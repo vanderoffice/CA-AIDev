@@ -1,0 +1,147 @@
+{
+  "name": "Industry Specialist Agent",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "7995a7b5-1cf1-43a7-a82e-a3359deacf40",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "industry",
+              "value": "={{$json.industry}}",
+              "type": "string"
+            },
+            {
+              "name": "businessType",
+              "value": "={{$json.businessType}}",
+              "type": "string"
+            },
+            {
+              "name": "city",
+              "value": "={{$json.city}}",
+              "type": "string"
+            },
+            {
+              "name": "county",
+              "value": "={{$json.county}}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "c54ed9e0-bc8d-4494-b53f-a4a3c50b90ba",
+      "name": "Extract Input Parameters",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        300,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "You are the Industry Specialist for California business licensing. Your expertise covers industry-specific requirements beyond the standard 4-phase process.\n\n**Your Role:**\nProvide detailed industry-specific licensing guidance for:\n- Medical/Healthcare (CDPH, Medical Board)\n- Food Service/Restaurants (Health permits, inspections)\n- Alcohol Sales (ABC licensing)\n- Construction/Contractors (CSLB)\n- Cannabis (DCC, local approval)\n- Child Care (CCL)\n- Personal Care (Barbering & Cosmetology Board, CAMTC)\n- Professional Services (various licensing boards)\n\n**Input Data:**\n- Industry: {{$json.industry}}\n- Business Type: {{$json.businessType}}\n- Location: {{$json.city}}, {{$json.county}}\n\n**Your Response Must Include:**\n\n1. **Industry Determination**\n   - Does this industry require special licensing?\n   - If general business, indicate \"No special industry requirements\"\n\n2. **State Industry Licenses** (if applicable)\n   - Licensing board/agency\n   - Portal URL and phone number\n   - Application process\n   - Required qualifications\n   - Timeline\n   - Costs\n\n3. **Local Industry Permits** (if applicable)\n   - County health department requirements\n   - City-specific industry permits\n   - Inspection requirements\n   - Ongoing compliance\n\n4. **Additional Documentation Required**\n   - Professional licenses\n   - Insurance requirements\n   - Background checks\n   - Training/certifications\n\n5. **Integration with 4-Phase Process**\n   - When to apply in the timeline\n   - Which phase to start industry licensing\n   - Expected additional time (e.g., +4-12 weeks)\n\n6. **Key Contacts & Resources**\n   - Specific agency contacts\n   - Industry-specific portals\n\nReference industry-requirements.md documentation. Provide extremely detailed guidance if industry requires special licensing. If general industry (consulting, retail, etc.), clearly state \"No additional industry-specific requirements beyond standard 4-phase process.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are an expert on California industry-specific licensing across medical, food service, alcohol, construction, cannabis, child care, personal care, and professional services. You know all licensing boards, requirements, and integration points with the standard licensing process."
+        }
+      },
+      "id": "2c33ee56-8e11-46a8-a8d5-e17cabc67f47",
+      "name": "Industry Specialist AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        600,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "phase",
+              "value": "Industry-Specific Requirements",
+              "type": "string"
+            },
+            {
+              "name": "guidance",
+              "value": "={{$json.output}}",
+              "type": "string"
+            },
+            {
+              "name": "completed",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "300dba2a-1a48-47e6-bc2d-97c88045207e",
+      "name": "Format Industry Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        900,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Input Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Input Parameters": {
+      "main": [
+        [
+          {
+            "node": "Industry Specialist AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Industry Specialist AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Format Industry Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "tags": [
+    "agent",
+    "industry-specific"
+  ]
+}

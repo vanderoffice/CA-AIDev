@@ -1,0 +1,153 @@
+{
+  "name": "Local Licensing Agent - Phase 3",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "4009d502-1761-43d5-8577-f6a7fdd80a2e",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "city",
+              "value": "={{$json.city}}",
+              "type": "string"
+            },
+            {
+              "name": "county",
+              "value": "={{$json.county}}",
+              "type": "string"
+            },
+            {
+              "name": "businessAddress",
+              "value": "={{$json.businessAddress}}",
+              "type": "string"
+            },
+            {
+              "name": "isHomeBased",
+              "value": "={{$json.isHomeBased}}",
+              "type": "boolean"
+            },
+            {
+              "name": "industry",
+              "value": "={{$json.industry}}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "a45cefb7-e66f-41b8-b670-72a2e86a67ac",
+      "name": "Extract Input Parameters",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        300,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "You are the Local Licensing Specialist for California businesses. Your expertise covers Phase 3, the most complex and time-consuming phase.\n\n**Your Role:**\nProvide city/county-specific guidance on:\n1. Zoning clearance (CRITICAL FIRST STEP)\n2. County business licenses (unincorporated areas)\n3. City business licenses and tax certificates\n4. Home-based business permits\n5. Multi-location requirements\n\n**Input Data:**\n- City: {{$json.city}}\n- County: {{$json.county}}\n- Address: {{$json.businessAddress}}\n- Home-Based: {{$json.isHomeBased}}\n- Industry: {{$json.industry}}\n\n**Your Response Must Include:**\n\n1. **ZONING CLEARANCE (DO THIS FIRST)**\n   - Explanation of why this comes first\n   - How to get APN (Assessor's Parcel Number)\n   - City Planning Department contact\n   - Timeline: 1-6 weeks\n   - Cost: $25-$100\n   - What they need to provide\n   - Keep confirmation for business license application\n\n2. **Jurisdiction Determination**\n   - Is this in city limits or unincorporated area?\n   - County license requirements (if unincorporated)\n\n3. **City Business License** (specific to {{$json.city}})\n   - Portal/website URL\n   - Phone number\n   - Application process\n   - Required documents\n   - Fee structure\n   - Processing timeline\n   - SB 205 requirements (if applicable)\n   - Office location and hours\n\n4. **Home-Based Business** (if applicable)\n   - Special permits required\n   - Zoning restrictions\n   - HOA considerations\n   - Common limitations\n\n5. **Timeline Summary**\n   - Zoning: 1-6 weeks\n   - Business license: 2-6 weeks\n   - Total Phase 3: 3-10 weeks\n\n6. **Required Documents Checklist**\n\nReference local-licensing.md for specific city details. Be extremely specific about {{$json.city}} requirements. Provide exact portal URLs, phone numbers, addresses, and office hours.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are an expert on local business licensing across all 482 California municipalities and 58 counties. You have detailed knowledge of city-specific requirements, zoning processes, and home-based business regulations."
+        }
+      },
+      "id": "0a41dcdd-3f33-48da-a209-72c76e317edb",
+      "name": "Local Licensing AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        600,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "phase",
+              "value": "Phase 3: Local Licensing",
+              "type": "string"
+            },
+            {
+              "name": "guidance",
+              "value": "={{$json.output}}",
+              "type": "string"
+            },
+            {
+              "name": "completed",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "150baaeb-8c9a-4b9e-87b8-4bd7b6f2c84d",
+      "name": "Format Phase 3 Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        900,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Input Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Input Parameters": {
+      "main": [
+        [
+          {
+            "node": "Local Licensing AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Local Licensing AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Format Phase 3 Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "tags": [
+    "agent",
+    "phase-3",
+    "local-licensing"
+  ]
+}

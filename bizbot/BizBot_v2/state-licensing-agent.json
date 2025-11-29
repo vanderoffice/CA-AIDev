@@ -1,0 +1,27 @@
+{
+    "name": "State Licensing Agent",
+    "nodes": [
+        {
+            "parameters": {
+                "model": "gpt-4",
+                "prompt": "Based on the input: {{ JSON.stringify($json) }}, and referencing state-licensing.md, provide guidance on state licensing."
+            },
+            "id": "ai-agent",
+            "name": "AI State Licensing Agent",
+            "type": "n8n-nodes-base.openAiChat",
+            "typeVersion": 1,
+            "position": [
+                250,
+                0
+            ]
+        }
+    ],
+    "connections": {},
+    "active": false,
+    "settings": {},
+    "tags": [
+        "ca-biz-license",
+        "agent",
+        "phase2"
+    ]
+}

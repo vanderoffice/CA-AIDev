@@ -1,0 +1,27 @@
+{
+    "name": "Industry Requirements Agent",
+    "nodes": [
+        {
+            "parameters": {
+                "model": "gpt-4",
+                "prompt": "Based on the input: {{ JSON.stringify($json) }}, and referencing industry-requirements.md, provide guidance on industry-specific requirements."
+            },
+            "id": "ai-agent",
+            "name": "AI Industry Agent",
+            "type": "n8n-nodes-base.openAiChat",
+            "typeVersion": 1,
+            "position": [
+                250,
+                0
+            ]
+        }
+    ],
+    "connections": {},
+    "active": false,
+    "settings": {},
+    "tags": [
+        "ca-biz-license",
+        "agent",
+        "industry"
+    ]
+}

@@ -1,0 +1,276 @@
+{
+    "name": "CA Business License Orchestrator",
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "ca-biz-license-webhook",
+                "responseMode": "onReceived",
+                "authentication": "none"
+            },
+            "id": "webhook-trigger",
+            "name": "Google Sheets Form Trigger",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 2,
+            "position": [
+                0,
+                0
+            ]
+        },
+        {
+            "parameters": {
+                "assignments": {
+                    "assignments": [
+                        {
+                            "name": "businessName",
+                            "value": "={{ $json.body.businessName }}",
+                            "type": "string"
+                        },
+                        {
+                            "name": "businessLocation",
+                            "value": "={{ $json.body.businessLocation }}",
+                            "type": "string"
+                        },
+                        {
+                            "name": "businessType",
+                            "value": "={{ $json.body.businessType }}",
+                            "type": "string"
+                        },
+                        {
+                            "name": "ownerEmail",
+                            "value": "={{ $json.body.ownerEmail }}",
+                            "type": "string"
+                        },
+                        {
+                            "name": "businessStage",
+                            "value": "={{ $json.body.businessStage || 'startup' }}",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            "id": "extract-data",
+            "name": "Extract Form Data",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 3.4,
+            "position": [
+                250,
+                0
+            ]
+        },
+        {
+            "parameters": {
+                "workflowId": "entity-formation-agent"
+            },
+            "id": "agent-entity",
+            "name": "Entity Formation Agent",
+            "type": "n8n-nodes-base.executeWorkflow",
+            "typeVersion": 1,
+            "position": [
+                500,
+                -200
+            ]
+        },
+        {
+            "parameters": {
+                "workflowId": "state-licensing-agent"
+            },
+            "id": "agent-state",
+            "name": "State Licensing Agent",
+            "type": "n8n-nodes-base.executeWorkflow",
+            "typeVersion": 1,
+            "position": [
+                750,
+                -100
+            ]
+        },
+        {
+            "parameters": {
+                "workflowId": "location-licensing-agent"
+            },
+            "id": "agent-location",
+            "name": "Location Licensing Agent",
+            "type": "n8n-nodes-base.executeWorkflow",
+            "typeVersion": 1,
+            "position": [
+                750,
+                50
+            ]
+        },
+        {
+            "parameters": {
+                "workflowId": "industry-requirements-agent"
+            },
+            "id": "agent-industry",
+            "name": "Industry Requirements Agent",
+            "type": "n8n-nodes-base.executeWorkflow",
+            "typeVersion": 1,
+            "position": [
+                1000,
+                -100
+            ]
+        },
+        {
+            "parameters": {
+                "workflowId": "compliance-advisor-agent"
+            },
+            "id": "agent-compliance",
+            "name": "Compliance & Renewal Agent",
+            "type": "n8n-nodes-base.executeWorkflow",
+            "typeVersion": 1,
+            "position": [
+                1000,
+                100
+            ]
+        },
+        {
+            "parameters": {},
+            "id": "merge-outputs",
+            "name": "Merge Agent Outputs",
+            "type": "n8n-nodes-base.merge",
+            "typeVersion": 1,
+            "position": [
+                1250,
+                0
+            ]
+        },
+        {
+            "parameters": {
+                "fileName": "CA_Business_License_Guidance",
+                "fileFormat": "pdf",
+                "content": "={{ JSON.stringify($json) }}"
+            },
+            "id": "generate-pdf",
+            "name": "Generate PDF Document",
+            "type": "n8n-nodes-base.createFile",
+            "typeVersion": 1,
+            "position": [
+                1500,
+                0
+            ]
+        },
+        {
+            "parameters": {
+                "to": "={{ $json.ownerEmail }}",
+                "subject": "Your California Business License Guidance",
+                "text": "Attached is your personalized CA business licensing guidance.",
+                "attachments": "={{ $json.data }}"
+            },
+            "id": "send-email",
+            "name": "Send Email with PDF",
+            "type": "n8n-nodes-base.emailSend",
+            "typeVersion": 2,
+            "position": [
+                1750,
+                0
+            ]
+        }
+    ],
+    "connections": {
+        "Google Sheets Form Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Extract Form Data",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Extract Form Data": {
+            "main": [
+                [
+                    {
+                        "node": "Entity Formation Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Entity Formation Agent": {
+            "main": [
+                [
+                    {
+                        "node": "State Licensing Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "State Licensing Agent": {
+            "main": [
+                [
+                    {
+                        "node": "Location Licensing Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Location Licensing Agent": {
+            "main": [
+                [
+                    {
+                        "node": "Industry Requirements Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Industry Requirements Agent": {
+            "main": [
+                [
+                    {
+                        "node": "Compliance & Renewal Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Compliance & Renewal Agent": {
+            "main": [
+                [
+                    {
+                        "node": "Merge Agent Outputs",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Merge Agent Outputs": {
+            "main": [
+                [
+                    {
+                        "node": "Generate PDF Document",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Generate PDF Document": {
+            "main": [
+                [
+                    {
+                        "node": "Send Email with PDF",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "active": false,
+    "settings": {},
+    "tags": [
+        "ca-biz-license",
+        "orchestrator"
+    ]
+}

@@ -1,0 +1,633 @@
+{
+  "name": "California Business Licensing Assistant - Main",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "63507132-fc49-4f02-b60c-7f9b0b95a32e",
+      "name": "Tally Form Submission Trigger",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        0,
+        0
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "google_sheets_credential",
+          "name": "Google Sheets OAuth2"
+        }
+      },
+      "webhookId": "",
+      "notesInFlow": true,
+      "notes": "Triggered when new business licensing request is submitted via Tally form"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "businessName",
+              "value": "={{ $json.businessName }}",
+              "type": "string"
+            },
+            {
+              "name": "businessType",
+              "value": "={{ $json.businessType }}",
+              "type": "string"
+            },
+            {
+              "name": "industry",
+              "value": "={{ $json.industry }}",
+              "type": "string"
+            },
+            {
+              "name": "city",
+              "value": "={{ $json.city }}",
+              "type": "string"
+            },
+            {
+              "name": "county",
+              "value": "={{ $json.county }}",
+              "type": "string"
+            },
+            {
+              "name": "businessAddress",
+              "value": "={{ $json.businessAddress }}",
+              "type": "string"
+            },
+            {
+              "name": "isHomeBased",
+              "value": "={{ $json.isHomeBased }}",
+              "type": "boolean"
+            },
+            {
+              "name": "sellsTangibleGoods",
+              "value": "={{ $json.sellsTangibleGoods }}",
+              "type": "boolean"
+            },
+            {
+              "name": "hasEmployees",
+              "value": "={{ $json.hasEmployees }}",
+              "type": "boolean"
+            },
+            {
+              "name": "targetOpenDate",
+              "value": "={{ $json.targetOpenDate }}",
+              "type": "string"
+            },
+            {
+              "name": "contactEmail",
+              "value": "={{ $json.contactEmail }}",
+              "type": "string"
+            },
+            {
+              "name": "contactName",
+              "value": "={{ $json.contactName }}",
+              "type": "string"
+            },
+            {
+              "name": "requestType",
+              "value": "={{ $json.requestType || 'new_business' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ac6b6661-cb57-4702-987f-d59783431bc2",
+      "name": "Extract Form Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        300,
+        0
+      ],
+      "notes": "Extract and structure form submission data"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": ""
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.businessName }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            },
+            {
+              "leftValue": "={{ $json.city }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            },
+            {
+              "leftValue": "={{ $json.industry }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            },
+            {
+              "leftValue": "={{ $json.contactEmail }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "bba79371-4a6e-4446-90a6-c47e4be2b69b",
+      "name": "Validate Required Fields",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        600,
+        0
+      ],
+      "notes": "Check that all required fields are present"
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "You are the California Business Licensing Supervisor Agent. Your role is to coordinate specialized sub-agents to provide comprehensive business licensing guidance.\n\nYou have access to the following specialized agents:\n1. Entity Formation Agent - Handles Phase 1 (business structure, registration)\n2. State Licensing Agent - Handles Phase 2 (state permits, CDTFA, SB 205)\n3. Local Licensing Agent - Handles Phase 3 (city/county licenses, zoning)\n4. Industry Specialist Agent - Handles industry-specific requirements\n5. Renewal & Compliance Agent - Handles Phase 4 (ongoing requirements)\n\nYour task:\n1. Analyze the business request: {{ $json.businessName }} in {{ $json.city }}, {{ $json.county }}\n2. Determine which phases apply based on business type: {{ $json.businessType }}, industry: {{ $json.industry }}\n3. Delegate to appropriate sub-agents in sequence\n4. Compile all responses into a comprehensive, actionable guide\n5. Include timelines, costs, direct links, and strategic advice\n\nRequest Type: {{ $json.requestType }}\nHome-Based: {{ $json.isHomeBased }}\nSells Goods: {{ $json.sellsTangibleGoods }}\nHas Employees: {{ $json.hasEmployees }}\nTarget Open Date: {{ $json.targetOpenDate }}\n\nCoordinate the agents to create a complete step-by-step guide.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are an expert California business licensing coordinator with deep knowledge of state, county, and city requirements across all 58 counties and 482 municipalities."
+        }
+      },
+      "id": "6100b795-5059-4e8e-b460-19848b2982a3",
+      "name": "Supervisor Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        900,
+        0
+      ],
+      "notes": "Main coordinator agent that orchestrates sub-agents"
+    },
+    {
+      "parameters": {
+        "name": "Entity Formation Agent",
+        "description": "Use this agent for Phase 1: Business entity formation, structure selection, Secretary of State registration, DBA filing, and EIN acquisition. Provides guidance on LLC, Corporation, Sole Proprietorship setup.",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": ""
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\"businessName\": \"string\", \"businessType\": \"string\", \"county\": \"string\", \"hasEmployees\": \"boolean\", \"targetOpenDate\": \"string\"}"
+      },
+      "id": "30993aea-5f9d-425d-962a-5e365ea69995",
+      "name": "Entity Formation Agent Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        900,
+        150
+      ],
+      "notes": "Phase 1: Entity formation specialist"
+    },
+    {
+      "parameters": {
+        "name": "State Licensing Agent",
+        "description": "Use this agent for Phase 2: State-level licensing including Statement of Information, CDTFA Seller's Permit, SB 205 stormwater compliance, and industry-specific state licenses. Covers CalGold database research.",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": ""
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\"businessType\": \"string\", \"industry\": \"string\", \"sellsTangibleGoods\": \"boolean\", \"county\": \"string\", \"city\": \"string\"}"
+      },
+      "id": "41081e52-c8f9-4e78-b0eb-20e67ac7e76e",
+      "name": "State Licensing Agent Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1200,
+        150
+      ],
+      "notes": "Phase 2: State licensing specialist"
+    },
+    {
+      "parameters": {
+        "name": "Local Licensing Agent",
+        "description": "Use this agent for Phase 3: City and county business licenses, zoning clearance, home-based business permits. Provides city-specific requirements for all 482 California municipalities.",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": ""
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\"city\": \"string\", \"county\": \"string\", \"businessAddress\": \"string\", \"isHomeBased\": \"boolean\", \"industry\": \"string\"}"
+      },
+      "id": "0c701235-8550-42c6-9f08-1da1292f2a31",
+      "name": "Local Licensing Agent Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1500,
+        150
+      ],
+      "notes": "Phase 3: Local licensing specialist"
+    },
+    {
+      "parameters": {
+        "name": "Industry Specialist Agent",
+        "description": "Use this agent for industry-specific requirements: Medical/Healthcare, Food Service, Alcohol, Construction, Cannabis, Child Care, Personal Care, Professional Services. Provides detailed licensing for regulated industries.",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": ""
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\"industry\": \"string\", \"businessType\": \"string\", \"city\": \"string\", \"county\": \"string\"}"
+      },
+      "id": "ef81108f-1fca-4f04-a759-9815efaaf4aa",
+      "name": "Industry Specialist Agent Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1800,
+        150
+      ],
+      "notes": "Industry-specific requirements specialist"
+    },
+    {
+      "parameters": {
+        "name": "Renewal & Compliance Agent",
+        "description": "Use this agent for Phase 4: Annual renewals, tax compliance (CDTFA, FTB), ongoing maintenance, Statement of Information updates. Provides compliance calendars and penalty avoidance strategies.",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": ""
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\"businessType\": \"string\", \"industry\": \"string\", \"sellsTangibleGoods\": \"boolean\", \"city\": \"string\"}"
+      },
+      "id": "bbbc9c5a-1d34-4a78-9165-b82d99bcd228",
+      "name": "Renewal & Compliance Agent Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2100,
+        150
+      ],
+      "notes": "Phase 4: Renewal and compliance specialist"
+    },
+    {
+      "parameters": {
+        "mode": "load",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "california_business_licensing",
+          "mode": "list"
+        },
+        "options": {}
+      },
+      "id": "66078819-08ca-4465-b2fb-ed81d0444ae1",
+      "name": "CA Licensing Knowledge Base",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        300
+      ],
+      "credentials": {
+        "qdrantApi": {
+          "id": "qdrant_credential",
+          "name": "Qdrant Vector DB"
+        }
+      },
+      "notes": "Vector database containing all CA licensing documentation"
+    },
+    {
+      "parameters": {
+        "name": "CalGold Database Search",
+        "description": "Search the California Government Online to Desktops (CalGold) database for permit and licensing requirements. Use when you need to verify specific city or industry requirements.",
+        "method": "GET",
+        "url": "https://www.calgold.ca.gov/",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": false,
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "0b003dec-26ba-41ed-ab73-8b5f9d258695",
+      "name": "CalGold Search Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        1500,
+        300
+      ],
+      "notes": "Search CalGold for city/industry requirements"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4-turbo-preview",
+          "mode": "list"
+        },
+        "options": {
+          "temperature": 0.3,
+          "maxTokens": 4000
+        }
+      },
+      "id": "918ce2e0-083a-47cf-a55d-f57378178a77",
+      "name": "AI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        300
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "openai_credential",
+          "name": "OpenAI API"
+        }
+      },
+      "notes": "Primary LLM for agents"
+    },
+    {
+      "parameters": {
+        "jsCode": "\n// Compile comprehensive business licensing guide\nconst businessName = $input.first().json.businessName;\nconst city = $input.first().json.city;\nconst county = $input.first().json.county;\nconst industry = $input.first().json.industry;\nconst agentResponse = $input.first().json.output;\n\nconst documentContent = `# California Business Licensing Guide\n## For: ${businessName}\n\n**Location:** ${city}, ${county} County\n**Industry:** ${industry}\n**Generated:** ${new Date().toLocaleDateString()}\n\n---\n\n${agentResponse}\n\n---\n\n## Important Disclaimers\n\n**This tool is for informational purposes only.**\n\n- **Not Legal Advice**: Always consult with a qualified attorney or tax professional for complex situations.\n- **Verify Information**: Government requirements change frequently. Always verify with official .gov websites.\n- **No Filing**: This guide does not file documents on your behalf.\n\n## Key Resources\n\n- **CalGold Database**: https://www.calgold.ca.gov/\n- **CA Secretary of State**: https://www.sos.ca.gov/ | (916) 657-5448\n- **CDTFA**: https://www.cdtfa.ca.gov/ | (800) 400-7115\n- **Franchise Tax Board**: https://www.ftb.ca.gov/ | (800) 852-5711\n\n---\n\n*Generated by California Business Licensing Assistant*\n*Last Updated: ${new Date().toISOString()}*\n`;\n\nreturn {\n  json: {\n    documentContent: documentContent,\n    businessName: businessName,\n    contactEmail: $input.first().json.contactEmail,\n    contactName: $input.first().json.contactName,\n    city: city,\n    county: county\n  }\n};\n"
+      },
+      "id": "4a93a2f5-b841-44ca-8ed1-936e880c3446",
+      "name": "Compile Final Document",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1800,
+        0
+      ],
+      "notes": "Compile agent responses into final formatted document"
+    },
+    {
+      "parameters": {
+        "operation": "markdownToPdf",
+        "markdown": "={{ $json.documentContent }}",
+        "options": {
+          "headerTemplate": "<div style='font-size:10px; text-align:center; width:100%;'>California Business Licensing Guide</div>",
+          "footerTemplate": "<div style='font-size:10px; text-align:center; width:100%;'>Page <span class='pageNumber'></span> of <span class='totalPages'></span></div>",
+          "displayHeaderFooter": true,
+          "margin": {
+            "top": "20mm",
+            "right": "15mm",
+            "bottom": "20mm",
+            "left": "15mm"
+          }
+        }
+      },
+      "id": "7c6c10f4-6bfd-4fbf-8a14-2926bdd976bb",
+      "name": "Generate PDF Document",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        2100,
+        0
+      ],
+      "notes": "Convert markdown guide to PDF"
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@ca-business-licensing.gov",
+        "toEmail": "={{$json.contactEmail}}",
+        "subject": "Your California Business Licensing Guide - {{$json.businessName}}",
+        "emailFormat": "html",
+        "message": "<html>\n<body style=\"font-family: Arial, sans-serif; line-height: 1.6; color: #333;\">\n  <h2 style=\"color: #1e3a8a;\">Your California Business Licensing Guide</h2>\n\n  <p>Hello {{$json.contactName}},</p>\n\n  <p>Thank you for using the California Business Licensing Assistant. Your personalized step-by-step guide for <strong>{{$json.businessName}}</strong> in <strong>{{$json.city}}, {{$json.county}} County</strong> is attached to this email.</p>\n\n  <h3>What's Inside:</h3>\n  <ul>\n    <li><strong>Complete 4-Phase Process:</strong> Entity formation, state licensing, local licensing, and ongoing compliance</li>\n    <li><strong>Timeline Estimates:</strong> Realistic timeframes for each step</li>\n    <li><strong>Direct Links:</strong> All forms, portals, and contact information</li>\n    <li><strong>Cost Breakdown:</strong> Expected fees and expenses</li>\n    <li><strong>Strategic Advice:</strong> Time-saving tips and pitfall avoidance</li>\n  </ul>\n\n  <h3>Important Next Steps:</h3>\n  <ol>\n    <li>Review the attached guide carefully</li>\n    <li>Verify all information on official .gov websites</li>\n    <li>Start 10-14 weeks before your target opening date</li>\n    <li>Consider professional consultation for complex industries</li>\n  </ol>\n\n  <h3>Key Resources:</h3>\n  <p>\n    <strong>CalGold Database:</strong> <a href=\"https://www.calgold.ca.gov/\">https://www.calgold.ca.gov/</a><br>\n    <strong>CA Secretary of State:</strong> <a href=\"https://www.sos.ca.gov/\">https://www.sos.ca.gov/</a><br>\n    <strong>CDTFA:</strong> <a href=\"https://www.cdtfa.ca.gov/\">https://www.cdtfa.ca.gov/</a>\n  </p>\n\n  <p style=\"background-color: #fef3c7; padding: 15px; border-left: 4px solid #f59e0b;\">\n    <strong>\u26a0\ufe0f Important Disclaimer:</strong><br>\n    This guide is for informational purposes only and does not constitute legal advice. Requirements change frequently - always verify current information on official government websites.\n  </p>\n\n  <p>Best wishes with your new business venture!</p>\n\n  <p style=\"color: #666; font-size: 0.9em;\">\n    California Business Licensing Assistant<br>\n    Powered by n8n AI Automation\n  </p>\n</body>\n</html>",
+        "options": {
+          "attachments": "data:application/pdf;base64,={{$binary.data.data}}",
+          "attachmentsPropertyName": "California_Business_License_Guide_{{$json.businessName}}.pdf"
+        }
+      },
+      "id": "ced3ca28-575b-44ec-8c0c-8ea20cf28c17",
+      "name": "Send Email with Guide",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        2400,
+        0
+      ],
+      "credentials": {
+        "smtp": {
+          "id": "smtp_credential",
+          "name": "SMTP Email"
+        }
+      },
+      "notes": "Send personalized guide to user"
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list"
+        },
+        "table": {
+          "__rl": true,
+          "value": "business_licensing_requests",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "business_name": "={{$json.businessName}}",
+            "city": "={{$json.city}}",
+            "county": "={{$json.county}}",
+            "industry": "={{$('Extract Form Data').item.json.industry}}",
+            "request_type": "={{$('Extract Form Data').item.json.requestType}}",
+            "contact_email": "={{$json.contactEmail}}",
+            "created_at": "={{$now}}",
+            "status": "completed"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "8940c5b0-e951-4eaa-98b7-c3d1bded4aa3",
+      "name": "Log Request to Database",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        2700,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "postgres_credential",
+          "name": "PostgreSQL Database"
+        }
+      },
+      "notes": "Track all requests for analytics"
+    },
+    {
+      "parameters": {
+        "fromEmail": "errors@ca-business-licensing.gov",
+        "toEmail": "admin@ca-business-licensing.gov",
+        "subject": "ERROR: Business Licensing Request Failed",
+        "emailFormat": "text",
+        "message": "Error processing request:\\n\\nBusiness: {{$json.businessName}}\\nCity: {{$json.city}}\\nError: {{$json.error}}\\n\\nTimestamp: {{$now}}"
+      },
+      "id": "bab5e6e4-84d4-4382-bb78-ea9faa34a350",
+      "name": "Send Error Notification",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        1200,
+        450
+      ],
+      "credentials": {
+        "smtp": {
+          "id": "smtp_credential",
+          "name": "SMTP Email"
+        }
+      },
+      "notes": "Alert admin of failures"
+    }
+  ],
+  "connections": {
+    "Tally Form Submission Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Form Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Form Data": {
+      "main": [
+        [
+          {
+            "node": "Validate Required Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Required Fields": {
+      "main": [
+        [
+          {
+            "node": "Supervisor Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Error Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supervisor Agent": {
+      "main": [
+        [
+          {
+            "node": "Compile Final Document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compile Final Document": {
+      "main": [
+        [
+          {
+            "node": "Generate PDF Document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate PDF Document": {
+      "main": [
+        [
+          {
+            "node": "Send Email with Guide",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email with Guide": {
+      "main": [
+        [
+          {
+            "node": "Log Request to Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "tags": [
+    "california",
+    "business-licensing",
+    "ai-agents"
+  ]
+}

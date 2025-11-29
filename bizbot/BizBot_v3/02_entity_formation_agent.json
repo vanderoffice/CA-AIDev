@@ -1,0 +1,178 @@
+{
+  "name": "Entity Formation Agent - Phase 1",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "63262e76-d2ad-4955-83a2-ac9f1e2ae97a",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "businessName",
+              "value": "={{$json.businessName}}",
+              "type": "string"
+            },
+            {
+              "name": "businessType",
+              "value": "={{$json.businessType}}",
+              "type": "string"
+            },
+            {
+              "name": "county",
+              "value": "={{$json.county}}",
+              "type": "string"
+            },
+            {
+              "name": "hasEmployees",
+              "value": "={{$json.hasEmployees}}",
+              "type": "boolean"
+            },
+            {
+              "name": "targetOpenDate",
+              "value": "={{$json.targetOpenDate}}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "c70e02cf-390e-42d5-a207-5dc0c7e30fb3",
+      "name": "Extract Input Parameters",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        300,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "load",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "entity_formation_knowledge",
+          "mode": "list"
+        },
+        "options": {}
+      },
+      "id": "dd497d5c-3cd0-44b9-b698-26f5c67b4f01",
+      "name": "Entity Formation Knowledge Base",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1,
+      "position": [
+        600,
+        150
+      ],
+      "credentials": {
+        "qdrantApi": {
+          "id": "qdrant_credential",
+          "name": "Qdrant Vector DB"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "You are the Entity Formation Specialist for California businesses. Your expertise covers Phase 1 of the business licensing process.\n\n**Your Role:**\nProvide detailed, step-by-step guidance on:\n1. Choosing the right business structure (LLC, Corporation, Sole Proprietorship, Partnership)\n2. Registering with California Secretary of State\n3. Filing Fictitious Business Name (DBA) if applicable\n4. Obtaining Federal EIN\n5. Timeline and cost estimates for Phase 1\n\n**Input Data:**\n- Business Name: {{$json.businessName}}\n- Intended Structure: {{$json.businessType}}\n- County: {{$json.county}}\n- Has Employees: {{$json.hasEmployees}}\n- Target Opening: {{$json.targetOpenDate}}\n\n**Your Response Must Include:**\n1. **Recommended Business Structure** with justification\n2. **Step-by-Step Process:**\n   - Secretary of State registration (portal link, forms, fees)\n   - DBA filing requirements for their county\n   - EIN application process\n   - Timeline for each step (with dates if possible)\n3. **Required Documents Checklist**\n4. **Cost Breakdown** (all fees)\n5. **Strategic Tips** (fastest methods, common mistakes)\n6. **Next Steps** (what to do after Phase 1)\n\nReference the entity-formation.md documentation. Provide specific portal URLs, phone numbers, and forms. Be detailed and actionable.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are an expert on California business entity formation with deep knowledge of Secretary of State processes, DBA requirements, and EIN acquisition across all 58 California counties."
+        }
+      },
+      "id": "c82fbc3f-0f09-419e-9353-49c11da76d85",
+      "name": "Entity Formation AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        900,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "phase",
+              "value": "Phase 1: Entity Formation",
+              "type": "string"
+            },
+            {
+              "name": "guidance",
+              "value": "={{$json.output}}",
+              "type": "string"
+            },
+            {
+              "name": "completed",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "806d441f-2136-4764-a91c-1ac2fa9ae39c",
+      "name": "Format Phase 1 Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1200,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Input Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Input Parameters": {
+      "main": [
+        [
+          {
+            "node": "Entity Formation AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Entity Formation AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Format Phase 1 Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "tags": [
+    "agent",
+    "phase-1",
+    "entity-formation"
+  ]
+}

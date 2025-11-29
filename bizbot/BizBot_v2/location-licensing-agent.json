@@ -1,0 +1,27 @@
+{
+    "name": "Location Licensing Agent",
+    "nodes": [
+        {
+            "parameters": {
+                "model": "gpt-4",
+                "prompt": "Based on the input: {{ JSON.stringify($json) }}, and referencing local-licensing.md, provide guidance on local licensing."
+            },
+            "id": "ai-agent",
+            "name": "AI Location Licensing Agent",
+            "type": "n8n-nodes-base.openAiChat",
+            "typeVersion": 1,
+            "position": [
+                250,
+                0
+            ]
+        }
+    ],
+    "connections": {},
+    "active": false,
+    "settings": {},
+    "tags": [
+        "ca-biz-license",
+        "agent",
+        "phase3"
+    ]
+}

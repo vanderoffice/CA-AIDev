@@ -1,0 +1,148 @@
+{
+  "name": "Renewal & Compliance Agent - Phase 4",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "231331a6-8d1f-4a4e-88d9-7abcdb7e5384",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "businessType",
+              "value": "={{$json.businessType}}",
+              "type": "string"
+            },
+            {
+              "name": "industry",
+              "value": "={{$json.industry}}",
+              "type": "string"
+            },
+            {
+              "name": "sellsTangibleGoods",
+              "value": "={{$json.sellsTangibleGoods}}",
+              "type": "boolean"
+            },
+            {
+              "name": "city",
+              "value": "={{$json.city}}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "acef2cf9-4db6-44b1-b49f-ddd190099a4f",
+      "name": "Extract Input Parameters",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        300,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "You are the Renewal & Compliance Specialist for California businesses. Your expertise covers Phase 4, the ongoing requirements after business launch.\n\n**Your Role:**\nProvide comprehensive guidance on:\n1. Annual business license renewals\n2. Statement of Information updates\n3. Tax compliance (CDTFA, FTB)\n4. SB 205 ongoing compliance\n5. Record keeping requirements\n6. Industry-specific ongoing compliance\n7. Penalty avoidance strategies\n\n**Input Data:**\n- Business Type: {{$json.businessType}}\n- Industry: {{$json.industry}}\n- Sells Tangible Goods: {{$json.sellsTangibleGoods}}\n- City: {{$json.city}}\n\n**Your Response Must Include:**\n\n1. **Annual Business License Renewal**\n   - Expiration date (December 31st for most cities)\n   - Renewal notice timing (mailed in December)\n   - Payment deadline (Feb 1 or Mar 1 for most)\n   - Late penalty structure (10% + 1% monthly + 40% if 2+ months)\n   - Required information for renewal\n   - Online portal link\n   - How to update business changes\n\n2. **Statement of Information Filing**\n   - LLC: Every 2 years\n   - Corporation: Annually\n   - Filing window (6 months based on formation)\n   - Portal: https://bizfileonline.sos.ca.gov/\n   - Penalty: $250 if missed\n   - When to file immediate updates\n\n3. **Tax Compliance**\n   - CDTFA Sales Tax (if applicable)\n     - Filing frequency (quarterly/monthly/annual)\n     - Deadlines\n     - Form 401-A\n     - Portal link\n     - Penalties for late filing\n   - FTB Franchise Tax\n     - $800 annual minimum (LLC/Corp)\n     - Due: April 15th\n     - Form 568 (LLC) or Form 100 (Corp)\n     - Portal: https://www.ftb.ca.gov/\n     - Penalties\n\n4. **SB 205 Ongoing Compliance** (if applicable)\n   - Annual permit maintenance\n   - SMARTS reporting\n   - Renewal requirements\n\n5. **Industry-Specific Ongoing Requirements** (based on {{$json.industry}})\n   - Professional license renewals\n   - Health inspections\n   - Staff certifications\n   - Insurance maintenance\n\n6. **Annual Compliance Calendar**\n   - Month-by-month checklist\n   - Key deadline dates\n   - Reminder schedule\n\n7. **Record Keeping**\n   - Required documents (4+ years)\n   - License display requirements\n   - Audit preparation\n\n8. **Penalty Avoidance Checklist**\n   - Calendar reminders to set\n   - Common mistakes\n   - Budget planning\n\n9. **Business Closure Process** (if needed in future)\n   - Proper closure steps\n   - Final filings\n   - Timeline\n\n10. **Key Contacts**\n    - City business license department\n    - CDTFA: (800) 400-7115\n    - FTB: (800) 852-5711\n    - Secretary of State: (916) 657-5448\n\nReference renewal-compliance.md documentation. Provide specific deadlines, portal URLs, and forms. Create a practical compliance calendar they can follow.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are an expert on California business compliance and renewal requirements with comprehensive knowledge of city renewal processes, tax filing requirements, Statement of Information updates, and ongoing regulatory compliance across all industries."
+        }
+      },
+      "id": "e5d3313b-7f30-4d7b-af4d-0152a26b241e",
+      "name": "Renewal & Compliance AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        600,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "phase",
+              "value": "Phase 4: Renewal & Ongoing Compliance",
+              "type": "string"
+            },
+            {
+              "name": "guidance",
+              "value": "={{$json.output}}",
+              "type": "string"
+            },
+            {
+              "name": "completed",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "8868dee1-df39-4dd2-8fd5-deea46046a42",
+      "name": "Format Phase 4 Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        900,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Input Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Input Parameters": {
+      "main": [
+        [
+          {
+            "node": "Renewal & Compliance AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Renewal & Compliance AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Format Phase 4 Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "tags": [
+    "agent",
+    "phase-4",
+    "renewal-compliance"
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "name": "State Licensing Agent - Phase 2",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "7571ea91-4b5f-40fc-8e6d-262aedd4bfd6",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "businessType",
+              "value": "={{$json.businessType}}",
+              "type": "string"
+            },
+            {
+              "name": "industry",
+              "value": "={{$json.industry}}",
+              "type": "string"
+            },
+            {
+              "name": "sellsTangibleGoods",
+              "value": "={{$json.sellsTangibleGoods}}",
+              "type": "boolean"
+            },
+            {
+              "name": "county",
+              "value": "={{$json.county}}",
+              "type": "string"
+            },
+            {
+              "name": "city",
+              "value": "={{$json.city}}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "0856e18b-f42d-48e3-aafe-8e7675dd00f8",
+      "name": "Extract Input Parameters",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        300,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "You are the State Licensing Specialist for California businesses. Your expertise covers Phase 2 of the business licensing process.\n\n**Your Role:**\nProvide detailed guidance on all state-level requirements:\n1. Statement of Information filing with Secretary of State\n2. CDTFA Seller's Permit (if applicable)\n3. SB 205 Stormwater Compliance (if applicable)\n4. CalGold database research\n5. Industry-specific state licenses\n\n**Input Data:**\n- Business Type: {{$json.businessType}}\n- Industry: {{$json.industry}}\n- Sells Tangible Goods: {{$json.sellsTangibleGoods}}\n- Location: {{$json.city}}, {{$json.county}} County\n\n**Your Response Must Include:**\n1. **Statement of Information Requirements**\n   - Filing deadline (90 days from formation)\n   - Portal link and forms\n   - Required information\n   - Cost and penalties\n\n2. **CDTFA Seller's Permit** (if selling goods)\n   - Registration process\n   - Timeline (14 days)\n   - Required documents\n   - Sales tax obligations\n\n3. **SB 205 Compliance** (if applicable to industry)\n   - Determination of applicability\n   - Enrollment options (NOI, NONA, NEC)\n   - SMARTS system registration\n   - Contact information\n\n4. **CalGold Research Results**\n   - Specific permits for this city/industry combination\n   - Links to requirements\n\n5. **Timeline & Costs**\n6. **Common Mistakes to Avoid**\n\nReference state-licensing.md documentation. Provide actionable steps with specific URLs and phone numbers.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are an expert on California state-level business licensing with comprehensive knowledge of CDTFA, Secretary of State, SB 205, and the CalGold database."
+        }
+      },
+      "id": "6ccc516b-669c-483a-b564-f8d1e8b6a23e",
+      "name": "State Licensing AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        600,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "phase",
+              "value": "Phase 2: State Licensing",
+              "type": "string"
+            },
+            {
+              "name": "guidance",
+              "value": "={{$json.output}}",
+              "type": "string"
+            },
+            {
+              "name": "completed",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "8c21a0dc-f9aa-460f-96e8-2beb53eeaa9a",
+      "name": "Format Phase 2 Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        900,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Input Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Input Parameters": {
+      "main": [
+        [
+          {
+            "node": "State Licensing AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "State Licensing AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Format Phase 2 Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "tags": [
+    "agent",
+    "phase-2",
+    "state-licensing"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Entity Formation Agent",
+    "nodes": [
+        {
+            "parameters": {
+                "model": "gpt-4",
+                "prompt": "Based on the input: {{ JSON.stringify($json) }}, and referencing entity-formation.md, provide guidance on entity formation."
+            },
+            "id": "ai-agent",
+            "name": "AI Entity Formation Agent",
+            "type": "n8n-nodes-base.openAiChat",
+            "typeVersion": 1,
+            "position": [
+                250,
+                0
+            ]
+        }
+    ],
+    "connections": {},
+    "active": false,
+    "settings": {},
+    "tags": [
+        "ca-biz-license",
+        "agent",
+        "phase1"
+    ]
+}

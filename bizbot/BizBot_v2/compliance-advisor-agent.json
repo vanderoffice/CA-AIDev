@@ -1,0 +1,27 @@
+{
+    "name": "Compliance & Renewal Agent",
+    "nodes": [
+        {
+            "parameters": {
+                "model": "gpt-4",
+                "prompt": "Based on the input: {{ JSON.stringify($json) }}, and referencing renewal-compliance.md, provide guidance on ongoing compliance and renewals."
+            },
+            "id": "ai-agent",
+            "name": "AI Compliance Agent",
+            "type": "n8n-nodes-base.openAiChat",
+            "typeVersion": 1,
+            "position": [
+                250,
+                0
+            ]
+        }
+    ],
+    "connections": {},
+    "active": false,
+    "settings": {},
+    "tags": [
+        "ca-biz-license",
+        "agent",
+        "phase4"
+    ]
+}

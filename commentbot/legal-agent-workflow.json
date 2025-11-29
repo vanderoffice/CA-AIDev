@@ -1,0 +1,105 @@
+{
+  "name": "Legal Agent Sub-Workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "workflow-trigger",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.comment_text }}",
+        "hasOutputParser": false,
+        "options": {
+          "systemMessage": "You are a legal expert analyzing public comments submitted to government agencies.\\n\\nYour role is to:\\n1. Identify any legal arguments, citations, or regulatory references in the comment\\n2. Assess the validity and merit of legal claims made\\n3. Evaluate potential regulatory compliance issues\\n4. Provide a concise analysis and suggested reply strategy\\n\\nIf the comment contains NO legal arguments, citations, or regulatory issues, respond with exactly: \\"No Comment\\"\\n\\nIf the comment does contain legal content, provide your response in the following format:\\n- Legal Issues: [1-2 sentence summary of legal arguments/citations]\\n- Validity Assessment: [1-2 sentence evaluation of claim merit]\\n- Suggested Reply: [1-2 sentence recommendation for response]\\n\\nKeep your total response to 5 sentences or fewer (excluding \\"No Comment\\" responses).\\nBe specific and reference actual statutes, regulations, or legal principles mentioned."
+        }
+      },
+      "id": "legal-agent",
+      "name": "Legal Analysis Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "model": "claude-3-5-sonnet-20241022",
+        "options": {
+          "temperature": 0.5,
+          "maxTokens": 500
+        }
+      },
+      "id": "anthropic-model",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [450, 480],
+      "credentials": {
+        "anthropicApi": {
+          "id": "anthropic-credentials",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format legal agent response\\nconst output = $input.item.json.output;\\nconst isNoComment = output.trim() === 'No Comment';\\n\\nreturn {\\n  json: {\\n    comment_id: $input.item.json.comment_id,\\n    legal_assessment: isNoComment ? null : output,\\n    has_legal_content: !isNoComment\\n  }\\n};"
+      },
+      "id": "format-legal-response",
+      "name": "Format Legal Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Legal Analysis Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Legal Analysis Agent": {
+      "main": [
+        [
+          {
+            "node": "Format Legal Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Legal Analysis Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "id": "legal-agent-workflow",
+  "meta": {
+    "instanceId": "your-instance-id"
+  },
+  "tags": []
+}
