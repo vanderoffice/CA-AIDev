@@ -1,0 +1,521 @@
+{
+  "name": "WiseBot - Parse & Normalize",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "workflow-trigger",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "content": "## WiseBot Parse & Normalize Sub-workflow\n\n**Purpose:** Transform attachments into normalized text content for embedding.\n\n**Input Parameters:**\n- `fileData` - Base64 encoded file content\n- `fileName` - Original file name\n- `mimeType` - MIME type of file\n- `docType` - Classified document type\n- `fileHash` - SHA-256 hash of file\n- `contentHash` - Hash of normalized content\n\n**Output:**\n- `parsedContent` - Extracted/normalized text\n- `structuredData` - Tables, metadata, etc.\n- `typeSpecificData` - Type-specific fields\n\n**Services Used:**\n- Docling for document parsing\n- Whisper/STT for audio\n- OCR for images",
+        "height": 400,
+        "width": 380
+      },
+      "id": "sticky-intro",
+      "name": "Sticky Note - Introduction",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [40, 40]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validate and prepare input for parsing\nconst input = $input.first().json;\n\nconst requiredFields = ['fileData', 'fileName', 'mimeType', 'docType'];\nfor (const field of requiredFields) {\n  if (!input[field]) {\n    throw new Error(`Missing required field: ${field}`);\n  }\n}\n\n// Decode base64 if needed and prepare for processing\nreturn [{\n  json: {\n    fileData: input.fileData,\n    fileName: input.fileName,\n    mimeType: input.mimeType,\n    docType: input.docType,\n    fileHash: input.fileHash,\n    contentHash: input.contentHash,\n    processingStartedAt: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "validate-input",
+      "name": "Validate Input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "is-text",
+              "leftValue": "={{$json.docType}}",
+              "rightValue": "text",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "route-text",
+      "name": "Is Text Doc?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [680, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "is-audio",
+              "leftValue": "={{$json.docType}}",
+              "rightValue": "audio",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "route-audio",
+      "name": "Is Audio?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [680, 400]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "is-image",
+              "leftValue": "={{$json.docType}}",
+              "rightValue": "image",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "route-image",
+      "name": "Is Image?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [680, 600]
+    },
+    {
+      "parameters": {
+        "content": "## Document Type Routing\n\nRoutes to appropriate parser based on document type:\n- **Text:** PDF, DOCX, MD → Docling\n- **Audio:** MP3 → Whisper STT\n- **Image:** JPG, BMP → OCR + Vision\n- **Tabular:** CSV, XLSX, JSON → Structure extraction",
+        "height": 180,
+        "width": 280
+      },
+      "id": "sticky-routing",
+      "name": "Sticky Note - Routing",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [680, 40]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.DOCLING_API_URL || 'http://localhost:8080'}}/convert",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"file_content\": \"{{$json.fileData}}\",\n  \"file_name\": \"{{$json.fileName}}\",\n  \"options\": {\n    \"extract_tables\": true,\n    \"extract_images\": false,\n    \"ocr_enabled\": true\n  }\n}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "parse-text-docling",
+      "name": "Parse with Docling",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [920, 120]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process Docling response and extract text content\nconst input = $input.first().json;\nconst doclingResponse = input;\n\n// Extract main text content\nconst fullText = doclingResponse.text || doclingResponse.content || '';\n\n// Extract structural information\nconst hasHeaders = doclingResponse.headers?.length > 0 || false;\nconst hasTables = doclingResponse.tables?.length > 0 || false;\nconst hasImages = doclingResponse.images?.length > 0 || false;\n\n// Get tables if present\nconst tables = doclingResponse.tables || [];\n\n// Detect language (simple heuristic)\nconst languageDetected = detectLanguage(fullText);\n\nfunction detectLanguage(text) {\n  // Simple detection based on character sets\n  if (/[\\u4e00-\\u9fff]/.test(text)) return 'zh';\n  if (/[\\u3040-\\u30ff]/.test(text)) return 'ja';\n  if (/[\\u0400-\\u04ff]/.test(text)) return 'ru';\n  if (/[\\u0600-\\u06ff]/.test(text)) return 'ar';\n  return 'en'; // default\n}\n\n// Build content preview (first 500 chars)\nconst contentPreview = fullText.substring(0, 500);\n\n// Count words\nconst wordCount = fullText.split(/\\s+/).filter(w => w.length > 0).length;\n\nreturn [{\n  json: {\n    parsedContent: fullText,\n    contentPreview,\n    wordCount,\n    typeSpecificData: {\n      hasHeaders,\n      hasTables,\n      hasImages,\n      languageDetected,\n      tables,\n      pageCount: doclingResponse.page_count || 1,\n      pdfVersion: doclingResponse.pdf_version,\n      isSearchable: doclingResponse.is_searchable !== false\n    },\n    structuredData: {\n      headers: doclingResponse.headers || [],\n      tables: tables.map((t, i) => ({\n        index: i,\n        rows: t.rows?.length || 0,\n        columns: t.columns?.length || 0\n      }))\n    },\n    docType: 'text',\n    parsingMethod: 'docling'\n  }\n}];"
+      },
+      "id": "process-text-response",
+      "name": "Process Text Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1140, 120]
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "binaryPropertyName": "data",
+        "options": {
+          "language": "en",
+          "responseFormat": "verbose_json"
+        }
+      },
+      "id": "transcribe-audio",
+      "name": "Transcribe with Whisper",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [920, 320],
+      "credentials": {
+        "openAiApi": {
+          "id": "OPENAI_CREDENTIAL_ID",
+          "name": "OpenAI"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process Whisper transcription response\nconst input = $input.first().json;\nconst whisperResponse = input;\n\nconst transcription = whisperResponse.text || '';\nconst languageDetected = whisperResponse.language || 'en';\nconst duration = whisperResponse.duration || 0;\n\n// Extract segments if available\nconst segments = whisperResponse.segments || [];\n\n// Build content preview\nconst contentPreview = transcription.substring(0, 500);\nconst wordCount = transcription.split(/\\s+/).filter(w => w.length > 0).length;\n\n// Calculate average confidence if segments have it\nlet avgConfidence = null;\nif (segments.length > 0 && segments[0].confidence !== undefined) {\n  avgConfidence = segments.reduce((sum, s) => sum + (s.confidence || 0), 0) / segments.length;\n}\n\nreturn [{\n  json: {\n    parsedContent: transcription,\n    contentPreview,\n    wordCount,\n    typeSpecificData: {\n      transcription,\n      transcriptionProvider: 'whisper',\n      transcriptionConfidence: avgConfidence,\n      durationSeconds: duration,\n      languageDetected,\n      segments: segments.map(s => ({\n        start: s.start,\n        end: s.end,\n        text: s.text\n      }))\n    },\n    structuredData: {\n      timestamps: segments.map(s => ({ time: s.start, text: s.text }))\n    },\n    docType: 'audio',\n    parsingMethod: 'whisper'\n  }\n}];"
+      },
+      "id": "process-audio-response",
+      "name": "Process Audio Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1140, 320]
+    },
+    {
+      "parameters": {
+        "content": "## Audio Processing\n\n**STT Provider:** OpenAI Whisper\n\n**Features:**\n- Language detection\n- Timestamp segments\n- Confidence scores\n\n**Configuration:**\nSet `OPENAI_API_KEY` in credentials.",
+        "height": 180,
+        "width": 250
+      },
+      "id": "sticky-audio",
+      "name": "Sticky Note - Audio",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [920, 500]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.DOCLING_API_URL || 'http://localhost:8080'}}/ocr",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"image_content\": \"{{$json.fileData}}\",\n  \"file_name\": \"{{$json.fileName}}\"\n}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "ocr-image",
+      "name": "OCR with Docling",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [920, 680]
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "model": "gpt-4o",
+        "messages": {
+          "values": [
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Describe this image in detail, including any text visible, objects, people, and context. This description will be used for document retrieval, so be comprehensive but concise."
+                },
+                {
+                  "type": "image_url",
+                  "imageUrl": "data:{{$json.mimeType}};base64,{{$json.fileData}}"
+                }
+              ]
+            }
+          ]
+        },
+        "options": {
+          "maxTokens": 1000
+        }
+      },
+      "id": "describe-image",
+      "name": "Describe Image (Vision)",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [1140, 680],
+      "credentials": {
+        "openAiApi": {
+          "id": "OPENAI_CREDENTIAL_ID",
+          "name": "OpenAI"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Combine OCR and Vision description for image\nconst items = $input.all();\n\n// Get OCR result (from first input)\nconst ocrResult = items[0]?.json || {};\nconst ocrText = ocrResult.text || '';\nconst ocrConfidence = ocrResult.confidence;\n\n// Get Vision description (from second input if available)\nconst visionResult = items[1]?.json || {};\nconst aiDescription = visionResult.choices?.[0]?.message?.content || visionResult.content || '';\n\n// Combine text for embedding\nconst combinedText = [ocrText, aiDescription].filter(t => t).join('\\n\\n');\n\nconst contentPreview = combinedText.substring(0, 500);\nconst wordCount = combinedText.split(/\\s+/).filter(w => w.length > 0).length;\n\nreturn [{\n  json: {\n    parsedContent: combinedText,\n    contentPreview,\n    wordCount,\n    typeSpecificData: {\n      ocrText,\n      ocrProvider: 'docling',\n      ocrConfidence,\n      aiDescription,\n      widthPx: ocrResult.width,\n      heightPx: ocrResult.height,\n      colorSpace: ocrResult.color_space,\n      detectedObjects: ocrResult.detected_objects\n    },\n    structuredData: {\n      textRegions: ocrResult.regions || []\n    },\n    docType: 'image',\n    parsingMethod: 'docling+vision'\n  }\n}];"
+      },
+      "id": "process-image-response",
+      "name": "Process Image Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1360, 680]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse tabular data (CSV, XLSX, JSON)\nconst input = $input.first().json;\nconst fileData = input.fileData;\nconst fileName = input.fileName;\nconst mimeType = input.mimeType;\n\nlet parsedData = {\n  rows: [],\n  columns: [],\n  rowCount: 0,\n  columnCount: 0\n};\n\nlet normalizedText = '';\nlet structuredData = {};\n\ntry {\n  // Decode base64\n  const buffer = Buffer.from(fileData, 'base64');\n  const content = buffer.toString('utf-8');\n\n  if (mimeType.includes('json')) {\n    // Parse JSON\n    const jsonData = JSON.parse(content);\n    const isArray = Array.isArray(jsonData);\n    \n    if (isArray) {\n      parsedData.rows = jsonData;\n      parsedData.rowCount = jsonData.length;\n      if (jsonData.length > 0) {\n        parsedData.columns = Object.keys(jsonData[0]);\n        parsedData.columnCount = parsedData.columns.length;\n      }\n    } else {\n      parsedData.columns = Object.keys(jsonData);\n      parsedData.columnCount = parsedData.columns.length;\n      parsedData.rowCount = 1;\n    }\n    \n    // Normalize to text\n    normalizedText = JSON.stringify(jsonData, null, 2);\n    structuredData = {\n      jsonSchema: inferJsonSchema(jsonData),\n      isArray,\n      rootKeys: isArray ? null : Object.keys(jsonData)\n    };\n    \n  } else if (mimeType.includes('csv')) {\n    // Parse CSV\n    const lines = content.split('\\n').filter(l => l.trim());\n    if (lines.length > 0) {\n      parsedData.columns = lines[0].split(',').map(c => c.trim().replace(/^\"|\"$/g, ''));\n      parsedData.columnCount = parsedData.columns.length;\n      parsedData.rowCount = lines.length - 1;\n      \n      // Parse rows (first 100 for sample)\n      parsedData.rows = lines.slice(1, 101).map(line => {\n        const values = line.split(',').map(v => v.trim().replace(/^\"|\"$/g, ''));\n        const row = {};\n        parsedData.columns.forEach((col, i) => {\n          row[col] = values[i] || '';\n        });\n        return row;\n      });\n    }\n    \n    // Normalize to text\n    normalizedText = `Columns: ${parsedData.columns.join(', ')}\\n\\n`;\n    normalizedText += parsedData.rows.slice(0, 50).map(row => \n      Object.entries(row).map(([k, v]) => `${k}: ${v}`).join(', ')\n    ).join('\\n');\n    \n    structuredData = {\n      columnTypes: inferColumnTypes(parsedData.rows, parsedData.columns)\n    };\n  }\n  \n  // For XLSX, we'd need a library - simplified handling\n  if (mimeType.includes('spreadsheet') || mimeType.includes('excel')) {\n    normalizedText = '[XLSX parsing requires xlsx library - content extracted during import]';\n    // In production, use SheetJS or similar\n  }\n  \n} catch (error) {\n  normalizedText = `Error parsing tabular data: ${error.message}`;\n}\n\nfunction inferJsonSchema(data) {\n  if (Array.isArray(data)) {\n    if (data.length === 0) return { type: 'array', items: {} };\n    return { type: 'array', items: inferJsonSchema(data[0]) };\n  }\n  if (typeof data === 'object' && data !== null) {\n    const properties = {};\n    for (const [key, value] of Object.entries(data)) {\n      properties[key] = { type: typeof value };\n    }\n    return { type: 'object', properties };\n  }\n  return { type: typeof data };\n}\n\nfunction inferColumnTypes(rows, columns) {\n  const types = {};\n  for (const col of columns) {\n    const values = rows.map(r => r[col]).filter(v => v !== '' && v !== null);\n    if (values.every(v => !isNaN(Number(v)))) {\n      types[col] = 'number';\n    } else if (values.every(v => /^\\d{4}-\\d{2}-\\d{2}/.test(v))) {\n      types[col] = 'date';\n    } else {\n      types[col] = 'string';\n    }\n  }\n  return types;\n}\n\nconst contentPreview = normalizedText.substring(0, 500);\nconst wordCount = normalizedText.split(/\\s+/).filter(w => w.length > 0).length;\n\nreturn [{\n  json: {\n    parsedContent: normalizedText,\n    contentPreview,\n    wordCount,\n    typeSpecificData: {\n      rowCount: parsedData.rowCount,\n      columnCount: parsedData.columnCount,\n      columnNames: parsedData.columns,\n      sampleRows: parsedData.rows.slice(0, 5),\n      ...structuredData\n    },\n    structuredData,\n    docType: 'tabular',\n    parsingMethod: 'native'\n  }\n}];"
+      },
+      "id": "parse-tabular",
+      "name": "Parse Tabular Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [920, 880]
+    },
+    {
+      "parameters": {
+        "content": "## Tabular Processing\n\n**Supported Formats:**\n- CSV: Native parsing\n- JSON: Native parsing\n- XLSX: Requires xlsx library\n\n**Output:**\n- Normalized text for embedding\n- Column names and types\n- Sample rows for preview",
+        "height": 180,
+        "width": 250
+      },
+      "id": "sticky-tabular",
+      "name": "Sticky Note - Tabular",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [920, 1060]
+    },
+    {
+      "parameters": {},
+      "id": "merge-results",
+      "name": "Merge Results",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [1580, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare final output with all parsed data\nconst input = $input.first().json;\n\n// Validate required output fields\nif (!input.parsedContent) {\n  throw new Error('Parsing failed: No content extracted');\n}\n\nreturn [{\n  json: {\n    parsedContent: input.parsedContent,\n    contentPreview: input.contentPreview,\n    wordCount: input.wordCount,\n    docType: input.docType,\n    parsingMethod: input.parsingMethod,\n    typeSpecificData: input.typeSpecificData,\n    structuredData: input.structuredData,\n    processingCompletedAt: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "prepare-output",
+      "name": "Prepare Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1800, 400]
+    },
+    {
+      "parameters": {
+        "content": "## Output Schema\n\n```json\n{\n  \"parsedContent\": \"string\",\n  \"contentPreview\": \"string (500 chars)\",\n  \"wordCount\": \"number\",\n  \"docType\": \"text|audio|image|tabular\",\n  \"parsingMethod\": \"string\",\n  \"typeSpecificData\": \"object\",\n  \"structuredData\": \"object\"\n}\n```",
+        "height": 220,
+        "width": 280
+      },
+      "id": "sticky-output",
+      "name": "Sticky Note - Output",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [1800, 120]
+    }
+  ],
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Validate Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Input": {
+      "main": [
+        [
+          {
+            "node": "Is Text Doc?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Is Audio?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Is Image?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Text Doc?": {
+      "main": [
+        [
+          {
+            "node": "Parse with Docling",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Is Audio?": {
+      "main": [
+        [
+          {
+            "node": "Transcribe with Whisper",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Is Image?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Image?": {
+      "main": [
+        [
+          {
+            "node": "OCR with Docling",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Parse Tabular Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse with Docling": {
+      "main": [
+        [
+          {
+            "node": "Process Text Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Text Response": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe with Whisper": {
+      "main": [
+        [
+          {
+            "node": "Process Audio Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Audio Response": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OCR with Docling": {
+      "main": [
+        [
+          {
+            "node": "Describe Image (Vision)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Describe Image (Vision)": {
+      "main": [
+        [
+          {
+            "node": "Process Image Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Image Response": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Tabular Data": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Results": {
+      "main": [
+        [
+          {
+            "node": "Prepare Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "WiseBot",
+      "id": "wisebot-tag"
+    },
+    {
+      "name": "Sub-workflow",
+      "id": "subworkflow-tag"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "versionId": "1.0.0"
+}

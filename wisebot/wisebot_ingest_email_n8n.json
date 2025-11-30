@@ -1,0 +1,905 @@
+{
+  "name": "WiseBot - Email Ingestion Main",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "start-node",
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "content": "## WiseBot Email Ingestion Workflow\n\n**Purpose:** Monitor Gmail for emails with configurable subject line, process attachments through parsing, deduplication, embedding, and storage.\n\n**Configuration Required:**\n- Gmail OAuth2 credentials\n- Supabase credentials\n- OpenAI API credentials\n- Anthropic API credentials\n\n**Environment Variables:**\n- `WISEBOT_EMAIL_SUBJECT` - Subject filter (default: WiseBotMindMeld)\n- `WISEBOT_OPS_EMAIL` - Operations alert email\n\n**Sub-workflows Called:**\n- wisebot_parse_normalize\n- wisebot_dedup_hash\n- wisebot_embed_store",
+        "height": 380,
+        "width": 400
+      },
+      "id": "sticky-intro",
+      "name": "Sticky Note - Introduction",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [40, 40]
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute",
+              "minute": 5
+            }
+          ]
+        },
+        "filters": {
+          "q": "subject:{{$env.WISEBOT_EMAIL_SUBJECT || 'WiseBotMindMeld'}} is:unread has:attachment"
+        },
+        "options": {
+          "maxResults": 10
+        }
+      },
+      "id": "gmail-trigger",
+      "name": "Gmail Trigger",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1,
+      "position": [460, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "GMAIL_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Email Trigger Configuration\n\n**Polling Interval:** Every 5 minutes\n\n**Filter Query:**\n- Subject matches configured value\n- Email is unread\n- Has attachments\n\n**Credential Placeholder:**\nReplace `GMAIL_CREDENTIAL_ID` with your actual Gmail OAuth2 credential ID.",
+        "height": 220,
+        "width": 300
+      },
+      "id": "sticky-trigger",
+      "name": "Sticky Note - Trigger",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [460, 40]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract email metadata and prepare for processing\nconst items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  const email = item.json;\n  \n  // Extract sender email\n  const fromHeader = email.payload?.headers?.find(h => h.name === 'From');\n  const uploaderEmail = fromHeader?.value?.match(/<(.+)>/)?.[1] || fromHeader?.value || 'unknown';\n  \n  // Extract subject\n  const subjectHeader = email.payload?.headers?.find(h => h.name === 'Subject');\n  const subject = subjectHeader?.value || 'No Subject';\n  \n  // Get message ID\n  const messageId = email.id;\n  const threadId = email.threadId;\n  \n  // Extract attachments from payload\n  const attachments = [];\n  \n  function findAttachments(parts, parentId = '') {\n    if (!parts) return;\n    \n    for (const part of parts) {\n      if (part.filename && part.filename.length > 0) {\n        attachments.push({\n          partId: part.partId,\n          filename: part.filename,\n          mimeType: part.mimeType,\n          size: part.body?.size || 0,\n          attachmentId: part.body?.attachmentId\n        });\n      }\n      \n      if (part.parts) {\n        findAttachments(part.parts, part.partId);\n      }\n    }\n  }\n  \n  findAttachments(email.payload?.parts);\n  \n  // Create processing record for each attachment\n  for (const attachment of attachments) {\n    // Determine document type based on MIME type\n    let docType = 'text';\n    const mime = attachment.mimeType.toLowerCase();\n    \n    if (mime.includes('audio') || mime.includes('mp3')) {\n      docType = 'audio';\n    } else if (mime.includes('image') || mime.includes('jpg') || mime.includes('jpeg') || mime.includes('bmp')) {\n      docType = 'image';\n    } else if (mime.includes('csv') || mime.includes('excel') || mime.includes('spreadsheet') || mime.includes('json')) {\n      docType = 'tabular';\n    }\n    \n    results.push({\n      json: {\n        messageId,\n        threadId,\n        uploaderEmail,\n        subject,\n        attachment: {\n          partId: attachment.partId,\n          filename: attachment.filename,\n          mimeType: attachment.mimeType,\n          size: attachment.size,\n          attachmentId: attachment.attachmentId\n        },\n        docType,\n        processingStartedAt: new Date().toISOString(),\n        workflowExecutionId: $execution.id\n      }\n    });\n  }\n}\n\nreturn results;"
+      },
+      "id": "extract-metadata",
+      "name": "Extract Email Metadata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "split-attachments",
+      "name": "Process Each Attachment",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "messageId": "={{$json.messageId}}",
+        "attachmentId": "={{$json.attachment.attachmentId}}",
+        "options": {}
+      },
+      "id": "download-attachment",
+      "name": "Download Attachment",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [1120, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "GMAIL_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Attachment Processing Loop\n\nEach attachment is processed sequentially:\n1. Download from Gmail\n2. Call deduplication sub-workflow\n3. If not duplicate, parse and embed\n4. Store results in Supabase\n\n**Retry Policy:**\n3 retries with exponential backoff on transient failures.",
+        "height": 200,
+        "width": 300
+      },
+      "id": "sticky-processing",
+      "name": "Sticky Note - Processing",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [900, 40]
+    },
+    {
+      "parameters": {
+        "workflowId": "={{ $env.WISEBOT_DEDUP_WORKFLOW_ID || 'wisebot_dedup_hash' }}",
+        "options": {},
+        "inputData": {
+          "fileData": "={{$binary.data}}",
+          "fileName": "={{$json.attachment.filename}}",
+          "mimeType": "={{$json.attachment.mimeType}}",
+          "uploaderEmail": "={{$json.uploaderEmail}}",
+          "messageId": "={{$json.messageId}}"
+        }
+      },
+      "id": "call-dedup-workflow",
+      "name": "Check Duplicates",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-exact-dup",
+              "leftValue": "={{$json.duplicateStatus}}",
+              "rightValue": "exact_duplicate",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-exact-duplicate",
+      "name": "Is Exact Duplicate?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1560, 300]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "ingestion_logs",
+        "columns": "document_id,source_email_id,file_name,workflow_execution_id,step_name,status,success,metadata",
+        "values": "={{$json.existingDocumentId}},={{$json.messageId}},={{$json.fileName}},'{{$execution.id}}','duplicate_check','duplicate',true,'{\"duplicate_of\": \"{{$json.existingDocumentId}}\"}'",
+        "options": {}
+      },
+      "id": "log-duplicate",
+      "name": "Log Duplicate Event",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1780, 160],
+      "credentials": {
+        "supabaseApi": {
+          "id": "SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{$env.WISEBOT_OPS_EMAIL || 'ops@example.com'}}",
+        "subject": "WiseBot: Duplicate Document Detected",
+        "message": "A duplicate document was detected during ingestion.\n\n**File Name:** {{$json.fileName}}\n**Uploader:** {{$json.uploaderEmail}}\n**Original Document ID:** {{$json.existingDocumentId}}\n**Email Subject:** {{$json.subject}}\n**Detection Time:** {{$now.format('YYYY-MM-DD HH:mm:ss')}}\n\nThe duplicate file was not re-processed. The original document remains in the knowledge base.",
+        "options": {}
+      },
+      "id": "send-duplicate-email",
+      "name": "Send Duplicate Notification",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [2000, 160],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "GMAIL_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": "={{ $env.WISEBOT_PARSE_WORKFLOW_ID || 'wisebot_parse_normalize' }}",
+        "options": {},
+        "inputData": {
+          "fileData": "={{$json.fileData}}",
+          "fileName": "={{$json.fileName}}",
+          "mimeType": "={{$json.mimeType}}",
+          "docType": "={{$json.docType}}",
+          "fileHash": "={{$json.fileHash}}",
+          "contentHash": "={{$json.contentHash}}"
+        }
+      },
+      "id": "call-parse-workflow",
+      "name": "Parse & Normalize",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [1780, 440]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-fuzzy",
+              "leftValue": "={{$json.duplicateStatus}}",
+              "rightValue": "fuzzy_duplicate",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-fuzzy-duplicate",
+      "name": "Is Fuzzy Duplicate?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [2000, 440]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "duplicate_detections",
+        "columns": "new_file_hash,original_document_id,detection_type,similarity_score,detection_method",
+        "values": "={{$json.fileHash}},={{$json.similarDocumentId}},'fuzzy_duplicate',={{$json.similarityScore}},'embedding'",
+        "options": {}
+      },
+      "id": "log-fuzzy-duplicate",
+      "name": "Log Fuzzy Duplicate",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [2220, 340],
+      "credentials": {
+        "supabaseApi": {
+          "id": "SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": "={{ $env.WISEBOT_EMBED_WORKFLOW_ID || 'wisebot_embed_store' }}",
+        "options": {},
+        "inputData": {
+          "documentId": "={{$json.documentId}}",
+          "parsedContent": "={{$json.parsedContent}}",
+          "fileName": "={{$json.fileName}}",
+          "mimeType": "={{$json.mimeType}}",
+          "docType": "={{$json.docType}}",
+          "uploaderEmail": "={{$json.uploaderEmail}}",
+          "sourceSubject": "={{$json.subject}}",
+          "fileHash": "={{$json.fileHash}}"
+        }
+      },
+      "id": "call-embed-workflow",
+      "name": "Embed & Store",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [2440, 440]
+    },
+    {
+      "parameters": {
+        "content": "## Embedding & Storage\n\nAfter parsing, content is:\n1. Chunked according to configuration\n2. Embedded using configured provider\n3. Stored in Supabase vector tables\n\n**Configuration:**\n- Chunk size: 1000 chars (configurable)\n- Overlap: 200 chars (configurable)\n- Provider: OpenAI (configurable)",
+        "height": 220,
+        "width": 280
+      },
+      "id": "sticky-embed",
+      "name": "Sticky Note - Embedding",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [2440, 180]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Collect all processed attachments for summary\nconst items = $input.all();\nlet processedDocs = [];\nlet duplicates = [];\nlet fuzzyDuplicates = [];\n\nfor (const item of items) {\n  const data = item.json;\n  \n  if (data.duplicateStatus === 'exact_duplicate') {\n    duplicates.push({\n      fileName: data.fileName,\n      existingDocId: data.existingDocumentId\n    });\n  } else if (data.duplicateStatus === 'fuzzy_duplicate') {\n    fuzzyDuplicates.push({\n      fileName: data.fileName,\n      similarDocId: data.similarDocumentId,\n      similarityScore: data.similarityScore\n    });\n    processedDocs.push({\n      documentId: data.documentId,\n      fileName: data.fileName,\n      docType: data.docType,\n      chunkCount: data.chunkCount\n    });\n  } else {\n    processedDocs.push({\n      documentId: data.documentId,\n      fileName: data.fileName,\n      docType: data.docType,\n      chunkCount: data.chunkCount\n    });\n  }\n}\n\n// Store in workflow data for summary generation\nreturn [{\n  json: {\n    emailSubject: items[0]?.json?.subject || 'Unknown',\n    uploaderEmail: items[0]?.json?.uploaderEmail || 'Unknown',\n    messageId: items[0]?.json?.messageId,\n    processedDocs,\n    duplicates,\n    fuzzyDuplicates,\n    totalAttachments: items.length,\n    successfullyProcessed: processedDocs.length,\n    duplicatesFound: duplicates.length,\n    fuzzyDuplicatesFound: fuzzyDuplicates.length\n  }\n}];"
+      },
+      "id": "collect-results",
+      "name": "Collect Processing Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2660, 440]
+    },
+    {
+      "parameters": {
+        "content": "## Ingestion Summary Generation\n\nAnthropic generates a concise summary:\n- Files ingested (names, types, topics)\n- Duplicates detected\n- Storage locations (document IDs)\n\n**Prompt Size Management:**\n- Representative chunks sent, not full documents\n- Summary limited to essential metadata",
+        "height": 200,
+        "width": 300
+      },
+      "id": "sticky-summary",
+      "name": "Sticky Note - Summary",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [2880, 180]
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "model": "claude-sonnet-4-20250514",
+        "messages": {
+          "values": [
+            {
+              "role": "user",
+              "content": "Generate a concise ingestion summary report for the following email attachment processing:\n\n**Email Subject:** {{$json.emailSubject}}\n**Sender:** {{$json.uploaderEmail}}\n**Total Attachments:** {{$json.totalAttachments}}\n\n**Successfully Processed Documents:**\n{{$json.processedDocs.map(d => `- ${d.fileName} (${d.docType}) - ID: ${d.documentId}, Chunks: ${d.chunkCount}`).join('\\n')}}\n\n**Exact Duplicates Detected:**\n{{$json.duplicates.length > 0 ? $json.duplicates.map(d => `- ${d.fileName} (duplicate of ${d.existingDocId})`).join('\\n') : 'None'}}\n\n**Possible Duplicates (Fuzzy Match):**\n{{$json.fuzzyDuplicates.length > 0 ? $json.fuzzyDuplicates.map(d => `- ${d.fileName} (${(d.similarityScore * 100).toFixed(1)}% similar to ${d.similarDocId})`).join('\\n') : 'None'}}\n\nProvide a brief 2-3 sentence summary suitable for logging and notification purposes. Include key topics if discernible from file names."
+            }
+          ]
+        },
+        "options": {
+          "maxTokens": 500
+        }
+      },
+      "id": "generate-summary",
+      "name": "Generate Ingestion Summary",
+      "type": "@n8n/n8n-nodes-langchain.anthropic",
+      "typeVersion": 1,
+      "position": [2880, 440],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIAL_ID",
+          "name": "Anthropic"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "schema": "public",
+        "table": "documents",
+        "filters": {
+          "filter": [
+            {
+              "column": "id",
+              "value": "={{$json.processedDocs.map(d => d.documentId)}}"
+            }
+          ]
+        },
+        "columns": "ingestion_summary",
+        "values": "={{$json.summary}}",
+        "options": {}
+      },
+      "id": "store-summary",
+      "name": "Store Summary in Documents",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [3100, 440],
+      "credentials": {
+        "supabaseApi": {
+          "id": "SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "schema": "public",
+        "table": "documents",
+        "filters": {
+          "filter": [
+            {
+              "column": "source_email_id",
+              "value": "={{$json.messageId}}"
+            }
+          ]
+        },
+        "columns": "status",
+        "values": "completed",
+        "options": {}
+      },
+      "id": "mark-complete",
+      "name": "Mark Processing Complete",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [3320, 440],
+      "credentials": {
+        "supabaseApi": {
+          "id": "SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "messageId": "={{$json.messageId}}",
+        "labelIds": ["INBOX"],
+        "addLabelIds": [],
+        "removeLabelIds": ["UNREAD"]
+      },
+      "id": "mark-email-read",
+      "name": "Mark Email as Read",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [3540, 440],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "GMAIL_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "ingestion_logs",
+        "columns": "source_email_id,workflow_execution_id,step_name,status,success,completed_at,metadata",
+        "values": "={{$json.messageId}},'{{$execution.id}}','complete','completed',true,'{{$now.toISO()}}','{\"summary\": \"{{$json.summary}}\", \"processed\": {{$json.successfullyProcessed}}, \"duplicates\": {{$json.duplicatesFound}}}'",
+        "options": {}
+      },
+      "id": "final-log",
+      "name": "Log Completion",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [3760, 440],
+      "credentials": {
+        "supabaseApi": {
+          "id": "SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Error Handling & Retry Policy\n\n**Retry Configuration:**\n- Max retries: 3\n- Backoff: Exponential\n- On final failure: Send error email\n\n**Error Categories:**\n- Transient: Network, rate limits (retry)\n- Permanent: Invalid format, auth (no retry)\n\n**Alert Email:**\nSent to configured ops address on failure.",
+        "height": 220,
+        "width": 300
+      },
+      "id": "sticky-errors",
+      "name": "Sticky Note - Error Handling",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [1340, 600]
+    },
+    {
+      "parameters": {
+        "errorMessage": "={{$json.errorMessage}}",
+        "continueOnFail": true
+      },
+      "id": "error-handler",
+      "name": "Error Handler",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [1560, 720]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Implement retry logic with exponential backoff\nconst error = $input.first().json;\nconst currentRetry = error.retryCount || 0;\nconst maxRetries = 3;\n\nif (currentRetry < maxRetries) {\n  // Calculate backoff delay: 2^retry * 1000ms (1s, 2s, 4s)\n  const backoffMs = Math.pow(2, currentRetry) * 1000;\n  \n  return [{\n    json: {\n      ...error,\n      retryCount: currentRetry + 1,\n      shouldRetry: true,\n      backoffMs,\n      nextRetryAt: new Date(Date.now() + backoffMs).toISOString()\n    }\n  }];\n} else {\n  return [{\n    json: {\n      ...error,\n      retryCount: currentRetry,\n      shouldRetry: false,\n      finalFailure: true\n    }\n  }];\n}"
+      },
+      "id": "retry-logic",
+      "name": "Retry Logic",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1780, 720]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "should-retry",
+              "leftValue": "={{$json.shouldRetry}}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "retry-decision",
+      "name": "Should Retry?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [2000, 720]
+    },
+    {
+      "parameters": {
+        "amount": "={{$json.backoffMs}}",
+        "unit": "milliseconds"
+      },
+      "id": "wait-backoff",
+      "name": "Wait (Backoff)",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [2220, 620]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{$env.WISEBOT_OPS_EMAIL || 'ops@example.com'}}",
+        "subject": "WiseBot: Ingestion Failure Alert",
+        "message": "**ALERT: Document Ingestion Failed After 3 Retries**\n\n**Error Details:**\n- File: {{$json.fileName || 'Unknown'}}\n- Step: {{$json.failedStep || 'Unknown'}}\n- Error: {{$json.errorMessage}}\n- Email ID: {{$json.messageId}}\n- Workflow Execution: {{$execution.id}}\n\n**Timestamp:** {{$now.format('YYYY-MM-DD HH:mm:ss')}}\n\n**Action Required:**\nPlease investigate the failure in the n8n execution logs and Supabase ingestion_logs table.\n\n**Possible Causes:**\n- Invalid file format\n- Service unavailable (Docling, OpenAI, Supabase)\n- Authentication/credential issues\n- File corruption",
+        "options": {}
+      },
+      "id": "send-failure-email",
+      "name": "Send Failure Alert",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [2220, 820],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "GMAIL_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "ingestion_logs",
+        "columns": "source_email_id,file_name,workflow_execution_id,step_name,status,success,error_message,error_details,retry_count",
+        "values": "={{$json.messageId}},={{$json.fileName}},'{{$execution.id}}',={{$json.failedStep}},'failed',false,={{$json.errorMessage}},={{JSON.stringify($json)}},={{$json.retryCount}}",
+        "options": {}
+      },
+      "id": "log-failure",
+      "name": "Log Final Failure",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [2440, 820],
+      "credentials": {
+        "supabaseApi": {
+          "id": "SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "end-success",
+      "name": "End (Success)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [3980, 440]
+    },
+    {
+      "parameters": {},
+      "id": "end-duplicate",
+      "name": "End (Duplicate)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [2220, 160]
+    },
+    {
+      "parameters": {},
+      "id": "end-failure",
+      "name": "End (Failure)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [2660, 820]
+    }
+  ],
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Email Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Email Metadata": {
+      "main": [
+        [
+          {
+            "node": "Process Each Attachment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Each Attachment": {
+      "main": [
+        [
+          {
+            "node": "Download Attachment",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Collect Processing Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Attachment": {
+      "main": [
+        [
+          {
+            "node": "Check Duplicates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Duplicates": {
+      "main": [
+        [
+          {
+            "node": "Is Exact Duplicate?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Exact Duplicate?": {
+      "main": [
+        [
+          {
+            "node": "Log Duplicate Event",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Parse & Normalize",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Duplicate Event": {
+      "main": [
+        [
+          {
+            "node": "Send Duplicate Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Duplicate Notification": {
+      "main": [
+        [
+          {
+            "node": "End (Duplicate)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse & Normalize": {
+      "main": [
+        [
+          {
+            "node": "Is Fuzzy Duplicate?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Fuzzy Duplicate?": {
+      "main": [
+        [
+          {
+            "node": "Log Fuzzy Duplicate",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Embed & Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Fuzzy Duplicate": {
+      "main": [
+        [
+          {
+            "node": "Embed & Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embed & Store": {
+      "main": [
+        [
+          {
+            "node": "Process Each Attachment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect Processing Results": {
+      "main": [
+        [
+          {
+            "node": "Generate Ingestion Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Ingestion Summary": {
+      "main": [
+        [
+          {
+            "node": "Store Summary in Documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Store Summary in Documents": {
+      "main": [
+        [
+          {
+            "node": "Mark Processing Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Processing Complete": {
+      "main": [
+        [
+          {
+            "node": "Mark Email as Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Email as Read": {
+      "main": [
+        [
+          {
+            "node": "Log Completion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Completion": {
+      "main": [
+        [
+          {
+            "node": "End (Success)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Handler": {
+      "main": [
+        [
+          {
+            "node": "Retry Logic",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retry Logic": {
+      "main": [
+        [
+          {
+            "node": "Should Retry?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Should Retry?": {
+      "main": [
+        [
+          {
+            "node": "Wait (Backoff)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Failure Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait (Backoff)": {
+      "main": [
+        [
+          {
+            "node": "Process Each Attachment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Failure Alert": {
+      "main": [
+        [
+          {
+            "node": "Log Final Failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Final Failure": {
+      "main": [
+        [
+          {
+            "node": "End (Failure)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "WiseBot",
+      "id": "wisebot-tag"
+    },
+    {
+      "name": "Ingestion",
+      "id": "ingestion-tag"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "versionId": "1.0.0"
+}

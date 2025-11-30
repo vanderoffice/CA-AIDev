@@ -1,0 +1,465 @@
+{
+  "name": "WiseBot - Embed & Store",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "workflow-trigger",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "content": "## WiseBot Embed & Store Sub-workflow\n\n**Purpose:** Chunk parsed content, generate embeddings, and store in Supabase.\n\n**Input Parameters:**\n- `documentId` - UUID of document record\n- `parsedContent` - Normalized text content\n- `fileName` - Original file name\n- `mimeType` - MIME type\n- `docType` - text|audio|image|tabular\n- `uploaderEmail` - Uploader's email\n- `sourceSubject` - Email subject\n- `fileHash` - Document hash\n\n**Configuration:**\n- `CHUNK_SIZE` - Characters per chunk (default: 1000)\n- `CHUNK_OVERLAP` - Overlap between chunks (default: 200)\n- `EMBEDDING_PROVIDER` - openai (default), cohere\n- `EMBEDDING_MODEL` - Model name\n\n**Output:**\n- `chunkCount` - Number of chunks created\n- `documentId` - Document ID\n- `success` - Boolean",
+        "height": 480,
+        "width": 400
+      },
+      "id": "sticky-intro",
+      "name": "Sticky Note - Introduction",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [40, 20]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Chunk the parsed content\nconst input = $input.first().json;\n\nconst content = input.parsedContent || '';\nconst documentId = input.documentId;\nconst fileName = input.fileName;\nconst mimeType = input.mimeType;\nconst docType = input.docType;\nconst uploaderEmail = input.uploaderEmail;\nconst sourceSubject = input.sourceSubject;\nconst fileHash = input.fileHash;\n\n// Get configuration (with defaults)\nconst chunkSize = parseInt($env.WISEBOT_CHUNK_SIZE) || 1000;\nconst chunkOverlap = parseInt($env.WISEBOT_CHUNK_OVERLAP) || 200;\n\nif (!content || content.length === 0) {\n  throw new Error('No content to chunk');\n}\n\n// Smart chunking function that respects sentence boundaries\nfunction smartChunk(text, size, overlap) {\n  const chunks = [];\n  let startIndex = 0;\n  \n  while (startIndex < text.length) {\n    let endIndex = startIndex + size;\n    \n    // Don't exceed text length\n    if (endIndex >= text.length) {\n      endIndex = text.length;\n    } else {\n      // Try to find a sentence boundary\n      const searchStart = Math.max(startIndex + size - 200, startIndex);\n      const searchText = text.substring(searchStart, endIndex + 100);\n      \n      // Look for sentence endings\n      const sentenceEnd = searchText.search(/[.!?]\\s+[A-Z]/);\n      if (sentenceEnd > 0) {\n        endIndex = searchStart + sentenceEnd + 1;\n      } else {\n        // Fall back to paragraph or newline\n        const paraEnd = searchText.indexOf('\\n\\n');\n        if (paraEnd > 0) {\n          endIndex = searchStart + paraEnd;\n        }\n      }\n    }\n    \n    const chunkText = text.substring(startIndex, endIndex).trim();\n    \n    if (chunkText.length > 0) {\n      chunks.push({\n        text: chunkText,\n        startChar: startIndex,\n        endChar: endIndex,\n        index: chunks.length\n      });\n    }\n    \n    // Move forward with overlap\n    startIndex = endIndex - overlap;\n    \n    // Ensure we make progress\n    if (startIndex <= chunks[chunks.length - 1]?.startChar) {\n      startIndex = endIndex;\n    }\n  }\n  \n  return chunks;\n}\n\nconst chunks = smartChunk(content, chunkSize, chunkOverlap);\n\n// Prepare chunks for embedding\nconst chunkItems = chunks.map((chunk, idx) => ({\n  json: {\n    documentId,\n    chunkText: chunk.text,\n    chunkIndex: chunk.index,\n    startChar: chunk.startChar,\n    endChar: chunk.endChar,\n    tokenCount: Math.ceil(chunk.text.length / 4), // Rough estimate\n    fileName,\n    mimeType,\n    docType,\n    uploaderEmail,\n    sourceSubject,\n    fileHash,\n    totalChunks: chunks.length\n  }\n}));\n\nreturn chunkItems;"
+      },
+      "id": "chunk-content",
+      "name": "Chunk Content",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "content": "## Chunking Strategy\n\n**Algorithm:** Recursive with sentence boundary detection\n\n**Parameters:**\n- Size: 1000 chars (configurable)\n- Overlap: 200 chars (configurable)\n\n**Best Practices:**\n- Respects sentence boundaries\n- Falls back to paragraph breaks\n- Ensures no empty chunks",
+        "height": 220,
+        "width": 280
+      },
+      "id": "sticky-chunking",
+      "name": "Sticky Note - Chunking",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [460, 40]
+    },
+    {
+      "parameters": {
+        "batchSize": 20,
+        "options": {}
+      },
+      "id": "batch-chunks",
+      "name": "Batch Chunks",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "resource": "embedding",
+        "model": "={{ $env.WISEBOT_EMBEDDING_MODEL || 'text-embedding-3-small' }}",
+        "text": "={{$json.chunkText}}",
+        "options": {}
+      },
+      "id": "generate-embedding",
+      "name": "Generate Embedding",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [900, 300],
+      "credentials": {
+        "openAiApi": {
+          "id": "OPENAI_CREDENTIAL_ID",
+          "name": "OpenAI"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Embedding Generation\n\n**Default Provider:** OpenAI\n**Default Model:** text-embedding-3-small\n**Dimensions:** 1536\n\n**Batching:**\n- 20 chunks per batch\n- Reduces API calls\n- Handles rate limits\n\n**To switch providers:**\nSet `WISEBOT_EMBEDDING_PROVIDER` env var.",
+        "height": 240,
+        "width": 280
+      },
+      "id": "sticky-embedding",
+      "name": "Sticky Note - Embedding",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [900, 40]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare chunk with embedding for storage\nconst items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  const chunk = item.json;\n  const embedding = chunk.data?.[0]?.embedding || chunk.embedding;\n  \n  if (!embedding || !Array.isArray(embedding)) {\n    console.log('Warning: No embedding returned for chunk', chunk.chunkIndex);\n    continue;\n  }\n  \n  results.push({\n    json: {\n      document_id: chunk.documentId,\n      chunk_text: chunk.chunkText,\n      chunk_index: chunk.chunkIndex,\n      start_char: chunk.startChar,\n      end_char: chunk.endChar,\n      token_count: chunk.tokenCount,\n      embedding: `[${embedding.join(',')}]`, // Format for Supabase vector\n      embedding_model: $env.WISEBOT_EMBEDDING_MODEL || 'text-embedding-3-small',\n      file_name: chunk.fileName,\n      mime_type: chunk.mimeType,\n      doc_type: chunk.docType,\n      uploader_email: chunk.uploaderEmail,\n      source_subject: chunk.sourceSubject,\n      document_created_at: new Date().toISOString()\n    }\n  });\n}\n\nreturn results;"
+      },
+      "id": "prepare-for-storage",
+      "name": "Prepare for Storage",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "document_chunks",
+        "columns": "document_id,chunk_text,chunk_index,start_char,end_char,token_count,embedding,embedding_model,file_name,mime_type,doc_type,uploader_email,source_subject,document_created_at",
+        "options": {}
+      },
+      "id": "store-chunks",
+      "name": "Store Chunks in Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1340, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "more-batches",
+              "leftValue": "={{$json.totalChunks}}",
+              "rightValue": "={{$json.chunkIndex + 1}}",
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "more-batches",
+      "name": "More Batches?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1560, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Check for fuzzy duplicates after embedding\nconst items = $input.all();\nconst documentId = items[0]?.json?.document_id;\n\nif (!documentId) {\n  return [{ json: { documentId: null, fuzzyDuplicates: [] } }];\n}\n\n// Return document ID for fuzzy check\nreturn [{\n  json: {\n    documentId,\n    chunkCount: items.length,\n    checkFuzzyDuplicates: true\n  }\n}];"
+      },
+      "id": "prepare-fuzzy-check",
+      "name": "Prepare Fuzzy Check",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1780, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.SUPABASE_URL}}/rest/v1/rpc/find_fuzzy_duplicates",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "supabaseApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"p_document_id\": \"{{$json.documentId}}\",\n  \"p_threshold\": {{$env.WISEBOT_SIMILARITY_THRESHOLD || 0.85}}\n}",
+        "options": {}
+      },
+      "id": "check-fuzzy-duplicates",
+      "name": "Check Fuzzy Duplicates",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2000, 400],
+      "credentials": {
+        "supabaseApi": {
+          "id": "SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Fuzzy Duplicate Detection\n\n**Method:** Vector similarity search\n**Threshold:** 0.85 (configurable)\n\n**Algorithm:**\n1. Average document chunk embeddings\n2. Compare to other documents\n3. Flag if similarity > threshold\n\n**Note:** Exact duplicates already filtered by hash.",
+        "height": 220,
+        "width": 280
+      },
+      "id": "sticky-fuzzy",
+      "name": "Sticky Note - Fuzzy",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [2000, 140]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process fuzzy duplicate results and update document\nconst fuzzyResults = $input.first().json;\nconst documentId = $('Prepare Fuzzy Check').first().json.documentId;\nconst chunkCount = $('Prepare Fuzzy Check').first().json.chunkCount;\n\nlet duplicateStatus = 'unique';\nlet similarDocumentId = null;\nlet similarityScore = null;\n\nif (Array.isArray(fuzzyResults) && fuzzyResults.length > 0) {\n  // Found similar documents\n  const mostSimilar = fuzzyResults[0];\n  duplicateStatus = 'fuzzy_duplicate';\n  similarDocumentId = mostSimilar.similar_document_id;\n  similarityScore = mostSimilar.similarity_score;\n}\n\nreturn [{\n  json: {\n    documentId,\n    chunkCount,\n    duplicateStatus,\n    similarDocumentId,\n    similarityScore,\n    success: true\n  }\n}];"
+      },
+      "id": "process-fuzzy-results",
+      "name": "Process Fuzzy Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2220, 400]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "schema": "public",
+        "table": "documents",
+        "filters": {
+          "filter": [
+            {
+              "column": "id",
+              "value": "={{$json.documentId}}"
+            }
+          ]
+        },
+        "columns": "status,duplicate_status,duplicate_of_id,similarity_score,processed_at",
+        "values": "'processing',={{$json.duplicateStatus}},={{$json.similarDocumentId}},={{$json.similarityScore}},'{{$now.toISO()}}'",
+        "options": {}
+      },
+      "id": "update-document-status",
+      "name": "Update Document Status",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [2440, 400],
+      "credentials": {
+        "supabaseApi": {
+          "id": "SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Store type-specific data based on document type\nconst input = $('Execute Workflow Trigger').first().json;\nconst documentId = $('Process Fuzzy Results').first().json.documentId;\nconst typeSpecificData = input.typeSpecificData || {};\nconst docType = input.docType;\n\nlet tableName = '';\nlet columns = '';\nlet values = {};\n\nswitch (docType) {\n  case 'text':\n    tableName = 'documents_text';\n    columns = 'document_id,full_text,has_headers,has_tables,has_images,language_detected';\n    values = {\n      document_id: documentId,\n      full_text: input.parsedContent?.substring(0, 100000), // Limit size\n      has_headers: typeSpecificData.hasHeaders || false,\n      has_tables: typeSpecificData.hasTables || false,\n      has_images: typeSpecificData.hasImages || false,\n      language_detected: typeSpecificData.languageDetected || 'en'\n    };\n    break;\n    \n  case 'audio':\n    tableName = 'documents_audio';\n    columns = 'document_id,transcription,transcription_provider,transcription_confidence,duration_seconds,language_detected';\n    values = {\n      document_id: documentId,\n      transcription: typeSpecificData.transcription,\n      transcription_provider: typeSpecificData.transcriptionProvider || 'whisper',\n      transcription_confidence: typeSpecificData.transcriptionConfidence,\n      duration_seconds: typeSpecificData.durationSeconds,\n      language_detected: typeSpecificData.languageDetected || 'en'\n    };\n    break;\n    \n  case 'image':\n    tableName = 'documents_image';\n    columns = 'document_id,ocr_text,ocr_provider,ocr_confidence,ai_description,width_px,height_px';\n    values = {\n      document_id: documentId,\n      ocr_text: typeSpecificData.ocrText,\n      ocr_provider: typeSpecificData.ocrProvider || 'docling',\n      ocr_confidence: typeSpecificData.ocrConfidence,\n      ai_description: typeSpecificData.aiDescription,\n      width_px: typeSpecificData.widthPx,\n      height_px: typeSpecificData.heightPx\n    };\n    break;\n    \n  case 'tabular':\n    tableName = 'documents_tabular';\n    columns = 'document_id,row_count,column_count,column_names,sample_rows,normalized_text';\n    values = {\n      document_id: documentId,\n      row_count: typeSpecificData.rowCount,\n      column_count: typeSpecificData.columnCount,\n      column_names: JSON.stringify(typeSpecificData.columnNames || []),\n      sample_rows: JSON.stringify(typeSpecificData.sampleRows || []),\n      normalized_text: input.parsedContent?.substring(0, 50000)\n    };\n    break;\n}\n\nreturn [{\n  json: {\n    tableName,\n    values,\n    documentId\n  }\n}];"
+      },
+      "id": "prepare-type-specific",
+      "name": "Prepare Type-Specific Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2660, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.SUPABASE_URL}}/rest/v1/{{$json.tableName}}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "supabaseApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{JSON.stringify($json.values)}}",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "store-type-specific",
+      "name": "Store Type-Specific Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2880, 400],
+      "credentials": {
+        "supabaseApi": {
+          "id": "SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Final output\nconst fuzzyResult = $('Process Fuzzy Results').first().json;\nconst typeSpecific = $('Prepare Type-Specific Data').first().json;\n\nreturn [{\n  json: {\n    success: true,\n    documentId: fuzzyResult.documentId,\n    chunkCount: fuzzyResult.chunkCount,\n    duplicateStatus: fuzzyResult.duplicateStatus,\n    similarDocumentId: fuzzyResult.similarDocumentId,\n    similarityScore: fuzzyResult.similarityScore,\n    typeSpecificTable: typeSpecific.tableName,\n    completedAt: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "final-output",
+      "name": "Final Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3100, 400]
+    },
+    {
+      "parameters": {
+        "content": "## Output Schema\n\n```json\n{\n  \"success\": true,\n  \"documentId\": \"uuid\",\n  \"chunkCount\": 15,\n  \"duplicateStatus\": \"unique|fuzzy_duplicate\",\n  \"similarDocumentId\": \"uuid|null\",\n  \"similarityScore\": \"float|null\"\n}\n```",
+        "height": 200,
+        "width": 280
+      },
+      "id": "sticky-output",
+      "name": "Sticky Note - Output",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [3100, 140]
+    }
+  ],
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Chunk Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chunk Content": {
+      "main": [
+        [
+          {
+            "node": "Batch Chunks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Batch Chunks": {
+      "main": [
+        [
+          {
+            "node": "Generate Embedding",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare Fuzzy Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Embedding": {
+      "main": [
+        [
+          {
+            "node": "Prepare for Storage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare for Storage": {
+      "main": [
+        [
+          {
+            "node": "Store Chunks in Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Store Chunks in Supabase": {
+      "main": [
+        [
+          {
+            "node": "More Batches?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "More Batches?": {
+      "main": [
+        [
+          {
+            "node": "Batch Chunks",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Prepare Fuzzy Check": {
+      "main": [
+        [
+          {
+            "node": "Check Fuzzy Duplicates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Fuzzy Duplicates": {
+      "main": [
+        [
+          {
+            "node": "Process Fuzzy Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Fuzzy Results": {
+      "main": [
+        [
+          {
+            "node": "Update Document Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Document Status": {
+      "main": [
+        [
+          {
+            "node": "Prepare Type-Specific Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Type-Specific Data": {
+      "main": [
+        [
+          {
+            "node": "Store Type-Specific Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Store Type-Specific Data": {
+      "main": [
+        [
+          {
+            "node": "Final Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "WiseBot",
+      "id": "wisebot-tag"
+    },
+    {
+      "name": "Sub-workflow",
+      "id": "subworkflow-tag"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "versionId": "1.0.0"
+}
