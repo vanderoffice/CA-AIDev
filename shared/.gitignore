@@ -1,0 +1,10 @@
+# Shared folder specific ignores
+
+# Environment file (only .env.example should be committed)
+.env
+
+# Docker volumes
+volumes/
+
+# Generated documentation
+docs/_build/

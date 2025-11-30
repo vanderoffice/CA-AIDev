@@ -128,6 +128,33 @@ Agentic architecture to help California families find and navigate childcare opt
 
 ---
 
+### WiseBot - Knowledge Ingestion System
+
+<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Workflows-6-blue" alt="Workflows"/>
+
+Multi-format document ingestion and retrieval system that processes email attachments, extracts content, generates embeddings, and provides intelligent knowledge retrieval via a unified gateway.
+
+**Capabilities:**
+- Multi-format support: PDF, DOCX, MD, MP3 (Whisper), Images (OCR), CSV, XLSX, JSON
+- Smart deduplication (hash-based + embedding similarity)
+- Configurable chunking with pgvector storage
+- RAG-ready knowledge gateway API
+- Operational monitoring and health checks
+
+**Workflows:**
+| Workflow | Purpose |
+|----------|---------|
+| Main Ingestion | Monitors Gmail, orchestrates processing pipeline |
+| Parse & Normalize | Document parsing via Docling, Whisper, Vision AI |
+| Deduplication | Hash-based exact + fuzzy duplicate detection |
+| Embed & Store | OpenAI embeddings + Supabase pgvector storage |
+| Knowledge Gateway | Vector search + optional LLM synthesis API |
+| Ops Dashboard | Health monitoring and automated alerts |
+
+[View WiseBot Documentation](./wisebot/)
+
+---
+
 ## Architecture
 
 All production systems follow a consistent multi-agent pattern:
@@ -194,23 +221,35 @@ All production systems follow a consistent multi-agent pattern:
 
 ### Quick Start
 
-1. **Choose a project** from the folders above
-2. **Read the project README** for specific setup instructions
-3. **Import n8n workflows** in the specified order
-4. **Configure credentials** in n8n settings
-5. **Test with sample data** provided in each project
+1. **Set up shared infrastructure**
+   ```bash
+   cd shared
+   cp .env.example .env
+   # Edit .env with your API keys and credentials
+   docker compose up -d
+   ```
+
+2. **Choose a project** from the folders above
+3. **Read the project README** for specific setup instructions
+4. **Import n8n workflows** in the specified order
+5. **Configure credentials** in n8n settings
+6. **Test with sample data** provided in each project
 
 ### Deployment Pattern
 
 ```bash
-# 1. Set up infrastructure (see CA-DevStacks repo)
+# 1. Set up shared infrastructure
+cd shared
+cp .env.example .env
+# Edit .env with your credentials
 docker compose up -d
 
-# 2. Import workflows to n8n
-# 3. Configure API credentials
-# 4. Load knowledge bases (if applicable)
-# 5. Create intake forms
-# 6. Test and deploy
+# 2. Access n8n at http://localhost:5678
+# 3. Import workflows for your chosen project
+# 4. Configure API credentials in n8n
+# 5. Load knowledge bases (if applicable)
+# 6. Create intake forms (for BizBot)
+# 7. Test and deploy
 ```
 
 ---
@@ -220,10 +259,16 @@ docker compose up -d
 ```
 CA-AIDev/
 ├── README.md              # This file
-├── shared/                # Shared resources across projects
+├── shared/                # Shared infrastructure and configuration
+│   ├── docker-compose.yml # Complete development environment
+│   ├── .env.example       # Environment variables template
+│   ├── README.md          # Shared resources documentation
+│   ├── scripts/           # Initialization and utility scripts
+│   ├── docs/              # Shared documentation
+│   └── templates/         # Reusable n8n workflow patterns
 ├── bizbot/                # Business licensing multi-agent system
-│   ├── BizBot_V1/         # Initial version
-│   ├── BizBot_v2/         # Second iteration
+│   ├── BizBot_V1/         # Initial version (archived)
+│   ├── BizBot_v2/         # Second iteration (archived)
 │   ├── BizBot_v3/         # Current production version
 │   └── BizAssessment/     # Model comparison research
 ├── commentbot/            # Public comment analysis system
@@ -234,9 +279,13 @@ CA-AIDev/
 │   ├── wcag-checklist.md
 │   └── postgres-schema.md
 ├── askca/                 # Digital services research
-│   ├── domain-crawler/    # Government endpoint crawler
+│   ├── domain-crawler/    # Government endpoint crawler (Scrapy)
 │   └── *.md               # Research documents
-└── kiddobot/              # Childcare services (in development)
+├── kiddobot/              # Childcare services (in development)
+└── wisebot/               # Knowledge ingestion and retrieval system
+    ├── *_n8n.json         # 6 n8n workflows
+    ├── wisebot_knowledge_schema.sql
+    └── README_WiseBot_Ingestion.md
 ```
 
 ---
@@ -247,6 +296,7 @@ CA-AIDev/
 |---------|-----------------|----------------|------------------|
 | BizBot | 2-5 minutes | 1,000-2,000 | ~$0.36 |
 | CommentBot | 30-60 seconds | 5,000+ | ~$0.15 |
+| WiseBot | ~10-30 seconds | 10,000+ | ~$0.08 |
 
 ---
 
