@@ -4,15 +4,17 @@
 
 ## Overview
 
-This directory contains systematic research documenting California's state-level business formation, licensing, and regulatory environment. The research combines simulated stakeholder interviews, regulatory analysis, and cross-agency mapping to surface operational pain points and high-impact opportunities for AI-enabled process improvements.
+This directory contains systematic research documenting California's state-level business formation, licensing, and regulatory environment. The research combines simulated stakeholder interviews, regulatory analysis, cross-agency mapping, and a comprehensive URL database to surface operational pain points and high-impact opportunities for AI-enabled process improvements.
 
-The research was conducted using multiple advanced AI models (ChatGPT, Claude Sonnet, Gemini, and Perplexity Deep Research) to ensure comprehensive coverage and diverse analytical perspectives on California's complex 25+ agency ecosystem.
+The research was conducted using multiple advanced AI models (ChatGPT, Claude Sonnet, Gemini, Perplexity Deep Research, and Claude Opus 4.5) to ensure comprehensive coverage and diverse analytical perspectives on California's complex 80+ agency ecosystem.
 
 ## Repository Structure
 
 ```
 BizAssessment/
 ├── README.md                                    # This file
+├── CA_Business_Licensing_URLs.xlsx             # ★ NEW: Comprehensive URL database (228+ URLs)
+├── CA_Business_Licensing_URLs_Documentation.md # ★ NEW: Database documentation for AI agents
 ├── Initial Assessment/                          # Multi-model stakeholder research
 │   ├── BizInterviews_CGPT5_1.md                # ChatGPT-5 analysis (4 core agencies)
 │   ├── BizInterviews_Gemini3P.md               # Gemini 1.5 Pro research (6 agencies)
@@ -21,8 +23,47 @@ BizAssessment/
 │   └── model_comparison.md                      # Comparative evaluation of model outputs
 ├── BizInterviews_SmallBiz_Def.md               # Comprehensive small business definition framework
 ├── ca_business_licensing_entities_clean.csv     # Structured agency data (CSV format)
-└── ca_business_licensing_entities_clean.md      # Entity landscape summary (markdown)
+├── ca_business_licensing_entities_clean.md      # Entity landscape summary (markdown)
+├── CA_FTB_URL_Comprehensive_Guide.md           # Detailed FTB URL reference
+├── CA_DCA_Comprehensive_URL_Guide.md           # Detailed DCA boards/bureaus URL reference
+├── CA_DIR_Comprehensive_URL_Guide.md           # Detailed DIR URL reference
+└── california-edd-employer-resources.md        # Detailed EDD URL reference
 ```
+
+## ★ NEW: Comprehensive URL Database (December 2025)
+
+The repository now includes a **machine-readable URL database** for AI agent integration:
+
+### CA_Business_Licensing_URLs.xlsx
+
+A comprehensive Excel database containing **228+ validated URLs** across **83 California state departments, boards, and agencies** involved in business licensing.
+
+| Statistic | Value |
+|-----------|-------|
+| Total URLs | 228+ |
+| Departments/Agencies | 83 |
+| URL Categories | 12 (Portal, Application, Search, Forms, Fees, Guide, Help, Contact, etc.) |
+| DCA Boards/Bureaus | 38 |
+| Regional Water Boards | 9 |
+| Local Air Districts | 26 (major districts) |
+
+**Excel Worksheets:**
+1. **CA Business Licensing URLs** - Main database with filtering
+2. **Summary by Department** - URL counts per agency
+3. **Summary by Category** - Distribution by type
+4. **About** - Metadata and usage notes
+
+### CA_Business_Licensing_URLs_Documentation.md
+
+Companion documentation providing:
+- Database structure explanation
+- Department coverage matrix
+- AI agent usage guidelines
+- Common user journey mappings
+- Key contact phone numbers
+- Acronym reference
+
+---
 
 ## 🎯 Research Objectives
 
@@ -30,12 +71,13 @@ BizAssessment/
 2. **Pain Point Discovery**: Surface operational bottlenecks, manual workflows, and user frustration patterns across both agency staff and business users
 3. **AI Opportunity Analysis**: Identify high-leverage intervention points where agentic AI can reduce administrative burden, improve process clarity, and streamline compliance
 4. **Cross-Agency Dependencies**: Map data flows, redundant information requests, and coordination gaps between agencies
+5. **URL Reference System**: Build a comprehensive, validated URL database for AI agents to provide accurate resource links
 
 ## 📊 Key Findings
 
 ### Agencies Covered
 
-The research spans **25+ state entities** organized across four functional categories:
+The research spans **80+ state entities** organized across five functional categories:
 
 **Core Formation & Tax Registration** (4 agencies)
 - Secretary of State (SOS) - Business Programs Division
@@ -43,13 +85,17 @@ The research spans **25+ state entities** organized across four functional categ
 - Employment Development Department (EDD)
 - California Department of Tax and Fee Administration (CDTFA)
 
-**Professional & Occupational Licensing** (6+ boards under DCA umbrella)
+**Professional & Occupational Licensing** (38 boards/bureaus under DCA umbrella)
 - Department of Consumer Affairs (DCA) coordination body
 - Contractors State License Board (CSLB)
 - Board of Registered Nursing (BRN)
 - Medical Board of California
 - California Board of Accountancy (CBA)
 - Bureau of Automotive Repair (BAR)
+- Board of Pharmacy
+- Board of Barbering and Cosmetology
+- Bureau of Security and Investigative Services (BSIS)
+- *...and 29 additional boards/bureaus (see URL database)*
 
 **Industry-Specific Regulators** (7 agencies)
 - Department of Alcoholic Beverage Control (ABC)
@@ -60,10 +106,12 @@ The research spans **25+ state entities** organized across four functional categ
 - Department of Industrial Relations (DIR)
 - California Air Resources Board (CARB)
 
-**Environmental & Safety Agencies** (4 entities)
-- State Water Resources Control Board + Regional Water Boards
+**Environmental & Safety Agencies** (45+ entities)
+- State Water Resources Control Board
+- 9 Regional Water Quality Control Boards
 - Department of Toxic Substances Control (DTSC)
-- Local Air Quality Management Districts
+- California Air Resources Board (CARB)
+- 35 Local Air Quality Management Districts
 - Cal/OSHA (DIR division)
 
 **Coordination & Support Entities** (3 offices)
@@ -224,8 +272,8 @@ This repository is part of the broader **CA-AIDev** initiative exploring AI appl
 
 This research is intended for public-sector use in government modernization and policy development. When referencing this work, please cite:
 - Repository: `vanderoffice/CA-AIDev/bizbot/BizAssessment`
-- Research Date: December 2024
-- Models Used: ChatGPT-5, Claude Sonnet 3.5, Gemini 1.5 Pro, Perplexity Deep Research
+- Research Date: December 2024-2025
+- Models Used: ChatGPT-5, Claude Sonnet 3.5, Claude Opus 4.5, Gemini 1.5 Pro, Perplexity Deep Research
 
 ## 📞 Contact & Support
 
@@ -236,6 +284,7 @@ For questions about this research or collaboration opportunities:
 
 ---
 
-**Last Updated**: December 2024  
-**Status**: Active Research Repository  
-**Next Steps**: Validation with real agency stakeholders; expansion to local jurisdiction mapping
+**Last Updated**: December 2025
+**Status**: Active Research Repository
+**Recent Additions**: Comprehensive URL database (228+ URLs across 83 agencies)
+**Next Steps**: Validation with real agency stakeholders; expansion to local jurisdiction mapping; URL validation automation
