@@ -89,6 +89,34 @@ Multi-agent system for analyzing public comments submitted to state government a
 
 ---
 
+### WiseBot - Knowledge Ingestion System
+
+<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Type-RAG_Pipeline-blue" alt="RAG Pipeline"/>
+
+Comprehensive n8n-based document ingestion and retrieval system that processes email attachments, extracts content, generates embeddings, and provides intelligent knowledge retrieval via a unified gateway.
+
+**Capabilities:**
+- Multi-format processing (PDF, DOCX, MD, MP3, images, CSV, XLSX)
+- Audio transcription via Whisper
+- Image OCR + Vision AI analysis
+- Smart deduplication (hash + embedding similarity)
+- Semantic search with pgvector
+- Unified Knowledge Gateway API
+
+**Workflows:**
+| Workflow | Purpose |
+|----------|---------|
+| Email Ingestion | Monitors Gmail for documents |
+| Parse & Normalize | Extracts content from all formats |
+| Dedup & Hash | Prevents duplicate processing |
+| Embed & Store | Generates and stores embeddings |
+| Knowledge Gateway | RAG retrieval API |
+| Ops Dashboard | Health monitoring and alerts |
+
+[View WiseBot Documentation](./wisebot/)
+
+---
+
 ### ADABot - Accessibility Compliance Guide
 
 <img src="https://img.shields.io/badge/Status-Documentation-yellow" alt="Documentation"/>
@@ -115,16 +143,6 @@ Research and documentation for California government digital services strategy, 
 - **Domain Crawler**: Production-ready Scrapy-based crawler for discovering California state government endpoints (*.ca.gov)
 
 [View AskCA Documentation](./askca/)
-
----
-
-### KiddoBot - Childcare Services
-
-<img src="https://img.shields.io/badge/Status-In_Development-orange" alt="In Development"/>
-
-Agentic architecture to help California families find and navigate childcare options.
-
-[View KiddoBot Documentation](./kiddobot/)
 
 ---
 
@@ -174,7 +192,7 @@ All production systems follow a consistent multi-agent pattern:
 |-----------|------------|---------|
 | **Workflow Engine** | n8n | Visual workflow automation, agent orchestration |
 | **AI Models** | GPT-4/4o, Claude 3.5 Sonnet, Gemini 1.5 Pro | Multi-LLM support for task-specific routing |
-| **Vector Database** | Qdrant | Knowledge base semantic search |
+| **Vector Database** | Qdrant / Supabase pgvector | Knowledge base semantic search |
 | **Relational Database** | PostgreSQL | Structured data, analytics, logging |
 | **Graph Database** | Neo4j | Relationship mapping (Domain Crawler) |
 | **Queue** | Redis | Distributed task management |
@@ -220,23 +238,29 @@ docker compose up -d
 ```
 CA-AIDev/
 ├── README.md              # This file
-├── shared/                # Shared resources across projects
+├── adabot/                # ADA compliance guidance
+│   ├── README.md
+│   ├── wcag-checklist.md
+│   ├── postgres-schema.md
+│   └── n8n-workflow-guide.md
+├── askca/                 # Digital services research
+│   ├── README.md
+│   └── domain-crawler/    # Government endpoint crawler
 ├── bizbot/                # Business licensing multi-agent system
+│   ├── README.md
 │   ├── BizBot_V1/         # Initial version
 │   ├── BizBot_v2/         # Second iteration
 │   ├── BizBot_v3/         # Current production version
 │   └── BizAssessment/     # Model comparison research
 ├── commentbot/            # Public comment analysis system
+│   ├── README.md
 │   ├── *-workflow.json    # n8n workflow definitions
 │   ├── database-schema.sql
 │   └── sample-comments.json
-├── adabot/                # ADA compliance guidance
-│   ├── wcag-checklist.md
-│   └── postgres-schema.md
-├── askca/                 # Digital services research
-│   ├── domain-crawler/    # Government endpoint crawler
-│   └── *.md               # Research documents
-└── kiddobot/              # Childcare services (in development)
+└── wisebot/               # Knowledge ingestion system
+    ├── README_WiseBot_Ingestion.md
+    ├── wisebot_knowledge_schema.sql
+    └── wisebot_*_n8n.json # n8n workflow definitions
 ```
 
 ---
