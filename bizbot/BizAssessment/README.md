@@ -2,44 +2,105 @@
 
 **Comprehensive research repository mapping California's business licensing ecosystem to identify AI-driven modernization opportunities.**
 
+> **TL;DR**: Research mapping California's 80+ business licensing agencies to identify AI modernization opportunities. Includes 228+ validated URLs across 83 agencies, simulated stakeholder interviews from 4 AI models, and structured data for chatbot/navigation tool integration.
+
 ## Overview
 
 This directory contains systematic research documenting California's state-level business formation, licensing, and regulatory environment. The research combines simulated stakeholder interviews, regulatory analysis, cross-agency mapping, and a comprehensive URL database to surface operational pain points and high-impact opportunities for AI-enabled process improvements.
 
 The research was conducted using multiple advanced AI models (ChatGPT, Claude Sonnet, Gemini, Perplexity Deep Research, and Claude Opus 4.5) to ensure comprehensive coverage and diverse analytical perspectives on California's complex 80+ agency ecosystem.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Repository Structure](#repository-structure)
+- [URL Database](#comprehensive-url-database-december-2025)
+- [Research Objectives](#research-objectives)
+- [Key Findings](#key-findings)
+- [Key Documents](#key-documents)
+- [AI Opportunity Areas](#ai-opportunity-areas)
+- [Use Cases](#use-cases)
+- [Research Methodology](#research-methodology)
+
 ## Repository Structure
 
 ```
 BizAssessment/
-├── README.md                                    # This file
-├── CA_Business_Licensing_URLs.xlsx             # ★ NEW: Comprehensive URL database (228+ URLs)
-├── CA_Business_Licensing_URLs_Documentation.md # ★ NEW: Database documentation for AI agents
-├── Initial Assessment/                          # Multi-model stakeholder research
-│   ├── BizInterviews_CGPT5_1.md                # ChatGPT-5 analysis (4 core agencies)
-│   ├── BizInterviews_Gemini3P.md               # Gemini 1.5 Pro research (6 agencies)
-│   ├── BizInterviews_PerplexDeep.md            # Perplexity research (15+ agencies - broadest scope)
-│   ├── BizInterviews_Sonnet4_5.md              # Claude Sonnet analysis (12+ agencies - deepest detail)
-│   └── model_comparison.md                      # Comparative evaluation of model outputs
-├── BizInterviews_SmallBiz_Def.md               # Comprehensive small business definition framework
-├── ca_business_licensing_entities_clean.csv     # Structured agency data (CSV format)
-├── ca_business_licensing_entities_clean.md      # Entity landscape summary (markdown)
-├── CA_FTB_URL_Comprehensive_Guide.md           # Detailed FTB URL reference
-├── CA_DCA_Comprehensive_URL_Guide.md           # Detailed DCA boards/bureaus URL reference
-├── CA_DIR_Comprehensive_URL_Guide.md           # Detailed DIR URL reference
-└── california-edd-employer-resources.md        # Detailed EDD URL reference
+├── README.md
+├── CA_Business_Licensing_URLs.xlsx              # Comprehensive URL database (228+ URLs)
+├── CA_Business_Licensing_URLs_Documentation.md  # Database documentation for AI agents
+├── Initial Assessment/
+│   ├── BizInterviews_CGPT5_1.md                 # ChatGPT-5 analysis (4 core agencies)
+│   ├── BizInterviews_Gemini3P.md                # Gemini 1.5 Pro research (6 agencies)
+│   ├── BizInterviews_PerplexDeep.md             # Perplexity research (15+ agencies)
+│   ├── BizInterviews_Sonnet4_5.md               # Claude Sonnet analysis (12+ agencies)
+│   └── model_comparison.md                       # Comparative evaluation of model outputs
+├── BizInterviews_SmallBiz_Def.md                # Small business definition framework
+├── ca_business_licensing_entities_clean.csv     # Structured agency data (CSV)
+├── ca_business_licensing_entities_clean.md      # Entity landscape summary
+├── CA_FTB_URL_Comprehensive_Guide.md            # FTB URL reference
+├── CA_DCA_Comprehensive_URL_Guide.md            # DCA boards/bureaus URL reference
+├── CA_DIR_Comprehensive_URL_Guide.md            # DIR URL reference
+└── california-edd-employer-resources.md         # EDD URL reference
 ```
 
-## ★ NEW: Comprehensive URL Database (December 2025)
+**Quick Links:**
+- [URL Database (Excel)](CA_Business_Licensing_URLs.xlsx) — 228+ URLs across 83 agencies
+- [URL Documentation](CA_Business_Licensing_URLs_Documentation.md) — AI agent usage guide
+- [Entity Catalog (CSV)](ca_business_licensing_entities_clean.csv) — Structured data for integration
+- [Small Business Definitions](BizInterviews_SmallBiz_Def.md) — 26+ statutory definitions reconciled
 
-The repository now includes a **machine-readable URL database** for AI agent integration:
+## Research Architecture
+
+```mermaid
+flowchart TB
+    subgraph Input["Multi-Model Research"]
+        CGPT[ChatGPT-5<br/>4 Core Agencies]
+        GEM[Gemini 1.5 Pro<br/>6 Agencies]
+        PERP[Perplexity Deep<br/>15+ Agencies]
+        SON[Claude Sonnet<br/>12+ Agencies]
+    end
+
+    subgraph Synthesis["Synthesis Layer"]
+        COMP[Model Comparison<br/>& Cross-Validation]
+        ENT[Entity Catalog<br/>80+ Agencies]
+    end
+
+    subgraph Output["Deliverables"]
+        URL[(URL Database<br/>228+ URLs)]
+        CSV[(Structured Data<br/>CSV/Markdown)]
+        GUIDE[Agency Guides<br/>FTB/DCA/DIR/EDD]
+    end
+
+    subgraph Use["Use Cases"]
+        BOT[Chatbots &<br/>Navigation Tools]
+        POL[Policy Analysis<br/>& Advocacy]
+        DEV[API Integration<br/>& Portals]
+    end
+
+    CGPT --> COMP
+    GEM --> COMP
+    PERP --> COMP
+    SON --> COMP
+    COMP --> ENT
+    ENT --> URL
+    ENT --> CSV
+    ENT --> GUIDE
+    URL --> BOT
+    CSV --> DEV
+    GUIDE --> POL
+```
+
+## Comprehensive URL Database (December 2025)
+
+The repository includes a **machine-readable URL database** for AI agent integration:
 
 ### CA_Business_Licensing_URLs.xlsx
 
 A comprehensive Excel database containing **228+ validated URLs** across **83 California state departments, boards, and agencies** involved in business licensing.
 
-| Statistic | Value |
-|-----------|-------|
+| Metric | Value |
+|--------|-------|
 | Total URLs | 228+ |
 | Departments/Agencies | 83 |
 | URL Categories | 12 (Portal, Application, Search, Forms, Fees, Guide, Help, Contact, etc.) |
@@ -48,10 +109,10 @@ A comprehensive Excel database containing **228+ validated URLs** across **83 Ca
 | Local Air Districts | 26 (major districts) |
 
 **Excel Worksheets:**
-1. **CA Business Licensing URLs** - Main database with filtering
-2. **Summary by Department** - URL counts per agency
-3. **Summary by Category** - Distribution by type
-4. **About** - Metadata and usage notes
+1. **CA Business Licensing URLs** — Main database with filtering
+2. **Summary by Department** — URL counts per agency
+3. **Summary by Category** — Distribution by type
+4. **About** — Metadata and usage notes
 
 ### CA_Business_Licensing_URLs_Documentation.md
 
@@ -65,7 +126,7 @@ Companion documentation providing:
 
 ---
 
-## 🎯 Research Objectives
+## Research Objectives
 
 1. **Ecosystem Mapping**: Identify and document every California state department involved in business formation, licensing, permitting, and compliance
 2. **Pain Point Discovery**: Surface operational bottlenecks, manual workflows, and user frustration patterns across both agency staff and business users
@@ -73,7 +134,7 @@ Companion documentation providing:
 4. **Cross-Agency Dependencies**: Map data flows, redundant information requests, and coordination gaps between agencies
 5. **URL Reference System**: Build a comprehensive, validated URL database for AI agents to provide accurate resource links
 
-## 📊 Key Findings
+## Key Findings
 
 ### Agencies Covered
 
@@ -134,18 +195,18 @@ The research spans **80+ state entities** organized across five functional categ
 - Inconsistent data standards: Lack of common identifiers or data formats complicates inter-agency coordination
 - Volume vs. capacity mismatches: Application backlogs reach 10-12 weeks for high-demand licenses (e.g., nursing, contractors)
 
-## 📁 Key Documents
+## Key Documents
 
 ### Initial Assessment Folder
 
 Contains four parallel research efforts, each generated by a different AI model to ensure comprehensive coverage:
 
-| Document | Model | Agencies Covered | Key Strength | Use Case |
-|----------|-------|------------------|--------------|----------|
-| **BizInterviews_CGPT5_1.md** | ChatGPT-5 | 4 core agencies | Concise, sharp interview questions focused on immediate pain points | Quick overview of core taxation and formation agencies |
-| **BizInterviews_Gemini3P.md** | Gemini 1.5 Pro | 6 agencies | Balanced narrative with standard pain point exploration | Mid-level stakeholder briefings |
-| **BizInterviews_PerplexDeep.md** | Perplexity Deep Research | **15+ agencies** | **Broadest scope** - includes environmental, safety, and niche regulatory bodies | Complete ecosystem mapping and stakeholder identification |
-| **BizInterviews_Sonnet4_5.md** | Claude Sonnet 3.5 | 12+ agencies | **Deepest detail** - sophisticated questions showing workflow understanding | Detailed interview preparation for high-impact agencies |
+| Document | Model | Agencies | Key Strength | Use Case |
+|----------|-------|----------|--------------|----------|
+| **BizInterviews_CGPT5_1.md** | ChatGPT-5 | 4 core | Concise, sharp interview questions | Quick overview of core agencies |
+| **BizInterviews_Gemini3P.md** | Gemini 1.5 Pro | 6 | Balanced narrative | Mid-level stakeholder briefings |
+| **BizInterviews_PerplexDeep.md** | Perplexity | **15+** | **Broadest scope** | Complete ecosystem mapping |
+| **BizInterviews_Sonnet4_5.md** | Claude Sonnet | 12+ | **Deepest detail** | Detailed interview preparation |
 
 **model_comparison.md** provides a structured evaluation of each model's output quality, scope, and analytical depth.
 
@@ -163,7 +224,7 @@ Contains four parallel research efforts, each generated by a different AI model 
 - Available in both human-readable markdown and machine-readable CSV formats
 - Designed for integration into navigation tools, chatbots, or requirement engines
 
-## 🔧 AI Opportunity Areas
+## AI Opportunity Areas
 
 Research identified six high-impact intervention categories:
 
@@ -197,7 +258,7 @@ Research identified six high-impact intervention categories:
    - Predictive models flagging applications likely to require additional review
    - A/B testing frameworks for evaluating process changes or communication strategies
 
-## 🏛️ Use Cases
+## Use Cases
 
 This research supports multiple stakeholder needs:
 
@@ -221,7 +282,7 @@ This research supports multiple stakeholder needs:
 - Identify internal process improvement opportunities
 - Plan digital transformation roadmaps
 
-## 📚 Research Methodology
+## Research Methodology
 
 ### Model Selection Rationale
 
@@ -229,7 +290,7 @@ Four models were selected to balance breadth and depth:
 - **ChatGPT-5**: Rapid synthesis and question formulation
 - **Gemini 1.5 Pro**: Multi-source integration and contextual reasoning
 - **Perplexity Deep Research**: Real-time web search and source diversity (60+ citations in small business definition research)
-- **Claude Sonnet 3.5**: Long-context analysis and nuanced interview question design
+- **Claude Sonnet**: Long-context analysis and nuanced interview question design
 
 ### Research Process
 
@@ -242,49 +303,6 @@ Four models were selected to balance breadth and depth:
 3. **Cross-Validation**: Outputs were compared in `model_comparison.md` to identify coverage gaps and reconcile conflicting information
 4. **Structured Output**: Final entity catalog synthesized into standardized CSV and markdown formats for downstream use
 
-## 🚀 Getting Started
-
-### For Researchers
-1. Review **model_comparison.md** to understand the strengths and limitations of each analysis
-2. Use **BizInterviews_PerplexDeep.md** for comprehensive ecosystem orientation
-3. Deep-dive into specific agencies using **BizInterviews_Sonnet4_5.md** for detailed interview preparation
-
-### For Developers
-1. Load **ca_business_licensing_entities_clean.csv** into your application database
-2. Use the structured fields (entity name, description, known challenges) to power chatbot responses or requirement engines
-3. Reference **BizInterviews_SmallBiz_Def.md** when implementing business classification logic
-
-### For Policy Analysts
-1. Start with **ca_business_licensing_entities_clean.md** for a plain-language overview
-2. Review pain points across the four model analyses to identify patterns
-3. Use concrete examples from interview simulations to illustrate systemic issues
-
-## 🤝 Contributing
-
-This repository is part of the broader **CA-AIDev** initiative exploring AI applications in California government. Contributions are welcome in the following areas:
-
-- **Additional agency coverage**: State agencies not yet documented (e.g., Department of Pesticide Regulation, California Architects Board)
-- **Local jurisdiction mapping**: City and county-level licensing requirements and pain points
-- **Real stakeholder interviews**: Validation of simulated interview findings with actual agency staff or business users
-- **Quantitative analysis**: Processing time data, application volume statistics, or cost-of-compliance studies
-
-## 📄 License & Usage
-
-This research is intended for public-sector use in government modernization and policy development. When referencing this work, please cite:
-- Repository: `vanderoffice/CA-AIDev/bizbot/BizAssessment`
-- Research Date: December 2024-2025
-- Models Used: ChatGPT-5, Claude Sonnet 3.5, Claude Opus 4.5, Gemini 1.5 Pro, Perplexity Deep Research
-
-## 📞 Contact & Support
-
-For questions about this research or collaboration opportunities:
-- Repository Issues: [github.com/vanderoffice/CA-AIDev/issues](https://github.com/vanderoffice/CA-AIDev/issues)
-- California Office of the Small Business Advocate: [calosba.ca.gov](https://calosba.ca.gov)
-- Governor's Office of Business and Economic Development: [business.ca.gov](https://business.ca.gov)
-
 ---
 
-**Last Updated**: December 2025
-**Status**: Active Research Repository
-**Recent Additions**: Comprehensive URL database (228+ URLs across 83 agencies)
-**Next Steps**: Validation with real agency stakeholders; expansion to local jurisdiction mapping; URL validation automation
+**Last Updated**: December 2025 | **Status**: Active Research
