@@ -1,0 +1,60 @@
+run_id,date,stage,section,model,rating,tokens_in,tokens_out,cost_usd,time_min,notes
+RUN-001,2025-12-23,1,initial-assessment,perplexity-deep,5,—,—,0.00,8,Excellent 12k word output with 60 citations covering all requested topics
+RUN-002,2025-12-23,1,initial-assessment,claude-opus-via-gw,5,—,3079,0.15,54,Thorough fact-check with 10 claims verified and corrections noted
+RUN-003,2025-12-23,1,initial-assessment,gemini-2.5-pro,5,—,2644,0.08,38,Exceptional practical insights on edge cases and county variations
+RUN-004,2025-12-23,1,initial-assessment,claude-opus-synthesis,5,—,—,—,—,Model comparison and reconciliation document
+RUN-005,2025-12-23,2,calworks-research,perplexity-deep,5,—,—,0.00,10,Comprehensive CalWORKs deep dive with 60+ citations
+RUN-006,2025-12-23,2,calworks-overview,claude-opus-synthesis,5,—,—,—,—,Parent-facing CalWORKs guide with all 3 stages
+RUN-007,2025-12-23,2,calworks-eligibility,claude-opus-synthesis,5,—,—,—,—,Detailed eligibility matrix with MBSAC/MAP/SMI tables
+RUN-008,2025-12-23,2,calworks-flowchart,claude-opus-synthesis,5,—,—,—,—,Mermaid flowcharts for application and stage transitions
+RUN-009,2025-12-23,2,county-variations,claude-opus-synthesis,5,—,—,—,—,4 county guides: LA SF-Bay San-Diego Sacramento
+RUN-010,2025-12-23,3,ccdf-research,perplexity-deep,5,—,—,0.00,12,Comprehensive CCDF deep dive 10k+ words with citations
+RUN-011,2025-12-23,3,ccdf-overview,claude-opus-synthesis,5,—,—,—,—,Parent-facing CCDF guide with eligibility and fees
+RUN-012,2025-12-23,3,ccdf-comparison,claude-opus-synthesis,5,—,—,—,—,CCDF vs CalWORKs side-by-side comparison
+RUN-013,2025-12-23,3,ccdf-eligibility,claude-opus-synthesis,5,—,—,—,—,CCDF eligibility matrix with SMI thresholds
+RUN-014,2025-12-23,3,rc-research,perplexity-deep,5,—,—,0.00,15,Regional Centers comprehensive guide 12k+ words
+RUN-015,2025-12-23,3,rc-overview,claude-opus-synthesis,5,—,—,—,—,Regional Center overview with services and rights
+RUN-016,2025-12-23,3,rc-eligibility,claude-opus-synthesis,5,—,—,—,—,RC eligibility and application step-by-step
+RUN-017,2025-12-23,3,rc-directory,claude-opus-synthesis,5,—,—,—,—,21 Regional Centers CSV with contacts and counties
+RUN-018,2025-12-23,4,provider-research,perplexity-deep,5,—,—,0.00,12,Comprehensive provider types licensing quality 60+ citations
+RUN-019,2025-12-23,4,provider-types,claude-opus-synthesis,5,—,—,—,—,Provider types guide with comparison tables
+RUN-020,2025-12-23,4,license-search,claude-opus-synthesis,5,—,—,—,—,MyChildCare license search step-by-step guide
+RUN-021,2025-12-23,4,nontraditional-hours,claude-opus-synthesis,5,—,—,—,—,Finding care for evening night weekend schedules
+RUN-022,2025-12-23,4,special-needs,claude-opus-synthesis,5,—,—,—,—,Special needs providers with RC coordination
+RUN-023,2025-12-23,4,quality-indicators,claude-opus-synthesis,5,—,—,—,—,Quality metrics ratios accreditation QRIS
+RUN-024,2025-12-23,4,ccrr-directory,claude-opus-synthesis,5,—,—,—,—,45 CCR&R agencies by region CSV
+RUN-025,2025-12-23,4,cost-research,perplexity-deep,5,—,—,0.00,15,Comprehensive cost research RMR fees tax credits
+RUN-026,2025-12-23,4,cost-overview,claude-opus-synthesis,5,—,—,—,—,CA childcare costs by type and region
+RUN-027,2025-12-23,4,family-fees,claude-opus-synthesis,5,—,—,—,—,Family fee schedules for subsidized care
+RUN-028,2025-12-23,4,tax-credits,claude-opus-synthesis,5,—,—,—,—,Federal and CA tax credits FSA guide
+RUN-029,2025-12-23,5,stage5-research,perplexity-deep,5,—,—,0.00,18,Comprehensive Stage 5 research: applications special situations agencies 60+ citations
+RUN-030,2025-12-23,5,paperwork-requirements,claude-opus-synthesis,5,—,—,—,—,Complete documentation checklist for all programs
+RUN-031,2025-12-23,5,income-verification,claude-opus-synthesis,5,—,—,—,—,Income verification by employment type
+RUN-032,2025-12-23,5,work-activity,claude-opus-synthesis,5,—,—,—,—,Work activity requirements and eligible need categories
+RUN-033,2025-12-23,5,immunizations,claude-opus-synthesis,5,—,—,—,—,Immunization requirements CAIR exemptions
+RUN-034,2025-12-23,5,waitlist-strategies,claude-opus-synthesis,5,—,—,—,—,Priority categories and waitlist navigation
+RUN-035,2025-12-23,5,homeless-families,claude-opus-synthesis,5,—,—,—,—,McKinney-Vento protections priority enrollment
+RUN-036,2025-12-23,5,foster-care,claude-opus-synthesis,5,—,—,—,—,Foster kinship care RFA childcare pathways
+RUN-037,2025-12-23,5,transitional-k,claude-opus-synthesis,5,—,—,—,—,TK eligibility expansion wraparound care
+RUN-038,2025-12-23,5,migrant-farmworker,claude-opus-synthesis,5,—,—,—,—,Migrant Head Start agricultural worker programs
+RUN-039,2025-12-23,5,military-families,claude-opus-synthesis,5,—,—,—,—,CDCs MCCYN installations PCS transitions
+RUN-040,2025-12-23,5,cdss-overview,claude-opus-synthesis,5,—,—,—,—,CDSS agency role programs policy
+RUN-041,2025-12-23,5,cde-overview,claude-opus-synthesis,5,—,—,—,—,CDE agency CSPP TK Head Start credentials
+RUN-042,2025-12-23,5,cdph-health,claude-opus-synthesis,5,—,—,—,—,CDPH immunizations health exams CAIR
+RUN-043,2025-12-23,5,agency-coordination,claude-opus-synthesis,5,—,—,—,—,Agency coordination map system navigation
+RUN-044,2025-12-23,6,county-research-FAILED,perplexity-research,0,—,—,2.50,—,Request 1 timed out - no data returned
+RUN-045,2025-12-23,6,county-research-FAILED,perplexity-research,0,—,—,2.50,—,Request 2 aborted - no data returned
+RUN-046,2025-12-23,6,fips-codes,perplexity-search,5,—,—,0.00,1,All 58 CA county FIPS codes retrieved
+RUN-047,2025-12-23,6,ccrr-sources,perplexity-search,5,—,—,0.00,1,CCR&R directory sources identified
+RUN-048,2025-12-23,6,rmr-sources,perplexity-search,5,—,—,0.00,1,RMR rate data sources located
+RUN-049,2025-12-23,6,migrant-hs,perplexity-search,5,—,—,0.00,1,Migrant Head Start locations by county
+RUN-050,2025-12-23,6,region-designation,perplexity-search,5,—,—,0.00,1,Region 1 vs 2 county list confirmed
+RUN-051,2025-12-23,6,county-welfare,perplexity-search,5,—,—,0.00,1,County welfare department contacts
+RUN-052,2025-12-23,6,county-infrastructure-csv,claude-opus-synthesis,0,—,—,—,—,INVALIDATED: 58-county dataset was FABRICATED not extracted from sources
+RUN-053,2025-12-23,6,data-dictionary,claude-opus-synthesis,0,—,—,—,—,INVALIDATED: Based on fabricated schema - DELETED
+RUN-054,2025-12-23,6,gap-analysis,claude-opus-synthesis,0,—,—,—,—,INVALIDATED: Analysis based on fabricated data - DELETED
+RUN-055,2025-12-23,6,validation,gpt-4o-via-gateway,—,—,—,0.00,5,GPT-4o validation revealed fabricated data - Region 1/2 incorrect RMR unverified
+RUN-056,2025-12-23,6,remediation,claude-opus,—,—,—,—,—,DELETED fabricated files: county CSV data_dictionary gap_analysis - Stage 6 FAILED
+RUN-057,2025-12-23,2,verification,perplexity-search+claude,5,—,—,0.00,10,Verified MBSAC MAP SMI tables against Sacramento SF LA county sources - corrected MAP values
+RUN-058,2025-12-23,3,verification,perplexity-search,5,—,—,0.00,5,Verified 85% SMI and 75% SMI against CCRC 2025-26 PDF - CORRECT
+RUN-059,2025-12-23,3,verification,perplexity-search,5,—,—,0.00,5,Verified 21 Regional Centers against dds.ca.gov/rc/listings - ALL CORRECT
