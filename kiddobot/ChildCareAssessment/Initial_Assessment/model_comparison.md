@@ -215,4 +215,4 @@ Based on this initial assessment, the CalWORKs deep-dive should:
 ---
 
 *Generated: 2025-12-23*
-*Research Protocol: KiddoChildCareAssessment v1.0*
+*Research Protocol: ChildCareAssessment v1.0*

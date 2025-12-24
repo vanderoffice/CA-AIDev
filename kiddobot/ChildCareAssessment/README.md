@@ -1,4 +1,4 @@
-# KiddoChildCareAssessment
+# ChildCareAssessment
 
 **Comprehensive research repository mapping California's childcare ecosystem to power KiddoBot—an agentic AI helping parents navigate subsidies, providers, paperwork, and county logistics.**
 
@@ -25,7 +25,7 @@ This repository contains systematic research documenting California's childcare 
 ## Repository Structure
 
 ```
-KiddoChildCareAssessment/
+ChildCareAssessment/
 ├── README.md                           # This file - navigation hub
 ├── research-protocol/
 │   ├── README.md                       # Research methodology docs

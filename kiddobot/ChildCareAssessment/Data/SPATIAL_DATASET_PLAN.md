@@ -1,7 +1,7 @@
 # CA Childcare Facility Spatial Dataset: Implementation Plan
 
 **Date:** 2025-12-23
-**Project:** KiddoChildCareAssessment
+**Project:** ChildCareAssessment
 **Purpose:** Build a geocoded dataset of California licensed childcare facilities
 
 ---
@@ -9,11 +9,11 @@
 ## Background: KiddoBot Project
 
 ### What is KiddoBot?
-KiddoBot is an agentic AI assistant helping California parents navigate childcare subsidies, providers, paperwork, and county logistics. The knowledge base powering KiddoBot lives in the `KiddoChildCareAssessment` repository.
+KiddoBot is an agentic AI assistant helping California parents navigate childcare subsidies, providers, paperwork, and county logistics. The knowledge base powering KiddoBot lives in the `ChildCareAssessment` repository.
 
 ### Repository Location
 ```
-/Users/slate/Documents/GitHub/CA-AIDev/kiddobot/KiddoChildCareAssessment/
+/Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/
 ```
 
 ### Project Status (as of 2025-12-23)
@@ -174,7 +174,7 @@ license_first_date, closed_date, file_date
 
 All outputs go to:
 ```
-/Users/slate/Documents/GitHub/CA-AIDev/kiddobot/KiddoChildCareAssessment/Data/
+/Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Data/
 ```
 
 ### Files to Create
@@ -257,8 +257,8 @@ All outputs go to:
 When starting a fresh session, provide this context:
 
 ```
-I'm working on the KiddoChildCareAssessment project at:
-/Users/slate/Documents/GitHub/CA-AIDev/kiddobot/KiddoChildCareAssessment/
+I'm working on the ChildCareAssessment project at:
+/Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/
 
 Read the spatial dataset plan at:
 Data/SPATIAL_DATASET_PLAN.md

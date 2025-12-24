@@ -1,6 +1,6 @@
 # Research Protocol
 
-This document describes the lightweight meta-research methodology used to build KiddoChildCareAssessment.
+This document describes the lightweight meta-research methodology used to build ChildCareAssessment.
 
 ## Goals
 
