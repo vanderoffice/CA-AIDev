@@ -1,0 +1,153 @@
+{
+  "name": "BizBot v4 - License Finder",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "bizbot-license-finder",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://vanderdev.net,http://localhost:3000"
+        }
+      },
+      "id": "webhook-trigger",
+      "name": "License Finder Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "bizbot-license-finder-v4",
+      "notes": "Calculator endpoint for license requirements"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract and validate business profile\nconst body = $input.first().json.body || {};\n\n// Required fields\nconst industryCode = body.industry || body.industryCode;\n\n// Validation\nif (!industryCode) {\n  return {\n    json: {\n      error: true,\n      message: 'industry is required',\n      code: 'MISSING_INDUSTRY'\n    }\n  };\n}\n\nreturn {\n  json: {\n    error: false,\n    entityType: body.entityType || 'llc',\n    industryCode: industryCode,\n    subIndustry: body.subIndustry || null,\n    city: body.city || null,\n    county: body.county || null,\n    hasEmployees: body.hasEmployees ?? false,\n    sellsTangibleGoods: body.sellsTangibleGoods ?? false,\n    isHomeBased: body.isHomeBased ?? false,\n    isNew: body.isNew ?? true,\n    specialSituations: body.specialSituations || []\n  }\n};"
+      },
+      "id": "extract-profile",
+      "name": "Extract Business Profile",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 0],
+      "notes": "Parse and validate request"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "" },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.error }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-validation",
+      "name": "Validation Failed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [440, 0],
+      "notes": "Route errors"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT\n  r.id,\n  r.license_name,\n  r.license_code,\n  a.name as agency_name,\n  a.abbreviation as agency_abbr,\n  a.url as agency_url,\n  a.phone as agency_phone,\n  r.sequence_order,\n  r.sequence_group,\n  r.is_conditional,\n  r.condition_description,\n  CASE\n    WHEN r.application_fee_min IS NULL THEN 'Free'\n    WHEN r.application_fee_min = r.application_fee_max THEN '$' || r.application_fee_min::TEXT\n    ELSE '$' || r.application_fee_min::TEXT || '-$' || r.application_fee_max::TEXT\n  END as fee_range,\n  CASE\n    WHEN r.processing_days_min IS NULL THEN 'Varies'\n    WHEN r.processing_days_min = r.processing_days_max THEN r.processing_days_min::TEXT || ' days'\n    ELSE r.processing_days_min::TEXT || '-' || r.processing_days_max::TEXT || ' days'\n  END as timeline,\n  r.application_url,\n  r.info_url,\n  r.notes\nFROM license_requirements r\nJOIN license_agencies a ON r.agency_code = a.code\nWHERE\n  (r.industry_code = $1 OR r.industry_code = 'other')\n  AND (\n    r.is_statewide = true\n    OR ($2 IS NOT NULL AND r.city = $2)\n    OR ($3 IS NOT NULL AND r.county = $3 AND r.city IS NULL)\n  )\nORDER BY r.sequence_order, r.license_name",
+        "options": {
+          "queryReplacement": "={{ $json.industryCode }},={{ $json.city || null }},={{ $json.county || null }}"
+        }
+      },
+      "id": "query-licenses",
+      "name": "Query License Requirements",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [660, -100],
+      "credentials": {
+        "postgres": {
+          "id": "postgres_credential",
+          "name": "PostgreSQL Database"
+        }
+      },
+      "notes": "Get licenses for industry + location"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process license results and add conditional logic\nconst profile = $('Extract Business Profile').item.json;\nconst dbLicenses = $('Query License Requirements').all();\n\n// Build license list with computed properties\nlet licenses = [];\nlet totalMinCost = 0;\nlet totalMaxCost = 0;\nlet totalMinDays = 0;\nlet totalMaxDays = 0;\n\n// Add formation licenses based on entity type\nif (profile.isNew && profile.entityType !== 'sole_proprietor') {\n  const entityFee = profile.entityType === 'corporation' ? 100 : 70;\n  licenses.push({\n    id: 0,\n    licenseName: profile.entityType === 'corporation' ? 'Articles of Incorporation' : 'Articles of Organization (LLC)',\n    licenseCode: profile.entityType === 'corporation' ? 'CORP' : 'LLC',\n    agencyName: 'CA Secretary of State',\n    agencyAbbr: 'SOS',\n    agencyUrl: 'https://bizfileonline.sos.ca.gov',\n    agencyPhone: '916-657-5448',\n    sequenceOrder: 1,\n    sequenceGroup: 'formation',\n    isConditional: false,\n    feeRange: '$' + entityFee,\n    timeline: '1-10 days',\n    applicationUrl: 'https://bizfileonline.sos.ca.gov',\n    notes: 'File online for fastest processing. Can expedite for $350 additional.'\n  });\n  totalMinCost += entityFee;\n  totalMaxCost += entityFee;\n  totalMinDays += 1;\n  totalMaxDays += 10;\n}\n\n// Add EIN (always needed for non-sole-proprietors or if has employees)\nif (profile.entityType !== 'sole_proprietor' || profile.hasEmployees) {\n  licenses.push({\n    id: 0,\n    licenseName: 'Employer Identification Number (EIN)',\n    licenseCode: 'EIN',\n    agencyName: 'Internal Revenue Service',\n    agencyAbbr: 'IRS',\n    agencyUrl: 'https://www.irs.gov/businesses',\n    agencyPhone: '800-829-4933',\n    sequenceOrder: 2,\n    sequenceGroup: 'formation',\n    isConditional: false,\n    feeRange: 'Free',\n    timeline: 'Immediate (online)',\n    applicationUrl: 'https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online',\n    notes: 'Apply online for immediate issuance. Required for business bank account.'\n  });\n}\n\n// Add city business license (always required)\nlicenses.push({\n  id: 0,\n  licenseName: 'City Business License',\n  licenseCode: 'BIZLIC',\n  agencyName: profile.city ? `${profile.city} City Clerk` : 'City Business License Office',\n  agencyAbbr: null,\n  agencyUrl: null,\n  agencyPhone: null,\n  sequenceOrder: 40,\n  sequenceGroup: 'local',\n  isConditional: false,\n  feeRange: '$50-$500',\n  timeline: '1-2 weeks',\n  applicationUrl: null,\n  notes: 'CRITICAL: Check zoning FIRST before applying. Contact your city clerk for requirements.'\n});\ntotalMinCost += 50;\ntotalMaxCost += 500;\ntotalMinDays += 7;\ntotalMaxDays += 14;\n\n// Add conditional tax registrations\nif (profile.sellsTangibleGoods) {\n  licenses.push({\n    id: 0,\n    licenseName: \"Seller's Permit\",\n    licenseCode: 'SELLER',\n    agencyName: 'CA Dept of Tax and Fee Administration',\n    agencyAbbr: 'CDTFA',\n    agencyUrl: 'https://cdtfa.ca.gov',\n    agencyPhone: '800-400-7115',\n    sequenceOrder: 20,\n    sequenceGroup: 'state',\n    isConditional: true,\n    conditionDescription: 'Required for businesses selling tangible goods',\n    feeRange: 'Free',\n    timeline: 'Same day (online)',\n    applicationUrl: 'https://onlineservices.cdtfa.ca.gov',\n    notes: 'Free permit. Security deposit may be required based on sales volume.'\n  });\n}\n\nif (profile.hasEmployees) {\n  licenses.push({\n    id: 0,\n    licenseName: 'Employer Account (Payroll Tax)',\n    licenseCode: 'EMPACCT',\n    agencyName: 'Employment Development Department',\n    agencyAbbr: 'EDD',\n    agencyUrl: 'https://edd.ca.gov/employers',\n    agencyPhone: '888-745-3886',\n    sequenceOrder: 21,\n    sequenceGroup: 'state',\n    isConditional: true,\n    conditionDescription: 'Required if you have employees',\n    feeRange: 'Free',\n    timeline: '1-2 weeks',\n    applicationUrl: 'https://eddservices.edd.ca.gov/tap/secure/eservices',\n    notes: 'Register within 20 days of first employee. UI, DI, SDI, and PIT withholding.'\n  });\n}\n\n// Add database licenses\nfor (const row of dbLicenses) {\n  const license = row.json;\n  \n  // Skip if conditional and condition not met\n  if (license.is_conditional) {\n    const cond = (license.condition_description || '').toLowerCase();\n    if (cond.includes('employee') && !profile.hasEmployees) continue;\n    if (cond.includes('tangible goods') && !profile.sellsTangibleGoods) continue;\n  }\n  \n  licenses.push({\n    id: license.id,\n    licenseName: license.license_name,\n    licenseCode: license.license_code,\n    agencyName: license.agency_name,\n    agencyAbbr: license.agency_abbr,\n    agencyUrl: license.agency_url,\n    agencyPhone: license.agency_phone,\n    sequenceOrder: license.sequence_order,\n    sequenceGroup: license.sequence_group,\n    isConditional: license.is_conditional,\n    conditionDescription: license.condition_description,\n    feeRange: license.fee_range,\n    timeline: license.timeline,\n    applicationUrl: license.application_url,\n    infoUrl: license.info_url,\n    notes: license.notes\n  });\n  \n  // Accumulate costs (parse from fee_range)\n  const feeMatch = license.fee_range?.match(/\\$([\\d,]+)/g);\n  if (feeMatch) {\n    const fees = feeMatch.map(f => parseInt(f.replace(/[$,]/g, '')));\n    totalMinCost += fees[0] || 0;\n    totalMaxCost += fees[fees.length - 1] || fees[0] || 0;\n  }\n}\n\n// Sort by sequence\nlicenses.sort((a, b) => a.sequenceOrder - b.sequenceOrder);\n\n// Group by sequence_group\nconst grouped = {\n  formation: licenses.filter(l => l.sequenceGroup === 'formation'),\n  state: licenses.filter(l => l.sequenceGroup === 'state'),\n  local: licenses.filter(l => l.sequenceGroup === 'local'),\n  industry: licenses.filter(l => l.sequenceGroup === 'industry'),\n  ongoing: licenses.filter(l => l.sequenceGroup === 'ongoing')\n};\n\nreturn {\n  json: {\n    success: true,\n    profile: {\n      industry: profile.industryCode,\n      city: profile.city,\n      county: profile.county,\n      entityType: profile.entityType,\n      hasEmployees: profile.hasEmployees,\n      sellsTangibleGoods: profile.sellsTangibleGoods\n    },\n    summary: {\n      totalLicenses: licenses.length,\n      estimatedCostRange: totalMaxCost > 0 ? `$${totalMinCost.toLocaleString()}-$${totalMaxCost.toLocaleString()}` : 'Varies',\n      formationCount: grouped.formation.length,\n      stateCount: grouped.state.length,\n      localCount: grouped.local.length,\n      industryCount: grouped.industry.length\n    },\n    licenses: licenses,\n    grouped: grouped\n  }\n};"
+      },
+      "id": "process-licenses",
+      "name": "Process & Enrich Licenses",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, -100],
+      "notes": "Add computed licenses, sort, group by phase"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              { "name": "Content-Type", "value": "application/json" }
+            ]
+          }
+        }
+      },
+      "id": "respond-success",
+      "name": "Respond with Licenses",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1100, -100],
+      "notes": "Return license requirements"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: false, error: $json.message, code: $json.code } }}",
+        "options": {
+          "responseCode": 400,
+          "responseHeaders": {
+            "entries": [
+              { "name": "Content-Type", "value": "application/json" }
+            ]
+          }
+        }
+      },
+      "id": "respond-error",
+      "name": "Respond with Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [660, 100],
+      "notes": "Return validation error"
+    }
+  ],
+  "connections": {
+    "License Finder Webhook": {
+      "main": [[{ "node": "Extract Business Profile", "type": "main", "index": 0 }]]
+    },
+    "Extract Business Profile": {
+      "main": [[{ "node": "Validation Failed?", "type": "main", "index": 0 }]]
+    },
+    "Validation Failed?": {
+      "main": [
+        [{ "node": "Respond with Error", "type": "main", "index": 0 }],
+        [{ "node": "Query License Requirements", "type": "main", "index": 0 }]
+      ]
+    },
+    "Query License Requirements": {
+      "main": [[{ "node": "Process & Enrich Licenses", "type": "main", "index": 0 }]]
+    },
+    "Process & Enrich Licenses": {
+      "main": [[{ "node": "Respond with Licenses", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "tags": ["bizbot", "v4", "calculator"]
+}

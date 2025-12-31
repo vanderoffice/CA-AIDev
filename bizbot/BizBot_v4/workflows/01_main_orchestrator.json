@@ -1,0 +1,274 @@
+{
+  "name": "BizBot v4 - Main Orchestrator",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "start",
+      "name": "Start",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0],
+      "notes": "Triggered by chat webhook or form workflow"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract input from calling workflow\nconst input = $input.first().json;\n\nreturn {\n  json: {\n    sessionId: input.sessionId,\n    message: input.message,\n    businessContext: input.businessContext || {},\n    messageHistory: input.messageHistory || [],\n    queryTopic: input.queryTopic || null\n  }\n};"
+      },
+      "id": "extract-input",
+      "name": "Extract Input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 0],
+      "notes": "Parse input from calling workflow"
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-ada-002",
+        "options": {}
+      },
+      "id": "embed-query",
+      "name": "Embed User Query",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1,
+      "position": [440, 0],
+      "credentials": {
+        "openAiApi": {
+          "id": "openai_credential",
+          "name": "OpenAI API"
+        }
+      },
+      "notes": "Generate embedding for semantic search"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT\n  id,\n  content,\n  source_file,\n  topic,\n  (1 - (embedding <=> $1::vector)) as similarity\nFROM bizbot_chunks\nWHERE\n  verification_status != 'deprecated'\n  AND ($2::VARCHAR IS NULL OR topic = $2)\nORDER BY embedding <=> $1::vector\nLIMIT 5",
+        "options": {
+          "queryReplacement": "={{ '[' + $('Embed User Query').item.json.embedding.join(',') + ']' }},={{ $('Extract Input').item.json.queryTopic || null }}"
+        }
+      },
+      "id": "vector-search",
+      "name": "Vector Search (pgvector)",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [660, 0],
+      "credentials": {
+        "postgres": {
+          "id": "postgres_credential",
+          "name": "PostgreSQL Database"
+        }
+      },
+      "notes": "Semantic search with optional topic filter"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build context from retrieval results\nconst input = $('Extract Input').item.json;\nconst retrievedChunks = $('Vector Search (pgvector)').all();\n\n// Format retrieved context\nconst retrievedContext = retrievedChunks\n  .map(chunk => {\n    const c = chunk.json;\n    return `[Source: ${c.source_file}]\\n${c.content}`;\n  })\n  .join('\\n\\n---\\n\\n');\n\n// Format message history\nconst historyText = input.messageHistory\n  .slice(-5)  // Last 5 messages\n  .map(m => `${m.role}: ${m.content}`)\n  .join('\\n');\n\n// Format business context\nconst bc = input.businessContext;\nconst businessContextText = bc.industry ? `\n## Business Profile\n- Industry: ${bc.industry}${bc.subIndustry ? ' / ' + bc.subIndustry : ''}\n- Location: ${bc.city || 'Not specified'}${bc.county ? ', ' + bc.county + ' County' : ''}\n- Entity Type: ${bc.entityType || 'Not specified'}\n- Has Employees: ${bc.hasEmployees ? 'Yes' : 'No'}\n- Sells Tangible Goods: ${bc.sellsTangibleGoods ? 'Yes' : 'No'}\n- Home-Based: ${bc.isHomeBased ? 'Yes' : 'No'}\n${bc.specialSituations?.length > 0 ? '- Special Situations: ' + bc.specialSituations.join(', ') : ''}\n` : '';\n\n// Track sources for response\nconst sources = retrievedChunks.map(c => ({\n  file: c.json.source_file,\n  topic: c.json.topic,\n  similarity: c.json.similarity\n}));\n\nreturn {\n  json: {\n    message: input.message,\n    businessContextText,\n    historyText,\n    retrievedContext,\n    sources,\n    queryTopic: input.queryTopic\n  }\n};"
+      },
+      "id": "build-context",
+      "name": "Build Agent Context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 0],
+      "notes": "Combine retrieval, history, and business profile"
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "You are BizBot, California's AI business licensing assistant. Answer the user's question based on the provided context.\n\n{{ $json.businessContextText }}\n\n## Conversation History\n{{ $json.historyText }}\n\n## Retrieved Knowledge\n{{ $json.retrievedContext }}\n\n## User Question\n{{ $json.message }}\n\n## Response Guidelines\n1. Be direct and specific to California requirements\n2. Always include relevant agency names and URLs when applicable\n3. Note any location-specific variations (city/county differences)\n4. Recommend the correct sequence of steps\n5. If unsure, say so and suggest where to verify\n6. Use markdown formatting for readability\n7. Include estimated costs and timelines when known\n\n## Format\n- Use bullet points for lists\n- Bold agency names: **ABC**, **CDTFA**\n- Format links as: [Agency Name](https://url.gov)\n- Include a \"Next Steps\" section when applicable",
+        "hasOutputParser": false,
+        "options": {
+          "systemMessage": "You are BizBot, a knowledgeable California business licensing assistant. You help entrepreneurs understand what licenses, permits, and registrations they need to start and operate a business in California. You have access to current California regulations and always cite your sources. You are direct, helpful, and never give legal advice - you always recommend consulting professionals for complex situations.",
+          "maxIterations": 3
+        }
+      },
+      "id": "supervisor-agent",
+      "name": "Supervisor Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [1100, 0],
+      "notes": "Main AI agent with context injection"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4-turbo-preview",
+          "mode": "list"
+        },
+        "options": {
+          "temperature": 0.3,
+          "maxTokens": 2000
+        }
+      },
+      "id": "chat-model",
+      "name": "GPT-4 Turbo",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [1100, 200],
+      "credentials": {
+        "openAiApi": {
+          "id": "openai_credential",
+          "name": "OpenAI API"
+        }
+      },
+      "notes": "Primary LLM"
+    },
+    {
+      "parameters": {
+        "name": "Entity Formation Agent",
+        "description": "Use this tool for questions about business structure selection (LLC vs Corp vs Sole Prop), Secretary of State filings, DBA registration, and EIN acquisition. Phase 1 of the licensing process.",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "BizBot v4 - Entity Formation Agent"
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\"query\": \"string\", \"entityType\": \"string\", \"hasEmployees\": \"boolean\"}"
+      },
+      "id": "entity-agent-tool",
+      "name": "Entity Formation Agent Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.1,
+      "position": [1100, 350],
+      "notes": "Phase 1 specialist"
+    },
+    {
+      "parameters": {
+        "name": "State Licensing Agent",
+        "description": "Use this tool for state-level requirements: FTB registration, EDD employer account, CDTFA seller's permit, and state industry licenses. Phase 2 of the licensing process.",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "BizBot v4 - State Licensing Agent"
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\"query\": \"string\", \"industry\": \"string\", \"sellsTangibleGoods\": \"boolean\"}"
+      },
+      "id": "state-agent-tool",
+      "name": "State Licensing Agent Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.1,
+      "position": [1300, 350],
+      "notes": "Phase 2 specialist"
+    },
+    {
+      "parameters": {
+        "name": "Local Licensing Agent",
+        "description": "Use this tool for city and county requirements: business licenses, zoning clearance, home-based business permits, and local industry permits. Phase 3 of the licensing process.",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "BizBot v4 - Local Licensing Agent"
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\"query\": \"string\", \"city\": \"string\", \"county\": \"string\", \"isHomeBased\": \"boolean\"}"
+      },
+      "id": "local-agent-tool",
+      "name": "Local Licensing Agent Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.1,
+      "position": [1500, 350],
+      "notes": "Phase 3 specialist"
+    },
+    {
+      "parameters": {
+        "name": "Industry Specialist Agent",
+        "description": "Use this tool for industry-specific licensing: food service (health permits), cannabis (DCC), alcohol (ABC), construction (CSLB), healthcare, childcare, and professional services (DCA boards).",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "BizBot v4 - Industry Specialist Agent"
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\"query\": \"string\", \"industry\": \"string\", \"city\": \"string\"}"
+      },
+      "id": "industry-agent-tool",
+      "name": "Industry Specialist Agent Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.1,
+      "position": [1700, 350],
+      "notes": "Industry specialist"
+    },
+    {
+      "parameters": {
+        "name": "Renewal & Compliance Agent",
+        "description": "Use this tool for ongoing requirements: annual renewals, tax filing deadlines, compliance calendars, and penalty avoidance. Phase 4 of the licensing process.",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "BizBot v4 - Renewal & Compliance Agent"
+        },
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\"query\": \"string\", \"industry\": \"string\", \"entityType\": \"string\"}"
+      },
+      "id": "renewal-agent-tool",
+      "name": "Renewal & Compliance Agent Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.1,
+      "position": [1900, 350],
+      "notes": "Phase 4 specialist"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format output for response\nconst agentOutput = $('Supervisor Agent').item.json;\nconst sources = $('Build Agent Context').item.json.sources;\n\n// Determine which agent was primarily used\nlet agentUsed = 'general';\nconst output = (agentOutput.output || agentOutput.text || '').toLowerCase();\nif (output.includes('entity') || output.includes('llc') || output.includes('corporation') || output.includes('sos')) {\n  agentUsed = 'entity';\n} else if (output.includes('ftb') || output.includes('edd') || output.includes('cdtfa') || output.includes('state')) {\n  agentUsed = 'state';\n} else if (output.includes('city') || output.includes('county') || output.includes('zoning') || output.includes('local')) {\n  agentUsed = 'local';\n} else if (output.includes('restaurant') || output.includes('cannabis') || output.includes('abc') || output.includes('cslb') || output.includes('health permit')) {\n  agentUsed = 'industry';\n} else if (output.includes('renewal') || output.includes('annual') || output.includes('compliance')) {\n  agentUsed = 'renewal';\n}\n\nreturn {\n  json: {\n    response: agentOutput.output || agentOutput.text || 'I apologize, but I was unable to generate a response. Please try rephrasing your question.',\n    agentUsed: agentUsed,\n    sources: sources.slice(0, 3),  // Top 3 sources\n    tokensUsed: agentOutput.tokenUsage?.totalTokens || null\n  }\n};"
+      },
+      "id": "format-output",
+      "name": "Format Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1320, 0],
+      "notes": "Structure response for webhook"
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [[{ "node": "Extract Input", "type": "main", "index": 0 }]]
+    },
+    "Extract Input": {
+      "main": [[{ "node": "Embed User Query", "type": "main", "index": 0 }]]
+    },
+    "Embed User Query": {
+      "main": [[{ "node": "Vector Search (pgvector)", "type": "main", "index": 0 }]]
+    },
+    "Vector Search (pgvector)": {
+      "main": [[{ "node": "Build Agent Context", "type": "main", "index": 0 }]]
+    },
+    "Build Agent Context": {
+      "main": [[{ "node": "Supervisor Agent", "type": "main", "index": 0 }]]
+    },
+    "Supervisor Agent": {
+      "main": [[{ "node": "Format Output", "type": "main", "index": 0 }]]
+    },
+    "GPT-4 Turbo": {
+      "ai_languageModel": [[{ "node": "Supervisor Agent", "type": "ai_languageModel", "index": 0 }]]
+    },
+    "Entity Formation Agent Tool": {
+      "ai_tool": [[{ "node": "Supervisor Agent", "type": "ai_tool", "index": 0 }]]
+    },
+    "State Licensing Agent Tool": {
+      "ai_tool": [[{ "node": "Supervisor Agent", "type": "ai_tool", "index": 0 }]]
+    },
+    "Local Licensing Agent Tool": {
+      "ai_tool": [[{ "node": "Supervisor Agent", "type": "ai_tool", "index": 0 }]]
+    },
+    "Industry Specialist Agent Tool": {
+      "ai_tool": [[{ "node": "Supervisor Agent", "type": "ai_tool", "index": 0 }]]
+    },
+    "Renewal & Compliance Agent Tool": {
+      "ai_tool": [[{ "node": "Supervisor Agent", "type": "ai_tool", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "tags": ["bizbot", "v4", "orchestrator"]
+}

@@ -1,0 +1,299 @@
+{
+  "name": "BizBot v4 - Chat Webhook",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "bizbot-chat",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://vanderdev.net,http://localhost:3000"
+        }
+      },
+      "id": "webhook-trigger",
+      "name": "Chat Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "bizbot-chat-v4",
+      "notes": "Receives chat messages from frontend"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract and validate request\nconst body = $input.first().json.body || {};\n\n// Required fields\nconst sessionId = body.sessionId;\nconst message = body.message;\n\n// Optional business context\nconst businessContext = body.businessContext || {};\n\n// Validation\nif (!sessionId) {\n  return {\n    json: {\n      error: true,\n      message: 'sessionId is required',\n      code: 'MISSING_SESSION_ID'\n    }\n  };\n}\n\nif (!message || message.trim().length === 0) {\n  return {\n    json: {\n      error: true,\n      message: 'message is required',\n      code: 'MISSING_MESSAGE'\n    }\n  };\n}\n\n// Sanitize message (basic)\nconst sanitizedMessage = message.trim().slice(0, 2000);\n\nreturn {\n  json: {\n    sessionId,\n    message: sanitizedMessage,\n    businessContext: {\n      businessName: businessContext.businessName || null,\n      entityType: businessContext.entityType || null,\n      industry: businessContext.industry || null,\n      subIndustry: businessContext.subIndustry || null,\n      city: businessContext.city || null,\n      county: businessContext.county || null,\n      isNew: businessContext.isNew ?? true,\n      isHomeBased: businessContext.isHomeBased ?? false,\n      hasEmployees: businessContext.hasEmployees ?? false,\n      sellsTangibleGoods: businessContext.sellsTangibleGoods ?? false,\n      specialSituations: businessContext.specialSituations || []\n    },\n    timestamp: new Date().toISOString(),\n    userAgent: $input.first().json.headers?.['user-agent'] || null\n  }\n};"
+      },
+      "id": "extract-request",
+      "name": "Extract & Validate Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 0],
+      "notes": "Parse request body, validate required fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "" },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.error }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-validation",
+      "name": "Validation Failed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [440, 0],
+      "notes": "Route errors to error response"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM get_or_create_session($1::VARCHAR, 'web', $2::TEXT)",
+        "options": {
+          "queryReplacement": "={{ $json.sessionId }},={{ $json.userAgent }}"
+        }
+      },
+      "id": "get-session",
+      "name": "Get or Create Session",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [660, -100],
+      "credentials": {
+        "postgres": {
+          "id": "postgres_credential",
+          "name": "PostgreSQL Database"
+        }
+      },
+      "notes": "Load or create user session"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE bizbot_sessions SET business_profile = business_profile || $1::JSONB WHERE session_id = $2 RETURNING *",
+        "options": {
+          "queryReplacement": "={{ JSON.stringify($('Extract & Validate Request').item.json.businessContext) }},={{ $('Extract & Validate Request').item.json.sessionId }}"
+        }
+      },
+      "id": "update-profile",
+      "name": "Update Business Profile",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [880, -100],
+      "credentials": {
+        "postgres": {
+          "id": "postgres_credential",
+          "name": "PostgreSQL Database"
+        }
+      },
+      "notes": "Merge any new business context"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT role, content FROM bizbot_session_messages WHERE session_id = $1 ORDER BY created_at DESC LIMIT 10",
+        "options": {
+          "queryReplacement": "={{ $('Extract & Validate Request').item.json.sessionId }}"
+        }
+      },
+      "id": "get-history",
+      "name": "Get Conversation History",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [1100, -100],
+      "credentials": {
+        "postgres": {
+          "id": "postgres_credential",
+          "name": "PostgreSQL Database"
+        }
+      },
+      "notes": "Fetch recent message history"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare context for orchestrator\nconst request = $('Extract & Validate Request').item.json;\nconst session = $('Update Business Profile').item.json;\nconst historyRows = $('Get Conversation History').all();\n\n// Format conversation history (reverse to chronological)\nconst messageHistory = historyRows\n  .map(row => ({ role: row.json.role, content: row.json.content }))\n  .reverse();\n\n// Determine query topic for filtered retrieval\nlet queryTopic = null;\nconst msg = request.message.toLowerCase();\nif (msg.includes('llc') || msg.includes('corporation') || msg.includes('entity') || msg.includes('form')) {\n  queryTopic = 'entity';\n} else if (msg.includes('state') || msg.includes('ftb') || msg.includes('edd') || msg.includes('cdtfa') || msg.includes('tax')) {\n  queryTopic = 'state';\n} else if (msg.includes('city') || msg.includes('county') || msg.includes('local') || msg.includes('zoning')) {\n  queryTopic = 'local';\n} else if (msg.includes('restaurant') || msg.includes('food') || msg.includes('cannabis') || msg.includes('alcohol') || msg.includes('abc') || msg.includes('construction') || msg.includes('contractor')) {\n  queryTopic = 'industry';\n} else if (msg.includes('renew') || msg.includes('compliance') || msg.includes('annual')) {\n  queryTopic = 'renewal';\n}\n\nreturn {\n  json: {\n    sessionId: request.sessionId,\n    message: request.message,\n    businessContext: session.business_profile || request.businessContext,\n    messageHistory,\n    queryTopic,\n    timestamp: request.timestamp\n  }\n};"
+      },
+      "id": "prepare-context",
+      "name": "Prepare Orchestrator Context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1320, -100],
+      "notes": "Combine session, history, and request for orchestrator"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "BizBot v4 - Main Orchestrator"
+        },
+        "options": {}
+      },
+      "id": "call-orchestrator",
+      "name": "Call Main Orchestrator",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [1540, -100],
+      "notes": "Execute orchestrator workflow with full context"
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "schema": { "__rl": true, "value": "public", "mode": "list" },
+        "table": { "__rl": true, "value": "bizbot_session_messages", "mode": "list" },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "session_id": "={{ $('Prepare Orchestrator Context').item.json.sessionId }}",
+            "role": "user",
+            "content": "={{ $('Prepare Orchestrator Context').item.json.message }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "save-user-message",
+      "name": "Save User Message",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [1760, 0],
+      "credentials": {
+        "postgres": {
+          "id": "postgres_credential",
+          "name": "PostgreSQL Database"
+        }
+      },
+      "notes": "Log user message to history"
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "schema": { "__rl": true, "value": "public", "mode": "list" },
+        "table": { "__rl": true, "value": "bizbot_session_messages", "mode": "list" },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "session_id": "={{ $('Prepare Orchestrator Context').item.json.sessionId }}",
+            "role": "assistant",
+            "content": "={{ $('Call Main Orchestrator').item.json.response }}",
+            "agent_used": "={{ $('Call Main Orchestrator').item.json.agentUsed }}",
+            "retrieval_sources": "={{ JSON.stringify($('Call Main Orchestrator').item.json.sources || []) }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "save-assistant-message",
+      "name": "Save Assistant Message",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [1980, 0],
+      "credentials": {
+        "postgres": {
+          "id": "postgres_credential",
+          "name": "PostgreSQL Database"
+        }
+      },
+      "notes": "Log assistant response to history"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format successful response\nconst orchestratorResult = $('Call Main Orchestrator').item.json;\n\nreturn {\n  json: {\n    success: true,\n    response: orchestratorResult.response,\n    sources: orchestratorResult.sources || [],\n    agentUsed: orchestratorResult.agentUsed || 'general',\n    sessionId: $('Prepare Orchestrator Context').item.json.sessionId\n  }\n};"
+      },
+      "id": "format-response",
+      "name": "Format Success Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2200, 0],
+      "notes": "Structure final response"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              { "name": "Content-Type", "value": "application/json" }
+            ]
+          }
+        }
+      },
+      "id": "respond-success",
+      "name": "Respond with Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [2420, 0],
+      "notes": "Return successful response"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: false, error: $json.message, code: $json.code } }}",
+        "options": {
+          "responseCode": 400,
+          "responseHeaders": {
+            "entries": [
+              { "name": "Content-Type", "value": "application/json" }
+            ]
+          }
+        }
+      },
+      "id": "respond-error",
+      "name": "Respond with Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [660, 100],
+      "notes": "Return validation error"
+    }
+  ],
+  "connections": {
+    "Chat Webhook": {
+      "main": [[{ "node": "Extract & Validate Request", "type": "main", "index": 0 }]]
+    },
+    "Extract & Validate Request": {
+      "main": [[{ "node": "Validation Failed?", "type": "main", "index": 0 }]]
+    },
+    "Validation Failed?": {
+      "main": [
+        [{ "node": "Respond with Error", "type": "main", "index": 0 }],
+        [{ "node": "Get or Create Session", "type": "main", "index": 0 }]
+      ]
+    },
+    "Get or Create Session": {
+      "main": [[{ "node": "Update Business Profile", "type": "main", "index": 0 }]]
+    },
+    "Update Business Profile": {
+      "main": [[{ "node": "Get Conversation History", "type": "main", "index": 0 }]]
+    },
+    "Get Conversation History": {
+      "main": [[{ "node": "Prepare Orchestrator Context", "type": "main", "index": 0 }]]
+    },
+    "Prepare Orchestrator Context": {
+      "main": [[{ "node": "Call Main Orchestrator", "type": "main", "index": 0 }]]
+    },
+    "Call Main Orchestrator": {
+      "main": [[{ "node": "Save User Message", "type": "main", "index": 0 }]]
+    },
+    "Save User Message": {
+      "main": [[{ "node": "Save Assistant Message", "type": "main", "index": 0 }]]
+    },
+    "Save Assistant Message": {
+      "main": [[{ "node": "Format Success Response", "type": "main", "index": 0 }]]
+    },
+    "Format Success Response": {
+      "main": [[{ "node": "Respond with Success", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "tags": ["bizbot", "v4", "chat"]
+}
