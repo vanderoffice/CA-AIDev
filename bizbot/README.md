@@ -4,17 +4,28 @@
   <img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/>
   <img src="https://img.shields.io/badge/Agents-6-blue" alt="6 Agents"/>
   <img src="https://img.shields.io/badge/Coverage-482_Cities-informational" alt="Coverage"/>
-  <img src="https://img.shields.io/badge/Response_Time-2--5_min-green" alt="Response Time"/>
+  <img src="https://img.shields.io/badge/Interface-Chat-orange" alt="Chat Interface"/>
 </p>
 
 **A multi-agent AI system providing personalized California business licensing guidance.**
 
-Users submit a simple form about their business, and within 2-5 minutes receive a comprehensive PDF guide via email with step-by-step licensing instructions, costs, timelines, and direct links to applications.
+**Live at:** [vanderdev.net/bizbot](https://vanderdev.net/bizbot)
+
+## Interfaces
+
+| Mode | Description |
+|------|-------------|
+| **Guided Setup** | 4-step intake form for personalized context |
+| **Just Chat** | Direct conversation without intake |
+| **License Finder** | Interactive calculator showing required licenses |
+
+The chat interface supports full conversation history, business context injection, and markdown rendering with clickable links.
 
 ---
 
 ## Table of Contents
 
+- [Interfaces](#interfaces)
 - [Overview](#overview)
 - [How It Works](#how-it-works)
 - [Agent Architecture](#agent-architecture)
@@ -22,6 +33,7 @@ Users submit a simple form about their business, and within 2-5 minutes receive 
 - [Quick Start](#quick-start)
 - [Configuration](#configuration)
 - [Performance](#performance)
+- [Testing](#testing)
 - [Folder Structure](#folder-structure)
 
 ---
@@ -269,6 +281,24 @@ SMTP_PASSWORD=secure_password
 
 ---
 
+## Testing
+
+Test scenarios cover diverse business types, locations, and complexity levels.
+
+| Test | Scenario | Score |
+|------|----------|-------|
+| B1 | Restaurant with bar (San Francisco) | 8/10 |
+| B2 | Cannabis retail (Oakland) | 8/10 |
+| B3 | Marketing consulting scale-up (Irvine) | 8/10 |
+| B4 | General contractor (Riverside) | 9/10 |
+| B5 | Out-of-state tech expansion | 8/10 |
+
+**Average:** 8.2/10
+
+See [BizAssessment/test-results-2025-12-31.md](BizAssessment/test-results-2025-12-31.md) for detailed analysis.
+
+---
+
 ## Folder Structure
 
 ```
@@ -276,25 +306,19 @@ bizbot/
 ├── README.md                 # This file
 ├── BizBot_V1/               # Initial version (archived)
 │   ├── AGENTS.md            # Agent prompt definitions
-│   ├── entity-formation.md
-│   ├── state-licensing.md
-│   ├── local-licensing.md
-│   ├── industry-requirements.md
-│   └── renewal-compliance.md
+│   └── *.md                 # Phase-specific guidance
 ├── BizBot_v2/               # Second version (archived)
 │   ├── ARCHITECTURE.md
-│   ├── IMPLEMENTATION-GUIDE.md
-│   ├── *-agent.json         # Individual agent workflows
-│   └── CA-Business-License-Orchestrator.json
+│   └── *.json               # Workflow files
 ├── BizBot_v3/               # Current production version
 │   ├── README.md            # Detailed setup guide
 │   ├── ARCHITECTURE.md      # Technical architecture
-│   ├── PROJECT_SUMMARY.md   # Quick overview
 │   ├── database_schema.sql  # PostgreSQL schema
 │   └── *.json               # n8n workflow files
-└── BizAssessment/           # Model comparison research
+└── BizAssessment/           # Research & testing
     ├── README.md
     ├── model_comparison.md
+    ├── test-results-*.md    # Chat interface test results
     └── BizInterviews_*.md   # LLM evaluation results
 ```
 
