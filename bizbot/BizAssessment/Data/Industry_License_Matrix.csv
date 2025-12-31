@@ -1,0 +1,67 @@
+industry,sub_industry,license_name,agency,agency_acronym,required,sequence,estimated_cost_min,estimated_cost_max,timeline_days,statewide,notes,url
+Food Service,Restaurant,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,Check zoning FIRST before applying,https://calgold.ca.gov/
+Food Service,Restaurant,Health Permit,County Environmental Health,LOCAL,TRUE,2,200,800,21,FALSE,Required for all food handling,https://calgold.ca.gov/
+Food Service,Restaurant,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,Free - required if selling tangible goods,https://onlineservices.cdtfa.ca.gov/
+Food Service,Restaurant,ABC License (Type 41/47),Alcoholic Beverage Control,ABC,FALSE,4,1000,15000,90,TRUE,Only if serving alcohol,https://www.abc.ca.gov/licensing/license-types/
+Food Service,Restaurant,Food Handler Card,County Environmental Health,LOCAL,TRUE,2,10,30,1,FALSE,Required for all food workers,https://calgold.ca.gov/
+Food Service,Food Truck,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,May need multiple city licenses,https://calgold.ca.gov/
+Food Service,Food Truck,Health Permit (Mobile Food Facility),County Environmental Health,LOCAL,TRUE,2,300,1000,30,FALSE,Commissary agreement required,https://calgold.ca.gov/
+Food Service,Food Truck,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,Free - required for food sales,https://onlineservices.cdtfa.ca.gov/
+Food Service,Food Truck,Fire Department Permit,City/County Fire,LOCAL,TRUE,3,50,200,14,FALSE,For cooking equipment,https://calgold.ca.gov/
+Food Service,Catering,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,At business location,https://calgold.ca.gov/
+Food Service,Catering,Health Permit,County Environmental Health,LOCAL,TRUE,2,200,600,21,FALSE,Caterer permit type,https://calgold.ca.gov/
+Food Service,Catering,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,For food and beverage sales,https://onlineservices.cdtfa.ca.gov/
+Retail,General Retail,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,Required in all jurisdictions,https://calgold.ca.gov/
+Retail,General Retail,Seller's Permit,CDTFA,CDTFA,TRUE,2,0,0,1,TRUE,For all tangible goods sales,https://onlineservices.cdtfa.ca.gov/
+Retail,General Retail,Resale Certificate,CDTFA,CDTFA,FALSE,2,0,0,1,TRUE,For wholesale purchases tax-free,https://cdtfa.ca.gov/
+Retail,Tobacco Retail,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,Check if city allows tobacco sales,https://calgold.ca.gov/
+Retail,Tobacco Retail,Tobacco Retail License,CDTFA,CDTFA,TRUE,2,265,265,30,TRUE,Annual license required,https://cdtfa.ca.gov/taxes-and-fees/cigarette-and-tobacco-products/
+Retail,Tobacco Retail,Seller's Permit,CDTFA,CDTFA,TRUE,2,0,0,1,TRUE,For retail sales,https://onlineservices.cdtfa.ca.gov/
+Retail,Online Only,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,At business/home address,https://calgold.ca.gov/
+Retail,Online Only,Seller's Permit,CDTFA,CDTFA,TRUE,2,0,0,1,TRUE,If selling tangible goods,https://onlineservices.cdtfa.ca.gov/
+Professional Services,Accounting/CPA,CPA License,California Board of Accountancy,CBA,TRUE,1,250,500,60,TRUE,Requires exam + experience,https://www.dca.ca.gov/cba/
+Professional Services,Accounting/CPA,Business License,City/County,LOCAL,TRUE,2,50,500,14,FALSE,At office location,https://calgold.ca.gov/
+Professional Services,Real Estate,Real Estate License,Department of Real Estate,DRE,TRUE,1,245,395,90,TRUE,Salesperson or Broker,https://www.dre.ca.gov/
+Professional Services,Real Estate,Business License,City/County,LOCAL,TRUE,2,50,500,14,FALSE,At office location,https://calgold.ca.gov/
+Professional Services,Insurance,Insurance Producer License,Department of Insurance,CDI,TRUE,1,188,188,60,TRUE,Requires exam,https://www.insurance.ca.gov/
+Professional Services,Legal,State Bar License,State Bar of California,STATE BAR,TRUE,1,520,520,varies,TRUE,Requires bar exam,https://www.calbar.ca.gov/
+Professional Services,Legal,Business License,City/County,LOCAL,TRUE,2,50,500,14,FALSE,At office location,https://calgold.ca.gov/
+Construction,General Contractor,CSLB License,Contractors State License Board,CSLB,TRUE,1,450,600,90,TRUE,Class A/B/C license types,https://www.cslb.ca.gov/
+Construction,General Contractor,Business License,City/County,LOCAL,TRUE,2,50,500,14,FALSE,At business location,https://calgold.ca.gov/
+Construction,General Contractor,Contractor Bond,Surety Company,PRIVATE,TRUE,1,15000,25000,7,TRUE,$25K bond required,https://www.cslb.ca.gov/
+Construction,General Contractor,Workers Comp Insurance,Insurance Carrier,PRIVATE,TRUE,2,varies,varies,7,TRUE,Required if hiring,https://www.dir.ca.gov/dwc/
+Construction,Electrical,CSLB C-10 License,Contractors State License Board,CSLB,TRUE,1,450,600,90,TRUE,Electrical contractor,https://www.cslb.ca.gov/
+Construction,Plumbing,CSLB C-36 License,Contractors State License Board,CSLB,TRUE,1,450,600,90,TRUE,Plumbing contractor,https://www.cslb.ca.gov/
+Cannabis,Retail Dispensary,Local Cannabis Permit,City/County,LOCAL,TRUE,1,5000,50000,180,FALSE,MUST GET LOCAL FIRST,https://calgold.ca.gov/
+Cannabis,Retail Dispensary,DCC Retail License,Department of Cannabis Control,DCC,TRUE,2,1000,120000,180,TRUE,After local approval,https://cannabis.ca.gov/
+Cannabis,Retail Dispensary,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,For retail sales,https://onlineservices.cdtfa.ca.gov/
+Cannabis,Cultivation,Local Cannabis Permit,City/County,LOCAL,TRUE,1,5000,50000,180,FALSE,MUST GET LOCAL FIRST,https://calgold.ca.gov/
+Cannabis,Cultivation,DCC Cultivation License,Department of Cannabis Control,DCC,TRUE,2,1205,77905,180,TRUE,Multiple license types,https://cannabis.ca.gov/
+Alcohol,Bar/Nightclub,ABC Type 48 License,Alcoholic Beverage Control,ABC,TRUE,1,1000,15000,120,TRUE,On-sale general public premises,https://www.abc.ca.gov/licensing/license-types/
+Alcohol,Bar/Nightclub,Business License,City/County,LOCAL,TRUE,2,50,500,14,FALSE,At business location,https://calgold.ca.gov/
+Alcohol,Bar/Nightclub,Conditional Use Permit,City Planning,LOCAL,FALSE,0,500,5000,90,FALSE,Often required for alcohol,https://calgold.ca.gov/
+Alcohol,Liquor Store,ABC Type 21 License,Alcoholic Beverage Control,ABC,TRUE,1,1000,15000,120,TRUE,Off-sale general,https://www.abc.ca.gov/licensing/license-types/
+Alcohol,Brewery,ABC Type 01/23 License,Alcoholic Beverage Control,ABC,TRUE,1,1000,15000,120,TRUE,Manufacturer licenses,https://www.abc.ca.gov/licensing/license-types/
+Healthcare,Medical Practice,Medical License,Medical Board of California,MBC,TRUE,1,808,808,90,TRUE,Requires exam + credentials,https://www.mbc.ca.gov/
+Healthcare,Medical Practice,DEA Registration,DEA,FEDERAL,TRUE,2,888,888,30,FALSE,For prescribing controlled substances,https://www.deadiversion.usdoj.gov/
+Healthcare,Medical Practice,Business License,City/County,LOCAL,TRUE,3,50,500,14,FALSE,At practice location,https://calgold.ca.gov/
+Healthcare,Nursing,RN License,Board of Registered Nursing,BRN,TRUE,1,150,300,60,TRUE,Requires NCLEX,https://www.rn.ca.gov/
+Healthcare,Pharmacy,Pharmacist License,Board of Pharmacy,BOP,TRUE,1,380,380,60,TRUE,Individual license,https://www.pharmacy.ca.gov/
+Healthcare,Pharmacy,Pharmacy License,Board of Pharmacy,BOP,TRUE,2,520,520,90,TRUE,Facility license,https://www.pharmacy.ca.gov/
+Personal Services,Hair Salon,Cosmetology License,Board of Barbering and Cosmetology,BBC,TRUE,1,50,100,30,TRUE,Individual license,https://www.barbercosmo.ca.gov/
+Personal Services,Hair Salon,Establishment License,Board of Barbering and Cosmetology,BBC,TRUE,2,50,100,30,TRUE,For the salon location,https://www.barbercosmo.ca.gov/
+Personal Services,Hair Salon,Business License,City/County,LOCAL,TRUE,3,50,500,14,FALSE,At salon location,https://calgold.ca.gov/
+Personal Services,Barbershop,Barber License,Board of Barbering and Cosmetology,BBC,TRUE,1,50,100,30,TRUE,Individual license,https://www.barbercosmo.ca.gov/
+Personal Services,Barbershop,Establishment License,Board of Barbering and Cosmetology,BBC,TRUE,2,50,100,30,TRUE,For the shop location,https://www.barbercosmo.ca.gov/
+Personal Services,Tattoo/Piercing,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,Check local regulations,https://calgold.ca.gov/
+Personal Services,Tattoo/Piercing,Health Permit,County Environmental Health,LOCAL,TRUE,2,100,500,30,FALSE,Body art facility permit,https://calgold.ca.gov/
+Security,Security Guard,Guard Card,BSIS,BSIS,TRUE,1,80,80,30,TRUE,Individual registration,https://www.bsis.ca.gov/
+Security,Security Company,PPO License,BSIS,BSIS,TRUE,1,1585,1585,90,TRUE,Private Patrol Operator,https://www.bsis.ca.gov/
+Security,Private Investigator,PI License,BSIS,BSIS,TRUE,1,175,175,90,TRUE,Individual license,https://www.bsis.ca.gov/
+Transportation,Trucking,Motor Carrier Permit,DMV,DMV,TRUE,1,0,0,14,TRUE,For commercial vehicles,https://www.dmv.ca.gov/
+Transportation,Trucking,CARB Truck Registration,California Air Resources Board,CARB,TRUE,2,0,0,14,TRUE,Clean truck compliance,https://ww2.arb.ca.gov/
+Transportation,Rideshare/Taxi,TCP License,CPUC,CPUC,TRUE,1,1000,5000,90,TRUE,Transportation Charter-Party,https://www.cpuc.ca.gov/
+Manufacturing,General Manufacturing,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,At facility location,https://calgold.ca.gov/
+Manufacturing,General Manufacturing,Air Permit (ATC),Local Air District,LOCAL,TRUE,2,500,10000,120,FALSE,Authority to Construct,https://ww2.arb.ca.gov/california-air-districts
+Manufacturing,General Manufacturing,Industrial Stormwater Permit,Regional Water Board,SWRCB,TRUE,3,500,2000,60,TRUE,If industrial activity,https://www.waterboards.ca.gov/
+Manufacturing,Food Manufacturing,Processed Food Registration,CDPH,CDPH,TRUE,2,100,500,30,TRUE,For packaged foods,https://www.cdph.ca.gov/

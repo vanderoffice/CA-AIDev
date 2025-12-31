@@ -26,24 +26,115 @@ The research was conducted using multiple advanced AI models (ChatGPT, Claude So
 
 ```
 BizAssessment/
-├── README.md
-├── CA_Business_Licensing_URLs.xlsx              # Comprehensive URL database (228+ URLs)
-├── CA_Business_Licensing_URLs_Documentation.md  # Database documentation for AI agents
-├── Initial Assessment/
-│   ├── BizInterviews_CGPT5_1.md                 # ChatGPT-5 analysis (4 core agencies)
-│   ├── BizInterviews_Gemini3P.md                # Gemini 1.5 Pro research (6 agencies)
-│   ├── BizInterviews_PerplexDeep.md             # Perplexity research (15+ agencies)
-│   ├── BizInterviews_Sonnet4_5.md               # Claude Sonnet analysis (12+ agencies)
-│   └── model_comparison.md                       # Comparative evaluation of model outputs
-├── BizInterviews_SmallBiz_Def.md                # Small business definition framework
-├── ca_business_licensing_entities_clean.csv     # Structured agency data (CSV)
-├── ca_business_licensing_entities_clean.md      # Entity landscape summary
-├── CA_FTB_URL_Comprehensive_Guide.md            # FTB URL reference
-├── CA_DCA_Comprehensive_URL_Guide.md            # DCA boards/bureaus URL reference
-├── CA_DIR_Comprehensive_URL_Guide.md            # DIR URL reference
-├── california-edd-employer-resources.md         # EDD URL reference
-└── create_url_database.py                       # Utility: generates XLSX from research data
+├── README.md                                    # This file - navigation hub
+│
+├── research-protocol/                           # Quality & methodology tracking
+│   ├── README.md                               # Multi-model research methodology
+│   ├── run-log.csv                             # Per-run quality & cost tracking
+│   └── summaries/                              # Weekly progress reports
+│
+├── 01_Entity_Formation/                        # Business structure selection
+│   └── README.md                               # LLC vs Corp vs Sole Prop
+│
+├── 02_State_Registration/                      # State-level registrations
+│   └── README.md                               # FTB, EDD, CDTFA
+│
+├── 03_Local_Licensing/                         # City/county permits
+│   ├── README.md                               # Zoning, business licenses
+│   └── County_Variations/                      # Per-county specifics
+│
+├── 04_Industry_Requirements/                   # Industry-specific licensing
+│   ├── README.md                               # Overview
+│   ├── Food_Service/                           # Restaurant, food truck, catering
+│   ├── Retail/                                 # General retail, tobacco, online
+│   ├── Professional_Services/                  # DCA boards (38+)
+│   ├── Construction/                           # CSLB, building permits
+│   ├── Cannabis/                               # DCC, local approval
+│   ├── Alcohol/                                # ABC licenses
+│   ├── Manufacturing/                          # Environmental permits
+│   ├── Transportation/                         # DMV, CPUC
+│   ├── Healthcare/                             # Medical boards
+│   └── Personal_Services/                      # Salon, spa, etc.
+│
+├── 05_Environmental_Compliance/                # Environmental permits
+│   └── README.md                               # Water boards, air districts, DTSC
+│
+├── 06_Renewal_Compliance/                      # Ongoing obligations
+│   └── README.md                               # Annual filings, renewals
+│
+├── 07_Special_Situations/                      # Certifications & special cases
+│   └── README.md                               # DVBE, SB, MBE/WBE
+│
+├── Data/                                       # Structured data files
+│   ├── Fee_Schedules/                          # Per-agency fee CSVs
+│   └── Industry_License_Matrix.csv             # Cross-reference lookup
+│
+├── Initial Assessment/                          # Original multi-model research
+│   ├── BizInterviews_CGPT5_1.md                # ChatGPT-5 analysis
+│   ├── BizInterviews_Gemini3P.md               # Gemini 1.5 Pro research
+│   ├── BizInterviews_PerplexDeep.md            # Perplexity research
+│   ├── BizInterviews_Sonnet4_5.md              # Claude Sonnet analysis
+│   └── model_comparison.md                      # Model comparison
+│
+├── CA_Business_Licensing_URLs.xlsx              # URL database (228+ URLs)
+├── CA_Business_Licensing_URLs_Documentation.md  # Database documentation
+├── BizInterviews_SmallBiz_Def.md                # Small business definitions
+├── ca_business_licensing_entities_clean.csv     # Structured agency data
+├── url_validation_results.csv                   # Latest URL health check
+├── url_fixes_2025-12-31.md                      # URL corrections needed
+└── create_url_database.py                       # URL database generator
 ```
+
+## Quick Navigation
+
+| Section | Description | Status |
+|---------|-------------|--------|
+| [01_Entity_Formation](01_Entity_Formation/) | Business structure selection | **Complete** |
+| [02_State_Registration](02_State_Registration/) | FTB, EDD, CDTFA registration | In Progress |
+| [03_Local_Licensing](03_Local_Licensing/) | City/county permits, zoning | Planned |
+| [04_Industry_Requirements](04_Industry_Requirements/) | Industry-specific licenses | **P0 + P1 Complete** |
+| [05_Environmental_Compliance](05_Environmental_Compliance/) | Water, air, hazmat permits | Planned |
+| [06_Renewal_Compliance](06_Renewal_Compliance/) | Annual obligations | **Complete** |
+| [07_Special_Situations](07_Special_Situations/) | DVBE, certifications | **Complete** |
+
+### Industry Licensing Guides (P0 + P1 Complete)
+
+**P0 Industries (Core):**
+
+| Industry | Guide | Last Updated |
+|----------|-------|--------------|
+| Food Service | [Restaurant Licensing Guide](04_Industry_Requirements/Food_Service/Restaurant_Licensing_Guide.md) | 2025-12-31 |
+| Food Service | [Food Truck Licensing Guide](04_Industry_Requirements/Food_Service/Food_Truck_Licensing_Guide.md) | 2025-12-31 |
+| Retail | [General Retail Guide](04_Industry_Requirements/Retail/General_Retail_Guide.md) | 2025-12-31 |
+| Professional Services | [DCA Licensing Overview](04_Industry_Requirements/Professional_Services/DCA_Licensing_Overview.md) | 2025-12-31 |
+| Construction | [CSLB Licensing Guide](04_Industry_Requirements/Construction/CSLB_Licensing_Guide.md) | 2025-12-31 |
+
+**P1 Industries (Specialized):**
+
+| Industry | Guide | Last Updated |
+|----------|-------|--------------|
+| Healthcare | [Healthcare Licensing Guide](04_Industry_Requirements/Healthcare/Healthcare_Licensing_Guide.md) | 2025-12-31 |
+| Cannabis | [Cannabis Licensing Guide](04_Industry_Requirements/Cannabis/Cannabis_Licensing_Guide.md) | 2025-12-31 |
+| Alcohol | [ABC Licensing Guide](04_Industry_Requirements/Alcohol/ABC_Licensing_Guide.md) | 2025-12-31 |
+| Manufacturing | [Manufacturing Licensing Guide](04_Industry_Requirements/Manufacturing/Manufacturing_Licensing_Guide.md) | 2025-12-31 |
+
+### Decision Matrices
+
+| Document | Purpose |
+|----------|---------|
+| [Entity Types Decision Matrix](01_Entity_Formation/Entity_Types_Decision_Matrix.md) | LLC vs Corp vs Sole Prop comparison |
+| [Industry License Matrix (CSV)](Data/Industry_License_Matrix.csv) | Cross-reference: industry × required licenses |
+
+## Data Quality Dashboard
+
+| Metric | Value | Last Updated |
+|--------|-------|--------------|
+| Total URLs | 228 | 2025-12-31 |
+| Healthy URLs | 200 (87.7%) | 2025-12-31 |
+| URLs Needing Fixes | 28 | 2025-12-31 |
+| Agencies Covered | 83 | 2025-12-09 |
+| Research Runs | 10 | 2025-12-31 |
+| Estimated Research Cost | $0.07 | 2025-12-31 |
 
 **Quick Links:**
 - [URL Database (Excel)](CA_Business_Licensing_URLs.xlsx) — 228+ URLs across 83 agencies
@@ -306,4 +397,4 @@ Four models were selected to balance breadth and depth:
 
 ---
 
-**Last Updated**: December 2025 | **Status**: Active Research
+**Last Updated**: 2025-12-31 | **Status**: Phase 1 Complete (P0 + P1 Industries)

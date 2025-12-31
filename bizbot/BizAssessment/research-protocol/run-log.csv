@@ -1,0 +1,11 @@
+run_id,date,section,topic,model,provider,tokens_in,tokens_out,cost_usd,quality_score,elapsed_sec,notes,verified_by
+001,2025-12-31,Data,URL Validation,python-script,local,0,0,0.00,5,120,Validated 228 URLs - 87.7% healthy,manual
+002,2025-12-31,Industry,Food Service - Restaurant,sonar-pro,perplexity,500,15000,0.005,5,45,Comprehensive restaurant licensing guide with 60 citations,pending
+003,2025-12-31,Industry,Food Service - Food Truck,sonar-pro,perplexity,600,20000,0.006,5,60,Comprehensive food truck guide with 60 citations covering MFF permits CMFO HCD,pending
+004,2025-12-31,Industry,Retail - General,sonar-pro,perplexity,500,18000,0.005,5,55,Comprehensive retail guide with 60 citations covering seller permit ADA tobacco firearms,pending
+005,2025-12-31,Industry,Professional Services - Overview,sonar-pro,perplexity,600,22000,0.007,5,65,DCA overview with 60 citations covering CPAs real estate insurance attorneys engineers healthcare,pending
+006,2025-12-31,Industry,Construction - CSLB,sonar-pro,perplexity,550,21000,0.006,5,70,Comprehensive CSLB guide with 60 citations covering all 44 classifications bonds exams experience,pending
+007,2025-12-31,Industry,Healthcare - All Boards,sonar-pro,perplexity,800,28000,0.008,5,90,Comprehensive healthcare guide covering MBC BRN Pharmacy Dental Allied Health with 60 citations,pending
+008,2025-12-31,Industry,Cannabis - All License Types,sonar-pro,perplexity,700,25000,0.007,5,80,Comprehensive cannabis guide covering DCC dual approval METRC cultivation manufacturing retail distribution taxes,pending
+009,2025-12-31,Industry,Alcohol - ABC Licensing,sonar-pro,perplexity,800,30000,0.009,5,95,Comprehensive ABC guide covering 70+ license types on-sale off-sale manufacturing fees enforcement 2025 updates,pending
+010,2025-12-31,Industry,Manufacturing - All Permits,sonar-pro,perplexity,900,35000,0.010,5,110,Comprehensive manufacturing guide covering air quality CUPA Cal/OSHA fire permits environmental compliance,pending
