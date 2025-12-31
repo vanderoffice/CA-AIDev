@@ -214,4 +214,46 @@ Non-relatives providing license-exempt care must register with TrustLine:
 
 ---
 
+## Stage Transition Flowchart
+
+```mermaid
+flowchart TD
+    A[Apply for CalWORKs] --> B{Approved for<br/>cash aid?}
+
+    B -->|No| C[Not eligible for<br/>CalWORKs childcare<br/>See APP for income-eligible]
+    B -->|Yes| D[Stage 1 Begins<br/>County manages<br/>No family fees]
+
+    D --> E{Participating in<br/>work activities?}
+
+    E -->|No| F[Must participate to<br/>keep childcare]
+    E -->|Yes| G{Employment<br/>stable?}
+
+    G -->|No| H[Continue Stage 1]
+    G -->|Yes| I{Leaving<br/>cash aid?}
+
+    I -->|No| H
+    I -->|Yes| J[Transfer to Stage 2<br/>APP takes over<br/>Family fees may apply]
+
+    J --> K{24 months<br/>passed?}
+
+    K -->|No| L[Continue Stage 2]
+    K -->|Yes| M{Still income<br/>eligible?}
+
+    M -->|No| N[Subsidies end<br/>Explore other options]
+    M -->|Yes| O{Stage 3<br/>funding available?}
+
+    O -->|Yes| P[Transfer to Stage 3<br/>Long-term until child 13]
+    O -->|No| Q[May stay in Stage 2<br/>or join Stage 3 waitlist]
+
+    P --> R{Still eligible<br/>at recertification?}
+
+    R -->|Yes| S[Continue Stage 3]
+    R -->|No| N
+
+    click C "../Alternative_Payment_Programs/APP_Overview.md"
+    click N "../../03_Costs_and_Affordability/Employer_Benefits.md"
+```
+
+---
+
 *Sources: CDSS.ca.gov, Sacramento County CalWORKs Fact Sheet (Jan 2025), LA County DPSS, California Child Care Resource & Referral Network*
