@@ -1,14 +1,15 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-n8n_|_Multi--Agent_AI-FF6D5A?style=for-the-badge" alt="Platform"/>
   <img src="https://img.shields.io/badge/LLMs-GPT--4_|_Claude_|_Gemini-blueviolet?style=for-the-badge" alt="LLMs"/>
-  <img src="https://img.shields.io/badge/Status-Production_Ready-success?style=for-the-badge" alt="Status"/>
+  <img src="https://img.shields.io/badge/Status-Production-success?style=for-the-badge" alt="Status"/>
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License"/>
 </p>
 
 # CA-AIDev
 
 **Multi-agent AI systems and citizen-facing government services for California.**
 
-This repository contains AI-powered applications designed to streamline government services and improve citizen experiences. Each project uses multi-agent architectures with specialized AI agents that collaborate to deliver accurate, personalized guidance.
+This repository contains **production** AI-powered applications designed to streamline government services and improve citizen experiences. Each project uses multi-agent architectures with specialized AI agents that collaborate to deliver accurate, personalized guidance.
 
 ---
 
@@ -65,84 +66,52 @@ Multi-agent system providing personalized California business licensing guidance
 
 ---
 
-### CommentBot - Public Comment Analyzer
+### KiddoBot - California Childcare Navigator
 
-<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Agents-4-blue" alt="Agents"/>
+<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Programs-5+-blue" alt="Programs"/> <img src="https://img.shields.io/badge/Interface-Chat-orange" alt="Chat"/>
 
-Multi-agent system for analyzing public comments submitted to state government agencies during regulatory proceedings.
+**Live at:** [vanderdev.net/kiddobot](https://vanderdev.net/kiddobot)
+
+An AI assistant helping California families navigate childcare subsidies, find providers, and complete applications.
 
 **Capabilities:**
-- Legal argument analysis and citation validation
-- Scientific claim evaluation and evidence assessment
-- Sentiment and urgency detection
-- Automated response recommendations
+- **Guided Setup** - 4-step intake form collecting family context
+- **Just Chat** - Direct conversation without intake
+- **Subsidy Calculator** - Interactive eligibility checker
 
-**Agents:**
-| Agent | Role | Model |
-|-------|------|-------|
-| Main Supervisor | Routes and synthesizes | GPT-4o |
-| Legal Agent | Regulatory/statutory analysis | Claude 3.5 Sonnet |
-| Scientific Agent | Evidence evaluation | Gemini 1.5 Pro |
-| Database Writer | Structured storage | - |
+**Programs Covered:**
+| Program | Ages |
+|---------|------|
+| CalWORKs Childcare | 0-12 |
+| CCDF | 0-12 |
+| Regional Center (Early Start) | 0-3 |
+| Head Start | 3-5 |
+| State Preschool (CSPP) | 3-4 |
 
-[View CommentBot Documentation](./commentbot/)
+[View KiddoBot Documentation](./kiddobot/)
 
 ---
 
-### WiseBot - Knowledge Ingestion System
+### WaterBot - Water Boards RAG Chatbot
 
-<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Type-RAG_Pipeline-blue" alt="RAG Pipeline"/>
+<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Type-RAG_Chatbot-blue" alt="RAG"/> <img src="https://img.shields.io/badge/React-18.2-61DAFB" alt="React"/>
 
-Comprehensive n8n-based document ingestion and retrieval system that processes email attachments, extracts content, generates embeddings, and provides intelligent knowledge retrieval via a unified gateway.
-
-**Capabilities:**
-- Multi-format processing (PDF, DOCX, MD, MP3, images, CSV, XLSX)
-- Audio transcription via Whisper
-- Image OCR + Vision AI analysis
-- Smart deduplication (hash + embedding similarity)
-- Semantic search with pgvector
-- Unified Knowledge Gateway API
-
-**Workflows:**
-| Workflow | Purpose |
-|----------|---------|
-| Email Ingestion | Monitors Gmail for documents |
-| Parse & Normalize | Extracts content from all formats |
-| Dedup & Hash | Prevents duplicate processing |
-| Embed & Store | Generates and stores embeddings |
-| Knowledge Gateway | RAG retrieval API |
-| Ops Dashboard | Health monitoring and alerts |
-
-[View WiseBot Documentation](./wisebot/)
-
----
-
-### ADABot - Accessibility Compliance Guide
-
-<img src="https://img.shields.io/badge/Status-Documentation-yellow" alt="Documentation"/>
-
-Guide and assessment system for ADA (Americans with Disabilities Act) compliance, focusing on WCAG 2.2 Level AA requirements for PDF documents.
+AI-powered assistant helping users navigate California's water regulations, permits, and funding programs. Built with React + Vite + Tailwind CSS.
 
 **Features:**
-- WCAG 2.2 compliance checklists
-- PDF-specific accessibility requirements
-- Automated testing tool recommendations
-- California web standards alignment
+| Feature | Status | Description |
+|---------|--------|-------------|
+| **Ask WaterBot** | ✅ Live | RAG-powered chat with source citations |
+| **Permit Finder** | 🔜 Coming | Decision tree tool for permit requirements |
+| **Funding Navigator** | 🔜 Coming | Eligibility checker for water infrastructure grants |
 
-[View ADABot Documentation](./adabot/)
+**Serves:**
+- Small business owners needing water discharge permits
+- Environmental organizations seeking restoration funding
+- Agricultural operations managing compliance requirements
+- Local governments pursuing infrastructure financing
 
----
-
-### AskCA - Digital Services Research
-
-<img src="https://img.shields.io/badge/Status-Research-informational" alt="Research"/>
-
-Research and documentation for California government digital services strategy, including analysis of essential citizen services.
-
-**Includes:**
-- **Domain Crawler**: Production-ready Scrapy-based crawler for discovering California state government endpoints (*.ca.gov)
-
-[View AskCA Documentation](./askca/)
+[View WaterBot Documentation](./waterbot/)
 
 ---
 
@@ -191,12 +160,11 @@ All production systems follow a consistent multi-agent pattern:
 | Component | Technology | Purpose |
 |-----------|------------|---------|
 | **Workflow Engine** | n8n | Visual workflow automation, agent orchestration |
-| **AI Models** | GPT-4/4o, Claude 3.5 Sonnet, Gemini 1.5 Pro | Multi-LLM support for task-specific routing |
-| **Vector Database** | Qdrant / Supabase pgvector | Knowledge base semantic search |
+| **AI Models** | Claude Sonnet, GPT-4o | Multi-LLM support for task-specific routing |
+| **Vector Database** | Supabase pgvector | Knowledge base semantic search (RAG) |
 | **Relational Database** | PostgreSQL | Structured data, analytics, logging |
-| **Graph Database** | Neo4j | Relationship mapping (Domain Crawler) |
-| **Queue** | Redis | Distributed task management |
-| **Forms** | Tally + Google Sheets | User input collection |
+| **Frontend** | React + Vite + Tailwind CSS | Chat interfaces (KiddoBot, WaterBot) |
+| **Forms** | Tally + Google Sheets | User input collection (BizBot) |
 | **Output** | PDF generation, SMTP email | Citizen delivery |
 
 ---
@@ -238,39 +206,35 @@ docker compose up -d
 ```
 CA-AIDev/
 ├── README.md              # This file
-├── adabot/                # ADA compliance guidance
-│   ├── README.md
-│   ├── wcag-checklist.md
-│   ├── postgres-schema.md
-│   └── n8n-workflow-guide.md
-├── askca/                 # Digital services research
-│   ├── README.md
-│   └── domain-crawler/    # Government endpoint crawler
+├── CLAUDE.md              # AI assistant context
 ├── bizbot/                # Business licensing multi-agent system
 │   ├── README.md
 │   ├── BizBot_V1/         # Initial version
 │   ├── BizBot_v2/         # Second iteration
 │   ├── BizBot_v3/         # Current production version
 │   └── BizAssessment/     # Model comparison research
-├── commentbot/            # Public comment analysis system
+├── kiddobot/              # Childcare navigation chatbot
 │   ├── README.md
-│   ├── *-workflow.json    # n8n workflow definitions
-│   ├── database-schema.sql
-│   └── sample-comments.json
-└── wisebot/               # Knowledge ingestion system
-    ├── README_WiseBot_Ingestion.md
-    ├── wisebot_knowledge_schema.sql
-    └── wisebot_*_n8n.json # n8n workflow definitions
+│   ├── KIDDOBOT-IMPROVEMENTS.md
+│   └── ChildCareAssessment/  # Assessment tools
+└── waterbot/              # Water Boards RAG chatbot
+    ├── README.md
+    ├── src/               # React frontend
+    ├── knowledge/         # RAG knowledge base
+    └── permit-decision-tree.json
 ```
+
+> **Archived Projects:** ADABot, AskCA, CommentBot, and WiseBot have been moved to `~/Documents/GitHub/ARCHIVE/CA-AIDev-Deprecated/` as they were planning/research artifacts that were not deployed to production.
 
 ---
 
 ## Performance Metrics
 
-| Project | Processing Time | Daily Capacity | Cost per Request |
-|---------|-----------------|----------------|------------------|
-| BizBot | 2-5 minutes | 1,000-2,000 | ~$0.36 |
-| CommentBot | 30-60 seconds | 5,000+ | ~$0.15 |
+| Project | Processing Time | Interface | Cost per Request |
+|---------|-----------------|-----------|------------------|
+| BizBot | 2-5 minutes | Form → Email PDF | ~$0.36 |
+| KiddoBot | Real-time | Chat | ~$0.05 |
+| WaterBot | Real-time | Chat | ~$0.05 |
 
 ---
 
@@ -299,7 +263,7 @@ Please review individual project READMEs for specific contribution guidelines.
 
 ## License
 
-Projects developed for California state government use. Contact repository maintainers for usage guidelines.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
