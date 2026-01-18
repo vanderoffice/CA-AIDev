@@ -128,6 +128,7 @@ kiddobot/
 ## Related
 
 - [BizBot](../bizbot/) - California business licensing assistant
+- [WaterBot](../waterbot/) - California Water Boards RAG chatbot
 - [Research Methodology](ChildCareAssessment/research-protocol/README.md) - Multi-model validation process
 
 ---

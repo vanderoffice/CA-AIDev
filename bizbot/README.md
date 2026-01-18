@@ -152,11 +152,30 @@ BizBot automates this research by using specialized AI agents that work together
 |---------|--------|-------------|
 | **V1** | Archived | Initial agent prompts and knowledge base |
 | **V2** | Archived | Multi-agent architecture, separate workflows |
-| **V3** | **Current** | Production version with 6 workflows, vector DB |
+| **V3** | Archived | Multi-agent form-to-PDF system |
+| **BizBot Pro** | **Current** | Production RAG chat (`/webhook/bizbot-pro`) |
+| **License Finder** | **Current** | Interactive calculator (`/webhook/bizbot-license-finder`) |
 
-### Current Version (V3)
+### Current Production
 
-Located in `BizBot_v3/`:
+Two active n8n workflows power the live site:
+
+| Workflow | Webhook | Description |
+|----------|---------|-------------|
+| BizBot Pro | `/bizbot-pro` | RAG-powered chat with Supabase pgvector |
+| License Finder | `/bizbot-license-finder` | Interactive requirements calculator |
+
+| Feature | Description |
+|---------|-------------|
+| Vector DB | PostgreSQL pgvector (via Supabase) |
+| Chat Mode | Interactive chat + Form intake |
+| Session Mgmt | Context-aware conversations |
+| License Finder | Interactive requirements calculator |
+| Source Citations | Inline citations with links |
+
+### Version 3 (Archived)
+
+Located in `BizBot_v3/` - Multi-agent form-to-PDF system:
 
 | File | Nodes | Description |
 |------|-------|-------------|
@@ -175,7 +194,7 @@ Located in `BizBot_v3/`:
 
 - n8n instance (self-hosted or cloud)
 - PostgreSQL database
-- Qdrant vector database (for knowledge base)
+- Supabase pgvector (for knowledge base)
 - OpenAI and/or Anthropic API keys
 - SMTP credentials
 - Tally account (for intake form)
@@ -234,10 +253,9 @@ POSTGRES_PASSWORD=secure_password
 OPENAI_API_KEY=sk-...
 ANTHROPIC_API_KEY=sk-ant-...
 
-# Vector Database
-QDRANT_HOST=localhost
-QDRANT_PORT=6333
-QDRANT_COLLECTION=ca_licensing
+# Vector Database (Supabase pgvector)
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_KEY=your-service-role-key
 
 # Email
 SMTP_HOST=smtp.example.com
@@ -340,7 +358,8 @@ The generated PDF includes:
 
 ## Related Resources
 
-- [CommentBot](../commentbot/) - Similar multi-agent architecture
+- [KiddoBot](../kiddobot/) - California childcare navigation assistant
+- [WaterBot](../waterbot/) - California Water Boards RAG chatbot
 - [CA-DevStacks](https://github.com/vanderoffice/CA-DevStacks) - Development infrastructure
 - [n8n Documentation](https://docs.n8n.io/)
 

@@ -12,19 +12,29 @@ Accurate, well-cited answers to "Do I need a permit?" and "Am I eligible for fun
 
 ### Validated
 
-(None yet — ship to validate)
+- [x] n8n workflows deployed and functional (4 workflows)
+- [x] Supabase schema with pgvector extension
+- [x] React frontend component (WaterBot.jsx)
+- [x] Knowledge base created (permits, funding, compliance, water quality)
+- [x] Chunking and embedding pipeline functional
 
 ### Active
 
-- [ ] RAG-powered chat with source citations (cosine similarity > 0.70, Top-K: 8)
-- [ ] "Do I Need a Permit?" decision tree tool (Permit Finder)
-- [ ] Funding Navigator eligibility checker
-- [ ] Knowledge base covering all 9 Regional Water Quality Control Boards
-- [ ] Permit type documentation (NPDES, WDR, 401 Certification, Water Rights, Habitat Restoration)
-- [ ] Funding program documentation including Proposition 4 (2024) — $10B bond
+- [x] RAG-powered chat with source citations (cosine similarity > 0.70, Top-K: 8)
+- [x] "Do I Need a Permit?" backend workflow (`/webhook/waterbot-permits`)
+- [x] Funding Navigator backend workflow (`/webhook/waterbot-funding`)
+- [x] Knowledge base covering all 9 Regional Water Quality Control Boards
+- [x] Permit type documentation (NPDES, WDR, 401 Certification, Water Rights, Habitat Restoration)
+- [x] Funding program documentation including Proposition 4 (2024) — $10B bond
 - [ ] Multi-model research validation matching KiddoBot quality (4.8/5.0 standard)
 - [ ] IntakeForm questionnaire (5 steps: Project Type, Location, Discharge, Water Needs, Applicant)
-- [ ] Disclaimer on all responses (not legal advice, contact Regional Board)
+- [x] Disclaimer on all responses (not legal advice, contact Regional Board)
+
+### Pending Deployment
+
+- [ ] Frontend integration with vanderdev.net
+- [ ] Route added to App.jsx
+- [ ] NavItem added to Sidebar.jsx
 
 ### Out of Scope
 
@@ -77,4 +87,4 @@ Accurate, well-cited answers to "Do I need a permit?" and "Am I eligible for fun
 | Knowledge base in separate repo (CA-AIDev/waterbot-knowledge) | Separation of concerns, easier research collaboration | — Pending |
 
 ---
-*Last updated: 2026-01-15 after initialization*
+*Last updated: 2026-01-17 — synced with production state*

@@ -101,9 +101,11 @@ AI-powered assistant helping users navigate California's water regulations, perm
 **Features:**
 | Feature | Status | Description |
 |---------|--------|-------------|
-| **Ask WaterBot** | ✅ Live | RAG-powered chat with source citations |
-| **Permit Finder** | 🔜 Coming | Decision tree tool for permit requirements |
-| **Funding Navigator** | 🔜 Coming | Eligibility checker for water infrastructure grants |
+| **Ask WaterBot** | ✅ Backend Ready | RAG-powered chat with source citations |
+| **Permit Finder** | ✅ Backend Ready | Decision tree tool for permit requirements |
+| **Funding Navigator** | ✅ Backend Ready | Eligibility checker for water infrastructure grants |
+
+> All three n8n backend workflows are deployed and active. Frontend integration pending.
 
 **Serves:**
 - Small business owners needing water discharge permits
@@ -209,10 +211,11 @@ CA-AIDev/
 ├── CLAUDE.md              # AI assistant context
 ├── bizbot/                # Business licensing multi-agent system
 │   ├── README.md
-│   ├── BizBot_V1/         # Initial version
-│   ├── BizBot_v2/         # Second iteration
-│   ├── BizBot_v3/         # Current production version
+│   ├── BizBot_V1/         # Archived - initial version
+│   ├── BizBot_v2/         # Archived - second iteration
+│   ├── BizBot_v3/         # Archived - multi-agent form-to-PDF
 │   └── BizAssessment/     # Model comparison research
+│   # Current: BizBot Pro (/webhook/bizbot-pro) + License Finder
 ├── kiddobot/              # Childcare navigation chatbot
 │   ├── README.md
 │   ├── KIDDOBOT-IMPROVEMENTS.md

@@ -7,7 +7,7 @@ WaterBot is an AI-powered assistant that helps users navigate California's compl
 ![React](https://img.shields.io/badge/React-18.2-61DAFB?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?logo=vite)
 ![Tailwind](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss)
-![License](https://img.shields.io/badge/License-Private-red)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 ---
 
@@ -23,11 +23,13 @@ WaterBot serves as a digital guide to California's State Water Resources Control
 
 ### Key Features
 
-| Feature | Status | Description |
-|---------|--------|-------------|
-| **Ask WaterBot** | ✅ Live | RAG-powered chat with source citations |
-| **Permit Finder** | 🔜 Coming | Decision tree tool for permit requirements |
-| **Funding Navigator** | 🔜 Coming | Eligibility checker for water infrastructure grants |
+| Feature | Status | Webhook | Description |
+|---------|--------|---------|-------------|
+| **Ask WaterBot** | ✅ Backend Ready | `/waterbot` | RAG-powered chat with source citations |
+| **Permit Finder** | ✅ Backend Ready | `/waterbot-permits` | Decision tree tool for permit requirements |
+| **Funding Navigator** | ✅ Backend Ready | `/waterbot-funding` | Eligibility checker for water infrastructure grants |
+
+> **Note:** All three backend workflows are deployed and active. Frontend integration with vanderdev.net is pending.
 
 ---
 
@@ -336,9 +338,9 @@ The chat interface provides:
 | 3. Permits | ✅ Complete | NPDES, WDR, 401, Water Rights docs |
 | 4. Funding | ✅ Complete | SRF, grants, federal programs |
 | 5. Additional Topics | ✅ Complete | Compliance, water quality, climate |
-| 6. Tools | 🔜 Planned | Permit Finder, Funding Navigator |
+| 6. Tools Backend | ✅ Complete | Permit Finder & Funding Navigator workflows |
 | 7. Vector DB Tuning | 🔜 Planned | Accuracy optimization |
-| 8. QA/Deploy | 🔜 Planned | Final testing, production launch |
+| 8. Frontend Deploy | 🔜 Pending | Integration with vanderdev.net |
 
 ---
 
@@ -356,7 +358,7 @@ All bots share the same architecture pattern for consistency and maintainability
 
 ## 📄 License
 
-This project is private and proprietary to vanderdev.net.
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
 
 ---
 
