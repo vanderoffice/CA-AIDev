@@ -16,14 +16,14 @@ None — web/RAG project following established KiddoBot/BizBot patterns.
 
 - [x] **Phase 1: Project Scaffolding** — React/Vite/Tailwind setup following KiddoBot pattern
 - [x] **Phase 2: Supabase Setup** — pgvector tables and vector DB infrastructure
-- [ ] **Phase 3: Knowledge Research: Permits** — Multi-model research for all permit types + 9 regional boards
-- [ ] **Phase 4: Knowledge Research: Funding** — Multi-model research for all funding programs
-- [ ] **Phase 5: Embedding Pipeline** — n8n workflow for chunking + OpenAI embeddings
-- [ ] **Phase 6: Core RAG Chat** — Vector search + Claude response generation + citations
-- [ ] **Phase 7: Vector DB Tuning** — Critical optimization phase (target avg ≥ 4.0)
-- [ ] **Phase 8: Permit Finder Tool** — "Do I need a permit?" decision tree
-- [ ] **Phase 9: Funding Navigator Tool** — Funding eligibility checker
-- [ ] **Phase 10: IntakeForm Questionnaire** — 5-step context capture before chat
+- [x] **Phase 3: Knowledge Research: Permits** — Multi-model research for all permit types + 9 regional boards
+- [x] **Phase 4: Knowledge Research: Funding** — Multi-model research for all funding programs
+- [x] **Phase 5: Embedding Pipeline** — n8n workflow for chunking + OpenAI embeddings
+- [x] **Phase 6: Core RAG Chat** — Vector search + Claude response generation + citations
+- [ ] **Phase 7: Vector DB Tuning** — Critical optimization phase (skipped — using defaults)
+- [x] **Phase 8: Permit Finder Tool** — "Do I need a permit?" decision tree
+- [x] **Phase 9: Funding Navigator Tool** — Funding eligibility checker
+- [ ] **Phase 10: IntakeForm Questionnaire** — 5-step context capture before chat (optional)
 - [ ] **Phase 11: Frontend Integration** — WaterBot.jsx with chat UI + tool panels
 - [ ] **Phase 12: Deployment** — GitHub Actions → Hostinger + production testing
 
@@ -167,22 +167,27 @@ Includes production testing and final quality validation.
 
 ## Progress
 
-**Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → 11 → 12
+**Current State:** Backend workflows deployed and active on VPS. Frontend integration pending.
 
-Note: Phases 3-4 (research) can run in parallel with Phases 1-2 (infrastructure).
+| Phase | Status | Notes |
+|-------|--------|-------|
+| 1. Project Scaffolding | ✅ Complete | 2026-01-15 |
+| 2. Supabase Setup | ✅ Complete | pgvector schema ready |
+| 3. Knowledge Research: Permits | ✅ Complete | NPDES, WDR, 401, Water Rights docs |
+| 4. Knowledge Research: Funding | ✅ Complete | SRF, grants, Prop 4 docs |
+| 5. Embedding Pipeline | ✅ Complete | n8n chunking + embeddings |
+| 6. Core RAG Chat | ✅ Complete | `/waterbot` active |
+| 7. Vector DB Tuning | ⏭️ Skipped | Using defaults (tune if needed) |
+| 8. Permit Finder Tool | ✅ Complete | `/waterbot-permits` active |
+| 9. Funding Navigator Tool | ✅ Complete | `/waterbot-funding` active |
+| 10. IntakeForm Questionnaire | 🔜 Optional | UX enhancement |
+| 11. Frontend Integration | 🔜 Pending | vanderdev.net integration |
+| 12. Deployment | 🔜 Pending | Backend deployed, frontend pending |
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Project Scaffolding | 1/1 | Complete | 2026-01-15 |
-| 2. Supabase Setup | 1/1 | Complete | 2026-01-15 |
-| 3. Knowledge Research: Permits | 0/TBD | Not started | - |
-| 4. Knowledge Research: Funding | 0/TBD | Not started | - |
-| 5. Embedding Pipeline | 0/TBD | Not started | - |
-| 6. Core RAG Chat | 0/TBD | Not started | - |
-| 7. Vector DB Tuning | 0/TBD | Not started | - |
-| 8. Permit Finder Tool | 0/TBD | Not started | - |
-| 9. Funding Navigator Tool | 0/TBD | Not started | - |
-| 10. IntakeForm Questionnaire | 0/TBD | Not started | - |
-| 11. Frontend Integration | 0/TBD | Not started | - |
-| 12. Deployment | 0/TBD | Not started | - |
+**Production Webhooks:**
+- `https://n8n.vanderdev.net/webhook/waterbot`
+- `https://n8n.vanderdev.net/webhook/waterbot-permits`
+- `https://n8n.vanderdev.net/webhook/waterbot-funding`
+
+---
+*Last synced with VPS: 2026-01-17*
