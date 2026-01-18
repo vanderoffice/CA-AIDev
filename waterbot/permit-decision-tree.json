@@ -1,0 +1,2352 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-16",
+  "metadata": {
+    "title": "California Water Permit Finder",
+    "description": "Decision tree to help identify which California water permits you may need",
+    "disclaimer": "This tool provides general guidance only. Always consult with your Regional Water Board for specific requirements."
+  },
+  "nodes": {
+    "start": {
+      "id": "start",
+      "type": "question",
+      "title": "What type of project or activity are you planning?",
+      "helpText": "Select the category that best describes your project. If your project spans multiple categories, you may need multiple permits.",
+      "options": [
+        {
+          "id": "construction",
+          "label": "Construction or Land Development",
+          "description": "Building projects, grading, excavation, demolition",
+          "icon": "construction",
+          "next": "construction_size"
+        },
+        {
+          "id": "industrial",
+          "label": "Industrial or Manufacturing",
+          "description": "Factories, processing plants, warehouses with industrial operations",
+          "icon": "factory",
+          "next": "industrial_discharge"
+        },
+        {
+          "id": "agriculture",
+          "label": "Agriculture or Farming",
+          "description": "Crops, livestock, wineries, dairies, cannabis cultivation",
+          "icon": "agriculture",
+          "next": "ag_type"
+        },
+        {
+          "id": "wastewater",
+          "label": "Wastewater Treatment or Discharge",
+          "description": "Sewage treatment, septic systems, industrial process water",
+          "icon": "water_drop",
+          "next": "ww_destination"
+        },
+        {
+          "id": "restoration",
+          "label": "Habitat Restoration",
+          "description": "Stream restoration, wetland enhancement, invasive species removal",
+          "icon": "eco",
+          "next": "restoration_size"
+        },
+        {
+          "id": "water_use",
+          "label": "Water Diversion or Storage",
+          "description": "Pumping from streams/rivers, reservoirs, wells, water storage",
+          "icon": "waves",
+          "next": "water_source"
+        },
+        {
+          "id": "municipal",
+          "label": "Municipal or Government Operations",
+          "description": "City/county stormwater systems, public facilities",
+          "icon": "account_balance",
+          "next": "municipal_type"
+        },
+        {
+          "id": "dredge_fill",
+          "label": "Dredging or Fill in Waterways",
+          "description": "Placing fill in wetlands, streams, or coastal waters; dredging channels",
+          "icon": "landscape",
+          "next": "dredge_federal"
+        }
+      ]
+    },
+
+    "construction_size": {
+      "id": "construction_size",
+      "type": "question",
+      "title": "How much land will be disturbed?",
+      "helpText": "Include all clearing, grading, excavation, and demolition activities. Projects that are part of a larger development are considered together.",
+      "options": [
+        {
+          "id": "less_than_1_acre",
+          "label": "Less than 1 acre",
+          "description": "Small projects, single lots, minor grading",
+          "next": "construction_small_common_plan"
+        },
+        {
+          "id": "1_to_5_acres",
+          "label": "1 to 5 acres",
+          "description": "Medium residential, small commercial",
+          "next": "construction_surface_discharge"
+        },
+        {
+          "id": "more_than_5_acres",
+          "label": "More than 5 acres",
+          "description": "Large developments, subdivisions, major commercial",
+          "next": "construction_surface_discharge"
+        }
+      ]
+    },
+
+    "construction_small_common_plan": {
+      "id": "construction_small_common_plan",
+      "type": "question",
+      "title": "Is this part of a larger common plan of development?",
+      "helpText": "If your project is part of a phased development or subdivision that totals 1+ acres, the entire plan counts toward the threshold.",
+      "options": [
+        {
+          "id": "yes_common_plan",
+          "label": "Yes, total plan is 1+ acres",
+          "description": "Part of subdivision, phased project, or multiple lots",
+          "next": "construction_surface_discharge"
+        },
+        {
+          "id": "no_standalone",
+          "label": "No, standalone small project",
+          "description": "Truly independent project under 1 acre",
+          "next": "construction_waterway"
+        }
+      ]
+    },
+
+    "construction_waterway": {
+      "id": "construction_waterway",
+      "type": "question",
+      "title": "Will your project involve work in or near waterways?",
+      "helpText": "This includes streams, wetlands, drainage channels, or flood control facilities.",
+      "options": [
+        {
+          "id": "yes_waterway",
+          "label": "Yes, work in or adjacent to waterways",
+          "description": "Stream crossings, wetland impacts, drainage modifications",
+          "next": "result_small_construction_waterway"
+        },
+        {
+          "id": "no_waterway",
+          "label": "No waterway involvement",
+          "description": "Upland construction only",
+          "next": "result_small_construction_no_permit"
+        }
+      ]
+    },
+
+    "construction_surface_discharge": {
+      "id": "construction_surface_discharge",
+      "type": "question",
+      "title": "Where will stormwater from your site drain?",
+      "helpText": "During and after construction, where does water leaving your site go?",
+      "options": [
+        {
+          "id": "surface_water",
+          "label": "To storm drains, streams, or other surface water",
+          "description": "Most urban and suburban sites",
+          "next": "construction_risk_assessment"
+        },
+        {
+          "id": "contained_onsite",
+          "label": "Contained and infiltrated on-site",
+          "description": "Retention basins, infiltration galleries",
+          "next": "construction_risk_assessment"
+        }
+      ]
+    },
+
+    "construction_risk_assessment": {
+      "id": "construction_risk_assessment",
+      "type": "question",
+      "title": "What is the terrain like?",
+      "helpText": "This helps determine your risk level under the Construction General Permit.",
+      "options": [
+        {
+          "id": "flat_stable",
+          "label": "Mostly flat with stable soils",
+          "description": "Slopes under 5%, no erosion concerns",
+          "next": "result_cgp_level1"
+        },
+        {
+          "id": "moderate_slopes",
+          "label": "Moderate slopes (5-15%)",
+          "description": "Some erosion potential, typical hillside",
+          "next": "construction_sensitive_waters"
+        },
+        {
+          "id": "steep_slopes",
+          "label": "Steep slopes (>15%) or erosive soils",
+          "description": "High erosion potential, unstable areas",
+          "next": "construction_sensitive_waters"
+        }
+      ]
+    },
+
+    "construction_sensitive_waters": {
+      "id": "construction_sensitive_waters",
+      "type": "question",
+      "title": "Does your site discharge to sensitive or impaired waters?",
+      "helpText": "Check the 303(d) list for your receiving water body. Sensitive waters include those with sediment TMDLs or habitat for endangered species.",
+      "options": [
+        {
+          "id": "not_sensitive",
+          "label": "No known impairments",
+          "description": "Standard receiving waters",
+          "next": "result_cgp_level2"
+        },
+        {
+          "id": "sensitive_tmdl",
+          "label": "Yes, water has TMDL or is impaired",
+          "description": "Listed on 303(d) for sediment, nutrients, or other pollutants",
+          "next": "result_cgp_level3"
+        }
+      ]
+    },
+
+    "industrial_discharge": {
+      "id": "industrial_discharge",
+      "type": "question",
+      "title": "What type of discharge does your facility have?",
+      "helpText": "Consider both process wastewater and stormwater runoff from your site.",
+      "options": [
+        {
+          "id": "stormwater_only",
+          "label": "Stormwater runoff only",
+          "description": "No process water discharge, just rain runoff from industrial areas",
+          "next": "industrial_exposure"
+        },
+        {
+          "id": "process_wastewater",
+          "label": "Process wastewater to surface water",
+          "description": "Industrial process water discharged to streams, rivers, or ocean",
+          "next": "result_individual_npdes"
+        },
+        {
+          "id": "land_application",
+          "label": "Process wastewater to land",
+          "description": "Discharge to evaporation ponds, land application, or infiltration",
+          "next": "result_individual_wdr"
+        },
+        {
+          "id": "to_sewer",
+          "label": "All discharge goes to public sewer",
+          "description": "No direct environmental discharge",
+          "next": "industrial_stormwater_check"
+        }
+      ]
+    },
+
+    "industrial_exposure": {
+      "id": "industrial_exposure",
+      "type": "question",
+      "title": "Are industrial materials exposed to stormwater?",
+      "helpText": "Consider outdoor storage areas, loading docks, equipment storage, waste materials, and raw materials.",
+      "options": [
+        {
+          "id": "yes_exposure",
+          "label": "Yes, some industrial materials are outdoors",
+          "description": "Storage areas, equipment, materials exposed to rain",
+          "next": "result_igp"
+        },
+        {
+          "id": "no_exposure",
+          "label": "No, all industrial activities are covered",
+          "description": "Everything happens indoors or under cover",
+          "next": "result_nec"
+        }
+      ]
+    },
+
+    "industrial_stormwater_check": {
+      "id": "industrial_stormwater_check",
+      "type": "question",
+      "title": "Does stormwater from your site reach surface waters?",
+      "helpText": "Even if process water goes to sewer, stormwater from parking lots and outdoor areas may need a permit.",
+      "options": [
+        {
+          "id": "yes_stormwater",
+          "label": "Yes, stormwater drains to storm system or surface water",
+          "description": "Parking lot drains, roof drains to storm system",
+          "next": "industrial_exposure"
+        },
+        {
+          "id": "no_stormwater",
+          "label": "No, all runoff also goes to sanitary sewer",
+          "description": "Combined system or all-indoor facility",
+          "next": "result_no_npdes_permit"
+        }
+      ]
+    },
+
+    "ag_type": {
+      "id": "ag_type",
+      "type": "question",
+      "title": "What type of agricultural operation?",
+      "helpText": "Different agricultural activities have different permit pathways.",
+      "options": [
+        {
+          "id": "winery",
+          "label": "Winery or grape processing",
+          "description": "Wine production, crush facilities, grape juice",
+          "next": "winery_volume"
+        },
+        {
+          "id": "dairy",
+          "label": "Dairy operation",
+          "description": "Milk production, cattle, manure management",
+          "next": "dairy_size"
+        },
+        {
+          "id": "cannabis",
+          "label": "Cannabis cultivation",
+          "description": "Legal cannabis farming (licensed)",
+          "next": "cannabis_size"
+        },
+        {
+          "id": "irrigated_crops",
+          "label": "Irrigated crops",
+          "description": "Row crops, orchards, vineyards (non-winery)",
+          "next": "ag_discharge"
+        },
+        {
+          "id": "livestock_other",
+          "label": "Other livestock (non-dairy)",
+          "description": "Beef cattle, poultry, swine, etc.",
+          "next": "livestock_cafo"
+        }
+      ]
+    },
+
+    "winery_volume": {
+      "id": "winery_volume",
+      "type": "question",
+      "title": "How much process water does your winery generate annually?",
+      "helpText": "This includes all wash water, crush water, and other process wastewater.",
+      "options": [
+        {
+          "id": "under_10k",
+          "label": "Less than 10,000 gallons/year",
+          "description": "Very small or hobby winery",
+          "next": "result_winery_exempt"
+        },
+        {
+          "id": "10k_to_30k",
+          "label": "10,000 - 30,000 gallons/year",
+          "description": "Small boutique winery",
+          "next": "result_winery_tier1"
+        },
+        {
+          "id": "30k_to_300k",
+          "label": "30,000 - 300,000 gallons/year",
+          "description": "Medium winery",
+          "next": "result_winery_tier2"
+        },
+        {
+          "id": "300k_to_1m",
+          "label": "300,000 - 1,000,000 gallons/year",
+          "description": "Large winery",
+          "next": "result_winery_tier3"
+        },
+        {
+          "id": "over_1m",
+          "label": "Over 1,000,000 gallons/year",
+          "description": "Major production facility",
+          "next": "result_winery_tier4"
+        }
+      ]
+    },
+
+    "dairy_size": {
+      "id": "dairy_size",
+      "type": "question",
+      "title": "How many mature dairy cows?",
+      "helpText": "This determines your facility classification and permit requirements.",
+      "options": [
+        {
+          "id": "under_200",
+          "label": "Less than 200 cows",
+          "description": "Small dairy",
+          "next": "dairy_discharge"
+        },
+        {
+          "id": "200_to_699",
+          "label": "200 - 699 cows",
+          "description": "Medium dairy (potential CAFO)",
+          "next": "dairy_discharge"
+        },
+        {
+          "id": "700_plus",
+          "label": "700 or more cows",
+          "description": "Large CAFO",
+          "next": "result_dairy_large"
+        }
+      ]
+    },
+
+    "dairy_discharge": {
+      "id": "dairy_discharge",
+      "type": "question",
+      "title": "Does wastewater discharge to surface waters?",
+      "helpText": "Consider manure runoff, silage leachate, and other wastewater.",
+      "options": [
+        {
+          "id": "yes_surface",
+          "label": "Yes, potential discharge to streams or ditches",
+          "description": "Runoff leaves property to surface water",
+          "next": "result_dairy_npdes"
+        },
+        {
+          "id": "no_contained",
+          "label": "No, all waste contained on land",
+          "description": "Lagoons, land application, no off-site discharge",
+          "next": "result_dairy_general"
+        }
+      ]
+    },
+
+    "cannabis_size": {
+      "id": "cannabis_size",
+      "type": "question",
+      "title": "What is the size of your cannabis cultivation?",
+      "helpText": "Include all canopy area and disturbed area.",
+      "options": [
+        {
+          "id": "under_2000sqft",
+          "label": "Less than 2,000 sq ft canopy",
+          "description": "Personal/medical use (exempt)",
+          "next": "result_cannabis_exempt"
+        },
+        {
+          "id": "2000sqft_to_1acre",
+          "label": "2,000 sq ft to 1 acre disturbed area",
+          "description": "Small commercial cultivation",
+          "next": "cannabis_risk"
+        },
+        {
+          "id": "over_1acre",
+          "label": "Over 1 acre disturbed area",
+          "description": "Large commercial operation",
+          "next": "result_cannabis_tier2"
+        }
+      ]
+    },
+
+    "cannabis_risk": {
+      "id": "cannabis_risk",
+      "type": "question",
+      "title": "What are the site conditions?",
+      "helpText": "Risk level affects permit requirements.",
+      "options": [
+        {
+          "id": "standard_risk",
+          "label": "Gentle slopes (<30%), away from waterways",
+          "description": "Standard risk site",
+          "next": "result_cannabis_tier1_standard"
+        },
+        {
+          "id": "high_risk",
+          "label": "Steep slopes (>30%) or near waterways",
+          "description": "Within setback of surface waters",
+          "next": "result_cannabis_tier1_high"
+        }
+      ]
+    },
+
+    "ag_discharge": {
+      "id": "ag_discharge",
+      "type": "question",
+      "title": "Is your agricultural land irrigated?",
+      "helpText": "In the Central Valley, virtually all irrigated agriculture requires WDR coverage.",
+      "options": [
+        {
+          "id": "yes_irrigated",
+          "label": "Yes, crops are irrigated",
+          "description": "Any form of irrigation water application",
+          "next": "ag_region"
+        },
+        {
+          "id": "dryland",
+          "label": "No, dryland farming only",
+          "description": "Rain-fed crops only",
+          "next": "result_ag_no_permit"
+        }
+      ]
+    },
+
+    "ag_region": {
+      "id": "ag_region",
+      "type": "question",
+      "title": "Which region is your farm located in?",
+      "helpText": "Requirements vary significantly by Regional Water Board.",
+      "options": [
+        {
+          "id": "central_valley",
+          "label": "Central Valley (Region 5)",
+          "description": "Sacramento or San Joaquin valleys",
+          "next": "result_ilrp"
+        },
+        {
+          "id": "central_coast",
+          "label": "Central Coast (Region 3)",
+          "description": "Santa Cruz to Santa Barbara",
+          "next": "result_ag_order_r3"
+        },
+        {
+          "id": "other_region",
+          "label": "Other region",
+          "description": "North Coast, LA, etc.",
+          "next": "result_contact_regional_board"
+        }
+      ]
+    },
+
+    "livestock_cafo": {
+      "id": "livestock_cafo",
+      "type": "question",
+      "title": "Does your facility meet CAFO thresholds?",
+      "helpText": "Concentrated Animal Feeding Operations are defined by animal counts and confinement.",
+      "options": [
+        {
+          "id": "large_cafo",
+          "label": "Yes, large CAFO",
+          "description": "1000+ beef cattle, 2500+ swine, etc.",
+          "next": "result_cafo_npdes"
+        },
+        {
+          "id": "medium_afo",
+          "label": "Medium AFO with discharge",
+          "description": "Medium size with potential runoff",
+          "next": "result_afo_wdr"
+        },
+        {
+          "id": "small_afo",
+          "label": "Small operation, contained",
+          "description": "Small with no discharge",
+          "next": "result_contact_regional_board"
+        }
+      ]
+    },
+
+    "ww_destination": {
+      "id": "ww_destination",
+      "type": "question",
+      "title": "Where will your wastewater be discharged?",
+      "helpText": "This is the primary factor in determining permit type.",
+      "options": [
+        {
+          "id": "surface_water",
+          "label": "Surface water (river, lake, bay, ocean)",
+          "description": "Direct discharge to navigable waters",
+          "next": "ww_volume"
+        },
+        {
+          "id": "land_or_gw",
+          "label": "Land or groundwater",
+          "description": "Land application, percolation ponds, injection",
+          "next": "ww_domestic_or_industrial"
+        },
+        {
+          "id": "to_sewer",
+          "label": "Public sewer system",
+          "description": "Discharge to POTW",
+          "next": "result_no_wdr_pretreatment"
+        }
+      ]
+    },
+
+    "ww_volume": {
+      "id": "ww_volume",
+      "type": "question",
+      "title": "What is your facility type and discharge volume?",
+      "helpText": "This determines whether you need an individual permit or may qualify for a general permit.",
+      "options": [
+        {
+          "id": "municipal_potw",
+          "label": "Municipal wastewater treatment plant",
+          "description": "Public sewage treatment",
+          "next": "result_potw_npdes"
+        },
+        {
+          "id": "industrial_process",
+          "label": "Industrial process wastewater",
+          "description": "Manufacturing, processing, cooling water",
+          "next": "result_individual_npdes"
+        },
+        {
+          "id": "other_facility",
+          "label": "Other facility type",
+          "description": "Commercial, institutional, etc.",
+          "next": "result_individual_npdes"
+        }
+      ]
+    },
+
+    "ww_domestic_or_industrial": {
+      "id": "ww_domestic_or_industrial",
+      "type": "question",
+      "title": "What type of wastewater?",
+      "helpText": "Domestic wastewater has different permit pathways than industrial.",
+      "options": [
+        {
+          "id": "domestic",
+          "label": "Domestic/sanitary wastewater",
+          "description": "From residences, offices, restrooms",
+          "next": "domestic_volume"
+        },
+        {
+          "id": "industrial",
+          "label": "Industrial process water",
+          "description": "From manufacturing or processing",
+          "next": "result_individual_wdr"
+        },
+        {
+          "id": "low_threat",
+          "label": "Clean/low-threat water",
+          "description": "Pool water, dewatering, hydrant flushing",
+          "next": "result_low_threat"
+        }
+      ]
+    },
+
+    "domestic_volume": {
+      "id": "domestic_volume",
+      "type": "question",
+      "title": "What is the daily wastewater flow?",
+      "helpText": "Average daily flow in gallons per day.",
+      "options": [
+        {
+          "id": "under_3500",
+          "label": "Less than 3,500 GPD",
+          "description": "Single residence or small business",
+          "next": "result_septic_tier1"
+        },
+        {
+          "id": "3500_to_10000",
+          "label": "3,500 - 10,000 GPD",
+          "description": "Multiple residences or medium facility",
+          "next": "result_septic_tier2"
+        },
+        {
+          "id": "10000_to_100000",
+          "label": "10,000 - 100,000 GPD",
+          "description": "Small community system",
+          "next": "result_small_domestic_wdr"
+        },
+        {
+          "id": "over_100000",
+          "label": "Over 100,000 GPD",
+          "description": "Large system",
+          "next": "result_individual_wdr"
+        }
+      ]
+    },
+
+    "restoration_size": {
+      "id": "restoration_size",
+      "type": "question",
+      "title": "What is the size of your restoration project?",
+      "helpText": "Different permit pathways exist based on project scale.",
+      "options": [
+        {
+          "id": "small",
+          "label": "≤5 acres or ≤500 linear feet",
+          "description": "Small-scale restoration",
+          "next": "result_small_restoration"
+        },
+        {
+          "id": "large",
+          "label": ">5 acres or >500 linear feet",
+          "description": "Large-scale restoration",
+          "next": "restoration_type"
+        }
+      ]
+    },
+
+    "restoration_type": {
+      "id": "restoration_type",
+      "type": "question",
+      "title": "What type of restoration work?",
+      "helpText": "The Statewide Restoration General Order covers specific project types.",
+      "options": [
+        {
+          "id": "stream_fish",
+          "label": "Stream or fish passage improvement",
+          "description": "Culvert replacement, fish ladder, dam removal",
+          "next": "result_srgo"
+        },
+        {
+          "id": "wetland",
+          "label": "Wetland restoration/creation",
+          "description": "Tidal, freshwater, or seasonal wetlands",
+          "next": "result_srgo"
+        },
+        {
+          "id": "floodplain",
+          "label": "Floodplain restoration",
+          "description": "Levee setback, floodplain reconnection",
+          "next": "result_srgo"
+        },
+        {
+          "id": "invasive",
+          "label": "Invasive species removal + revegetation",
+          "description": "Remove invasives, plant natives",
+          "next": "result_srgo"
+        },
+        {
+          "id": "other_restoration",
+          "label": "Other restoration type",
+          "description": "Check SRGO eligibility",
+          "next": "result_srgo"
+        }
+      ]
+    },
+
+    "water_source": {
+      "id": "water_source",
+      "type": "question",
+      "title": "Where are you getting the water from?",
+      "helpText": "Water rights requirements depend on the source.",
+      "options": [
+        {
+          "id": "surface_stream",
+          "label": "Stream, river, or lake",
+          "description": "Surface water diversion",
+          "next": "water_right_type"
+        },
+        {
+          "id": "groundwater",
+          "label": "Groundwater well",
+          "description": "Pumping from underground aquifer",
+          "next": "result_groundwater_rights"
+        },
+        {
+          "id": "purchased",
+          "label": "Purchased from water supplier",
+          "description": "Municipal water, water district",
+          "next": "result_no_water_right_needed"
+        },
+        {
+          "id": "recycled",
+          "label": "Recycled/reclaimed water",
+          "description": "Treated wastewater",
+          "next": "result_recycled_water"
+        }
+      ]
+    },
+
+    "water_right_type": {
+      "id": "water_right_type",
+      "type": "question",
+      "title": "What is your water rights situation?",
+      "helpText": "California has different types of water rights with different requirements.",
+      "options": [
+        {
+          "id": "riparian",
+          "label": "Land borders the water source",
+          "description": "Riparian land ownership",
+          "next": "result_riparian"
+        },
+        {
+          "id": "existing_pre1914",
+          "label": "Existing use since before 1914",
+          "description": "Pre-1914 appropriative right",
+          "next": "result_pre1914"
+        },
+        {
+          "id": "new_diversion",
+          "label": "New diversion or no existing right",
+          "description": "Need to establish new appropriative right",
+          "next": "water_quantity"
+        }
+      ]
+    },
+
+    "water_quantity": {
+      "id": "water_quantity",
+      "type": "question",
+      "title": "How much water do you need?",
+      "helpText": "Small uses may qualify for streamlined registration programs.",
+      "options": [
+        {
+          "id": "small_domestic",
+          "label": "Small domestic use (<4,500 GPD)",
+          "description": "Household purposes only",
+          "next": "result_small_domestic_registration"
+        },
+        {
+          "id": "small_irrigation",
+          "label": "Small irrigation (<20 acres)",
+          "description": "Limited agricultural use",
+          "next": "result_small_irrigation_registration"
+        },
+        {
+          "id": "stockpond",
+          "label": "Livestock stockpond",
+          "description": "Water for livestock only",
+          "next": "result_stockpond_registration"
+        },
+        {
+          "id": "larger_use",
+          "label": "Larger use or commercial purposes",
+          "description": "Exceeds small use thresholds",
+          "next": "result_appropriative_permit"
+        }
+      ]
+    },
+
+    "municipal_type": {
+      "id": "municipal_type",
+      "type": "question",
+      "title": "What type of municipal operation?",
+      "helpText": "Different municipal activities have different requirements.",
+      "options": [
+        {
+          "id": "storm_sewer",
+          "label": "Municipal stormwater system",
+          "description": "City/county storm drain system",
+          "next": "municipal_population"
+        },
+        {
+          "id": "potw",
+          "label": "Wastewater treatment plant",
+          "description": "Publicly owned treatment works",
+          "next": "result_potw_npdes"
+        },
+        {
+          "id": "other_facility",
+          "label": "Other public facility",
+          "description": "Parks, maintenance yards, etc.",
+          "next": "result_contact_regional_board"
+        }
+      ]
+    },
+
+    "municipal_population": {
+      "id": "municipal_population",
+      "type": "question",
+      "title": "What is the population served?",
+      "helpText": "MS4 permit requirements are based on population thresholds.",
+      "options": [
+        {
+          "id": "under_50k",
+          "label": "Under 50,000",
+          "description": "Small community",
+          "next": "municipal_urbanized"
+        },
+        {
+          "id": "50k_to_100k",
+          "label": "50,000 - 100,000",
+          "description": "Medium community",
+          "next": "result_ms4_phase2"
+        },
+        {
+          "id": "over_100k",
+          "label": "Over 100,000",
+          "description": "Large community",
+          "next": "result_ms4_phase1"
+        }
+      ]
+    },
+
+    "municipal_urbanized": {
+      "id": "municipal_urbanized",
+      "type": "question",
+      "title": "Is your community in a Census-defined urban area?",
+      "helpText": "Phase II requirements apply to small MS4s in urbanized areas ≥50,000 population.",
+      "options": [
+        {
+          "id": "yes_urban",
+          "label": "Yes, within urbanized area",
+          "description": "Part of larger metropolitan area",
+          "next": "result_ms4_phase2"
+        },
+        {
+          "id": "no_rural",
+          "label": "No, rural area",
+          "description": "Not in Census urbanized area",
+          "next": "result_no_ms4_permit"
+        }
+      ]
+    },
+
+    "dredge_federal": {
+      "id": "dredge_federal",
+      "type": "question",
+      "title": "Will your project require a federal Section 404 permit?",
+      "helpText": "Section 404 of the Clean Water Act regulates discharge of dredged or fill material into waters of the United States.",
+      "options": [
+        {
+          "id": "yes_404",
+          "label": "Yes, 404 permit required",
+          "description": "Fill in wetlands, streams, or navigable waters",
+          "next": "result_401_certification"
+        },
+        {
+          "id": "not_sure",
+          "label": "Not sure / Need to determine",
+          "description": "May need jurisdictional determination",
+          "next": "dredge_water_type"
+        },
+        {
+          "id": "no_404",
+          "label": "No federal waters involved",
+          "description": "Isolated waters only",
+          "next": "result_wdr_dredge_fill"
+        }
+      ]
+    },
+
+    "dredge_water_type": {
+      "id": "dredge_water_type",
+      "type": "question",
+      "title": "What type of waterway is involved?",
+      "helpText": "Federal jurisdiction typically includes navigable waters, their tributaries, and adjacent wetlands.",
+      "options": [
+        {
+          "id": "navigable",
+          "label": "Navigable river, bay, or ocean",
+          "description": "Clearly federal waters",
+          "next": "result_401_certification"
+        },
+        {
+          "id": "stream_tributary",
+          "label": "Stream or tributary to navigable water",
+          "description": "May be federal waters",
+          "next": "result_401_certification"
+        },
+        {
+          "id": "wetland",
+          "label": "Wetland",
+          "description": "May need jurisdictional determination",
+          "next": "result_401_certification"
+        },
+        {
+          "id": "isolated",
+          "label": "Isolated pond or seasonal feature",
+          "description": "May not be federal waters (post-Sackett)",
+          "next": "result_wdr_dredge_fill"
+        }
+      ]
+    },
+
+    "result_small_construction_waterway": {
+      "id": "result_small_construction_waterway",
+      "type": "result",
+      "title": "Construction Near Waterways - Special Requirements",
+      "permits": [
+        {
+          "name": "CDFW Lake and Streambed Alteration Agreement",
+          "code": "1602",
+          "description": "Required for any work that may change the bed, bank, or channel of a stream or lake.",
+          "agency": "California Department of Fish and Wildlife",
+          "link": "https://wildlife.ca.gov/Conservation/LSA",
+          "estimatedTime": "60 days"
+        },
+        {
+          "name": "Section 401 Water Quality Certification",
+          "code": "401",
+          "description": "May be required if federal Section 404 permit is needed for fill in waters.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/",
+          "estimatedTime": "30-60 days"
+        }
+      ],
+      "additionalInfo": "Even projects under 1 acre may require permits if they affect streams or wetlands. Contact your Regional Board and CDFW early to determine specific requirements.",
+      "nextSteps": [
+        "Contact your local CDFW regional office to discuss the project",
+        "Determine if the waterway is subject to federal jurisdiction",
+        "Consider consulting with a qualified biologist"
+      ],
+      "ragQuery": "small construction project near streams waterways CDFW 1602 notification requirements"
+    },
+
+    "result_small_construction_no_permit": {
+      "id": "result_small_construction_no_permit",
+      "type": "result",
+      "title": "No Construction Stormwater Permit Required",
+      "permits": [],
+      "additionalInfo": "Projects under 1 acre that are not part of a larger development and don't affect waterways typically don't need a Construction General Permit. However, you must still comply with local erosion control requirements.",
+      "nextSteps": [
+        "Check with your local city/county for grading permit requirements",
+        "Implement basic erosion control best management practices",
+        "Ensure no sediment leaves your site"
+      ],
+      "ragQuery": "small construction site erosion control best management practices California"
+    },
+
+    "result_cgp_level1": {
+      "id": "result_cgp_level1",
+      "type": "result",
+      "title": "Construction General Permit - Risk Level 1",
+      "permits": [
+        {
+          "name": "Construction General Permit (CGP) - Risk Level 1",
+          "code": "WQ 2022-0057-DWQ",
+          "description": "Stormwater permit for construction sites ≥1 acre. Risk Level 1 has the lowest monitoring requirements.",
+          "agency": "State Water Resources Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/construction/",
+          "estimatedTime": "1-2 weeks after NOI submission",
+          "fees": "$511 base + $54/acre annually"
+        }
+      ],
+      "requirements": [
+        "Submit Notice of Intent (NOI) via SMARTS at least 1 month before construction",
+        "Develop and implement Stormwater Pollution Prevention Plan (SWPPP)",
+        "SWPPP must be prepared by Qualified SWPPP Developer (QSD)",
+        "Visual monitoring required (no sampling for Level 1)",
+        "Post-construction stormwater controls required"
+      ],
+      "nextSteps": [
+        "Create account in SMARTS system",
+        "Hire qualified QSD to develop SWPPP",
+        "Calculate risk level using SMARTS risk calculator",
+        "Submit NOI with fee payment",
+        "Install BMPs before land disturbance begins"
+      ],
+      "ragQuery": "Construction General Permit CGP risk level 1 requirements SWPPP NOI SMARTS California"
+    },
+
+    "result_cgp_level2": {
+      "id": "result_cgp_level2",
+      "type": "result",
+      "title": "Construction General Permit - Risk Level 2",
+      "permits": [
+        {
+          "name": "Construction General Permit (CGP) - Risk Level 2",
+          "code": "WQ 2022-0057-DWQ",
+          "description": "Stormwater permit for construction with moderate erosion risk. Requires water quality sampling during storm events.",
+          "agency": "State Water Resources Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/construction/",
+          "estimatedTime": "1-2 weeks after NOI submission",
+          "fees": "$511 base + $54/acre annually"
+        }
+      ],
+      "requirements": [
+        "All Risk Level 1 requirements PLUS:",
+        "Sampling required during qualifying rain events",
+        "Enhanced erosion and sediment control BMPs",
+        "More frequent inspections",
+        "Numeric Action Levels (NALs) for pH and turbidity"
+      ],
+      "nextSteps": [
+        "Hire QSD with experience in Risk Level 2 projects",
+        "Plan for water quality sampling during storms",
+        "Budget for laboratory analysis costs",
+        "Consider enhanced BMP measures proactively"
+      ],
+      "ragQuery": "Construction General Permit CGP risk level 2 sampling requirements NAL California stormwater"
+    },
+
+    "result_cgp_level3": {
+      "id": "result_cgp_level3",
+      "type": "result",
+      "title": "Construction General Permit - Risk Level 3",
+      "permits": [
+        {
+          "name": "Construction General Permit (CGP) - Risk Level 3",
+          "code": "WQ 2022-0057-DWQ",
+          "description": "Most stringent tier for high-risk sites discharging to sensitive waters. Numeric Effluent Limitations apply.",
+          "agency": "State Water Resources Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/construction/",
+          "estimatedTime": "1-2 weeks after NOI submission",
+          "fees": "$511 base + $54/acre annually"
+        }
+      ],
+      "requirements": [
+        "All Risk Level 1 and 2 requirements PLUS:",
+        "Weekly inspections during rainy season",
+        "Minimum 3 samples per day during extended storms",
+        "Numeric Effluent Limitations (NELs) - exceedances are violations",
+        "TMDL-specific requirements may apply",
+        "Must demonstrate erosion doesn't exceed pre-construction levels"
+      ],
+      "nextSteps": [
+        "Engage experienced QSD early in design phase",
+        "Consider active treatment systems (may be required)",
+        "Budget significantly for monitoring and BMPs",
+        "Review applicable TMDLs for your watershed",
+        "Plan construction phasing to minimize exposed area"
+      ],
+      "ragQuery": "Construction General Permit CGP risk level 3 NEL numeric effluent limitation TMDL sensitive waters California"
+    },
+
+    "result_igp": {
+      "id": "result_igp",
+      "type": "result",
+      "title": "Industrial General Permit Required",
+      "permits": [
+        {
+          "name": "Industrial General Permit (IGP)",
+          "code": "2014-0057-DWQ",
+          "description": "Stormwater permit for industrial facilities with outdoor exposure of materials to rain.",
+          "agency": "State Water Resources Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/industrial.html",
+          "estimatedTime": "Immediate upon NOI approval",
+          "fees": "$1,738 annual"
+        }
+      ],
+      "requirements": [
+        "Submit Notice of Intent (NOI) via SMARTS",
+        "Develop and implement Stormwater Pollution Prevention Plan (SWPPP)",
+        "Conduct monthly visual observations",
+        "Collect minimum 4 stormwater samples per year",
+        "Submit Annual Report by July 15 each year",
+        "Monitor against benchmark values for your industry"
+      ],
+      "nextSteps": [
+        "Determine your SIC code(s) from the IGP Attachment A",
+        "Register in SMARTS and submit NOI",
+        "Develop site-specific SWPPP",
+        "Identify all discharge points and install BMPs",
+        "Train staff on pollution prevention procedures"
+      ],
+      "ragQuery": "Industrial General Permit IGP SWPPP benchmark monitoring California stormwater SIC code"
+    },
+
+    "result_nec": {
+      "id": "result_nec",
+      "type": "result",
+      "title": "No Exposure Certification Option",
+      "permits": [
+        {
+          "name": "No Exposure Certification (NEC)",
+          "code": "IGP Alternative",
+          "description": "If ALL industrial materials and activities are protected from stormwater contact, you may certify no exposure instead of obtaining full IGP coverage.",
+          "agency": "State Water Resources Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/industrial.html",
+          "estimatedTime": "Immediate upon certification",
+          "fees": "$150 annual"
+        }
+      ],
+      "requirements": [
+        "ALL industrial materials and activities must be covered/protected",
+        "Submit NEC certification via SMARTS",
+        "Recertify annually (July 1 - October 1)",
+        "If any exposure develops, must immediately file NOI for full coverage"
+      ],
+      "additionalInfo": "NEC is only available if you can truthfully certify no exposure in all 11 major exposure categories. One uncovered storage area or exposed equipment disqualifies your facility.",
+      "nextSteps": [
+        "Conduct thorough site inspection of all 11 exposure categories",
+        "Document protective measures (roofs, covers, containment)",
+        "If qualified, submit NEC via SMARTS",
+        "Maintain no-exposure conditions year-round"
+      ],
+      "ragQuery": "Industrial General Permit No Exposure Certification NEC eligibility criteria California"
+    },
+
+    "result_no_npdes_permit": {
+      "id": "result_no_npdes_permit",
+      "type": "result",
+      "title": "No NPDES Permit Required",
+      "permits": [],
+      "additionalInfo": "If your facility sends all process water AND stormwater to the sanitary sewer (combined system), you generally don't need an NPDES stormwater permit. However, you may have pretreatment requirements from your local sewer authority.",
+      "nextSteps": [
+        "Confirm all drainage goes to sanitary sewer with your local POTW",
+        "Check if you need a local industrial pretreatment permit",
+        "Maintain pollution prevention practices regardless",
+        "Document your drainage configuration"
+      ],
+      "ragQuery": "industrial pretreatment permit POTW sewer discharge California requirements"
+    },
+
+    "result_individual_npdes": {
+      "id": "result_individual_npdes",
+      "type": "result",
+      "title": "Individual NPDES Permit Required",
+      "permits": [
+        {
+          "name": "Individual NPDES Permit",
+          "code": "Site-specific",
+          "description": "A customized permit tailored to your specific discharge characteristics, issued by your Regional Water Board.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "estimatedTime": "6-12+ months",
+          "fees": "Varies by facility type and discharge"
+        }
+      ],
+      "requirements": [
+        "Submit Report of Waste Discharge (Form 200)",
+        "Submit federal EPA application forms (1, 2A-2F as applicable)",
+        "Technical report signed by registered civil engineer",
+        "CEQA environmental review",
+        "Public notice and 30-day comment period",
+        "Regional Board hearing for adoption",
+        "EPA 30-day review period"
+      ],
+      "additionalInfo": "Individual NPDES permits are complex and involve significant technical and regulatory review. Budget 6-12+ months for the process. Effluent limits will be based on technology standards and water quality objectives.",
+      "nextSteps": [
+        "Contact your Regional Board for a pre-application meeting",
+        "Gather detailed discharge characterization data",
+        "Engage qualified environmental consultant",
+        "Begin CEQA process early",
+        "Plan for compliance with anticipated permit limits"
+      ],
+      "ragQuery": "individual NPDES permit application process California Regional Board Form 200 effluent limits"
+    },
+
+    "result_individual_wdr": {
+      "id": "result_individual_wdr",
+      "type": "result",
+      "title": "Individual Waste Discharge Requirements Needed",
+      "permits": [
+        {
+          "name": "Individual WDR",
+          "code": "Site-specific",
+          "description": "A customized permit for discharge to land or groundwater that doesn't fit a General Order category.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/waste_discharge_requirements/",
+          "estimatedTime": "6-12+ months",
+          "fees": "Varies by discharge type and region"
+        }
+      ],
+      "requirements": [
+        "Submit Report of Waste Discharge (Form 200)",
+        "Technical report with discharge characterization",
+        "Site map showing disposal areas, monitoring wells",
+        "Groundwater monitoring plan",
+        "CEQA documentation"
+      ],
+      "nextSteps": [
+        "Contact your Regional Board before submitting",
+        "Determine if any General Order might apply first",
+        "Characterize your wastewater thoroughly",
+        "Assess groundwater conditions at your site",
+        "Plan for ongoing monitoring program"
+      ],
+      "ragQuery": "individual WDR waste discharge requirements application California land discharge groundwater"
+    },
+
+    "result_winery_exempt": {
+      "id": "result_winery_exempt",
+      "type": "result",
+      "title": "Winery Exempt from General Order",
+      "permits": [],
+      "additionalInfo": "Wineries generating less than 10,000 gallons of process water annually are exempt from the Statewide Winery General Order, provided the discharge poses no threat to water quality. You should still follow best management practices.",
+      "nextSteps": [
+        "Document your annual process water volume",
+        "Implement pollution prevention practices",
+        "Ensure no discharge to surface waters",
+        "Contact Regional Board if operations change"
+      ],
+      "ragQuery": "small winery exempt California permit wastewater process water threshold"
+    },
+
+    "result_winery_tier1": {
+      "id": "result_winery_tier1",
+      "type": "result",
+      "title": "Winery General Order - Tier 1",
+      "permits": [
+        {
+          "name": "Winery General Order - Tier 1",
+          "code": "WQ 2021-0002-DWQ",
+          "description": "For wineries generating 10,000-30,000 gallons process water annually. Basic requirements with minimal monitoring.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/winery/",
+          "estimatedTime": "30-60 days for NOI processing",
+          "fees": "~$889 annual"
+        }
+      ],
+      "requirements": [
+        "Submit Notice of Intent to Regional Board",
+        "Implement basic BMPs for wastewater management",
+        "Maintain records of process water volumes",
+        "No discharge to surface waters allowed"
+      ],
+      "nextSteps": [
+        "Determine your Regional Board",
+        "Prepare NOI with basic facility information",
+        "Implement land application or other approved disposal method",
+        "Maintain volume records"
+      ],
+      "ragQuery": "winery general order tier 1 California NOI requirements process wastewater"
+    },
+
+    "result_winery_tier2": {
+      "id": "result_winery_tier2",
+      "type": "result",
+      "title": "Winery General Order - Tier 2",
+      "permits": [
+        {
+          "name": "Winery General Order - Tier 2",
+          "code": "WQ 2021-0002-DWQ",
+          "description": "For wineries generating 30,000-300,000 gallons process water annually. Moderate monitoring requirements.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/winery/",
+          "estimatedTime": "30-60 days",
+          "fees": "~$1,500-2,000 annual"
+        }
+      ],
+      "requirements": [
+        "All Tier 1 requirements PLUS:",
+        "Wastewater sampling and analysis",
+        "Basic nutrient management",
+        "Annual reporting"
+      ],
+      "nextSteps": [
+        "Submit NOI with detailed facility information",
+        "Establish wastewater sampling program",
+        "Develop nutrient management approach",
+        "Plan disposal areas with appropriate buffer zones"
+      ],
+      "ragQuery": "winery general order tier 2 California wastewater monitoring requirements"
+    },
+
+    "result_winery_tier3": {
+      "id": "result_winery_tier3",
+      "type": "result",
+      "title": "Winery General Order - Tier 3",
+      "permits": [
+        {
+          "name": "Winery General Order - Tier 3",
+          "code": "WQ 2021-0002-DWQ",
+          "description": "For wineries generating 300,000-1,000,000 gallons process water annually. Comprehensive monitoring required.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/winery/",
+          "estimatedTime": "30-60 days",
+          "fees": "~$2,500-3,000 annual"
+        }
+      ],
+      "requirements": [
+        "All Tier 2 requirements PLUS:",
+        "Nitrogen Control Plan required",
+        "Comprehensive monitoring program",
+        "Groundwater monitoring may be required"
+      ],
+      "nextSteps": [
+        "Develop Nitrogen Control Plan",
+        "Evaluate groundwater conditions",
+        "Plan for enhanced monitoring program",
+        "Consider treatment improvements if needed"
+      ],
+      "ragQuery": "winery general order tier 3 California nitrogen control plan groundwater monitoring"
+    },
+
+    "result_winery_tier4": {
+      "id": "result_winery_tier4",
+      "type": "result",
+      "title": "Winery General Order - Tier 4",
+      "permits": [
+        {
+          "name": "Winery General Order - Tier 4",
+          "code": "WQ 2021-0002-DWQ",
+          "description": "For large wineries generating 1-15 million gallons process water annually. Full monitoring with groundwater wells required.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/winery/",
+          "estimatedTime": "30-60 days",
+          "fees": "~$3,540+ annual"
+        }
+      ],
+      "requirements": [
+        "All Tier 3 requirements PLUS:",
+        "Groundwater monitoring wells required",
+        "Full analytical monitoring program",
+        "May need engineered treatment system"
+      ],
+      "additionalInfo": "Wineries generating over 15 million gallons annually exceed the General Order threshold and need individual WDRs.",
+      "nextSteps": [
+        "Install groundwater monitoring wells",
+        "Engage environmental consultant for monitoring program design",
+        "Evaluate treatment system adequacy",
+        "Submit comprehensive NOI package"
+      ],
+      "ragQuery": "winery general order tier 4 California groundwater monitoring wells large facility"
+    },
+
+    "result_dairy_large": {
+      "id": "result_dairy_large",
+      "type": "result",
+      "title": "Large Dairy - CAFO Requirements",
+      "permits": [
+        {
+          "name": "Dairy General Order (Regional)",
+          "code": "Region-specific",
+          "description": "Large dairies (700+ mature cows) are classified as Large CAFOs with the most stringent requirements.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/centralvalley/water_issues/dairies/",
+          "estimatedTime": "60-90 days for enrollment",
+          "fees": "Based on animal units"
+        }
+      ],
+      "requirements": [
+        "Nutrient Management Plan required",
+        "Waste Management Plan required",
+        "No discharge to surface waters (must fully contain all waste)",
+        "Annual reporting",
+        "Regular inspections",
+        "May need NPDES permit if any discharge occurs"
+      ],
+      "additionalInfo": "Large CAFOs that discharge to surface waters require NPDES permits in addition to WDRs. Zero discharge is the goal.",
+      "nextSteps": [
+        "Contact your Regional Board (typically Region 5 for Central Valley)",
+        "Develop Nutrient Management Plan with qualified professional",
+        "Ensure waste storage capacity for storm events",
+        "Plan for comprehensive record keeping"
+      ],
+      "ragQuery": "large dairy CAFO California permit nutrient management waste management plan Region 5"
+    },
+
+    "result_dairy_npdes": {
+      "id": "result_dairy_npdes",
+      "type": "result",
+      "title": "Dairy with Surface Water Discharge",
+      "permits": [
+        {
+          "name": "NPDES Permit (CAFO)",
+          "code": "Individual",
+          "description": "Dairies that discharge to surface waters need NPDES coverage in addition to WDRs.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "estimatedTime": "6+ months for NPDES",
+          "fees": "Varies significantly"
+        },
+        {
+          "name": "Dairy General Order (WDR)",
+          "code": "Region-specific",
+          "description": "Separate WDR coverage for land application of waste.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/centralvalley/water_issues/dairies/",
+          "estimatedTime": "60-90 days",
+          "fees": "Based on animal units"
+        }
+      ],
+      "requirements": [
+        "NPDES permit application required",
+        "WDR coverage also needed",
+        "Zero discharge should be goal - NPDES is for when discharge occurs",
+        "Enhanced containment and management"
+      ],
+      "nextSteps": [
+        "Contact Regional Board immediately",
+        "Evaluate options to eliminate surface water discharge",
+        "If discharge unavoidable, prepare NPDES application",
+        "Implement enhanced containment measures"
+      ],
+      "ragQuery": "dairy NPDES permit surface water discharge California CAFO requirements"
+    },
+
+    "result_dairy_general": {
+      "id": "result_dairy_general",
+      "type": "result",
+      "title": "Dairy General Order",
+      "permits": [
+        {
+          "name": "Dairy General Order",
+          "code": "Region-specific (e.g., R5-2007-0035)",
+          "description": "Coverage for dairy operations that contain all waste on-site with no discharge to surface waters.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/centralvalley/water_issues/dairies/",
+          "estimatedTime": "60-90 days",
+          "fees": "Based on animal units"
+        }
+      ],
+      "requirements": [
+        "Submit NOI to Regional Board",
+        "Nutrient Management Plan",
+        "Waste Management Plan",
+        "Annual reporting",
+        "Maintain zero discharge to surface waters"
+      ],
+      "nextSteps": [
+        "Determine which Regional Board has jurisdiction",
+        "Prepare Nutrient and Waste Management Plans",
+        "Submit NOI with facility information",
+        "Establish monitoring and record keeping systems"
+      ],
+      "ragQuery": "dairy general order California nutrient management plan waste management WDR enrollment"
+    },
+
+    "result_cannabis_exempt": {
+      "id": "result_cannabis_exempt",
+      "type": "result",
+      "title": "Cannabis Cultivation - Exempt",
+      "permits": [],
+      "additionalInfo": "Personal/medical cannabis cultivation under 2,000 square feet of canopy is generally exempt from the Cannabis Cultivation General Order. However, you may still need local permits and a cannabis license.",
+      "nextSteps": [
+        "Verify you meet exemption criteria",
+        "Check local permit requirements",
+        "Implement basic pollution prevention practices",
+        "Ensure legal cultivation status"
+      ],
+      "ragQuery": "cannabis cultivation exempt California personal medical use canopy threshold"
+    },
+
+    "result_cannabis_tier1_standard": {
+      "id": "result_cannabis_tier1_standard",
+      "type": "result",
+      "title": "Cannabis General Order - Tier 1 Standard Risk",
+      "permits": [
+        {
+          "name": "Cannabis Cultivation General Order - Tier 1",
+          "code": "WQ 2023-0102-DWQ",
+          "description": "For cannabis cultivation with 2,000 sq ft to 1 acre disturbed area in standard risk locations.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/cannabis/",
+          "estimatedTime": "30-60 days",
+          "fees": "Varies by size"
+        }
+      ],
+      "requirements": [
+        "Submit NOI to Regional Board",
+        "Site Management Plan",
+        "Erosion and Sediment Control Plan",
+        "Proof of water right or exemption",
+        "Annual reporting"
+      ],
+      "nextSteps": [
+        "Verify cannabis license status",
+        "Prepare Site Management Plan",
+        "Document water source and right",
+        "Submit NOI through SMARTS",
+        "Implement required BMPs before cultivation"
+      ],
+      "ragQuery": "cannabis cultivation general order tier 1 California site management plan water rights"
+    },
+
+    "result_cannabis_tier1_high": {
+      "id": "result_cannabis_tier1_high",
+      "type": "result",
+      "title": "Cannabis General Order - Tier 1 High Risk",
+      "permits": [
+        {
+          "name": "Cannabis Cultivation General Order - Tier 1 High Risk",
+          "code": "WQ 2023-0102-DWQ",
+          "description": "For cannabis cultivation on steep slopes or near waterways. Enhanced requirements apply.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/cannabis/",
+          "estimatedTime": "30-60 days",
+          "fees": "Varies by size"
+        }
+      ],
+      "requirements": [
+        "All standard Tier 1 requirements PLUS:",
+        "Enhanced erosion control measures",
+        "Stream setback compliance",
+        "May require site inspection",
+        "Additional monitoring"
+      ],
+      "nextSteps": [
+        "Verify setback requirements for your location",
+        "Consider site modifications to reduce risk",
+        "Engage qualified professional for erosion control design",
+        "Submit complete NOI package"
+      ],
+      "ragQuery": "cannabis cultivation high risk steep slopes stream setback California requirements"
+    },
+
+    "result_cannabis_tier2": {
+      "id": "result_cannabis_tier2",
+      "type": "result",
+      "title": "Cannabis General Order - Tier 2",
+      "permits": [
+        {
+          "name": "Cannabis Cultivation General Order - Tier 2",
+          "code": "WQ 2023-0102-DWQ",
+          "description": "For large cannabis operations (>1 acre) or indoor facilities of any size.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/cannabis/",
+          "estimatedTime": "30-60 days",
+          "fees": "Higher tier fees"
+        }
+      ],
+      "requirements": [
+        "All Tier 1 requirements PLUS:",
+        "Enhanced monitoring requirements",
+        "More detailed Site Management Plan",
+        "May require TMDL compliance measures",
+        "Annual comprehensive reporting"
+      ],
+      "nextSteps": [
+        "Prepare comprehensive Site Management Plan",
+        "Evaluate TMDL requirements for your watershed",
+        "Plan for enhanced monitoring program",
+        "Ensure water rights documentation is complete"
+      ],
+      "ragQuery": "cannabis cultivation tier 2 large operation California general order monitoring TMDL"
+    },
+
+    "result_ag_no_permit": {
+      "id": "result_ag_no_permit",
+      "type": "result",
+      "title": "Dryland Agriculture - Generally No Permit",
+      "permits": [],
+      "additionalInfo": "Dryland (non-irrigated) farming generally doesn't require WDR coverage. However, if your practices could affect water quality (such as heavy pesticide use near waterways), you may still need coverage.",
+      "nextSteps": [
+        "Implement agricultural best management practices",
+        "Avoid impacts to nearby waterways",
+        "Monitor if practices change to include irrigation",
+        "Contact Regional Board if unsure"
+      ],
+      "ragQuery": "dryland agriculture California permit requirements nonpoint source pollution"
+    },
+
+    "result_ilrp": {
+      "id": "result_ilrp",
+      "type": "result",
+      "title": "Irrigated Lands Regulatory Program (Central Valley)",
+      "permits": [
+        {
+          "name": "ILRP General Order Coverage",
+          "code": "R5-2022-0004 or coalition-specific",
+          "description": "All irrigated agriculture in the Central Valley must have WDR coverage, either individually or through a third-party coalition.",
+          "agency": "Central Valley Regional Water Board",
+          "link": "https://www.waterboards.ca.gov/centralvalley/water_issues/irrigated_lands/",
+          "estimatedTime": "Immediate through coalition",
+          "fees": "Varies by coalition and acreage"
+        }
+      ],
+      "requirements": [
+        "Join a third-party coalition OR obtain individual WDR",
+        "Implement Irrigation and Nitrogen Management Plan",
+        "Participate in regional monitoring (through coalition)",
+        "Annual reporting"
+      ],
+      "additionalInfo": "Most growers join coalitions like ESJWQC, SJREC, or Sacramento Valley for cost-effective compliance. Coalitions provide technical assistance and coordinate monitoring.",
+      "nextSteps": [
+        "Contact an agricultural coalition in your area",
+        "Evaluate individual vs. coalition coverage",
+        "Develop farm-level nutrient management plan",
+        "Submit enrollment forms to chosen coalition"
+      ],
+      "ragQuery": "irrigated lands regulatory program ILRP California Central Valley coalition enrollment nitrogen management"
+    },
+
+    "result_ag_order_r3": {
+      "id": "result_ag_order_r3",
+      "type": "result",
+      "title": "Central Coast Agricultural Order",
+      "permits": [
+        {
+          "name": "Agricultural Order",
+          "code": "R3-2021-0040",
+          "description": "Irrigated agriculture in the Central Coast region requires coverage under the Agricultural Order.",
+          "agency": "Central Coast Regional Water Board",
+          "link": "https://www.waterboards.ca.gov/centralcoast/water_issues/programs/ag_waivers/",
+          "estimatedTime": "30-60 days for enrollment",
+          "fees": "Based on acreage and tier"
+        }
+      ],
+      "requirements": [
+        "Enroll via online portal",
+        "Tiered requirements based on risk",
+        "Irrigation and nutrient management",
+        "Reporting requirements vary by tier"
+      ],
+      "nextSteps": [
+        "Determine your tier level based on operation characteristics",
+        "Register through the enrollment system",
+        "Implement required management practices",
+        "Submit annual reports"
+      ],
+      "ragQuery": "Central Coast agricultural order California Region 3 irrigated agriculture enrollment"
+    },
+
+    "result_contact_regional_board": {
+      "id": "result_contact_regional_board",
+      "type": "result",
+      "title": "Contact Your Regional Water Board",
+      "permits": [],
+      "additionalInfo": "Your specific situation doesn't clearly fit a standard category. Contact your Regional Water Board directly for guidance on permit requirements.",
+      "nextSteps": [
+        "Determine which Regional Board has jurisdiction (based on location)",
+        "Prepare a summary of your operation and proposed discharge",
+        "Request a pre-application meeting",
+        "Be prepared to discuss alternatives"
+      ],
+      "regionalBoards": [
+        {"region": 1, "name": "North Coast", "phone": "707-576-2220"},
+        {"region": 2, "name": "San Francisco Bay", "phone": "510-622-2300"},
+        {"region": 3, "name": "Central Coast", "phone": "805-549-3147"},
+        {"region": 4, "name": "Los Angeles", "phone": "213-576-6600"},
+        {"region": 5, "name": "Central Valley", "phone": "916-464-3291"},
+        {"region": 6, "name": "Lahontan", "phone": "530-542-5400"},
+        {"region": 7, "name": "Colorado River", "phone": "760-346-7491"},
+        {"region": 8, "name": "Santa Ana", "phone": "951-782-4130"},
+        {"region": 9, "name": "San Diego", "phone": "619-516-1990"}
+      ],
+      "ragQuery": "Regional Water Board contact permit requirements California guidance"
+    },
+
+    "result_cafo_npdes": {
+      "id": "result_cafo_npdes",
+      "type": "result",
+      "title": "Large CAFO - NPDES Required",
+      "permits": [
+        {
+          "name": "NPDES CAFO Permit",
+          "code": "Individual or General",
+          "description": "Large Concentrated Animal Feeding Operations require NPDES permit coverage.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "estimatedTime": "3-6+ months",
+          "fees": "Varies by operation"
+        }
+      ],
+      "requirements": [
+        "NPDES permit application",
+        "Nutrient Management Plan",
+        "Zero discharge required in most cases",
+        "Comprehensive monitoring and reporting"
+      ],
+      "nextSteps": [
+        "Contact Regional Board for specific requirements",
+        "Develop comprehensive nutrient management plan",
+        "Ensure adequate waste storage capacity",
+        "Submit NPDES application"
+      ],
+      "ragQuery": "CAFO NPDES permit California concentrated animal feeding operation requirements"
+    },
+
+    "result_afo_wdr": {
+      "id": "result_afo_wdr",
+      "type": "result",
+      "title": "Animal Feeding Operation - WDR Coverage",
+      "permits": [
+        {
+          "name": "WDR General Order or Individual",
+          "code": "Region-specific",
+          "description": "Medium animal feeding operations with discharge potential need WDR coverage.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/waste_discharge_requirements/",
+          "estimatedTime": "60-90 days",
+          "fees": "Varies"
+        }
+      ],
+      "requirements": [
+        "Waste management plan",
+        "Containment of runoff",
+        "Nutrient management for land application",
+        "Monitoring as required"
+      ],
+      "nextSteps": [
+        "Contact Regional Board to determine specific requirements",
+        "Evaluate options to contain all runoff on-site",
+        "Develop waste management plan",
+        "Submit NOI or application as directed"
+      ],
+      "ragQuery": "animal feeding operation AFO WDR California waste management containment"
+    },
+
+    "result_no_wdr_pretreatment": {
+      "id": "result_no_wdr_pretreatment",
+      "type": "result",
+      "title": "No WDR Needed - Check Pretreatment Requirements",
+      "permits": [],
+      "additionalInfo": "Discharges to public sewer don't require WDRs because the POTW holds the NPDES permit. However, you may need a local pretreatment permit from your sewer agency.",
+      "nextSteps": [
+        "Contact your local sewer/sanitation district",
+        "Determine if industrial pretreatment permit required",
+        "Comply with local discharge limits",
+        "Maintain proper waste segregation"
+      ],
+      "ragQuery": "industrial pretreatment permit local sewer discharge POTW California"
+    },
+
+    "result_potw_npdes": {
+      "id": "result_potw_npdes",
+      "type": "result",
+      "title": "POTW - Individual NPDES Permit",
+      "permits": [
+        {
+          "name": "Individual NPDES Permit (POTW)",
+          "code": "Site-specific",
+          "description": "Publicly Owned Treatment Works require individual NPDES permits with specific secondary treatment standards.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "estimatedTime": "6-12+ months",
+          "fees": "Based on flow and discharge type"
+        }
+      ],
+      "requirements": [
+        "Secondary treatment standards (BOD/TSS ≤30 mg/L)",
+        "Effluent monitoring program",
+        "Pretreatment program (if >5 MGD with industrial users)",
+        "Biosolids management plan",
+        "Annual reporting"
+      ],
+      "additionalInfo": "POTWs must meet federal secondary treatment standards and may have more stringent water quality-based limits depending on receiving water.",
+      "nextSteps": [
+        "Submit renewal application 180 days before expiration",
+        "Review receiving water conditions for potential WQBELs",
+        "Maintain pretreatment program if applicable",
+        "Plan for any necessary treatment upgrades"
+      ],
+      "ragQuery": "POTW NPDES permit California secondary treatment standards pretreatment program"
+    },
+
+    "result_septic_tier1": {
+      "id": "result_septic_tier1",
+      "type": "result",
+      "title": "Onsite Wastewater - Tier 1",
+      "permits": [
+        {
+          "name": "OWTS Tier 1 (Local Oversight)",
+          "code": "WQ 2012-0058-DWQ",
+          "description": "Standard residential septic systems under 3,500 GPD are regulated locally under the statewide OWTS Policy.",
+          "agency": "Local Environmental Health Department",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/owts/",
+          "estimatedTime": "Varies by county",
+          "fees": "Local permit fees"
+        }
+      ],
+      "requirements": [
+        "Local permit from county environmental health",
+        "Design by qualified professional",
+        "Proper setbacks from wells and waterways",
+        "Percolation testing",
+        "Routine maintenance"
+      ],
+      "additionalInfo": "Most residential septic systems are permitted locally under the State Water Board's OWTS Policy. Contact your county environmental health department.",
+      "nextSteps": [
+        "Contact your county environmental health department",
+        "Obtain site evaluation (perc test)",
+        "Have system designed by qualified professional",
+        "Apply for local permit"
+      ],
+      "ragQuery": "septic system OWTS tier 1 California local permit county environmental health"
+    },
+
+    "result_septic_tier2": {
+      "id": "result_septic_tier2",
+      "type": "result",
+      "title": "Onsite Wastewater - Tier 2",
+      "permits": [
+        {
+          "name": "OWTS Tier 2 (LAMP Area)",
+          "code": "WQ 2012-0058-DWQ",
+          "description": "Systems in areas with Local Agency Management Programs may have additional requirements or alternative standards.",
+          "agency": "Local Environmental Health Department",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/owts/",
+          "estimatedTime": "Varies by county",
+          "fees": "Local permit fees"
+        }
+      ],
+      "requirements": [
+        "Local permit under LAMP",
+        "May allow alternative systems",
+        "Local-specific design standards",
+        "Monitoring may be required"
+      ],
+      "nextSteps": [
+        "Check if your county has a LAMP",
+        "Contact county environmental health",
+        "Determine applicable standards",
+        "Apply through local process"
+      ],
+      "ragQuery": "OWTS tier 2 LAMP California onsite wastewater alternative system"
+    },
+
+    "result_small_domestic_wdr": {
+      "id": "result_small_domestic_wdr",
+      "type": "result",
+      "title": "Small Community Wastewater System",
+      "permits": [
+        {
+          "name": "Small Domestic Wastewater General Order",
+          "code": "WQ 2014-0153-DWQ",
+          "description": "For systems serving multiple residences or small commercial facilities with flows between 10,000-100,000 GPD.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/owts/",
+          "estimatedTime": "60-90 days",
+          "fees": "Based on flow"
+        }
+      ],
+      "requirements": [
+        "Submit NOI to Regional Board",
+        "Design by qualified engineer",
+        "Monitoring and reporting",
+        "Operation and maintenance plan"
+      ],
+      "nextSteps": [
+        "Determine if system qualifies for General Order",
+        "Engage qualified engineer for design",
+        "Prepare NOI package",
+        "Plan for ongoing O&M"
+      ],
+      "ragQuery": "small domestic wastewater general order California community system 10000 GPD"
+    },
+
+    "result_low_threat": {
+      "id": "result_low_threat",
+      "type": "result",
+      "title": "Low-Threat Discharge General Order",
+      "permits": [
+        {
+          "name": "Low-Threat Discharge General Order",
+          "code": "Region-specific",
+          "description": "For clean or relatively pollutant-free wastewaters like pool drainage, construction dewatering, or hydrant flushing.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/waste_discharge_requirements/",
+          "estimatedTime": "15-30 days",
+          "fees": "Minimal"
+        }
+      ],
+      "requirements": [
+        "Characterize discharge to confirm low-threat status",
+        "Meet tier-specific treatment requirements",
+        "Submit NOI",
+        "No discharge of contaminated water"
+      ],
+      "additionalInfo": "Low-threat orders are tiered (1A, 1B, 2, 3) based on treatment needed. Contact your Regional Board to confirm eligibility.",
+      "nextSteps": [
+        "Characterize your discharge water quality",
+        "Determine applicable tier",
+        "Contact Regional Board for specific requirements",
+        "Submit NOI if eligible"
+      ],
+      "ragQuery": "low threat discharge general order California clean water dewatering pool drainage"
+    },
+
+    "result_small_restoration": {
+      "id": "result_small_restoration",
+      "type": "result",
+      "title": "Small Habitat Restoration Order",
+      "permits": [
+        {
+          "name": "General Order for Small Habitat Restoration Projects",
+          "code": "Region-specific",
+          "description": "Streamlined 401 certification for restoration projects ≤5 acres or ≤500 linear feet.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/generalorders.html",
+          "estimatedTime": "30 days (or deemed approved if no response)",
+          "fees": "Reduced restoration fees (~$4,212 application)"
+        }
+      ],
+      "requirements": [
+        "Submit NOI at least 30 days before project start",
+        "Project must meet CEQA categorical exemption criteria",
+        "Net benefit to aquatic/riparian resources",
+        "Basic project description and protection measures"
+      ],
+      "additionalInfo": "Small restoration projects receive streamlined permitting. You may also qualify for CDFW's HREA (1652/1653) for expedited Lake and Streambed Alteration coverage.",
+      "nextSteps": [
+        "Confirm project meets size and eligibility criteria",
+        "Prepare NOI with project description",
+        "Submit to Regional Board",
+        "Coordinate with CDFW for 1600 agreement if needed"
+      ],
+      "ragQuery": "small habitat restoration order California 401 certification streamlined permit"
+    },
+
+    "result_srgo": {
+      "id": "result_srgo",
+      "type": "result",
+      "title": "Statewide Restoration General Order (SRGO)",
+      "permits": [
+        {
+          "name": "Statewide Restoration General Order",
+          "code": "WQ 2022-0048-DWQ",
+          "description": "Unified 401 certification and WDR coverage for restoration projects >5 acres with net ecological benefit.",
+          "agency": "State/Regional Water Boards",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/generalorders.html",
+          "estimatedTime": "30-60 days",
+          "fees": "Reduced restoration fees"
+        }
+      ],
+      "requirements": [
+        "Pre-application consultation (30+ days before NOI)",
+        "Submit NOI with project description, maps, baseline conditions",
+        "21-day public notice period",
+        "Project must result in net increase in aquatic/riparian functions",
+        "Annual reporting"
+      ],
+      "additionalInfo": "SRGO covers 10 specific project types including stream restoration, wetland creation, dam removal, and invasive species removal. Significantly faster than individual permits.",
+      "nextSteps": [
+        "Request pre-application meeting with Regional Board",
+        "Document baseline conditions",
+        "Prepare NOI package with required elements",
+        "Coordinate with Army Corps (404), CDFW (1600), and other agencies"
+      ],
+      "ragQuery": "Statewide Restoration General Order SRGO California habitat restoration 401 certification"
+    },
+
+    "result_groundwater_rights": {
+      "id": "result_groundwater_rights",
+      "type": "result",
+      "title": "Groundwater Rights",
+      "permits": [],
+      "additionalInfo": "Groundwater rights in California are primarily managed locally through Groundwater Sustainability Agencies (GSAs) under SGMA. You generally don't need a State Water Board permit to pump groundwater, but local restrictions may apply.",
+      "requirements": [
+        "Check if your basin is subject to SGMA (medium or high priority)",
+        "Contact your local GSA for pumping rules",
+        "May need well permit from county",
+        "May be subject to adjudication in some basins"
+      ],
+      "nextSteps": [
+        "Identify your groundwater basin",
+        "Determine basin priority (SGMA)",
+        "Contact local GSA if applicable",
+        "Check county well permit requirements"
+      ],
+      "ragQuery": "groundwater rights California SGMA GSA pumping permit well"
+    },
+
+    "result_no_water_right_needed": {
+      "id": "result_no_water_right_needed",
+      "type": "result",
+      "title": "No Water Right Needed - Purchasing Water",
+      "permits": [],
+      "additionalInfo": "If you're purchasing water from a water district, utility, or municipal supplier, the supplier already has the water rights. You don't need your own water right permit.",
+      "nextSteps": [
+        "Establish account with your water supplier",
+        "Understand any use restrictions in your service agreement",
+        "For large uses, confirm supplier has adequate supply"
+      ],
+      "ragQuery": "water supply contract California water district municipal supplier"
+    },
+
+    "result_recycled_water": {
+      "id": "result_recycled_water",
+      "type": "result",
+      "title": "Recycled Water Use",
+      "permits": [],
+      "additionalInfo": "Recycled water use is regulated through the producer's permit. As a user, you may need to enter a recycled water use agreement and follow specific use requirements.",
+      "requirements": [
+        "Recycled water use agreement with producer",
+        "Follow approved use categories (landscape, agriculture, industrial)",
+        "May need site supervisor training",
+        "Signage requirements"
+      ],
+      "nextSteps": [
+        "Contact the recycled water producer",
+        "Determine approved uses for the water quality",
+        "Execute use agreement",
+        "Install required signage and backflow prevention"
+      ],
+      "ragQuery": "recycled water use California Title 22 user requirements agreement"
+    },
+
+    "result_riparian": {
+      "id": "result_riparian",
+      "type": "result",
+      "title": "Riparian Water Right",
+      "permits": [],
+      "additionalInfo": "Riparian rights arise automatically from owning land adjacent to a natural water source. No permit is required, but you must still use water reasonably and beneficially.",
+      "requirements": [
+        "Land must physically touch the water source",
+        "Use limited to natural flow (no storage)",
+        "Water must be used on riparian land (same watershed)",
+        "Must file Statement of Water Diversion and Use if diverting >10 AF/year",
+        "Subject to correlative sharing during shortages"
+      ],
+      "nextSteps": [
+        "Confirm your land qualifies as riparian",
+        "File Statement of Water Diversion and Use with State Water Board",
+        "Implement reasonable and beneficial use practices",
+        "Maintain records of water use"
+      ],
+      "ragQuery": "riparian water rights California statement of diversion reasonable beneficial use"
+    },
+
+    "result_pre1914": {
+      "id": "result_pre1914",
+      "type": "result",
+      "title": "Pre-1914 Appropriative Right",
+      "permits": [],
+      "additionalInfo": "Pre-1914 appropriative rights are vested rights that don't require a permit. However, recent legislation (SB 389) gives the State Water Board investigative and enforcement authority.",
+      "requirements": [
+        "Must document history of use since before December 19, 1914",
+        "File Statement of Water Diversion and Use annually",
+        "Subject to reasonable and beneficial use requirement",
+        "May receive information orders from State Water Board"
+      ],
+      "nextSteps": [
+        "Gather documentation of historical use",
+        "File Statement of Water Diversion and Use",
+        "Maintain records of ongoing use",
+        "Respond to any State Water Board inquiries"
+      ],
+      "ragQuery": "pre-1914 water right California appropriative vested statement diversion SB 389"
+    },
+
+    "result_small_domestic_registration": {
+      "id": "result_small_domestic_registration",
+      "type": "result",
+      "title": "Small Domestic Use Registration",
+      "permits": [
+        {
+          "name": "Small Domestic Use Registration",
+          "code": "Water Code §1228",
+          "description": "Streamlined registration for small domestic water use up to 4,500 gallons per day.",
+          "agency": "State Water Resources Control Board - Division of Water Rights",
+          "link": "https://www.waterboards.ca.gov/waterrights/water_issues/programs/applications/registrations/",
+          "estimatedTime": "30-90 days",
+          "fees": "Reduced fees"
+        }
+      ],
+      "requirements": [
+        "Use limited to domestic purposes (household)",
+        "Maximum 4,500 gallons per day",
+        "No injury to other legal users",
+        "Annual reporting"
+      ],
+      "nextSteps": [
+        "Confirm eligibility for registration program",
+        "Submit registration application",
+        "Pay applicable fees",
+        "File annual reports"
+      ],
+      "ragQuery": "small domestic use registration California water right streamlined"
+    },
+
+    "result_small_irrigation_registration": {
+      "id": "result_small_irrigation_registration",
+      "type": "result",
+      "title": "Small Irrigation Use Registration",
+      "permits": [
+        {
+          "name": "Small Irrigation Use Registration",
+          "code": "Water Code §1228.3",
+          "description": "Streamlined registration for small-scale agricultural irrigation.",
+          "agency": "State Water Resources Control Board - Division of Water Rights",
+          "link": "https://www.waterboards.ca.gov/waterrights/water_issues/programs/applications/registrations/",
+          "estimatedTime": "30-90 days",
+          "fees": "Reduced fees"
+        }
+      ],
+      "requirements": [
+        "Limited acreage (generally <20 acres)",
+        "Agricultural use only",
+        "No injury to other legal users",
+        "Annual reporting"
+      ],
+      "nextSteps": [
+        "Confirm acreage within limits",
+        "Submit registration application",
+        "Document place and purpose of use",
+        "Maintain annual reports"
+      ],
+      "ragQuery": "small irrigation use registration California water right agricultural"
+    },
+
+    "result_stockpond_registration": {
+      "id": "result_stockpond_registration",
+      "type": "result",
+      "title": "Livestock Stockpond Registration",
+      "permits": [
+        {
+          "name": "Livestock Stockpond Registration",
+          "code": "Water Code §1226",
+          "description": "Registration for impoundments used to water livestock.",
+          "agency": "State Water Resources Control Board - Division of Water Rights",
+          "link": "https://www.waterboards.ca.gov/waterrights/water_issues/programs/applications/registrations/",
+          "estimatedTime": "30-90 days",
+          "fees": "Minimal"
+        }
+      ],
+      "requirements": [
+        "Use limited to livestock watering",
+        "Pond capacity within limits",
+        "Dam must meet Division of Safety of Dams requirements if applicable"
+      ],
+      "nextSteps": [
+        "Confirm pond is for livestock only",
+        "Check dam safety requirements",
+        "Submit registration",
+        "Maintain registration status"
+      ],
+      "ragQuery": "livestock stockpond registration California water right cattle"
+    },
+
+    "result_appropriative_permit": {
+      "id": "result_appropriative_permit",
+      "type": "result",
+      "title": "Appropriative Water Right Permit Required",
+      "permits": [
+        {
+          "name": "Post-1914 Appropriative Water Right Permit",
+          "code": "Water Code §1225 et seq.",
+          "description": "Full application process for new water diversions from streams, rivers, or lakes.",
+          "agency": "State Water Resources Control Board - Division of Water Rights",
+          "link": "https://www.waterboards.ca.gov/waterrights/",
+          "estimatedTime": "5-7+ years (permit), additional years (license)",
+          "fees": "$275 application + additional fees"
+        }
+      ],
+      "requirements": [
+        "File Application to Appropriate Water",
+        "Water availability analysis required",
+        "CEQA environmental review",
+        "Public notice and protest period",
+        "May require formal hearing if protested",
+        "Permit phase, then license phase after beneficial use demonstrated"
+      ],
+      "additionalInfo": "Water rights permits are complex and take years. Consider consulting a water rights attorney. Not all applications are approved—water must be available.",
+      "nextSteps": [
+        "Conduct preliminary water availability assessment",
+        "Engage water rights attorney/consultant",
+        "Prepare complete application with technical documentation",
+        "Budget for multi-year process",
+        "Consider alternatives (purchased water, groundwater, conservation)"
+      ],
+      "ragQuery": "appropriative water right permit application California Division of Water Rights process timeline"
+    },
+
+    "result_ms4_phase1": {
+      "id": "result_ms4_phase1",
+      "type": "result",
+      "title": "MS4 Phase I Permit Required",
+      "permits": [
+        {
+          "name": "Phase I MS4 Permit (Regional)",
+          "code": "Region-specific",
+          "description": "Regional permit for large municipal storm sewer systems serving populations ≥100,000.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/phase_i_municipal.html",
+          "estimatedTime": "Already covered by regional permit",
+          "fees": "Annual fees based on population"
+        }
+      ],
+      "requirements": [
+        "Comprehensive Stormwater Management Plan",
+        "Meet Maximum Extent Practicable (MEP) standard",
+        "Industrial/commercial facility oversight",
+        "Illicit discharge elimination",
+        "Construction site oversight",
+        "Post-construction controls for new development",
+        "TMDL compliance where applicable"
+      ],
+      "additionalInfo": "Large MS4s are typically already covered under regional permits with multiple co-permittees. Your jurisdiction should already have a permit in place.",
+      "nextSteps": [
+        "Confirm current regional permit coverage",
+        "Review permit requirements and compliance schedules",
+        "Participate in co-permittee coordination",
+        "Implement local ordinances and programs"
+      ],
+      "ragQuery": "MS4 Phase I permit California municipal stormwater management plan MEP TMDL"
+    },
+
+    "result_ms4_phase2": {
+      "id": "result_ms4_phase2",
+      "type": "result",
+      "title": "MS4 Phase II Permit Required",
+      "permits": [
+        {
+          "name": "Phase II Small MS4 General Permit",
+          "code": "2013-0001-DWQ (as amended)",
+          "description": "Statewide general permit for small MS4s in urbanized areas with population ≥50,000.",
+          "agency": "State Water Resources Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/phase_ii_municipal.html",
+          "estimatedTime": "NOI process",
+          "fees": "Based on population"
+        }
+      ],
+      "requirements": [
+        "Submit Notice of Intent",
+        "Develop Stormwater Management Plan",
+        "Implement Six Minimum Control Measures (MCMs)",
+        "Annual reporting"
+      ],
+      "sixMCMs": [
+        "Public Education and Outreach",
+        "Public Participation and Involvement",
+        "Illicit Discharge Detection and Elimination",
+        "Construction Site Runoff Control",
+        "Post-Construction Runoff Control",
+        "Pollution Prevention/Good Housekeeping"
+      ],
+      "nextSteps": [
+        "Submit NOI to Regional Board",
+        "Develop comprehensive SWMP",
+        "Adopt necessary local ordinances",
+        "Implement all six MCMs",
+        "Submit annual reports"
+      ],
+      "ragQuery": "MS4 Phase II permit California small MS4 general permit six minimum control measures MCM"
+    },
+
+    "result_no_ms4_permit": {
+      "id": "result_no_ms4_permit",
+      "type": "result",
+      "title": "MS4 Permit May Not Be Required",
+      "permits": [],
+      "additionalInfo": "Rural communities not in Census-defined urbanized areas may not need MS4 permit coverage. However, you should implement stormwater best practices.",
+      "nextSteps": [
+        "Confirm your community is not in an urbanized area",
+        "Verify no designation by Regional Board",
+        "Implement voluntary stormwater management practices",
+        "Monitor for future designation requirements"
+      ],
+      "ragQuery": "rural community stormwater California urbanized area MS4 exemption"
+    },
+
+    "result_401_certification": {
+      "id": "result_401_certification",
+      "type": "result",
+      "title": "Section 401 Water Quality Certification Required",
+      "permits": [
+        {
+          "name": "Section 401 Water Quality Certification",
+          "code": "Clean Water Act §401",
+          "description": "State certification that your federally-permitted project will comply with water quality standards.",
+          "agency": "Regional Water Quality Control Board (or State Board for FERC/multi-regional)",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/",
+          "estimatedTime": "30 days - 1 year (varies by complexity)",
+          "fees": "Based on project type and impact area"
+        },
+        {
+          "name": "Section 404 Permit",
+          "code": "Clean Water Act §404",
+          "description": "Federal permit for discharge of dredged or fill material (obtained from Army Corps).",
+          "agency": "U.S. Army Corps of Engineers",
+          "link": "https://www.usace.army.mil/Missions/Civil-Works/Regulatory-Program-and-Permits/",
+          "estimatedTime": "2-12+ months",
+          "fees": "Varies"
+        }
+      ],
+      "requirements": [
+        "Request pre-filing meeting at least 30 days before application",
+        "Submit complete certification application",
+        "Include CEQA documentation",
+        "Proposed mitigation measures",
+        "21-day public notice period"
+      ],
+      "additionalInfo": "You cannot receive a federal permit (404, FERC, etc.) without state 401 certification. California can grant, condition, or deny certification.",
+      "nextSteps": [
+        "Apply for federal Section 404 permit from Army Corps",
+        "Request pre-filing meeting with Regional Board",
+        "Prepare complete 401 application",
+        "Coordinate timing between federal and state processes",
+        "Begin CEQA documentation early"
+      ],
+      "ragQuery": "401 certification California Section 404 dredge fill Army Corps federal permit"
+    },
+
+    "result_wdr_dredge_fill": {
+      "id": "result_wdr_dredge_fill",
+      "type": "result",
+      "title": "WDR for Dredge/Fill in State Waters",
+      "permits": [
+        {
+          "name": "WDR for Dredge or Fill",
+          "code": "Individual or General Order",
+          "description": "For dredge/fill activities in waters of the state that are not subject to federal jurisdiction.",
+          "agency": "Regional Water Quality Control Board",
+          "link": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/",
+          "estimatedTime": "3-6 months",
+          "fees": "Based on impact area"
+        }
+      ],
+      "additionalInfo": "After the Supreme Court's 2023 Sackett decision, some waters lost federal protection but remain waters of the state under Porter-Cologne. WDRs apply to impacts in these areas.",
+      "requirements": [
+        "Submit Report of Waste Discharge (Form 200)",
+        "Project description and impact analysis",
+        "Proposed mitigation measures",
+        "CEQA documentation"
+      ],
+      "nextSteps": [
+        "Determine if waters are truly non-federal",
+        "Contact Regional Board for guidance",
+        "Prepare application with mitigation plan",
+        "Consider CDFW Lake and Streambed Alteration requirements"
+      ],
+      "ragQuery": "WDR dredge fill state waters California Sackett isolated wetlands Porter-Cologne"
+    }
+  }
+}

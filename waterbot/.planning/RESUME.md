@@ -10,9 +10,9 @@
 
 ## Current State
 
-- **Phase:** 12 of 12 (UI/Deployment)
-- **Status:** PHASE 12 COMPLETE - PROJECT COMPLETE
-- **Production URL:** https://vanderdev.net/waterbot
+- **Phase:** Backend Complete — Frontend Integration Pending
+- **Status:** All 3 n8n workflows deployed and active on VPS
+- **Production URL:** Not yet live (integration with vanderdev.net pending)
 
 ## What Exists
 
@@ -124,15 +124,22 @@ curl -X POST https://n8n.vanderdev.net/webhook/waterbot \
 | 11-04 | n8n Chat Workflow | COMPLETE |
 | 11-05 | Integration Testing | COMPLETE |
 
-## Phase 12 PLAN Files
+## Production Webhooks (Active)
 
-| PLAN | Description | Status |
-|------|-------------|--------|
-| 12-01 | Adapt WaterBot.jsx to Dashboard Layout | COMPLETE |
-| 12-02 | Integrate into vanderdev-website Repo | COMPLETE |
-| 12-03 | Production Deployment and Testing | COMPLETE |
+| Workflow | Webhook | Status |
+|----------|---------|--------|
+| WaterBot - Chat | `https://n8n.vanderdev.net/webhook/waterbot` | ✅ Active |
+| WaterBot - Permit Lookup | `https://n8n.vanderdev.net/webhook/waterbot-permits` | ✅ Active |
+| WaterBot - Funding Lookup | `https://n8n.vanderdev.net/webhook/waterbot-funding` | ✅ Active |
 
-### Phase 12 Integration Architecture
+## Remaining Work
+
+- [ ] Frontend integration with vanderdev.net
+- [ ] Add route in App.jsx
+- [ ] Add NavItem in Sidebar.jsx
+- [ ] Deploy via GitHub Actions
+
+### Frontend Integration Plan
 
 WaterBot will be integrated into vanderdev-website (not deployed standalone):
 - Adapt WaterBot.jsx to fit dashboard layout (remove standalone headers/footers)

@@ -1,5 +1,7 @@
 # BizBot v4 - California Business Licensing Assistant
 
+> **⚠️ ARCHIVED:** This folder contains planning/architecture documents from the v4 development cycle. The production system is now called **"BizBot Pro"** and runs at `/webhook/bizbot-pro`. See the [parent README](../README.md) for current production status.
+
 Enhanced n8n multi-agent system for California business licensing guidance.
 
 ## Key Changes from v3

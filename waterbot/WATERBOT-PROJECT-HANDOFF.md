@@ -157,12 +157,13 @@ CREATE TYPE waterbot.regional_board AS ENUM (
 
 ## n8n Workflows
 
-| Workflow | Webhook | Purpose |
-|----------|---------|---------|
-| WaterBot Knowledge Gateway | `/webhook/waterbot` | RAG chat (primary) |
-| WaterBot Ingest & Embed | Manual trigger | Document processing |
-| Permit Finder Lookup | `/webhook/waterbot-permit-finder` | Decision tree tool |
-| Funding Navigator Query | `/webhook/waterbot-funding-navigator` | Eligibility checker |
+| Workflow | Webhook | Purpose | Status |
+|----------|---------|---------|--------|
+| WaterBot - Chat | `/webhook/waterbot` | RAG chat (primary) | ✅ Active |
+| WaterBot - Permit Lookup | `/webhook/waterbot-permits` | Decision tree tool | ✅ Active |
+| WaterBot - Funding Lookup | `/webhook/waterbot-funding` | Eligibility checker | ✅ Active |
+
+> **Note:** All backend workflows are deployed and active on n8n.vanderdev.net. Frontend integration pending.
 
 ---
 
