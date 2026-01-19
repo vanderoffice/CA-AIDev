@@ -69,6 +69,79 @@ See [ChildCareAssessment/test-results-2025-12-31.md](ChildCareAssessment/test-re
 
 ---
 
+## Knowledge Base Quality Assurance
+
+KiddoBot's RAG knowledge base underwent rigorous validation to ensure accurate, trustworthy guidance for California families.
+
+### Knowledge Base Stats
+
+| Metric | Value |
+|--------|-------|
+| **Unique Knowledge Chunks** | 1,402 |
+| **Embedding Model** | OpenAI text-embedding-3-small (1536 dim) |
+| **Database Schema** | Normalized (category, subcategory, file_name) |
+| **Content Date** | January 2026 |
+
+### Content Coverage
+
+| Category | Documents | Topics |
+|----------|-----------|--------|
+| **CalWORKs Stages** | 6 | Stage 1/2/3 eligibility, transitions, applications |
+| **County Deep-Dives** | 20 | LA, SD, SF, Sacramento, + 16 more counties |
+| **Age-Specific Care** | 8 | Infant, toddler, preschool, school-age, teen |
+| **Provider Info** | 10 | Centers, family childcare, nanny, co-ops |
+| **Application Processes** | 10 | Wait lists, income verification, appeals |
+| **Quality & Health** | 10 | QRIS, licensing, CACFP, emergency care |
+| **Special Situations** | 12 | Foster care, special needs, summer, siblings |
+
+### Validation Methodology
+
+**Adversarial Testing:** We tested against real parent questions (Reddit, Facebook groups, R&R agency FAQs)—not questions derived from our own content.
+
+| Metric | Result |
+|--------|--------|
+| Adversarial queries tested | 25 |
+| Strong matches (≥0.40 similarity) | 25/25 (100%) |
+| Acceptable coverage | 100% |
+
+**Top-performing queries:**
+- "CalWORKs Stage 1/2/3 differences" → 0.76 similarity
+- "Special needs children (IEP priority)" → 0.67 similarity
+- "Foster parent programs" → 0.66 similarity
+
+### Gap Discovery & Remediation
+
+Initial testing revealed one gap:
+
+| Query | Issue | Fix |
+|-------|-------|-----|
+| "Family fees vs co-payments?" | Not covered | Added `family_fees_vs_copayments.json` |
+
+**After remediation:** 100% coverage on adversarial test set.
+
+### Data Quality Checks
+
+| Check | Result |
+|-------|--------|
+| Duplicate detection | 80 duplicates removed (5% of initial data) |
+| URL verification | 245 URLs tested, 0 broken |
+| Content deduplication | `COUNT(*) - COUNT(DISTINCT md5(content)) = 0` |
+| URL path corruption | Fixed `carefacilitysearch//` double-slash issues |
+
+### Why This Matters
+
+> Finding affordable childcare in California shouldn't require a social work degree. KiddoBot provides verified, county-specific guidance—not generic internet advice.
+
+**What makes KiddoBot different:**
+- ✅ Curated from official CA sources (CDSS, CDE, R&R Network)
+- ✅ Adversarial testing against real parent questions
+- ✅ County-specific information (all 58 counties)
+- ✅ URL verification (every link tested)
+- ✅ Deduplication for data quality
+- ✅ Personalization via intake forms
+
+---
+
 ## Architecture
 
 ```

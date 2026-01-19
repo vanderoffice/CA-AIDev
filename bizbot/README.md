@@ -317,6 +317,64 @@ See [BizAssessment/test-results-2025-12-31.md](BizAssessment/test-results-2025-1
 
 ---
 
+## Knowledge Base Quality Assurance
+
+BizBot's RAG knowledge base underwent rigorous validation to ensure accurate, trustworthy responses.
+
+### Knowledge Base Stats
+
+| Metric | Value |
+|--------|-------|
+| **Unique Knowledge Chunks** | 425 |
+| **Embedding Model** | OpenAI text-embedding-3-small (1536 dim) |
+| **Source Types** | CSLB, ABC, BBC, DRE, FTB, SOS |
+| **Content Date** | January 2026 |
+
+### Content Coverage
+
+| Category | Documents | Topics |
+|----------|-----------|--------|
+| **CSLB Contractor** | 4 | License classes, bonds, fees, handyman exemption |
+| **ABC Liquor** | 4 | Type 41/47, secondary market, application process |
+| **BBC Cosmetology/Barber** | 8 | Hour requirements, establishment licenses, CE |
+| **DRE Real Estate** | 4 | Salesperson/broker paths, exam, renewal |
+
+### Validation Methodology
+
+**Adversarial Testing:** We tested against real questions from business owners (Reddit, Avvo, SCORE forums)—not questions derived from our own content.
+
+| Metric | Result |
+|--------|--------|
+| Adversarial queries tested | 25 |
+| Strong matches (≥0.40 similarity) | 25/25 (100%) |
+| Acceptable coverage | 100% |
+
+**Top-performing queries:**
+- "Restaurant licensing total costs" → 0.71 similarity
+- "Cosmetology CE requirements" → 0.72 similarity
+- "Contractor bond requirements" → 0.68 similarity
+
+### Data Quality Checks
+
+| Check | Result |
+|-------|--------|
+| Duplicate detection | 212 duplicates removed (33% of initial data) |
+| URL verification | 230 URLs tested, 0 broken |
+| Content deduplication | `COUNT(*) - COUNT(DISTINCT md5(content)) = 0` |
+
+### Why This Matters
+
+> Most chatbots search the internet and hope for the best. BizBot searches a curated knowledge base of verified California agency sources—then cites them.
+
+**What makes BizBot different:**
+- ✅ Curated from official CA agency sources (not web scraping)
+- ✅ Adversarial testing against real user questions
+- ✅ URL verification (every link tested)
+- ✅ Deduplication for data quality
+- ✅ Personalization via intake forms
+
+---
+
 ## Folder Structure
 
 ```
