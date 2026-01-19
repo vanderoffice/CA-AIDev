@@ -1,88 +1,277 @@
-# WaterBot 💧
+# WaterBot
 
 **California Water Boards RAG Chatbot**
 
-WaterBot is an AI-powered assistant that helps users navigate California's complex water regulations, permits, and funding programs. Built with React and powered by Retrieval-Augmented Generation (RAG), it provides accurate, source-cited answers about water quality compliance, NPDES permits, and infrastructure funding opportunities.
-
-![React](https://img.shields.io/badge/React-18.2-61DAFB?logo=react)
-![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?logo=vite)
-![Tailwind](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss)
-![License](https://img.shields.io/badge/License-MIT-blue)
-
----
-
-## 🎯 Overview
-
-WaterBot serves as a digital guide to California's State Water Resources Control Board (SWRCB) and its nine Regional Water Quality Control Boards. It helps:
-
-- **Small business owners** needing water discharge permits
-- **Environmental organizations** seeking restoration funding
-- **Agricultural operations** managing compliance requirements
-- **Local governments** pursuing infrastructure financing
-- **Non-profits** working with water resources
-
-### Key Features
-
-| Feature | Status | Webhook | Description |
-|---------|--------|---------|-------------|
-| **Ask WaterBot** | ✅ Backend Ready | `/waterbot` | RAG-powered chat with source citations |
-| **Permit Finder** | ✅ Backend Ready | `/waterbot-permits` | Decision tree tool for permit requirements |
-| **Funding Navigator** | ✅ Backend Ready | `/waterbot-funding` | Eligibility checker for water infrastructure grants |
-
-> **Note:** All three backend workflows are deployed and active. Frontend integration with vanderdev.net is pending.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18.2-61DAFB?logo=react" alt="React"/>
+  <img src="https://img.shields.io/badge/Knowledge-1,401_Chunks-informational" alt="Knowledge"/>
+  <img src="https://img.shields.io/badge/Status-Production-success" alt="Status"/>
+  <img src="https://img.shields.io/badge/License-MIT-blue" alt="License"/>
+</p>
 
 ---
 
-## 🏗️ Architecture
+## The Complexity Problem
+
+California's water regulatory landscape is notoriously complex:
+
+- **1 State Water Resources Control Board** sets statewide policy
+- **9 Regional Water Quality Control Boards** implement regulations in their jurisdictions
+- **Hundreds of permit types** depending on what you discharge, where, and how much
+- **Multiple funding programs** with different eligibility requirements
+
+A small business owner trying to figure out if they need a permit faces a maze of acronyms: NPDES, WDR, TMDL, 401 Certification. WaterBot cuts through this complexity with AI that understands the context.
+
+---
+
+## What WaterBot Does
+
+WaterBot is an AI-powered assistant that helps users navigate California's water regulations, permits, and funding programs. It provides accurate, source-cited answers about water quality compliance, NPDES permits, and infrastructure funding opportunities.
+
+**Live features:**
+
+| Feature | Description |
+|---------|-------------|
+| **Ask WaterBot** | RAG-powered chat with source citations |
+| **Permit Finder** | Interactive decision tree tool for permit requirements |
+| **Funding Navigator** | Eligibility checker for water infrastructure grants |
+
+---
+
+## Who WaterBot Serves
+
+| User Type | Example Questions |
+|-----------|-------------------|
+| **Residents** | "Is my tap water safe?" "What does my CCR report mean?" |
+| **Businesses** | "Do I need an NPDES permit?" "What are the discharge requirements?" |
+| **Operators** | "Am I eligible for SAFER funding?" "How does consolidation work?" |
+
+---
+
+## The Permit Finder: Decision Trees Instead of Search
+
+Most chatbots just search for keywords. The Permit Finder uses **decision trees**—structured paths that mirror how a regulatory expert thinks.
+
+**Example: Construction Site Permits**
+
+```
+Q: Are you doing construction or land disturbance?
+   │
+   ├─► Yes
+   │     │
+   │     Q: How many acres will be disturbed?
+   │           │
+   │           ├─► Less than 1 acre → General guidance, may not need permit
+   │           │
+   │           └─► 1+ acres → Construction General Permit required
+   │                 │
+   │                 Q: Will you discharge stormwater?
+   │                       │
+   │                       ├─► Yes → NPDES permit + SWPPP required
+   │                       │
+   │                       └─► No → Still need erosion control plan
+   │
+   └─► No → Check other permit categories
+```
+
+**Why this matters:** A keyword search for "construction permit" returns hundreds of results. A decision tree gets you to the right answer in 3-4 questions.
+
+---
+
+## The RAG Architecture (Explained)
+
+RAG (Retrieval-Augmented Generation) is the core technology that makes WaterBot accurate. Here's how it works:
+
+### Step-by-Step Flow
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                         User Interface                          │
 │                    React + Vite + Tailwind CSS                  │
 └─────────────────────────────────┬───────────────────────────────┘
-                                  │ HTTPS
+                                  │ User asks: "Do I need a permit
+                                  │  for my car wash discharge?"
                                   ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                      n8n Workflow Engine                        │
-│                   n8n.vanderdev.net/webhook/waterbot            │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────┐  │
-│  │   Webhook    │→ │ Vector Search │→ │   Claude Sonnet LLM  │  │
-│  │   Receiver   │  │  (pgvector)   │  │   with RAG Context   │  │
-│  └──────────────┘  └──────────────┘  └──────────────────────┘  │
+│                      Step 1: EMBED THE QUERY                    │
+│                                                                 │
+│  "Do I need a permit for my car wash discharge?"                │
+│                           ↓                                     │
+│  [0.023, -0.156, 0.089, ... 1536 dimensions]                    │
+│                                                                 │
+│  The question becomes a vector that captures its meaning        │
 └─────────────────────────────────┬───────────────────────────────┘
                                   │
                                   ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Supabase PostgreSQL                          │
-│              pgvector extension (1536 dimensions)               │
-│                   waterbot_documents table                      │
+│                    Step 2: SEARCH KNOWLEDGE BASE                │
+│                                                                 │
+│  pgvector finds the 8 most similar chunks:                      │
+│                                                                 │
+│  1. "Car wash discharge requirements" (0.82 similarity)         │
+│  2. "Industrial general permit categories" (0.76 similarity)    │
+│  3. "Discharge to sanitary sewer vs storm drain" (0.71)         │
+│  ...                                                            │
+└─────────────────────────────────┬───────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    Step 3: AUGMENT THE PROMPT                   │
+│                                                                 │
+│  System: "Answer using ONLY this context:"                      │
+│  [Retrieved chunks inserted here]                               │
+│                                                                 │
+│  User: "Do I need a permit for my car wash discharge?"          │
+└─────────────────────────────────┬───────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    Step 4: GENERATE RESPONSE                    │
+│                                                                 │
+│  Claude generates an answer GROUNDED in the retrieved context:  │
+│                                                                 │
+│  "Car wash discharges typically require coverage under the      │
+│   Industrial General Permit if discharged to storm drains.      │
+│   If your discharge goes to sanitary sewer, contact your        │
+│   local sewer authority instead..."                             │
+│                                                                 │
+│  Sources: [Links to original documents]                         │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Tech Stack
+### Why RAG Matters
 
-| Layer | Technology |
-|-------|------------|
-| **Frontend** | React 18, Vite 5, Tailwind CSS 3.4 |
-| **Backend** | n8n webhooks (workflow automation) |
-| **Vector Database** | Supabase PostgreSQL + pgvector |
-| **Embeddings** | OpenAI `text-embedding-3-small` (1536 dim) |
-| **LLM** | Claude Sonnet |
-| **Similarity** | Cosine similarity, threshold > 0.70 |
-| **Hosting** | Hostinger (via GitHub Actions FTP deploy) |
+| Without RAG | With RAG |
+|-------------|----------|
+| AI guesses from training data | AI searches curated knowledge first |
+| Can't cite sources | Every answer links to official sources |
+| Knowledge frozen at training date | Knowledge base updates without retraining |
+| Hallucinations common | Hallucinations rare (grounded in context) |
 
 ---
 
-## 📁 Project Structure
+## Semantic Chunking: The Secret Sauce
+
+Most RAG systems split documents every 500-1000 characters. This creates problems:
+
+```
+❌ ARBITRARY CHUNKING (what most systems do):
+
+Chunk 47: "...discharge requirements for car washes. The permit fee"
+Chunk 48: "schedule is as follows: $500 for minor facilities, $2,500"
+Chunk 49: "for major facilities. Monitoring requirements include..."
+
+Problems:
+- Information split mid-sentence
+- Related content scattered across chunks
+- Retrieval returns partial information
+```
+
+WaterBot uses **semantic chunking**—splitting on meaning, not character counts:
+
+```
+✅ SEMANTIC CHUNKING (what WaterBot does):
+
+Split on H2 headers. Each ## Section becomes a chunk.
+
+Chunk: "## Fee Schedule
+The permit fee schedule is as follows:
+- $500 for minor facilities
+- $2,500 for major facilities
+
+Fees are non-refundable and due at application submission."
+
+Benefits:
+- Complete thoughts stay together
+- H3 subsections stay with their parent H2
+- Each chunk is prefixed with document title for context
+```
+
+### Chunking Configuration
+
+| Parameter | Value | Why |
+|-----------|-------|-----|
+| Split boundary | H2 headers (`##`) | Sections are natural semantic units |
+| Max chunk size | 2,000 characters | Fits in context window, captures full sections |
+| Min chunk size | 100 characters | Filters out empty/trivial sections |
+| Large chunk handling | Split on `\n\n` | Preserves paragraph boundaries |
+| Context prefix | Document title (H1) | Chunk knows what document it came from |
+
+---
+
+## The Knowledge Base
+
+### By the Numbers
+
+| Metric | Value |
+|--------|-------|
+| **Unique Knowledge Chunks** | 1,401 |
+| **Embedding Model** | OpenAI text-embedding-3-small (1536 dim) |
+| **Similarity Threshold** | 0.30 minimum |
+| **Top-K Retrieved** | 8 chunks per query |
+| **Content Date** | January 2026 |
+
+### Content Coverage
+
+| Category | Documents | Topics |
+|----------|-----------|--------|
+| **Pollutants** | 10 | PFAS, lead, arsenic, nitrate, chromium-6, DBPs |
+| **Regional Boards** | 10 | All 9 Regional Water Boards + responsibilities |
+| **Permits & Compliance** | 10 | MS4, WDRs, 401 cert, monitoring, enforcement |
+| **Programs** | 10 | Recycled water, conservation, drought, TMDLs |
+| **Small Systems** | 10 | Consolidation, private wells, state small systems |
+| **Consumer FAQ** | 25 | Tap safety, CCRs, hard water, chlorine, testing |
+| **Public Resources** | 10 | Complaints, bills, shutoff protections |
+
+---
+
+## Quality Assurance
+
+### Adversarial Testing
+
+We didn't test with questions we made up. We tested with real questions from:
+- Water Board public comment letters
+- Reddit and Nextdoor discussions
+- Water system operator forums
+- Agency FAQ pages
+
+| Metric | Result |
+|--------|--------|
+| Adversarial queries tested | 25 |
+| Strong matches (≥0.40 similarity) | 25/25 (100%) |
+
+**Top-performing queries:**
+- "Recycled water regulations California" → 0.79 similarity
+- "TMDL pollution limits explained" → 0.76 similarity
+- "SAFER funding eligibility" → 0.72 similarity
+
+### Gap Discovery & Remediation
+
+Initial testing revealed a structural gap—content was regulatory-focused but missing consumer FAQ topics:
+
+| Gap Category | Issue | Fix |
+|--------------|-------|-----|
+| Hard water, chlorine smell | Zero content | Added consumer FAQ documents |
+| How to read CCR reports | Technical only | Added consumer-friendly explainers |
+| Boiling water misconceptions | Not covered | Added safety guidance |
+
+**Before remediation:** 64% coverage
+**After remediation:** 100% coverage
+
+### Data Quality Checks
+
+| Check | Result |
+|-------|--------|
+| Duplicate detection | 88 duplicates removed (6% of initial data) |
+| URL verification | 194 URLs tested, 0 broken |
+| Content deduplication | `COUNT(*) - COUNT(DISTINCT md5(content)) = 0` |
+
+---
+
+## Project Structure
 
 ```
 waterbot/
-├── .planning/                    # Project management files
-│   ├── PROJECT.md               # Project definition
-│   ├── ROADMAP.md               # Development phases
-│   ├── RESUME.md                # Session handoff state
-│   └── phases/                  # Individual phase plans
-│
 ├── knowledge/                    # RAG knowledge base (markdown)
 │   ├── 03-permits/              # Permit documentation
 │   │   ├── npdes/               # National Pollutant Discharge
@@ -105,302 +294,34 @@ waterbot/
 ├── scripts/                      # RAG pipeline scripts
 │   ├── chunk-knowledge.js       # Markdown → chunks processor
 │   ├── embed-chunks.py          # Chunk → vector embeddings
-│   └── chunks.json              # Generated chunk data (1.5MB)
+│   └── chunks.json              # Generated chunk data
 │
 ├── src/
 │   ├── components/              # Reusable UI components
-│   ├── config/
-│   │   └── supabase.js          # Database configuration
 │   ├── pages/
 │   │   └── WaterBot.jsx         # Main chat interface
 │   ├── App.jsx                  # Root component
-│   ├── main.jsx                 # Entry point
-│   └── index.css                # Global styles + Tailwind
+│   └── main.jsx                 # Entry point
 │
-├── index.html                    # HTML entry point
-├── package.json                  # Dependencies
-├── vite.config.js               # Vite bundler config
-├── tailwind.config.js           # Tailwind theme config
-├── postcss.config.js            # PostCSS plugins
-└── WATERBOT-PROJECT-HANDOFF.md  # Complete project context
+└── index.html                    # HTML entry point
 ```
 
 ---
 
-## 🧠 RAG Pipeline
+## What Makes WaterBot Different
 
-The Retrieval-Augmented Generation pipeline ensures accurate, source-cited responses.
-
-### 1. Knowledge Ingestion
-
-```bash
-# Step 1: Chunk markdown documents by H2 sections
-node scripts/chunk-knowledge.js
-
-# Step 2: Generate embeddings and insert into Postgres
-export OPENAI_API_KEY='your-key'
-python scripts/embed-chunks.py
-```
-
-### 2. Chunking Strategy
-
-The chunker (`chunk-knowledge.js`) implements a semantic chunking approach:
-
-- **Split on H2 headers** — Each `## Section` becomes a chunk
-- **Preserve hierarchy** — H3 subsections stay with their parent H2
-- **Add document context** — Each chunk is prefixed with the document title (H1)
-- **Size limits** — Max 2000 chars per chunk, min 100 chars
-- **Paragraph-aware splitting** — Large chunks split on `\n\n` boundaries
-
-### 3. Vector Search Configuration
-
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| Embedding Model | `text-embedding-3-small` | 1536 dimensions |
-| Similarity Metric | Cosine | Standard for text |
-| Threshold | 0.70 | Minimum relevance score |
-| Top-K | 8 | Chunks retrieved per query |
-
-### 4. n8n Workflow
-
-The backend workflow handles:
-1. **Receive** — Webhook accepts user message + session history
-2. **Embed** — Generate embedding for user query
-3. **Search** — pgvector similarity search (top 8 chunks)
-4. **Augment** — Inject relevant chunks into Claude prompt
-5. **Generate** — Claude Sonnet produces response with citations
-6. **Return** — JSON response with answer + sources
-
-**Critical Pattern** (from KiddoBot learnings):
-```javascript
-// Always set on vector search node to handle empty results
-alwaysOutputData: true
-```
+| Typical Chatbot | WaterBot |
+|-----------------|----------|
+| Searches the internet | Searches curated, verified knowledge base |
+| Generic water facts | California-specific regulations |
+| "I think..." responses | Source-cited answers |
+| One-size-fits-all | Three user types (resident, business, operator) |
+| Keyword search | Semantic similarity + decision trees |
+| No quality gates | MD5 deduplication, URL verification, adversarial testing |
 
 ---
 
-## 🔍 Knowledge Base Quality Assurance
-
-WaterBot's RAG knowledge base underwent rigorous validation to ensure accurate, trustworthy responses for residents, businesses, and water system operators.
-
-### Knowledge Base Stats
-
-| Metric | Value |
-|--------|-------|
-| **Unique Knowledge Chunks** | 1,401 |
-| **Embedding Model** | OpenAI text-embedding-3-small (1536 dim) |
-| **Similarity Threshold** | 0.30 minimum |
-| **Content Date** | January 2026 |
-
-### Content Coverage
-
-| Category | Documents | Topics |
-|----------|-----------|--------|
-| **Pollutants** | 10 | PFAS, lead, arsenic, nitrate, chromium-6, DBPs |
-| **Regional Boards** | 10 | All 9 Regional Water Boards + responsibilities |
-| **Permits & Compliance** | 10 | MS4, WDRs, 401 cert, monitoring, enforcement |
-| **Programs** | 10 | Recycled water, conservation, drought, TMDLs |
-| **Small Systems** | 10 | Consolidation, private wells, state small systems |
-| **Consumer FAQ** | 25 | Tap safety, CCRs, hard water, chlorine, testing |
-| **Public Resources** | 10 | Complaints, bills, shutoff protections |
-
-### Three User Types Served
-
-| User Type | Example Queries | Coverage |
-|-----------|-----------------|----------|
-| **Residents** | Tap water safety, violation notices, hard water | ✅ 100% |
-| **Businesses** | NPDES permits, discharge requirements, fees | ✅ 100% |
-| **Operators** | SAFER funding, consolidation, compliance | ✅ 100% |
-
-### Validation Methodology
-
-**Adversarial Testing:** We tested against real questions from Californians (Water Board comment letters, Reddit, Nextdoor, operator forums)—not questions derived from our own content.
-
-| Metric | Result |
-|--------|--------|
-| Adversarial queries tested | 25 |
-| Strong matches (≥0.40 similarity) | 25/25 (100%) |
-| Acceptable coverage | 100% |
-
-**Top-performing queries:**
-- "Recycled water regulations California" → 0.79 similarity
-- "TMDL pollution limits explained" → 0.76 similarity
-- "SAFER funding eligibility" → 0.72 similarity
-
-### Gap Discovery & Remediation
-
-Initial testing revealed a structural gap—content was regulatory-focused but missing consumer FAQ topics:
-
-| Gap Category | Issue | Fix |
-|--------------|-------|-----|
-| Hard water, chlorine smell | Zero content | Added `batch_consumer_faq.json` (10 docs) |
-| How to read CCR reports | Technical only | Added consumer-friendly explainers |
-| Boiling water misconceptions | Not covered | Added safety guidance (nitrates, bacteria) |
-
-**Before remediation:** 64% coverage
-**After remediation:** 100% coverage
-
-### Data Quality Checks
-
-| Check | Result |
-|-------|--------|
-| Duplicate detection | 88 duplicates removed (6% of initial data) |
-| URL verification | 194 URLs tested, 0 broken |
-| Content deduplication | `COUNT(*) - COUNT(DISTINCT md5(content)) = 0` |
-
-### Why This Matters
-
-> California's water regulatory landscape is notoriously complex. WaterBot provides verified, jurisdiction-aware guidance—not generic water facts.
-
-**What makes WaterBot different:**
-- ✅ Curated from official Water Board sources
-- ✅ Adversarial testing against real user questions
-- ✅ Three user types (resident, business, operator)
-- ✅ Regional Water Board jurisdiction mapping
-- ✅ URL verification (every link tested)
-- ✅ Personalization via IntakeForm (county, concern, water system)
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm or pnpm
-- OpenAI API key (for embeddings)
-- Access to n8n instance (for backend)
-- Supabase/PostgreSQL with pgvector
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/vanderoffice/CA-AIDev.git
-cd CA-AIDev/waterbot
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-The app will open at `http://localhost:5173`.
-
-### Environment Setup
-
-The frontend communicates with the n8n webhook at:
-```
-https://n8n.vanderdev.net/webhook/waterbot
-```
-
-For local development with a different backend, update `CHAT_WEBHOOK_URL` in `src/pages/WaterBot.jsx`.
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-Output is written to `dist/` directory.
-
----
-
-## 📚 Knowledge Base
-
-### Document Format
-
-All knowledge documents use markdown with structured content:
-
-```markdown
-# Document Title
-
-Brief introduction paragraph.
-
-## Section Heading
-
-Content organized by topic...
-
-### Subsection
-
-More detailed information...
-
-## Another Section
-
-Additional content...
-```
-
-### Categories
-
-| Category | Content |
-|----------|---------|
-| **permits** | NPDES, WDR, 401 Certification, Water Rights, Habitat Restoration |
-| **funding** | CWSRF, DWSRF, SAFER, Propositions 1/4/68, WIFIA |
-| **compliance** | Enforcement, violations, monitoring requirements |
-| **water-quality** | Standards, TMDLs, beneficial uses |
-| **entities** | Regional boards, contact information |
-| **water-rights** | Appropriative, riparian, temporary permits |
-| **climate-drought** | Conservation, drought response, adaptation |
-| **public-resources** | CIWQS, GeoTracker, public databases |
-
-### Adding New Knowledge
-
-1. Create a markdown file in the appropriate `knowledge/` subdirectory
-2. Follow the H1 → H2 → H3 heading hierarchy
-3. Run the chunking script:
-   ```bash
-   node scripts/chunk-knowledge.js
-   ```
-4. Generate and upload embeddings:
-   ```bash
-   python scripts/embed-chunks.py
-   ```
-
----
-
-## 🎨 UI Components
-
-### Main Interface (`WaterBot.jsx`)
-
-The chat interface provides:
-
-- **Mode Selection** — Landing screen with feature choices
-- **Chat Mode** — Conversational interface with message history
-- **Suggested Questions** — Quick-start prompts for new users
-- **Source Citations** — Transparent sourcing for all responses
-- **Session Persistence** — Chat history saved in sessionStorage
-
-### Color Theme
-
-| Element | Color | Tailwind Class |
-|---------|-------|----------------|
-| Primary | Sky Blue | `sky-500` |
-| Accent | Cyan | `cyan-500` |
-| Background | Neutral Dark | `neutral-900` |
-| Text | White/Gray | `white`, `neutral-400` |
-
----
-
-## 🔧 Configuration Files
-
-### `vite.config.js`
-- React plugin with Fast Refresh
-- Production build to `dist/`
-- ESBuild minification
-
-### `tailwind.config.js`
-- Custom `water-blue` color (`#0ea5e9`)
-- Inter font family (sans)
-- JetBrains Mono (monospace)
-
-### `postcss.config.js`
-- Tailwind CSS processing
-- Autoprefixer for browser compatibility
-
----
-
-## 📋 Disclaimer
+## Disclaimer
 
 > **WaterBot provides general information about California Water Boards regulations, permits, and funding programs. This information is for educational purposes only and does not constitute official guidance or legal advice.**
 >
@@ -412,43 +333,6 @@ The chat interface provides:
 
 ---
 
-## 🗺️ Roadmap
-
-| Phase | Status | Description |
-|-------|--------|-------------|
-| 1. Infrastructure | ✅ Complete | Schema, n8n workflows, UI skeleton |
-| 2. Foundation | ✅ Complete | Core knowledge documents |
-| 3. Permits | ✅ Complete | NPDES, WDR, 401, Water Rights docs |
-| 4. Funding | ✅ Complete | SRF, grants, federal programs |
-| 5. Additional Topics | ✅ Complete | Compliance, water quality, climate |
-| 6. Tools Backend | ✅ Complete | Permit Finder & Funding Navigator workflows |
-| 7. Vector DB Tuning | 🔜 Planned | Accuracy optimization |
-| 8. Frontend Deploy | 🔜 Pending | Integration with vanderdev.net |
-
----
-
-## 🤝 Related Projects
-
-WaterBot is part of the **CA-AIDev** suite of California government assistance chatbots:
-
-- **KiddoBot** — Childcare assistance navigator
-- **BizBot** — Business licensing guide
-- **WaterBot** — Water regulations assistant (this project)
-
-All bots share the same architecture pattern for consistency and maintainability.
-
----
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
-
----
-
-## 🔗 Resources
-
-- [California Water Boards](https://www.waterboards.ca.gov/)
-- [Find Your Regional Board](https://www.waterboards.ca.gov/waterboards_map.html)
-- [CIWQS Database](https://ciwqs.waterboards.ca.gov/)
-- [Electronic Filing System](https://efiling.waterboards.ca.gov/)
-- [Financial Assistance Programs](https://www.waterboards.ca.gov/water_issues/programs/grants_loans/)

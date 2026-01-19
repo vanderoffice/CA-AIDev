@@ -1,4 +1,6 @@
-# KiddoBot - California Childcare Navigator
+# KiddoBot
+
+**California Childcare Navigator**
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/>
@@ -13,24 +15,34 @@
 
 ---
 
-## Overview
+## The Problem We're Solving
 
 Finding affordable childcare in California is overwhelming. Parents must navigate:
 
-- **Multiple subsidy programs** (CalWORKs, CCDF, Regional Center, Head Start, State Preschool)
-- **58 county R&R agencies** with different processes
-- **Income eligibility thresholds** that vary by family size
-- **Special situations** (foster care, special needs, shift workers, rural areas)
+- **6+ subsidy programs** with different eligibility rules (CalWORKs, CCDF, Regional Center, Head Start, State Preschool, TK)
+- **58 county R&R agencies** with different application processes
+- **Income thresholds** that vary by family size and county
+- **Special situations** that change everything (foster care, special needs, shift workers, rural areas)
 
-KiddoBot provides personalized guidance through conversational AI, helping families understand their options and take action.
+A single mom in LA with an autistic toddler qualifies for different programs than a two-parent household in Modoc County. Generic "childcare resources" pages don't help. KiddoBot provides personalized guidance.
 
 ---
 
-## Interfaces
+## What KiddoBot Does
+
+KiddoBot helps California families:
+- **Understand their options** — Which programs they might qualify for
+- **Navigate applications** — Where to apply, what documents they need
+- **Find providers** — Licensed childcare in their county
+- **Handle special situations** — Foster care priority, special needs services, non-traditional hours
+
+---
+
+## Three Ways to Use KiddoBot
 
 | Mode | Description |
 |------|-------------|
-| **Guided Setup** | 4-step intake form collecting family context |
+| **Guided Setup** | 4-step intake form collecting family context (county, income, children's ages) |
 | **Just Chat** | Direct conversation without intake |
 | **Subsidy Calculator** | Interactive eligibility checker |
 
@@ -40,46 +52,27 @@ The chat interface supports full conversation history, family context injection,
 
 ## Programs Covered
 
-| Program | Eligibility | Ages |
-|---------|-------------|------|
-| **CalWORKs Childcare** | CalWORKs recipients, working/in training | 0-12 |
-| **CCDF** | Income ≤85% SMI, working/in training | 0-12 |
-| **Regional Center** | Children with developmental disabilities | 0-3 (Early Start) |
-| **Head Start** | Income at/below poverty line | 3-5 |
-| **State Preschool (CSPP)** | Income-based eligibility | 3-4 |
-| **Transitional Kindergarten** | All children (age cutoff varies) | 4-5 |
+| Program | Eligibility | Ages | What You Get |
+|---------|-------------|------|--------------|
+| **CalWORKs Childcare** | CalWORKs recipients, working/in training | 0-12 | Subsidized care while working toward self-sufficiency |
+| **CCDF** | Income ≤85% SMI, working/in training | 0-12 | Federal subsidy for working families |
+| **Regional Center** | Children with developmental disabilities | 0-3 | Early intervention services + childcare support |
+| **Head Start** | Income at/below poverty line | 3-5 | Comprehensive early childhood education |
+| **State Preschool (CSPP)** | Income-based eligibility | 3-4 | Free part-day preschool |
+| **Transitional Kindergarten** | All children (age cutoff varies) | 4-5 | Free public school option |
 
 ---
 
-## Testing
+## The Knowledge Base: 58 Counties Deep
 
-Test scenarios cover diverse family situations across California.
-
-| Test | Scenario | Score |
-|------|----------|-------|
-| K1 | Multi-program eligibility (single mom, autism) | 9/10 |
-| K2 | Foster/kinship care priority | 9/10 |
-| K3 | Income cliff anxiety | 9/10 |
-| K4 | Rural county (Modoc) | 8/10 |
-| K5 | Immigrant family concerns | 9/10 |
-
-**Average:** 8.8/10
-
-See [ChildCareAssessment/test-results-2025-12-31.md](ChildCareAssessment/test-results-2025-12-31.md) for detailed analysis.
-
----
-
-## Knowledge Base Quality Assurance
-
-KiddoBot's RAG knowledge base underwent rigorous validation to ensure accurate, trustworthy guidance for California families.
-
-### Knowledge Base Stats
+### By the Numbers
 
 | Metric | Value |
 |--------|-------|
 | **Unique Knowledge Chunks** | 1,402 |
 | **Embedding Model** | OpenAI text-embedding-3-small (1536 dim) |
-| **Database Schema** | Normalized (category, subcategory, file_name) |
+| **Counties Covered** | All 58 California counties |
+| **URLs Verified** | 245 (0 broken) |
 | **Content Date** | January 2026 |
 
 ### Content Coverage
@@ -94,15 +87,23 @@ KiddoBot's RAG knowledge base underwent rigorous validation to ensure accurate, 
 | **Quality & Health** | 10 | QRIS, licensing, CACFP, emergency care |
 | **Special Situations** | 12 | Foster care, special needs, summer, siblings |
 
-### Validation Methodology
+---
 
-**Adversarial Testing:** We tested against real parent questions (Reddit, Facebook groups, R&R agency FAQs)—not questions derived from our own content.
+## Quality Assurance
+
+### Adversarial Testing
+
+We tested with real questions from parents—not questions we made up:
+
+- Reddit r/BabyBumps and r/Parenting
+- Facebook parent groups
+- R&R agency FAQ pages
+- CDE public inquiries
 
 | Metric | Result |
 |--------|--------|
 | Adversarial queries tested | 25 |
 | Strong matches (≥0.40 similarity) | 25/25 (100%) |
-| Acceptable coverage | 100% |
 
 **Top-performing queries:**
 - "CalWORKs Stage 1/2/3 differences" → 0.76 similarity
@@ -128,38 +129,23 @@ Initial testing revealed one gap:
 | Content deduplication | `COUNT(*) - COUNT(DISTINCT md5(content)) = 0` |
 | URL path corruption | Fixed `carefacilitysearch//` double-slash issues |
 
-### Why This Matters
-
-> Finding affordable childcare in California shouldn't require a social work degree. KiddoBot provides verified, county-specific guidance—not generic internet advice.
-
-**What makes KiddoBot different:**
-- ✅ Curated from official CA sources (CDSS, CDE, R&R Network)
-- ✅ Adversarial testing against real parent questions
-- ✅ County-specific information (all 58 counties)
-- ✅ URL verification (every link tested)
-- ✅ Deduplication for data quality
-- ✅ Personalization via intake forms
-
 ---
 
-## Architecture
+## Testing Results
 
-```
-┌─────────────────┐     ┌─────────────────┐
-│  React Frontend │────▶│  n8n Webhook    │
-│  (vanderdev.net)│     │  /kiddobot      │
-└─────────────────┘     └────────┬────────┘
-                                 │
-                                 ▼
-                    ┌────────────────────────┐
-                    │    OpenAI GPT-4        │
-                    │  + Conversation History│
-                    │  + Family Context      │
-                    └────────────────────────┘
-```
+Test scenarios cover diverse family situations across California:
 
-**n8n Workflow ID:** `nNMQGXPM8tlqYSgr`
-**Webhook:** `https://n8n.vanderdev.net/webhook/kiddobot`
+| Test | Scenario | Score |
+|------|----------|-------|
+| K1 | Multi-program eligibility (single mom, autism) | 9/10 |
+| K2 | Foster/kinship care priority | 9/10 |
+| K3 | Income cliff anxiety | 9/10 |
+| K4 | Rural county (Modoc) | 8/10 |
+| K5 | Immigrant family concerns | 9/10 |
+
+**Average:** 8.8/10
+
+See [ChildCareAssessment/test-results-2025-12-31.md](ChildCareAssessment/test-results-2025-12-31.md) for detailed analysis.
 
 ---
 
@@ -187,6 +173,18 @@ kiddobot/
 
 ---
 
+## What Makes KiddoBot Different
+
+| Typical Chatbot | KiddoBot |
+|-----------------|----------|
+| Generic childcare info | California-specific, county-aware |
+| "Try searching for..." | Direct answers with program recommendations |
+| One-size-fits-all | Personalized by family situation |
+| Ignores special cases | Foster care, special needs, rural counties |
+| No quality gates | Adversarial testing, URL verification, deduplication |
+
+---
+
 ## Key Resources
 
 | Resource | Description |
@@ -198,11 +196,9 @@ kiddobot/
 
 ---
 
-## Related
+## License
 
-- [BizBot](../bizbot/) - California business licensing assistant
-- [WaterBot](../waterbot/) - California Water Boards RAG chatbot
-- [Research Methodology](ChildCareAssessment/research-protocol/README.md) - Multi-model validation process
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
 
 ---
 

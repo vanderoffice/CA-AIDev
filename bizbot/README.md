@@ -1,4 +1,6 @@
-# BizBot - California Business Licensing Assistant
+# BizBot
+
+**California Business Licensing Assistant**
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/>
@@ -11,7 +13,24 @@
 
 **Live at:** [vanderdev.net/bizbot](https://vanderdev.net/bizbot)
 
-## Interfaces
+---
+
+## The Problem
+
+Starting a business in California requires navigating a complex web of requirements that vary by:
+
+- **Business structure** — LLC, Corporation, Sole Proprietor, Partnership
+- **Industry type** — Retail, food service, healthcare, cannabis, construction
+- **Location** — 482 cities and 58 counties with different rules
+- **Size and scope** — Home-based vs. commercial, local vs. statewide
+
+A restaurant in San Francisco needs different permits than a construction company in Riverside. A cannabis retailer faces requirements that a marketing consultant never encounters. One-size-fits-all guidance doesn't work.
+
+---
+
+## What BizBot Does
+
+BizBot provides personalized business licensing guidance through two interfaces:
 
 | Mode | Description |
 |------|-------------|
@@ -19,46 +38,31 @@
 | **Just Chat** | Direct conversation without intake |
 | **License Finder** | Interactive calculator showing required licenses |
 
-The chat interface supports full conversation history, business context injection, and markdown rendering with clickable links.
+The chat interface supports full conversation history, business context injection, and markdown rendering with clickable links to official sources.
 
 ---
 
-## Table of Contents
+## The Multi-Agent Architecture (Explained)
 
-- [Interfaces](#interfaces)
-- [Overview](#overview)
-- [How It Works](#how-it-works)
-- [Agent Architecture](#agent-architecture)
-- [Version History](#version-history)
-- [Quick Start](#quick-start)
-- [Configuration](#configuration)
-- [Performance](#performance)
-- [Testing](#testing)
-- [Folder Structure](#folder-structure)
+### Why Multiple Agents?
 
----
+Most chatbots are single-agent: one AI tries to answer everything. This works for simple questions but fails for complex domains like business licensing.
 
-## Overview
+**Think of it like a law firm:**
 
-Starting a business in California requires navigating a complex web of federal, state, and local requirements that vary by:
+You wouldn't ask the tax lawyer about real estate closings. You wouldn't ask the immigration specialist about corporate formation. Each expert handles their domain, and a senior partner coordinates the team.
 
-- Business structure (LLC, Corporation, Sole Proprietor, etc.)
-- Industry type (retail, food service, healthcare, cannabis, etc.)
-- Location (city and county regulations)
-- Size and scope of operations
+BizBot works the same way. Six specialized AI agents collaborate, each expert in one phase of business formation.
 
-BizBot automates this research by using specialized AI agents that work together to generate personalized guidance covering all four phases of business formation.
-
----
-
-## How It Works
+### How It Works
 
 ```
 ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│   Tally Form    │────▶│  Google Sheets  │────▶│      n8n        │
-│   (User Input)  │     │   (Data Store)  │     │   (Trigger)     │
+│   User Input    │────▶│  Context Store  │────▶│    Supervisor   │
+│   (Form/Chat)   │     │  (Business Info)│     │     Agent       │
 └─────────────────┘     └─────────────────┘     └────────┬────────┘
                                                          │
+                                                         │ Delegates to specialists
                                                          ▼
                         ┌────────────────────────────────────────────┐
                         │           SUPERVISOR AGENT                  │
@@ -80,248 +84,56 @@ BizBot automates this research by using specialized AI agents that work together
                                              │
                                              ▼
                         ┌────────────────────────────────────────────┐
-                        │         PDF GENERATION & EMAIL             │
-                        │   • Markdown to PDF conversion             │
-                        │   • SMTP delivery to user                  │
-                        │   • Database logging                       │
+                        │              FINAL OUTPUT                   │
+                        │   • Synthesized guidance                    │
+                        │   • Source citations                        │
+                        │   • Next steps                              │
                         └────────────────────────────────────────────┘
 ```
 
----
+### The Six Specialist Agents
 
-## Agent Architecture
+| Agent | Phase | What It Handles |
+|-------|-------|-----------------|
+| **Supervisor** | Orchestration | Analyzes business profile, routes to specialists, synthesizes responses |
+| **Entity Formation** | Phase 1 | Business structure selection, Secretary of State registration, EIN, registered agent |
+| **State Licensing** | Phase 2 | State-level permits, professional certifications, tax registrations (BOE, EDD, FTB) |
+| **Local Licensing** | Phase 3 | City/county business licenses, zoning compliance, fire/health permits, signage |
+| **Industry Specialist** | Phase 4 | Sector-specific requirements (healthcare, food, alcohol, cannabis, construction) |
+| **Renewal & Compliance** | Phase 5 | Annual renewals, compliance deadlines, record-keeping, penalty avoidance |
 
-### Supervisor Agent (Main Workflow)
-- **Model**: GPT-4 Turbo or Claude 3.5 Sonnet
-- **Role**: Orchestrates the entire process, routes to specialists, synthesizes responses
-- **Tools**: Access to all 5 sub-agent workflows
+### Why This Architecture Works
 
-### Phase 1: Entity Formation Agent
-- **Focus**: Business structure selection, registration, federal requirements
-- **Outputs**:
-  - Recommended entity type with pros/cons
-  - Secretary of State registration steps
-  - EIN application process
-  - Registered agent requirements
-  - Timeline: 1-2 weeks
-
-### Phase 2: State Licensing Agent
-- **Focus**: California state-level permits and certifications
-- **Outputs**:
-  - Required state licenses by business type
-  - Professional certifications
-  - State tax registrations (BOE, EDD, FTB)
-  - Environmental permits
-  - Timeline: 2-4 weeks
-
-### Phase 3: Local Licensing Agent
-- **Focus**: City and county requirements
-- **Outputs**:
-  - Business license application
-  - Zoning compliance verification
-  - Fire/health department permits
-  - Signage permits
-  - Home occupation permits (if applicable)
-  - Timeline: 2-6 weeks
-
-### Phase 4: Industry Specialist Agent
-- **Focus**: Sector-specific requirements
-- **Specialized Industries**:
-  - Healthcare (licenses, HIPAA)
-  - Food Service (health permits, handlers cards)
-  - Alcohol (ABC licenses)
-  - Cannabis (state and local licenses)
-  - Construction (CSLB licensing)
-  - Childcare (Community Care Licensing)
-  - Professional Services (various boards)
-  - Transportation (CPUC, DMV)
-
-### Phase 5: Renewal & Compliance Agent
-- **Focus**: Ongoing obligations
-- **Outputs**:
-  - Annual renewal calendar
-  - Compliance deadlines
-  - Record-keeping requirements
-  - Penalty avoidance guidance
+| Single Agent | Multi-Agent |
+|--------------|-------------|
+| One prompt tries to cover everything | Each agent has focused expertise |
+| Context window fills with irrelevant info | Each agent sees only relevant context |
+| Errors compound across domains | Domain isolation limits error spread |
+| Hard to update one area | Update individual agents independently |
+| Generic responses | Deep domain expertise in each area |
 
 ---
 
-## Version History
+## Industries Covered
 
-| Version | Status | Description |
-|---------|--------|-------------|
-| **V1** | Archived | Initial agent prompts and knowledge base |
-| **V2** | Archived | Multi-agent architecture, separate workflows |
-| **V3** | Archived | Multi-agent form-to-PDF system |
-| **BizBot Pro** | **Current** | Production RAG chat (`/webhook/bizbot-pro`) |
-| **License Finder** | **Current** | Interactive calculator (`/webhook/bizbot-license-finder`) |
+The Industry Specialist Agent has deep knowledge of sector-specific requirements:
 
-### Current Production
-
-Two active n8n workflows power the live site:
-
-| Workflow | Webhook | Description |
-|----------|---------|-------------|
-| BizBot Pro | `/bizbot-pro` | RAG-powered chat with Supabase pgvector |
-| License Finder | `/bizbot-license-finder` | Interactive requirements calculator |
-
-| Feature | Description |
-|---------|-------------|
-| Vector DB | PostgreSQL pgvector (via Supabase) |
-| Chat Mode | Interactive chat + Form intake |
-| Session Mgmt | Context-aware conversations |
-| License Finder | Interactive requirements calculator |
-| Source Citations | Inline citations with links |
-
-### Version 3 (Archived)
-
-Located in `BizBot_v3/` - Multi-agent form-to-PDF system:
-
-| File | Nodes | Description |
-|------|-------|-------------|
-| 01_main_workflow.json | 17 | Main orchestrator |
-| 02_entity_formation_agent.json | 5 | Phase 1 specialist |
-| 03_state_licensing_agent.json | 4 | Phase 2 specialist |
-| 04_local_licensing_agent.json | 4 | Phase 3 specialist |
-| 05_industry_specialist_agent.json | 4 | Industry expert |
-| 06_renewal_compliance_agent.json | 4 | Phase 4 specialist |
+| Industry | Key Requirements |
+|----------|------------------|
+| **Healthcare** | Licenses, HIPAA compliance, facility permits |
+| **Food Service** | Health permits, food handler cards, alcohol licenses |
+| **Alcohol** | ABC licenses (Type 41, 47, etc.), responsible beverage service |
+| **Cannabis** | State and local licenses, track-and-trace, security requirements |
+| **Construction** | CSLB licensing, contractor bonds, workers' comp |
+| **Childcare** | Community Care Licensing, ratios, background checks |
+| **Professional Services** | Board certifications, continuing education |
+| **Transportation** | CPUC, DMV, vehicle permits |
 
 ---
 
-## Quick Start
+## The Knowledge Base
 
-### Prerequisites
-
-- n8n instance (self-hosted or cloud)
-- PostgreSQL database
-- Supabase pgvector (for knowledge base)
-- OpenAI and/or Anthropic API keys
-- SMTP credentials
-- Tally account (for intake form)
-
-### Installation Steps
-
-1. **Set up database**
-   ```bash
-   psql -U postgres -d bizbot -f BizBot_v3/database_schema.sql
-   ```
-
-2. **Import workflows to n8n** (in order)
-   - Import sub-agents first (02-06)
-   - Import main workflow last (01)
-
-3. **Configure credentials in n8n**
-   - PostgreSQL connection
-   - OpenAI/Anthropic API keys
-   - SMTP settings
-   - Tally webhook
-
-4. **Load knowledge base**
-   - Upload licensing documentation to Qdrant
-   - ~60K+ characters of CA licensing requirements
-
-5. **Create Tally form**
-   - Business name, type, location
-   - Owner information
-   - Industry selection
-   - Email for delivery
-
-6. **Connect Google Sheets**
-   - Form responses flow to Sheets
-   - n8n triggers on new rows
-
-7. **Test and deploy**
-   - Submit test form
-   - Verify PDF delivery
-   - Check database logging
-
----
-
-## Configuration
-
-### Environment Variables
-
-```env
-# Database
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-POSTGRES_DB=bizbot
-POSTGRES_USER=bizbot
-POSTGRES_PASSWORD=secure_password
-
-# AI Models
-OPENAI_API_KEY=sk-...
-ANTHROPIC_API_KEY=sk-ant-...
-
-# Vector Database (Supabase pgvector)
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_KEY=your-service-role-key
-
-# Email
-SMTP_HOST=smtp.example.com
-SMTP_PORT=587
-SMTP_USER=bizbot@example.com
-SMTP_PASSWORD=secure_password
-```
-
-### Model Selection
-
-| Agent | Recommended | Alternative |
-|-------|-------------|-------------|
-| Supervisor | GPT-4 Turbo | Claude 3.5 Sonnet |
-| Entity Formation | Claude 3.5 Sonnet | GPT-4 |
-| State Licensing | GPT-4 | Gemini 1.5 Pro |
-| Local Licensing | GPT-4 | Claude 3.5 Sonnet |
-| Industry Specialist | Claude 3.5 Sonnet | GPT-4 |
-| Renewal/Compliance | GPT-4 | Claude 3.5 Sonnet |
-
----
-
-## Performance
-
-| Metric | Value |
-|--------|-------|
-| Processing Time | 2-5 minutes |
-| Daily Capacity | 1,000-2,000 requests |
-| Cost per Request | ~$0.36 |
-| Knowledge Base | 60,000+ characters |
-| Total Nodes | 38 across 6 workflows |
-
-### Cost Breakdown (per request)
-
-| Component | Cost |
-|-----------|------|
-| Supervisor (GPT-4) | ~$0.12 |
-| Sub-agents (5x) | ~$0.20 |
-| Vector search | ~$0.02 |
-| PDF generation | ~$0.02 |
-| **Total** | **~$0.36** |
-
----
-
-## Testing
-
-Test scenarios cover diverse business types, locations, and complexity levels.
-
-| Test | Scenario | Score |
-|------|----------|-------|
-| B1 | Restaurant with bar (San Francisco) | 8/10 |
-| B2 | Cannabis retail (Oakland) | 8/10 |
-| B3 | Marketing consulting scale-up (Irvine) | 8/10 |
-| B4 | General contractor (Riverside) | 9/10 |
-| B5 | Out-of-state tech expansion | 8/10 |
-
-**Average:** 8.2/10
-
-See [BizAssessment/test-results-2025-12-31.md](BizAssessment/test-results-2025-12-31.md) for detailed analysis.
-
----
-
-## Knowledge Base Quality Assurance
-
-BizBot's RAG knowledge base underwent rigorous validation to ensure accurate, trustworthy responses.
-
-### Knowledge Base Stats
+### By the Numbers
 
 | Metric | Value |
 |--------|-------|
@@ -339,15 +151,29 @@ BizBot's RAG knowledge base underwent rigorous validation to ensure accurate, tr
 | **BBC Cosmetology/Barber** | 8 | Hour requirements, establishment licenses, CE |
 | **DRE Real Estate** | 4 | Salesperson/broker paths, exam, renewal |
 
-### Validation Methodology
+### What Makes This Different
 
-**Adversarial Testing:** We tested against real questions from business owners (Reddit, Avvo, SCORE forums)—not questions derived from our own content.
+- **Curated from official CA sources** — Not web scraping, actual agency documentation
+- **Semantic chunking** — Documents split by meaning, not arbitrary character counts
+- **Every URL verified** — 230 URLs tested, 0 broken links
+
+---
+
+## Quality Assurance
+
+### Adversarial Testing
+
+We tested with real questions from business owners—not questions we made up:
+
+- Reddit r/smallbusiness and r/Entrepreneur
+- Avvo legal Q&A forums
+- SCORE mentor forums
+- Secretary of State FAQ pages
 
 | Metric | Result |
 |--------|--------|
 | Adversarial queries tested | 25 |
 | Strong matches (≥0.40 similarity) | 25/25 (100%) |
-| Acceptable coverage | 100% |
 
 **Top-performing queries:**
 - "Restaurant licensing total costs" → 0.71 similarity
@@ -362,16 +188,46 @@ BizBot's RAG knowledge base underwent rigorous validation to ensure accurate, tr
 | URL verification | 230 URLs tested, 0 broken |
 | Content deduplication | `COUNT(*) - COUNT(DISTINCT md5(content)) = 0` |
 
-### Why This Matters
+---
 
-> Most chatbots search the internet and hope for the best. BizBot searches a curated knowledge base of verified California agency sources—then cites them.
+## Testing Results
 
-**What makes BizBot different:**
-- ✅ Curated from official CA agency sources (not web scraping)
-- ✅ Adversarial testing against real user questions
-- ✅ URL verification (every link tested)
-- ✅ Deduplication for data quality
-- ✅ Personalization via intake forms
+Test scenarios cover diverse business types, locations, and complexity levels:
+
+| Test | Scenario | Score |
+|------|----------|-------|
+| B1 | Restaurant with bar (San Francisco) | 8/10 |
+| B2 | Cannabis retail (Oakland) | 8/10 |
+| B3 | Marketing consulting scale-up (Irvine) | 8/10 |
+| B4 | General contractor (Riverside) | 9/10 |
+| B5 | Out-of-state tech expansion | 8/10 |
+
+**Average:** 8.2/10
+
+See [BizAssessment/test-results-2025-12-31.md](BizAssessment/test-results-2025-12-31.md) for detailed analysis.
+
+---
+
+## Version History
+
+BizBot evolved through multiple iterations:
+
+| Version | Description |
+|---------|-------------|
+| **V1** | Initial agent prompts and knowledge base |
+| **V2** | Multi-agent architecture with separate workflows |
+| **V3** | Multi-agent form-to-PDF system |
+| **BizBot Pro** | Current production RAG chat |
+| **License Finder** | Interactive requirements calculator |
+
+### What We Learned
+
+Each version taught us something:
+
+1. **V1 → V2:** Single agents can't handle complex domains. Specialization matters.
+2. **V2 → V3:** Agent orchestration needs a dedicated supervisor, not ad-hoc routing.
+3. **V3 → Pro:** PDF generation is valuable, but real-time chat serves more users.
+4. **Pro + Finder:** Decision trees complement free-form chat for structured queries.
 
 ---
 
@@ -386,7 +242,7 @@ bizbot/
 ├── BizBot_v2/               # Second version (archived)
 │   ├── ARCHITECTURE.md
 │   └── *.json               # Workflow files
-├── BizBot_v3/               # Current production version
+├── BizBot_v3/               # Third version (archived)
 │   ├── README.md            # Detailed setup guide
 │   ├── ARCHITECTURE.md      # Technical architecture
 │   ├── database_schema.sql  # PostgreSQL schema
@@ -400,26 +256,21 @@ bizbot/
 
 ---
 
-## Sample Output
+## What Makes BizBot Different
 
-The generated PDF includes:
-
-1. **Executive Summary** - Business profile and key requirements
-2. **Phase 1: Entity Formation** - Registration steps with links
-3. **Phase 2: State Licenses** - Required permits with costs
-4. **Phase 3: Local Requirements** - City/county specific needs
-5. **Phase 4: Industry Requirements** - Specialized permits
-6. **Phase 5: Compliance Calendar** - Ongoing obligations
-7. **Quick Reference** - All links and contacts in one place
+| Typical Chatbot | BizBot |
+|-----------------|--------|
+| Single AI tries to answer everything | 6 specialized agents collaborate |
+| Generic business advice | California-specific, location-aware |
+| "I think..." responses | Source-cited answers from official agencies |
+| One-size-fits-all | Industry-specific guidance |
+| No quality gates | Deduplication, URL verification, adversarial testing |
 
 ---
 
-## Related Resources
+## License
 
-- [KiddoBot](../kiddobot/) - California childcare navigation assistant
-- [WaterBot](../waterbot/) - California Water Boards RAG chatbot
-- [CA-DevStacks](https://github.com/vanderoffice/CA-DevStacks) - Development infrastructure
-- [n8n Documentation](https://docs.n8n.io/)
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
 
 ---
 

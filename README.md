@@ -13,118 +13,190 @@ This repository contains **production** AI-powered applications designed to stre
 
 ---
 
-## Table of Contents
+## The Problem We're Solving
 
-- [Overview](#overview)
-- [Projects](#projects)
-- [Architecture](#architecture)
-- [Technology Stack](#technology-stack)
-- [Getting Started](#getting-started)
-- [Repository Structure](#repository-structure)
-- [Related Repositories](#related-repositories)
-- [Contributing](#contributing)
+California state government serves nearly 40 million residents across hundreds of services. Navigating these services is overwhelming:
 
----
+- **Starting a business?** You might need permits from 3-5 different agencies depending on your industry and location.
+- **Finding childcare?** There are 6+ subsidy programs with different eligibility rules across 58 counties.
+- **Water regulations?** One State Board plus 9 Regional Boards, each with different jurisdictions and requirements.
 
-## Overview
-
-California state government serves nearly 40 million residents across hundreds of services. These AI systems aim to:
-
-- **Reduce friction** in accessing government services
-- **Provide personalized guidance** based on individual circumstances
-- **Automate analysis** of complex regulatory requirements
-- **Scale expertise** that would otherwise require specialized staff
-
-Each project follows a **supervisor-subordinate agent pattern** where a main orchestrator delegates to specialized domain experts.
+Traditional solutions—call centers, PDFs, and websites—don't scale. These AI systems do.
 
 ---
 
-## Projects
+## The Three Bots
 
 ### BizBot - Business Licensing Assistant
 
-<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Agents-6-blue" alt="Agents"/>
+<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Agents-6-blue" alt="6 Agents"/> <img src="https://img.shields.io/badge/Coverage-482_Cities-informational" alt="Coverage"/>
 
-Multi-agent system providing personalized California business licensing guidance. Users submit a form and receive a detailed PDF guide via email within 2-5 minutes.
+**Live at:** [vanderdev.net/bizbot](https://vanderdev.net/bizbot)
 
-**Coverage:**
-- All 482 California cities
-- All 58 counties
-- 8+ specialized industries (healthcare, food service, cannabis, construction, etc.)
+Multi-agent system providing personalized California business licensing guidance. Six specialized AI agents collaborate to cover entity formation, state licensing, local permits, industry requirements, and ongoing compliance.
 
-**Agents:**
-| Agent | Role |
-|-------|------|
-| Supervisor | Orchestrates workflow, synthesizes responses |
-| Entity Formation | Business structure, registration, EIN |
-| State Licensing | State-level permits and certifications |
-| Local Licensing | City/county business licenses and zoning |
-| Industry Specialist | Sector-specific requirements |
-| Renewal & Compliance | Ongoing obligations and deadlines |
-
-[View BizBot Documentation](./bizbot/)
+[View BizBot Documentation →](./bizbot/)
 
 ---
 
-### KiddoBot - California Childcare Navigator
+### KiddoBot - Childcare Navigator
 
-<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Programs-5+-blue" alt="Programs"/> <img src="https://img.shields.io/badge/Interface-Chat-orange" alt="Chat"/>
+<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Programs-5+-blue" alt="Programs"/> <img src="https://img.shields.io/badge/Counties-58-informational" alt="Counties"/>
 
 **Live at:** [vanderdev.net/kiddobot](https://vanderdev.net/kiddobot)
 
-An AI assistant helping California families navigate childcare subsidies, find providers, and complete applications.
+An AI assistant helping California families navigate childcare subsidies, find providers, and complete applications. Covers CalWORKs, CCDF, Regional Center, Head Start, and State Preschool programs across all 58 counties.
 
-**Capabilities:**
-- **Guided Setup** - 4-step intake form collecting family context
-- **Just Chat** - Direct conversation without intake
-- **Subsidy Calculator** - Interactive eligibility checker
-
-**Programs Covered:**
-| Program | Ages |
-|---------|------|
-| CalWORKs Childcare | 0-12 |
-| CCDF | 0-12 |
-| Regional Center (Early Start) | 0-3 |
-| Head Start | 3-5 |
-| State Preschool (CSPP) | 3-4 |
-
-[View KiddoBot Documentation](./kiddobot/)
+[View KiddoBot Documentation →](./kiddobot/)
 
 ---
 
-### WaterBot - Water Boards RAG Chatbot
+### WaterBot - Water Regulations Assistant
 
-<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Type-RAG_Chatbot-blue" alt="RAG"/> <img src="https://img.shields.io/badge/React-18.2-61DAFB" alt="React"/>
+<img src="https://img.shields.io/badge/Status-Production-success" alt="Production"/> <img src="https://img.shields.io/badge/Type-RAG_Chatbot-blue" alt="RAG"/> <img src="https://img.shields.io/badge/Knowledge-1,401_Chunks-informational" alt="Knowledge"/>
 
-AI-powered assistant helping users navigate California's water regulations, permits, and funding programs. Built with React + Vite + Tailwind CSS.
+AI-powered assistant helping users navigate California's water regulations, permits, and funding programs. Features a RAG-powered chat, interactive Permit Finder decision tree, and Funding Navigator.
 
-**Features:**
-| Feature | Status | Description |
-|---------|--------|-------------|
-| **Ask WaterBot** | ✅ Backend Ready | RAG-powered chat with source citations |
-| **Permit Finder** | ✅ Backend Ready | Decision tree tool for permit requirements |
-| **Funding Navigator** | ✅ Backend Ready | Eligibility checker for water infrastructure grants |
-
-> All three n8n backend workflows are deployed and active. Frontend integration pending.
-
-**Serves:**
-- Small business owners needing water discharge permits
-- Environmental organizations seeking restoration funding
-- Agricultural operations managing compliance requirements
-- Local governments pursuing infrastructure financing
-
-[View WaterBot Documentation](./waterbot/)
+[View WaterBot Documentation →](./waterbot/)
 
 ---
 
-## Architecture
+## How We Built Production AI Systems
+
+Building chatbots is easy. Building chatbots that give **accurate, trustworthy answers** about complex government regulations is hard. Here's how we approached it.
+
+### 1. The Research Phase: Multi-Model Cross-Validation
+
+We didn't just scrape websites. We used multiple AI models to cross-validate information:
+
+```
+Research Question
+      │
+      ▼
+┌─────────────┐
+│  Perplexity │ ─── Initial research with citations
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│   Claude    │ ─── Verify facts, identify gaps
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│    GPT-4    │ ─── Cross-check discrepancies
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│   Gemini    │ ─── Final validation
+└──────┬──────┘
+       │
+       ▼
+  Verified Content
+```
+
+**Why this matters:** Single AI models hallucinate. When four models agree on a fact, and we can trace it to an official source, we have confidence.
+
+### 2. The Architecture: Multi-Agent Systems
+
+Most chatbots are single-agent: one AI tries to answer everything. Our systems use **specialized agents** that collaborate.
+
+**Think of it like a law firm:**
+- You don't ask the tax lawyer about real estate closings
+- You don't ask the immigration specialist about corporate formation
+- Each expert handles their domain, and a senior partner coordinates
+
+**BizBot's agents:**
+| Agent | Specialty |
+|-------|-----------|
+| **Supervisor** | Orchestrates workflow, synthesizes responses |
+| **Entity Formation** | Business structures, registration, EIN |
+| **State Licensing** | State-level permits and certifications |
+| **Local Licensing** | City/county business licenses, zoning |
+| **Industry Specialist** | Sector-specific requirements |
+| **Renewal & Compliance** | Ongoing obligations, deadlines |
+
+### 3. The Intelligence: RAG (Retrieval-Augmented Generation)
+
+RAG is the difference between a chatbot that makes things up and one that cites sources.
+
+**How traditional chatbots work:**
+```
+User Question → AI generates answer from training data → Hope it's right
+```
+
+**How RAG works:**
+```
+User Question → Search knowledge base → Find relevant content → AI generates answer WITH context → Cited sources
+```
+
+**Our implementation:**
+1. **Semantic chunking** — We split documents by meaning (H2 sections), not arbitrary character counts
+2. **Vector embeddings** — Each chunk becomes a 1536-dimensional vector that captures its meaning
+3. **Similarity search** — User questions are matched to relevant chunks using cosine similarity
+4. **Augmented generation** — The AI sees the relevant chunks before answering
+
+**Why semantic chunking matters:**
+
+Most systems split every 500 characters—mid-sentence if needed:
+
+```
+❌ Arbitrary chunking:
+"...requirements for NPDES permits. The fee schedule is as fol"
+"lows: $500 for minor permits, $2,500 for major permits..."
+
+✅ Semantic chunking:
+"## Fee Schedule
+The fee schedule is as follows: $500 for minor permits,
+$2,500 for major permits..."
+```
+
+### 4. The Quality: Adversarial Testing
+
+We don't test with questions we made up—that's like writing your own exam.
+
+**Adversarial testing methodology:**
+1. Find real questions from Reddit, forums, agency FAQs, and public comment letters
+2. Test if our knowledge base can answer them
+3. Identify gaps where we have no relevant content
+4. Fill gaps with verified information
+5. Retest
+
+**Results across all three bots:**
+
+| Bot | Adversarial Queries | Coverage |
+|-----|---------------------|----------|
+| BizBot | 25 | 100% |
+| KiddoBot | 25 | 100% |
+| WaterBot | 25 | 100% |
+
+### 5. The Validation: Data Quality Gates
+
+Before any knowledge base goes to production:
+
+| Check | What It Catches |
+|-------|-----------------|
+| **MD5 Deduplication** | Duplicate content that wastes tokens and confuses retrieval |
+| **URL Verification** | Broken links that erode user trust |
+| **Similarity Threshold Tuning** | Too-loose thresholds return irrelevant results; too-tight misses relevant content |
+| **Content Audit** | Outdated information, missing topics, structural issues |
+
+**Our numbers:**
+- 669+ URLs verified across all bots
+- 380 duplicate chunks removed
+- 0 broken links in production
+
+---
+
+## Architecture Overview
 
 All production systems follow a consistent multi-agent pattern:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        USER REQUEST                              │
-│                    (Form / API / Webhook)                        │
+│                    (Form / Chat / Webhook)                       │
 └───────────────────────────┬─────────────────────────────────────┘
                             │
                             ▼
@@ -151,7 +223,7 @@ All production systems follow a consistent multi-agent pattern:
                             ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                     OUTPUT GENERATION                            │
-│              (PDF / Email / Database / API)                      │
+│              (Chat Response / PDF / Email)                       │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -164,42 +236,9 @@ All production systems follow a consistent multi-agent pattern:
 | **Workflow Engine** | n8n | Visual workflow automation, agent orchestration |
 | **AI Models** | Claude Sonnet, GPT-4o | Multi-LLM support for task-specific routing |
 | **Vector Database** | Supabase pgvector | Knowledge base semantic search (RAG) |
-| **Relational Database** | PostgreSQL | Structured data, analytics, logging |
-| **Frontend** | React + Vite + Tailwind CSS | Chat interfaces (KiddoBot, WaterBot) |
-| **Forms** | Tally + Google Sheets | User input collection (BizBot) |
+| **Embeddings** | OpenAI text-embedding-3-small | 1536-dimensional vectors for similarity search |
+| **Frontend** | React + Vite + Tailwind CSS | Chat interfaces |
 | **Output** | PDF generation, SMTP email | Citizen delivery |
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- n8n instance (self-hosted or cloud)
-- PostgreSQL database
-- API keys for LLM providers (OpenAI, Anthropic, Google)
-- SMTP credentials for email delivery
-
-### Quick Start
-
-1. **Choose a project** from the folders above
-2. **Read the project README** for specific setup instructions
-3. **Import n8n workflows** in the specified order
-4. **Configure credentials** in n8n settings
-5. **Test with sample data** provided in each project
-
-### Deployment Pattern
-
-```bash
-# 1. Set up infrastructure (see CA-DevStacks repo)
-docker compose up -d
-
-# 2. Import workflows to n8n
-# 3. Configure API credentials
-# 4. Load knowledge bases (if applicable)
-# 5. Create intake forms
-# 6. Test and deploy
-```
 
 ---
 
@@ -208,59 +247,21 @@ docker compose up -d
 ```
 CA-AIDev/
 ├── README.md              # This file
-├── CLAUDE.md              # AI assistant context
 ├── bizbot/                # Business licensing multi-agent system
-│   ├── README.md
-│   ├── BizBot_V1/         # Archived - initial version
-│   ├── BizBot_v2/         # Archived - second iteration
-│   ├── BizBot_v3/         # Archived - multi-agent form-to-PDF
-│   └── BizAssessment/     # Model comparison research
-│   # Current: BizBot Pro (/webhook/bizbot-pro) + License Finder
+│   ├── README.md          # Architecture, agents, QA process
+│   ├── BizBot_V1/         # Archived versions
+│   ├── BizBot_v2/
+│   ├── BizBot_v3/
+│   └── BizAssessment/     # Testing and validation
 ├── kiddobot/              # Childcare navigation chatbot
-│   ├── README.md
-│   ├── KIDDOBOT-IMPROVEMENTS.md
-│   └── ChildCareAssessment/  # Assessment tools
+│   ├── README.md          # Programs, coverage, QA process
+│   └── ChildCareAssessment/
 └── waterbot/              # Water Boards RAG chatbot
-    ├── README.md
+    ├── README.md          # RAG pipeline, decision trees, QA
     ├── src/               # React frontend
-    ├── knowledge/         # RAG knowledge base
-    └── permit-decision-tree.json
+    ├── knowledge/         # RAG knowledge base (markdown)
+    └── scripts/           # Chunking and embedding pipeline
 ```
-
-> **Archived Projects:** ADABot, AskCA, CommentBot, and WiseBot have been moved to `~/Documents/GitHub/ARCHIVE/CA-AIDev-Deprecated/` as they were planning/research artifacts that were not deployed to production.
-
----
-
-## Performance Metrics
-
-| Project | Processing Time | Interface | Cost per Request |
-|---------|-----------------|-----------|------------------|
-| BizBot | 2-5 minutes | Form → Email PDF | ~$0.36 |
-| KiddoBot | Real-time | Chat | ~$0.05 |
-| WaterBot | Real-time | Chat | ~$0.05 |
-
----
-
-## Related Repositories
-
-| Repository | Description |
-|------------|-------------|
-| [CA-Strategy](https://github.com/vanderoffice/CA-Strategy) | Strategic planning and governance frameworks |
-| [CA-DevStacks](https://github.com/vanderoffice/CA-DevStacks) | Docker-based development environments |
-
----
-
-## Contributing
-
-Contributions welcome for:
-
-- Improving agent prompts and accuracy
-- Adding new specialized agents
-- Expanding knowledge bases
-- Documentation improvements
-- Testing and validation
-
-Please review individual project READMEs for specific contribution guidelines.
 
 ---
 
