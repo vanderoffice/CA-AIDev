@@ -8,7 +8,7 @@ The California Water Boards maintain public databases for tracking enforcement a
 
 ### Accessing Enforcement Information
 
-**CIWQS Public Reports**: https://ciwqs.waterboards.ca.gov/ciwqs/publicReports.jsp
+**CIWQS Public Reports**: https://www.waterboards.ca.gov/water_issues/programs/ciwqs/publicreports.html
 
 The public CIWQS interface provides:
 - Violation history by facility

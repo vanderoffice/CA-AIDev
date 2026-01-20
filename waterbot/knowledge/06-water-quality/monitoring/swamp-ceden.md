@@ -145,7 +145,7 @@ Data submitted to CEDEN must conform to:
 - Support for 303(d) and TMDL processes
 - Community-accessible information
 
-**Website**: ceden.org
+**Website**: ceden.waterboards.ca.gov
 
 ## Specialized Monitoring Programs
 
@@ -198,10 +198,10 @@ Monitoring Programs (SWAMP, SPoT, Regional)
 
 ## Key Resources
 
-- **SWAMP Main**: waterboards.ca.gov/swamp
-- **CEDEN**: ceden.org
-- **GAMA**: waterboards.ca.gov/gama
-- **CSCI Info**: waterboards.ca.gov/swamp/bioassessment
+- **SWAMP Main**: www.waterboards.ca.gov/water_issues/programs/swamp/
+- **CEDEN**: ceden.waterboards.ca.gov
+- **GAMA**: www.waterboards.ca.gov/water_issues/programs/gama/
+- **CSCI Info**: www.waterboards.ca.gov/water_issues/programs/swamp/bioassessment/
 
 ## Related Topics
 

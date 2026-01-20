@@ -311,7 +311,7 @@ Sacramento, CA 95814
 - Drinking water funding guidance
 
 **SAFER Program**
-waterboards.ca.gov/safer
+www.waterboards.ca.gov/safer/
 
 **SRF Programs**
-waterboards.ca.gov/water_issues/programs/grants_loans/srf
+www.waterboards.ca.gov/water_issues/programs/grants_loans/srf/

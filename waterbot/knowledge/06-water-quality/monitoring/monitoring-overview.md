@@ -157,10 +157,10 @@ Open data principles (State Water Board Resolution 2018-0032):
 
 ## Key Resources
 
-- **CEDEN**: ceden.org
-- **SWAMP**: waterboards.ca.gov/swamp
-- **CIWQS**: waterboards.ca.gov/ciwqs
-- **GAMA**: waterboards.ca.gov/gama
+- **CEDEN**: ceden.waterboards.ca.gov
+- **SWAMP**: www.waterboards.ca.gov/water_issues/programs/swamp/
+- **CIWQS**: www.waterboards.ca.gov/water_issues/programs/ciwqs/
+- **GAMA**: www.waterboards.ca.gov/water_issues/programs/gama/
 
 ## Related Topics
 

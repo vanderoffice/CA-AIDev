@@ -239,14 +239,14 @@ California Integrated Water Quality System:
 - Violation tracking
 - Enforcement documentation
 
-**Website**: waterboards.ca.gov/ciwqs
+**Website**: www.waterboards.ca.gov/water_issues/programs/ciwqs/
 
 ## Key Resources
 
-- **Clean Water Team**: waterboards.ca.gov/swamp/clean_water_team
-- **CWT Guidance**: waterboards.ca.gov/swamp/cwt/guidance
-- **CIWQS**: waterboards.ca.gov/ciwqs
-- **Stormwater Program**: waterboards.ca.gov/stormwater
+- **Clean Water Team**: www.waterboards.ca.gov/water_issues/programs/swamp/clean_water_team/
+- **CWT Guidance**: www.waterboards.ca.gov/water_issues/programs/swamp/cwt_volunteer.html
+- **CIWQS**: www.waterboards.ca.gov/water_issues/programs/ciwqs/
+- **Stormwater Program**: www.waterboards.ca.gov/water_issues/programs/stormwater/
 
 ## Related Topics
 

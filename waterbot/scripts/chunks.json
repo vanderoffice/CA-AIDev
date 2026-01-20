@@ -5897,14 +5897,14 @@
   },
   {
     "document_id": "06-water-quality-impaired-waters-303d-overview",
-    "chunk_text": "# Section 303(d) Impaired Waters List Overview\n\n## Key Resources\n\n- **Integrated Report**: waterboards.ca.gov/water_quality_assessment/\n- **CEDEN Data**: ceden.waterboards.ca.gov\n- **EPA TMDL Page**: epa.gov/tmdl",
+    "chunk_text": "# Section 303(d) Impaired Waters List Overview\n\n## Key Resources\n\n- **Integrated Report**: www.waterboards.ca.gov/water_issues/programs/water_quality_assessment/\n- **CEDEN Data**: ceden.waterboards.ca.gov\n- **EPA TMDL Page**: www.epa.gov/tmdl",
     "chunk_index": 10,
     "file_name": "303d-overview.md",
     "file_path": "06-water-quality/impaired-waters/303d-overview.md",
     "category": "water-quality",
     "subcategory": "impaired-waters",
     "section_title": "Key Resources",
-    "char_count": 212
+    "char_count": 242
   },
   {
     "document_id": "06-water-quality-impaired-waters-303d-overview",
@@ -6139,25 +6139,25 @@
   },
   {
     "document_id": "06-water-quality-monitoring-compliance-citizen-monitoring",
-    "chunk_text": "# Compliance and Citizen Monitoring\n\n## CIWQS: Compliance Data System\n\nCalifornia Integrated Water Quality System:\n\n**Functions**:\n- Track permits and orders\n- Manage compliance data\n- Record violations\n- Support enforcement\n- Public data access\n\n**Features**:\n- Online DMR/SMR submission\n- Facility At-a-Glance reports\n- Violation tracking\n- Enforcement documentation\n\n**Website**: waterboards.ca.gov/ciwqs",
+    "chunk_text": "# Compliance and Citizen Monitoring\n\n## CIWQS: Compliance Data System\n\nCalifornia Integrated Water Quality System:\n\n**Functions**:\n- Track permits and orders\n- Manage compliance data\n- Record violations\n- Support enforcement\n- Public data access\n\n**Features**:\n- Online DMR/SMR submission\n- Facility At-a-Glance reports\n- Violation tracking\n- Enforcement documentation\n\n**Website**: www.waterboards.ca.gov/water_issues/programs/ciwqs/",
     "chunk_index": 5,
     "file_name": "compliance-citizen-monitoring.md",
     "file_path": "06-water-quality/monitoring/compliance-citizen-monitoring.md",
     "category": "water-quality",
     "subcategory": "monitoring",
     "section_title": "CIWQS: Compliance Data System",
-    "char_count": 407
+    "char_count": 434
   },
   {
     "document_id": "06-water-quality-monitoring-compliance-citizen-monitoring",
-    "chunk_text": "# Compliance and Citizen Monitoring\n\n## Key Resources\n\n- **Clean Water Team**: waterboards.ca.gov/swamp/clean_water_team\n- **CWT Guidance**: waterboards.ca.gov/swamp/cwt/guidance\n- **CIWQS**: waterboards.ca.gov/ciwqs\n- **Stormwater Program**: waterboards.ca.gov/stormwater",
+    "chunk_text": "# Compliance and Citizen Monitoring\n\n## Key Resources\n\n- **Clean Water Team**: www.waterboards.ca.gov/water_issues/programs/swamp/clean_water_team/\n- **CWT Guidance**: www.waterboards.ca.gov/water_issues/programs/swamp/cwt_volunteer.html\n- **CIWQS**: www.waterboards.ca.gov/water_issues/programs/ciwqs/\n- **Stormwater Program**: www.waterboards.ca.gov/water_issues/programs/stormwater/",
     "chunk_index": 6,
     "file_name": "compliance-citizen-monitoring.md",
     "file_path": "06-water-quality/monitoring/compliance-citizen-monitoring.md",
     "category": "water-quality",
     "subcategory": "monitoring",
     "section_title": "Key Resources",
-    "char_count": 272
+    "char_count": 385
   },
   {
     "document_id": "06-water-quality-monitoring-compliance-citizen-monitoring",
@@ -6271,14 +6271,14 @@
   },
   {
     "document_id": "06-water-quality-monitoring-monitoring-overview",
-    "chunk_text": "# Water Quality Monitoring Overview\n\n## Key Resources\n\n- **CEDEN**: ceden.org\n- **SWAMP**: waterboards.ca.gov/swamp\n- **CIWQS**: waterboards.ca.gov/ciwqs\n- **GAMA**: waterboards.ca.gov/gama",
+    "chunk_text": "# Water Quality Monitoring Overview\n\n## Key Resources\n\n- **CEDEN**: ceden.waterboards.ca.gov\n- **SWAMP**: www.waterboards.ca.gov/water_issues/programs/swamp/\n- **CIWQS**: www.waterboards.ca.gov/water_issues/programs/ciwqs/\n- **GAMA**: www.waterboards.ca.gov/water_issues/programs/gama/",
     "chunk_index": 9,
     "file_name": "monitoring-overview.md",
     "file_path": "06-water-quality/monitoring/monitoring-overview.md",
     "category": "water-quality",
     "subcategory": "monitoring",
     "section_title": "Key Resources",
-    "char_count": 189
+    "char_count": 285
   },
   {
     "document_id": "06-water-quality-monitoring-monitoring-overview",
@@ -6326,14 +6326,14 @@
   },
   {
     "document_id": "06-water-quality-monitoring-swamp-ceden",
-    "chunk_text": "# SWAMP and CEDEN\n\n## California Environmental Data Exchange Network (CEDEN)\n\n### Purpose\n\nCentral repository where diverse groups throughout California can find and share water quality information.\n\n**Data Types**:\n- Streams, lakes, rivers\n- Coastal and ocean environments\n- Physical, chemical, biological parameters\n- Habitat assessments\n- Toxicity results\n\n### Data Standardization\n\nData submitted to CEDEN must conform to:\n- **Standardized templates**: Structured Excel formats\n- **Business rules**: Automated quality checks\n- **Vocabulary standards**: Consistent terminology\n- **Quality assurance**: Documented QA/QC\n\n### Regional Data Centers\n\n| Center | Focus Area |\n|--------|------------|\n| Moss Landing | Bioassessment statewide |\n| SF Estuary Institute | San Francisco Bay-Delta |\n| Central Valley RDC | Central Valley region |\n| SWAMP IQ | SWAMP data verification |\n\n### Public Access\n\n- Free access to all water quality data\n- Online data queries and downloads\n- Support for 303(d) and TMDL processes\n- Community-accessible information\n\n**Website**: ceden.org",
+    "chunk_text": "# SWAMP and CEDEN\n\n## California Environmental Data Exchange Network (CEDEN)\n\n### Purpose\n\nCentral repository where diverse groups throughout California can find and share water quality information.\n\n**Data Types**:\n- Streams, lakes, rivers\n- Coastal and ocean environments\n- Physical, chemical, biological parameters\n- Habitat assessments\n- Toxicity results\n\n### Data Standardization\n\nData submitted to CEDEN must conform to:\n- **Standardized templates**: Structured Excel formats\n- **Business rules**: Automated quality checks\n- **Vocabulary standards**: Consistent terminology\n- **Quality assurance**: Documented QA/QC\n\n### Regional Data Centers\n\n| Center | Focus Area |\n|--------|------------|\n| Moss Landing | Bioassessment statewide |\n| SF Estuary Institute | San Francisco Bay-Delta |\n| Central Valley RDC | Central Valley region |\n| SWAMP IQ | SWAMP data verification |\n\n### Public Access\n\n- Free access to all water quality data\n- Online data queries and downloads\n- Support for 303(d) and TMDL processes\n- Community-accessible information\n\n**Website**: ceden.waterboards.ca.gov",
     "chunk_index": 3,
     "file_name": "swamp-ceden.md",
     "file_path": "06-water-quality/monitoring/swamp-ceden.md",
     "category": "water-quality",
     "subcategory": "monitoring",
     "section_title": "California Environmental Data Exchange Network (CEDEN)",
-    "char_count": 1072
+    "char_count": 1087
   },
   {
     "document_id": "06-water-quality-monitoring-swamp-ceden",
@@ -6359,14 +6359,14 @@
   },
   {
     "document_id": "06-water-quality-monitoring-swamp-ceden",
-    "chunk_text": "# SWAMP and CEDEN\n\n## Key Resources\n\n- **SWAMP Main**: waterboards.ca.gov/swamp\n- **CEDEN**: ceden.org\n- **GAMA**: waterboards.ca.gov/gama\n- **CSCI Info**: waterboards.ca.gov/swamp/bioassessment",
+    "chunk_text": "# SWAMP and CEDEN\n\n## Key Resources\n\n- **SWAMP Main**: www.waterboards.ca.gov/water_issues/programs/swamp/\n- **CEDEN**: ceden.waterboards.ca.gov\n- **GAMA**: www.waterboards.ca.gov/water_issues/programs/gama/\n- **CSCI Info**: www.waterboards.ca.gov/water_issues/programs/swamp/bioassessment/",
     "chunk_index": 6,
     "file_name": "swamp-ceden.md",
     "file_path": "06-water-quality/monitoring/swamp-ceden.md",
     "category": "water-quality",
     "subcategory": "monitoring",
     "section_title": "Key Resources",
-    "char_count": 194
+    "char_count": 290
   },
   {
     "document_id": "06-water-quality-monitoring-swamp-ceden",
@@ -7019,14 +7019,14 @@
   },
   {
     "document_id": "06-water-quality-tmdls-tmdl-overview",
-    "chunk_text": "# Total Maximum Daily Loads (TMDLs) Overview\n\n## Key Statewide Resources\n\n- **TMDL Program**: waterboards.ca.gov/water_issues/programs/tmdl/\n- **303(d) List**: Integrated Report shows all impaired waters\n- **Regional Board TMDL Pages**: Project-specific information\n- **CEDEN**: Water quality monitoring data supporting TMDLs",
+    "chunk_text": "# Total Maximum Daily Loads (TMDLs) Overview\n\n## Key Statewide Resources\n\n- **TMDL Program**: www.waterboards.ca.gov/water_issues/programs/tmdl/\n- **303(d) List**: Integrated Report shows all impaired waters\n- **Regional Board TMDL Pages**: Project-specific information\n- **CEDEN**: Water quality monitoring data supporting TMDLs",
     "chunk_index": 7,
     "file_name": "tmdl-overview.md",
     "file_path": "06-water-quality/tmdls/tmdl-overview.md",
     "category": "water-quality",
     "subcategory": "tmdls",
     "section_title": "Key Statewide Resources",
-    "char_count": 325
+    "char_count": 329
   },
   {
     "document_id": "06-water-quality-tmdls-tmdl-overview",
@@ -8108,14 +8108,14 @@
   },
   {
     "document_id": "07-entities-state-water-board-ddw-dfa-programs",
-    "chunk_text": "# Drinking Water and Financial Assistance Programs\n\n## Key Contacts\n\n**Division of Financial Assistance**\nState Water Resources Control Board\n1001 I Street\nSacramento, CA 95814\n\n**Office of Sustainable Water Solutions**\n- Small community technical assistance\n- Drinking water funding guidance\n\n**SAFER Program**\nwaterboards.ca.gov/safer\n\n**SRF Programs**\nwaterboards.ca.gov/water_issues/programs/grants_loans/srf",
+    "chunk_text": "# Drinking Water and Financial Assistance Programs\n\n## Key Contacts\n\n**Division of Financial Assistance**\nState Water Resources Control Board\n1001 I Street\nSacramento, CA 95814\n\n**Office of Sustainable Water Solutions**\n- Small community technical assistance\n- Drinking water funding guidance\n\n**SAFER Program**\nwww.waterboards.ca.gov/safer/\n\n**SRF Programs**\nwww.waterboards.ca.gov/water_issues/programs/grants_loans/srf/",
     "chunk_index": 11,
     "file_name": "ddw-dfa-programs.md",
     "file_path": "07-entities/state-water-board/ddw-dfa-programs.md",
     "category": "entities",
     "subcategory": "state-water-board",
     "section_title": "Key Contacts",
-    "char_count": 412
+    "char_count": 422
   },
   {
     "document_id": "07-entities-state-water-board-dwq-programs",
@@ -12112,14 +12112,14 @@
   },
   {
     "document_id": "10-public-resources-complaints-enforcement-enforcement-tracking",
-    "chunk_text": "# Tracking Water Board Enforcement Actions\n\n## CIWQS Enforcement Data\n\n### Accessing Enforcement Information\n\n**CIWQS Public Reports**: https://ciwqs.waterboards.ca.gov/ciwqs/publicReports.jsp\n\nThe public CIWQS interface provides:\n- Violation history by facility\n- Enforcement actions issued\n- Penalty assessments\n- Compliance schedules\n- Return to compliance status\n\n### Types of Enforcement Data Available\n\n1. **Violations**: Exceedances of permit limits, missed reports, prohibited discharges\n2. **Informal Actions**: Warning letters, notices of violation\n3. **Formal Actions**: Administrative Civil Liability (ACL) orders, Cease and Desist Orders (CDO)\n4. **Penalties Assessed**: Dollar amounts of fines\n5. **Compliance Status**: Current standing of facilities\n\n### Searching for Enforcement Records\n\n**Search Options**:\n- By facility name or place ID\n- By permit number (NPDES, WDR)\n- By geographic area (Region, county, city)\n- By violation type\n- By date range\n- By enforcement action type",
+    "chunk_text": "# Tracking Water Board Enforcement Actions\n\n## CIWQS Enforcement Data\n\n### Accessing Enforcement Information\n\n**CIWQS Public Reports**: https://www.waterboards.ca.gov/water_issues/programs/ciwqs/publicreports.html\n\nThe public CIWQS interface provides:\n- Violation history by facility\n- Enforcement actions issued\n- Penalty assessments\n- Compliance schedules\n- Return to compliance status\n\n### Types of Enforcement Data Available\n\n1. **Violations**: Exceedances of permit limits, missed reports, prohibited discharges\n2. **Informal Actions**: Warning letters, notices of violation\n3. **Formal Actions**: Administrative Civil Liability (ACL) orders, Cease and Desist Orders (CDO)\n4. **Penalties Assessed**: Dollar amounts of fines\n5. **Compliance Status**: Current standing of facilities\n\n### Searching for Enforcement Records\n\n**Search Options**:\n- By facility name or place ID\n- By permit number (NPDES, WDR)\n- By geographic area (Region, county, city)\n- By violation type\n- By date range\n- By enforcement action type",
     "chunk_index": 1,
     "file_name": "enforcement-tracking.md",
     "file_path": "10-public-resources/complaints-enforcement/enforcement-tracking.md",
     "category": "public-resources",
     "subcategory": "complaints-enforcement",
     "section_title": "CIWQS Enforcement Data",
-    "char_count": 996
+    "char_count": 1017
   },
   {
     "document_id": "10-public-resources-complaints-enforcement-enforcement-tracking",

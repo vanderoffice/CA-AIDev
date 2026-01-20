@@ -160,9 +160,9 @@ The Prioritization Framework provides structured approach to restoration plannin
 
 ## Key Resources
 
-- **Integrated Report**: waterboards.ca.gov/water_quality_assessment/
+- **Integrated Report**: www.waterboards.ca.gov/water_issues/programs/water_quality_assessment/
 - **CEDEN Data**: ceden.waterboards.ca.gov
-- **EPA TMDL Page**: epa.gov/tmdl
+- **EPA TMDL Page**: www.epa.gov/tmdl
 
 ## Related Topics
 

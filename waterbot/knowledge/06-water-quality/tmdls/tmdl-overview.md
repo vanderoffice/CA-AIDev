@@ -120,7 +120,7 @@ California has developed TMDLs for hundreds of waterbody-pollutant combinations:
 
 ## Key Statewide Resources
 
-- **TMDL Program**: waterboards.ca.gov/water_issues/programs/tmdl/
+- **TMDL Program**: www.waterboards.ca.gov/water_issues/programs/tmdl/
 - **303(d) List**: Integrated Report shows all impaired waters
 - **Regional Board TMDL Pages**: Project-specific information
 - **CEDEN**: Water quality monitoring data supporting TMDLs
