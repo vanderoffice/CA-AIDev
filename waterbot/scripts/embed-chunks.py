@@ -29,7 +29,7 @@ if not OPENAI_API_KEY:
 
 # Database config (Supabase on VPS - postgres database where PostgREST connects)
 DB_CONFIG = {
-    "host": "vps.vanderdev.net",  # Will tunnel through SSH
+    "host": "100.111.63.3",  # VPS via Tailscale
     "port": 5432,
     "database": "postgres",  # PostgREST connects to this DB
     "user": "postgres",

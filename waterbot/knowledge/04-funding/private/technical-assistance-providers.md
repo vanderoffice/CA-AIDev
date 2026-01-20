@@ -410,7 +410,7 @@ Recognizes domestic well users lack governance structures:
 
 ### Contact Information
 
-- **Website:** waterboards.ca.gov/water_issues/programs/grants_loans/sustainable_water_solutions
+- **Website:** waterboards.ca.gov/safer/
 
 ## Environmental Justice Technical Assistance Framework
 

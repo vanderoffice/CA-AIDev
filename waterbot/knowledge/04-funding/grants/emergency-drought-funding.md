@@ -316,7 +316,7 @@ Annual median household income <60% statewide MHI (~$43,737)
 ## Sources
 
 - SWRCB Urgent Water Needs: waterboards.ca.gov/water_issues/programs/grants_loans/urgent_water_needs
-- SAFER Program: waterboards.ca.gov/water_issues/programs/grants_loans/sustainable_water_solutions/safer
+- SAFER Program: waterboards.ca.gov/safer/
 - DWR Small Community Drought Relief: water.ca.gov/Water-Basics/Drought/Drought-Funding
 - USDA ECWAG: rd.usda.gov/programs-services/water-environmental-programs
 - Drought Planning Handbook for California Indian Tribes (2015)

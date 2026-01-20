@@ -1948,14 +1948,14 @@
   },
   {
     "document_id": "04-funding-grants-emergency-drought-funding",
-    "chunk_text": "# Emergency and Drought Water Funding Programs\n\n## Sources\n\n- SWRCB Urgent Water Needs: waterboards.ca.gov/water_issues/programs/grants_loans/urgent_water_needs\n- SAFER Program: waterboards.ca.gov/water_issues/programs/grants_loans/sustainable_water_solutions/safer\n- DWR Small Community Drought Relief: water.ca.gov/Water-Basics/Drought/Drought-Funding\n- USDA ECWAG: rd.usda.gov/programs-services/water-environmental-programs\n- Drought Planning Handbook for California Indian Tribes (2015)",
+    "chunk_text": "# Emergency and Drought Water Funding Programs\n\n## Sources\n\n- SWRCB Urgent Water Needs: waterboards.ca.gov/water_issues/programs/grants_loans/urgent_water_needs\n- SAFER Program: waterboards.ca.gov/safer/\n- DWR Small Community Drought Relief: water.ca.gov/Water-Basics/Drought/Drought-Funding\n- USDA ECWAG: rd.usda.gov/programs-services/water-environmental-programs\n- Drought Planning Handbook for California Indian Tribes (2015)",
     "chunk_index": 12,
     "file_name": "emergency-drought-funding.md",
     "file_path": "04-funding/grants/emergency-drought-funding.md",
     "category": "funding",
     "subcategory": "grants",
     "section_title": "Sources",
-    "char_count": 490
+    "char_count": 428
   },
   {
     "document_id": "04-funding-grants-irwm-funding",
@@ -2729,14 +2729,14 @@
   },
   {
     "document_id": "04-funding-private-technical-assistance-providers",
-    "chunk_text": "# Technical Assistance Providers\n\n## SAFER Program (Safe and Affordable Funding for Equity and Resilience)\n\n### Program Overview\n\n- **Established:** Senate Bill 200 (2019)\n- **Purpose:** Ensure one million Californians without safe water receive access\n- **Funding:** Up to $130 million per year for up to ten years\n\n### Eligible Applicants\n\n- Public agencies\n- Nonprofit organizations\n- Public utilities\n- Mutual water companies\n- California Native American tribes\n- Administrators\n- Groundwater sustainability agencies\n\n### Program Priorities\n\n1. Emergency/urgent funding needs\n2. Community water systems and schools out of compliance\n3. Accelerating consolidations\n4. Interim solutions for state small water systems and domestic wells\n\n### Technical Assistance Integration\n\nSAFER provides up to $130 million annually specifically for:\n- Technical assistance\n- Planning\n- Feasibility studies\n\nThis TA funding enables communities to complete preliminary work required before accessing capital funding.\n\n### Program Impact\n\n- Distributed over $1.6 billion in grants\n- 320 water systems serving 3.3 million people returned to compliance\n- $20 million invested in hauled water for drought-impacted households\n\n### Domestic Well Support\n\nRecognizes domestic well users lack governance structures:\n- Domestic well testing\n- Replacement water provisions\n- Consolidation with small water systems\n\n### Recent Achievements\n\n**SAFER Extended Through 2045:**\n- Governor Newsom and Legislature three-party deal\n- Continuous appropriation of up to $130 million annually\n- Additional $180 million from Proposition 4\n\n### Contact Information\n\n- **Website:** waterboards.ca.gov/water_issues/programs/grants_loans/sustainable_water_solutions",
+    "chunk_text": "# Technical Assistance Providers\n\n## SAFER Program (Safe and Affordable Funding for Equity and Resilience)\n\n### Program Overview\n\n- **Established:** Senate Bill 200 (2019)\n- **Purpose:** Ensure one million Californians without safe water receive access\n- **Funding:** Up to $130 million per year for up to ten years\n\n### Eligible Applicants\n\n- Public agencies\n- Nonprofit organizations\n- Public utilities\n- Mutual water companies\n- California Native American tribes\n- Administrators\n- Groundwater sustainability agencies\n\n### Program Priorities\n\n1. Emergency/urgent funding needs\n2. Community water systems and schools out of compliance\n3. Accelerating consolidations\n4. Interim solutions for state small water systems and domestic wells\n\n### Technical Assistance Integration\n\nSAFER provides up to $130 million annually specifically for:\n- Technical assistance\n- Planning\n- Feasibility studies\n\nThis TA funding enables communities to complete preliminary work required before accessing capital funding.\n\n### Program Impact\n\n- Distributed over $1.6 billion in grants\n- 320 water systems serving 3.3 million people returned to compliance\n- $20 million invested in hauled water for drought-impacted households\n\n### Domestic Well Support\n\nRecognizes domestic well users lack governance structures:\n- Domestic well testing\n- Replacement water provisions\n- Consolidation with small water systems\n\n### Recent Achievements\n\n**SAFER Extended Through 2045:**\n- Governor Newsom and Legislature three-party deal\n- Continuous appropriation of up to $130 million annually\n- Additional $180 million from Proposition 4\n\n### Contact Information\n\n- **Website:** waterboards.ca.gov/safer/",
     "chunk_index": 9,
     "file_name": "technical-assistance-providers.md",
     "file_path": "04-funding/private/technical-assistance-providers.md",
     "category": "funding",
     "subcategory": "private",
     "section_title": "SAFER Program (Safe and Affordable Funding for Equity and Resilience)",
-    "char_count": 1725
+    "char_count": 1669
   },
   {
     "document_id": "04-funding-private-technical-assistance-providers",
