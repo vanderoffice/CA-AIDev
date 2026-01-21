@@ -14,12 +14,11 @@ None
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [ ] **Phase 1: BizBot URL Remediation** - Fix 313 broken URLs and re-embed affected knowledge files
-- [ ] **Phase 2: KiddoBot Assessment** - Full quality audit for KiddoBot knowledge base
+- [x] **Phase 1: URL Remediation (All Bots)** - Fix broken URLs across BizBot, KiddoBot, WaterBot and re-embed
+- [ ] **Phase 2: Content Quality Audit** - Freshness, factual accuracy, cross-reference validity
 - [ ] **Phase 3: Deduplication & Embedding Integrity** - Zero duplicates, valid vectors across all bots
-- [ ] **Phase 4: Content Quality Audit** - Freshness, factual accuracy, cross-reference validity
-- [ ] **Phase 5: Chunk & Metadata Consistency** - Chunk sizing and metadata accuracy validation
-- [ ] **Phase 6: Query Coverage Testing** - Real user questions retrieve relevant content
+- [ ] **Phase 4: Chunk & Metadata Consistency** - Chunk sizing and metadata accuracy validation
+- [ ] **Phase 5: Query Coverage Testing** - Real user questions retrieve relevant content
 
 ## Phase Details
 
@@ -108,13 +107,12 @@ Key work:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. BizBot URL Remediation | 0/TBD | Not started | - |
-| 2. KiddoBot Assessment | 0/TBD | Not started | - |
+| 1. URL Remediation (All Bots) | 1/1 | **COMPLETE** | 2026-01-20 |
+| 2. Content Quality Audit | 1/1 | Planned | - |
 | 3. Deduplication & Embedding Integrity | 0/TBD | Not started | - |
-| 4. Content Quality Audit | 0/TBD | Not started | - |
-| 5. Chunk & Metadata Consistency | 0/TBD | Not started | - |
-| 6. Query Coverage Testing | 0/TBD | Not started | - |
+| 4. Chunk & Metadata Consistency | 0/TBD | Not started | - |
+| 5. Query Coverage Testing | 0/TBD | Not started | - |

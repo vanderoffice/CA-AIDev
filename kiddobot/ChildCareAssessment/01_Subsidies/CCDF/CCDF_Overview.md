@@ -278,7 +278,7 @@ Demand exceeds supply in most California counties. Even with eligibility, you ma
 | **Provider search** | [MyChildCare.ca.gov](https://mychildcare.ca.gov) |
 | **TrustLine** | 800-822-8490 or [TrustLine.org](https://www.trustline.org) |
 | **Local resources** | Dial 211 |
-| **CDSS Child Care** | [cdss.ca.gov/inforesources/child-care](https://cdss.ca.gov/inforesources/child-care) |
+| **CDSS Child Care** | [Child Care Programs](https://www.cdss.ca.gov/inforesources/child-care-and-development/child-care-and-development-programs) |
 
 ---
 

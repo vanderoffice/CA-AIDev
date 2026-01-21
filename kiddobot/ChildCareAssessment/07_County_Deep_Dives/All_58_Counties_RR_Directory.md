@@ -137,7 +137,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~900,000 (Urban/Rural mix)
 - **R&R:** Community Connection for Child Care (KCSOS)
 - **Phone:** (661) 861-5200
-- **Website:** https://www.kern.org/childcare
+- **Website:** https://kern.org/community-connection-child-care/
 - **APP Contractor:** KCSOS
 - **Notes:** Bakersfield has good options. Rural areas (Ridgecrest, Tehachapi, etc.) very limited. Oil field/agriculture economy = nontraditional hour needs.
 

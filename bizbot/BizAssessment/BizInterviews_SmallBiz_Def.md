@@ -268,7 +268,7 @@ California is home to approximately **4.1 million small businesses**—the most 
 
 [^1_72]: http://www.emerald.com/ccij/article/12/3/311-312/47054
 
-[^1_73]: https://digital-library.theiet.org/content/conferences/10.1049/ic_20040212
+[^1_73]: *(IET conference paper - link no longer available)*
 
 [^1_74]: https://iiste.org/Journals/index.php/JLPG/article/download/56234/58078
 

@@ -20,7 +20,7 @@ from datetime import datetime
 KNOWLEDGE_DIRS = {
     'waterbot': Path(__file__).parent.parent / 'waterbot' / 'knowledge',
     'bizbot': Path(__file__).parent.parent / 'bizbot' / 'BizAssessment',
-    'kiddobot': Path(__file__).parent.parent / 'kiddobot' / 'KiddoChildCareAssessment',
+    'kiddobot': Path(__file__).parent.parent / 'kiddobot' / 'ChildCareAssessment',
 }
 
 # URL patterns to extract
@@ -42,6 +42,10 @@ SKIP_PATTERNS = [
     r'^mailto:',
     r'^tel:',
     r'^#',  # Anchor links
+    r'\.md$',  # Markdown file references (e.g., County_Name.md)
+    r'^https?://\d+_',  # URLs starting with numbered directories (01_Entity_Formation)
+    r'^https?://[^/]+\.md',  # Domain is a .md file
+    r'^https?://[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+$',  # Simple path without TLD (research-protocol/summaries)
 ]
 
 # Known redirects that are fine
@@ -66,22 +70,32 @@ def extract_urls_from_file(filepath: Path) -> dict[str, list[str]]:
         # Extract markdown links
         for match in re.finditer(r'\[([^\]]+)\]\(([^)]+)\)', line):
             link_text, url = match.groups()
-            url = url.strip()
-            if url and not url.startswith('#'):
+            url = url.strip().strip('`')  # Strip whitespace and backticks
+            # Skip relative file paths, anchors, and non-URLs
+            if url and not url.startswith('#') and not url.startswith('./') and not url.startswith('../'):
+                # Skip if it's clearly a relative file path (no protocol, ends in .md, or is a simple path)
+                if not url.startswith(('http://', 'https://')):
+                    # Skip if ends with .md or .html (relative links)
+                    if url.endswith('.md') or url.endswith('.html'):
+                        continue
+                    # Skip if it looks like a directory path (contains / but no dots before first /)
+                    if '/' in url and '.' not in url.split('/')[0]:
+                        continue
                 urls[url].append(f"{filepath}:{line_num}")
 
         # Extract bare URLs
         for match in re.finditer(r'(?<!["\(\[])(https?://[^\s\)\]<>"\']+)', line):
-            url = match.group(1).rstrip('.,;:')
+            url = match.group(1).rstrip('.,;:`')  # Strip trailing punctuation including backticks
             urls[url].append(f"{filepath}:{line_num}")
 
         # Extract domain-style references (waterboards.ca.gov/...)
-        for match in re.finditer(r'(?<![/\w@])((?:www\.)?[a-zA-Z0-9-]+\.(?:ca\.gov|gov)[^\s\)\]<>"\']*)', line):
-            domain = match.group(1).rstrip('.,;:')
+        # Note: (?<![/\w@.]) includes . to prevent matching "ca.gov" inside "business.ca.gov"
+        for match in re.finditer(r'(?<![/\w@.])((?:www\.)?[a-zA-Z0-9-]+\.(?:ca\.gov|gov)[^\s\)\]<>"\'`]*)', line):
+            domain = match.group(1).rstrip('.,;:`')  # Strip trailing punctuation including backticks
             if not domain.startswith('http'):
                 domain = f"https://{domain}"
             # Clean up common trailing issues
-            domain = re.sub(r'[.,;:]+$', '', domain)
+            domain = re.sub(r'[.,;:`]+$', '', domain)
             urls[domain].append(f"{filepath}:{line_num}")
 
     return urls

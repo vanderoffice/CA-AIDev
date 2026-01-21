@@ -102,8 +102,8 @@ flowchart LR
     TYPE --> FCC[Family Child Care Home]
     TYPE --> EXEMPT[License-Exempt]
 
-    CENTER --> CHECK1[Check license at<br/>cdss.ca.gov/childcare]
-    FCC --> CHECK2[Check license at<br/>cdss.ca.gov/childcare]
+    CENTER --> CHECK1[Check license at<br/>cdss.ca.gov/inforesources/child-care-licensing]
+    FCC --> CHECK2[Check license at<br/>cdss.ca.gov/inforesources/child-care-licensing]
 
     EXEMPT --> Q{Related to child?}
     Q -->|YES| OK1[✅ No TrustLine needed<br/>Must be 18+]

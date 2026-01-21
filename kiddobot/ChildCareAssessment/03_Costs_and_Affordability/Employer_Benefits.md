@@ -369,7 +369,7 @@ When evaluating offers, calculate total childcare value:
 | Your HR/Benefits department | Internal |
 | IRS DCFSA information | [irs.gov/publications/p503](https://www.irs.gov/publications/p503) |
 | CA Employment Development Dept | [edd.ca.gov](https://edd.ca.gov) |
-| CA Paid Family Leave | [edd.ca.gov/disability/paid-family-leave](https://edd.ca.gov/disability/paid-family-leave/) |
+| CA Paid Family Leave | [EDD Paid Family Leave](https://edd.ca.gov/en/disability/paid-family-leave/) |
 | Care.com (backup care) | [care.com](https://care.com) |
 | Bright Horizons | [brighthorizons.com](https://brighthorizons.com) |
 

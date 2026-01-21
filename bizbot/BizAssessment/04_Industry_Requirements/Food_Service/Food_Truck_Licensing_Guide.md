@@ -129,7 +129,7 @@ PHASE 4: Operations (Weeks 16-24)
 **Agency:** California Department of Tax and Fee Administration (CDTFA)
 **Cost:** Free
 **Timeline:** Same day (online)
-**URL:** https://onlineservices.cdtfa.ca.gov/
+**URL:** https://cdtfa.ca.gov/services/
 
 **Required for:** All food trucks selling prepared food (taxable)
 
@@ -210,7 +210,7 @@ PHASE 4: Operations (Weeks 16-24)
 | County | URL |
 |--------|-----|
 | Los Angeles | https://publichealth.lacounty.gov/eh/business/food-trucks-carts.htm |
-| San Francisco | https://www.sfdph.org/dph/EH/ |
+| San Francisco | https://www.sf.gov/topics--health-permits-and-regulations |
 | San Diego | https://www.sandiegocounty.gov/deh/fhd/ |
 | Orange | https://ochealthinfo.com/services-programs/environmental-health |
 | Sacramento | https://emd.saccounty.net/EH/FoodProtect-RetailFood/Pages/MobileFood.aspx |

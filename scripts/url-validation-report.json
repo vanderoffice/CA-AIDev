@@ -1,0 +1,1984 @@
+{
+  "timestamp": "2026-01-20T20:06:43.341978",
+  "summary": {
+    "valid": 815,
+    "redirected": 0,
+    "broken": 203,
+    "skipped": 85
+  },
+  "broken_urls": [
+    {
+      "url": "https://APP_Directory.csv",
+      "original": "APP_Directory.csv",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Alternative_Payment_Programs/APP_Overview.md:258"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host app_directory.csv:443 ssl:d"
+    },
+    {
+      "url": "https://bizfileonline.sos.ca.gov",
+      "original": "https://bizfileonline.sos.ca.gov/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/california-edd-employer-resources.md:176",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:113",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_DCA_Comprehensive_URL_Guide.md:181",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_Business_Licensing_URLs_Documentation.md:48",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/01_Entity_Formation/Entity_Types_Decision_Matrix.md:300",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/01_Entity_Formation/README.md:18",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Food_Service/Restaurant_Licensing_Guide.md:85",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Retail/General_Retail_Guide.md:48",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Food_Service/Restaurant_Licensing_Guide.md:464",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Manufacturing/Manufacturing_Licensing_Guide.md:29",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Construction/CSLB_Licensing_Guide.md:611"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://communityinvestment.lacity.gov/early-intervention-providers-and-educators",
+      "original": "https://communityinvestment.lacity.gov/early-intervention-providers-and-educators",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Initial_Assessment/KiddoInterviews_Perplexity.md:299"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/file/business/credits/small-business-hiring-credit.html",
+      "original": "https://www.ftb.ca.gov/file/business/credits/small-business-hiring-credit.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:287"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/California_Governor",
+      "original": "https://en.wikipedia.org/wiki/California_Governor",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:275",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:170"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://apps.calbar.ca.gov",
+      "original": "https://apps.calbar.ca.gov",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Professional_Services/DCA_Licensing_Overview.md:405"
+      ],
+      "status": 500,
+      "error": ""
+    },
+    {
+      "url": "https://winnie.com/mountain-view-ca/overnight-childcare",
+      "original": "https://winnie.com/mountain-view-ca/overnight-childcare",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Initial_Assessment/KiddoInterviews_Perplexity.md:303"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.rcoe.us/departments/early-education-services/early-care-and-education/alternative-payment-program-calworks-stage-2-and-calworks-stage-3",
+      "original": "https://www.rcoe.us/departments/early-education-services/early-care-and-education/alternative-payment-program-calworks-stage-2-and-calworks-stage-3",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Alternative_Payment_Programs/APP_Overview.md:306"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://academic.oup.com/bjd/article/doi/10.1093/bjd/ljaf085.086/8162163",
+      "original": "https://academic.oup.com/bjd/article/doi/10.1093/bjd/ljaf085.086/8162163",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:293"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://ca.metrc.com",
+      "original": "https://ca.metrc.com",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Cannabis/Cannabis_Licensing_Guide.md:345",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Cannabis/Cannabis_Licensing_Guide.md:566"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://calcannabis.cdfa.ca.gov",
+      "original": "https://calcannabis.cdfa.ca.gov",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Cannabis/Cannabis_Licensing_Guide.md:560"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host calcannabis.cdfa.ca.gov:443"
+    },
+    {
+      "url": "https://academic.oup.com/bjd/article/doi/10.1093/bjd/ljaf085.519/8162055",
+      "original": "https://academic.oup.com/bjd/article/doi/10.1093/bjd/ljaf085.519/8162055",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:295"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://distributecannabis.org",
+      "original": "https://distributecannabis.org",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Cannabis/Cannabis_Licensing_Guide.md:574"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host distributecannabis.org:443 "
+    },
+    {
+      "url": "https://www.ccrcca.org/publications",
+      "original": "https://www.ccrcca.org/publications/",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/04_Application_Processes/Common_Mistakes_FAQ.md:437"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CHCQ/LCP",
+      "original": "https://www.cdph.ca.gov/Programs/CHCQ/LCP",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Healthcare/Healthcare_Licensing_Guide.md:449",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Healthcare/Healthcare_Licensing_Guide.md:525"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/School/childcare-immunizations.aspx",
+      "original": "https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/School/childcare-immunizations.aspx",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/04_Application_Processes/Immunization_Requirements.md:366",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Initial_Assessment/KiddoInterviews_Perplexity.md:287",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Initial_Assessment/KiddoInterviews_Perplexity.md:316"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://dds.ca.gov/rc/listings/*",
+      "original": "https://dds.ca.gov/rc/listings/*",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Regional_Center/Regional_Center_Overview.md:9"
+      ],
+      "status": 502,
+      "error": ""
+    },
+    {
+      "url": "https://www.cchealth.org/health-and-safety-information/communicable-disease-program/immunization/school-childcare-requirements-for-immunizations",
+      "original": "https://www.cchealth.org/health-and-safety-information/communicable-disease-program/immunization/school-childcare-requirements-for-immunizations",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Initial_Assessment/KiddoInterviews_Perplexity.md:314"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CHCQ/LCP/Pages/ApplyForLicensure.aspx",
+      "original": "https://www.cdph.ca.gov/Programs/CHCQ/LCP/Pages/ApplyForLicensure.aspx",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Healthcare/Healthcare_Licensing_Guide.md:526"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.kidsdata.org/topic/99/child-care-availability/table",
+      "original": "https://www.kidsdata.org/topic/99/child-care-availability/table",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Initial_Assessment/KiddoInterviews_Perplexity.md:315"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://cdph.ca.gov/immunization",
+      "original": "https://cdph.ca.gov/immunization",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/04_Application_Processes/Immunization_Requirements.md:366"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/Local-Health-Department.aspx",
+      "original": "https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/Local-Health-Department.aspx",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/04_Application_Processes/Immunization_Requirements.md:369"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://academic.oup.com/ntr/advance-article/doi/10.1093/ntr/ntaf174/8329339",
+      "original": "https://academic.oup.com/ntr/advance-article/doi/10.1093/ntr/ntaf174/8329339",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:299"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://jgiass.com/pdf-reader.php?file=Catalyzing-Development-in-Agricultural-Based-Regions:-Exploring-the-Impact-of-Business-Licensing,-Governance,-and-Public-Trust-in-the-Agricultural-Logistics.pdf\\&path=issue_papers",
+      "original": "https://jgiass.com/pdf-reader.php?file=Catalyzing-Development-in-Agricultural-Based-Regions:-Exploring-the-Impact-of-Business-Licensing,-Governance,-and-Public-Trust-in-the-Agricultural-Logistics.pdf\\&path=issue_papers",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:293"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.ferc.gov/media/h-1-rm24-5-000-0",
+      "original": "https://www.ferc.gov/media/h-1-rm24-5-000-0",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/03-permits/401-certification/401-federal-nexus.md:282"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://cdph.ca.gov",
+      "original": "https://cdph.ca.gov",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/04_Application_Processes/Immunization_Requirements.md:369",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Glossary.md:33",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Glossary.md:33",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:13",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/Agency_Coordination_Map.md:291",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/Agency_Coordination_Map.md:291"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.guidedogsboard.ca.gov",
+      "original": "https://www.guidedogsboard.ca.gov/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_DCA_Comprehensive_URL_Guide.md:115"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.guidedogsboard.ca.gov:4"
+    },
+    {
+      "url": "https://www.shotsforschool.org",
+      "original": "https://www.shotsforschool.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/04_Application_Processes/Immunization_Requirements.md:370",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:214",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/Agency_Coordination_Map.md:43"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.ccld.dcdss.ca.gov/carefacilitysearch",
+      "original": "https://www.ccld.dcdss.ca.gov/carefacilitysearch/",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/Orange_County.md:23",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/Alameda_County.md:23",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/Sacramento_County.md:23",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/San_Diego_County.md:23",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/LA_County.md:23",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/LA_County.md:23"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.ccld.dcdss.ca.gov:443 s"
+    },
+    {
+      "url": "https://www.tandfonline.com/doi/pdf/10.1080/23311975.2023.2276944?needAccess=true",
+      "original": "https://www.tandfonline.com/doi/pdf/10.1080/23311975.2023.2276944?needAccess=true",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:321"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://mychildcare.ca.gov",
+      "original": "https://mychildcare.ca.gov",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/Orange_County.md:294",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/Alameda_County.md:269",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/Sacramento_County.md:271",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/San_Diego_County.md:280",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/LA_County.md:271",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Homeschool_Childcare_Options.md:49",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Homeschool_Childcare_Options.md:178",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Homeschool_Childcare_Options.md:360",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/09_User_Journeys/Journey_New_Parent.md:119",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CCDF/CCDF_Overview.md:278",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/San_Diego.md:266",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/San_Diego.md:266",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/SF_Bay_Area.md:277",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/SF_Bay_Area.md:277",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/LA_County.md:215",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/LA_County.md:215",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/Sacramento.md:331",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/Sacramento.md:331"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host mychildcare.ca.gov:443 ssl:"
+    },
+    {
+      "url": "http://www.scirp.org/journal/PaperDownload.aspx?paperID=101924",
+      "original": "http://www.scirp.org/journal/PaperDownload.aspx?paperID=101924",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:323"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/file/personal/credits/child-and-dependent-care-expenses-credit.html",
+      "original": "https://www.ftb.ca.gov/file/personal/credits/child-and-dependent-care-expenses-credit.html",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/03_Costs_and_Affordability/Tax_Credits.md:365"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9358365",
+      "original": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9358365/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:325"
+      ],
+      "status": 405,
+      "error": ""
+    },
+    {
+      "url": "https://ftb.ca.gov",
+      "original": "https://ftb.ca.gov",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/03_Costs_and_Affordability/Tax_Credits.md:365",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/03_Costs_and_Affordability/CA_Childcare_Cost_Overview.md:313"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://law.justia.com/codes/california/2009/wat/13260-13274.html",
+      "original": "https://law.justia.com/codes/california/2009/wat/13260-13274.html",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/03-permits/npdes/npdes-individual.md:59"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://pricereporter.com/sba-size-standards-how-to-determine-if-your-business-is-small",
+      "original": "https://pricereporter.com/sba-size-standards-how-to-determine-if-your-business-is-small/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:327"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host pricereporter.com:443 ssl:T"
+    },
+    {
+      "url": "https://childrencouncil.org",
+      "original": "https://childrencouncil.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/SF_Bay_Area.md:282"
+      ],
+      "status": 0,
+      "error": "[Errno 54] Connection reset by peer"
+    },
+    {
+      "url": "https://fremont.gov",
+      "original": "https://fremont.gov",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/Alameda_County.md:36"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.eso-ventures.com/news/small-business-big-impact-how-entrepreneurs-are-boosting-californias-economy",
+      "original": "https://www.eso-ventures.com/news/small-business-big-impact-how-entrepreneurs-are-boosting-californias-economy",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:331"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://MyChildCare.ca.gov:**",
+      "original": "https://MyChildCare.ca.gov:**",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/San_Diego_County.md:253",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/San_Diego.md:266",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/SF_Bay_Area.md:277",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/Sacramento.md:331"
+      ],
+      "status": 0,
+      "error": "https://MyChildCare.ca.gov:**"
+    },
+    {
+      "url": "https://www.harborcompliance.com/start-a-business-in-california",
+      "original": "https://www.harborcompliance.com/start-a-business-in-california",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:323"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.alamedasocialservices.org",
+      "original": "https://www.alamedasocialservices.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/SF_Bay_Area.md:287"
+      ],
+      "status": 0,
+      "error": "[Errno 54] Connection reset by peer"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2296/text",
+      "original": "https://www.congress.gov/bill/119th-congress/senate-bill/2296/text",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:331",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_CGPT5_1.md:150",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:212"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "http://www.emerald.com/jopp/article/24/4/465-477/1218959",
+      "original": "http://www.emerald.com/jopp/article/24/4/465-477/1218959",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:339"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.harborcompliance.com/california-engineering-license",
+      "original": "https://www.harborcompliance.com/california-engineering-license",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:333"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://MyChildCare.ca.gov",
+      "original": "https://MyChildCare.ca.gov",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/LA_County.md:244",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Homeschool_Childcare_Options.md:49",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Homeschool_Childcare_Options.md:178",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Homeschool_Childcare_Options.md:360",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/09_User_Journeys/Journey_New_Parent.md:119",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Data/SPATIAL_DATASET_PLAN.md:244",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CCDF/CCDF_Overview.md:278",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/San_Diego.md:166",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/LA_County.md:110",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/Sacramento.md:180"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host mychildcare.ca.gov:443 ssl:"
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CEH/DFDCS/Pages/FDBPrograms/FoodSafetyProgram/CottageFoodOperations.aspx",
+      "original": "https://www.cdph.ca.gov/Programs/CEH/DFDCS/Pages/FDBPrograms/FoodSafetyProgram/CottageFoodOperations.aspx",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Food_Service/Food_Truck_Licensing_Guide.md:69"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.northwestregisteredagent.com/llc/california",
+      "original": "https://www.northwestregisteredagent.com/llc/california",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:337"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.acpjournals.org/doi/10.7326/M14-1866",
+      "original": "https://www.acpjournals.org/doi/10.7326/M14-1866",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:341",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:192"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "http://www.tandfonline.com/doi/abs/10.1080/09540962.2015.1007704",
+      "original": "http://www.tandfonline.com/doi/abs/10.1080/09540962.2015.1007704",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:343"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://pubs.aeaweb.org/doi/10.1257/aer.101.6.2653",
+      "original": "https://pubs.aeaweb.org/doi/10.1257/aer.101.6.2653",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:345"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "http://sweetmaxwell.org/ViewIssue.php?Paper=142\\&Issue=47",
+      "original": "http://sweetmaxwell.org/ViewIssue.php?Paper=142\\&Issue=47",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:347"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host sweetmaxwell.org:80 ssl:def"
+    },
+    {
+      "url": "https://valleyoakcs.org",
+      "original": "https://valleyoakcs.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:59"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host valleyoakcs.org:443 ssl:def"
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/hyp.5137",
+      "original": "https://onlinelibrary.wiley.com/doi/10.1002/hyp.5137",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:347"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.eurekaselect.com/230357/article",
+      "original": "https://www.eurekaselect.com/230357/article",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:349"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/hyp.5135",
+      "original": "https://onlinelibrary.wiley.com/doi/10.1002/hyp.5135",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:349"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.delnortechildcare.org",
+      "original": "https://www.delnortechildcare.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:89"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.delnortechildcare.org:4"
+    },
+    {
+      "url": "https://www.k12.com/california-virtual-academies.html",
+      "original": "https://www.k12.com/california-virtual-academies.html",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Homeschool_Overview.md:260",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Hybrid_School_Arrangements.md:349"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://ywca-sv.org",
+      "original": "https://ywca-sv.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/SF_Bay_Area.md:291"
+      ],
+      "status": 502,
+      "error": ""
+    },
+    {
+      "url": "https://www.hcd.ca.gov/building-standards",
+      "original": "https://www.hcd.ca.gov/building-standards",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Food_Service/Food_Truck_Licensing_Guide.md:488"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://cvchn.org",
+      "original": "https://cvchn.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:103"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host cvchn.org:443 ssl:default ["
+    },
+    {
+      "url": "https://www.harborcompliance.com/california-business-tax",
+      "original": "https://www.harborcompliance.com/california-business-tax",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:353"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.nsf.org/nsf-standards",
+      "original": "https://www.nsf.org/nsf-standards",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Food_Service/Food_Truck_Licensing_Guide.md:497"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://inspireschools.org",
+      "original": "https://inspireschools.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Hybrid_School_Arrangements.md:355"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host inspireschools.org:443 ssl:"
+    },
+    {
+      "url": "https://www.ftb.ca.gov/file/business/types/limited-liability-company",
+      "original": "https://www.ftb.ca.gov/file/business/types/limited-liability-company/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Retail/General_Retail_Guide.md:59"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0264999323000135",
+      "original": "https://linkinghub.elsevier.com/retrieve/pii/S0264999323000135",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:367"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://sageoakcharter.org",
+      "original": "https://sageoakcharter.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Hybrid_School_Arrangements.md:357"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host sageoakcharter.org:443 ssl:"
+    },
+    {
+      "url": "https://dha.saccounty.gov",
+      "original": "https://dha.saccounty.gov",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/Sacramento.md:324"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host dha.saccounty.gov:443 ssl:d"
+    },
+    {
+      "url": "https://www.ftb.ca.gov/myftb/create-an-account.html",
+      "original": "https://www.ftb.ca.gov/myftb/create-an-account.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:361"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://dha.saccounty.gov/Services/Pages/CalWORKs.aspx",
+      "original": "https://dha.saccounty.gov/Services/Pages/CalWORKs.aspx",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/Sacramento.md:325"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host dha.saccounty.gov:443 ssl:d"
+    },
+    {
+      "url": "https://dgs.saccounty.net/capsd/Pages/FAQ-LSBO.aspx",
+      "original": "https://dgs.saccounty.net/capsd/Pages/FAQ-LSBO.aspx",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:379"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host dgs.saccounty.net:443 ssl:d"
+    },
+    {
+      "url": "https://abp.assembly.ca.gov/sites/abp.assembly.ca.gov/files/hearings/Info",
+      "original": "https://abp.assembly.ca.gov/sites/abp.assembly.ca.gov/files/hearings/Info",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:377"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://dtsc.ca.gov",
+      "original": "https://dtsc.ca.gov/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_Business_Licensing_URLs_Documentation.md:83",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/05_Environmental_Compliance/README.md:26",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Manufacturing/Manufacturing_Licensing_Guide.md:560"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://theresourceconnection.net",
+      "original": "https://theresourceconnection.net",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:52",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:67"
+      ],
+      "status": 405,
+      "error": ""
+    },
+    {
+      "url": "https://lassencfr.org",
+      "original": "https://lassencfr.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:162"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host lassencfr.org:443 ssl:defau"
+    },
+    {
+      "url": "https://hslda.org/group-finder",
+      "original": "https://hslda.org/group-finder",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Homeschool_Childcare_Options.md:93",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/10_Alternative_Education/Homeschool_Childcare_Options.md:364"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://data.ca.gov/api/3/action/datastore_search?resource_id=[RESOURCE_ID",
+      "original": "https://data.ca.gov/api/3/action/datastore_search?resource_id=[RESOURCE_ID",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/10-public-resources/data-portals/data-access-guide.md:34"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.acpjournals.org/doi/10.7326/0003-4819-144-2-200601170-00008",
+      "original": "https://www.acpjournals.org/doi/10.7326/0003-4819-144-2-200601170-00008",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:375"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://gamagroundwater.waterboards.ca.gov/gama/gamamap/public",
+      "original": "https://gamagroundwater.waterboards.ca.gov/gama/gamamap/public/",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/10-public-resources/data-portals/data-access-guide.md:41",
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/10-public-resources/data-portals/water-data-systems.md:177"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://legiscan.com/CA/text/AB185/id/2605823",
+      "original": "https://legiscan.com/CA/text/AB185/id/2605823",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:397"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://geotracker.waterboards.ca.gov",
+      "original": "https://geotracker.waterboards.ca.gov",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/10-public-resources/data-portals/data-access-guide.md:69",
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/10-public-resources/data-portals/water-data-systems.md:176"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://iceschildcare.org",
+      "original": "https://iceschildcare.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:194",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:439"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host iceschildcare.org:443 ssl:d"
+    },
+    {
+      "url": "https://disabilityrightsca.org",
+      "original": "https://disabilityrightsca.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/09_User_Journeys/Journey_Special_Needs_Child.md:328",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/09_User_Journeys/Journey_Special_Needs_Child.md:365"
+      ],
+      "status": 405,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/myftb",
+      "original": "https://www.ftb.ca.gov/myftb/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:12",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:45"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/California_Contractors_State_License_Board",
+      "original": "https://en.wikipedia.org/wiki/California_Contractors_State_License_Board",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Sonnet4_5.md:407"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/file/business/index.html",
+      "original": "https://www.ftb.ca.gov/file/business/index.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:20",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:167",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_CGPT5_1.md:184",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:220"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://law.justia.com/codes/california/code-gov/title-2/division-3/part-5-5/chapter-6-5/article-1/section-14837",
+      "original": "https://law.justia.com/codes/california/code-gov/title-2/division-3/part-5-5/chapter-6-5/article-1/section-14837/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:133"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/file/business/types/corporations/index.html",
+      "original": "https://www.ftb.ca.gov/file/business/types/corporations/index.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:21"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/forms/search",
+      "original": "https://www.ftb.ca.gov/forms/search/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:22",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:23",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:24",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:25"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://sncs.org",
+      "original": "https://sncs.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:244",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:373"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host sncs.org:443 ssl:True [SSLC"
+    },
+    {
+      "url": "https://www.ftb.ca.gov/pay/bank-account/index.asp",
+      "original": "https://www.ftb.ca.gov/pay/bank-account/index.asp",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:33"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cde.ca.gov/schooldirectory",
+      "original": "https://www.cde.ca.gov/schooldirectory/",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/05_Special_Situations/Transitional_Kindergarten.md:326",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDE_Overview.md:146"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/pay/estimated-tax-payments.html",
+      "original": "https://www.ftb.ca.gov/pay/estimated-tax-payments.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:34"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CEH/DFDCS/Pages/FDBPrograms/FoodSafetyProgram/ProcessedFoodRegistration.aspx",
+      "original": "https://www.cdph.ca.gov/Programs/CEH/DFDCS/Pages/FDBPrograms/FoodSafetyProgram/ProcessedFoodRegistration.aspx",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Manufacturing/Manufacturing_Licensing_Guide.md:376"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.ftb.ca.gov/pay/payment-plans/index.asp",
+      "original": "https://www.ftb.ca.gov/pay/payment-plans/index.asp",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:35"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CEH/DFDCS",
+      "original": "https://www.cdph.ca.gov/Programs/CEH/DFDCS",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Manufacturing/Manufacturing_Licensing_Guide.md:586"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html",
+      "original": "https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:36",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_CGPT5_1.md:178"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.rcoe.us",
+      "original": "https://www.rcoe.us",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:274"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/refund/index.asp",
+      "original": "https://www.ftb.ca.gov/refund/index.asp",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:44"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://legiscan.com/CA/text/AB141/id/2424452",
+      "original": "https://legiscan.com/CA/text/AB141/id/2424452",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_CGPT5_1.md:142"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/help/contact/index.html",
+      "original": "https://www.ftb.ca.gov/help/contact/index.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:46",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:76"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/tax-pros/power-of-attorney/index.html",
+      "original": "https://www.ftb.ca.gov/tax-pros/power-of-attorney/index.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:47"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://family-resource.org",
+      "original": "https://family-resource.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:291"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host family-resource.org:443 ssl"
+    },
+    {
+      "url": "https://www.ftb.ca.gov/pay/penalties-and-interest/index.html",
+      "original": "https://www.ftb.ca.gov/pay/penalties-and-interest/index.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:55"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cde.ca.gov/sp/cd/ci/cspp.asp",
+      "original": "https://www.cde.ca.gov/sp/cd/ci/cspp.asp",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDE_Overview.md:144"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/help/business/entity-status-letter.asp",
+      "original": "https://www.ftb.ca.gov/help/business/entity-status-letter.asp",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:56",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:57",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:66",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:67"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cityofranchocordova.org/departments/public-works/stormwater-quality-program/submit-business-license-requirements-for-senate-bill-205",
+      "original": "https://www.cityofranchocordova.org/departments/public-works/stormwater-quality-program/submit-business-license-requirements-for-senate-bill-205",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Sonnet4_5.md:429",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:247"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/tax-pros/law/index.html",
+      "original": "https://www.ftb.ca.gov/tax-pros/law/index.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:58"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cde.ca.gov/sp/cd/re/caelresources.asp",
+      "original": "https://www.cde.ca.gov/sp/cd/re/caelresources.asp",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDE_Overview.md:147"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/help/business/index.html",
+      "original": "https://www.ftb.ca.gov/help/business/index.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:75"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/help/disagree-or-resolve-an-issue/taxpayer-advocate-services.html",
+      "original": "https://www.ftb.ca.gov/help/disagree-or-resolve-an-issue/taxpayer-advocate-services.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:77"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.harborcompliance.com/california-business-license",
+      "original": "https://www.harborcompliance.com/california-business-license",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Sonnet4_5.md:445"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://docs.yandex.ru/docs/view?url=ya-disk-public%3A%2F%2Fv9KLHlfXfjoAC3xdifqJOM3T92Sy76zMRsttV1%2B5aTCKFk5qdXv%2BOJPi8Fk7Xp79q%2FJ6bpmRyOJonT3VoXnDag%3D%3D\\&name=yagofarova-kolotkina.pdf\\&nosw=1",
+      "original": "https://docs.yandex.ru/docs/view?url=ya-disk-public%3A%2F%2Fv9KLHlfXfjoAC3xdifqJOM3T92Sy76zMRsttV1%2B5aTCKFk5qdXv%2BOJPi8Fk7Xp79q%2FJ6bpmRyOJonT3VoXnDag%3D%3D\\&name=yagofarova-kolotkina.pdf\\&nosw=1",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:169"
+      ],
+      "status": 400,
+      "error": ""
+    },
+    {
+      "url": "https://www.cdph.ca.gov",
+      "original": "https://www.cdph.ca.gov",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:13"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.ftb.ca.gov/tax-pros/index.html",
+      "original": "https://www.ftb.ca.gov/tax-pros/index.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:78"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/file/business/types/corporations/s-corporations.html",
+      "original": "https://www.ftb.ca.gov/file/business/types/corporations/s-corporations.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_CGPT5_1.md:176"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII",
+      "original": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Construction/CSLB_Licensing_Guide.md:600"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization-Branch.aspx",
+      "original": "https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization-Branch.aspx",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:14",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:216"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.sbfamilycare.org",
+      "original": "https://www.sbfamilycare.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:343"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.sbfamilycare.org:443 ss"
+    },
+    {
+      "url": "https://cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization-Branch",
+      "original": "https://cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization-Branch",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:14",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:216"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://ca_business_licensing_entities_clean.csv",
+      "original": "ca_business_licensing_entities_clean.csv",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/README.md:142"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host ca_business_licensing_entit"
+    },
+    {
+      "url": "https://cdrc-childcare.org",
+      "original": "https://cdrc-childcare.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:359"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host cdrc-childcare.org:443 ssl:"
+    },
+    {
+      "url": "https://cairweb.org",
+      "original": "https://cairweb.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:215"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Medical-Exemptions.aspx",
+      "original": "https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Medical-Exemptions.aspx",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:217"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://irs.treasury.gov/freetaxprep",
+      "original": "https://irs.treasury.gov/freetaxprep/",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/04_Application_Processes/Income_Verification.md:423"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://cdph.ca.gov/Programs/CID/DCDC/Pages/Medical-Exemptions",
+      "original": "https://cdph.ca.gov/Programs/CID/DCDC/Pages/Medical-Exemptions",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:217"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.ftb.ca.gov/file/business/types/partnerships.html",
+      "original": "https://www.ftb.ca.gov/file/business/types/partnerships.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/url_fixes_2025-12-31.md:20"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/myftb/help/what-you-need-to-register-help.html",
+      "original": "https://www.ftb.ca.gov/myftb/help/what-you-need-to-register-help.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:165",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_CGPT5_1.md:180",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:136"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.calpipetrades.org",
+      "original": "https://www.calpipetrades.org",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Construction/CSLB_Licensing_Guide.md:620"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.calpipetrades.org:443 s"
+    },
+    {
+      "url": "https://www.usbr.gov/mp/water-transfer",
+      "original": "https://www.usbr.gov/mp/water-transfer/",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/08-water-rights/transfers-markets/transfer-mechanisms.md:361",
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/08-water-rights/transfers-markets/water-transfers-overview.md:230"
+      ],
+      "status": 0,
+      "error": "[Errno 54] Connection reset by peer"
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CCDPHP/DCDIC/CTCA/Pages/Local-Health-Departments.aspx",
+      "original": "https://www.cdph.ca.gov/Programs/CCDPHP/DCDIC/CTCA/Pages/Local-Health-Departments.aspx",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:230"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://www.sandiegocounty.gov/hhsa/programs/ssp/calworks",
+      "original": "https://www.sandiegocounty.gov/hhsa/programs/ssp/calworks/",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/San_Diego.md:260"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://sandiegocounty.gov/hhsa/programs/ssp/calworks",
+      "original": "https://sandiegocounty.gov/hhsa/programs/ssp/calworks",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/San_Diego.md:260"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://www.sandiegocounty.gov/hhsa/programs/ssp/family_resource_centers.html",
+      "original": "https://www.sandiegocounty.gov/hhsa/programs/ssp/family_resource_centers.html",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/San_Diego.md:261"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://www.trintyfamilyresource.org",
+      "original": "https://www.trintyfamilyresource.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/All_58_Counties_RR_Directory.md:425"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.trintyfamilyresource.or"
+    },
+    {
+      "url": "https://cdph.ca.gov/Programs/CCDPHP/DCDIC/CTCA/Pages/Local-Health-Departments",
+      "original": "https://cdph.ca.gov/Programs/CCDPHP/DCDIC/CTCA/Pages/Local-Health-Departments",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/CDPH_Health_Requirements.md:230"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://agency_urls.csv",
+      "original": "agency_urls.csv",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/08_URL_Database/README.md:11"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host agency_urls.csv:443 ssl:def"
+    },
+    {
+      "url": "https://ccld.dss.ca.gov",
+      "original": "https://ccld.dss.ca.gov",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/06_State_Agencies/Agency_Coordination_Map.md:46"
+      ],
+      "status": 400,
+      "error": ""
+    },
+    {
+      "url": "https://program_urls.csv",
+      "original": "program_urls.csv",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/08_URL_Database/README.md:12"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host program_urls.csv:443 ssl:de"
+    },
+    {
+      "url": "https://law.justia.com/codes/california/2009/gov/14835-14843.html",
+      "original": "https://law.justia.com/codes/california/2009/gov/14835-14843.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:199"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://dds.ca.gov",
+      "original": "https://dds.ca.gov",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/README.md:129",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Priority_Populations_Quick_Reference.md:131",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Priority_Populations_Quick_Reference.md:131",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Priority_Populations_Quick_Reference.md:239",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Priority_Populations_Quick_Reference.md:239",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Glossary.md:41",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Glossary.md:41",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Glossary.md:157",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Glossary.md:157",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Regional_Center/Regional_Center_Overview.md:287"
+      ],
+      "status": 502,
+      "error": ""
+    },
+    {
+      "url": "https://county_welfare_urls.csv",
+      "original": "county_welfare_urls.csv",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/08_URL_Database/README.md:13"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host county_welfare_urls.csv:443"
+    },
+    {
+      "url": "https://econdev.mountainview.gov/business/starting-a-business",
+      "original": "https://econdev.mountainview.gov/business/starting-a-business",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:201"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://ebudget.ca.gov",
+      "original": "https://ebudget.ca.gov",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Initial_Assessment/KiddoInterviews_GPT4o.md:186"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host ebudget.ca.gov:443 ssl:True"
+    },
+    {
+      "url": "https://eddservices.edd.ca.gov",
+      "original": "https://eddservices.edd.ca.gov/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/california-edd-employer-resources.md:12",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/california-edd-employer-resources.md:46",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/california-edd-employer-resources.md:121",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_DIR_Comprehensive_URL_Guide.md:165",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_Business_Licensing_URLs_Documentation.md:50",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/02_State_Registration/README.md:27"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://sandiegocounty.gov/hhsa/programs/ssp/family_resource_centers",
+      "original": "https://sandiegocounty.gov/hhsa/programs/ssp/family_resource_centers",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/San_Diego.md:261"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://www.sandiegocounty.gov/deh/fhd",
+      "original": "https://www.sandiegocounty.gov/deh/fhd/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Food_Service/Restaurant_Licensing_Guide.md:150",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Food_Service/Food_Truck_Licensing_Guide.md:214"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://www.linkedin.com/company/cagobiz",
+      "original": "https://www.linkedin.com/company/cagobiz",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:174"
+      ],
+      "status": 999,
+      "error": ""
+    },
+    {
+      "url": "https://www.breeze.ca.gov",
+      "original": "https://www.breeze.ca.gov/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_DCA_Comprehensive_URL_Guide.md:12",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_DCA_Comprehensive_URL_Guide.md:140",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_DCA_Comprehensive_URL_Guide.md:141"
+      ],
+      "status": 401,
+      "error": ""
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/California_Department_of_Consumer_Affairs",
+      "original": "https://en.wikipedia.org/wiki/California_Department_of_Consumer_Affairs",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:181"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.northone.com/landing-page/how-to-start-a-business-in-california-in-2025",
+      "original": "https://www.northone.com/landing-page/how-to-start-a-business-in-california-in-2025",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:207"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://eddservices.edd.ca.gov/tap/secure/eservices",
+      "original": "https://eddservices.edd.ca.gov/tap/secure/eservices",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/california-edd-employer-resources.md:22"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://law.justia.com/codes/california/code-gov/title-2/division-3/part-1/chapter-3-5/article-2/section-11342-610",
+      "original": "https://law.justia.com/codes/california/code-gov/title-2/division-3/part-1/chapter-3-5/article-2/section-11342-610/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:213"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://MyChildCare.ca.gov**",
+      "original": "https://MyChildCare.ca.gov**",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Data/SPATIAL_DATASET_PLAN.md:48"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host mychildcare.ca.gov**:443 ss"
+    },
+    {
+      "url": "https://openaccess.wgtn.ac.nz/articles/thesis/Under_Prying_Eyes_Repression_Surveillance_and_Exposure_in_California_1918-1939/17007901/1",
+      "original": "https://openaccess.wgtn.ac.nz/articles/thesis/Under_Prying_Eyes_Repression_Surveillance_and_Exposure_in_California_1918-1939/17007901/1",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:186"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://sandiegocounty.gov/hhsa",
+      "original": "https://sandiegocounty.gov/hhsa",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/07_County_Deep_Dives/San_Diego_County.md:275",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/county_variations/San_Diego.md:19"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://www.ftb.ca.gov/tax-pros/law/legal-rulings/1996-5.html",
+      "original": "https://www.ftb.ca.gov/tax-pros/law/legal-rulings/1996-5.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:217"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://codelibrary.amlegal.com/codes/los_angeles/latest/laac/0-0-0-86369",
+      "original": "https://codelibrary.amlegal.com/codes/los_angeles/latest/laac/0-0-0-86369",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:221"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://cwc.ca.gov",
+      "original": "https://cwc.ca.gov",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/04-funding/grants/prop1-overview.md:114"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host cwc.ca.gov:443 ssl:True [SS"
+    },
+    {
+      "url": "https://www.ftb.ca.gov/myftb/help/how-to-guides/individuals/individual-register.html",
+      "original": "https://www.ftb.ca.gov/myftb/help/how-to-guides/individuals/individual-register.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:214"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://data.chhs.ca.gov/dataset/46ffcbdf-4874-4cc1-92c2-fb715e3ad014/resource/7aed8063-cea7-4367-8651-c81643164ae0/download/tmpwya01y9s.csv",
+      "original": "https://data.chhs.ca.gov/dataset/46ffcbdf-4874-4cc1-92c2-fb715e3ad014/resource/7aed8063-cea7-4367-8651-c81643164ae0/download/tmpwya01y9s.csv",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Data/SPATIAL_DATASET_PLAN.md:70"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://data.chhs.ca.gov/dataset/46ffcbdf-4874-4cc1-92c2-fb715e3ad014/resource/4b5cc48d-03b1-4f42-a7d1-b9816903eb2b/download/tmpghf_prqt.csv",
+      "original": "https://data.chhs.ca.gov/dataset/46ffcbdf-4874-4cc1-92c2-fb715e3ad014/resource/4b5cc48d-03b1-4f42-a7d1-b9816903eb2b/download/tmpghf_prqt.csv",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Data/SPATIAL_DATASET_PLAN.md:75"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+      "original": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Data/SPATIAL_DATASET_PLAN.md:89"
+      ],
+      "status": 400,
+      "error": ""
+    },
+    {
+      "url": "https://planning.saccounty.net/applicants/Pages/Alcoholic-Beverage-Sales-(ABC-and-PCN",
+      "original": "https://planning.saccounty.net/applicants/Pages/Alcoholic-Beverage-Sales-(ABC-and-PCN",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:215",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_CGPT5_1.md:166"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.cde.ca.gov/sp/cd/re/cdcontractorinfo.asp",
+      "original": "https://www.cde.ca.gov/sp/cd/re/cdcontractorinfo.asp",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CalWORKs/CalWORKs_Application_Flowchart.md:236",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CCDF/CCDF_Overview.md:93",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/CCDF/CCDF_Overview.md:276"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://academic.oup.com/healthaffairsscholar/article/doi/10.1093/haschl/qxaf065/8093653",
+      "original": "https://academic.oup.com/healthaffairsscholar/article/doi/10.1093/haschl/qxaf065/8093653",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:232"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://journals.lww.com/10.1097/JOM.0000000000003123",
+      "original": "https://journals.lww.com/10.1097/JOM.0000000000003123",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:236"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://parks.ca.gov",
+      "original": "https://parks.ca.gov",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/04-funding/private/environmental-foundations.md:394"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host parks.ca.gov:443 ssl:True ["
+    },
+    {
+      "url": "https://www.cde.ca.gov/ls/ex/ast",
+      "original": "https://www.cde.ca.gov/ls/ex/ast/",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/02_Provider_Search/School_Age_Programs.md:108",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/02_Provider_Search/School_Age_Programs.md:403"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.atsjournals.org/doi/10.1513/AnnalsATS.202112-1334VP",
+      "original": "https://www.atsjournals.org/doi/10.1513/AnnalsATS.202112-1334VP",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:242"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.rcoe.us/departments/early-education-services/migrant-head-start-programs",
+      "original": "https://www.rcoe.us/departments/early-education-services/migrant-head-start-programs",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Migrant_Seasonal_Head_Start.md:142",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Migrant_Seasonal_Head_Start.md:266",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Migrant_Seasonal_Head_Start.md:273"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://legiscan.com/CA/text/AB2019/id/2578676",
+      "original": "https://legiscan.com/CA/text/AB2019/id/2578676",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:251"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/School/childcare.aspx",
+      "original": "https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/School/childcare.aspx",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Initial_Assessment/KiddoInterviews_Perplexity.md:284"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host www.cdph.ca.gov:443 ssl:Tru"
+    },
+    {
+      "url": "https://academic.oup.com/ptj/article/doi/10.1093/ptj/pzaf082/8161544",
+      "original": "https://academic.oup.com/ptj/article/doi/10.1093/ptj/pzaf082/8161544",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:244"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://academic.oup.com/cornell-scholarship-online/book/38240/chapter/333175999",
+      "original": "https://academic.oup.com/cornell-scholarship-online/book/38240/chapter/333175999",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_Gemini3P.md:246"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/file/business/doing-business-in-california.html",
+      "original": "https://www.ftb.ca.gov/file/business/doing-business-in-california.html",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:253"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.acacamps.org",
+      "original": "https://www.acacamps.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/02_Provider_Search/School_Age_Programs.md:408"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cde.ca.gov/sp/cd/re/hscollab.asp",
+      "original": "https://www.cde.ca.gov/sp/cd/re/hscollab.asp",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Head_Start_Overview.md:220",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Head_Start_Overview.md:240"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://legiscan.com/CA/text/AB1573/id/2604813",
+      "original": "https://legiscan.com/CA/text/AB1573/id/2604813",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:259"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://cityofpetaluma.org/business-stormwater-discharge-permit",
+      "original": "https://cityofpetaluma.org/business-stormwater-discharge-permit/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:251"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.cde.ca.gov/ls/ex/asesinfo.asp",
+      "original": "https://www.cde.ca.gov/ls/ex/asesinfo.asp",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/02_Provider_Search/School_Age_Programs.md:415"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://ocds.ocpublicworks.com/sites/ocpwocds/files/2021-06/CAL",
+      "original": "https://ocds.ocpublicworks.com/sites/ocpwocds/files/2021-06/CAL",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:255"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.cde.ca.gov/ls/ex/21stcclc",
+      "original": "https://www.cde.ca.gov/ls/ex/21stcclc/",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/02_Provider_Search/School_Age_Programs.md:416"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://bizfileonline.sos.ca.gov/search/business",
+      "original": "https://bizfileonline.sos.ca.gov/search/business",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/01_Entity_Formation/Entity_Types_Decision_Matrix.md:302"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "http://www.ssrn.com/abstract=2435306",
+      "original": "http://www.ssrn.com/abstract=2435306",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:267"
+      ],
+      "status": 429,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov/file/business",
+      "original": "https://www.ftb.ca.gov/file/business/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/01_Entity_Formation/Entity_Types_Decision_Matrix.md:303"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://engage.caloes.ca.gov",
+      "original": "https://engage.caloes.ca.gov",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/04-funding/federal/fema-mitigation.md:355"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host engage.caloes.ca.gov:443 ss"
+    },
+    {
+      "url": "https://www.rcoe.us/departments/early-education-services/early-education-programs/head-start-and-early-head-start",
+      "original": "https://www.rcoe.us/departments/early-education-services/early-education-programs/head-start-and-early-head-start",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Head_Start_Overview.md:238"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "http://www.emerald.com/ccij/article/12/3/311-312/47054",
+      "original": "http://www.emerald.com/ccij/article/12/3/311-312/47054",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/BizInterviews_SmallBiz_Def.md:269"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.ftb.ca.gov",
+      "original": "https://www.ftb.ca.gov/",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/california-edd-employer-resources.md:175",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_FTB_URL_Comprehensive_Guide.md:11",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/CA_Business_Licensing_URLs_Documentation.md:49",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/02_State_Registration/README.md:22",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Retail/General_Retail_Guide.md:407",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/03_Costs_and_Affordability/CA_Childcare_Cost_Overview.md:313"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://headstartca.org",
+      "original": "https://headstartca.org",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/02_Provider_Search/Special_Needs_Providers.md:224",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/02_Provider_Search/Provider_Types.md:212",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/02_Provider_Search/Provider_Types.md:368",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Priority_Populations_Quick_Reference.md:238",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Appendices/Planning_Timeline.md:355",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Subsidy_Stacking_Guide.md:319",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/09_User_Journeys/Journey_New_Parent.md:103",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/09_User_Journeys/Journey_New_Parent.md:290",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/09_User_Journeys/Journey_Special_Needs_Child.md:172",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/09_User_Journeys/Journey_Special_Needs_Child.md:364",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/09_User_Journeys/README.md:103",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Early_Head_Start_Overview.md:194",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Early_Head_Start_Overview.md:233",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Migrant_Seasonal_Head_Start.md:167",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Migrant_Seasonal_Head_Start.md:264",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Head_Start_Overview.md:153",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Head_Start_Overview.md:228",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Head_Start_Eligibility.md:251",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Head_Start_Eligibility.md:309"
+      ],
+      "status": 405,
+      "error": ""
+    },
+    {
+      "url": "https://www.optionsforlearning.org/apps/pages/index.jsp?uREC_ID=4331645&type=d&pREC_ID=2533847",
+      "original": "https://www.optionsforlearning.org/apps/pages/index.jsp?uREC_ID=4331645&type=d&pREC_ID=2533847",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Head_Start/Head_Start_Overview.md:239"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://run-log.csv",
+      "original": "run-log.csv",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/research-protocol/README.md:64"
+      ],
+      "status": 0,
+      "error": "Connection error: Cannot connect to host run-log.csv:443 ssl:default"
+    },
+    {
+      "url": "https://www.shastacounty.gov/agriculture/page/pesticide-licensing-faq",
+      "original": "https://www.shastacounty.gov/agriculture/page/pesticide-licensing-faq",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/Initial Assessment/BizInterviews_PerplexDeep.md:269"
+      ],
+      "status": 403,
+      "error": ""
+    },
+    {
+      "url": "https://www.fullertonsd.org/departments/educational-services/early-education/preschool/california-state-preschool-program-cspp/cspp-part-day-preschool",
+      "original": "https://www.fullertonsd.org/departments/educational-services/early-education/preschool/california-state-preschool-program-cspp/cspp-part-day-preschool",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/Initial_Assessment/KiddoInterviews_Perplexity.md:295"
+      ],
+      "status": 404,
+      "error": ""
+    },
+    {
+      "url": "https://www.sdapcd.org",
+      "original": "https://www.sdapcd.org",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Manufacturing/Manufacturing_Licensing_Guide.md:91",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Manufacturing/Manufacturing_Licensing_Guide.md:572"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://www.valleyair.org",
+      "original": "https://www.valleyair.org",
+      "sources": [
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Manufacturing/Manufacturing_Licensing_Guide.md:89",
+        "[bizbot] /Users/slate/Documents/GitHub/CA-AIDev/bizbot/BizAssessment/04_Industry_Requirements/Manufacturing/Manufacturing_Licensing_Guide.md:571"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://dds.ca.gov/rc/listings",
+      "original": "https://dds.ca.gov/rc/listings",
+      "sources": [
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/02_Provider_Search/Special_Needs_Providers.md:409",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Subsidy_Stacking_Guide.md:321",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/09_User_Journeys/Journey_Special_Needs_Child.md:65",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/09_User_Journeys/Journey_Special_Needs_Child.md:363",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Regional_Center/Eligibility_and_Application.md:129",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Regional_Center/Eligibility_and_Application.md:337",
+        "[kiddobot] /Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/01_Subsidies/Regional_Center/Regional_Center_Overview.md:286"
+      ],
+      "status": 502,
+      "error": ""
+    },
+    {
+      "url": "https://www.sandiegocounty.gov/content/sdc/dpw/watersheds/ordinance.html",
+      "original": "https://www.sandiegocounty.gov/content/sdc/dpw/watersheds/ordinance.html",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/03-permits/npdes/npdes-ms4.md:353"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://www.cmegroup.com/markets/equities/nasdaq/nasdaq-veles-california-water-index.html",
+      "original": "https://www.cmegroup.com/markets/equities/nasdaq/nasdaq-veles-california-water-index.html",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/08-water-rights/transfers-markets/water-markets.md:348"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://www.nasdaq.com/market-activity/index/nqh2o",
+      "original": "https://www.nasdaq.com/market-activity/index/nqh2o",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/08-water-rights/transfers-markets/water-markets.md:347"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://www.rd.usda.gov/programs-services/rd-apply",
+      "original": "https://www.rd.usda.gov/programs-services/rd-apply",
+      "sources": [
+        "[waterbot] /Users/slate/Documents/GitHub/CA-AIDev/waterbot/knowledge/04-funding/federal/usda-rural-water.md:308"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    }
+  ],
+  "redirected_urls": []
+}

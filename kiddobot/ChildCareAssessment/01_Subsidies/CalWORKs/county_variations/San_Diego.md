@@ -264,7 +264,7 @@ San Diego follows state requirements, but be prepared for:
 
 ### State Resources
 - **MyChildCare.ca.gov:** [mychildcare.ca.gov](https://mychildcare.ca.gov)
-- **CDSS Child Care:** [cdss.ca.gov/inforesources/child-care](https://cdss.ca.gov/inforesources/child-care)
+- **CDSS Child Care:** [Child Care Programs](https://www.cdss.ca.gov/inforesources/child-care-and-development/child-care-and-development-programs)
 
 ### Military Specific
 - **Military OneSource:** [militaryonesource.mil](https://www.militaryonesource.mil)

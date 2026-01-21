@@ -329,7 +329,7 @@ Sacramento is in **Region 2** (lower cost of living), which affects MAP amounts:
 ### State Resources
 - **MyBenefits CalWIN:** [mybenefitscalwin.org](https://www.mybenefitscalwin.org)
 - **MyChildCare.ca.gov:** [mychildcare.ca.gov](https://mychildcare.ca.gov)
-- **CDSS Child Care:** [cdss.ca.gov/inforesources/child-care](https://cdss.ca.gov/inforesources/child-care)
+- **CDSS Child Care:** [Child Care Programs](https://www.cdss.ca.gov/inforesources/child-care-and-development/child-care-and-development-programs)
 
 ### Special Needs
 - **Alta California Regional Center:** [altaregional.org](https://www.altaregional.org) | (916) 978-6400

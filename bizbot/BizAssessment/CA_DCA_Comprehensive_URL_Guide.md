@@ -24,9 +24,9 @@
 | CSLB Homepage | https://www.cslb.ca.gov/ | Contractor licensing information |
 | License Application | https://www.cslb.ca.gov/About_Us/Library/Licensing_Classifications/ | 43 contractor classifications |
 | License Lookup | https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx | Verify contractor licenses |
-| Exam Scheduling | https://www.cslb.ca.gov/Applicants/Examination_Information/ | Schedule licensing exams |
+| Exam Info & Guides | https://www.cslb.ca.gov/Contractors/Applicants/Examination_Study_Guides/ | Exam study materials |
 | Renewal | https://www.cslb.ca.gov/Licensees/Renew_A_License.aspx | Renew contractor license |
-| Bond & Insurance | https://www.cslb.ca.gov/Licensees/Maintain_Bond_And_Insurance/ | Requirements and updates |
+| Bond & Insurance | https://www.cslb.ca.gov/Contractors/Bond_Basics.aspx | Bond requirements and info |
 
 ### Board of Registered Nursing (BRN)
 
@@ -34,8 +34,8 @@
 |----------|-----|-------------|
 | BRN Homepage | https://www.rn.ca.gov/ | RN and APRN licensing |
 | License Application | https://www.rn.ca.gov/applicants/index.shtml | New license applications |
-| License Verification | https://www.rn.ca.gov/verification/ | Verify nursing licenses |
-| Renewal | https://www.rn.ca.gov/licensees/renewal.shtml | License renewal info |
+| License Verification | https://www.rn.ca.gov/online/verify.shtml | Verify nursing licenses |
+| Renewal | https://www.rn.ca.gov/licensees/lic-renewal.shtml | License renewal info |
 | Continuing Education | https://www.rn.ca.gov/licensees/ce-renewal.shtml | CE requirements |
 | Endorsement | https://www.rn.ca.gov/applicants/lic-end.shtml | Out-of-state license transfer |
 
@@ -53,20 +53,20 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| CBA Homepage | https://www.dca.ca.gov/cba/ | CPA licensing |
-| License Application | https://www.dca.ca.gov/cba/applicants/index.shtml | CPA exam and licensure |
-| License Verification | https://www.dca.ca.gov/cba/consumers/verify_a_license.shtml | Verify CPA licenses |
-| 150-Hour Requirement | https://www.dca.ca.gov/cba/applicants/education.shtml | Education requirements |
-| Firm Registration | https://www.dca.ca.gov/cba/licensees/firm_registration.shtml | Accounting firm registration |
+| CBA Homepage | https://www.cba.ca.gov/ | CPA licensing |
+| License Application | https://www.cba.ca.gov/applicants/ | CPA exam and licensure |
+| License Verification | https://www.cba.ca.gov/consumers/check-a-license/ | Verify CPA licenses |
+| Education Requirements | https://www.cba.ca.gov/applicants/ | 150-hour and education info |
+| Firm Registration | https://www.cba.ca.gov/licensees/ | Accounting firm registration |
 
 ### Bureau of Automotive Repair (BAR)
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| BAR Homepage | https://bar.ca.gov/ | Auto repair dealer registration |
-| Smog Check | https://bar.ca.gov/Industry/Smog_Check_Stations | Smog station licensing |
-| ARD Registration | https://bar.ca.gov/Industry/Automotive_Repair_Dealer | Auto repair dealer info |
-| License Lookup | https://bar.ca.gov/Consumers/License_Status_Lookup | Verify BAR registrations |
+| BAR Homepage | https://www.bar.ca.gov/ | Auto repair dealer registration |
+| Smog Check Licensing | https://www.bar.ca.gov/licensing | Smog technician/station licensing |
+| ARD Registration | https://www.bar.ca.gov/licensing-ard | Auto repair dealer info |
+| License Lookup | https://search.dca.ca.gov/advanced?BD=21 | Verify BAR registrations |
 
 ### Board of Pharmacy
 
@@ -75,7 +75,7 @@
 | Pharmacy Board Homepage | https://www.pharmacy.ca.gov/ | Pharmacist licensing |
 | License Application | https://www.pharmacy.ca.gov/applicants/ | New pharmacist applications |
 | License Verification | https://www.pharmacy.ca.gov/about/verify_lic.shtml | Verify pharmacy licenses |
-| Pharmacy Permits | https://www.pharmacy.ca.gov/licensees/facility/index.shtml | Facility licensing |
+| Pharmacy Permits | https://www.pharmacy.ca.gov/licensees/facility/facility_lic_info.shtml | Facility licensing |
 
 ### Board of Barbering and Cosmetology
 
@@ -83,7 +83,7 @@
 |----------|-----|-------------|
 | BBC Homepage | https://www.barbercosmo.ca.gov/ | Barber and cosmetology licensing |
 | License Application | https://www.barbercosmo.ca.gov/applicants/ | New license applications |
-| Establishment Permits | https://www.barbercosmo.ca.gov/applicants/establishments.shtml | Salon/shop permits |
+| Establishment Permits | https://www.barbercosmo.ca.gov/forms_pubs/ | Salon/shop permit forms |
 | School Approval | https://www.barbercosmo.ca.gov/schools/ | Approved schools list |
 
 ### Bureau of Security and Investigative Services (BSIS)
@@ -91,9 +91,9 @@
 | Resource | URL | Description |
 |----------|-----|-------------|
 | BSIS Homepage | https://www.bsis.ca.gov/ | Security and PI licensing |
-| Guard Card | https://www.bsis.ca.gov/forms_pubs/guard.shtml | Security guard registration |
-| Private Investigator | https://www.bsis.ca.gov/forms_pubs/pi.shtml | PI licensing |
-| License Lookup | https://www.bsis.ca.gov/online_services/license_lookup.shtml | Verify BSIS licenses |
+| Guard Card | https://www.bsis.ca.gov/industries/guard.shtml | Security guard registration |
+| Private Investigator | https://www.bsis.ca.gov/industries/pi.shtml | PI licensing |
+| License Lookup | https://search.dca.ca.gov/ | Verify BSIS licenses |
 
 ---
 
@@ -137,9 +137,9 @@ BreEZe is DCA's centralized online licensing system used by many (but not all) b
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| BreEZe Portal | https://www.breeze.ca.gov/ | Main login portal |
-| BreEZe Help | https://www.dca.ca.gov/webapps/breeze/breeze_faqs.shtml | FAQs and troubleshooting |
-| Participating Boards | https://www.dca.ca.gov/webapps/breeze/ | List of boards on BreEZe |
+| BreEZe Portal | https://www.breeze.ca.gov/ | Main login portal for many boards |
+| BreEZe Help | https://www.breeze.ca.gov/ | Login or create account |
+| License Search | https://search.dca.ca.gov/ | Verify any DCA license |
 
 **Note:** Not all boards use BreEZe. Some maintain separate systems (e.g., CSLB, BAR).
 
@@ -184,5 +184,5 @@ Based on research conducted for the BizAssessment project:
 
 ---
 
-*Last Updated: December 2025*
+*Last Updated: January 2026*
 *Part of the CA-AIDev BizAssessment research repository*

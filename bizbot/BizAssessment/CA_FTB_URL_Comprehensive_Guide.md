@@ -18,11 +18,11 @@
 | Resource | URL | Description |
 |----------|-----|-------------|
 | Business Entity Registration | https://www.ftb.ca.gov/file/business/index.html | Overview of business filing requirements |
-| File Business Returns | https://www.ftb.ca.gov/file/business/types/index.html | Filing options by entity type |
-| Corporation Tax Forms | https://www.ftb.ca.gov/forms/search/index.aspx?form=100 | Form 100 series for corporations |
-| LLC Tax Forms | https://www.ftb.ca.gov/forms/search/index.aspx?form=568 | Form 568 for LLCs |
-| Partnership Forms | https://www.ftb.ca.gov/forms/search/index.aspx?form=565 | Form 565 for partnerships |
-| S Corporation Forms | https://www.ftb.ca.gov/forms/search/index.aspx?form=100S | Form 100S for S corporations |
+| File Business Returns | https://www.ftb.ca.gov/file/business/types/corporations/index.html | Filing options by entity type |
+| Corporation Tax Forms (Form 100) | https://www.ftb.ca.gov/forms/search/ | Search for Form 100 series |
+| LLC Tax Forms (Form 568) | https://www.ftb.ca.gov/forms/search/ | Search for Form 568 |
+| Partnership Forms (Form 565) | https://www.ftb.ca.gov/forms/search/ | Search for Form 565 |
+| S Corporation Forms (Form 100S) | https://www.ftb.ca.gov/forms/search/ | Search for Form 100S |
 
 ---
 
@@ -30,9 +30,9 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Web Pay for Businesses | https://www.ftb.ca.gov/pay/business/web-pay.html | Online payment portal |
+| Web Pay for Businesses | https://www.ftb.ca.gov/pay/bank-account/index.asp | Online payment portal |
 | Estimated Tax Payments | https://www.ftb.ca.gov/pay/estimated-tax-payments.html | Quarterly payment requirements |
-| Payment Plans | https://www.ftb.ca.gov/pay/payment-plans.html | Installment agreement options |
+| Payment Plans | https://www.ftb.ca.gov/pay/payment-plans/index.asp | Installment agreement options |
 | $800 Minimum Tax Info | https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html | LLC minimum franchise tax details |
 
 ---
@@ -41,10 +41,10 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Check Refund Status | https://www.ftb.ca.gov/refund/index.html | Track business refunds |
+| Check Refund Status | https://www.ftb.ca.gov/refund/index.asp | Track business refunds |
 | View Account Balance | https://www.ftb.ca.gov/myftb/ | Via MyFTB portal |
-| Update Business Information | https://www.ftb.ca.gov/help/business/update-business-info.html | Address and contact changes |
-| Power of Attorney | https://www.ftb.ca.gov/help/business/power-of-attorney.html | Authorize representatives |
+| Update Business Information | https://www.ftb.ca.gov/help/contact/index.html | Contact FTB for address/contact changes |
+| Power of Attorney | https://www.ftb.ca.gov/tax-pros/power-of-attorney/index.html | Authorize representatives |
 
 ---
 
@@ -53,9 +53,9 @@
 | Resource | URL | Description |
 |----------|-----|-------------|
 | Penalties and Interest | https://www.ftb.ca.gov/pay/penalties-and-interest/index.html | Penalty calculation and relief |
-| Suspended/Forfeited Businesses | https://www.ftb.ca.gov/help/business/entity-status-letter.html | Revival requirements |
-| Entity Status Letter | https://www.ftb.ca.gov/help/business/entity-status-letter.html | Certificate of good standing |
-| Voluntary Disclosure | https://www.ftb.ca.gov/tax-pros/law/voluntary-disclosure/index.html | Come into compliance |
+| Suspended/Forfeited Businesses | https://www.ftb.ca.gov/help/business/entity-status-letter.asp | Revival requirements |
+| Entity Status Letter | https://www.ftb.ca.gov/help/business/entity-status-letter.asp | Certificate of good standing |
+| Voluntary Disclosure | https://www.ftb.ca.gov/tax-pros/law/index.html | Tax law and compliance resources |
 
 ---
 
@@ -63,8 +63,8 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Business Search | https://www.ftb.ca.gov/help/business/business-search.html | Verify business tax status |
-| Entity Status Letter Request | https://www.ftb.ca.gov/help/business/entity-status-letter.html | Official status documentation |
+| Business Search | https://www.ftb.ca.gov/help/business/entity-status-letter.asp | Request entity status verification |
+| Entity Status Letter Request | https://www.ftb.ca.gov/help/business/entity-status-letter.asp | Official status documentation |
 
 ---
 
@@ -74,7 +74,7 @@
 |----------|-----|-------------|
 | Business Tax FAQ | https://www.ftb.ca.gov/help/business/index.html | Common questions answered |
 | Contact FTB | https://www.ftb.ca.gov/help/contact/index.html | Phone, mail, chat options |
-| Taxpayer Rights | https://www.ftb.ca.gov/about-ftb/taxpayer-rights-advocate.html | Advocate services |
+| Taxpayer Rights | https://www.ftb.ca.gov/help/disagree-or-resolve-an-issue/taxpayer-advocate-services.html | Advocate services |
 | Tax Professionals | https://www.ftb.ca.gov/tax-pros/index.html | Resources for CPAs and preparers |
 
 ---
@@ -111,7 +111,7 @@ Based on research conducted for the BizAssessment project:
 | Agency | Relationship | URL |
 |--------|--------------|-----|
 | Secretary of State | Entity formation triggers FTB registration | https://bizfileonline.sos.ca.gov/ |
-| EDD | Employer registration coordination | https://eddservices.edd.ca.gov/ |
+| EDD | Employer registration coordination | https://edd.ca.gov/en/employers/ |
 | CDTFA | Sales tax registration (separate from FTB) | https://cdtfa.ca.gov/ |
 
 ---

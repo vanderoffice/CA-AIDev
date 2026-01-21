@@ -121,7 +121,7 @@ In addition to regular schedule, update immediately if:
 **Deadlines**:
 - Quarterly: Due month after quarter ends (Apr 15, Jul 15, Oct 15, Jan 15)
 - Monthly: Due 25th day of following month
-- Electronic filing available: https://onlineservices.cdtfa.ca.gov/
+- Electronic filing available: https://cdtfa.ca.gov/services/
 
 **Penalties for Late Payment**:
 - Underpayment interest: 1% per month
@@ -398,7 +398,7 @@ In addition to regular schedule, update immediately if:
 
 **California Department of Tax and Fee Administration**
 - Portal: https://www.cdtfa.ca.gov/
-- Online Services: https://onlineservices.cdtfa.ca.gov/
+- Online Services: https://cdtfa.ca.gov/services/
 - Phone: (800) 400-7115
 
 **Your City Business License Department**

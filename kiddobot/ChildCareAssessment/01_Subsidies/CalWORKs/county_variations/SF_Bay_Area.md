@@ -275,12 +275,12 @@ Very common in Bay Area (Uber, DoorDash, Instacart):
 
 ### State Resources
 - **MyChildCare.ca.gov:** [mychildcare.ca.gov](https://mychildcare.ca.gov)
-- **CDSS Child Care:** [cdss.ca.gov/inforesources/child-care](https://cdss.ca.gov/inforesources/child-care)
+- **CDSS Child Care:** [Child Care Programs](https://www.cdss.ca.gov/inforesources/child-care-and-development/child-care-and-development-programs)
 
 ### San Francisco
 - **SF Human Services:** [sfhsa.org](https://www.sfhsa.org)
 - **Children's Council:** [childrencouncil.org](https://childrencouncil.org)
-- **Preschool for All:** [sfdec.org/pfa](https://sfdec.org/pfa)
+- **Early Learning For All:** [sfdec.org/early-learning-for-all](https://sfdec.org/early-learning-for-all/)
 
 ### Alameda
 - **4Cs of Alameda:** [4c-alameda.org](https://4c-alameda.org)

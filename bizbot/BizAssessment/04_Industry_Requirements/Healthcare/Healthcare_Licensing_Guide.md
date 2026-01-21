@@ -531,7 +531,7 @@ Complete licensing pathways for healthcare professionals in California (2025).
 |-------|-----|
 | DCA License Search | https://search.dca.ca.gov |
 | Medical Board | https://www.mbc.ca.gov/Breeze |
-| Nursing Board | https://www.rn.ca.gov/verification.shtml |
+| Nursing Board | https://www.rn.ca.gov/online/verify.shtml |
 | Pharmacy Board | https://www.pharmacy.ca.gov/about/verify_lic.shtml |
 
 ---

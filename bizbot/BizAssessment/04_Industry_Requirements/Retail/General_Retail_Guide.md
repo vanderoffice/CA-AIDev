@@ -26,7 +26,7 @@ Complete licensing pathway for opening a retail store in California (2025).
 **Agency:** California Department of Tax and Fee Administration (CDTFA)
 **Cost:** FREE
 **Timeline:** Same day (online)
-**URL:** https://onlineservices.cdtfa.ca.gov/
+**URL:** https://cdtfa.ca.gov/services/
 
 **Who Needs It:** ANY business selling tangible personal property in California
 

@@ -598,8 +598,8 @@ Every license must have a Qualifying Individual who meets experience/exam requir
 | Main Website | https://www.cslb.ca.gov |
 | Online Application | https://www.cslb.ca.gov/onlineservices |
 | License Lookup | https://www.cslb.ca.gov/OnlineServices/CheckLicenseII |
-| Exam Scheduling | https://www.cslb.ca.gov/Applicants |
-| Forms Library | https://www.cslb.ca.gov/Forms_Pubs |
+| Applicants | https://www.cslb.ca.gov/Applicants.aspx |
+| Forms Library | https://www.cslb.ca.gov/About_Us/Library/ |
 | Processing Times | https://www.cslb.ca.gov/About_Us/Library/Licensing_Timeframes.aspx |
 
 ### Related Agencies

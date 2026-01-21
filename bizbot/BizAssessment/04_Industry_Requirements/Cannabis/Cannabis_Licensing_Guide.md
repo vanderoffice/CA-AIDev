@@ -183,7 +183,7 @@ Complete licensing pathway for cannabis businesses in California (2025).
 | Limited Licenses | Many cities cap number of licenses |
 | Banned | Most rural counties, many suburban cities |
 
-**Check Local Status:** https://cannabis.ca.gov/resources/local-jurisdiction-information/
+**Check Local Status:** https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/
 
 ### Step 2: State Application
 
@@ -556,7 +556,7 @@ Many cities have equity programs:
 
 | Resource | URL |
 |----------|-----|
-| Local Jurisdiction Map | https://cannabis.ca.gov/resources/local-jurisdiction-information/ |
+| Local Jurisdiction Map | https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/ |
 | CalCannabis Cultivation | https://calcannabis.cdfa.ca.gov |
 
 ### Track and Trace

@@ -1,24 +1,24 @@
 industry,sub_industry,license_name,agency,agency_acronym,required,sequence,estimated_cost_min,estimated_cost_max,timeline_days,statewide,notes,url
 Food Service,Restaurant,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,Check zoning FIRST before applying,https://calgold.ca.gov/
 Food Service,Restaurant,Health Permit,County Environmental Health,LOCAL,TRUE,2,200,800,21,FALSE,Required for all food handling,https://calgold.ca.gov/
-Food Service,Restaurant,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,Free - required if selling tangible goods,https://onlineservices.cdtfa.ca.gov/
+Food Service,Restaurant,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,Free - required if selling tangible goods,https://cdtfa.ca.gov/services/
 Food Service,Restaurant,ABC License (Type 41/47),Alcoholic Beverage Control,ABC,FALSE,4,1000,15000,90,TRUE,Only if serving alcohol,https://www.abc.ca.gov/licensing/license-types/
 Food Service,Restaurant,Food Handler Card,County Environmental Health,LOCAL,TRUE,2,10,30,1,FALSE,Required for all food workers,https://calgold.ca.gov/
 Food Service,Food Truck,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,May need multiple city licenses,https://calgold.ca.gov/
 Food Service,Food Truck,Health Permit (Mobile Food Facility),County Environmental Health,LOCAL,TRUE,2,300,1000,30,FALSE,Commissary agreement required,https://calgold.ca.gov/
-Food Service,Food Truck,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,Free - required for food sales,https://onlineservices.cdtfa.ca.gov/
+Food Service,Food Truck,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,Free - required for food sales,https://cdtfa.ca.gov/services/
 Food Service,Food Truck,Fire Department Permit,City/County Fire,LOCAL,TRUE,3,50,200,14,FALSE,For cooking equipment,https://calgold.ca.gov/
 Food Service,Catering,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,At business location,https://calgold.ca.gov/
 Food Service,Catering,Health Permit,County Environmental Health,LOCAL,TRUE,2,200,600,21,FALSE,Caterer permit type,https://calgold.ca.gov/
-Food Service,Catering,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,For food and beverage sales,https://onlineservices.cdtfa.ca.gov/
+Food Service,Catering,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,For food and beverage sales,https://cdtfa.ca.gov/services/
 Retail,General Retail,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,Required in all jurisdictions,https://calgold.ca.gov/
-Retail,General Retail,Seller's Permit,CDTFA,CDTFA,TRUE,2,0,0,1,TRUE,For all tangible goods sales,https://onlineservices.cdtfa.ca.gov/
+Retail,General Retail,Seller's Permit,CDTFA,CDTFA,TRUE,2,0,0,1,TRUE,For all tangible goods sales,https://cdtfa.ca.gov/services/
 Retail,General Retail,Resale Certificate,CDTFA,CDTFA,FALSE,2,0,0,1,TRUE,For wholesale purchases tax-free,https://cdtfa.ca.gov/
 Retail,Tobacco Retail,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,Check if city allows tobacco sales,https://calgold.ca.gov/
 Retail,Tobacco Retail,Tobacco Retail License,CDTFA,CDTFA,TRUE,2,265,265,30,TRUE,Annual license required,https://cdtfa.ca.gov/taxes-and-fees/cigarette-and-tobacco-products/
-Retail,Tobacco Retail,Seller's Permit,CDTFA,CDTFA,TRUE,2,0,0,1,TRUE,For retail sales,https://onlineservices.cdtfa.ca.gov/
+Retail,Tobacco Retail,Seller's Permit,CDTFA,CDTFA,TRUE,2,0,0,1,TRUE,For retail sales,https://cdtfa.ca.gov/services/
 Retail,Online Only,Business License,City/County,LOCAL,TRUE,1,50,500,14,FALSE,At business/home address,https://calgold.ca.gov/
-Retail,Online Only,Seller's Permit,CDTFA,CDTFA,TRUE,2,0,0,1,TRUE,If selling tangible goods,https://onlineservices.cdtfa.ca.gov/
+Retail,Online Only,Seller's Permit,CDTFA,CDTFA,TRUE,2,0,0,1,TRUE,If selling tangible goods,https://cdtfa.ca.gov/services/
 Professional Services,Accounting/CPA,CPA License,California Board of Accountancy,CBA,TRUE,1,250,500,60,TRUE,Requires exam + experience,https://www.dca.ca.gov/cba/
 Professional Services,Accounting/CPA,Business License,City/County,LOCAL,TRUE,2,50,500,14,FALSE,At office location,https://calgold.ca.gov/
 Professional Services,Real Estate,Real Estate License,Department of Real Estate,DRE,TRUE,1,245,395,90,TRUE,Salesperson or Broker,https://www.dre.ca.gov/
@@ -34,7 +34,7 @@ Construction,Electrical,CSLB C-10 License,Contractors State License Board,CSLB,T
 Construction,Plumbing,CSLB C-36 License,Contractors State License Board,CSLB,TRUE,1,450,600,90,TRUE,Plumbing contractor,https://www.cslb.ca.gov/
 Cannabis,Retail Dispensary,Local Cannabis Permit,City/County,LOCAL,TRUE,1,5000,50000,180,FALSE,MUST GET LOCAL FIRST,https://calgold.ca.gov/
 Cannabis,Retail Dispensary,DCC Retail License,Department of Cannabis Control,DCC,TRUE,2,1000,120000,180,TRUE,After local approval,https://cannabis.ca.gov/
-Cannabis,Retail Dispensary,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,For retail sales,https://onlineservices.cdtfa.ca.gov/
+Cannabis,Retail Dispensary,Seller's Permit,CDTFA,CDTFA,TRUE,3,0,0,1,TRUE,For retail sales,https://cdtfa.ca.gov/services/
 Cannabis,Cultivation,Local Cannabis Permit,City/County,LOCAL,TRUE,1,5000,50000,180,FALSE,MUST GET LOCAL FIRST,https://calgold.ca.gov/
 Cannabis,Cultivation,DCC Cultivation License,Department of Cannabis Control,DCC,TRUE,2,1205,77905,180,TRUE,Multiple license types,https://cannabis.ca.gov/
 Alcohol,Bar/Nightclub,ABC Type 48 License,Alcoholic Beverage Control,ABC,TRUE,1,1000,15000,120,TRUE,On-sale general public premises,https://www.abc.ca.gov/licensing/license-types/

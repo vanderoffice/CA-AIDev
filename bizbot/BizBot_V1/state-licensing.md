@@ -55,7 +55,7 @@ Complete this phase during weeks 2-3. Register with state agencies that oversee 
 
 **Exempt**: Service-only businesses (consulting, accounting, repairs-only)
 
-**Portal**: https://onlineservices.cdtfa.ca.gov/
+**Portal**: https://cdtfa.ca.gov/services/
 **Phone**: (800) 400-7115
 
 **Processing**: Approximately 14 days

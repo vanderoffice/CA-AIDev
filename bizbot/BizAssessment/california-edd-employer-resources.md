@@ -21,8 +21,8 @@
 |----------|-----|-------------|
 | Register as Employer | https://eddservices.edd.ca.gov/tap/secure/eservices | New employer registration |
 | Registration Requirements | https://www.edd.ca.gov/payroll_taxes/what_are_state_payroll_taxes.htm | When to register |
-| Employer Account Number | https://www.edd.ca.gov/payroll_taxes/Get_Your_State_Employer_Account_Number.htm | Getting your EAN |
-| Out-of-State Employers | https://www.edd.ca.gov/payroll_taxes/Out-of-State_Employers.htm | Multi-state guidance |
+| Employer Account Number | https://www.edd.ca.gov/en/payroll_taxes/employers-payroll-tax-account-registration/ | Getting your EAN |
+| Out-of-State Employers | https://www.edd.ca.gov/en/payroll_taxes/FAQ_-_Payroll_Taxes_General_Information/ | Multi-state guidance |
 
 ---
 
@@ -34,20 +34,20 @@
 |----------|-----|-------------|
 | Payroll Tax Overview | https://www.edd.ca.gov/payroll_taxes/ | All payroll tax information |
 | Tax Rates & Wage Limits | https://www.edd.ca.gov/payroll_taxes/rates_and_withholding.htm | Current rates |
-| UI Tax Rate | https://www.edd.ca.gov/payroll_taxes/Determining_Taxable_Wages.htm | Unemployment Insurance |
-| SDI Rate | https://www.edd.ca.gov/disability/SDI_Contribution_Rates.htm | State Disability Insurance |
-| ETT Rate | https://www.edd.ca.gov/payroll_taxes/employment_training_tax.htm | Employment Training Tax |
-| PIT Withholding | https://www.edd.ca.gov/payroll_taxes/Personal_Income_Tax.htm | Income tax withholding |
+| UI Tax Rate | https://www.edd.ca.gov/en/payroll_taxes/Determine_Taxable_Wages/ | Unemployment Insurance |
+| SDI Rate | https://www.edd.ca.gov/en/Payroll_Taxes/Rates_and_Withholding | State Disability Insurance |
+| ETT Rate | https://www.edd.ca.gov/en/payroll_taxes/what_are_state_payroll_taxes/ | Employment Training Tax |
+| PIT Withholding | https://www.edd.ca.gov/en/payroll_taxes/what_are_state_payroll_taxes/ | Income tax withholding |
 
 ### Filing & Payment
 
 | Resource | URL | Description |
 |----------|-----|-------------|
 | e-Services for Business | https://eddservices.edd.ca.gov/ | File returns online |
-| Quarterly Returns (DE 9/DE 9C) | https://www.edd.ca.gov/payroll_taxes/Filing_Requirements.htm | Quarterly filing info |
-| Filing Deadlines | https://www.edd.ca.gov/payroll_taxes/Payroll_Tax_Due_Dates.htm | Due dates calendar |
-| Payment Options | https://www.edd.ca.gov/payroll_taxes/Payroll_Tax_Payment_Options.htm | How to pay |
-| Electronic Filing Mandate | https://www.edd.ca.gov/payroll_taxes/electronic_filing.htm | e-file requirements |
+| Quarterly Returns (DE 9/DE 9C) | https://www.edd.ca.gov/en/payroll_taxes/required_filings_and_due_dates/ | Quarterly filing info |
+| Filing Deadlines | https://www.edd.ca.gov/en/payroll_taxes/Due_Dates_Calendar/ | Due dates calendar |
+| Payment Options | https://www.edd.ca.gov/en/payroll_taxes/file_and_pay/ | How to pay |
+| Electronic Filing Mandate | https://www.edd.ca.gov/en/payroll_taxes/e-Services_for_Business/ | e-file requirements |
 
 ---
 
@@ -55,11 +55,11 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Employee vs IC Guide | https://www.edd.ca.gov/payroll_taxes/Employment_Status.htm | Classification guidance |
-| ABC Test | https://www.edd.ca.gov/payroll_taxes/ab-5-702.htm | AB 5 requirements |
+| Employee vs IC Guide | https://www.edd.ca.gov/en/payroll_taxes/ab-5 | Classification guidance |
+| ABC Test | https://www.edd.ca.gov/en/payroll_taxes/ab-5 | AB 5 requirements |
 | DE 1870 Worksheet | https://www.edd.ca.gov/pdf_pub_ctr/de1870.pdf | Classification worksheet |
-| Common Law Employee | https://www.edd.ca.gov/payroll_taxes/Employment_Status.htm | Traditional test |
-| Exempt Employment | https://www.edd.ca.gov/payroll_taxes/Exempt_Employment.htm | Exemptions from coverage |
+| Common Law Employee | https://edd.ca.gov/en/payroll_taxes/employment-status/ | Traditional test |
+| Exempt Employment | https://www.edd.ca.gov/en/payroll_taxes/FAQ_-_Payroll_Taxes_General_Information/ | Exemptions from coverage |
 
 ---
 
@@ -81,11 +81,11 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Update Account Info | https://www.edd.ca.gov/payroll_taxes/Changing_Business_or_Contact_Information.htm | Change address, contacts |
-| Close Employer Account | https://www.edd.ca.gov/payroll_taxes/Closing_Your_Employer_Payroll_Tax_Account.htm | Account closure |
-| Reserve Account | https://www.edd.ca.gov/payroll_taxes/Reserve_Account.htm | UI reserve balance |
+| Update Account Info | https://www.edd.ca.gov/en/payroll_taxes/Changes_to_Your_Business/ | Change address, contacts |
+| Close Employer Account | https://www.edd.ca.gov/en/payroll_taxes/Changes_to_Your_Business/ | Account closure |
+| Reserve Account | https://www.edd.ca.gov/en/payroll_taxes/tax-rated-employers/ | UI reserve balance |
 | Voluntary Plan (VPDI) | https://www.edd.ca.gov/disability/Employer_Voluntary_Plans.htm | Alternative SDI coverage |
-| Third-Party Authorization | https://www.edd.ca.gov/payroll_taxes/Third_Party_Administration.htm | Payroll service access |
+| Third-Party Authorization | https://www.edd.ca.gov/en/payroll_taxes/e-Services_for_Business/ | Payroll service access |
 
 ---
 
@@ -93,11 +93,11 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Audit Information | https://www.edd.ca.gov/payroll_taxes/Audits.htm | What to expect in an audit |
-| Penalties & Interest | https://www.edd.ca.gov/payroll_taxes/Penalties_and_Interest.htm | Penalty information |
-| Appeal Rights | https://www.edd.ca.gov/payroll_taxes/Tax_Determination_Appeals.htm | How to appeal |
-| Payment Plans | https://www.edd.ca.gov/payroll_taxes/Payment_Plans.htm | Installment agreements |
-| Tax Lien Information | https://www.edd.ca.gov/payroll_taxes/state_tax_liens.htm | Lien resolution |
+| Audit Information | https://www.edd.ca.gov/en/payroll_taxes/tax-rated-employers/ | What to expect in an audit |
+| Penalties & Interest | https://www.edd.ca.gov/en/payroll_taxes/timely_payroll_tax_deposits/ | Penalty information |
+| Appeal Rights | https://www.edd.ca.gov/en/payroll_taxes/tax-rated-employers/ | How to appeal |
+| Payment Plans | https://www.edd.ca.gov/en/payroll_taxes/Contact_Us_About_Payroll_Taxes/ | Installment agreements |
+| Tax Lien Information | https://www.edd.ca.gov/en/payroll_taxes/Contact_Us_About_Payroll_Taxes/ | Lien resolution |
 
 ---
 
@@ -105,11 +105,11 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Employer UI Information | https://www.edd.ca.gov/payroll_taxes/Unemployment_Insurance.htm | UI program overview |
-| Respond to UI Claims | https://www.edd.ca.gov/payroll_taxes/UI_Claims_Response.htm | Responding to claims |
-| Benefit Charge Statements | https://www.edd.ca.gov/payroll_taxes/Benefit_Charge_Statement.htm | Understanding charges |
-| Reserve Account | https://www.edd.ca.gov/payroll_taxes/Reserve_Account.htm | Reserve account info |
-| Experience Rating | https://www.edd.ca.gov/payroll_taxes/UI_Tax_Rate.htm | How rates are set |
+| Employer UI Information | https://www.edd.ca.gov/en/payroll_taxes/tax-rated-employers/ | UI program overview |
+| Respond to UI Claims | https://www.edd.ca.gov/en/unemployment/responding_to_ui_claim_notices/ | Responding to claims |
+| Benefit Charge Statements | https://www.edd.ca.gov/en/payroll_taxes/tax-rated-employers/ | Understanding charges |
+| Reserve Account | https://edd.ca.gov/en/payroll_taxes/tax-rated-employers/ | Reserve account info |
+| Experience Rating | https://www.edd.ca.gov/en/payroll_taxes/tax-rated-employers/ | How rates are set |
 
 ---
 
@@ -128,11 +128,11 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Employer FAQ | https://www.edd.ca.gov/payroll_taxes/FAQ_-_For_Employers.htm | Common questions |
-| Tax Seminars | https://www.edd.ca.gov/payroll_taxes/employer_seminars.htm | Free training seminars |
-| Taxpayer Assistance | https://www.edd.ca.gov/payroll_taxes/Contact_Payroll_Taxes.htm | Contact information |
+| Employer FAQ | https://www.edd.ca.gov/en/payroll_taxes/FAQ_-_Payroll_Taxes_General_Information/ | Common questions |
+| Tax Seminars | https://www.edd.ca.gov/en/payroll_taxes/taxhelp/ | Free training seminars |
+| Taxpayer Assistance | https://www.edd.ca.gov/en/payroll_taxes/Contact_Us_About_Payroll_Taxes/ | Contact information |
 | Office Locator | https://www.edd.ca.gov/Office_Locator/ | Find local offices |
-| Multilingual Resources | https://www.edd.ca.gov/about_edd/translations.htm | Resources in other languages |
+| Multilingual Resources | https://www.edd.ca.gov/en/ | Resources in other languages |
 
 ---
 
@@ -190,5 +190,5 @@ Based on research conducted for the BizAssessment project:
 
 ---
 
-*Last Updated: December 2025*
+*Last Updated: January 2026*
 *Part of the CA-AIDev BizAssessment research repository*

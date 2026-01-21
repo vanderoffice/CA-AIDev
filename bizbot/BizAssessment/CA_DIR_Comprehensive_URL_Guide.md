@@ -21,30 +21,30 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Cal/OSHA Permits | https://www.dir.ca.gov/dosh/Permits.html | Permit requirements overview |
+| Cal/OSHA Permits | https://www.dir.ca.gov/permits-licenses-certifications.html | Permit requirements overview |
 | Elevator Permits | https://www.dir.ca.gov/dosh/elevator.html | Conveyance permits |
-| Pressure Vessel Permits | https://www.dir.ca.gov/dosh/pressure-vessel.html | Boiler and tank permits |
-| Amusement Ride Permits | https://www.dir.ca.gov/dosh/amusementride.html | Ride inspection permits |
-| Crane Certification | https://www.dir.ca.gov/dosh/crane.html | Tower crane permits |
-| Asbestos Registration | https://www.dir.ca.gov/dosh/asbestos/ | Asbestos contractor registration |
-| Carcinogen Registration | https://www.dir.ca.gov/dosh/carcinogen.html | Carcinogen use registration |
-| Lead Registration | https://www.dir.ca.gov/dosh/Lead.html | Lead work registration |
+| Pressure Vessel Permits | https://www.dir.ca.gov/dosh/pressure.html | Boiler and tank permits |
+| Amusement Ride Permits | https://www.dir.ca.gov/dosh/AROffices.htm | Ride inspection permits |
+| Crane Certification | https://www.dir.ca.gov/dosh/Cranes.html | Tower crane permits |
+| Asbestos Registration | https://www.dir.ca.gov/dosh/asbestos.html | Asbestos contractor registration |
+| Carcinogen Registration | https://www.dir.ca.gov/dosh/asbestos.html | Asbestos & Carcinogen Unit |
+| Lead Registration | https://www.dir.ca.gov/dosh/Lead/ | Lead work registration |
 
 ### Online Services
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| ePermits Portal | https://www.dir.ca.gov/dosh/epermits.html | Online permit applications |
-| Permit Fee Schedule | https://www.dir.ca.gov/dosh/permitfees.html | Current permit fees |
-| Inspection Results | https://www.dir.ca.gov/dosh/Inspection.html | Look up inspection data |
+| ePermits Portal | https://www.dir.ca.gov/permits-licenses-certifications.html | Online permit applications |
+| Permit Fee Schedule | https://www.dir.ca.gov/permits-licenses-certifications.html | Current permit fees |
+| Inspection Results | https://www.dir.ca.gov/dosh/Citation-statistics.html | Look up inspection data |
 
 ### Safety Resources
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Cal/OSHA Regulations | https://www.dir.ca.gov/title8/index.htm | Title 8 safety orders |
+| Cal/OSHA Regulations | https://www.dir.ca.gov/samples/search/query.htm | Title 8 safety orders |
 | Consultation Services | https://www.dir.ca.gov/dosh/consultation.html | Free safety consultation |
-| Training Requirements | https://www.dir.ca.gov/dosh/training.html | Required safety training |
+| Training Requirements | https://www.dir.ca.gov/dosh/Osha-Training-Institute.html | Required safety training |
 | COVID-19 Resources | https://www.dir.ca.gov/dosh/coronavirus/ | Workplace COVID guidance |
 | Heat Illness Prevention | https://www.dir.ca.gov/dosh/heatillnessinfo.html | Outdoor heat safety |
 
@@ -56,18 +56,18 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| FLC Licensing Overview | https://www.dir.ca.gov/dlse/flc.html | Farm labor contractor requirements |
-| FLC License Application | https://www.dir.ca.gov/dlse/flc_application.htm | Application forms |
-| FLC License Search | https://www.dir.ca.gov/databases/dlselr/flclic.html | Verify FLC licenses |
-| FLC Fee Schedule | https://www.dir.ca.gov/dlse/flc_fees.html | License fees |
+| FLC Licensing Overview | https://www.dir.ca.gov/dlse/flc.htm | Farm labor contractor requirements |
+| FLC License Application | https://www.dir.ca.gov/dlse/obtainalicense.html | Application forms |
+| FLC License Search | https://www.dir.ca.gov/dlse/dlse-databases.htm | Verify FLC licenses |
+| FLC Fee Schedule | https://www.dir.ca.gov/dlse/flc.htm | License fees |
 
 ### Talent Agencies
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Talent Agency Licensing | https://www.dir.ca.gov/dlse/Talent_Agency.html | Talent agency requirements |
-| License Application | https://www.dir.ca.gov/dlse/Talent_agency_application.htm | Application forms |
-| Licensed Agency Search | https://www.dir.ca.gov/databases/dlselr/taession.html | Verify talent agency licenses |
+| Talent Agency Licensing | https://www.dir.ca.gov/dlse/talent_agency_license.html | Talent agency requirements |
+| License Application | https://www.dir.ca.gov/dlse/Talent-Agency-Paper-Application.html | Application forms |
+| Licensed Agency Search | https://www.dir.ca.gov/dlse/dlse-databases.htm | Verify talent agency licenses |
 
 ---
 
@@ -77,10 +77,10 @@
 |----------|-----|-------------|
 | DWC Homepage | https://www.dir.ca.gov/dwc/ | Workers' comp overview |
 | Employer Requirements | https://www.dir.ca.gov/dwc/employer.htm | Employer obligations |
-| Insurance Requirements | https://www.dir.ca.gov/dwc/insurance.htm | Coverage requirements |
-| Self-Insurance | https://www.dir.ca.gov/osip/osip.html | Self-insurance program |
-| Medical Provider Network | https://www.dir.ca.gov/dwc/mpn.html | MPN requirements |
-| Claims Administration | https://www.dir.ca.gov/dwc/ClaimsAdmin.htm | Claims administrator info |
+| Insurance Requirements | https://www.dir.ca.gov/dwc/employer.htm | Coverage requirements |
+| Self-Insurance | https://www.dir.ca.gov/osip/ | Self-insurance program |
+| Medical Provider Network | https://www.dir.ca.gov/dwc/mpn/dwc_mpn_main.html | MPN requirements |
+| Claims Administration | https://www.dir.ca.gov/dwc/ClaimsAdministrators.htm | Claims administrator info |
 
 ---
 
@@ -88,11 +88,11 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Public Works | https://www.dir.ca.gov/public-works/public-works.html | Public works requirements |
+| Public Works | https://www.dir.ca.gov/public-works/publicworks.html | Public works requirements |
 | Prevailing Wage | https://www.dir.ca.gov/oprl/dprewagedetermination.htm | Wage determinations |
 | Contractor Registration | https://www.dir.ca.gov/public-works/contractor-registration.html | PWC registration |
 | Apprenticeship | https://www.dir.ca.gov/das/das.html | Apprenticeship programs |
-| eCPR System | https://www.dir.ca.gov/Public-Works/Certified-Payroll.html | Certified payroll reporting |
+| eCPR System | https://www.dir.ca.gov/public-works/certified-payroll-reporting.html | Certified payroll reporting |
 
 ---
 
@@ -102,7 +102,7 @@
 |----------|-----|-------------|
 | DLSE Homepage | https://www.dir.ca.gov/dlse/ | Labor Commissioner's Office |
 | Wage Claims | https://www.dir.ca.gov/dlse/howtofilewageclaim.htm | File wage claims |
-| Employer Penalties | https://www.dir.ca.gov/dlse/Employer_Penalties.html | Penalty information |
+| Employer Penalties | https://www.dir.ca.gov/dlse/dlse-bofe.html | Penalty information |
 | Meal & Rest Breaks | https://www.dir.ca.gov/dlse/FAQ_MealPeriods.htm | Break requirements |
 | Overtime Rules | https://www.dir.ca.gov/dlse/FAQ_Overtime.htm | Overtime requirements |
 | Independent Contractor | https://www.dir.ca.gov/dlse/faq_independentcontractor.htm | IC vs employee guidance |
@@ -113,11 +113,11 @@
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| All DIR Forms | https://www.dir.ca.gov/DIRForms.html | Searchable form library |
-| Cal/OSHA Forms | https://www.dir.ca.gov/dosh/forms.html | Safety-related forms |
+| All DIR Forms | https://www.dir.ca.gov/permits-licenses-certifications.html | Searchable form library |
+| Cal/OSHA Forms | https://www.dir.ca.gov/dosh/PubOrder.asp | Safety-related forms |
 | DWC Forms | https://www.dir.ca.gov/dwc/forms.html | Workers' comp forms |
-| DLSE Forms | https://www.dir.ca.gov/dlse/dlse_forms.html | Labor standards forms |
-| Publications | https://www.dir.ca.gov/publications.html | Guides and posters |
+| DLSE Forms | https://www.dir.ca.gov/dlse/dlse-forms.htm | Labor standards forms |
+| Publications | https://www.dir.ca.gov/dosh/PubOrder.asp | Guides and posters |
 | Required Workplace Postings | https://www.dir.ca.gov/wpnodb.html | Mandatory posters |
 
 ---
@@ -169,5 +169,5 @@ Based on research conducted for the BizAssessment project:
 
 ---
 
-*Last Updated: December 2025*
+*Last Updated: January 2026*
 *Part of the CA-AIDev BizAssessment research repository*

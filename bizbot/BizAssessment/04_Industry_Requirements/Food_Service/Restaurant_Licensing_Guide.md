@@ -100,7 +100,7 @@ PHASE 4: Alcohol (If Applicable - Weeks 1-52)
 **Agency:** California Department of Tax and Fee Administration (CDTFA)
 **Cost:** Free
 **Timeline:** Same day (online)
-**URL:** https://onlineservices.cdtfa.ca.gov/
+**URL:** https://cdtfa.ca.gov/services/
 
 **Required For:** All restaurants selling tangible goods (food, beverages, merchandise)
 
@@ -119,7 +119,7 @@ PHASE 4: Alcohol (If Applicable - Weeks 1-52)
 **Agency:** Employment Development Department (EDD)
 **Cost:** Free
 **Timeline:** 1-2 weeks
-**URL:** https://edd.ca.gov/employers/
+**URL:** https://edd.ca.gov/en/employers/
 
 **Required When:** Hiring any employees (even part-time)
 
@@ -146,7 +146,7 @@ PHASE 4: Alcohol (If Applicable - Weeks 1-52)
 | County | URL |
 |--------|-----|
 | Los Angeles | https://publichealth.lacounty.gov/eh/ |
-| San Francisco | https://www.sfdph.org/dph/EH/ |
+| San Francisco | https://www.sf.gov/topics--health-permits-and-regulations |
 | San Diego | https://www.sandiegocounty.gov/deh/fhd/ |
 | Orange | https://www.ochealthinfo.com/eh |
 | Sacramento | https://emd.saccounty.gov/ |
