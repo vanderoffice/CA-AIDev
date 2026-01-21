@@ -385,7 +385,7 @@ Local agencies that consolidate six environmental programs:
 **Medical Device Manufacturing:**
 - License from CDPH Food and Drug Branch
 - FDA registration required
-- ISO 13485:2003 certification or FDA inspection within 2 years
+- ISO 13485:2016 certification or FDA inspection within 2 years
 - Fee: ~$200/year
 
 **Drug Manufacturing:**

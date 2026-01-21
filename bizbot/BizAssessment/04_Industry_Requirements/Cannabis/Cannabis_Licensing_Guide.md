@@ -296,23 +296,25 @@ Complete licensing pathway for cannabis businesses in California (2025).
 
 ### Cannabis Excise Tax
 
-**Rate:** 15% of retail selling price (as of 2025)
+**Rate:** 15% of retail selling price (as of October 2025)
 
 **History:**
-| Period | Rate |
-|--------|------|
-| 2018-2022 | 15% |
-| 2023-2024 | 19% (temporary increase) |
-| 2025+ | 15% (reduced by AB 195) |
+| Period | Rate | Notes |
+|--------|------|-------|
+| Jan 2018 – June 2025 | 15% | Original Prop 64 rate |
+| July – Sept 2025 | 19% | AB 195 biennial adjustment |
+| Oct 2025 – June 2028 | 15% | Reduced by AB 564 |
+| July 2028+ | TBD | Subject to biennial review (max 19%) |
+
+*AB 564 (signed Sept 2025) froze the rate at 15% through June 2028 to stabilize the licensed market.*
 
 **Collection Point:**
-- Retailer collects from customer
-- Remits to distributor
-- Distributor remits to CDTFA
+- Retailer collects from customer at point of sale
+- Retailer remits to CDTFA
 
 ### Cultivation Tax
 
-**ELIMINATED** as of January 1, 2023 (SB 94)
+**ELIMINATED** as of July 1, 2022 (AB 195)
 
 Previously: $10.08/oz dry flower, $3/oz leaves, $1.41/oz fresh plant
 

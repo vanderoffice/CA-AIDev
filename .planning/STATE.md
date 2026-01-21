@@ -11,10 +11,10 @@ See: .planning/PROJECT.md (updated 2026-01-20)
 
 Phase: 2 of 6 (Content Quality Audit)
 Plan: 02-PLAN.md
-Status: **IN PROGRESS** — Tasks 1-3 complete, ready for Task 4 (research)
-Last activity: 2026-01-20 — All bot scans completed
+Status: **IN PROGRESS** — Tasks 1-5 complete, Task 6-7 can be quick (most content OK)
+Last activity: 2026-01-20 — Research verification & BizBot fixes complete
 
-Progress: ███░░░░░░░ 30%
+Progress: █████░░░░░ 50%
 
 ### Tasks 1-3 Results (All Bot Scans) — COMPLETE
 
@@ -50,6 +50,36 @@ Progress: ███░░░░░░░ 30%
 **Key Insight:** 613 "critical" findings → 492 actionable after context filtering. WaterBot has the most due to historical drought documentation.
 
 **Report:** `scripts/content-audit-report.json`
+
+### Task 4 Research Verification — COMPLETE
+
+**Verified Items:**
+
+| Item | Finding | Action |
+|------|---------|--------|
+| ISO 13485:2003 (Manufacturing Guide) | **OUTDATED** — 2003 version withdrawn in 2016 | Fixed → ISO 13485:2016 |
+| Cannabis excise tax history | **INCORRECT** — wrong timeline (2023-2024 was not 19%) | Fixed with correct AB 564/AB 195 history |
+| Cannabis cultivation tax (bonus fix) | **INCORRECT** — was SB 94/Jan 2023, actually AB 195/July 2022 | Fixed |
+| KiddoBot income limits FY 2025-26 | **CURRENT** — verified 2025-12-23, no action needed | None |
+
+**Verification Report:** `scripts/content-verification-results.json`
+
+### Task 5 BizBot Fixes — COMPLETE
+
+**Files Modified:**
+- `Manufacturing_Licensing_Guide.md` — ISO 13485:2003 → 2016
+- `Cannabis_Licensing_Guide.md` — Full tax rate table correction + cultivation tax fix
+
+**Database Updates:**
+- Chunk 439 (Cannabis Tax): Updated content + new embedding
+- Chunk 506 (Manufacturing): Updated content + new embedding
+- Script: `scripts/phase2-content-fix.py`
+
+**Verifications Passed:**
+- ✓ Old ISO 13485:2003 references: 0
+- ✓ New ISO 13485:2016 references: 1
+- ✓ Old tax table references: 0
+- ✓ New AB 564 references: 1
 
 ### Phase 2 Scope
 
@@ -171,9 +201,16 @@ Progress: ███░░░░░░░ 30%
 ## Session Continuity
 
 Last session: 2026-01-20
-Current state: Phase 2 PLANNED, ready for execution
+Current state: Phase 2 Tasks 1-5 COMPLETE, Tasks 6-7 ready
 Resume file: This STATE.md + 02-PLAN.md
 Memory query: `CA-AIDev_Bot_Quality_Audit`
+
+**Next Actions:**
+1. Task 6 (KiddoBot fixes) — Already current, may skip or do quick review
+2. Task 7 (WaterBot fixes) — Heavy historical content, mostly intentional dates
+3. Task 8 (Cross-reference validation) — New task
+4. Task 9 (Re-embedding) — Only if more content changes made
+5. Task 10 (Summary report) — Finalize phase
 
 ---
 

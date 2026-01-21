@@ -1,0 +1,53 @@
+{
+  "verification_date": "2026-01-20",
+  "items_verified": 3,
+  "findings": [
+    {
+      "item": "ISO 13485:2003",
+      "location": "bizbot/BizAssessment/04_Industry_Requirements/Manufacturing/Manufacturing_Licensing_Guide.md:388",
+      "current_content": "ISO 13485:2003 certification or FDA inspection within 2 years",
+      "finding": "OUTDATED",
+      "research_summary": "ISO 13485:2003 was officially WITHDRAWN when ISO 13485:2016 was published on March 1, 2016. The 2016 version has been the current standard for nearly 10 years.",
+      "sources": [
+        "https://www.iso.org/standard/59752.html",
+        "https://www.iso.org/iso-13485-medical-devices.html"
+      ],
+      "recommended_fix": "Replace 'ISO 13485:2003' with 'ISO 13485:2016'",
+      "priority": "HIGH",
+      "action": "FIX"
+    },
+    {
+      "item": "Cannabis Excise Tax History",
+      "location": "bizbot/BizAssessment/04_Industry_Requirements/Cannabis/Cannabis_Licensing_Guide.md:299-306",
+      "current_content": "2018-2022: 15%, 2023-2024: 19% (temporary increase), 2025+: 15% (reduced by AB 195)",
+      "finding": "INCORRECT HISTORY",
+      "research_summary": "The actual tax rate timeline is: (1) Jan 2018 - June 30, 2025: 15% under Prop 64/AB 195, (2) July 1 - Sept 30, 2025: 19% from AB 195's biennial adjustment, (3) Oct 1, 2025 - June 30, 2028: 15% under AB 564 (signed Sept 22, 2025). The file incorrectly states 2023-2024 was 19% - it was actually 15% throughout. AB 564 (not AB 195) restored the 15% rate.",
+      "sources": [
+        "https://cannabis.lacity.gov/articles/california-cannabis-taxes",
+        "https://cdtfa.ca.gov/formspubs/l979.pdf",
+        "https://freedomforallamericans.org/newsom-cannabis-tax-law/"
+      ],
+      "recommended_fix": "Correct history table to: 2018-June 2025: 15%, July-Sept 2025: 19%, Oct 2025-June 2028: 15% (AB 564). Note biennial review mechanism starting FY 2028-29.",
+      "priority": "HIGH",
+      "action": "FIX"
+    },
+    {
+      "item": "KiddoBot Income Limits FY 2025-26",
+      "location": "kiddobot/ChildCareAssessment/03_Costs_and_Affordability/Family_Fee_Schedules.md",
+      "current_content": "2025-26 thresholds: 75% SMI family of 4 = $7,959/month, 85% SMI = $9,020/month",
+      "finding": "CURRENT AND VERIFIED",
+      "research_summary": "File already contains 2025-26 income thresholds with verification date of 2025-12-23. Data sourced from CCRC 2025-26 State Median Income Schedule based on 2023 ACS data. No update needed.",
+      "sources": [
+        "ccrcca.org (California Child Care Resource & Referral Network)"
+      ],
+      "recommended_fix": "None - content is current",
+      "priority": "N/A",
+      "action": "NONE"
+    }
+  ],
+  "summary": {
+    "items_needing_fix": 2,
+    "items_current": 1,
+    "next_steps": "Apply fixes to Manufacturing_Licensing_Guide.md and Cannabis_Licensing_Guide.md, then re-embed affected chunks"
+  }
+}
