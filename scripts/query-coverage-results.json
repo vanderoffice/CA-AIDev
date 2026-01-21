@@ -1,0 +1,854 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-21T15:26:02.506013",
+    "phase": "5 - Query Coverage Testing"
+  },
+  "task2_stub_pollution": {
+    "passed": true,
+    "results": [
+      {
+        "query": "FTB",
+        "name": "Franchise Tax Board",
+        "stub_pollution": false,
+        "stub_count_in_top3": 0,
+        "top5_results": [
+          {
+            "rank": 1,
+            "content_length": 349,
+            "similarity": 0.489495113178942,
+            "preview": "# California Franchise Tax Board (FTB) - Comprehensive URL Guide\n## Primary Portal\n\n| Resource | URL"
+          },
+          {
+            "rank": 2,
+            "content_length": 383,
+            "similarity": 0.455560061004159,
+            "preview": "## Franchise Tax Board (FTB)\n\n**What they do:** Administers business income taxes and the minimum fr"
+          },
+          {
+            "rank": 3,
+            "content_length": 347,
+            "similarity": 0.442348367887933,
+            "preview": "# California Franchise Tax Board (FTB) - Comprehensive URL Guide\n## Introduction\n\n**Agency Overview:"
+          },
+          {
+            "rank": 4,
+            "content_length": 510,
+            "similarity": 0.440663827677483,
+            "preview": "# California Franchise Tax Board (FTB) - Comprehensive URL Guide\n## Help & Support\n\n| Resource | URL"
+          },
+          {
+            "rank": 5,
+            "content_length": 505,
+            "similarity": 0.432371441580568,
+            "preview": "# California Franchise Tax Board (FTB) - Comprehensive URL Guide\n## Related Agencies\n\n| Agency | Rel"
+          }
+        ]
+      },
+      {
+        "query": "EDD",
+        "name": "Employment Development Dept",
+        "stub_pollution": false,
+        "stub_count_in_top3": 0,
+        "top5_results": [
+          {
+            "rank": 1,
+            "content_length": 386,
+            "similarity": 0.543071925640106,
+            "preview": "# California Employment Development Department (EDD) - Employer Resources Guide\n## Introduction\n\n**A"
+          },
+          {
+            "rank": 2,
+            "content_length": 425,
+            "similarity": 0.536202247595523,
+            "preview": "## Employment Development Department (EDD)\n\n**What they do:** Registers employers and administers pa"
+          },
+          {
+            "rank": 3,
+            "content_length": 521,
+            "similarity": 0.51567830192084,
+            "preview": "# California Employment Development Department (EDD) - Employer Resources Guide\n## Primary Portals\n\n"
+          },
+          {
+            "rank": 4,
+            "content_length": 473,
+            "similarity": 0.504632890224457,
+            "preview": "# California Employment Development Department (EDD) - Employer Resources Guide\n## Key Contact Infor"
+          },
+          {
+            "rank": 5,
+            "content_length": 547,
+            "similarity": 0.476787835359573,
+            "preview": "# California Employment Development Department (EDD) - Employer Resources Guide\n## Employer Registra"
+          }
+        ]
+      },
+      {
+        "query": "CSLB",
+        "name": "Contractors State License Board",
+        "stub_pollution": false,
+        "stub_count_in_top3": 0,
+        "top5_results": [
+          {
+            "rank": 1,
+            "content_length": 447,
+            "similarity": 0.574739234196086,
+            "preview": "## Contractors State License Board (CSLB)\n\n**What they do:** Licenses and regulates contractors acro"
+          },
+          {
+            "rank": 2,
+            "content_length": 682,
+            "similarity": 0.466187985766651,
+            "preview": "# California Contractor Licensing Guide\n## Contractors State License Board (CSLB) Overview\n\n**Agency"
+          },
+          {
+            "rank": 3,
+            "content_length": 802,
+            "similarity": 0.462944177564639,
+            "preview": "# California Department of Consumer Affairs (DCA) - Comprehensive URL Guide\n## Major Licensing Board"
+          },
+          {
+            "rank": 4,
+            "content_length": 702,
+            "similarity": 0.446775946213249,
+            "preview": "# California Contractor Licensing Guide\n## Exam Preparation Resources\n\n### CSLB Study Guides\n\n**Free"
+          },
+          {
+            "rank": 5,
+            "content_length": 882,
+            "similarity": 0.441489312560004,
+            "preview": "# California Contractor Licensing Guide\n## Resources\n\n### CSLB Resources\n\n| Resource | URL |\n|------"
+          }
+        ]
+      }
+    ]
+  },
+  "task3_category_filtering": {
+    "passed": true,
+    "categories_in_db": [
+      {
+        "name": "subsidies",
+        "count": 305
+      },
+      {
+        "name": null,
+        "count": 250
+      },
+      {
+        "name": "county_deep_dives",
+        "count": 123
+      },
+      {
+        "name": "application_processes",
+        "count": 119
+      },
+      {
+        "name": "provider_search",
+        "count": 111
+      },
+      {
+        "name": "special_situations",
+        "count": 86
+      },
+      {
+        "name": "user_journeys",
+        "count": 84
+      },
+      {
+        "name": "costs_and_affordability",
+        "count": 75
+      },
+      {
+        "name": "state_agencies",
+        "count": 54
+      },
+      {
+        "name": "alternative_education",
+        "count": 53
+      },
+      {
+        "name": "County Deep Dives",
+        "count": 25
+      },
+      {
+        "name": "Provider Search",
+        "count": 20
+      },
+      {
+        "name": "Application Processes",
+        "count": 16
+      },
+      {
+        "name": "Special Situations",
+        "count": 15
+      },
+      {
+        "name": "Quality & Safety",
+        "count": 13
+      },
+      {
+        "name": "Parent Resources",
+        "count": 11
+      },
+      {
+        "name": "Subsidies",
+        "count": 10
+      },
+      {
+        "name": "Age-Specific Care",
+        "count": 7
+      },
+      {
+        "name": "Costs & Affordability",
+        "count": 6
+      },
+      {
+        "name": "Alternative Education",
+        "count": 5
+      },
+      {
+        "name": "applications",
+        "count": 1
+      },
+      {
+        "name": "providers",
+        "count": 1
+      }
+    ],
+    "results": [
+      {
+        "filter": "subsidies",
+        "exact_match_count": 305,
+        "ilike_match_count": 315,
+        "expected_min": 50,
+        "passed": true,
+        "issue": null
+      },
+      {
+        "filter": "county_deep_dives",
+        "exact_match_count": 123,
+        "ilike_match_count": 148,
+        "expected_min": 50,
+        "passed": true,
+        "issue": null
+      },
+      {
+        "filter": "provider_search",
+        "exact_match_count": 111,
+        "ilike_match_count": 131,
+        "expected_min": 20,
+        "passed": true,
+        "issue": null
+      }
+    ]
+  },
+  "task4_e2e_testing": {
+    "bizbot": {
+      "queries": [
+        {
+          "query_id": "bb-1",
+          "query": "How do I get a contractor license in California?",
+          "purpose": "core_use_case",
+          "category_filter": null,
+          "score": 1,
+          "evaluation": "Adequate: sim=0.739, match=62.5%",
+          "expected": "CSLB licensing guide with requirements, fees, exam info",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# California Contractor Licensing Guide\n## Application Process\n\n### Step 1: Gather Documentation\n\n**Required Forms:**\n- Application for Original Contr",
+              "content_length": 957,
+              "similarity": 0.73907519942074
+            },
+            {
+              "rank": 2,
+              "content_preview": "# California Contractor Licensing Guide\n## Introduction\n\nComplete licensing pathway for contractors in California (2025).\n\n---",
+              "content_length": 126,
+              "similarity": 0.69704015868663
+            },
+            {
+              "rank": 3,
+              "content_preview": "# California Contractor Licensing Guide\n## License Requirements\n\n### 2. Examinations\n\n**Two Exams Required:**\n\n| Exam | Questions | Time | Passing Sco",
+              "content_length": 916,
+              "similarity": 0.694186008669614
+            }
+          ]
+        },
+        {
+          "query_id": "bb-2",
+          "query": "FTB",
+          "purpose": "stub_pollution_test",
+          "category_filter": null,
+          "score": 1,
+          "evaluation": "Adequate: sim=0.489, match=33.3%",
+          "expected": "FTB comprehensive guide (tax filing, forms, contacts)",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# California Franchise Tax Board (FTB) - Comprehensive URL Guide\n## Primary Portal\n\n| Resource | URL | Description |\n|----------|-----|-------------|\n",
+              "content_length": 349,
+              "similarity": 0.489495113178942
+            },
+            {
+              "rank": 2,
+              "content_preview": "## Franchise Tax Board (FTB)\n\n**What they do:** Administers business income taxes and the minimum franchise tax; opens tax accounts after SOS formatio",
+              "content_length": 383,
+              "similarity": 0.455560061004159
+            },
+            {
+              "rank": 3,
+              "content_preview": "# California Franchise Tax Board (FTB) - Comprehensive URL Guide\n## Introduction\n\n**Agency Overview:** The Franchise Tax Board administers California'",
+              "content_length": 347,
+              "similarity": 0.442348367887933
+            }
+          ]
+        },
+        {
+          "query_id": "bb-3",
+          "query": "EDD employer registration",
+          "purpose": "stub_pollution_test",
+          "category_filter": null,
+          "score": 1,
+          "evaluation": "Adequate: sim=0.716, match=100.0%",
+          "expected": "EDD employer resources guide",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# California Employment Development Department (EDD) - Employer Resources Guide\n## Employer Registration\n\n| Resource | URL | Description |\n|----------",
+              "content_length": 547,
+              "similarity": 0.716449737548828
+            },
+            {
+              "rank": 2,
+              "content_preview": "## Employment Development Department (EDD)\n\n**What they do:** Registers employers and administers payroll taxes (UI, SDI, ETT, PIT) via e-Services for",
+              "content_length": 425,
+              "similarity": 0.675757387190181
+            },
+            {
+              "rank": 3,
+              "content_preview": "# California Employment Development Department (EDD) - Employer Resources Guide\n## Introduction\n\n**Agency Overview:** The Employment Development Depar",
+              "content_length": 386,
+              "similarity": 0.657033145427704
+            }
+          ]
+        },
+        {
+          "query_id": "bb-4",
+          "query": "CSLB license renewal",
+          "purpose": "stub_pollution_test",
+          "category_filter": null,
+          "score": 1,
+          "evaluation": "Adequate: sim=0.592, match=50.0%",
+          "expected": "CSLB renewal procedures and requirements",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "## Contractors State License Board (CSLB)\n\n**What they do:** Licenses and regulates contractors across many classifications; requires exams, backgroun",
+              "content_length": 447,
+              "similarity": 0.59171335795959
+            },
+            {
+              "rank": 2,
+              "content_preview": "# 06 - Renewal & Compliance\n## Professional License Renewals\n\nMost DCA-regulated licenses renew every 2 years. Check the specific board for:\n- Renewal",
+              "content_length": 207,
+              "similarity": 0.58678071976728
+            },
+            {
+              "rank": 3,
+              "content_preview": "# California CSLB Contractor License Fees (2026)\n\n## Contractors State License Board Fee Schedule\n\n### Application Fees\n| Fee Type | Amount |\n|-------",
+              "content_length": 1658,
+              "similarity": 0.581850367243599
+            }
+          ]
+        },
+        {
+          "query_id": "bb-5",
+          "query": "cannabis retail license requirements",
+          "purpose": "domain_coverage",
+          "category_filter": null,
+          "score": 1,
+          "evaluation": "Adequate: sim=0.651, match=80.0%",
+          "expected": "Cannabis Licensing Guide with DCC requirements",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# California Cannabis Business Licensing Guide\n## License Types Overview\n\n### Retail Licenses\n\n| Type | Description | Key Features |\n|------|---------",
+              "content_length": 510,
+              "similarity": 0.650984328867873
+            },
+            {
+              "rank": 2,
+              "content_preview": "# California Cannabis Business Licensing Guide\n## Premises Requirements\n\n### Security Requirements\n\n**All License Types:**\n\n| Requirement | Details |\n",
+              "content_length": 920,
+              "similarity": 0.625161848952661
+            },
+            {
+              "rank": 3,
+              "content_preview": "# California General Retail Licensing Guide\n## Special Retail Categories\n\n### Tobacco Retail\n\n**Additional License:** Cigarette and Tobacco Products R",
+              "content_length": 576,
+              "similarity": 0.571887493133549
+            }
+          ]
+        },
+        {
+          "query_id": "bb-6",
+          "query": "restaurant health permit California",
+          "purpose": "domain_coverage",
+          "category_filter": null,
+          "score": 1,
+          "evaluation": "Adequate: sim=0.682, match=50.0%",
+          "expected": "Restaurant/Food Service licensing guide",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# California Restaurant Licensing Guide\n## California State Requirements\n\n### 5. California Food Facility Permit\n\n**Agency:** County Department of Env",
+              "content_length": 843,
+              "similarity": 0.681568064502708
+            },
+            {
+              "rank": 2,
+              "content_preview": "# California Restaurant Licensing Guide\n## Local Requirements\n\n### 12. Fire Department Permit\n\n**Agency:** Local Fire Department / Fire Marshal\n**Cost",
+              "content_length": 686,
+              "similarity": 0.652283272011086
+            },
+            {
+              "rank": 3,
+              "content_preview": "# California Restaurant Licensing Guide\n## California State Requirements\n\n### 6. Food Handler Cards\n\n**Agency:** County Environmental Health or Approv",
+              "content_length": 679,
+              "similarity": 0.620043359992305
+            }
+          ]
+        },
+        {
+          "query_id": "bb-7",
+          "query": "ISO 13485",
+          "purpose": "phase2_fix_verification",
+          "category_filter": null,
+          "score": 1,
+          "evaluation": "Adequate: sim=0.378, match=66.7%",
+          "expected": "Manufacturing guide with ISO 13485:2016 (NOT 2003)",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# California Manufacturing Business Licensing Guide\n## Specialized Manufacturing Categories\n\n### Food Manufacturing\n\n**California:**\n- Processed Food ",
+              "content_length": 974,
+              "similarity": 0.377686012456246
+            },
+            {
+              "rank": 2,
+              "content_preview": "### Industry-Specific\n\n| Agency | URL |\n|--------|-----|\n| CDPH Food & Drug | https://www.cdph.ca.gov/Programs/CEH/DFDCS |\n| FDA Registration | https:",
+              "content_length": 363,
+              "similarity": 0.35677983937624
+            },
+            {
+              "rank": 3,
+              "content_preview": "**Regional Offices:**\n| Region | Phone |\n|--------|-------|\n| Northern California | (800) 952-8356 |\n| Southern California | (800) 952-8356 |\n\n### 3. ",
+              "content_length": 665,
+              "similarity": 0.347760197920765
+            }
+          ]
+        },
+        {
+          "query_id": "bb-8",
+          "query": "cannabis excise tax rate",
+          "purpose": "phase2_fix_verification",
+          "category_filter": null,
+          "score": 1,
+          "evaluation": "Adequate: sim=0.575, match=60.0%",
+          "expected": "Cannabis Licensing Guide with AB 564 tax info",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# California Cannabis Business Licensing Guide\n## Tax Obligations\n\n### Cannabis Excise Tax\n\n**Rate:** 15% of retail selling price (as of October 2025)",
+              "content_length": 1108,
+              "similarity": 0.574724069958097
+            },
+            {
+              "rank": 2,
+              "content_preview": "**Warning:** Combined state + local taxes can exceed 30% in some areas.\n\n### Sales Tax\n\nStandard California sales tax applies to retail cannabis sales",
+              "content_length": 229,
+              "similarity": 0.564218997955326
+            },
+            {
+              "rank": 3,
+              "content_preview": "---\n\n*Last Updated: 2025-12-31*\n*Sources: DCC, CDTFA, METRC, CalCannabis*\n*Research Method: Perplexity Pro with manual verification*",
+              "content_length": 132,
+              "similarity": 0.438883334398273
+            }
+          ]
+        }
+      ],
+      "avg_score": 1.0,
+      "coverage": 1.0
+    },
+    "kiddobot": {
+      "queries": [
+        {
+          "query_id": "kb-1",
+          "query": "CalWORKs eligibility requirements",
+          "purpose": "core_use_case",
+          "category_filter": "subsidies",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.632, match=40.0%",
+          "expected": "CalWORKs guide with eligibility criteria",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "## Quick Eligibility Check\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502  Do you receive CalWORKs cash aid?                  ",
+              "content_length": 803,
+              "similarity": 0.631650429020812
+            },
+            {
+              "rank": 2,
+              "content_preview": "## Stage 1 Eligibility: Cash Aid Recipients\n\n### Initial Eligibility Test (MBSAC)\nTo receive CalWORKs cash aid, gross income must be below MBSAC:\n\n| F",
+              "content_length": 836,
+              "similarity": 0.618268434560148
+            },
+            {
+              "rank": 3,
+              "content_preview": "## Eligibility Decision Tree\n\n```\nSTART: Do you have a child under 13 (or under 22 with disability)?\n\u2502\n\u251c\u2500 NO \u2192 Not eligible for CalWORKs childcare\n\u2502\n\u2514",
+              "content_length": 996,
+              "similarity": 0.611946399087882
+            }
+          ]
+        },
+        {
+          "query_id": "kb-2",
+          "query": "income limits for child care subsidies",
+          "purpose": "data_accuracy",
+          "category_filter": "subsidies",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.627, match=40.0%",
+          "expected": "Family Fee Schedules with FY 2025-26 limits",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "## Stages 2 & 3 Eligibility: 85% State Median Income\n\nOnce off cash aid, you qualify for continued childcare if income stays below:\n\n| Family Size | M",
+              "content_length": 692,
+              "similarity": 0.627229317756973
+            },
+            {
+              "rank": 2,
+              "content_preview": "# California Child Care Subsidy Income Eligibility Overview (2025-26)\n\n## State Median Income (SMI) Thresholds\n\nCalifornia uses State Median Income (S",
+              "content_length": 1827,
+              "similarity": 0.622345850188035
+            },
+            {
+              "rank": 3,
+              "content_preview": "## Income Thresholds Compared\n\n### CalWORKs Cash Aid Eligibility (MBSAC)\n\nTo receive CalWORKs cash aid, gross income must be below:\n\n| Family Size | M",
+              "content_length": 777,
+              "similarity": 0.562158875208035
+            }
+          ]
+        },
+        {
+          "query_id": "kb-3",
+          "query": "find child care in San Diego",
+          "purpose": "category_filter_test",
+          "category_filter": "county_deep_dives",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.677, match=60.0%",
+          "expected": "San Diego regional guide with R&R info",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "## Tips for San Diego County\n\n### Finding Providers\n\n1. **Start with YMCA CRS:** (800) 481-2151 - they maintain the main provider database\n2. **Milita",
+              "content_length": 766,
+              "similarity": 0.677398522055238
+            },
+            {
+              "rank": 2,
+              "content_preview": "# San Diego County Childcare Guide\n\n**Population:** ~3.3 million (2nd largest county in CA)\n**Region:** 1 (Higher Cost of Living)\n**Primary Agency:** ",
+              "content_length": 209,
+              "similarity": 0.632471859455109
+            },
+            {
+              "rank": 3,
+              "content_preview": "# San Diego County Childcare Programs\n\n## YMCA Childcare Resource Service\nPrimary R&R for San Diego County.\n\n## Key Resources\n- **YMCA CRS**: (800) 48",
+              "content_length": 692,
+              "similarity": 0.631835855951063
+            }
+          ]
+        },
+        {
+          "query_id": "kb-4",
+          "query": "provider licensing requirements",
+          "purpose": "category_filter_test",
+          "category_filter": "provider_search",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.480, match=33.3%",
+          "expected": "Provider licensing content",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# Child Care Center Licensing Overview (2026)\n\n## Types of Licensed Centers\n\n### Infant Centers\n- Ages: Birth to 2 years\n- Staff ratio: 1:4 (one adult",
+              "content_length": 2493,
+              "similarity": 0.480324745178223
+            },
+            {
+              "rank": 2,
+              "content_preview": "# Child Care Center Licensing Overview (2026)\n\n## Types of Licensed Centers\n\n### Infant Centers\n- Ages: Birth to 2 years\n- Staff ratio: 1:4 (one adult",
+              "content_length": 2533,
+              "similarity": 0.477304532447593
+            },
+            {
+              "rank": 3,
+              "content_preview": "# Provider Training and Credentials\n\n## California Training Requirements\n\n### Licensed Center Staff\n- **Teachers**: 12 ECE units + 6 months experience",
+              "content_length": 1275,
+              "similarity": 0.461077272891998
+            }
+          ]
+        },
+        {
+          "query_id": "kb-5",
+          "query": "CalWORKs child care stages transition",
+          "purpose": "domain_coverage",
+          "category_filter": "subsidies",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.752, match=66.7%",
+          "expected": "Stage transition explanations",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "## CalWORKs Child Care Stages\n\nAPP agencies administer **Stages 2 and 3** of CalWORKs child care:\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u250c\u2500\u2500\u2500\u2500",
+              "content_length": 950,
+              "similarity": 0.752446257234106
+            },
+            {
+              "rank": 2,
+              "content_preview": "## Next Steps for Parents\n\n1. **If you need CalWORKs cash aid:** Apply at your county welfare office\n2. **If you already have CalWORKs:** Ask your wor",
+              "content_length": 326,
+              "similarity": 0.712179660797139
+            },
+            {
+              "rank": 3,
+              "content_preview": "# CalWORKs Stage 2 Child Care (2026)\n\n## What is Stage 2?\n\nStage 2 child care serves families whose situation has stabilized OR families transitioning",
+              "content_length": 1599,
+              "similarity": 0.702178502342527
+            }
+          ]
+        },
+        {
+          "query_id": "kb-6",
+          "query": "Sacramento child care resources",
+          "purpose": "category_filter_test",
+          "category_filter": "county_deep_dives",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.747, match=33.3%",
+          "expected": "Sacramento regional guide",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "## Tips for Sacramento County\n\n### Finding Providers\n\n1. **Start with Child Action:** They maintain comprehensive provider lists\n2. **Check school dis",
+              "content_length": 768,
+              "similarity": 0.74726281323246
+            },
+            {
+              "rank": 2,
+              "content_preview": "# Sacramento County Childcare Guide\n\n**Population:** ~1.5 million\n**Region:** 2 (Moderate Cost of Living)\n**Primary Agency:** Sacramento County Depart",
+              "content_length": 185,
+              "similarity": 0.71781315558592
+            },
+            {
+              "rank": 3,
+              "content_preview": "## County-Specific Features\n\n### State Worker Benefits\n\nMany Sacramento residents are state employees with access to:\n- **FlexElect (DCFSA):** Pre-tax",
+              "content_length": 804,
+              "similarity": 0.678121706191352
+            }
+          ]
+        }
+      ],
+      "avg_score": 1.0,
+      "coverage": 1.0
+    },
+    "waterbot": {
+      "queries": [
+        {
+          "query_id": "wb-1",
+          "query": "NPDES permit application process",
+          "purpose": "core_use_case",
+          "category_filter": "permits",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.719, match=80.0%",
+          "expected": "Permits guide with NPDES requirements",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# Individual NPDES Permits\n\n## Timeline: Application to Permit Issuance\n\n**Typical timeline: 6\u201312 months** (complex facilities may take longer)\n\n| Pha",
+              "content_length": 1356,
+              "similarity": 0.719205813455236
+            },
+            {
+              "rank": 2,
+              "content_preview": "# NPDES Permit Program Overview\n\n## Application Process Overview\n\n### For Individual NPDES Permits\n\n**Step 1: Submit Application**\n- California Form 2",
+              "content_length": 1458,
+              "similarity": 0.684390246868134
+            },
+            {
+              "rank": 3,
+              "content_preview": "# Individual NPDES Permits\n\n## Permit Renewal Process\n\n### Timeline Requirements\n\n- **Maximum term:** 5 years (per Clean Water Act)\n- **Renewal applic",
+              "content_length": 1255,
+              "similarity": 0.654031872749329
+            }
+          ]
+        },
+        {
+          "query_id": "wb-2",
+          "query": "drought restrictions 2022",
+          "purpose": "historical_accuracy",
+          "category_filter": "climate-drought",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.656, match=0.0%",
+          "expected": "Climate/drought documentation",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# Drought Emergency Response\n\n## Mandatory Conservation Measures\n\n### Prohibited Water Uses (2021-2022 Emergency Regulations)\n\n1. **Decorative fountai",
+              "content_length": 907,
+              "similarity": 0.65565099285993
+            },
+            {
+              "rank": 2,
+              "content_preview": "# Emergency Drought Regulations - Overview\n\n## History of Emergency Drought Regulations\n\n### 2014-2016 Drought\n\n**July 15, 2014 (Resolution 2014-0038)",
+              "content_length": 1379,
+              "similarity": 0.635254163600629
+            },
+            {
+              "rank": 3,
+              "content_preview": "# Drought Emergency Response\n\n## Lessons from 2020-2022 Drought\n\n### More Aggressive Regulatory Response\n\n- Multiple emergency regulations in rapid su",
+              "content_length": 807,
+              "similarity": 0.605395454329117
+            }
+          ]
+        },
+        {
+          "query_id": "wb-3",
+          "query": "water quality monitoring requirements",
+          "purpose": "domain_coverage",
+          "category_filter": "water-quality",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.717, match=50.0%",
+          "expected": "Water quality compliance guidance",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# Water Quality Monitoring Overview\n\n## Data Quality Requirements\n\nFor data to support regulatory decisions:\n\n- **Standard methods**: Approved analyti",
+              "content_length": 373,
+              "similarity": 0.717283359059688
+            },
+            {
+              "rank": 2,
+              "content_preview": "# Water Quality Monitoring Overview\n\n## Related Topics\n\n- SWAMP and CEDEN\n- Compliance and Citizen Monitoring\n- 303(d) Listing Process\n- TMDL Developm",
+              "content_length": 153,
+              "similarity": 0.697546518141451
+            },
+            {
+              "rank": 3,
+              "content_preview": "# Water Quality Monitoring Overview\n\n## Monitoring Parameters\n\n### Physical Parameters\n\n- Temperature\n- Dissolved oxygen\n- pH\n- Conductivity\n- Turbidi",
+              "content_length": 460,
+              "similarity": 0.666164716204472
+            }
+          ]
+        },
+        {
+          "query_id": "wb-4",
+          "query": "small community water system funding",
+          "purpose": "domain_coverage",
+          "category_filter": "funding",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.669, match=100.0%",
+          "expected": "Funding programs for small systems",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# State Water Resources Control Board Grant Programs\n\n## Small Community Grant Programs\n\n### Office of Sustainable Water Solutions\nEstablished 2015 (A",
+              "content_length": 1257,
+              "similarity": 0.669064442030859
+            },
+            {
+              "rank": 2,
+              "content_preview": "# SRF Funding for Small Communities\n\n## Technical Assistance Programs\n\n### Proposition 1 Technical Assistance\nEstablished under the Water Quality, Sup",
+              "content_length": 1220,
+              "similarity": 0.648000540018041
+            },
+            {
+              "rank": 3,
+              "content_preview": "# SRF Funding for Small Communities\n\n## Consolidation Support\n\n### Types of Consolidation\n\n**Physical Consolidation:**\n- Smaller system dissolved\n- Cu",
+              "content_length": 1426,
+              "similarity": 0.644005160212377
+            }
+          ]
+        },
+        {
+          "query_id": "wb-5",
+          "query": "groundwater sustainability plan",
+          "purpose": "domain_coverage",
+          "category_filter": "compliance",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.412, match=50.0%",
+          "expected": "GSP compliance requirements",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# Compliance Assistance Overview\n\n## SAFER Engagement Units\n\n### Function\nWater resource engineers and specialists supporting:\n- Sustainable drinking ",
+              "content_length": 296,
+              "similarity": 0.411970757367846
+            },
+            {
+              "rank": 2,
+              "content_preview": "# Small Water System Support Programs\n\n## SAFER Program (Safe and Affordable Funding for Equity and Resilience)\n\n### Overview\nComprehensive framework ",
+              "content_length": 1123,
+              "similarity": 0.408076477291479
+            },
+            {
+              "rank": 3,
+              "content_preview": "# Return to Compliance Pathways\n\n## Supplemental Environmental Projects (SEPs)\n\n### Definition\nEnvironmentally beneficial projects undertaken in lieu ",
+              "content_length": 969,
+              "similarity": 0.402389133118935
+            }
+          ]
+        },
+        {
+          "query_id": "wb-6",
+          "query": "stormwater pollution prevention",
+          "purpose": "domain_coverage",
+          "category_filter": "compliance",
+          "score": 1,
+          "evaluation": "Adequate: sim=0.557, match=33.3%",
+          "expected": "Stormwater management guidance",
+          "top_results": [
+            {
+              "rank": 1,
+              "content_preview": "# Informal Enforcement Actions\n\n## Stormwater Program Example\n\nThe stormwater program illustrates informal enforcement prevalence:\n- Most violations a",
+              "content_length": 334,
+              "similarity": 0.55703152886127
+            },
+            {
+              "rank": 2,
+              "content_preview": "# CIWQS Electronic Reporting\n\n## SSO Reporting\n\n### Sanitary Sewer Overflows\n- Separate online SSO database\n- Required under State Board Order 2006-00",
+              "content_length": 322,
+              "similarity": 0.45811942469362
+            },
+            {
+              "rank": 3,
+              "content_preview": "# Compliance Assistance Overview\n\n## Philosophy\n\nCalifornia Water Boards' compliance assistance emphasizes:\n- **Prevention over punishment** - Build c",
+              "content_length": 416,
+              "similarity": 0.454421176148092
+            }
+          ]
+        }
+      ],
+      "avg_score": 1.0,
+      "coverage": 1.0
+    }
+  },
+  "summary": {
+    "stub_pollution_passed": true,
+    "category_filtering_passed": true,
+    "bizbot_coverage": 1.0,
+    "bizbot_avg_score": 1.0,
+    "kiddobot_coverage": 1.0,
+    "kiddobot_avg_score": 1.0,
+    "waterbot_coverage": 1.0,
+    "waterbot_avg_score": 1.0
+  }
+}

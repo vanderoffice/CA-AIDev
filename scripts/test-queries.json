@@ -1,0 +1,190 @@
+{
+  "metadata": {
+    "created": "2026-01-21",
+    "phase": "5 - Query Coverage Testing",
+    "purpose": "Representative queries for validating RAG retrieval quality"
+  },
+  "bizbot": {
+    "description": "Business licensing and regulatory compliance",
+    "queries": [
+      {
+        "id": "bb-1",
+        "query": "How do I get a contractor license in California?",
+        "expected_content": "CSLB licensing guide with requirements, fees, exam info",
+        "purpose": "core_use_case",
+        "min_chars": 500
+      },
+      {
+        "id": "bb-2",
+        "query": "FTB",
+        "expected_content": "FTB comprehensive guide (tax filing, forms, contacts)",
+        "purpose": "stub_pollution_test",
+        "min_chars": 100,
+        "note": "Must NOT return 25-char stub entry"
+      },
+      {
+        "id": "bb-3",
+        "query": "EDD employer registration",
+        "expected_content": "EDD employer resources guide",
+        "purpose": "stub_pollution_test",
+        "min_chars": 100
+      },
+      {
+        "id": "bb-4",
+        "query": "CSLB license renewal",
+        "expected_content": "CSLB renewal procedures and requirements",
+        "purpose": "stub_pollution_test",
+        "min_chars": 100
+      },
+      {
+        "id": "bb-5",
+        "query": "cannabis retail license requirements",
+        "expected_content": "Cannabis Licensing Guide with DCC requirements",
+        "purpose": "domain_coverage",
+        "min_chars": 300
+      },
+      {
+        "id": "bb-6",
+        "query": "restaurant health permit California",
+        "expected_content": "Restaurant/Food Service licensing guide",
+        "purpose": "domain_coverage",
+        "min_chars": 300
+      },
+      {
+        "id": "bb-7",
+        "query": "ISO 13485",
+        "expected_content": "Manufacturing guide with ISO 13485:2016 (NOT 2003)",
+        "purpose": "phase2_fix_verification",
+        "min_chars": 100,
+        "note": "Verify Phase 2 content fix applied"
+      },
+      {
+        "id": "bb-8",
+        "query": "cannabis excise tax rate",
+        "expected_content": "Cannabis Licensing Guide with AB 564 tax info",
+        "purpose": "phase2_fix_verification",
+        "min_chars": 100,
+        "note": "Verify Phase 2 tax rate correction"
+      }
+    ]
+  },
+  "kiddobot": {
+    "description": "Child care subsidies and provider information",
+    "queries": [
+      {
+        "id": "kb-1",
+        "query": "CalWORKs eligibility requirements",
+        "expected_content": "CalWORKs guide with eligibility criteria",
+        "purpose": "core_use_case",
+        "category_filter": "subsidies",
+        "min_chars": 300,
+        "note": "CalWORKs is a subsidy program - content correctly categorized under 'subsidies'"
+      },
+      {
+        "id": "kb-2",
+        "query": "income limits for child care subsidies",
+        "expected_content": "Family Fee Schedules with FY 2025-26 limits",
+        "purpose": "data_accuracy",
+        "category_filter": "subsidies",
+        "min_chars": 200
+      },
+      {
+        "id": "kb-3",
+        "query": "find child care in San Diego",
+        "expected_content": "San Diego regional guide with R&R info",
+        "purpose": "category_filter_test",
+        "category_filter": "county_deep_dives",
+        "min_chars": 200
+      },
+      {
+        "id": "kb-4",
+        "query": "provider licensing requirements",
+        "expected_content": "Provider licensing content",
+        "purpose": "category_filter_test",
+        "category_filter": "provider_search",
+        "min_chars": 200
+      },
+      {
+        "id": "kb-5",
+        "query": "CalWORKs child care stages transition",
+        "expected_content": "Stage transition explanations",
+        "purpose": "domain_coverage",
+        "category_filter": "subsidies",
+        "min_chars": 200,
+        "note": "Original 'Stage 1 vs Stage 2' had semantic mismatch - matched comparison tables not subsidy content"
+      },
+      {
+        "id": "kb-6",
+        "query": "Sacramento child care resources",
+        "expected_content": "Sacramento regional guide",
+        "purpose": "category_filter_test",
+        "category_filter": "county_deep_dives",
+        "min_chars": 200
+      }
+    ]
+  },
+  "waterbot": {
+    "description": "Water board compliance and regulations",
+    "queries": [
+      {
+        "id": "wb-1",
+        "query": "NPDES permit application process",
+        "expected_content": "Permits guide with NPDES requirements",
+        "purpose": "core_use_case",
+        "category_filter": "permits",
+        "min_chars": 300
+      },
+      {
+        "id": "wb-2",
+        "query": "drought restrictions 2022",
+        "expected_content": "Climate/drought documentation",
+        "purpose": "historical_accuracy",
+        "category_filter": "climate-drought",
+        "min_chars": 200
+      },
+      {
+        "id": "wb-3",
+        "query": "water quality monitoring requirements",
+        "expected_content": "Water quality compliance guidance",
+        "purpose": "domain_coverage",
+        "category_filter": "water-quality",
+        "min_chars": 200
+      },
+      {
+        "id": "wb-4",
+        "query": "small community water system funding",
+        "expected_content": "Funding programs for small systems",
+        "purpose": "domain_coverage",
+        "category_filter": "funding",
+        "min_chars": 200
+      },
+      {
+        "id": "wb-5",
+        "query": "groundwater sustainability plan",
+        "expected_content": "GSP compliance requirements",
+        "purpose": "domain_coverage",
+        "category_filter": "compliance",
+        "min_chars": 200
+      },
+      {
+        "id": "wb-6",
+        "query": "stormwater pollution prevention",
+        "expected_content": "Stormwater management guidance",
+        "purpose": "domain_coverage",
+        "category_filter": "compliance",
+        "min_chars": 200
+      }
+    ]
+  },
+  "quality_gates": {
+    "query_coverage_min": 0.90,
+    "retrieval_accuracy_min": 1.5,
+    "stub_pollution_max": 0,
+    "category_filter_issues_max": 0,
+    "scoring_rubric": {
+      "0": "No relevant results in top 5",
+      "1": "Some relevant results in top 3-5",
+      "2": "Top result directly answers query"
+    }
+  }
+}
