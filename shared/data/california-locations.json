@@ -1,0 +1,244 @@
+{
+  "metadata": {
+    "description": "California counties and incorporated cities",
+    "source": "California League of Cities, US Census Bureau",
+    "lastUpdated": "2026-01-21",
+    "totalCounties": 58,
+    "totalCities": 482,
+    "usage": "Shared across BizBot, KiddoBot, WaterBot for location selection"
+  },
+  "counties": {
+    "Alameda": {
+      "population": 1682353,
+      "cities": ["Alameda", "Albany", "Berkeley", "Dublin", "Emeryville", "Fremont", "Hayward", "Livermore", "Newark", "Oakland", "Piedmont", "Pleasanton", "San Leandro", "Union City"]
+    },
+    "Alpine": {
+      "population": 1235,
+      "cities": []
+    },
+    "Amador": {
+      "population": 41259,
+      "cities": ["Amador City", "Ione", "Jackson", "Plymouth", "Sutter Creek"]
+    },
+    "Butte": {
+      "population": 217769,
+      "cities": ["Biggs", "Chico", "Gridley", "Oroville", "Paradise"]
+    },
+    "Calaveras": {
+      "population": 46447,
+      "cities": ["Angels Camp"]
+    },
+    "Colusa": {
+      "population": 22020,
+      "cities": ["Colusa", "Williams"]
+    },
+    "Contra Costa": {
+      "population": 1161413,
+      "cities": ["Antioch", "Brentwood", "Clayton", "Concord", "Danville", "El Cerrito", "Hercules", "Lafayette", "Martinez", "Moraga", "Oakley", "Orinda", "Pinole", "Pittsburg", "Pleasant Hill", "Richmond", "San Pablo", "San Ramon", "Walnut Creek"]
+    },
+    "Del Norte": {
+      "population": 27692,
+      "cities": ["Crescent City"]
+    },
+    "El Dorado": {
+      "population": 193098,
+      "cities": ["Placerville", "South Lake Tahoe"]
+    },
+    "Fresno": {
+      "population": 1013581,
+      "cities": ["Clovis", "Coalinga", "Firebaugh", "Fowler", "Fresno", "Huron", "Kerman", "Kingsburg", "Mendota", "Orange Cove", "Parlier", "Reedley", "San Joaquin", "Sanger", "Selma"]
+    },
+    "Glenn": {
+      "population": 28805,
+      "cities": ["Orland", "Willows"]
+    },
+    "Humboldt": {
+      "population": 136373,
+      "cities": ["Arcata", "Blue Lake", "Eureka", "Ferndale", "Fortuna", "Rio Dell", "Trinidad"]
+    },
+    "Imperial": {
+      "population": 181827,
+      "cities": ["Brawley", "Calexico", "Calipatria", "El Centro", "Holtville", "Imperial", "Westmorland"]
+    },
+    "Inyo": {
+      "population": 19016,
+      "cities": ["Bishop"]
+    },
+    "Kern": {
+      "population": 916467,
+      "cities": ["Arvin", "Bakersfield", "California City", "Delano", "Maricopa", "McFarland", "Ridgecrest", "Shafter", "Taft", "Tehachapi", "Wasco"]
+    },
+    "Kings": {
+      "population": 153443,
+      "cities": ["Avenal", "Corcoran", "Hanford", "Lemoore"]
+    },
+    "Lake": {
+      "population": 68766,
+      "cities": ["Clearlake", "Lakeport"]
+    },
+    "Lassen": {
+      "population": 33159,
+      "cities": ["Susanville"]
+    },
+    "Los Angeles": {
+      "population": 10014009,
+      "cities": ["Agoura Hills", "Alhambra", "Arcadia", "Artesia", "Avalon", "Azusa", "Baldwin Park", "Bell", "Bell Gardens", "Bellflower", "Beverly Hills", "Bradbury", "Burbank", "Calabasas", "Carson", "Cerritos", "Claremont", "Commerce", "Compton", "Covina", "Cudahy", "Culver City", "Diamond Bar", "Downey", "Duarte", "El Monte", "El Segundo", "Gardena", "Glendale", "Glendora", "Hawaiian Gardens", "Hawthorne", "Hermosa Beach", "Hidden Hills", "Huntington Park", "Industry", "Inglewood", "Irwindale", "La Canada Flintridge", "La Habra Heights", "La Mirada", "La Puente", "La Verne", "Lakewood", "Lancaster", "Lawndale", "Lomita", "Long Beach", "Los Angeles", "Lynwood", "Malibu", "Manhattan Beach", "Maywood", "Monrovia", "Montebello", "Monterey Park", "Norwalk", "Palmdale", "Palos Verdes Estates", "Paramount", "Pasadena", "Pico Rivera", "Pomona", "Rancho Palos Verdes", "Redondo Beach", "Rolling Hills", "Rolling Hills Estates", "Rosemead", "San Dimas", "San Fernando", "San Gabriel", "San Marino", "Santa Clarita", "Santa Fe Springs", "Santa Monica", "Sierra Madre", "Signal Hill", "South El Monte", "South Gate", "South Pasadena", "Temple City", "Torrance", "Vernon", "Walnut", "West Covina", "West Hollywood", "Westlake Village", "Whittier"]
+    },
+    "Madera": {
+      "population": 159410,
+      "cities": ["Chowchilla", "Madera"]
+    },
+    "Marin": {
+      "population": 260831,
+      "cities": ["Belvedere", "Corte Madera", "Fairfax", "Larkspur", "Mill Valley", "Novato", "Ross", "San Anselmo", "San Rafael", "Sausalito", "Tiburon"]
+    },
+    "Mariposa": {
+      "population": 17795,
+      "cities": []
+    },
+    "Mendocino": {
+      "population": 91475,
+      "cities": ["Fort Bragg", "Point Arena", "Ukiah", "Willits"]
+    },
+    "Merced": {
+      "population": 286461,
+      "cities": ["Atwater", "Dos Palos", "Gustine", "Livingston", "Los Banos", "Merced"]
+    },
+    "Modoc": {
+      "population": 9612,
+      "cities": ["Alturas"]
+    },
+    "Mono": {
+      "population": 12419,
+      "cities": ["Mammoth Lakes"]
+    },
+    "Monterey": {
+      "population": 439035,
+      "cities": ["Carmel-by-the-Sea", "Del Rey Oaks", "Gonzales", "Greenfield", "King City", "Marina", "Monterey", "Pacific Grove", "Salinas", "Sand City", "Seaside", "Soledad"]
+    },
+    "Napa": {
+      "population": 138572,
+      "cities": ["American Canyon", "Calistoga", "Napa", "St. Helena", "Yountville"]
+    },
+    "Nevada": {
+      "population": 103487,
+      "cities": ["Grass Valley", "Nevada City", "Truckee"]
+    },
+    "Orange": {
+      "population": 3186989,
+      "cities": ["Aliso Viejo", "Anaheim", "Brea", "Buena Park", "Costa Mesa", "Cypress", "Dana Point", "Fountain Valley", "Fullerton", "Garden Grove", "Huntington Beach", "Irvine", "La Habra", "La Palma", "Laguna Beach", "Laguna Hills", "Laguna Niguel", "Laguna Woods", "Lake Forest", "Los Alamitos", "Mission Viejo", "Newport Beach", "Orange", "Placentia", "Rancho Santa Margarita", "San Clemente", "San Juan Capistrano", "Santa Ana", "Seal Beach", "Stanton", "Tustin", "Villa Park", "Westminster", "Yorba Linda"]
+    },
+    "Placer": {
+      "population": 412300,
+      "cities": ["Auburn", "Colfax", "Lincoln", "Loomis", "Rocklin", "Roseville"]
+    },
+    "Plumas": {
+      "population": 19790,
+      "cities": ["Portola"]
+    },
+    "Riverside": {
+      "population": 2418185,
+      "cities": ["Banning", "Beaumont", "Blythe", "Calimesa", "Canyon Lake", "Cathedral City", "Coachella", "Corona", "Desert Hot Springs", "Eastvale", "Hemet", "Indian Wells", "Indio", "Jurupa Valley", "La Quinta", "Lake Elsinore", "Menifee", "Moreno Valley", "Murrieta", "Norco", "Palm Desert", "Palm Springs", "Perris", "Rancho Mirage", "Riverside", "San Jacinto", "Temecula", "Wildomar"]
+    },
+    "Sacramento": {
+      "population": 1585055,
+      "cities": ["Citrus Heights", "Elk Grove", "Folsom", "Galt", "Isleton", "Rancho Cordova", "Sacramento"]
+    },
+    "San Benito": {
+      "population": 66677,
+      "cities": ["Hollister", "San Juan Bautista"]
+    },
+    "San Bernardino": {
+      "population": 2181654,
+      "cities": ["Adelanto", "Apple Valley", "Barstow", "Big Bear Lake", "Chino", "Chino Hills", "Colton", "Fontana", "Grand Terrace", "Hesperia", "Highland", "Loma Linda", "Montclair", "Needles", "Ontario", "Rancho Cucamonga", "Redlands", "Rialto", "San Bernardino", "Twentynine Palms", "Upland", "Victorville", "Yucaipa", "Yucca Valley"]
+    },
+    "San Diego": {
+      "population": 3298634,
+      "cities": ["Carlsbad", "Chula Vista", "Coronado", "Del Mar", "El Cajon", "Encinitas", "Escondido", "Imperial Beach", "La Mesa", "Lemon Grove", "National City", "Oceanside", "Poway", "San Diego", "San Marcos", "Santee", "Solana Beach", "Vista"]
+    },
+    "San Francisco": {
+      "population": 873965,
+      "cities": ["San Francisco"]
+    },
+    "San Joaquin": {
+      "population": 789410,
+      "cities": ["Escalon", "Lathrop", "Lodi", "Manteca", "Ripon", "Stockton", "Tracy"]
+    },
+    "San Luis Obispo": {
+      "population": 283111,
+      "cities": ["Arroyo Grande", "Atascadero", "El Paso de Robles", "Grover Beach", "Morro Bay", "Pismo Beach", "San Luis Obispo"]
+    },
+    "San Mateo": {
+      "population": 764442,
+      "cities": ["Atherton", "Belmont", "Brisbane", "Burlingame", "Colma", "Daly City", "East Palo Alto", "Foster City", "Half Moon Bay", "Hillsborough", "Menlo Park", "Millbrae", "Pacifica", "Portola Valley", "Redwood City", "San Bruno", "San Carlos", "San Mateo", "South San Francisco", "Woodside"]
+    },
+    "Santa Barbara": {
+      "population": 448229,
+      "cities": ["Buellton", "Carpinteria", "Goleta", "Guadalupe", "Lompoc", "Santa Barbara", "Santa Maria", "Solvang"]
+    },
+    "Santa Clara": {
+      "population": 1936259,
+      "cities": ["Campbell", "Cupertino", "Gilroy", "Los Altos", "Los Altos Hills", "Los Gatos", "Milpitas", "Monte Sereno", "Morgan Hill", "Mountain View", "Palo Alto", "San Jose", "Santa Clara", "Saratoga", "Sunnyvale"]
+    },
+    "Santa Cruz": {
+      "population": 270861,
+      "cities": ["Capitola", "Santa Cruz", "Scotts Valley", "Watsonville"]
+    },
+    "Shasta": {
+      "population": 182155,
+      "cities": ["Anderson", "Redding", "Shasta Lake"]
+    },
+    "Sierra": {
+      "population": 3229,
+      "cities": ["Loyalton"]
+    },
+    "Siskiyou": {
+      "population": 44118,
+      "cities": ["Dorris", "Dunsmuir", "Etna", "Fort Jones", "Montague", "Mount Shasta", "Tulelake", "Weed", "Yreka"]
+    },
+    "Solano": {
+      "population": 453491,
+      "cities": ["Benicia", "Dixon", "Fairfield", "Rio Vista", "Suisun City", "Vacaville", "Vallejo"]
+    },
+    "Sonoma": {
+      "population": 488863,
+      "cities": ["Cloverdale", "Cotati", "Healdsburg", "Petaluma", "Rohnert Park", "Santa Rosa", "Sebastopol", "Sonoma", "Windsor"]
+    },
+    "Stanislaus": {
+      "population": 552999,
+      "cities": ["Ceres", "Hughson", "Modesto", "Newman", "Oakdale", "Patterson", "Riverbank", "Turlock", "Waterford"]
+    },
+    "Sutter": {
+      "population": 99633,
+      "cities": ["Live Oak", "Yuba City"]
+    },
+    "Tehama": {
+      "population": 65498,
+      "cities": ["Corning", "Red Bluff", "Tehama"]
+    },
+    "Trinity": {
+      "population": 16060,
+      "cities": []
+    },
+    "Tulare": {
+      "population": 473117,
+      "cities": ["Dinuba", "Exeter", "Farmersville", "Lindsay", "Porterville", "Tulare", "Visalia", "Woodlake"]
+    },
+    "Tuolumne": {
+      "population": 55810,
+      "cities": ["Sonora"]
+    },
+    "Ventura": {
+      "population": 843843,
+      "cities": ["Camarillo", "Fillmore", "Moorpark", "Ojai", "Oxnard", "Port Hueneme", "San Buenaventura", "Santa Paula", "Simi Valley", "Thousand Oaks"]
+    },
+    "Yolo": {
+      "population": 216986,
+      "cities": ["Davis", "West Sacramento", "Winters", "Woodland"]
+    },
+    "Yuba": {
+      "population": 81575,
+      "cities": ["Marysville", "Wheatland"]
+    }
+  }
+}
