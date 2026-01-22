@@ -140,9 +140,9 @@ Key work:
 **Scope per bot:**
 | Bot | Frontend File | Expected URLs |
 |-----|---------------|---------------|
-| BizBot | `src/pages/BizBot.jsx` | TBD |
-| KiddoBot | `src/pages/KiddoBot.jsx` | 32 (audited 2026-01-21) |
-| WaterBot | `src/pages/WaterBot.jsx` | TBD |
+| BizBot | `src/pages/BizBot.jsx` | 1 (verified 2026-01-21) ✅ |
+| KiddoBot | `src/pages/KiddoBot.jsx` | 32 (fixed 2026-01-21) ✅ |
+| WaterBot | `src/pages/WaterBot.jsx` | 4 (verified 2026-01-21) ✅ |
 
 ---
 
