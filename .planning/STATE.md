@@ -235,6 +235,33 @@ See: 05-SUMMARY.md for full details
 **Timeouts (15):**
 - Will retry with longer timeout
 
+## Post-Production Issue: Frontend URL Blind Spot (2026-01-21)
+
+**Issue Discovered:** User testing revealed broken links in KiddoBot Program Finder decision tree.
+
+**Root Cause:** GSD project scope was limited to RAG database URLs. Frontend hardcoded URLs in JSX components were never scanned.
+
+**Scope of Damage:**
+| URL | Status | Occurrences |
+|-----|--------|-------------|
+| `mychildcare.ca.gov` | DNS dead | 4 links + 8 text refs |
+| `cde.ca.gov/sp/cd/ci/generalchildcare.asp` | 404 | 3 |
+| `cde.ca.gov/sp/cd/ci/calworksstages.asp` | 404 | 3 |
+| `cde.ca.gov/sp/cd/ci/emergchildcarebridgeprog.asp` | 404 | 1 |
+
+**Resolution:** Fixed in `vanderdev-website` commit `113d5e5` (2026-01-21)
+- Replaced dead `mychildcare.ca.gov` → `rrnetwork.org/family-services/find-child-care`
+- Updated CDE paths to current structure or CDSS equivalents (per 2021 program transfer)
+
+**Lesson Learned:**
+> "URL Remediation" must include BOTH data layer (RAG chunks, markdown files) AND presentation layer (frontend components, decision trees, hardcoded links in JSX).
+
+**Recommended Addition to Future Bot Quality Audits:**
+- Phase N: Frontend URL Audit
+  - `grep -r "https://" src/pages/*Bot.jsx src/components/*bot/`
+  - Validate all hardcoded URLs in decision trees, error messages, footers
+  - Test end-to-end user click paths, not just RAG retrieval
+
 ## Performance Metrics
 
 **Session 5 (2026-01-20 ~21:30):**

@@ -115,4 +115,49 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Content Quality Audit | 1/1 | **COMPLETE** | 2026-01-21 |
 | 3. Deduplication & Embedding Integrity | 1/1 | **COMPLETE** | 2026-01-21 |
 | 4. Chunk & Metadata Consistency | 1/1 | **COMPLETE** | 2026-01-21 |
-| 5. Query Coverage Testing | 1/1 | **PLANNED** | - |
+| 5. Query Coverage Testing | 1/1 | **COMPLETE** | 2026-01-21 |
+
+## Recommended Future Phase: Frontend URL Audit
+
+**Added:** 2026-01-21 (post-production issue discovered)
+
+### Phase 6: Frontend URL Audit (RECOMMENDED)
+**Goal**: Validate all hardcoded URLs in frontend application code (JSX components, decision trees, error messages, footers)
+**Depends on**: None (can run anytime, independent of RAG audits)
+**Research**: Unlikely (grep + HTTP validation)
+**Plans**: TBD
+
+**Why This Phase is Needed:**
+> Phases 1-5 audited the DATA LAYER (RAG chunks, markdown files, database). But bots also have a PRESENTATION LAYER with hardcoded URLs that bypass RAG entirely. User testing on 2026-01-21 revealed 11 broken URLs in KiddoBot's Program Finder decision tree that were never scanned.
+
+Key work:
+- `grep -rn "https://" src/pages/*Bot.jsx src/components/*bot/`
+- Extract all hardcoded URLs from decision trees, error messages, footers
+- HTTP HEAD validation of each URL
+- Fix broken URLs (update to current paths or replacement sites)
+- End-to-end click testing of all user-facing links
+
+**Scope per bot:**
+| Bot | Frontend File | Expected URLs |
+|-----|---------------|---------------|
+| BizBot | `src/pages/BizBot.jsx` | TBD |
+| KiddoBot | `src/pages/KiddoBot.jsx` | 32 (audited 2026-01-21) |
+| WaterBot | `src/pages/WaterBot.jsx` | TBD |
+
+---
+
+## Lessons Learned
+
+### 2026-01-21: Frontend URL Blind Spot
+
+**Issue:** User clicked a link in KiddoBot Program Finder → 404 error. Investigation revealed 11 broken URLs in the decision tree that were never scanned during Phases 1-5.
+
+**Root Cause:** Project scope was defined as "knowledge base content" which implicitly meant RAG database only. Frontend JSX components contain hardcoded URLs that exist in a completely separate code path.
+
+**Impact:**
+- 4 unique broken URLs × 11 occurrences in KiddoBot.jsx
+- Affected decision paths: Infants (75% broken), CalWORKs (67%), Foster Care (67%)
+
+**Resolution:** Fixed in `vanderdev-website` commit `113d5e5`
+
+**Prevention:** Added recommended Phase 6 (Frontend URL Audit) to this roadmap. Future bot quality projects should explicitly include both data layer AND presentation layer URL validation
