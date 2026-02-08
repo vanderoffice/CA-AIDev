@@ -1,0 +1,44 @@
+# {{PROJECT_TITLE}} — Bot Project
+
+> **Session Start:** Query memory for `{{PROJECT_NAME}}_Session_Handoff`
+
+## Project
+
+- **Track:** Bot (vanderdev-website SPA page)
+- **Schema:** {{SCHEMA_NAME}}
+- **Factory:** CA-AIDev/factory/ (shared scripts, templates)
+- **Location:** This directory
+
+## Pipeline
+
+research → presentations → knowledge base → RAG ingest → n8n workflows → frontend → deploy → final decks
+
+## Key Paths
+
+| Path | Purpose |
+|------|---------|
+| knowledge/ | Domain knowledge markdown files |
+| scripts/ | Symlinks to factory RAG pipeline |
+| research/ | Domain research outputs |
+| decks/ | Presentation deck outputs |
+| .planning/ | GSD project state |
+
+## Standards
+
+- **Knowledge docs:** Follow factory/templates/knowledge/TEMPLATE.md (7-field YAML frontmatter, H2 = chunk boundary)
+- **RAG table:** {{SCHEMA_NAME}}.document_chunks
+- **Embedding:** text-embedding-3-small, 1536 dims
+- **DB creds:** Via env vars only (see factory/.env.example)
+
+## Session End
+
+Save to memory:
+- Entity: {{PROJECT_NAME}}_Session_Handoff
+- Include: current phase/plan, what was done, what's next, any blockers
+
+## DO NOT
+
+- Hardcode database credentials or IPs
+- Create custom RAG scripts (use factory pipeline)
+- Skip memory query at session start
+- End session without saving handoff to memory

@@ -1,0 +1,45 @@
+# {{PROJECT_TITLE}} — Form Project
+
+> **Session Start:** Query memory for `{{PROJECT_NAME}}_Session_Handoff`
+
+## Project
+
+- **Track:** Form (standalone Docker container)
+- **Schema:** {{SCHEMA_NAME}}
+- **Factory:** CA-AIDev/factory/ (shared templates)
+- **Location:** This directory
+
+## Pipeline
+
+research → presentations → database schema → API layer → UI → deploy → final decks
+
+## Key Paths
+
+| Path | Purpose |
+|------|---------|
+| sql/ | Database migrations |
+| src/ | Application source code |
+| research/ | Domain research outputs |
+| decks/ | Presentation deck outputs |
+| .planning/ | GSD project state |
+
+## Standards
+
+- **Schema:** One Supabase schema per project ({{SCHEMA_NAME}})
+- **API:** Supabase PostgREST
+- **Frontend:** React + Tailwind (vanderdev.net design system)
+- **Deploy:** Docker multi-stage build, docker-compose.prod.yml
+- **DB creds:** Via env vars only
+
+## Session End
+
+Save to memory:
+- Entity: {{PROJECT_NAME}}_Session_Handoff
+- Include: current phase/plan, what was done, what's next, any blockers
+
+## DO NOT
+
+- Hardcode database credentials or IPs
+- Skip memory query at session start
+- End session without saving handoff to memory
+- Use React Router basename in navigate() paths (relative to base only)

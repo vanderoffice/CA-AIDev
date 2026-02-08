@@ -1,0 +1,232 @@
+{
+  "name": "{{BOT_NAME}} - {{DATA_ENDPOINT_NAME}}",
+  "active": false,
+  "nodes": [
+    {
+      "id": "webhook-trigger",
+      "name": "Data Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "notes": "Endpoint for data lookup requests",
+      "position": [0, 0],
+      "webhookId": "{{BOT_SLUG}}-{{DATA_SLUG}}-webhook",
+      "parameters": {
+        "path": "{{BOT_SLUG}}-{{DATA_SLUG}}",
+        "options": {
+          "allowedOrigins": "{{CORS_ORIGINS}}"
+        },
+        "httpMethod": "POST",
+        "responseMode": "responseNode"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "extract-request",
+      "name": "Extract & Validate Request",
+      "type": "n8n-nodes-base.code",
+      "notes": "Parse input fields and validate required params",
+      "position": [220, 0],
+      "parameters": {
+        "jsCode": "// CUSTOMIZE: Replace field names and validation rules for your domain\nconst body = $input.first().json.body || {};\n\n// CUSTOMIZE: Extract your required fields\nconst primaryField = body.primaryField || '';\n\n// Validation\nif (!primaryField) {\n  return {\n    json: {\n      error: true,\n      message: 'primaryField is required',\n      code: 'MISSING_REQUIRED_FIELD'\n    }\n  };\n}\n\n// CUSTOMIZE: Return all parsed fields for downstream nodes\nreturn {\n  json: {\n    error: false,\n    primaryField: primaryField,\n    optionalField: body.optionalField || null,\n    filterFlag: body.filterFlag ?? false\n  }\n};"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "check-validation",
+      "name": "Validation Failed?",
+      "type": "n8n-nodes-base.if",
+      "notes": "Route errors to error response, valid requests to query",
+      "position": [440, 0],
+      "parameters": {
+        "options": {},
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.error }}",
+              "rightValue": true
+            }
+          ]
+        }
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "query-data",
+      "name": "Query Data",
+      "type": "n8n-nodes-base.postgres",
+      "notes": "CUSTOMIZE: Replace with your domain-specific query",
+      "position": [660, -100],
+      "parameters": {
+        "query": "-- CUSTOMIZE: Replace table names, columns, JOINs, and WHERE clauses\n-- for your domain. This example shows a common pattern:\n-- main table JOIN reference table, filtered by input params.\nSELECT\n  m.id,\n  m.name,\n  m.description,\n  r.label AS category_label,\n  m.status,\n  m.notes\nFROM {{DB_SCHEMA}}.{{DATA_TABLE}} m\nJOIN {{DB_SCHEMA}}.{{DATA_TABLE_SECONDARY}} r ON m.category_code = r.code\nWHERE\n  m.primary_field = $1\n  AND (m.is_active = true OR $2 IS NOT NULL)\nORDER BY m.sort_order, m.name",
+        "options": {
+          "queryReplacement": "={{ $json.primaryField }},={{ $json.optionalField || null }}"
+        },
+        "operation": "executeQuery"
+      },
+      "credentials": {
+        "postgres": {
+          "id": "{{CREDENTIAL_POSTGRES}}",
+          "name": "Postgres account"
+        }
+      },
+      "typeVersion": 2.5
+    },
+    {
+      "id": "process-results",
+      "name": "Process Results",
+      "type": "n8n-nodes-base.code",
+      "notes": "CUSTOMIZE: Transform query results for your domain",
+      "position": [880, -100],
+      "parameters": {
+        "jsCode": "// CUSTOMIZE: Replace this entire block with your domain-specific\n// business logic. The pattern below shows a common structure:\n// - Read validated input from upstream node\n// - Read DB query results\n// - Transform/enrich/group results\n// - Return structured response envelope\n\nconst request = $('Extract & Validate Request').item.json;\nconst dbResults = $('Query Data').all();\n\n// Transform DB rows into response format\nconst items = dbResults.map(row => {\n  const record = row.json;\n  return {\n    id: record.id,\n    name: record.name,\n    description: record.description,\n    category: record.category_label,\n    status: record.status,\n    notes: record.notes\n  };\n});\n\n// CUSTOMIZE: Add any computed fields, grouping, or summaries\nconst summary = {\n  totalResults: items.length,\n  query: request.primaryField\n};\n\nreturn {\n  json: {\n    success: true,\n    summary: summary,\n    data: items\n  }\n};"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "respond-success",
+      "name": "Respond with Data",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "notes": "Return successful data response",
+      "position": [1100, -100],
+      "parameters": {
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              }
+            ]
+          }
+        },
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      },
+      "typeVersion": 1.1
+    },
+    {
+      "id": "respond-error",
+      "name": "Respond with Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "notes": "Return validation error with 400 status",
+      "position": [660, 100],
+      "parameters": {
+        "options": {
+          "responseCode": 400,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              }
+            ]
+          }
+        },
+        "respondWith": "json",
+        "responseBody": "={{ { success: false, error: $json.message, code: $json.code } }}"
+      },
+      "typeVersion": 1.1
+    }
+  ],
+  "connections": {
+    "Data Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract & Validate Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract & Validate Request": {
+      "main": [
+        [
+          {
+            "node": "Validation Failed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validation Failed?": {
+      "main": [
+        [
+          {
+            "node": "Respond with Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Query Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query Data": {
+      "main": [
+        [
+          {
+            "node": "Process Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Results": {
+      "main": [
+        [
+          {
+            "node": "Respond with Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  }
+}

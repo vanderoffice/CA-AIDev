@@ -1,0 +1,331 @@
+{
+  "name": "{{BOT_NAME}} - Chat",
+  "active": false,
+  "nodes": [
+    {
+      "id": "webhook",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "onError": "continueRegularOutput",
+      "position": [0, 0],
+      "webhookId": "{{BOT_SLUG}}-chat-webhook",
+      "parameters": {
+        "path": "{{BOT_SLUG}}",
+        "options": {
+          "rawBody": false
+        },
+        "httpMethod": "POST",
+        "responseMode": "responseNode"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "parse_request",
+      "name": "Parse Request",
+      "type": "n8n-nodes-base.code",
+      "position": [220, 0],
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body || {};\nlet userMessage = (body.message || '').trim();\nconst sessionId = body.sessionId || '{{BOT_SLUG}}-' + Date.now();\nconst messageHistory = body.messageHistory || [];\nconst {{USER_CONTEXT_FIELD}} = body.{{USER_CONTEXT_FIELD}} || null;\n\nif (!userMessage) {\n  userMessage = '[User sent empty message - greet them and ask how you can help]';\n}\n\nreturn [{\n  json: {\n    userMessage,\n    sessionId,\n    messageHistory,\n    {{USER_CONTEXT_FIELD}},\n    searchQuery: userMessage,\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "embed_query",
+      "name": "Embed Query",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [440, 0],
+      "parameters": {
+        "url": "https://api.openai.com/v1/embeddings",
+        "method": "POST",
+        "options": {},
+        "jsonBody": "={\n  \"input\": {{ JSON.stringify($json.searchQuery) }},\n  \"model\": \"text-embedding-3-small\",\n  \"dimensions\": 1536\n}",
+        "sendBody": true,
+        "sendHeaders": true,
+        "specifyBody": "json",
+        "authentication": "predefinedCredentialType",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "nodeCredentialType": "openAiApi"
+      },
+      "credentials": {
+        "openAiApi": {
+          "id": "{{CREDENTIAL_OPENAI}}",
+          "name": "OpenAi account"
+        }
+      },
+      "typeVersion": 4.2
+    },
+    {
+      "id": "prepare_search",
+      "name": "Prepare Search",
+      "type": "n8n-nodes-base.code",
+      "position": [660, 0],
+      "parameters": {
+        "jsCode": "const embedding = $input.first().json.data[0].embedding;\nconst context = $('Parse Request').first().json;\n\nconst embeddingStr = '[' + embedding.join(',') + ']';\n\nconst sqlQuery = `SELECT * FROM {{DB_SCHEMA}}.document_chunks\nWHERE embedding <=> '${embeddingStr}'::vector < {{RAG_SIMILARITY_THRESHOLD}}\nORDER BY embedding <=> '${embeddingStr}'::vector\nLIMIT {{RAG_TOP_K}};`;\n\nreturn [{\n  json: {\n    ...context,\n    embeddingStr: embeddingStr,\n    sqlQuery: sqlQuery\n  }\n}];"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "vector_search",
+      "name": "Vector Search",
+      "type": "n8n-nodes-base.postgres",
+      "onError": "continueRegularOutput",
+      "position": [880, 0],
+      "parameters": {
+        "query": "={{ $json.sqlQuery }}",
+        "options": {},
+        "operation": "executeQuery"
+      },
+      "credentials": {
+        "postgres": {
+          "id": "{{CREDENTIAL_POSTGRES}}",
+          "name": "Postgres account"
+        }
+      },
+      "typeVersion": 2.6,
+      "alwaysOutputData": true
+    },
+    {
+      "id": "handle_empty",
+      "name": "Handle Empty Results",
+      "type": "n8n-nodes-base.code",
+      "position": [1100, 0],
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nif (items.length === 0 || !items[0].json.content) {\n  return [{\n    json: {\n      content: null,\n      noResults: true\n    }\n  }];\n}\n\nreturn items;"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "build_prompt",
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.code",
+      "position": [1320, 0],
+      "parameters": {
+        "jsCode": "const chunks = $input.all().map(item => item.json);\nconst context = $('Prepare Search').first().json;\n\nfunction escapeBraces(text) {\n  if (!text) return text;\n  return text.replace(/\\{/g, '{{').replace(/\\}/g, '}}');\n}\n\nlet ragContext = '';\nlet noDocsRetrieved = false;\n\nif (chunks.length > 0 && chunks[0].content) {\n  ragContext = chunks.map((chunk, i) => {\n    const source = chunk.file_name || 'Unknown';\n    const category = chunk.category || '';\n    const safeText = escapeBraces(chunk.content);\n    return `[Source ${i+1}: ${source}${category ? ' (' + category + ')' : ''}]\\n${safeText}`;\n  }).join('\\n\\n---\\n\\n');\n} else {\n  noDocsRetrieved = true;\n  ragContext = 'No specific documents were retrieved for this query. Respond based on general knowledge, but be clear about what requires verification.';\n}\n\nlet conversationHistory = '';\nif (context.messageHistory && context.messageHistory.length > 0) {\n  conversationHistory = '\\n\\n## CONVERSATION HISTORY\\n';\n  conversationHistory += context.messageHistory.map(m => {\n    const role = m.role === 'user' ? 'User' : '{{BOT_NAME}}';\n    return `${role}: ${m.content}`;\n  }).join('\\n');\n  conversationHistory += '\\n\\nUse this history to maintain context.';\n}\n\n{{INTAKE_CONTEXT_BLOCK}}\n\nconst fallbackInstructions = noDocsRetrieved ? `\\n\\n## NO DOCUMENTS RETRIEVED\\nThe knowledge base returned no specific documents. You should:\\n- Still respond helpfully based on general knowledge\\n- For greetings, introduce yourself as {{BOT_NAME}}\\n- Direct users to {{CITATION_DOMAIN}} for official information\\n- Be honest that you're responding from general knowledge` : '';\n\nconst systemPrompt = `You are {{BOT_NAME}}, an expert assistant for {{SYSTEM_PROMPT_FACTS}}.\n${userContextSection}\n## YOUR KNOWLEDGE BASE\n${ragContext}\n\n## ROLE\n{{SYSTEM_PROMPT_ROLE}}\n${conversationHistory}${fallbackInstructions}\n\n## GUIDELINES\n- Use ONLY the provided context to answer questions\n- If the context doesn't contain the answer, say so and suggest contacting the appropriate authority\n- Be specific about requirements and processes\n- Include relevant links and contact information when available\n- Never make up regulations, deadlines, or requirements\n- Keep responses clear and under 300 words unless detail is requested\n\n## CRITICAL RULES\n- **NEVER invent specific fees, deadlines, or contact information** - only cite what appears in your knowledge base\n- It's better to say \"I don't have that specific information\" than to make something up\n\n## URL CITATION RULES\n- ONLY cite URLs that explicitly appear in YOUR KNOWLEDGE BASE section above\n- If no specific URL is in the knowledge base, say visit the official agency website instead\n- NEVER generate URLs from memory - government websites restructure frequently\n- When in doubt, direct users to {{CITATION_DOMAIN}}\n\n## FORMAT\n- Use markdown for formatting (bold, lists, links)\n- Include relevant URLs when helpful\n- End with a follow-up question when appropriate`;\n\nreturn [{\n  json: {\n    chatInput: context.userMessage,\n    sessionId: context.sessionId,\n    systemPrompt: systemPrompt,\n    chunksRetrieved: chunks.length,\n    noDocsRetrieved: noDocsRetrieved,\n    hasUserContext: !!context.{{USER_CONTEXT_FIELD}}\n  }\n}];"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "ai_agent",
+      "name": "{{BOT_NAME}} Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [1540, 0],
+      "parameters": {
+        "agent": "conversationalAgent",
+        "options": {
+          "systemMessage": "={{ $json.systemPrompt }}"
+        }
+      },
+      "typeVersion": 1.7
+    },
+    {
+      "id": "claude_model",
+      "name": "Claude Sonnet",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "position": [1540, 220],
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "{{LLM_MODEL}}"
+        },
+        "options": {
+          "temperature": "{{LLM_TEMPERATURE}}",
+          "maxTokensToSample": "{{LLM_MAX_TOKENS}}"
+        }
+      },
+      "credentials": {
+        "anthropicApi": {
+          "id": "{{CREDENTIAL_ANTHROPIC}}",
+          "name": "Anthropic account"
+        }
+      },
+      "typeVersion": 1.3
+    },
+    {
+      "id": "memory",
+      "name": "Conversation Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "position": [1700, 340],
+      "parameters": {
+        "sessionKey": "={{ $('Build Prompt').first().json.sessionId }}",
+        "sessionIdType": "customKey",
+        "contextWindowLength": "{{MEMORY_WINDOW}}"
+      },
+      "typeVersion": 1.3
+    },
+    {
+      "id": "format_response",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.code",
+      "position": [1760, 0],
+      "parameters": {
+        "jsCode": "const agentOutput = $input.first().json.output || $input.first().json.text || '';\nconst context = $('Build Prompt').first().json;\n\nconst vectorSearchOutput = $('Vector Search').all();\nconst sources = vectorSearchOutput.slice(0, 3).map((item, i) => {\n  const chunk = item.json;\n  return {\n    fileName: chunk.file_name || 'N/A',\n    category: chunk.category || '',\n    similarity: chunk.similarity || 'N/A'\n  };\n});\n\nreturn [{\n  json: {\n    response: agentOutput,\n    sessionId: context.sessionId,\n    sources: sources,\n    chunksUsed: context.chunksRetrieved\n  }\n}];"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "respond",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [1980, 0],
+      "parameters": {
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              }
+            ]
+          }
+        },
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      },
+      "typeVersion": 1.1
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Parse Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Request": {
+      "main": [
+        [
+          {
+            "node": "Embed Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embed Query": {
+      "main": [
+        [
+          {
+            "node": "Prepare Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Search": {
+      "main": [
+        [
+          {
+            "node": "Vector Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Search": {
+      "main": [
+        [
+          {
+            "node": "Handle Empty Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Empty Results": {
+      "main": [
+        [
+          {
+            "node": "Build Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Prompt": {
+      "main": [
+        [
+          {
+            "node": "{{BOT_NAME}} Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude Sonnet": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "{{BOT_NAME}} Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Conversation Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "{{BOT_NAME}} Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "{{BOT_NAME}} Agent": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  }
+}

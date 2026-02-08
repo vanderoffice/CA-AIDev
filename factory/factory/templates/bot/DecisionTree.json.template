@@ -1,0 +1,133 @@
+{
+  "_comment": "Decision tree template for {{BOT_NAME}}. Generated from factory/templates/bot/DecisionTree.json.template. Replace {{PLACEHOLDER}} tokens with domain-specific values. Must conform to factory/templates/knowledge/decision-tree-schema.json. Copy this file to src/data/{{BOT_SLUG}}-decision-tree.json and populate with real decision logic.",
+  "version": "1.0.0",
+  "lastUpdated": "{{CREATED_DATE}}",
+  "metadata": {
+    "title": "{{BOT_NAME}} {{TOOL_NAME}}",
+    "description": "{{BOT_DESCRIPTION}}",
+    "disclaimer": "This tool provides general guidance only. For official information, consult the appropriate agency."
+  },
+  "nodes": {
+    "start": {
+      "id": "start",
+      "type": "question",
+      "title": "What best describes your situation?",
+      "helpText": "Select the option that most closely matches what you need help with. You can always go back and choose a different path.",
+      "options": [
+        {
+          "id": "opt_category_a",
+          "label": "Category A",
+          "description": "Description of the first major category",
+          "icon": "default",
+          "next": "category_a"
+        },
+        {
+          "id": "opt_category_b",
+          "label": "Category B",
+          "description": "Description of the second major category",
+          "icon": "default",
+          "next": "category_b"
+        },
+        {
+          "id": "opt_category_c",
+          "label": "Category C",
+          "description": "Description of the third major category",
+          "icon": "default",
+          "next": "result_general"
+        }
+      ]
+    },
+    "category_a": {
+      "id": "category_a",
+      "type": "question",
+      "title": "Tell us more about your Category A situation",
+      "helpText": "This helps us narrow down the specific guidance you need.",
+      "options": [
+        {
+          "id": "opt_a_specific",
+          "label": "Specific Sub-type",
+          "description": "A more specific scenario within Category A",
+          "next": "result_a_specific"
+        },
+        {
+          "id": "opt_a_general",
+          "label": "General / Other",
+          "description": "General Category A question or something not listed above",
+          "next": "result_a_general"
+        }
+      ]
+    },
+    "category_b": {
+      "id": "category_b",
+      "type": "question",
+      "title": "What type of Category B assistance do you need?",
+      "options": [
+        {
+          "id": "opt_b_type_1",
+          "label": "Type 1",
+          "description": "First type within Category B",
+          "next": "result_b"
+        },
+        {
+          "id": "opt_b_type_2",
+          "label": "Type 2",
+          "description": "Second type within Category B",
+          "next": "result_b"
+        }
+      ]
+    },
+    "result_a_specific": {
+      "id": "result_a_specific",
+      "type": "result",
+      "title": "Category A — Specific Guidance",
+      "description": "Based on your answers, here is the specific guidance for your situation. Replace this description with real domain content after scaffolding.",
+      "ragQuery": "What are the requirements and process for Category A specific sub-type?",
+      "links": [
+        {
+          "label": "Official Agency Page",
+          "url": "https://example.ca.gov/category-a"
+        },
+        {
+          "label": "Application Portal",
+          "url": "https://example.ca.gov/apply"
+        }
+      ]
+    },
+    "result_a_general": {
+      "id": "result_a_general",
+      "type": "result",
+      "title": "Category A — General Information",
+      "description": "General guidance for Category A situations. This result node demonstrates a result without links but with a RAG query for additional context.",
+      "ragQuery": "General overview and requirements for Category A"
+    },
+    "result_b": {
+      "id": "result_b",
+      "type": "result",
+      "title": "Category B Results",
+      "description": "Guidance for Category B situations. This result node demonstrates a result with links but no RAG query.",
+      "links": [
+        {
+          "label": "Category B Resources",
+          "url": "https://example.ca.gov/category-b"
+        }
+      ]
+    },
+    "result_general": {
+      "id": "result_general",
+      "type": "result",
+      "title": "General Guidance",
+      "description": "This is a direct result from the start node, demonstrating that options can skip intermediate questions and go straight to a result. Replace with real guidance content.",
+      "ragQuery": "General overview and getting started guide for {{BOT_NAME}}",
+      "links": [
+        {
+          "label": "Getting Started Guide",
+          "url": "https://example.ca.gov/getting-started"
+        },
+        {
+          "label": "Contact Us",
+          "url": "https://example.ca.gov/contact"
+        }
+      ]
+    }
+  }
+}

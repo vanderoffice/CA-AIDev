@@ -1,0 +1,218 @@
+# {{DOMAIN_TITLE}}: Technical Architecture Assessment
+
+> {{DATE}} · Developer Audience
+> Domain: {{DOMAIN_SLUG}} · Track: {{RECOMMENDED_TRACK}}
+
+---
+
+## Architecture Overview
+
+{{ARCHITECTURE_OVERVIEW}}
+
+:::diagram architecture
+Components: {{ARCHITECTURE_COMPONENTS}}
+Flow: {{ARCHITECTURE_FLOW}}
+:::
+
+<!-- Presenter note: Set the landscape before diving into specifics. Show how pieces connect. -->
+
+---
+
+## System Landscape
+
+{{SYSTEM_LANDSCAPE}}
+
+:::diagram mermaid
+graph TB
+    {{SYSTEM_DIAGRAM_NODES}}
+:::
+
+---
+
+## Data Sources & APIs
+
+| Source | Type | Format | Auth | Rate Limit |
+|--------|------|--------|------|------------|
+| {{DATA_SOURCE_1_NAME}} | {{DATA_SOURCE_1_TYPE}} | {{DATA_SOURCE_1_FORMAT}} | {{DATA_SOURCE_1_AUTH}} | {{DATA_SOURCE_1_RATE}} |
+| {{DATA_SOURCE_2_NAME}} | {{DATA_SOURCE_2_TYPE}} | {{DATA_SOURCE_2_FORMAT}} | {{DATA_SOURCE_2_AUTH}} | {{DATA_SOURCE_2_RATE}} |
+| {{DATA_SOURCE_3_NAME}} | {{DATA_SOURCE_3_TYPE}} | {{DATA_SOURCE_3_FORMAT}} | {{DATA_SOURCE_3_AUTH}} | {{DATA_SOURCE_3_RATE}} |
+| {{DATA_SOURCE_4_NAME}} | {{DATA_SOURCE_4_TYPE}} | {{DATA_SOURCE_4_FORMAT}} | {{DATA_SOURCE_4_AUTH}} | {{DATA_SOURCE_4_RATE}} |
+
+:::collapse API Integration Notes
+{{API_INTEGRATION_NOTES}}
+:::
+
+---
+
+## Integration Points
+
+:::diagram flowchart
+Components:
+- {{INTEGRATION_COMPONENT_1}}
+- {{INTEGRATION_COMPONENT_2}}
+- {{INTEGRATION_COMPONENT_3}}
+- {{INTEGRATION_COMPONENT_4}}
+
+Data flow: {{INTEGRATION_FLOW}}
+:::
+
+{{INTEGRATION_DESCRIPTION}}
+
+---
+
+## RAG Pipeline Fit
+
+{{RAG_SUITABILITY}}
+
+:::chart bar
+| RAG Dimension | Score |
+|---------------|-------|
+| Content Volume | {{RAG_SCORE_VOLUME}} |
+| Update Frequency | {{RAG_SCORE_FREQUENCY}} |
+| Query Complexity | {{RAG_SCORE_COMPLEXITY}} |
+| Citation Need | {{RAG_SCORE_CITATION}} |
+| Decision Tree Fit | {{RAG_SCORE_DECISION_TREE}} |
+:::
+
+:::collapse RAG Pipeline Mapping
+**Chunk strategy:** {{RAG_CHUNK_STRATEGY}}
+**Embedding model:** {{RAG_EMBEDDING_MODEL}}
+**Retrieval approach:** {{RAG_RETRIEVAL_APPROACH}}
+:::
+
+<!-- Presenter note: This maps to the factory's standard RAG pipeline. Scores indicate how well this domain fits the pattern. -->
+
+---
+
+## Architecture Recommendation
+
+:::diagram architecture
+Components: {{RECOMMENDED_ARCHITECTURE_COMPONENTS}}
+Flow: {{RECOMMENDED_ARCHITECTURE_FLOW}}
+:::
+
+{{ARCHITECTURE_RECOMMENDATION_DETAIL}}
+
+---
+
+## Risk Registry
+
+| Risk | Likelihood | Impact | Mitigation |
+|------|-----------|--------|------------|
+{{RISK_ROWS}}
+
+:::collapse Risk Analysis Detail
+{{RISK_ANALYSIS_DETAIL}}
+:::
+
+---
+
+## Complexity Estimate
+
+{{COMPLEXITY_ASSESSMENT}}
+
+:::chart bar
+| Component | Complexity (1-10) |
+|-----------|-------------------|
+| {{COMPLEXITY_COMPONENT_1}} | {{COMPLEXITY_SCORE_1}} |
+| {{COMPLEXITY_COMPONENT_2}} | {{COMPLEXITY_SCORE_2}} |
+| {{COMPLEXITY_COMPONENT_3}} | {{COMPLEXITY_SCORE_3}} |
+| {{COMPLEXITY_COMPONENT_4}} | {{COMPLEXITY_SCORE_4}} |
+| {{COMPLEXITY_COMPONENT_5}} | {{COMPLEXITY_SCORE_5}} |
+:::
+
+---
+
+## Implementation Phases
+
+{{IMPLEMENTATION_PHASES_SUMMARY}}
+
+:::diagram mermaid
+gantt
+    title {{DOMAIN_TITLE}} Development Phases
+    dateFormat YYYY-MM-DD
+
+    section Foundation
+    {{DEV_PHASE_1}}
+
+    section Core
+    {{DEV_PHASE_2}}
+
+    section Integration
+    {{DEV_PHASE_3}}
+
+    section Polish
+    {{DEV_PHASE_4}}
+:::
+
+<!-- Presenter note: Phases map to GSD roadmap template from Phase 2. Reference bot-ROADMAP.md or form-ROADMAP.md depending on track. -->
+
+---
+
+## Dependencies & Prerequisites
+
+{{DEPENDENCIES_SUMMARY}}
+
+| Dependency | Type | Status | Blocker? |
+|------------|------|--------|----------|
+| {{DEP_1_NAME}} | {{DEP_1_TYPE}} | {{DEP_1_STATUS}} | {{DEP_1_BLOCKER}} |
+| {{DEP_2_NAME}} | {{DEP_2_TYPE}} | {{DEP_2_STATUS}} | {{DEP_2_BLOCKER}} |
+| {{DEP_3_NAME}} | {{DEP_3_TYPE}} | {{DEP_3_STATUS}} | {{DEP_3_BLOCKER}} |
+
+---
+
+## Tech Stack
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| Frontend | {{TECH_FRONTEND}} | {{TECH_FRONTEND_PURPOSE}} |
+| Backend | {{TECH_BACKEND}} | {{TECH_BACKEND_PURPOSE}} |
+| Database | {{TECH_DATABASE}} | {{TECH_DATABASE_PURPOSE}} |
+| AI/ML | {{TECH_AI}} | {{TECH_AI_PURPOSE}} |
+| Hosting | {{TECH_HOSTING}} | {{TECH_HOSTING_PURPOSE}} |
+| Orchestration | {{TECH_ORCHESTRATION}} | {{TECH_ORCHESTRATION_PURPOSE}} |
+
+:::collapse Stack Rationale
+{{TECH_STACK_RATIONALE}}
+:::
+
+---
+
+## Development Timeline
+
+:::diagram mermaid
+gantt
+    title {{DOMAIN_TITLE}} — Estimated Development Timeline
+    dateFormat YYYY-MM-DD
+
+    section Phase 1 — Foundation
+    {{TIMELINE_FOUNDATION}}
+
+    section Phase 2 — Scaffolding
+    {{TIMELINE_SCAFFOLDING}}
+
+    section Phase 3 — Core Build
+    {{TIMELINE_CORE}}
+
+    section Phase 4 — Integration
+    {{TIMELINE_INTEGRATION}}
+
+    section Phase 5 — Deploy
+    {{TIMELINE_DEPLOY}}
+:::
+
+---
+
+## Open Questions
+
+{{OPEN_QUESTIONS}}
+
+---
+
+## Sources
+
+{{SOURCES_LIST}}
+
+---
+
+*Generated by Government Automation Factory · {{DATE}}*

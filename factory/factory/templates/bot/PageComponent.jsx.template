@@ -1,0 +1,422 @@
+/**
+ * {{BOT_NAME}}Page.jsx
+ *
+ * {{BOT_DESCRIPTION}}
+ *
+ * Generated from factory/templates/bot/PageComponent.jsx.template
+ * Placeholders replaced by scaffold.sh --track bot
+ *
+ * PLACEHOLDERS:
+ *   {{BOT_NAME}}        — Display name (e.g., "WaterBot", "HousingBot")
+ *                          Source: scaffold.sh --name flag
+ *   {{BOT_SLUG}}        — Lowercase identifier (e.g., "waterbot", "housingbot")
+ *                          Source: scaffold.sh derives from BOT_NAME
+ *   {{BOT_DESCRIPTION}} — One-line tagline for the choice screen
+ *                          Source: scaffold.sh --description flag
+ *   {{BOT_ICON}}        — Icon component name from Icons.jsx (e.g., "Droplets", "Home")
+ *                          Source: scaffold.sh --icon flag
+ *   {{SCHEMA_NAME}}     — Supabase schema (e.g., "waterbot", "housing")
+ *                          Source: scaffold.sh --schema flag or defaults to BOT_SLUG
+ *   {{CHAT_WEBHOOK_URL}} — n8n chat orchestrator webhook endpoint
+ *                          Source: scaffold.sh --chat-webhook flag
+ *   {{TOOL_WEBHOOK_URL}} — n8n tool/RAG webhook endpoint (for decision tree RAG button)
+ *                          Source: scaffold.sh --tool-webhook flag
+ *   {{PRIMARY_COLOR}}   — Tailwind accent color class (e.g., "blue", "emerald", "orange")
+ *                          Source: scaffold.sh --color flag
+ *   {{TOOL_NAME}}       — Display name for the decision tree tool (e.g., "Permit Finder")
+ *                          Source: scaffold.sh --tool-name flag
+ */
+
+import { useState, useRef, useEffect } from 'react'
+import {
+  ChatMessage,
+  DecisionTreeView,
+  RAGButton,
+  autoLinkUrls,
+} from '../lib/bots'
+import BotHeader from '../components/BotHeader'
+import useBotPersistence from '../hooks/useBotPersistence'
+import { {{BOT_ICON}}, Send, User, Loader, MessageSquare, ArrowRight, Search } from '../components/Icons'
+
+// Bot-specific imports — intake form is always custom per bot
+import IntakeForm from '../components/{{BOT_SLUG}}/IntakeForm'
+
+// Decision tree JSON — populated by knowledge pipeline (Phase 1)
+import decisionTreeData from '../../public/data/{{BOT_SLUG}}-decision-tree.json'
+
+// n8n webhook endpoints
+// Populated by scaffold.sh from n8n-templates (Phase 4)
+const CHAT_WEBHOOK_URL = '{{CHAT_WEBHOOK_URL}}'
+const TOOL_WEBHOOK_URL = '{{TOOL_WEBHOOK_URL}}'
+
+// ─── Mode options for the landing/choice screen ─────────────────────────
+const MODES = [
+  {
+    id: 'intake',
+    icon: User,
+    title: 'Personalized Help',
+    description: 'Answer a few questions for tailored guidance.',
+    color: '{{PRIMARY_COLOR}}'
+  },
+  {
+    id: 'chat',
+    icon: MessageSquare,
+    title: 'Ask {{BOT_NAME}}',
+    description: 'Skip setup and ask questions directly.',
+    color: '{{PRIMARY_COLOR}}'
+  },
+  {
+    id: 'tool',
+    icon: Search,
+    title: '{{TOOL_NAME}}',
+    description: 'Navigate a guided decision tree for specific answers.',
+    color: '{{PRIMARY_COLOR}}'
+  }
+]
+
+// ─── Suggested questions for empty chat state ───────────────────────────
+// Replace these with domain-specific starter questions after scaffolding
+const SUGGESTED_QUESTIONS = [
+  'What services do you provide?',
+  'How do I get started?',
+  'What are the requirements?',
+  'Who should I contact for help?'
+]
+
+// ─── Component ──────────────────────────────────────────────────────────
+
+export default function {{BOT_NAME}}Page() {
+  // Persisted state via sessionStorage (survives page refreshes)
+  const {
+    sessionId,
+    messages,
+    mode,
+    context,
+    setMessages,
+    setMode,
+    setContext,
+    reset
+  } = useBotPersistence('{{BOT_SLUG}}')
+
+  // Local state (not persisted across refreshes)
+  const [input, setInput] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const messagesEndRef = useRef(null)
+  const inputRef = useRef(null)
+
+  // ─── Effects ────────────────────────────────────────────────────────
+
+  // Auto-scroll to bottom when new messages arrive
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages])
+
+  // Focus input when entering chat mode
+  useEffect(() => {
+    if (mode === 'chat') {
+      inputRef.current?.focus()
+    }
+  }, [mode])
+
+  // ─── Handlers ───────────────────────────────────────────────────────
+
+  // Handle intake form completion — save context and enter chat
+  const handleIntakeComplete = (intakeContext) => {
+    setContext(intakeContext)
+    setMode('chat')
+  }
+
+  // Send message to the chat webhook
+  const sendMessage = async (messageText) => {
+    if (!messageText.trim() || isLoading) return
+
+    const userMessage = { role: 'user', content: messageText.trim() }
+    setMessages(prev => [...prev, userMessage])
+    setInput('')
+    setIsLoading(true)
+
+    try {
+      const response = await fetch(CHAT_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: messageText.trim(),
+          sessionId,
+          messageHistory: messages.map(m => ({ role: m.role, content: m.content })),
+          // Include intake context for personalized responses
+          context: context || undefined
+        })
+      })
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
+      const data = await response.json()
+      const assistantMessage = {
+        role: 'assistant',
+        content: data.response || 'I apologize, but I was unable to generate a response. Please try again.',
+        sources: data.sources || []
+      }
+      setMessages(prev => [...prev, assistantMessage])
+    } catch (error) {
+      console.error('{{BOT_NAME}} error:', error)
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: 'I apologize, but I encountered an error. Please try again.',
+        error: true
+      }])
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    sendMessage(input)
+  }
+
+  const handleModeSelect = (selectedMode) => {
+    if (selectedMode.disabled) return
+    setMode(selectedMode.id)
+  }
+
+  const handleSuggestedQuestion = (question) => {
+    sendMessage(question)
+  }
+
+  // ─── Intake Form Screen ─────────────────────────────────────────────
+
+  if (mode === 'intake') {
+    return (
+      <IntakeForm
+        onComplete={handleIntakeComplete}
+        onSkip={() => setMode('chat')}
+        onBack={() => setMode('choice')}
+      />
+    )
+  }
+
+  // ─── Decision Tree / Tool Screen ────────────────────────────────────
+
+  if (mode === 'tool') {
+    return (
+      <DecisionTreeView
+        tree={decisionTreeData}
+        title="{{TOOL_NAME}}"
+        subtitle="{{BOT_DESCRIPTION}}"
+        accentColor="{{PRIMARY_COLOR}}"
+        onBack={() => setMode('choice')}
+        ragButton={(node) => (
+          <RAGButton
+            webhookUrl={TOOL_WEBHOOK_URL}
+            query={node.ragQuery}
+            context={{ sessionId }}
+            accentColor="{{PRIMARY_COLOR}}"
+          />
+        )}
+      />
+    )
+  }
+
+  // ─── Choice Screen ──────────────────────────────────────────────────
+
+  if (mode === 'choice') {
+    return (
+      <div className="h-full flex flex-col animate-in fade-in duration-500">
+        {/* Header */}
+        <header className="flex justify-between items-end border-b border-neutral-800 pb-6 mb-6">
+          <div>
+            <h1 className="text-3xl font-bold text-white glow-text mb-1">{{BOT_NAME}}</h1>
+            <p className="text-neutral-500 text-sm">{{BOT_DESCRIPTION}}</p>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-neutral-500">
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            Online
+          </div>
+        </header>
+
+        {/* Welcome */}
+        <div className="flex items-start gap-4 mb-6 pb-6 border-b border-neutral-800">
+          <div className={`w-12 h-12 rounded-full bg-{{PRIMARY_COLOR}}-500/20 text-{{PRIMARY_COLOR}}-500 flex items-center justify-center flex-shrink-0`}>
+            <{{BOT_ICON}} size={24} />
+          </div>
+          <div>
+            <h2 className="text-lg font-medium text-white mb-2">Welcome!</h2>
+            <p className="text-neutral-400 text-sm leading-relaxed">
+              {/* Replace this welcome text with domain-specific messaging after scaffolding */}
+              Choose how you'd like to get started. You can chat directly, answer a few
+              questions for personalized help, or use the guided tool.
+            </p>
+          </div>
+        </div>
+
+        {/* Mode Selection */}
+        <div className="grid gap-4">
+          {MODES.map(m => (
+            <button
+              key={m.id}
+              onClick={() => handleModeSelect(m)}
+              disabled={m.disabled}
+              className={`group flex items-center gap-4 p-4 bg-neutral-900 border border-neutral-800 rounded-lg transition-all text-left ${
+                m.disabled
+                  ? 'opacity-50 cursor-not-allowed'
+                  : `hover:border-{{PRIMARY_COLOR}}-500/50`
+              }`}
+            >
+              <div className={`w-10 h-10 rounded-full bg-${m.color}-500/20 text-${m.color}-500 flex items-center justify-center ${!m.disabled && 'group-hover:scale-110'} transition-transform`}>
+                <m.icon size={20} />
+              </div>
+              <div className="flex-1">
+                <h3 className={`font-medium text-white ${!m.disabled && `group-hover:text-{{PRIMARY_COLOR}}-400`} transition-colors`}>
+                  {m.title}
+                </h3>
+                <p className="text-sm text-neutral-500">{m.description}</p>
+              </div>
+              {!m.disabled && (
+                <ArrowRight size={20} className={`text-neutral-600 group-hover:text-{{PRIMARY_COLOR}}-500 group-hover:translate-x-1 transition-all`} />
+              )}
+            </button>
+          ))}
+        </div>
+
+        {/* Footer */}
+        <div className="mt-auto pt-6 text-center">
+          <p className="text-xs text-neutral-600">
+            {{BOT_NAME}} provides general information only. This is not legal or professional advice.
+          </p>
+        </div>
+      </div>
+    )
+  }
+
+  // ─── Chat Interface (default) ───────────────────────────────────────
+
+  return (
+    <div className="h-full flex flex-col animate-in fade-in duration-500">
+      {/* Header */}
+      <BotHeader
+        title="{{BOT_NAME}}"
+        subtitle="{{BOT_DESCRIPTION}}"
+        mode={mode}
+        messages={messages}
+        onBack={() => {
+          setMode('choice')
+          setMessages([])
+        }}
+        onReset={reset}
+      />
+
+      {/* Chat Container */}
+      <div className="flex-1 bg-neutral-900 border border-neutral-800 rounded-lg glow-box flex flex-col overflow-hidden">
+        {/* Messages Area */}
+        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          {/* Empty state with suggestions */}
+          {messages.length === 0 && (
+            <div className="text-center py-8">
+              <div className={`w-16 h-16 rounded-full bg-{{PRIMARY_COLOR}}-500/20 flex items-center justify-center mx-auto mb-4`}>
+                <{{BOT_ICON}} size={32} className={`text-{{PRIMARY_COLOR}}-500`} />
+              </div>
+              <h2 className="text-lg font-semibold text-white mb-2">How can I help you today?</h2>
+
+              {/* Show context if intake was completed */}
+              {context && (
+                <div className={`mb-4 px-4 py-2 bg-{{PRIMARY_COLOR}}-900/20 border border-{{PRIMARY_COLOR}}-700/30 rounded-lg inline-block`}>
+                  <p className={`text-xs text-{{PRIMARY_COLOR}}-300`}>
+                    {/* Customize this to display relevant intake context fields */}
+                    Personalized session active
+                  </p>
+                </div>
+              )}
+
+              <p className="text-neutral-400 text-sm mb-4">
+                {/* Replace with domain-specific prompt text */}
+                Ask me anything to get started.
+              </p>
+
+              {/* Suggested questions */}
+              <div>
+                <p className="text-xs text-neutral-500 uppercase tracking-wide mb-2">Try asking</p>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {SUGGESTED_QUESTIONS.map((question, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSuggestedQuestion(question)}
+                      className={`px-3 py-2 bg-neutral-800/50 border border-neutral-700/50 rounded-full text-xs text-neutral-400 hover:border-{{PRIMARY_COLOR}}-500/50 hover:text-white transition-colors`}
+                    >
+                      {question}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Messages */}
+          {messages.map((message, idx) => (
+            <div
+              key={idx}
+              className={`flex gap-3 ${message.role === 'user' ? 'flex-row-reverse' : ''}`}
+            >
+              {/* Avatar */}
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                message.role === 'user'
+                  ? `bg-{{PRIMARY_COLOR}}-500/20 text-{{PRIMARY_COLOR}}-500`
+                  : `bg-{{PRIMARY_COLOR}}-500/20 text-{{PRIMARY_COLOR}}-500`
+              }`}>
+                {message.role === 'user' ? <User size={16} /> : <{{BOT_ICON}} size={16} />}
+              </div>
+
+              {/* Message Bubble */}
+              <div className={`max-w-[80%] rounded-lg px-4 py-3 ${
+                message.role === 'user'
+                  ? `bg-{{PRIMARY_COLOR}}-500/10 border border-{{PRIMARY_COLOR}}-500/20 text-white`
+                  : message.error
+                    ? 'bg-red-900/30 border border-red-700/50 text-red-200'
+                    : 'bg-neutral-800 border border-neutral-700 text-gray-200'
+              }`}>
+                <ChatMessage message={message} linkColor="{{PRIMARY_COLOR}}" />
+              </div>
+            </div>
+          ))}
+
+          {/* Loading indicator */}
+          {isLoading && (
+            <div className="flex gap-3">
+              <div className={`w-8 h-8 rounded-full bg-{{PRIMARY_COLOR}}-500/20 text-{{PRIMARY_COLOR}}-500 flex items-center justify-center`}>
+                <{{BOT_ICON}} size={16} />
+              </div>
+              <div className="bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3">
+                <Loader size={16} className="animate-spin text-neutral-400" />
+              </div>
+            </div>
+          )}
+
+          <div ref={messagesEndRef} />
+        </div>
+
+        {/* Input Area */}
+        <form onSubmit={handleSubmit} className="p-4 border-t border-neutral-800">
+          <div className="flex gap-3">
+            <input
+              ref={inputRef}
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Type your question..."
+              disabled={isLoading}
+              className={`flex-1 bg-black border border-neutral-700 rounded-lg px-4 py-3 text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-{{PRIMARY_COLOR}}-500 transition-colors disabled:opacity-50`}
+            />
+            <button
+              type="submit"
+              disabled={isLoading || !input.trim()}
+              className={`bg-{{PRIMARY_COLOR}}-500 hover:bg-{{PRIMARY_COLOR}}-600 disabled:bg-neutral-700 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg transition-colors flex items-center gap-2`}
+            >
+              <Send size={16} />
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
