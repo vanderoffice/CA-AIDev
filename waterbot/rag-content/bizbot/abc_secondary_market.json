@@ -1,0 +1,16 @@
+{
+  "documents": [
+    {
+      "content": "# California Type 47 License Secondary Market Guide (2026)\n\n## Why Buy on the Secondary Market?\n\nBecause Type 47 (full liquor) licenses are population-limited (1 per 2,000 persons per county), most restaurateurs in major metro areas must purchase an existing license rather than apply for a new one.\n\n### Current Secondary Market Prices (Los Angeles County)\n\n| License Type | Typical Price Range | Notes |\n|--------------|---------------------|-------|\n| Type 47 (Full Liquor) | $85,000 - $100,000 | Base license only |\n| + Broker Commission | $5,500 - $6,500 | 5-6% typical |\n| + Priority App Fee | $19,840 | State fee |\n| **Total Acquisition** | **$110,000 - $130,000** | All-in cost |\n\n### Why So Expensive?\n1. **Supply Constraint:** Limited by population formula\n2. **High Demand:** LA County has thousands of restaurants\n3. **No New Licenses:** State rarely issues new Type 47s in populated areas\n4. **Investment Value:** Licenses can be sold later (appreciating asset)\n\n### The Purchase Process\n1. **Find a License:** Through licensed ABC broker\n2. **Escrow:** Funds held until transfer approved\n3. **ABC Application:** Submit person-to-person transfer ($1,565)\n4. **30-Day Posting:** Required public notice period\n5. **ABC Review:** Background check, premises inspection\n6. **Transfer Approval:** ~75 days total\n\n### Licensed ABC Brokers\nABC requires using licensed brokers for transfers. Find brokers at:\nhttps://www.abc.ca.gov/licensing/\n\n### Alternatives to Type 47 Purchase\n- **Type 41:** Beer/wine only (no quota, much cheaper)\n- **New Type 87 Licenses:** See AB 828 - LA County only\n- **SB 395 SF Licenses:** San Francisco hospitality zone\n- **LA RBP Program:** Streamlined permitting in eligible areas\n\n### LA District Office Contact\n- Address: 888 S Figueroa Street, Suite 320, Los Angeles, CA 90013\n- Phone: (213) 833-6043\n- Email: abc-la-do@abc.ca.gov",
+      "metadata": {
+        "category": "Industry-Specific Licenses",
+        "subcategory": "ABC Liquor Licensing",
+        "topic": "Secondary Market Pricing",
+        "source_urls": ["https://www.abc.ca.gov/licensing/", "https://www.abc.ca.gov/licensing/license-lookup/"],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2026",
+        "location_specific": "Los Angeles County"
+      }
+    }
+  ]
+}

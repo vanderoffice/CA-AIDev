@@ -1,0 +1,18 @@
+{
+  "documents": [
+    {
+      "content": "# NPDES Permit Fee Schedule (2025-26)\n\n## Municipal Stormwater Permits (MS4)\n\nFees based on population served:\n\n| Population Served | Annual Fee |\n|-------------------|------------|\n| ≥ 250,000 | $27,293 |\n| 100,000 - 249,999 | $21,835 |\n| 50,000 - 99,999 | $18,196 |\n| 25,000 - 49,999 | $18,196 |\n| 10,000 - 24,999 | $10,920 |\n| 1,000 - 9,999 | $7,279 |\n| < 1,000 | $3,641 |\n\n## Industrial Stormwater Permits\n\nFees based on acres of industrial activity:\n\n| Industrial Acres | Annual Fee |\n|------------------|------------|\n| < 1 acre | $1,701 |\n| 1 to < 5 acres | $1,723 |\n| ≥ 5 acres | $1,873 |\n\n## Construction Stormwater Permits\n\n### General Construction Permit\n- **Base fee:** $511\n- **Plus:** $54 per acre of disturbed area\n- **Maximum:** $11,311\n- Calculated on total acreage disturbed over project life\n\n### Rainfall Erosivity Waiver (Small Projects)\n- **Fee:** $200\n- For small construction projects meeting waiver criteria\n\n### Broadband Projects (E.O. N-73-20)\n- **Annual fee:** $10,000\n- **Plus:** $54 per acre\n- For programmatic statewide broadband construction\n\n## Individual NPDES Permits\n\nFees vary by:\n- Discharge type\n- Volume\n- Receiving water sensitivity\n- Contact your [Regional Water Board](https://www.waterboards.ca.gov/waterboards_map.html) for specifics\n\n## Fee Payment\n\n### When to Pay\n- Annual fees: Due each fiscal year\n- Application fees: At time of application\n- Construction: Before permit issuance\n\n### How to Pay\n- Electronic payment preferred\n- Check payable to State Water Board\n- Include permit number on payment\n\n## Fee Adjustments\n\n- Fees may increase annually with CPI\n- Check the [current fee schedule](https://www.waterboards.ca.gov/resources/fees/water_quality/) before applying\n- FY 2025-26 schedule effective July 1, 2025\n\n## Contact\n\n**Fee Information:** [Water Quality Fee Schedule](https://www.waterboards.ca.gov/resources/fees/water_quality/)\n**Fee Schedule Document:** [FY 2025-26 Fee Schedule (PDF)](https://www.waterboards.ca.gov/resources/fees/stakeholder/docs/2025/fy2526-wq-feeschedule.pdf)\n\n## Take Action\n\n1. **Look up your fee category** -- Review the [FY 2025-26 Fee Schedule (PDF)](https://www.waterboards.ca.gov/resources/fees/stakeholder/docs/2025/fy2526-wq-feeschedule.pdf) for specific fee amounts by permit type.\n2. **Calculate your stormwater fees** -- Visit the [Water Quality Fee Schedule](https://www.waterboards.ca.gov/resources/fees/water_quality/) page for fee calculators and additional guidance.\n3. **Contact your Regional Board** -- Use the [Waterboards Map](https://www.waterboards.ca.gov/waterboards_map.html) to find fee contacts for individual NPDES permits with site-specific conditions.\n4. **Set up electronic payment** -- Prepare for annual billing by ensuring your permit number is current and payment records are up to date with the State Water Board.",
+      "metadata": {
+        "category": "Permits",
+        "subcategory": "Fees",
+        "topic": "NPDES Permit Fee Schedule 2026",
+        "source_urls": [
+          "https://www.waterboards.ca.gov/resources/fees/stakeholder/docs/2025/fy2526-wq-feeschedule.pdf",
+          "https://www.waterboards.ca.gov/resources/fees/water_quality/"
+        ],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2025-26"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# California Barber License Requirements (2026)\n\n## Board of Barbering and Cosmetology (BBC)\n\n### Training Requirements\n- **Total Hours:** 1,000 hours at a BBC-approved school\n- **Curriculum:** Haircutting, shaving, beard/mustache trimming, facial massage, hair and scalp treatments\n- **Note:** Hours reduced from 1,500 to 1,000 effective January 1, 2022 (SB 803)\n\n### Eligibility\n- Age: 17 years or older\n- Education: 10th grade completion or equivalent\n- Complete approved barber program OR apprenticeship (3,200 hours)\n\n### Examination\n- **Format:** Written exam only (practical exam eliminated January 1, 2022)\n- **Questions:** 85 scored questions + 10 pretest questions\n- **Time:** 120 minutes\n- **Passing Score:** 70%\n- **Languages:** English, Korean, Spanish, Vietnamese, Simplified Chinese\n\n### Fees (2025-2026)\n| Fee Type | Amount |\n|----------|--------|\n| Application/Exam | $75 |\n| Initial License | $50 |\n| Biennial Renewal | $50 |\n| Delinquent Renewal | +$25 |\n\n### Key Difference from Cosmetologist\nBarbers focus on hair and facial services. They CANNOT perform:\n- Chemical treatments (perms, relaxers)\n- Nail services\n- Esthetician services\n\n### Crossover to Cosmetology\nLicensed barbers can obtain a cosmetology license by completing a 200-hour crossover course at an approved school.\n\n### Official URLs\n- BBC Main: https://www.barbercosmo.ca.gov\n- Barber Requirements: https://www.barbercosmo.ca.gov/applicants/license_requirements.shtml\n- School Listings: https://www.barbercosmo.ca.gov/schools/",
+      "metadata": {
+        "category": "Industry-Specific Licenses",
+        "subcategory": "Cosmetology & Barber",
+        "topic": "Barber License Requirements",
+        "source_urls": ["https://www.barbercosmo.ca.gov", "https://www.barbercosmo.ca.gov/applicants/license_requirements.shtml"],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2026"
+      }
+    }
+  ]
+}

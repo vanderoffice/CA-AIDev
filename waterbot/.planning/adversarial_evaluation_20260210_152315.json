@@ -1,0 +1,1914 @@
+{
+  "metadata": {
+    "run_date": "2026-02-10T15:21:43.233592",
+    "thresholds": {
+      "strong": 0.4,
+      "acceptable": 0.3
+    },
+    "top_k": 3
+  },
+  "summary": {
+    "bizbot": {
+      "total": 25,
+      "strong": 25,
+      "acceptable": 0,
+      "weak": 0,
+      "no_results": 0,
+      "coverage_rate": 100.0
+    },
+    "kiddobot": {
+      "total": 25,
+      "strong": 25,
+      "acceptable": 0,
+      "weak": 0,
+      "no_results": 0,
+      "coverage_rate": 100.0
+    },
+    "waterbot": {
+      "total": 35,
+      "strong": 33,
+      "acceptable": 2,
+      "weak": 0,
+      "no_results": 0,
+      "coverage_rate": 100.0
+    }
+  },
+  "details": {
+    "bizbot": [
+      {
+        "query_id": "biz-001",
+        "query": "Do I need a DBA or an LLC? What's the difference?",
+        "type": "real_user",
+        "expected_coverage": "Should explain DBA is just a name registration, LLC is entity formation, and you might need both",
+        "score": "STRONG",
+        "top_similarity": 0.5193,
+        "top_results": [
+          {
+            "content": "| $5,000,000+ | $11,790 |",
+            "similarity": 0.519262583211815
+          },
+          {
+            "content": "---",
+            "similarity": 0.485897062527787
+          },
+          {
+            "content": "- Pass-through taxation",
+            "similarity": 0.48557111620903
+          }
+        ]
+      },
+      {
+        "query_id": "biz-002",
+        "query": "I work in three different cities as a mobile dog groomer. Do I need a business license from each city?",
+        "type": "edge_case",
+        "expected_coverage": "Yes, each city requires its own license; tax only on portion of revenue in each",
+        "score": "STRONG",
+        "top_similarity": 0.4645,
+        "top_results": [
+          {
+            "content": "```",
+            "similarity": 0.464532403023983
+          },
+          {
+            "content": "| San Francisco | $91+ |",
+            "similarity": 0.435810949552713
+          },
+          {
+            "content": "---",
+            "similarity": 0.428980346261284
+          }
+        ]
+      },
+      {
+        "query_id": "biz-003",
+        "query": "What order do I get licenses in? City first or state first?",
+        "type": "real_user",
+        "expected_coverage": "Generally: entity formation (state) \u2192 EIN (federal) \u2192 city business license \u2192 industry permits",
+        "score": "STRONG",
+        "top_similarity": 0.549,
+        "top_results": [
+          {
+            "content": "```",
+            "similarity": 0.549045026302342
+          },
+          {
+            "content": "---",
+            "similarity": 0.514830349107939
+          },
+          {
+            "content": "7. **Approval/denial** decision",
+            "similarity": 0.504247754559056
+          }
+        ]
+      },
+      {
+        "query_id": "biz-004",
+        "query": "My contractor license expired 4 months ago. Can I just renew it or do I have to start over?",
+        "type": "edge_case",
+        "expected_coverage": "CSLB allows reinstatement within 5 years with fees; after that, reapply",
+        "score": "STRONG",
+        "top_similarity": 0.6075,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.607514238805429
+          },
+          {
+            "content": "### Step 5: Post-Exam Requirements",
+            "similarity": 0.51911073923111
+          },
+          {
+            "content": "---",
+            "similarity": 0.506907776203984
+          }
+        ]
+      },
+      {
+        "query_id": "biz-005",
+        "query": "I'm a sole proprietor working from home under my own name. Do I need any licenses at all?",
+        "type": "real_user",
+        "expected_coverage": "Still need city business license (Business Tax Certificate), possibly home occupation permit",
+        "score": "STRONG",
+        "top_similarity": 0.5272,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.527236104011536
+          },
+          {
+            "content": "https://www.cslb.ca.gov/consumers/",
+            "similarity": 0.429142683744431
+          },
+          {
+            "content": "---",
+            "similarity": 0.427536427974701
+          }
+        ]
+      },
+      {
+        "query_id": "biz-006",
+        "query": "What's the total cost to open a restaurant in California including all permits and licenses?",
+        "type": "multi_part",
+        "expected_coverage": "Should mention: business license, health permit, ABC license if alcohol, fire inspection, seller's permit, etc.",
+        "score": "STRONG",
+        "top_similarity": 0.7147,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.714654803276062
+          },
+          {
+            "content": "| San Jose | $195 | + varying rates |",
+            "similarity": 0.651963770389557
+          },
+          {
+            "content": "---",
+            "similarity": 0.631315193693925
+          }
+        ]
+      },
+      {
+        "query_id": "biz-007",
+        "query": "I live in an unincorporated area of the county. Do I still need a business license?",
+        "type": "edge_case",
+        "expected_coverage": "Yes, from the county; unincorporated areas are county jurisdiction",
+        "score": "STRONG",
+        "top_similarity": 0.4328,
+        "top_results": [
+          {
+            "content": "| San Francisco | $91+ |",
+            "similarity": 0.432834241817348
+          },
+          {
+            "content": "```",
+            "similarity": 0.431987975121268
+          },
+          {
+            "content": "City and county business licenses, permits, and zoning requirements.",
+            "similarity": 0.430754346116601
+          }
+        ]
+      },
+      {
+        "query_id": "biz-008",
+        "query": "When do I need an EIN number vs just using my SSN?",
+        "type": "real_user",
+        "expected_coverage": "EIN required for: employees, certain business types, partnerships; optional for sole props without employees",
+        "score": "STRONG",
+        "top_similarity": 0.6108,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.610846817493439
+          },
+          {
+            "content": "---",
+            "similarity": 0.525035262107849
+          },
+          {
+            "content": "```",
+            "similarity": 0.445688886811998
+          }
+        ]
+      },
+      {
+        "query_id": "biz-009",
+        "query": "I'm a cosmetologist who wants to add microblading. Do I need a separate license?",
+        "type": "edge_case",
+        "expected_coverage": "Should explain BBC requirements for esthetician services, separate certification for microblading",
+        "score": "STRONG",
+        "top_similarity": 0.4977,
+        "top_results": [
+          {
+            "content": "**Law:** Safe Body Art Act (Health and Safety Code)",
+            "similarity": 0.497679471969608
+          },
+          {
+            "content": "https://www.barbercosmo.ca.gov/applicants/license_requirements.shtml",
+            "similarity": 0.489734649658207
+          },
+          {
+            "content": "---",
+            "similarity": 0.481458395719532
+          }
+        ]
+      },
+      {
+        "query_id": "biz-010",
+        "query": "What's the bond requirement for a contractor license and why do I need it?",
+        "type": "real_user",
+        "expected_coverage": "CSLB requires $25,000 contractor bond; protects consumers from contractor default",
+        "score": "STRONG",
+        "top_similarity": 0.681,
+        "top_results": [
+          {
+            "content": "- CSLB maintains list of bond providers",
+            "similarity": 0.68102500921637
+          },
+          {
+            "content": "**Common challenges:** Long processing and exam queues; confusion about correct classification; lack of awareness of license verification tools; lapses due to missed renewals, bond, or insurance changes.",
+            "similarity": 0.538602439248425
+          },
+          {
+            "content": "- Application Status: https://www2.cslb.ca.gov/OnlineServices/CheckApplicationII/ApplicantRequest.aspx",
+            "similarity": 0.530731308227597
+          }
+        ]
+      },
+      {
+        "query_id": "biz-011",
+        "query": "I want to sell homemade candles at farmers markets. What licenses do I need?",
+        "type": "multi_part",
+        "expected_coverage": "Business license, seller's permit (CDTFA), possibly cottage food exemption doesn't apply to candles",
+        "score": "STRONG",
+        "top_similarity": 0.463,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.462994424283173
+          },
+          {
+            "content": "- NOT the same as a city business license",
+            "similarity": 0.439574297641177
+          },
+          {
+            "content": "- Quarterly returns required",
+            "similarity": 0.437418989827512
+          }
+        ]
+      },
+      {
+        "query_id": "biz-012",
+        "query": "How do I transfer my business license to a new owner when I sell my business?",
+        "type": "real_user",
+        "expected_coverage": "Most licenses don't transfer; new owner must apply fresh",
+        "score": "STRONG",
+        "top_similarity": 0.4819,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.481902241706848
+          },
+          {
+            "content": "7. **Approval/denial** decision",
+            "similarity": 0.450413852930069
+          },
+          {
+            "content": "```",
+            "similarity": 0.435483094184584
+          }
+        ]
+      },
+      {
+        "query_id": "biz-013",
+        "query": "What happens if I forget to renew my business license?",
+        "type": "real_user",
+        "expected_coverage": "Penalties, late fees; operating without valid license can result in fines",
+        "score": "STRONG",
+        "top_similarity": 0.4841,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.484062433242798
+          },
+          {
+            "content": "---",
+            "similarity": 0.479169428348541
+          },
+          {
+            "content": "---",
+            "similarity": 0.472234098448402
+          }
+        ]
+      },
+      {
+        "query_id": "biz-014",
+        "query": "I'm starting a food truck. Do I need a health permit from every county I operate in?",
+        "type": "edge_case",
+        "expected_coverage": "Mobile Food Facility Permit; some reciprocity between counties but varies",
+        "score": "STRONG",
+        "top_similarity": 0.6535,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.65351271629334
+          },
+          {
+            "content": "---",
+            "similarity": 0.616862081476327
+          },
+          {
+            "content": "### County Health Department Contacts",
+            "similarity": 0.610883437938486
+          }
+        ]
+      },
+      {
+        "query_id": "biz-015",
+        "query": "What's the difference between a seller's permit and a business license?",
+        "type": "real_user",
+        "expected_coverage": "Business license = city tax; seller's permit = state sales tax collection authority",
+        "score": "STRONG",
+        "top_similarity": 0.5625,
+        "top_results": [
+          {
+            "content": "- NOT the same as a city business license",
+            "similarity": 0.562510635703169
+          },
+          {
+            "content": "---",
+            "similarity": 0.533566443111513
+          },
+          {
+            "content": "| San Francisco | $91+ |",
+            "similarity": 0.517547607421879
+          }
+        ]
+      },
+      {
+        "query_id": "biz-016",
+        "query": "Can my LLC get a Type 47 liquor license or does it have to be in my personal name?",
+        "type": "edge_case",
+        "expected_coverage": "LLCs can hold ABC licenses; all members undergo background check",
+        "score": "STRONG",
+        "top_similarity": 0.5606,
+        "top_results": [
+          {
+            "content": "- Annual Fees: https://www.abc.ca.gov/licensing/license-fees/annual-fee-schedule/",
+            "similarity": 0.560594985431887
+          },
+          {
+            "content": "| 90 | Music Venue | Concert halls, performance venues |",
+            "similarity": 0.537755743794315
+          },
+          {
+            "content": "| 57 | Special On-Sale General | Members and guests only | Allowed | No |",
+            "similarity": 0.518328176587359
+          }
+        ]
+      },
+      {
+        "query_id": "biz-017",
+        "query": "I run an online-only business from California selling to customers nationwide. What CA licenses do I need?",
+        "type": "multi_part",
+        "expected_coverage": "Still need city business license, seller's permit if selling tangible goods",
+        "score": "STRONG",
+        "top_similarity": 0.6024,
+        "top_results": [
+          {
+            "content": "- NOT the same as a city business license",
+            "similarity": 0.60237193107605
+          },
+          {
+            "content": "**URL:** https://cdtfa.ca.gov",
+            "similarity": 0.587172031402588
+          },
+          {
+            "content": "---",
+            "similarity": 0.587046290216072
+          }
+        ]
+      },
+      {
+        "query_id": "biz-018",
+        "query": "How much does a real estate broker license cost including all the required education?",
+        "type": "real_user",
+        "expected_coverage": "DRE fees, required courses, exam fees, E&O insurance",
+        "score": "STRONG",
+        "top_similarity": 0.5991,
+        "top_results": [
+          {
+            "content": "- Fees: https://www.dre.ca.gov/Fees/Fees.html",
+            "similarity": 0.599059784468426
+          },
+          {
+            "content": "---",
+            "similarity": 0.592454314231877
+          },
+          {
+            "content": "### Costs",
+            "similarity": 0.565264446578492
+          }
+        ]
+      },
+      {
+        "query_id": "biz-019",
+        "query": "I'm a handyman. Do I need a contractor license for small jobs under $500?",
+        "type": "edge_case",
+        "expected_coverage": "$500 limit (including materials and labor); still need business license",
+        "score": "STRONG",
+        "top_similarity": 0.65,
+        "top_results": [
+          {
+            "content": "https://www.cslb.ca.gov/consumers/",
+            "similarity": 0.650023937225342
+          },
+          {
+            "content": "---",
+            "similarity": 0.540217399597168
+          },
+          {
+            "content": "---",
+            "similarity": 0.536986486225918
+          }
+        ]
+      },
+      {
+        "query_id": "biz-020",
+        "query": "What continuing education do I need to renew my cosmetology license?",
+        "type": "real_user",
+        "expected_coverage": "BBC CE requirements vary by license type",
+        "score": "STRONG",
+        "top_similarity": 0.7164,
+        "top_results": [
+          {
+            "content": "- Address: Board of Barbering and Cosmetology, PO Box 944226, Sacramento, CA 94244-2260",
+            "similarity": 0.716409921646118
+          },
+          {
+            "content": "https://www.barbercosmo.ca.gov/laws_regs/",
+            "similarity": 0.568570009640458
+          },
+          {
+            "content": "- Contact: (800) 952-5210",
+            "similarity": 0.559444513354033
+          }
+        ]
+      },
+      {
+        "query_id": "biz-021",
+        "query": "Can I operate a daycare out of my home? What licenses and inspections are required?",
+        "type": "multi_part",
+        "expected_coverage": "Community Care Licensing, fire clearance, background checks, capacity limits",
+        "score": "STRONG",
+        "top_similarity": 0.4407,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.440698358970979
+          },
+          {
+            "content": "6. What signage is permitted?",
+            "similarity": 0.440362088723435
+          },
+          {
+            "content": "- Age verification at entry",
+            "similarity": 0.437561605121994
+          }
+        ]
+      },
+      {
+        "query_id": "biz-022",
+        "query": "I want to import goods from China to sell in California. What permits do I need beyond a seller's permit?",
+        "type": "out_of_scope",
+        "expected_coverage": "Should note this involves federal customs/import law beyond CA state licensing",
+        "score": "STRONG",
+        "top_similarity": 0.6582,
+        "top_results": [
+          {
+            "content": "- NOT the same as a city business license",
+            "similarity": 0.658176600933075
+          },
+          {
+            "content": "---",
+            "similarity": 0.620097637176514
+          },
+          {
+            "content": "- Soft drinks and candy always taxable",
+            "similarity": 0.563356876373291
+          }
+        ]
+      },
+      {
+        "query_id": "biz-023",
+        "query": "How do I look up if a contractor is properly licensed?",
+        "type": "real_user",
+        "expected_coverage": "CSLB license lookup tool, what to verify",
+        "score": "STRONG",
+        "top_similarity": 0.6487,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.648673474788666
+          },
+          {
+            "content": "| Bond & Insurance | https://www.cslb.ca.gov/contractors/ | Requirements and updates |",
+            "similarity": 0.572769292923132
+          },
+          {
+            "content": "### Step 5: Post-Exam Requirements",
+            "similarity": 0.570807456970215
+          }
+        ]
+      },
+      {
+        "query_id": "biz-024",
+        "query": "My HOA says I can't run a business from home. Does that override my home occupation permit?",
+        "type": "edge_case",
+        "expected_coverage": "HOA covenants are separate from city permits; both must be satisfied",
+        "score": "STRONG",
+        "top_similarity": 0.4034,
+        "top_results": [
+          {
+            "content": "- Cannabis has special zoning requirements",
+            "similarity": 0.403437227010727
+          },
+          {
+            "content": "---",
+            "similarity": 0.358784220146193
+          },
+          {
+            "content": "---",
+            "similarity": 0.355985264658489
+          }
+        ]
+      },
+      {
+        "query_id": "biz-025",
+        "query": "What's the penalty for operating without a business license in California?",
+        "type": "real_user",
+        "expected_coverage": "Varies by city; typically fines, back taxes, potential cease operations order",
+        "score": "STRONG",
+        "top_similarity": 0.684,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.684000750899345
+          },
+          {
+            "content": "| San Francisco | $91+ |",
+            "similarity": 0.60581097093388
+          },
+          {
+            "content": "| San Jose | $195 | + varying rates |",
+            "similarity": 0.597859316872896
+          }
+        ]
+      }
+    ],
+    "kiddobot": [
+      {
+        "query_id": "kid-001",
+        "query": "What's the difference between CalWORKs Stage 1, Stage 2, and Stage 3?",
+        "type": "real_user",
+        "expected_coverage": "Stage 1 = receiving cash aid; Stage 2 = transition/stable; Stage 3 = income-based, not entitlement",
+        "score": "STRONG",
+        "top_similarity": 0.7617,
+        "top_results": [
+          {
+            "content": "### Stage Transitions",
+            "similarity": 0.761665426542352
+          },
+          {
+            "content": "\u2502  + WTW activ",
+            "similarity": 0.75668586750712
+          },
+          {
+            "content": "### Stage 3: Extended Support",
+            "similarity": 0.752420499776584
+          }
+        ]
+      },
+      {
+        "query_id": "kid-002",
+        "query": "I signed up for the Centralized Eligibility List 6 months ago. Why haven't I heard anything?",
+        "type": "real_user",
+        "expected_coverage": "CEL is NOT first-come-first-served; ranked by income and family size; can be year+ wait",
+        "score": "STRONG",
+        "top_similarity": 0.4912,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.491179616310646
+          },
+          {
+            "content": "- Ask your caseworker specifically about this option",
+            "similarity": 0.458568692207336
+          },
+          {
+            "content": "```",
+            "similarity": 0.43287068605423
+          }
+        ]
+      },
+      {
+        "query_id": "kid-003",
+        "query": "I make $5,000 a month and have 3 kids. Do I qualify for subsidized childcare?",
+        "type": "real_user",
+        "expected_coverage": "Should reference SMI thresholds by family size; $5K/mo for family of 4 is under threshold",
+        "score": "STRONG",
+        "top_similarity": 0.6196,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.619563959862951
+          },
+          {
+            "content": "---",
+            "similarity": 0.59502257689901
+          },
+          {
+            "content": "> Your children deserve these services, and using them is completely safe for your family.",
+            "similarity": 0.566516578197479
+          }
+        ]
+      },
+      {
+        "query_id": "kid-004",
+        "query": "Can my mom watch my kids and get paid through the subsidy program?",
+        "type": "real_user",
+        "expected_coverage": "Yes, Alternative Payment Program allows license-exempt providers including relatives",
+        "score": "STRONG",
+        "top_similarity": 0.4966,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.49664692570707
+          },
+          {
+            "content": "Alternative Payment Programs (APPs), administered through CDSS in partnership with contracted agencies, represent a voucher-based approach to childcare subsidies that maximizes parental choice[9][12]. Rather than limiting families to directly-contracted childcare facilities, APPs issue vouchers that families can use at any eligible childcare provider of their choosing, including licensed childcare centers, licensed family childcare homes, or unlicensed relative, friend, or neighbor care[9].",
+            "similarity": 0.471516384825599
+          },
+          {
+            "content": "The highest monthly cash aid amount for CalWORKs families, adjusted by family size. Used in certain eligibility calculations.",
+            "similarity": 0.468534396036436
+          }
+        ]
+      },
+      {
+        "query_id": "kid-005",
+        "query": "What's the difference between a family fee and a co-payment?",
+        "type": "edge_case",
+        "expected_coverage": "Family fee = income-based payment to program; co-payment = difference between provider rate and max reimbursement",
+        "score": "STRONG",
+        "top_similarity": 0.6714,
+        "top_results": [
+          {
+            "content": "- **211:** Dial 2-1-1 for local child care resources",
+            "similarity": 0.671358823776264
+          },
+          {
+            "content": "---",
+            "similarity": 0.604245888680714
+          },
+          {
+            "content": "---",
+            "similarity": 0.577695181644541
+          }
+        ]
+      },
+      {
+        "query_id": "kid-006",
+        "query": "I'm on CalFresh and Medi-Cal. Does that automatically qualify me for childcare assistance?",
+        "type": "real_user",
+        "expected_coverage": "Yes, participating in means-tested programs satisfies income eligibility; still need to show 'need'",
+        "score": "STRONG",
+        "top_similarity": 0.6326,
+        "top_results": [
+          {
+            "content": "California childcare subsidies help low-income families afford quality care. CalWORKs provides childcare assistance for families receiving cash aid. CCDF (Child Care and Development Fund) offers subsidies for families up to 85% of State Median Income. To find childcare providers in your area, visit rrnetwork.org/family-services/find-child-care.",
+            "similarity": 0.632643022098722
+          },
+          {
+            "content": "A: The child must be a U.S. citizen, national, or qualified immigrant. Parent immigration status is generally not asked for state programs, but verify with your local agency.",
+            "similarity": 0.618568658828735
+          },
+          {
+            "content": "*This guide is for informational purposes. Programs change frequently. Always verify with your local APP or R&R agency.*",
+            "similarity": 0.605585611199476
+          }
+        ]
+      },
+      {
+        "query_id": "kid-007",
+        "query": "My child has an IEP. Does that help us get childcare faster?",
+        "type": "edge_case",
+        "expected_coverage": "Children with exceptional needs get priority within same rank; also CHAN program for severely disabled",
+        "score": "STRONG",
+        "top_similarity": 0.5889,
+        "top_results": [
+          {
+            "content": "- Inclusion-focused",
+            "similarity": 0.588900625705719
+          },
+          {
+            "content": "Many private providers welcome children with disabilities.",
+            "similarity": 0.582437294198194
+          },
+          {
+            "content": "---",
+            "similarity": 0.578634475388199
+          }
+        ]
+      },
+      {
+        "query_id": "kid-008",
+        "query": "I'm a seasonal farmworker. Is there a special childcare program for me?",
+        "type": "real_user",
+        "expected_coverage": "CMIG (Migrant Child Care) and CMAP (Migrant Alternative Payment) programs",
+        "score": "STRONG",
+        "top_similarity": 0.6938,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.693836051593063
+          },
+          {
+            "content": "---",
+            "similarity": 0.670593817794693
+          },
+          {
+            "content": "- **Community health center**",
+            "similarity": 0.648371319521331
+          }
+        ]
+      },
+      {
+        "query_id": "kid-009",
+        "query": "How do I recertify for childcare assistance? What documents do I need?",
+        "type": "real_user",
+        "expected_coverage": "Income verification, continued need documentation, timeline",
+        "score": "STRONG",
+        "top_similarity": 0.6293,
+        "top_results": [
+          {
+            "content": "**Get Help:** Contact your local R&R at rrnetwork.org",
+            "similarity": 0.629278678574523
+          },
+          {
+            "content": "---",
+            "similarity": 0.588449036386552
+          },
+          {
+            "content": "### Required for Need Verification",
+            "similarity": 0.587361139435737
+          }
+        ]
+      },
+      {
+        "query_id": "kid-010",
+        "query": "I just got a job but haven't started yet. Can I get childcare while job searching?",
+        "type": "edge_case",
+        "expected_coverage": "Seeking employment is a valid need; limited duration",
+        "score": "STRONG",
+        "top_similarity": 0.5708,
+        "top_results": [
+          {
+            "content": "### Variable/Unpredictable Schedules",
+            "similarity": 0.570751394443422
+          },
+          {
+            "content": "### Q: What counts as \"reasonable\" commute time?",
+            "similarity": 0.565427320165263
+          },
+          {
+            "content": "---",
+            "similarity": 0.534932986942923
+          }
+        ]
+      },
+      {
+        "query_id": "kid-011",
+        "query": "The childcare provider I want to use charges more than what the program pays. What do I do?",
+        "type": "real_user",
+        "expected_coverage": "Family may need to pay co-payment (difference); or choose different provider",
+        "score": "STRONG",
+        "top_similarity": 0.5599,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.559927105903625
+          },
+          {
+            "content": "- Ask provider about sibling discounts or payment plans",
+            "similarity": 0.5574173497384
+          },
+          {
+            "content": "---",
+            "similarity": 0.538617638431929
+          }
+        ]
+      },
+      {
+        "query_id": "kid-012",
+        "query": "I'm homeless and need childcare. Are there special provisions for me?",
+        "type": "real_user",
+        "expected_coverage": "Homelessness satisfies both income AND need criteria; special priority",
+        "score": "STRONG",
+        "top_similarity": 0.6149,
+        "top_results": [
+          {
+            "content": "- Housing assistance available",
+            "similarity": 0.614911877220162
+          },
+          {
+            "content": "---",
+            "similarity": 0.588948011398315
+          },
+          {
+            "content": "### Who to Contact",
+            "similarity": 0.584179138194272
+          }
+        ]
+      },
+      {
+        "query_id": "kid-013",
+        "query": "Can I get help paying for summer camp or just daycare?",
+        "type": "edge_case",
+        "expected_coverage": "School-age children up to 13 can receive subsidized care including summer programs",
+        "score": "STRONG",
+        "top_similarity": 0.6343,
+        "top_results": [
+          {
+            "content": "- Church vacation Bible school programs",
+            "similarity": 0.634304545265166
+          },
+          {
+            "content": "---",
+            "similarity": 0.562074098710663
+          },
+          {
+            "content": "### School Break Coverage",
+            "similarity": 0.556165304412527
+          }
+        ]
+      },
+      {
+        "query_id": "kid-014",
+        "query": "My income went up. When do I lose my childcare subsidy?",
+        "type": "real_user",
+        "expected_coverage": "Families can stay until income exceeds 85% SMI (higher than entry threshold)",
+        "score": "STRONG",
+        "top_similarity": 0.5865,
+        "top_results": [
+          {
+            "content": "**Find Help:** https://rrnetwork.org/family-services/find-child-care",
+            "similarity": 0.586521692288969
+          },
+          {
+            "content": "---",
+            "similarity": 0.556354956518262
+          },
+          {
+            "content": "### B. Non-Standard Family & Work Structures",
+            "similarity": 0.555541429253902
+          }
+        ]
+      },
+      {
+        "query_id": "kid-015",
+        "query": "How do I know if a childcare center is safe and licensed?",
+        "type": "real_user",
+        "expected_coverage": "Community Care Licensing lookup; Oliver's Law right to review facility file",
+        "score": "STRONG",
+        "top_similarity": 0.6959,
+        "top_results": [
+          {
+            "content": "**Verify License:** https://www.ccld.dss.ca.gov/carefacilitysearch//carefacilitysearch/",
+            "similarity": 0.695945283649722
+          },
+          {
+            "content": "**Verify License:** https://www.ccld.dss.ca.gov/carefacilitysearch/",
+            "similarity": 0.694882869720459
+          },
+          {
+            "content": "- May have wait lists",
+            "similarity": 0.645916065817115
+          }
+        ]
+      },
+      {
+        "query_id": "kid-016",
+        "query": "I'm in school full-time. Does that count as a 'need' for childcare?",
+        "type": "real_user",
+        "expected_coverage": "Yes, vocational training or educational program qualifies as need",
+        "score": "STRONG",
+        "top_similarity": 0.5314,
+        "top_results": [
+          {
+            "content": "### Q: What counts as \"reasonable\" commute time?",
+            "similarity": 0.53136572054829
+          },
+          {
+            "content": "---",
+            "similarity": 0.526289463043213
+          },
+          {
+            "content": "- Ask about partial enrollment",
+            "similarity": 0.514505474894913
+          }
+        ]
+      },
+      {
+        "query_id": "kid-017",
+        "query": "What happens if I get a CPS referral for childcare? Do I go to the front of the line?",
+        "type": "edge_case",
+        "expected_coverage": "CPS referrals are Priority 1; served first when funding available",
+        "score": "STRONG",
+        "top_similarity": 0.6108,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.610824727366882
+          },
+          {
+            "content": "When your turn comes, you'll need:",
+            "similarity": 0.549057266284717
+          },
+          {
+            "content": "These small, in-home daycares often have more openings, more flexible hours (for parents with non-traditional schedules), and are more likely to have infant slots than large centers.",
+            "similarity": 0.548567614215444
+          }
+        ]
+      },
+      {
+        "query_id": "kid-018",
+        "query": "My child is 14 but has special needs. Can they still get subsidized care?",
+        "type": "edge_case",
+        "expected_coverage": "Children 13+ with IEP and professional letter can continue in care",
+        "score": "STRONG",
+        "top_similarity": 0.6725,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.672537405935682
+          },
+          {
+            "content": "- Early Start Family Resource Centers",
+            "similarity": 0.619059764202848
+          },
+          {
+            "content": "**Get Help:** Contact your local R&R at rrnetwork.org",
+            "similarity": 0.618303037780714
+          }
+        ]
+      },
+      {
+        "query_id": "kid-019",
+        "query": "I applied to 5 different programs. Do they all use the same eligibility list?",
+        "type": "real_user",
+        "expected_coverage": "Depends on county; some have unified CEL, others require separate applications",
+        "score": "STRONG",
+        "top_similarity": 0.5259,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.52591165745785
+          },
+          {
+            "content": "---",
+            "similarity": 0.480098875749245
+          },
+          {
+            "content": "---",
+            "similarity": 0.435184073117244
+          }
+        ]
+      },
+      {
+        "query_id": "kid-020",
+        "query": "What immunizations does my child need for daycare?",
+        "type": "real_user",
+        "expected_coverage": "CA required vaccines for childcare; CDPH immunization schedule",
+        "score": "STRONG",
+        "top_similarity": 0.6727,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.672690510749817
+          },
+          {
+            "content": "The CDPH establishes and enforces immunization requirements for all children attending childcare facilities, preschools, and schools[27][30]. California law requires that children in childcare centers, family day care homes, nursery schools, and developmental centers receive specific immunizations before enrollment[27]. The department mandates immunizations including polio, diphtheria-tetanus-pertussis (DTaP), Haemophilus influenzae type B (Hib), measles-mumps-rubella (MMR), hepatitis B, and var...",
+            "similarity": 0.653798301631162
+          },
+          {
+            "content": "---",
+            "similarity": 0.602843105792999
+          }
+        ]
+      },
+      {
+        "query_id": "kid-021",
+        "query": "I have a disability and can't physically care for my child during the day. Does that qualify me?",
+        "type": "edge_case",
+        "expected_coverage": "Physical/mental incapacity is a valid need category",
+        "score": "STRONG",
+        "top_similarity": 0.6169,
+        "top_results": [
+          {
+            "content": "### Substantial Disability = Limitations in 3+ Life Areas",
+            "similarity": 0.616941250380353
+          },
+          {
+            "content": "- Serves children \"at risk\" of developmental disabilities",
+            "similarity": 0.592968881130219
+          },
+          {
+            "content": "### NOT Qualifying (By Themselves)",
+            "similarity": 0.562171578407288
+          }
+        ]
+      },
+      {
+        "query_id": "kid-022",
+        "query": "Can I use childcare subsidies for overnight care if I work night shifts?",
+        "type": "edge_case",
+        "expected_coverage": "Care authorized based on work schedule; some programs cover non-traditional hours",
+        "score": "STRONG",
+        "top_similarity": 0.6121,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.612082857253637
+          },
+          {
+            "content": "- Consider schedule changes if possible",
+            "similarity": 0.566112706114712
+          },
+          {
+            "content": "---",
+            "similarity": 0.560853736426048
+          }
+        ]
+      },
+      {
+        "query_id": "kid-023",
+        "query": "I'm a foster parent. What childcare help is available to me?",
+        "type": "real_user",
+        "expected_coverage": "Emergency Foster Care Bridge Program; foster children get priority",
+        "score": "STRONG",
+        "top_similarity": 0.6643,
+        "top_results": [
+          {
+            "content": "- Post-adoption childcare may also qualify",
+            "similarity": 0.664292097091675
+          },
+          {
+            "content": "> **Important**: You typically don't need to be the legal guardian yet to access these programs - your current kinship arrangement with DCFS should qualify you.",
+            "similarity": 0.659951587918307
+          },
+          {
+            "content": "---",
+            "similarity": 0.647005715787753
+          }
+        ]
+      },
+      {
+        "query_id": "kid-024",
+        "query": "How do I complain about my childcare provider to the state?",
+        "type": "real_user",
+        "expected_coverage": "Community Care Licensing complaint process",
+        "score": "STRONG",
+        "top_similarity": 0.6039,
+        "top_results": [
+          {
+            "content": "**Website**: www.ccld.ca.gov",
+            "similarity": 0.603930401333523
+          },
+          {
+            "content": "---",
+            "similarity": 0.537165577749541
+          },
+          {
+            "content": "---",
+            "similarity": 0.514496472865975
+          }
+        ]
+      },
+      {
+        "query_id": "kid-025",
+        "query": "What's the California State Preschool Program and is it different from Head Start?",
+        "type": "real_user",
+        "expected_coverage": "CSPP is state-funded preschool; Head Start is federal; different income limits and requirements",
+        "score": "STRONG",
+        "top_similarity": 0.7182,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.71820610761643
+          },
+          {
+            "content": "---",
+            "similarity": 0.692220009300708
+          },
+          {
+            "content": "Head Start is FREE to eligible families.",
+            "similarity": 0.680456379638425
+          }
+        ]
+      }
+    ],
+    "waterbot": [
+      {
+        "query_id": "wat-001",
+        "query": "Is my tap water safe to drink? How do I know?",
+        "type": "real_user",
+        "expected_coverage": "Check Consumer Confidence Report; public systems must meet MCLs; testing available",
+        "score": "STRONG",
+        "top_similarity": 0.6068,
+        "top_results": [
+          {
+            "content": "Chlorine smell = your water is being disinfected. This is good! The amount used is regulated and safe. If the taste bothers you, a simple carbon filter or leaving water in the fridge overnight will solve it.",
+            "similarity": 0.606778347088198
+          },
+          {
+            "content": "Most cloudy water is just trapped air\u2014completely harmless and clears within minutes. If your water doesn't clear, or if you notice color, odor, or particles, contact your water utility for guidance.",
+            "similarity": 0.504801600885297
+          },
+          {
+            "content": "If you're healthy, drinking hard water is completely safe. If you dislike the effects on your home or skin, water softening is an option\u2014but it's about comfort, not health.",
+            "similarity": 0.503019153711897
+          }
+        ]
+      },
+      {
+        "query_id": "wat-002",
+        "query": "I have a private well. How do I get it tested and how often should I?",
+        "type": "real_user",
+        "expected_coverage": "No state oversight for private wells; homeowner responsibility; annual testing recommended; find certified lab",
+        "score": "STRONG",
+        "top_similarity": 0.6737,
+        "top_results": [
+          {
+            "content": "As a private well owner, annual testing is your responsibility and your protection. Basic bacteria and nitrate testing costs $50-100 and could protect your family from serious illness.",
+            "similarity": 0.673730373382568
+          },
+          {
+            "content": "- Your contact information",
+            "similarity": 0.433646615364947
+          },
+          {
+            "content": "4. Private well owners: Test before resuming use",
+            "similarity": 0.417264665202181
+          }
+        ]
+      },
+      {
+        "query_id": "wat-003",
+        "query": "What is PFAS and should I be worried about it in my water?",
+        "type": "real_user",
+        "expected_coverage": "PFAS = forever chemicals; health effects; CA monitoring requirements; treatment options",
+        "score": "STRONG",
+        "top_similarity": 0.5924,
+        "top_results": [
+          {
+            "content": "- Manganese (proposed notification/response levels Sept 2025)",
+            "similarity": 0.592411233351607
+          },
+          {
+            "content": "- Regional recycled water permits",
+            "similarity": 0.485352667805076
+          },
+          {
+            "content": "---",
+            "similarity": 0.478292974437124
+          }
+        ]
+      },
+      {
+        "query_id": "wat-004",
+        "query": "My water has a chlorine smell. Is that dangerous?",
+        "type": "real_user",
+        "expected_coverage": "Chlorine/chloramine used for disinfection; not dangerous at treatment levels; taste/odor issue",
+        "score": "STRONG",
+        "top_similarity": 0.7422,
+        "top_results": [
+          {
+            "content": "Chlorine smell = your water is being disinfected. This is good! The amount used is regulated and safe. If the taste bothers you, a simple carbon filter or leaving water in the fridge overnight will solve it.",
+            "similarity": 0.742238640785217
+          },
+          {
+            "content": "Most cloudy water is just trapped air\u2014completely harmless and clears within minutes. If your water doesn't clear, or if you notice color, odor, or particles, contact your water utility for guidance.",
+            "similarity": 0.455431044101715
+          },
+          {
+            "content": "If you're healthy, drinking hard water is completely safe. If you dislike the effects on your home or skin, water softening is an option\u2014but it's about comfort, not health.",
+            "similarity": 0.433780852926919
+          }
+        ]
+      },
+      {
+        "query_id": "wat-005",
+        "query": "I live in a farming community. Should I be worried about nitrates?",
+        "type": "real_user",
+        "expected_coverage": "Agricultural areas have elevated nitrate risk; health effects especially for infants; testing recommended",
+        "score": "STRONG",
+        "top_similarity": 0.4231,
+        "top_results": [
+          {
+            "content": "- Channel modification",
+            "similarity": 0.423103541135788
+          },
+          {
+            "content": "- Pharmaceuticals and personal care products",
+            "similarity": 0.380609333515167
+          },
+          {
+            "content": "- Copper (marinas)",
+            "similarity": 0.365981291710773
+          }
+        ]
+      },
+      {
+        "query_id": "wat-006",
+        "query": "What's the difference between a Maximum Contaminant Level and a Public Health Goal?",
+        "type": "edge_case",
+        "expected_coverage": "PHG = ideal safe level; MCL = enforceable legal limit (may be higher due to cost/tech limits)",
+        "score": "STRONG",
+        "top_similarity": 0.4653,
+        "top_results": [
+          {
+            "content": "- Compliance monitoring required",
+            "similarity": 0.465289904632864
+          },
+          {
+            "content": "- Other water chemistry parameters",
+            "similarity": 0.448784202337265
+          },
+          {
+            "content": "- Aesthetic and sensory water quality attributes",
+            "similarity": 0.447431027889252
+          }
+        ]
+      },
+      {
+        "query_id": "wat-007",
+        "query": "I got a notice from my water company about a violation. What should I do?",
+        "type": "real_user",
+        "expected_coverage": "Read notice carefully; may recommend alternative water source; contact water provider for details",
+        "score": "STRONG",
+        "top_similarity": 0.5226,
+        "top_results": [
+          {
+            "content": "- Any known information about the diverter",
+            "similarity": 0.522552728652954
+          },
+          {
+            "content": "5. **Formal Enforcement**: ACL, CDO, or other action issued",
+            "similarity": 0.503961563110352
+          },
+          {
+            "content": "- **Suspected Source**: If known, identify potential responsible party",
+            "similarity": 0.489483967110037
+          }
+        ]
+      },
+      {
+        "query_id": "wat-008",
+        "query": "My landlord won't tell me about the water quality. What are my rights?",
+        "type": "real_user",
+        "expected_coverage": "Landlords must forward water notices to tenants; can request CCR; right to safe water",
+        "score": "STRONG",
+        "top_similarity": 0.4745,
+        "top_results": [
+          {
+            "content": "6. Wait for official \"all clear\" before resuming normal use",
+            "similarity": 0.474477557806824
+          },
+          {
+            "content": "- Your contact information",
+            "similarity": 0.439600162458439
+          },
+          {
+            "content": "As a private well owner, annual testing is your responsibility and your protection. Basic bacteria and nitrate testing costs $50-100 and could protect your family from serious illness.",
+            "similarity": 0.404747450634686
+          }
+        ]
+      },
+      {
+        "query_id": "wat-009",
+        "query": "Is hard water bad for my health or just annoying?",
+        "type": "real_user",
+        "expected_coverage": "Not a health risk; causes scale buildup, dry skin, appliance damage",
+        "score": "STRONG",
+        "top_similarity": 0.7297,
+        "top_results": [
+          {
+            "content": "If you're healthy, drinking hard water is completely safe. If you dislike the effects on your home or skin, water softening is an option\u2014but it's about comfort, not health.",
+            "similarity": 0.729736403838612
+          },
+          {
+            "content": "Most cloudy water is just trapped air\u2014completely harmless and clears within minutes. If your water doesn't clear, or if you notice color, odor, or particles, contact your water utility for guidance.",
+            "similarity": 0.409710824489594
+          },
+          {
+            "content": "Chlorine smell = your water is being disinfected. This is good! The amount used is regulated and safe. If the taste bothers you, a simple carbon filter or leaving water in the fridge overnight will solve it.",
+            "similarity": 0.398877859115601
+          }
+        ]
+      },
+      {
+        "query_id": "wat-010",
+        "query": "I think there's lead in my water from old pipes. How do I test for it?",
+        "type": "real_user",
+        "expected_coverage": "Lead test ~$50 from certified lab; old plumbing issue not water supply; flush before drinking",
+        "score": "STRONG",
+        "top_similarity": 0.4821,
+        "top_results": [
+          {
+            "content": "Look for NSF/ANSI 42 certification for taste and odor reduction.",
+            "similarity": 0.482085243401373
+          },
+          {
+            "content": "As a private well owner, annual testing is your responsibility and your protection. Basic bacteria and nitrate testing costs $50-100 and could protect your family from serious illness.",
+            "similarity": 0.468494369640779
+          },
+          {
+            "content": "6. Wait for official \"all clear\" before resuming normal use",
+            "similarity": 0.431666238059588
+          }
+        ]
+      },
+      {
+        "query_id": "wat-011",
+        "query": "What water filter should I buy to remove arsenic?",
+        "type": "real_user",
+        "expected_coverage": "Reverse osmosis; check NSF certification for specific contaminants; SWRCB approved device list",
+        "score": "STRONG",
+        "top_similarity": 0.4405,
+        "top_results": [
+          {
+            "content": "Look for NSF/ANSI 42 certification for taste and odor reduction.",
+            "similarity": 0.440520863439883
+          },
+          {
+            "content": "If you or a family member is in a vulnerable group, err on the side of caution. When in doubt, use bottled water and consult your healthcare provider.",
+            "similarity": 0.355082082142584
+          },
+          {
+            "content": "Boiling is ONLY for killing germs. If your water has chemical contamination (nitrate, lead, arsenic, PFAS), do NOT boil it. Use certified filtration or bottled water instead.",
+            "similarity": 0.35343016941188
+          }
+        ]
+      },
+      {
+        "query_id": "wat-012",
+        "query": "My water system is on the 'failing' list. What does that mean?",
+        "type": "real_user",
+        "expected_coverage": "Not meeting Human Right to Water Act standards; may have violations; state working on solutions",
+        "score": "STRONG",
+        "top_similarity": 0.4789,
+        "top_results": [
+          {
+            "content": "- Operator certification support",
+            "similarity": 0.478876262903217
+          },
+          {
+            "content": "7. Transition to sustainable governance",
+            "similarity": 0.460020051597953
+          },
+          {
+            "content": "| Outdated drawings | Apply for technical assistance grant |",
+            "similarity": 0.415687906274562
+          }
+        ]
+      },
+      {
+        "query_id": "wat-013",
+        "query": "Who do I complain to if my water looks or smells bad?",
+        "type": "real_user",
+        "expected_coverage": "Contact water provider first; if unresolved, State Water Board or local LPA",
+        "score": "STRONG",
+        "top_similarity": 0.542,
+        "top_results": [
+          {
+            "content": "- **Suspected Source**: If known, identify potential responsible party",
+            "similarity": 0.542007510901394
+          },
+          {
+            "content": "5. **Formal Enforcement**: ACL, CDO, or other action issued",
+            "similarity": 0.516503916666264
+          },
+          {
+            "content": "- Whistleblower situations",
+            "similarity": 0.507419154711292
+          }
+        ]
+      },
+      {
+        "query_id": "wat-014",
+        "query": "Will boiling my water make it safe if it's contaminated with nitrates?",
+        "type": "edge_case",
+        "expected_coverage": "NO - boiling concentrates nitrates; only works for bacteria/viruses",
+        "score": "STRONG",
+        "top_similarity": 0.4562,
+        "top_results": [
+          {
+            "content": "Chlorine smell = your water is being disinfected. This is good! The amount used is regulated and safe. If the taste bothers you, a simple carbon filter or leaving water in the fridge overnight will solve it.",
+            "similarity": 0.456224593149151
+          },
+          {
+            "content": "If you're healthy, drinking hard water is completely safe. If you dislike the effects on your home or skin, water softening is an option\u2014but it's about comfort, not health.",
+            "similarity": 0.401640009684562
+          },
+          {
+            "content": "Most cloudy water is just trapped air\u2014completely harmless and clears within minutes. If your water doesn't clear, or if you notice color, odor, or particles, contact your water utility for guidance.",
+            "similarity": 0.342503110021168
+          }
+        ]
+      },
+      {
+        "query_id": "wat-015",
+        "query": "What is chromium-6 and why was it in the news?",
+        "type": "real_user",
+        "expected_coverage": "Industrial pollutant; cancer risk; CA had/has stricter standard; some systems struggle to meet it",
+        "score": "ACCEPTABLE",
+        "top_similarity": 0.3389,
+        "top_results": [
+          {
+            "content": "---",
+            "similarity": 0.338912000591279
+          },
+          {
+            "content": "- Manganese (proposed notification/response levels Sept 2025)",
+            "similarity": 0.319359242916109
+          },
+          {
+            "content": "- Take enforcement if needed",
+            "similarity": 0.263746275678503
+          }
+        ]
+      },
+      {
+        "query_id": "wat-016",
+        "query": "I'm pregnant. Are there extra precautions I should take with tap water?",
+        "type": "edge_case",
+        "expected_coverage": "Consult healthcare provider; extra concern for nitrates, lead; consider testing if unsure",
+        "score": "STRONG",
+        "top_similarity": 0.5727,
+        "top_results": [
+          {
+            "content": "If you or a family member is in a vulnerable group, err on the side of caution. When in doubt, use bottled water and consult your healthcare provider.",
+            "similarity": 0.572680592536926
+          },
+          {
+            "content": "**For most people, filtered tap water is the safest, cheapest, and most environmentally friendly option.**",
+            "similarity": 0.449294057446365
+          },
+          {
+            "content": "6. Wait for official \"all clear\" before resuming normal use",
+            "similarity": 0.434161007404327
+          }
+        ]
+      },
+      {
+        "query_id": "wat-017",
+        "query": "What's in my Consumer Confidence Report and how do I read it?",
+        "type": "real_user",
+        "expected_coverage": "Annual water quality report; shows contaminants detected, levels vs MCL, source info",
+        "score": "ACCEPTABLE",
+        "top_similarity": 0.3659,
+        "top_results": [
+          {
+            "content": "- Permit information",
+            "similarity": 0.365914314985275
+          },
+          {
+            "content": "- **Consultants**: Can prepare reports for LRP certification",
+            "similarity": 0.354510962963104
+          },
+          {
+            "content": "- Facility information",
+            "similarity": 0.351858931558262
+          }
+        ]
+      },
+      {
+        "query_id": "wat-018",
+        "query": "Is bottled water safer than tap water?",
+        "type": "real_user",
+        "expected_coverage": "Not necessarily; tap water often more tested; bottled water regulated differently; environmental concerns",
+        "score": "STRONG",
+        "top_similarity": 0.742,
+        "top_results": [
+          {
+            "content": "**For most people, filtered tap water is the safest, cheapest, and most environmentally friendly option.**",
+            "similarity": 0.742045804384102
+          },
+          {
+            "content": "If you or a family member is in a vulnerable group, err on the side of caution. When in doubt, use bottled water and consult your healthcare provider.",
+            "similarity": 0.483461916446686
+          },
+          {
+            "content": "Look for NSF/ANSI 42 certification for taste and odor reduction.",
+            "similarity": 0.429877792008055
+          }
+        ]
+      },
+      {
+        "query_id": "wat-019",
+        "query": "My water looks cloudy in the morning. Is something wrong?",
+        "type": "real_user",
+        "expected_coverage": "Usually air bubbles or temperature; clears after standing; if persistent, may be sediment",
+        "score": "STRONG",
+        "top_similarity": 0.6525,
+        "top_results": [
+          {
+            "content": "Most cloudy water is just trapped air\u2014completely harmless and clears within minutes. If your water doesn't clear, or if you notice color, odor, or particles, contact your water utility for guidance.",
+            "similarity": 0.652527609618165
+          },
+          {
+            "content": "Chlorine smell = your water is being disinfected. This is good! The amount used is regulated and safe. If the taste bothers you, a simple carbon filter or leaving water in the fridge overnight will solve it.",
+            "similarity": 0.384451889065021
+          },
+          {
+            "content": "If you're healthy, drinking hard water is completely safe. If you dislike the effects on your home or skin, water softening is an option\u2014but it's about comfort, not health.",
+            "similarity": 0.374168634414676
+          }
+        ]
+      },
+      {
+        "query_id": "wat-020",
+        "query": "What's a TMDL and how does it affect my local creek?",
+        "type": "edge_case",
+        "expected_coverage": "Total Maximum Daily Load; pollution limit for impaired water body; cleanup plan",
+        "score": "STRONG",
+        "top_similarity": 0.7339,
+        "top_results": [
+          {
+            "content": "TMDLs serve as the critical bridge between water quality standards (what the water body should look like) and implementation (what actions are needed to get there).",
+            "similarity": 0.733884529239863
+          },
+          {
+            "content": "One TMDL is developed for each waterbody-pollutant combination. A single water body impaired by multiple pollutants may require multiple TMDLs.",
+            "similarity": 0.692956883135029
+          },
+          {
+            "content": "- Water Quality Standards",
+            "similarity": 0.670333186348297
+          }
+        ]
+      },
+      {
+        "query_id": "wat-021",
+        "query": "I want to report someone illegally dumping into a storm drain. Who do I call?",
+        "type": "real_user",
+        "expected_coverage": "Local water quality agency; Regional Water Board; CalEPA complaint portal",
+        "score": "STRONG",
+        "top_similarity": 0.4681,
+        "top_results": [
+          {
+            "content": "- **Suspected Source**: If known, identify potential responsible party",
+            "similarity": 0.468109685053561
+          },
+          {
+            "content": "- Whistleblower situations",
+            "similarity": 0.41549784952428
+          },
+          {
+            "content": "- Any known information about the diverter",
+            "similarity": 0.411976049902913
+          }
+        ]
+      },
+      {
+        "query_id": "wat-022",
+        "query": "Can I get a grant to fix my failing water system? I'm on a small community system.",
+        "type": "multi_part",
+        "expected_coverage": "State Drinking Water Revolving Fund; SAFER program; technical assistance available",
+        "score": "STRONG",
+        "top_similarity": 0.5501,
+        "top_results": [
+          {
+            "content": "2. Submit to: DFA-TArequest@waterboards.ca.gov",
+            "similarity": 0.550139844417576
+          },
+          {
+            "content": "- Operator certification support",
+            "similarity": 0.533030033111576
+          },
+          {
+            "content": "7. Transition to sustainable governance",
+            "similarity": 0.530742391027739
+          }
+        ]
+      },
+      {
+        "query_id": "wat-023",
+        "query": "What's the difference between the State Water Board and Regional Water Boards?",
+        "type": "real_user",
+        "expected_coverage": "State = statewide policy, drinking water; Regional = 9 boards for watershed-specific pollution control",
+        "score": "STRONG",
+        "top_similarity": 0.7778,
+        "top_results": [
+          {
+            "content": "This structure balances statewide consistency with regional flexibility.",
+            "similarity": 0.777829673548981
+          },
+          {
+            "content": "- Request stay if necessary",
+            "similarity": 0.767814471255872
+          },
+          {
+            "content": "| **Drinking Water** | State Board (Division of Drinking Water) |",
+            "similarity": 0.76261880286392
+          }
+        ]
+      },
+      {
+        "query_id": "wat-024",
+        "query": "I heard my water district uses recycled water. Is that safe to drink?",
+        "type": "real_user",
+        "expected_coverage": "Potable reuse is highly treated and regulated; direct vs indirect potable reuse; monitoring requirements",
+        "score": "STRONG",
+        "top_similarity": 0.5481,
+        "top_results": [
+          {
+            "content": "Chlorine smell = your water is being disinfected. This is good! The amount used is regulated and safe. If the taste bothers you, a simple carbon filter or leaving water in the fridge overnight will solve it.",
+            "similarity": 0.548081040382385
+          },
+          {
+            "content": "If you're healthy, drinking hard water is completely safe. If you dislike the effects on your home or skin, water softening is an option\u2014but it's about comfort, not health.",
+            "similarity": 0.42680633504353
+          },
+          {
+            "content": "Most cloudy water is just trapped air\u2014completely harmless and clears within minutes. If your water doesn't clear, or if you notice color, odor, or particles, contact your water utility for guidance.",
+            "similarity": 0.398026347160339
+          }
+        ]
+      },
+      {
+        "query_id": "wat-025",
+        "query": "After the wildfire, is my tap water safe? I heard about benzene contamination.",
+        "type": "edge_case",
+        "expected_coverage": "Post-fire water quality concerns are real; follow local advisories; VOC contamination possible from burned infrastructure",
+        "score": "STRONG",
+        "top_similarity": 0.5198,
+        "top_results": [
+          {
+            "content": "4. Private well owners: Test before resuming use",
+            "similarity": 0.519842194304663
+          },
+          {
+            "content": "If you or a family member is in a vulnerable group, err on the side of caution. When in doubt, use bottled water and consult your healthcare provider.",
+            "similarity": 0.4420904648927
+          },
+          {
+            "content": "6. Wait for official \"all clear\" before resuming normal use",
+            "similarity": 0.435033453554912
+          }
+        ]
+      },
+      {
+        "query_id": "wat-026",
+        "query": "What is SB 606 and how does it affect my water usage?",
+        "type": "real_user",
+        "expected_coverage": "AB 1668/SB 606 Making Conservation a Way of Life; permanent water use standards; supplier water budgets",
+        "score": "STRONG",
+        "top_similarity": 0.5961,
+        "top_results": [
+          {
+            "content": "AB 1668 and SB 606 shifted California from \"save water during droughts\" to \"use water efficiently all the time.\" Your water supplier now has a permanent, customized efficiency budget \u2014 and real consequences for missing it.",
+            "similarity": 0.596103560460042
+          },
+          {
+            "content": "- Performance measures for CII water uses",
+            "similarity": 0.581112350159148
+          },
+          {
+            "content": "SB 1157 set a clear trajectory: Californians should use no more than 47 gallons per person per day indoors as of 2025, trending lower by 2030. This standard helps your water supplier build a realistic water budget \u2014 and gives them reason to offer you tools and incentives to save.",
+            "similarity": 0.576836585998535
+          }
+        ]
+      },
+      {
+        "query_id": "wat-027",
+        "query": "How much water am I allowed to use per day in California?",
+        "type": "real_user",
+        "expected_coverage": "Indoor standard is 47 GPCD as of 2025; standards apply to suppliers not individuals; outdoor varies by climate",
+        "score": "STRONG",
+        "top_similarity": 0.5601,
+        "top_results": [
+          {
+            "content": "SB 1157 set a clear trajectory: Californians should use no more than 47 gallons per person per day indoors as of 2025, trending lower by 2030. This standard helps your water supplier build a realistic water budget \u2014 and gives them reason to offer you tools and incentives to save.",
+            "similarity": 0.560101125246354
+          },
+          {
+            "content": "- CalWEP (California Water Efficiency Partnership) guidance",
+            "similarity": 0.552019629002788
+          },
+          {
+            "content": "Conservation standards will likely nudge your water rates up over time, but rebates, incentives, and smarter water use can more than offset the cost. Start by checking SaveOurWater.com for rebates in your area, fix any leaks, and make sure your landscape isn't drinking more water than it needs.",
+            "similarity": 0.549969315528874
+          }
+        ]
+      },
+      {
+        "query_id": "wat-028",
+        "query": "What was the 20 by 2020 water conservation goal?",
+        "type": "real_user",
+        "expected_coverage": "SB X7-7 Water Conservation Act of 2009; 20% reduction by 2020; achieved 32% reduction; 199 to 136 GPCD",
+        "score": "STRONG",
+        "top_similarity": 0.5416,
+        "top_results": [
+          {
+            "content": "- Population figures from Health and Safety Code Section 116530 reporting",
+            "similarity": 0.541641609121615
+          },
+          {
+            "content": "- Total statewide annual losses: ~316,000 acre-feet",
+            "similarity": 0.523093985595763
+          },
+          {
+            "content": "The efficiency standards create a comprehensive, progressively tighter framework through 2040. Indoor use shrinks to 47+ GPCD, outdoor landscaping must match 55-80% of plant needs, system leaks face economic-model-based limits, and commercial landscapes get their own declining budget.",
+            "similarity": 0.500367775614228
+          }
+        ]
+      },
+      {
+        "query_id": "wat-029",
+        "query": "What are the current drought restrictions in California?",
+        "type": "real_user",
+        "expected_coverage": "No statewide emergency regulations as of 2025; permanent conservation standards now apply; local restrictions may vary",
+        "score": "STRONG",
+        "top_similarity": 0.6388,
+        "top_results": [
+          {
+            "content": "- Referral to Attorney General possible",
+            "similarity": 0.638800659108201
+          },
+          {
+            "content": "- Governor's emergency proclamations",
+            "similarity": 0.633692029086475
+          },
+          {
+            "content": "- Pattern of annual renewals as conditions persist",
+            "similarity": 0.630345542143153
+          }
+        ]
+      },
+      {
+        "query_id": "wat-030",
+        "query": "How does my water company calculate my water budget?",
+        "type": "real_user",
+        "expected_coverage": "Urban Water Use Objectives; indoor + outdoor + water loss + CII budgets; custom per supplier; annual reporting",
+        "score": "STRONG",
+        "top_similarity": 0.5519,
+        "top_results": [
+          {
+            "content": "  - New potable reuse: up to 10% bonus",
+            "similarity": 0.551865994930267
+          },
+          {
+            "content": "- Population figures from Health and Safety Code Section 116530 reporting",
+            "similarity": 0.532773224546122
+          },
+          {
+            "content": "Process water (manufacturing/production) excluded from several CII requirements, but suppliers must still address top 20% of water-using sectors and top 2.5% of individual accounts.",
+            "similarity": 0.50142365694046
+          }
+        ]
+      },
+      {
+        "query_id": "wat-031",
+        "query": "What is Save Our Water and how do I participate?",
+        "type": "real_user",
+        "expected_coverage": "DWR campaign; rebate finder; conservation tips; SaveOurWater.com",
+        "score": "STRONG",
+        "top_similarity": 0.5004,
+        "top_results": [
+          {
+            "content": "**Website:** communitywatercenter.org",
+            "similarity": 0.500356137710078
+          },
+          {
+            "content": "### Policy Achievements",
+            "similarity": 0.495022297498906
+          },
+          {
+            "content": "- Central Coast Alliance United for a Sustainable Economy",
+            "similarity": 0.424546693292458
+          }
+        ]
+      },
+      {
+        "query_id": "wat-032",
+        "query": "What's the difference between drought restrictions and permanent conservation rules?",
+        "type": "real_user",
+        "expected_coverage": "Emergency vs permanent framework; drought restrictions are temporary; AB 1668/SB 606 standards are permanent",
+        "score": "STRONG",
+        "top_similarity": 0.5763,
+        "top_results": [
+          {
+            "content": "- Protects individual property owners during mandated conservation",
+            "similarity": 0.576303073919186
+          },
+          {
+            "content": "- Target: ~20% supply shortage response",
+            "similarity": 0.550101730233535
+          },
+          {
+            "content": "- Watering drought-sensitive vegetation during declared emergencies",
+            "similarity": 0.523351876535908
+          }
+        ]
+      },
+      {
+        "query_id": "wat-033",
+        "query": "When does California start enforcing water use limits?",
+        "type": "real_user",
+        "expected_coverage": "Regulation effective Jan 2025; graduated enforcement; penalties start Nov 2027; $1000-$10000 per day",
+        "score": "STRONG",
+        "top_similarity": 0.6257,
+        "top_results": [
+          {
+            "content": "AB 1668 and SB 606 shifted California from \"save water during droughts\" to \"use water efficiently all the time.\" Your water supplier now has a permanent, customized efficiency budget \u2014 and real consequences for missing it.",
+            "similarity": 0.625715568746997
+          },
+          {
+            "content": "Available beginning November 1, 2027 for suppliers not meeting objectives despite earlier enforcement actions.",
+            "similarity": 0.613786064756748
+          },
+          {
+            "content": "California moved from \"conserve only when the Governor says so\" to \"conserve all the time, with extra measures during emergencies.\" The permanent standards under AB 1668/SB 606 are now the baseline, and drought declarations can add temporary restrictions on top.",
+            "similarity": 0.609170473168522
+          }
+        ]
+      },
+      {
+        "query_id": "wat-034",
+        "query": "What rebates are available for water-saving appliances in California?",
+        "type": "real_user",
+        "expected_coverage": "Toilet, washer, showerhead rebates; turf removal; smart controllers; SaveOurWater.com rebate finder",
+        "score": "STRONG",
+        "top_similarity": 0.6115,
+        "top_results": [
+          {
+            "content": "Conservation standards will likely nudge your water rates up over time, but rebates, incentives, and smarter water use can more than offset the cost. Start by checking SaveOurWater.com for rebates in your area, fix any leaks, and make sure your landscape isn't drinking more water than it needs.",
+            "similarity": 0.611540006215572
+          },
+          {
+            "content": "Save Our Water is your free, one-stop resource for saving water in California. Start with the rebate finder to see what incentives are available in your area, and explore the tips and tools to make conservation a part of your daily routine.",
+            "similarity": 0.598902666634163
+          },
+          {
+            "content": "- DWR Urban Water Use Efficiency guidance",
+            "similarity": 0.569920182228092
+          }
+        ]
+      },
+      {
+        "query_id": "wat-035",
+        "query": "What does water use efficiency mean for California homeowners?",
+        "type": "real_user",
+        "expected_coverage": "Indoor 47 GPCD standard; outdoor ET-based budgets; rate impacts; available incentives",
+        "score": "STRONG",
+        "top_similarity": 0.6234,
+        "top_results": [
+          {
+            "content": "Conservation standards will likely nudge your water rates up over time, but rebates, incentives, and smarter water use can more than offset the cost. Start by checking SaveOurWater.com for rebates in your area, fix any leaks, and make sure your landscape isn't drinking more water than it needs.",
+            "similarity": 0.623354040184377
+          },
+          {
+            "content": "- CalWEP (California Water Efficiency Partnership) guidance",
+            "similarity": 0.608923554420471
+          },
+          {
+            "content": "Save Our Water is your free, one-stop resource for saving water in California. Start with the rebate finder to see what incentives are available in your area, and explore the tips and tools to make conservation a part of your daily routine.",
+            "similarity": 0.57929539680481
+          }
+        ]
+      }
+    ]
+  }
+}

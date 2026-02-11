@@ -1,0 +1,6170 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-02-10",
+  "stats": {
+    "total_topics": 179,
+    "total_urls": 577,
+    "validated_count": 577,
+    "broken_count": 1
+  },
+  "entries": [
+    {
+      "topic": "401 Certification Fees",
+      "category": "Permits",
+      "subcategory": "Fees",
+      "source_file": "401_certification_fees.json",
+      "urls": [
+        {
+          "label": "Cwa401",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "401Fee",
+          "url": "https://www.waterboards.ca.gov/rwqcb8/water_issues/programs/401_certification/docs/401fee.pdf",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": false
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Annual Reporting Requirements",
+      "category": "Compliance",
+      "subcategory": "Reporting",
+      "source_file": "annual_reporting.json",
+      "urls": [
+        {
+          "label": "Annual Reporting Requirements",
+          "url": "https://www.waterboards.ca.gov",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Annual Reporting Requirements",
+          "url": "https://ciwqs.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Annual Reporting Requirements",
+          "url": "https://smarts.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Annual Reporting Requirements",
+          "url": "https://geotracker.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Desalination in California",
+      "category": "Water Supply",
+      "subcategory": "Desalination",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "DWR Desalination Program",
+          "url": "https://water.ca.gov/Work-With-Us/Grants-And-Loans/desalination-Grant-Program",
+          "type": "info",
+          "agency": "DWR",
+          "stable": false
+        },
+        {
+          "label": "SWRCB Desalination Amendment",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/ocean/desalination/",
+          "type": "regulation",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Water Resilience Portfolio - Diversified Supply",
+          "url": "https://waterresilience.ca.gov/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Groundwater Banking and Recharge",
+      "category": "Water Supply",
+      "subcategory": "Groundwater",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "DWR Groundwater Management",
+          "url": "https://water.ca.gov/Programs/Groundwater-Management",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "SGMA Groundwater Sustainability",
+          "url": "https://water.ca.gov/Programs/Groundwater-Management/SGMA-Groundwater-Management",
+          "type": "regulation",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Groundwater Programs",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/groundwater/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "DWR Flood-MAR (Managed Aquifer Recharge)",
+          "url": "https://water.ca.gov/Programs/All-Programs/Flood-MAR",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "California Water Infrastructure",
+      "category": "Water Supply",
+      "subcategory": "Infrastructure",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "State Water Project - DWR",
+          "url": "https://water.ca.gov/Programs/State-Water-Project",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "DWR Infrastructure Programs",
+          "url": "https://water.ca.gov/Programs",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Water Resilience Portfolio",
+          "url": "https://waterresilience.ca.gov/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "EPA Water Infrastructure Finance",
+          "url": "https://www.epa.gov/dwsrf",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Agricultural Water Management",
+      "category": "Programs",
+      "subcategory": "Agriculture",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "Agricultural Water Management - DWR",
+          "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Agricultural-Water-Use-Efficiency",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Irrigated Lands Regulatory Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/agriculture/",
+          "type": "regulation",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Statewide Water Planning",
+      "category": "Programs",
+      "subcategory": "Planning",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "California Water Plan (Update 2023)",
+          "url": "https://water.ca.gov/Programs/California-Water-Plan",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Water Resilience Portfolio",
+          "url": "https://waterresilience.ca.gov/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "DWR Planning Programs",
+          "url": "https://water.ca.gov/Programs",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Bay-Delta Water Issues",
+      "category": "Programs",
+      "subcategory": "Delta",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "Bay-Delta Program - SWRCB",
+          "url": "https://www.waterboards.ca.gov/waterrights/water_issues/programs/bay_delta/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Delta Stewardship Council",
+          "url": "https://deltacouncil.ca.gov/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "DWR Delta Conveyance",
+          "url": "https://water.ca.gov/Programs/State-Water-Project/Delta-Conveyance",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Flood Management in California",
+      "category": "Programs",
+      "subcategory": "Flood Management",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "Flood Management - DWR",
+          "url": "https://water.ca.gov/Programs/Flood-Management",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Central Valley Flood Protection Plan",
+          "url": "https://water.ca.gov/Programs/Flood-Management/Flood-Planning-and-Studies/Central-Valley-Flood-Protection-Plan",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "FEMA Flood Maps",
+          "url": "https://msc.fema.gov/portal/home",
+          "type": "tool",
+          "agency": "Federal",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Harmful Algal Blooms (HABs)",
+      "category": "Water Quality",
+      "subcategory": "HABs",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "SWAMP Freshwater HABs Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/freshwater_cyanobacteria.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "HABs Portal",
+          "url": "https://mywaterquality.ca.gov/habs/",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "DDW HABs Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/habs/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "OEHHA HABs Resources",
+          "url": "https://oehha.ca.gov/habs/cyanobacteria-harmful-algal-blooms-habs-and-cyanotoxins-recreational-waters",
+          "type": "info",
+          "agency": "OEHHA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Mercury in California Waters",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "Statewide Mercury Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/mercury/other_programs.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Mercury Reservoir Control Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/mercury/reservoirs/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "GAMA Mercury Fact Sheet",
+          "url": "https://www.waterboards.ca.gov/gama/docs/coc_hexchromcr6.pdf",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "TMDL Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/tmdl/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Swimming Pool and Spa Regulations",
+      "category": "Public Resources",
+      "subcategory": "Recreation",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "CDPH Pool Safety and Regulations",
+          "url": "https://www.cdph.ca.gov/Programs/CEH/DRSEM/Pages/EMB/RecreationalHealth/California-Swimming-Pool-Requirements.aspx",
+          "type": "regulation",
+          "agency": "CDPH",
+          "stable": false
+        },
+        {
+          "label": "CDC Recreational Water Health",
+          "url": "https://www.cdc.gov/healthy-swimming/",
+          "type": "info",
+          "agency": "Federal",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Graywater Systems in California",
+      "category": "Programs",
+      "subcategory": "Conservation",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "Graywater Reuse - SWRCB Overview",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/onsite_nonpotable_reuse_regulations.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "EPA Water Reuse Guidelines",
+          "url": "https://www.epa.gov/waterreuse",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Rainwater Harvesting in California",
+      "category": "Programs",
+      "subcategory": "Conservation",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "Rainwater Harvesting - SWRCB",
+          "url": "https://www.waterboards.ca.gov/waterrights/board_info/faqs.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "DWR Water Use Efficiency",
+          "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Save Our Water - Conservation Tips",
+          "url": "https://saveourwater.com/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Secondary Drinking Water Standards",
+      "category": "Water Quality",
+      "subcategory": "Standards",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "DDW Secondary Standards (PDF)",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/ddw_secondary_standards.pdf",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Chemical Contaminants",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chemicalcontaminants.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Drinking Water Standards",
+          "url": "https://www.epa.gov/dwreginfo/drinking-water-regulations",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Fluoride in Drinking Water",
+      "category": "Water Quality",
+      "subcategory": "Fluoride",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "Fluoridation by Public Water Systems",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Fluoridation.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Chemical Contaminants",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chemicalcontaminants.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Drinking Water Standards",
+          "url": "https://www.epa.gov/dwreginfo/drinking-water-regulations",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Source Water Protection",
+      "category": "Water Quality",
+      "subcategory": "Source Protection",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "DWSAP Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/DWSAP.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Source Water Protection",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/DWSAP-Protection.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Protecting Groundwater",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/groundwater/protecting_gw.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water System Cybersecurity",
+      "category": "Compliance",
+      "subcategory": "Cybersecurity",
+      "source_file": "batch_additional_topics.json",
+      "urls": [
+        {
+          "label": "Water Resiliency - Prepare",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/water_resiliency/prepare.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Water Resiliency Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/water_resiliency/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Cybersecurity for Water Sector",
+          "url": "https://www.epa.gov/cyberwater/epa-cybersecurity-water-sector",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "CISA Water and Wastewater Systems",
+          "url": "https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience/critical-infrastructure-sectors/water-and-wastewater-sector",
+          "type": "info",
+          "agency": "Federal",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "How to Use CIWQS Database",
+      "category": "Community Resources",
+      "subcategory": "Advocate Toolkit",
+      "source_file": "batch_advocate_toolkit.json",
+      "urls": [
+        {
+          "label": "How to Use CIWQS Database",
+          "url": "https://ciwqs.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "CIWQS Help Guide",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/ciwqs/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "How to Use GeoTracker Database",
+      "category": "Community Resources",
+      "subcategory": "Advocate Toolkit",
+      "source_file": "batch_advocate_toolkit.json",
+      "urls": [
+        {
+          "label": "How to Use GeoTracker Database",
+          "url": "https://geotracker.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "GeoTracker Program Info",
+          "url": "https://www.waterboards.ca.gov/ust/electronic_submittal/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Joining Clean Water Team Citizen Monitoring",
+      "category": "Community Resources",
+      "subcategory": "Advocate Toolkit",
+      "source_file": "batch_advocate_toolkit.json",
+      "urls": [
+        {
+          "label": "Clean Water Team - Citizen Monitoring",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/clean_water_team/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "SWAMP Monitoring Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Volunteer Water Monitoring",
+          "url": "https://www.epa.gov/awma",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "How to Participate in Water Board Meetings",
+      "category": "Community Resources",
+      "subcategory": "Advocate Toolkit",
+      "source_file": "batch_advocate_toolkit.json",
+      "urls": [
+        {
+          "label": "SWRCB Board Meeting Calendar",
+          "url": "https://www.waterboards.ca.gov/board_info/calendar/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Board Meetings and Agendas",
+          "url": "https://www.waterboards.ca.gov/board_info/agendas/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Public Participation",
+          "url": "https://www.waterboards.ca.gov/about_us/public_participation/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Filing Environmental Justice Complaints",
+      "category": "Community Resources",
+      "subcategory": "Advocate Toolkit",
+      "source_file": "batch_advocate_toolkit.json",
+      "urls": [
+        {
+          "label": "SWRCB Environmental Justice",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/outreach/education/justice.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "SWRCB File a Complaint",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/",
+          "type": "form",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "CalEPA Environmental Complaints",
+          "url": "https://calepa.ca.gov/enforcement/complaints/",
+          "type": "form",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "CalEPA Environmental Justice",
+          "url": "https://calepa.ca.gov/envjustice/",
+          "type": "info",
+          "agency": "CalEPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "How to Request Public Records",
+      "category": "Community Resources",
+      "subcategory": "Advocate Toolkit",
+      "source_file": "batch_advocate_toolkit.json",
+      "urls": [
+        {
+          "label": "SWRCB Public Records Request",
+          "url": "https://www.waterboards.ca.gov/resources/public_records/",
+          "type": "form",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "California Public Records Act Guide",
+          "url": "https://oag.ca.gov/consumers/general/pra",
+          "type": "info",
+          "agency": "State of California",
+          "stable": false
+        },
+        {
+          "label": "SWRCB Public Participation Resources",
+          "url": "https://www.waterboards.ca.gov/about_us/public_participation/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Community Water Needs Assessment Guide",
+      "category": "Community Resources",
+      "subcategory": "Advocate Toolkit",
+      "source_file": "batch_advocate_toolkit.json",
+      "urls": [
+        {
+          "label": "SAFER Needs Assessment",
+          "url": "https://www.waterboards.ca.gov/safer/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Human Right to Water",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/hr2w/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "CalEnviroScreen EJ Tool",
+          "url": "https://oehha.ca.gov/calenviroscreen",
+          "type": "tool",
+          "agency": "OEHHA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Key Contacts for Water Advocacy",
+      "category": "Community Resources",
+      "subcategory": "Advocate Toolkit",
+      "source_file": "batch_advocate_toolkit.json",
+      "urls": [
+        {
+          "label": "SWRCB Contact Information",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "Regional Water Quality Control Boards",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Environmental Justice Contacts",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/outreach/education/justice.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "EPA Region 9 Contact",
+          "url": "https://www.epa.gov/aboutepa/epa-region-9-pacific-southwest",
+          "type": "contact",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "20x2020 Water Conservation Foundation",
+      "category": "Programs",
+      "subcategory": "Conservation History",
+      "source_file": "batch_conservation.json",
+      "urls": [
+        {
+          "label": "Sb X7 7",
+          "url": "https://water.ca.gov/programs/water-use-and-efficiency/sb-x7-7",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Billnavclient.Xhtml",
+          "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=200920107SB7",
+          "type": "regulation",
+          "agency": "State of California",
+          "stable": false
+        },
+        {
+          "label": "Urban Water Use",
+          "url": "https://viewperformance.deltacouncil.ca.gov/pm/urban-water-use",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Making Conservation a Way of Life AB 1668 and SB 606",
+      "category": "Programs",
+      "subcategory": "Conservation",
+      "source_file": "batch_conservation.json",
+      "urls": [
+        {
+          "label": "Water Efficiency Legislation",
+          "url": "https://www.waterboards.ca.gov/conservation/regs/water_efficiency_legislation.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "California Water Conservation Regulations",
+          "url": "https://www.kutakrock.com/newspublications/publications/2024/july/california-water-conservation-regulations",
+          "type": "info",
+          "agency": "Other",
+          "stable": false
+        },
+        {
+          "label": "The Framework",
+          "url": "https://calwep.org/the-framework/",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "SB 1157 Indoor Water Use Standards",
+      "category": "Programs",
+      "subcategory": "Conservation",
+      "source_file": "batch_conservation.json",
+      "urls": [
+        {
+          "label": "Billnavclient.Xhtml",
+          "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202120220SB1157",
+          "type": "regulation",
+          "agency": "State of California",
+          "stable": false
+        },
+        {
+          "label": "Indoor Residential Standard Drops To 47 Gpcd",
+          "url": "https://calwep.org/timeline/indoor-residential-standard-drops-to-47-gpcd/",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "Urban Water Use Efficiency Standards Variances And Performance Measures",
+          "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/2018-Water-Conservation-Legislation/Urban-Water-Use-Efficiency-Standards-Variances-and-Performance-Measures",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Use Efficiency Standards Explained",
+      "category": "Programs",
+      "subcategory": "Water Use Efficiency",
+      "source_file": "batch_conservation.json",
+      "urls": [
+        {
+          "label": "The Framework",
+          "url": "https://calwep.org/the-framework/",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "Outdoor Residential Standard",
+          "url": "https://calwep.org/outdoor-residential-standard/",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "Water Loss Control",
+          "url": "https://www.waterboards.ca.gov/conservation/water_loss_control.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Commercial Industrial Institutional",
+          "url": "https://calwep.org/commercial-industrial-institutional/",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Urban Water Use Objectives What Suppliers Must Do",
+      "category": "Compliance",
+      "subcategory": "Conservation",
+      "source_file": "batch_conservation.json",
+      "urls": [
+        {
+          "label": "Water Efficiency Legislation",
+          "url": "https://www.waterboards.ca.gov/conservation/regs/water_efficiency_legislation.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Urban Water Use Efficiency",
+          "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "4823",
+          "url": "https://lao.ca.gov/Publications/Report/4823",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Save Our Water Campaign",
+      "category": "Programs",
+      "subcategory": "Conservation",
+      "source_file": "batch_conservation.json",
+      "urls": [
+        {
+          "label": "Save Our Water Campaign",
+          "url": "https://saveourwater.com",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "Save Our Water Campaign",
+          "url": "https://water.ca.gov",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Drought Restrictions vs Permanent Conservation Rules",
+      "category": "Public Resources",
+      "subcategory": "Conservation",
+      "source_file": "batch_conservation.json",
+      "urls": [
+        {
+          "label": "Emergency Regulation",
+          "url": "https://www.waterboards.ca.gov/conservation/regs/emergency_regulation.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Wasteful Water Uses",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/conservation_portal/regs/wasteful_water_uses.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Water Efficiency Legislation",
+          "url": "https://www.waterboards.ca.gov/conservation/regs/water_efficiency_legislation.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Conservation and Your Water Bill",
+      "category": "Consumer FAQ",
+      "subcategory": "Conservation",
+      "source_file": "batch_conservation.json",
+      "urls": [
+        {
+          "label": "Conservation and Your Water Bill",
+          "url": "https://saveourwater.com",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "4823",
+          "url": "https://lao.ca.gov/Publications/Report/4823",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "Billtextclient.Xhtml",
+          "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201520160SB814",
+          "type": "regulation",
+          "agency": "State of California",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Hard Water Health and Safety",
+      "category": "Consumer FAQ",
+      "subcategory": "Water Quality Concerns",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "EPA Secondary Drinking Water Standards",
+          "url": "https://www.epa.gov/sdwa/secondary-drinking-water-standards-guidance-nuisance-chemicals",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "DDW Drinking Water Quality",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "USGS Water Hardness Information",
+          "url": "https://www.usgs.gov/water-science-school/science/hardness-water",
+          "type": "info",
+          "agency": "Federal",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Chlorine Smell and Safety",
+      "category": "Consumer FAQ",
+      "subcategory": "Water Quality Concerns",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "EPA Chlorine in Drinking Water",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "CDC Water Disinfection",
+          "url": "https://www.cdc.gov/drinking-water/about/about-water-disinfection-with-chlorine-and-chloramine.html",
+          "type": "info",
+          "agency": "Federal",
+          "stable": false
+        },
+        {
+          "label": "DDW Drinking Water Standards",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/MCLsandPHGs.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Cloudy or Milky Water Causes",
+      "category": "Consumer FAQ",
+      "subcategory": "Water Quality Concerns",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "EPA Consumer Information on Drinking Water",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "DDW Drinking Water Quality",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "CDC Safe Drinking Water",
+          "url": "https://www.cdc.gov/drinking-water/about/index.html",
+          "type": "info",
+          "agency": "Federal",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "How to Read Consumer Confidence Reports",
+      "category": "Consumer FAQ",
+      "subcategory": "Reports and Notifications",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "EPA Consumer Confidence Reports",
+          "url": "https://www.epa.gov/ccr",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "DDW Annual Compliance Reports",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/CCR.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA CCR Finder Tool",
+          "url": "https://www.epa.gov/ccr/ccr-information-consumers",
+          "type": "tool",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "When Boiling Water Helps and When It Doesnt",
+      "category": "Consumer FAQ",
+      "subcategory": "Treatment",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "EPA Emergency Disinfection Guide",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "CDC Making Water Safe in Emergencies",
+          "url": "https://www.cdc.gov/water-emergency/about/index.html",
+          "type": "info",
+          "agency": "Federal",
+          "stable": false
+        },
+        {
+          "label": "DDW Boil Water Advisories",
+          "url": "https://www.waterboards.ca.gov/drinking_water/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "What to Do When You Get a Violation Notice",
+      "category": "Consumer FAQ",
+      "subcategory": "Reports and Notifications",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "DDW Compliance and Enforcement",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/compliance/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Public Notification Requirements",
+          "url": "https://www.epa.gov/dwreginfo/public-notification-rule",
+          "type": "regulation",
+          "agency": "EPA",
+          "stable": false
+        },
+        {
+          "label": "EPA SDWIS Violation Database",
+          "url": "https://enviro.epa.gov/facts/sdwis/search.html",
+          "type": "database",
+          "agency": "EPA",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Bottled Water vs Tap Water Comparison",
+      "category": "Consumer FAQ",
+      "subcategory": "Comparisons",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "EPA Drinking Water vs Bottled Water",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "FDA Bottled Water Regulations",
+          "url": "https://www.fda.gov/consumers/consumer-updates/bottled-water-everywhere-keeping-it-safe",
+          "type": "regulation",
+          "agency": "Federal",
+          "stable": false
+        },
+        {
+          "label": "DDW Drinking Water Standards (MCLs)",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/MCLsandPHGs.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Private Well Testing in California",
+      "category": "Consumer FAQ",
+      "subcategory": "Private Wells",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "DDW Private Well Information",
+          "url": "https://www.waterboards.ca.gov/gama/well_owners.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": false
+        },
+        {
+          "label": "EPA Private Drinking Water Wells",
+          "url": "https://www.epa.gov/privatewells",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "GAMA Groundwater Information System",
+          "url": "https://gamagroundwater.waterboards.ca.gov/gama/gamamap/public/",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Drinking Water for Infants Pregnant and Immunocompromised",
+      "category": "Consumer FAQ",
+      "subcategory": "Vulnerable Populations",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "EPA Drinking Water for Vulnerable Populations",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "CDC Drinking Water for Special Populations",
+          "url": "https://www.cdc.gov/drinking-water/about/index.html",
+          "type": "info",
+          "agency": "Federal",
+          "stable": true
+        },
+        {
+          "label": "OEHHA Public Health Goals for Drinking Water",
+          "url": "https://oehha.ca.gov/water/public-health-goals-phgs-drinking-water",
+          "type": "info",
+          "agency": "OEHHA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Safety After Disasters",
+      "category": "Consumer FAQ",
+      "subcategory": "Emergencies",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "EPA Emergency Disinfection of Drinking Water",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "CDC Water Safety After a Disaster",
+          "url": "https://www.cdc.gov/water-emergency/about/index.html",
+          "type": "info",
+          "agency": "Federal",
+          "stable": false
+        },
+        {
+          "label": "Cal OES Emergency Preparedness",
+          "url": "https://www.caloes.ca.gov/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Taste and Odor Problems Diagnosis",
+      "category": "Consumer FAQ",
+      "subcategory": "Water Quality Concerns",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "EPA Secondary Drinking Water Standards",
+          "url": "https://www.epa.gov/sdwa/secondary-drinking-water-standards-guidance-nuisance-chemicals",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "DDW Drinking Water Quality",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Consumer Complaints",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Quality Hotlines and Help Resources",
+      "category": "Consumer FAQ",
+      "subcategory": "Resources",
+      "source_file": "batch_consumer_faq.json",
+      "urls": [
+        {
+          "label": "EPA Safe Drinking Water Hotline",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water/safe-drinking-water-information",
+          "type": "contact",
+          "agency": "EPA",
+          "stable": false
+        },
+        {
+          "label": "DDW District Offices Contact",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/districts/",
+          "type": "contact",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Public Inquiries",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Dam Safety Program in California",
+      "category": "Programs",
+      "subcategory": "Dam Safety",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "Division of Safety of Dams - DWR",
+          "url": "https://water.ca.gov/Programs/All-Programs/Division-of-Safety-of-Dams",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Dam Safety Program - DSOD",
+          "url": "https://water.ca.gov/Programs/All-Programs/Division-of-Safety-of-Dams/Jurisdictional-Sized-Dams",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "FEMA Dam Safety",
+          "url": "https://www.fema.gov/grants/mitigation/learn/dam-safety",
+          "type": "info",
+          "agency": "Federal",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Water Quality Standards and Criteria",
+      "category": "Water Quality",
+      "subcategory": "Standards",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "Plans and Policies",
+          "url": "https://www.waterboards.ca.gov/plans_policies/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Water Quality Goals",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/water_quality_goals/",
+          "type": "tool",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Water Quality Standards - California",
+          "url": "https://www.epa.gov/wqs-tech/water-quality-standards-regulations-california",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Stormwater Capture and Reuse",
+      "category": "Programs",
+      "subcategory": "Stormwater",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "Stormwater Program - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Storm Water Resource Plans",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/swgp/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "DWR Stormwater Guidance",
+          "url": "https://water.ca.gov/programs/integrated-regional-water-management",
+          "type": "info",
+          "agency": "DWR",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Climate Change and California Water",
+      "category": "Programs",
+      "subcategory": "Climate Adaptation",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "Climate Change and Water - SWRCB",
+          "url": "https://www.waterboards.ca.gov/climate/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "DWR Climate Change Program",
+          "url": "https://water.ca.gov/Programs/All-Programs/Climate-Change-Program",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Water Resilience Portfolio",
+          "url": "https://waterresilience.ca.gov/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "EPA Climate Change and Water",
+          "url": "https://www.epa.gov/climate-change-water-sector",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water and Land Use Planning",
+      "category": "Programs",
+      "subcategory": "Land Use",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "Water Supply Assessments - DWR",
+          "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Land-And-Water-Use",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Sustainable Groundwater Management Act (SGMA)",
+          "url": "https://water.ca.gov/Programs/Groundwater-Management/SGMA-Groundwater-Management",
+          "type": "regulation",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "OPR General Plan Guidelines - Water",
+          "url": "https://lci.ca.gov/planning/general-plan/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Cannabis Cultivation and Water",
+      "category": "Permits",
+      "subcategory": "Cannabis",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "Cannabis Cultivation Programs",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cannabis/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Cannabis Cultivation Policy",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cannabis/cannabis_policy.html",
+          "type": "regulation",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Cannabis Water Quality",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cannabis/cannabis_water_quality.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Cannabis Water Rights",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cannabis/cannabis_water_rights.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Aquifer Storage and Recovery (ASR)",
+      "category": "Water Supply",
+      "subcategory": "Groundwater",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "DWR Groundwater Management",
+          "url": "https://water.ca.gov/Programs/Groundwater-Management",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Groundwater Programs",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/groundwater/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Underground Injection Control - ASR",
+          "url": "https://www.epa.gov/uic/aquifer-recharge-and-aquifer-storage-and-recovery",
+          "type": "regulation",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Cross-Connection Control Program",
+      "category": "Compliance",
+      "subcategory": "Cross-Connection",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "Cross-Connection Control Policy Handbook",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/cccph.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "DDW Publications",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Publications.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Drinking Water Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Loss Management",
+      "category": "Compliance",
+      "subcategory": "Water Loss",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "Water Loss Control",
+          "url": "https://www.waterboards.ca.gov/conservation/water_loss_control.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Water Loss Control Portal",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/conservation_portal/water_loss_control.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "DWR Validated Water Loss Reporting",
+          "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency/Validated-Water-Loss-Reporting",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Emergency Response Planning",
+      "category": "Compliance",
+      "subcategory": "Emergency Planning",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "Water Resiliency Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/water_resiliency/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Water Resiliency - Prepare",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/water_resiliency/prepare.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Emergency Management Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/emp/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Water Resilience",
+          "url": "https://www.epa.gov/waterresilience",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Tribal Water Rights in California",
+      "category": "Programs",
+      "subcategory": "Tribal",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "Tribal Water Issues - SWRCB",
+          "url": "https://www.waterboards.ca.gov/about_us/public_participation/tribal_affairs/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Tribal Drinking Water",
+          "url": "https://www.epa.gov/tribaldrinkingwater",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        },
+        {
+          "label": "BIA Indian Water Rights",
+          "url": "https://www.bia.gov/service/water-rights-negotiation-and-litigation-program",
+          "type": "info",
+          "agency": "Federal",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Wastewater Biosolids Management",
+      "category": "Programs",
+      "subcategory": "Wastewater",
+      "source_file": "batch_final_topics.json",
+      "urls": [
+        {
+          "label": "Biosolids Management - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/biosolids/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Biosolids Program",
+          "url": "https://www.epa.gov/biosolids",
+          "type": "regulation",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "NPDES Wastewater Permits",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water System Interconnections",
+      "category": "Water Supply",
+      "subcategory": "Infrastructure",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "DWR Integrated Regional Water Management",
+          "url": "https://water.ca.gov/Programs/Integrated-Regional-Water-Management",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "DDW Public Water System Requirements",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Water Resilience Portfolio",
+          "url": "https://waterresilience.ca.gov/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Lead Service Line Replacement",
+      "category": "Compliance",
+      "subcategory": "Infrastructure",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Lead and Copper Rule",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead-copper-rule/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Lead Service Line Replacement Funding",
+          "url": "https://www.waterboards.ca.gov/drinking_water/services/funding/lead-service-line-funding.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Lead Service Line Inventory",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead_service_line_inventory_pws.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "LCR Water System Resources",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead-copper-rule/water_system_resources.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Quality Monitoring Equipment",
+      "category": "Compliance",
+      "subcategory": "Monitoring",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "ELAP Lab Accreditation",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/labs/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "About ELAP",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/labs/about_elap.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Drinking Water Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Drinking Water Treatment Technologies",
+      "category": "Programs",
+      "subcategory": "Treatment",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "DDW Drinking Water Treatment",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Drinking Water Treatment",
+          "url": "https://www.epa.gov/sdwa/overview-drinking-water-treatment-technologies",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        },
+        {
+          "label": "CDPH Water Treatment Operator Certification",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/occupations/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Waterborne Disease Outbreaks",
+      "category": "Water Quality",
+      "subcategory": "Health",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Revised Total Coliform Rule",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/rtcr.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Drinking Water Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "CDC Waterborne Disease Surveillance",
+          "url": "https://www.cdc.gov/mmwr/volumes/73/ss/ss7301a1.htm",
+          "type": "info",
+          "agency": "Federal",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Meter Technology",
+      "category": "Programs",
+      "subcategory": "Technology",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Water Conservation and Metering - SWRCB",
+          "url": "https://www.waterboards.ca.gov/conservation/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "DWR Water Use Efficiency",
+          "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "EPA WaterSense",
+          "url": "https://www.epa.gov/watersense",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Storage Tanks and Reservoirs",
+      "category": "Programs",
+      "subcategory": "Infrastructure",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Division of Safety of Dams",
+          "url": "https://water.ca.gov/Programs/All-Programs/Division-of-Safety-of-Dams",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "DWR Water Storage Program",
+          "url": "https://water.ca.gov/What-We-Do/Water-Storage-And-Supply",
+          "type": "info",
+          "agency": "DWR",
+          "stable": false
+        },
+        {
+          "label": "DDW Drinking Water Facility Standards",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Lawbook.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Copper Corrosion Control",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Lead and Copper Rule",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead-copper-rule/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "LCR Regulatory Background",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead-copper-rule/background.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Lead and Copper Rule",
+          "url": "https://www.epa.gov/dwreginfo/lead-and-copper-rule",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Urban Runoff Pollution",
+      "category": "Programs",
+      "subcategory": "Stormwater",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Stormwater Program - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Municipal Stormwater Permits",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/municipal.html",
+          "type": "regulation",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Urban Runoff",
+          "url": "https://www.epa.gov/npdes/stormwater-discharges-municipal-sources",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "CASQA Stormwater Resources",
+          "url": "https://www.casqa.org/resources",
+          "type": "info",
+          "agency": "CASQA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Industrial Stormwater Requirements",
+      "category": "Permits",
+      "subcategory": "Stormwater",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Industrial Stormwater Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/industrial.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SMARTS Portal",
+          "url": "https://smarts.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "CASQA Resources",
+          "url": "https://www.casqa.org",
+          "type": "info",
+          "agency": "CASQA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Stormwater BMPs",
+      "category": "Programs",
+      "subcategory": "Stormwater",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Stormwater Best Management Practices",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/smarts/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Construction Stormwater BMPs",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/constpermits.html",
+          "type": "regulation",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "CASQA BMP Handbooks",
+          "url": "https://www.casqa.org/resources/bmp-handbooks",
+          "type": "info",
+          "agency": "CASQA",
+          "stable": true
+        },
+        {
+          "label": "EPA Stormwater BMPs",
+          "url": "https://www.epa.gov/npdes/national-menu-best-management-practices-bmps-stormwater",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Quality Modeling",
+      "category": "Programs",
+      "subcategory": "Planning",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "SWAMP - Surface Water Ambient Monitoring",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "CEDEN - Water Quality Data Portal",
+          "url": "https://ceden.waterboards.ca.gov/",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Water Quality Models",
+          "url": "https://www.epa.gov/waterdata",
+          "type": "tool",
+          "agency": "EPA",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Salinity Management in California",
+      "category": "Water Quality",
+      "subcategory": "Salinity",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Salt and Nutrient Management Plans",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/recycled_water/snmp.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Water Quality Goals",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/water_quality_goals/",
+          "type": "tool",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Plans and Policies",
+          "url": "https://www.waterboards.ca.gov/plans_policies/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Pharmaceutical Contamination",
+      "category": "Water Quality",
+      "subcategory": "Emerging Contaminants",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Emerging Contaminants",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/EmergingContaminants.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Constituents of Emerging Concern",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cec/index.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Contaminant Candidate List",
+          "url": "https://www.epa.gov/sdwa",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Microplastics in Water",
+      "category": "Water Quality",
+      "subcategory": "Emerging Contaminants",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Microplastics in Drinking Water",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/microplastics.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Emerging Contaminants",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/EmergingContaminants.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Constituents of Emerging Concern",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cec/index.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Well Abandonment Requirements",
+      "category": "Permits",
+      "subcategory": "Wells",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "DWR Well Standards",
+          "url": "https://water.ca.gov/Programs/Groundwater-Management/Wells/Well-Standards/Combined-Well-Standards",
+          "type": "regulation",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Well Destruction Standards",
+          "url": "https://water.ca.gov/Programs/Groundwater-Management/Wells/Well-Standards/Combined-Well-Standards/Water-Destruction",
+          "type": "regulation",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "DWR Wells Program",
+          "url": "https://water.ca.gov/Programs/Groundwater-Management/Wells",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Produced Water Management",
+      "category": "Permits",
+      "subcategory": "Industrial",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Oil Fields Program",
+          "url": "https://www.waterboards.ca.gov/centralvalley/water_issues/oil_fields/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Produced Water Ponds Monitoring",
+          "url": "https://www.waterboards.ca.gov/oil-gas/oil_field_produced/produced_water_ponds/index.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "WDR Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/waste_discharge_requirements/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Cooling Water Discharge Regulations",
+      "category": "Permits",
+      "subcategory": "Industrial",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "CWA 316(b) Cooling Water Intake",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/ocean/cwa316/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Once-Through Cooling Policy",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/ocean/cwa316/policy.html",
+          "type": "regulation",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "OTC Advisory Committee",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/ocean/cwa316/saccwis/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Wastewater Reuse for Agriculture",
+      "category": "Programs",
+      "subcategory": "Recycled Water",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Recycled Water for Agricultural Irrigation",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/recycled_water/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "DDW Recycled Water Permits",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/recycledwater/",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Guidelines for Water Reuse",
+          "url": "https://www.epa.gov/waterreuse",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Instream Flow Requirements",
+      "category": "Programs",
+      "subcategory": "Environmental",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Instream Flow Program - SWRCB",
+          "url": "https://www.waterboards.ca.gov/waterrights/water_issues/programs/instream_flows/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "California Environmental Flows Framework",
+          "url": "https://ceff.ucdavis.edu/",
+          "type": "tool",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "Water Rights Overview - SWRCB",
+          "url": "https://www.waterboards.ca.gov/waterrights/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Fish Passage Requirements",
+      "category": "Programs",
+      "subcategory": "Environmental",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Fish Passage Program - CDFW",
+          "url": "https://wildlife.ca.gov/Conservation/Watersheds/Fish-Passage",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "Dam Removal and Fish Passage - SWRCB",
+          "url": "https://www.waterboards.ca.gov/waterrights/water_issues/programs/instream_flows/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "NOAA Fish Passage Engineering",
+          "url": "https://www.fisheries.noaa.gov/west-coast/habitat-conservation/west-coast-fish-passage-guidelines",
+          "type": "info",
+          "agency": "Federal",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Ballast Water Management",
+      "category": "Permits",
+      "subcategory": "Marine",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Vessel General Permit Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/beaches/vssl_prmt.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "CA State Lands Commission - Ballast Water",
+          "url": "https://www.slc.ca.gov/marine-invasive-species-program/ballast-water-discharge-performance-standards-faqs/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "NPDES Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Vessel Sewage Discharge Regulations",
+      "category": "Permits",
+      "subcategory": "Marine",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Vessel General Permit Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/beaches/vssl_prmt.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "NPDES General Permits",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/general_permits.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "NPDES Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Dredging and Dredged Material",
+      "category": "Permits",
+      "subcategory": "Marine",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "SF Bay Dredging Program",
+          "url": "https://www.waterboards.ca.gov/sanfranciscobay/water_issues/programs/dredging.html",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "401 Certification and Wetlands Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "NPDES Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Atmospheric Rivers and Water Supply",
+      "category": "Programs",
+      "subcategory": "Climate",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "DWR Atmospheric River Program",
+          "url": "https://water.ca.gov/Programs/Flood-Management",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Climate Change and Water - SWRCB",
+          "url": "https://www.waterboards.ca.gov/climate/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "CW3E Atmospheric Rivers Research",
+          "url": "https://cw3e.ucsd.edu/",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water System Asset Management",
+      "category": "Compliance",
+      "subcategory": "Management",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Water Loss Control",
+          "url": "https://www.waterboards.ca.gov/conservation/water_loss_control.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Drinking Water Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "AWWA Asset Management",
+          "url": "https://www.awwa.org/resource/asset-management/",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Landscape Irrigation Runoff",
+      "category": "Programs",
+      "subcategory": "Conservation",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Conservation Programs - SWRCB",
+          "url": "https://www.waterboards.ca.gov/conservation/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "Model Water Efficient Landscape Ordinance (MWELO)",
+          "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency/Model-Water-Efficient-Landscape-Ordinance",
+          "type": "regulation",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "EPA WaterSense Irrigation",
+          "url": "https://www.epa.gov/watersense/outdoors",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Construction Site Dewatering",
+      "category": "Permits",
+      "subcategory": "Construction",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Construction Stormwater Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/construction.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "NPDES General Permits",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/general_permits.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SMARTS Portal",
+          "url": "https://smarts.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Aquatic Invasive Species Prevention",
+      "category": "Programs",
+      "subcategory": "Environmental",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Aquatic Invasive Species Program - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/ais/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "CDFW Invasive Species",
+          "url": "https://wildlife.ca.gov/Conservation/Invasives",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "EPA Aquatic Invasive Species",
+          "url": "https://www.epa.gov/vessels-marinas-and-ports/aquatic-nuisance-species-ans",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Sediment Quality Objectives",
+      "category": "Water Quality",
+      "subcategory": "Standards",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Plans and Policies - Sediment Quality",
+          "url": "https://www.waterboards.ca.gov/plans_policies/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SWAMP Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Water Quality Goals",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/water_quality_goals/",
+          "type": "tool",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Bioassessment and Biological Monitoring",
+      "category": "Water Quality",
+      "subcategory": "Monitoring",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "SWAMP Bioassessment",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/bioassessment/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SWAMP IQ Bioassessment",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/swamp_iq/bioassessment.html",
+          "type": "tool",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Biological Objectives",
+          "url": "https://waterboards.ca.gov/plans_policies/biological_objective.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Impaired Waters List (303d)",
+      "category": "Water Quality",
+      "subcategory": "Assessment",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "2024 Integrated Report",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/water_quality_assessment/2024-integrated-report.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Water Quality Assessment Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/water_quality_assessment/2020_2022_integrated_report.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "TMDL Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/tmdl/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Quality Improvement Funding",
+      "category": "Funding",
+      "subcategory": "Water Quality",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Grants and Loans - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Clean Water State Revolving Fund",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/srf/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Proposition 1 - Water Quality Funding",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/proposition1/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Water Quality Grants",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water/drinking-water-grants",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Nutrients in Surface Water",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Nutrient Objectives Development",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/nutrient_objectives/development/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Water Quality Goals",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/water_quality_goals/",
+          "type": "tool",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "TMDL Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/tmdl/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Temperature TMDLs",
+      "category": "Water Quality",
+      "subcategory": "TMDLs",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "TMDL Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/tmdl/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "TMDL Background",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/tmdl/background.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Plans and Policies",
+          "url": "https://www.waterboards.ca.gov/plans_policies/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Stormwater Fees and Funding",
+      "category": "Funding",
+      "subcategory": "Stormwater",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "Stormwater Grants - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/swgp/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "CASQA Stormwater Funding Resources",
+          "url": "https://www.casqa.org/resources",
+          "type": "info",
+          "agency": "CASQA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Monitoring Council and Data Integration",
+      "category": "Public Resources",
+      "subcategory": "Data",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "California Water Quality Monitoring Council",
+          "url": "https://www.mywaterquality.ca.gov/",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "CEDEN Environmental Data Exchange",
+          "url": "https://ceden.waterboards.ca.gov/",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SWAMP Monitoring Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Drinking Water Fluoridation Programs",
+      "category": "Programs",
+      "subcategory": "Drinking Water",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "DDW Fluoridation Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Fluoridation.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "CDC Community Water Fluoridation",
+          "url": "https://www.cdc.gov/fluoridation/",
+          "type": "info",
+          "agency": "Federal",
+          "stable": true
+        },
+        {
+          "label": "EPA Fluoride Standards",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Point Source vs Nonpoint Source",
+      "category": "Programs",
+      "subcategory": "Pollution Control",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "NPDES Program - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Nonpoint Source Pollution Control - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/nps/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Point Source Permitting",
+          "url": "https://www.epa.gov/npdes",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "EPA Nonpoint Source Pollution",
+          "url": "https://www.epa.gov/nps",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Groundwater Quality Protection",
+      "category": "Water Quality",
+      "subcategory": "Groundwater",
+      "source_file": "batch_gap_filler.json",
+      "urls": [
+        {
+          "label": "GAMA Program",
+          "url": "https://www.waterboards.ca.gov/gama/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Protecting Groundwater",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/groundwater/protecting_gw.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "GAMA Online Tools",
+          "url": "https://www.waterboards.ca.gov/gama/online_tools.html",
+          "type": "tool",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Groundwater Data and Databases",
+          "url": "https://www.waterboards.ca.gov/resources/data_databases/groundwater.html",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "TMF Self-Assessment Guide",
+      "category": "Small Systems",
+      "subcategory": "Operator Guides",
+      "source_file": "batch_operator_guides.json",
+      "urls": [
+        {
+          "label": "DDW Small Water Systems Technical Assistance",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/publicwatersystems.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": false
+        },
+        {
+          "label": "EPA TMF Capacity Development",
+          "url": "https://www.epa.gov/dwcapacity",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "RCAC Technical Assistance",
+          "url": "https://www.rcac.org/events/drinking-water-compliance/",
+          "type": "info",
+          "agency": "Other",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Water System Consolidation Pathways",
+      "category": "Small Systems",
+      "subcategory": "Operator Guides",
+      "source_file": "batch_operator_guides.json",
+      "urls": [
+        {
+          "label": "DDW Mandatory Consolidation Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/compliance/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "SAFER Program - Consolidation",
+          "url": "https://www.waterboards.ca.gov/safer/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Consolidation and Extension of Service",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/waterpartnership.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Funding Navigator for Small Water Systems",
+      "category": "Small Systems",
+      "subcategory": "Operator Guides",
+      "source_file": "batch_operator_guides.json",
+      "urls": [
+        {
+          "label": "SAFER Program Funding",
+          "url": "https://www.waterboards.ca.gov/safer/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Grants and Loans Overview",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Drinking Water State Revolving Fund",
+          "url": "https://www.waterboards.ca.gov/drinking_water/services/funding/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA DWSRF Program",
+          "url": "https://www.epa.gov/dwsrf",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Emergency Response for Small Water Systems",
+      "category": "Small Systems",
+      "subcategory": "Operator Guides",
+      "source_file": "batch_operator_guides.json",
+      "urls": [
+        {
+          "label": "DDW Emergency Response Guidance",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Small System Emergency Planning",
+          "url": "https://www.epa.gov/waterutilityresponse",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "Cal OES Emergency Management",
+          "url": "https://www.caloes.ca.gov/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Compliance Basics for Small Water Systems",
+      "category": "Small Systems",
+      "subcategory": "Operator Guides",
+      "source_file": "batch_operator_guides.json",
+      "urls": [
+        {
+          "label": "DDW Small Water System Compliance",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/publicwatersystems.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": false
+        },
+        {
+          "label": "DDW Compliance and Enforcement",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/compliance/",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Small Drinking Water Systems Compliance",
+          "url": "https://www.epa.gov/dwreginfo",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "MS4 Municipal Stormwater Permits",
+      "category": "Permits",
+      "subcategory": "Stormwater",
+      "source_file": "batch_permits_compliance.json",
+      "urls": [
+        {
+          "label": "Municipal Stormwater Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/municipal.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Phase I MS4 Permits",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/phase_i_municipal.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Phase II Small MS4 Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/phase_ii_municipal.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Stormwater Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Waste Discharge Requirements (WDRs)",
+      "category": "Permits",
+      "subcategory": "WDRs",
+      "source_file": "batch_permits_compliance.json",
+      "urls": [
+        {
+          "label": "WDR Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/waste_discharge_requirements/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Report of Waste Discharge Form 200",
+          "url": "https://www.waterboards.ca.gov/publications_forms/forms/docs/form200.pdf",
+          "type": "form",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "NPDES Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Quality Certification (Section 401)",
+      "category": "Permits",
+      "subcategory": "401 Certification",
+      "source_file": "batch_permits_compliance.json",
+      "urls": [
+        {
+          "label": "401 Certification and Wetlands Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "401 Emergency Permitting",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/emergency-permitting.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "NPDES Permit Monitoring and Reporting",
+      "category": "Compliance",
+      "subcategory": "Monitoring",
+      "source_file": "batch_permits_compliance.json",
+      "urls": [
+        {
+          "label": "NPDES Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "CIWQS Electronic Reporting",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/ciwqs/esmr25.html",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "CIWQS Database",
+          "url": "https://ciwqs.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "NPDES Permit Search",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/permit_search.html",
+          "type": "tool",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Quality Enforcement",
+      "category": "Compliance",
+      "subcategory": "Enforcement",
+      "source_file": "batch_permits_compliance.json",
+      "urls": [
+        {
+          "label": "Office of Enforcement",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/enforcement/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Compliance and Enforcement Data",
+          "url": "https://www.waterboards.ca.gov/resources/data_databases/compliance_enforcement.html",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "CIWQS Database",
+          "url": "https://ciwqs.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Public Records and Water Quality Data",
+      "category": "Public Resources",
+      "subcategory": "Data Access",
+      "source_file": "batch_permits_compliance.json",
+      "urls": [
+        {
+          "label": "SWRCB Public Records Request",
+          "url": "https://www.waterboards.ca.gov/resources/public_records/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SDWIS Drinking Water Database",
+          "url": "https://sdwis.waterboards.ca.gov/PDWW/",
+          "type": "database",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "CIWQS Water Quality Database",
+          "url": "https://ciwqs.waterboards.ca.gov/",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "GeoTracker Environmental Data",
+          "url": "https://geotracker.waterboards.ca.gov/",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Dewatering and Temporary Discharge Permits",
+      "category": "Permits",
+      "subcategory": "Temporary Discharges",
+      "source_file": "batch_permits_compliance.json",
+      "urls": [
+        {
+          "label": "NPDES General Permits",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/general_permits.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Construction Stormwater Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/construction.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "WDR Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/waste_discharge_requirements/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Industrial Pretreatment Programs",
+      "category": "Permits",
+      "subcategory": "Industrial",
+      "source_file": "batch_permits_compliance.json",
+      "urls": [
+        {
+          "label": "NPDES Pretreatment Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/pretreat.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "NPDES Wastewater Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA NPDES",
+          "url": "https://www.epa.gov/npdes",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Operator Certification for Water Systems",
+      "category": "Compliance",
+      "subcategory": "Operator Certification",
+      "source_file": "batch_permits_compliance.json",
+      "urls": [
+        {
+          "label": "Drinking Water Operator Certification",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/occupations/DWopcert.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Operator Certification Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/operator_certification/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Wastewater Operator Certification",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/operator_certification/cert.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Sanitary Survey Requirements",
+      "category": "Compliance",
+      "subcategory": "Inspections",
+      "source_file": "batch_permits_compliance.json",
+      "urls": [
+        {
+          "label": "Drinking Water Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "DDW Performance - Inspections",
+          "url": "https://www.waterboards.ca.gov/about_us/performance_report_2324/regulate/251_drinking_water.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Electronic Annual Report (eAR)",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/ear.html",
+          "type": "portal",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "PFAS in Drinking Water",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_pollutants.json",
+      "urls": [
+        {
+          "label": "PFAS Program",
+          "url": "https://www.waterboards.ca.gov/pfas/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "PFAS Drinking Water",
+          "url": "https://www.waterboards.ca.gov/pfas/drinking_water.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "DDW PFAS General Orders",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/pfas_ddw_general_order/",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA PFAS",
+          "url": "https://www.epa.gov/pfas",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Lead in Drinking Water",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_pollutants.json",
+      "urls": [
+        {
+          "label": "Lead and Copper Rule",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead-copper-rule/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Lead Sampling in Schools",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/leadsamplinginschools.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Lead in Drinking Water",
+          "url": "https://www.epa.gov/lead",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "LCR Public Health Info",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead-copper-rule/public_health_info.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Arsenic in Drinking Water",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_pollutants.json",
+      "urls": [
+        {
+          "label": "Arsenic in Drinking Water",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Arsenic.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Arsenic MCL Revision",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/arsenic-mcl-revision.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Chemical Contaminants",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chemicalcontaminants.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "OEHHA Public Health Goals",
+          "url": "https://oehha.ca.gov/water/public-health-goals-phgs",
+          "type": "info",
+          "agency": "OEHHA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Nitrate Contamination in Groundwater",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_pollutants.json",
+      "urls": [
+        {
+          "label": "Nitrates and Nitrites in Drinking Water",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Nitrate.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Nitrate Project",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/nitrate_project/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Chemical Contaminants",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chemicalcontaminants.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Chromium-6 (Hexavalent Chromium)",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_pollutants.json",
+      "urls": [
+        {
+          "label": "Hexavalent Chromium",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chromium6.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Hexavalent Chromium MCL Regulation",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/SWRCBDDW-21-003_hexavalent_chromium.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "OEHHA Public Health Goals",
+          "url": "https://oehha.ca.gov/water/public-health-goals-phgs",
+          "type": "info",
+          "agency": "OEHHA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Disinfection Byproducts (DBPs)",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_pollutants.json",
+      "urls": [
+        {
+          "label": "DDW Disinfection Regulations",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/ddw-disinfectionregulations.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Chemical Contaminants",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chemicalcontaminants.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Drinking Water Standards",
+          "url": "https://www.epa.gov/dwreginfo/drinking-water-regulations",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "1,2,3-Trichloropropane (TCP)",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_pollutants.json",
+      "urls": [
+        {
+          "label": "1,2,3-TCP Page",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/123TCP.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "1,2,3-TCP MCL Regulation",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/SBDDW-17-001_123TCP_MCL.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Chemical Contaminants",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chemicalcontaminants.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Uranium in Drinking Water",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_pollutants.json",
+      "urls": [
+        {
+          "label": "Chemical Contaminants",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chemicalcontaminants.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "MCL Review Process",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/MCLReview.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Drinking Water Standards",
+          "url": "https://www.epa.gov/dwreginfo/drinking-water-regulations",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        },
+        {
+          "label": "OEHHA Public Health Goals",
+          "url": "https://oehha.ca.gov/water/public-health-goals-phgs",
+          "type": "info",
+          "agency": "OEHHA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Perchlorate Contamination",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_pollutants.json",
+      "urls": [
+        {
+          "label": "Perchlorate in Drinking Water",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Perchlorate.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Chemical Contaminants",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chemicalcontaminants.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "OEHHA Public Health Goals",
+          "url": "https://oehha.ca.gov/water/public-health-goals-phgs",
+          "type": "info",
+          "agency": "OEHHA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Bacteria and Pathogens in Water",
+      "category": "Water Quality",
+      "subcategory": "Contaminants",
+      "source_file": "batch_pollutants.json",
+      "urls": [
+        {
+          "label": "Revised Total Coliform Rule",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/rtcr.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Bacterial Objectives",
+          "url": "https://www.waterboards.ca.gov/bacterialobjectives/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Ground Water and Drinking Water",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Recycled Water Regulations",
+      "category": "Programs",
+      "subcategory": "Recycled Water",
+      "source_file": "batch_programs.json",
+      "urls": [
+        {
+          "label": "Recycled Water Policy - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/recycled_water/",
+          "type": "regulation",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "DDW Recycled Water Permits",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/recycledwater/",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Title 22 Recycled Water Criteria",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/water-recycling-criteria.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": false
+        },
+        {
+          "label": "EPA Water Reuse",
+          "url": "https://www.epa.gov/waterreuse",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "TMDLs Explained",
+      "category": "Programs",
+      "subcategory": "Water Quality",
+      "source_file": "batch_programs.json",
+      "urls": [
+        {
+          "label": "TMDL Program - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/tmdl/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "TMDL Integrated Report (303d List)",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/tmdl/integrated2014_2016.shtml",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA TMDLs Overview",
+          "url": "https://www.epa.gov/tmdl",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Beach Water Quality Monitoring",
+      "category": "Programs",
+      "subcategory": "Recreation",
+      "source_file": "batch_programs.json",
+      "urls": [
+        {
+          "label": "Beach Water Quality - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/beaches/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Heal the Bay Beach Report Card",
+          "url": "https://healthebay.org/beach-report-card-2018/",
+          "type": "tool",
+          "agency": "Other",
+          "stable": false
+        },
+        {
+          "label": "EPA Beach and Recreational Water",
+          "url": "https://www.epa.gov/beaches",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Wetlands Protection in California",
+      "category": "Programs",
+      "subcategory": "Wetlands",
+      "source_file": "batch_programs.json",
+      "urls": [
+        {
+          "label": "Wetlands and Riparian Program - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/wrapp/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "State Wetland Definition and Procedures",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/docs/2021/procedures.pdf",
+          "type": "regulation",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "EPA Wetlands Protection",
+          "url": "https://www.epa.gov/wetlands",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Rights in California",
+      "category": "Programs",
+      "subcategory": "Water Rights",
+      "source_file": "batch_programs.json",
+      "urls": [
+        {
+          "label": "Water Rights - SWRCB",
+          "url": "https://www.waterboards.ca.gov/waterrights/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Water Rights Application Process",
+          "url": "https://www.waterboards.ca.gov/waterrights/board_decisions/adopted_orders/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "eWRIMS Water Rights Database",
+          "url": "https://www.waterboards.ca.gov/upward/calwatrs/",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "DWR Water Rights Overview",
+          "url": "https://water.ca.gov/Programs/Groundwater-Management/SGMA-Groundwater-Management/Groundwater-Sustainable-Agencies",
+          "type": "info",
+          "agency": "DWR",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Onsite Wastewater Systems (Septic)",
+      "category": "Programs",
+      "subcategory": "Wastewater",
+      "source_file": "batch_programs.json",
+      "urls": [
+        {
+          "label": "Onsite Wastewater Treatment Systems (OWTS) Policy",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/owts/",
+          "type": "regulation",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Septic System Guidance - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/owts/docs/owts_policy.pdf",
+          "type": "regulation",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Septic Systems",
+          "url": "https://www.epa.gov/septic",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Underground Storage Tank Program",
+      "category": "Programs",
+      "subcategory": "Cleanup",
+      "source_file": "batch_programs.json",
+      "urls": [
+        {
+          "label": "Underground Storage Tank (UST) Cleanup Program",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/ust/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "GeoTracker - UST Case Search",
+          "url": "https://geotracker.waterboards.ca.gov/",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "UST Cleanup Fund",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/ustcf/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Underground Storage Tanks",
+          "url": "https://www.epa.gov/ust",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Site Cleanup Program Overview",
+      "category": "Programs",
+      "subcategory": "Cleanup",
+      "source_file": "batch_programs.json",
+      "urls": [
+        {
+          "label": "Site Cleanup Program - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/scp/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "GeoTracker - Site Cleanup",
+          "url": "https://geotracker.waterboards.ca.gov/",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Cleanup Sites in California",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/site_cleanup_program/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Reporting Water Quality Problems",
+      "category": "Public Resources",
+      "subcategory": "Complaints",
+      "source_file": "batch_public_resources.json",
+      "urls": [
+        {
+          "label": "SWRCB File a Complaint",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/",
+          "type": "form",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "DDW District Offices",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/districts/",
+          "type": "contact",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "CalEPA Environmental Complaint System",
+          "url": "https://calepa.ca.gov/enforcement/complaints/",
+          "type": "form",
+          "agency": "State of California",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Understanding Your Water Bill",
+      "category": "Public Resources",
+      "subcategory": "Billing",
+      "source_file": "batch_public_resources.json",
+      "urls": [
+        {
+          "label": "CPUC Water Utility Rates",
+          "url": "https://www.cpuc.ca.gov/industries-and-topics/water",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "DWR Water Use Efficiency",
+          "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Water Conservation",
+          "url": "https://www.waterboards.ca.gov/conservation/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Water Shutoff Protections",
+      "category": "Public Resources",
+      "subcategory": "Consumer Protections",
+      "source_file": "batch_public_resources.json",
+      "urls": [
+        {
+          "label": "SWRCB Water Shutoff Protections (SB 998)",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/shutoff-protection.html",
+          "type": "regulation",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "CPUC Utility Consumer Protections",
+          "url": "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "California Low-Income Water Rate Assistance",
+          "url": "https://www.waterboards.ca.gov/conservation/assistance/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Home Water Testing Guide",
+      "category": "Public Resources",
+      "subcategory": "Testing",
+      "source_file": "batch_public_resources.json",
+      "urls": [
+        {
+          "label": "EPA Home Water Testing",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "DDW Certified Labs (ELAP)",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/labs/",
+          "type": "portal",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "GAMA Groundwater Information",
+          "url": "https://gamagroundwater.waterboards.ca.gov/gama/gamamap/public/",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Point-of-Use Water Treatment",
+      "category": "Public Resources",
+      "subcategory": "Treatment",
+      "source_file": "batch_public_resources.json",
+      "urls": [
+        {
+          "label": "DDW Drinking Water Treatment Technologies",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Home Water Treatment",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        },
+        {
+          "label": "NSF International Water Filter Certification",
+          "url": "https://www.nsf.org/consumer-resources/articles/standards-water-treatment-systems",
+          "type": "info",
+          "agency": "Other",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Water Conservation Tips for Residents",
+      "category": "Public Resources",
+      "subcategory": "Conservation",
+      "source_file": "batch_public_resources.json",
+      "urls": [
+        {
+          "label": "Save Our Water Campaign",
+          "url": "https://saveourwater.com/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Conservation Programs",
+          "url": "https://www.waterboards.ca.gov/conservation/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "EPA WaterSense Tips",
+          "url": "https://www.epa.gov/watersense/start-saving",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "DWR Water Use Efficiency",
+          "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Landscaping for Water Efficiency",
+      "category": "Public Resources",
+      "subcategory": "Landscaping",
+      "source_file": "batch_public_resources.json",
+      "urls": [
+        {
+          "label": "Save Our Water - Outdoor Tips",
+          "url": "https://saveourwater.com/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "DWR Model Water Efficient Landscape Ordinance",
+          "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency/Model-Water-Efficient-Landscape-Ordinance",
+          "type": "regulation",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "EPA WaterSense Outdoors",
+          "url": "https://www.epa.gov/watersense/outdoors",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Understanding Consumer Confidence Reports",
+      "category": "Public Resources",
+      "subcategory": "Reports",
+      "source_file": "batch_public_resources.json",
+      "urls": [
+        {
+          "label": "EPA Consumer Confidence Reports",
+          "url": "https://www.epa.gov/ccr",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "DDW Consumer Confidence Report Requirements",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/CCR.html",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA CCR Finder",
+          "url": "https://www.epa.gov/ccr/ccr-information-consumers",
+          "type": "tool",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Quality During Emergencies",
+      "category": "Public Resources",
+      "subcategory": "Emergencies",
+      "source_file": "batch_public_resources.json",
+      "urls": [
+        {
+          "label": "EPA Emergency Disinfection of Drinking Water",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "DDW Emergency Response",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Cal OES Emergency Preparedness",
+          "url": "https://www.caloes.ca.gov/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "CDC Water Safety After Disasters",
+          "url": "https://www.cdc.gov/water-emergency/about/index.html",
+          "type": "info",
+          "agency": "Federal",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Environmental Justice and Water",
+      "category": "Public Resources",
+      "subcategory": "Environmental Justice",
+      "source_file": "batch_public_resources.json",
+      "urls": [
+        {
+          "label": "SWRCB Environmental Justice",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/outreach/education/justice.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "CalEnviroScreen EJ Mapping Tool",
+          "url": "https://oehha.ca.gov/calenviroscreen",
+          "type": "tool",
+          "agency": "OEHHA",
+          "stable": true
+        },
+        {
+          "label": "CalEPA Environmental Justice",
+          "url": "https://calepa.ca.gov/envjustice/",
+          "type": "info",
+          "agency": "CalEPA",
+          "stable": true
+        },
+        {
+          "label": "SAFER Program - Disadvantaged Communities",
+          "url": "https://www.waterboards.ca.gov/safer/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "North Coast Regional Water Board",
+      "category": "Regional Boards",
+      "subcategory": "Region 1",
+      "source_file": "batch_regional_boards.json",
+      "urls": [
+        {
+          "label": "North Coast RWQCB (Region 1)",
+          "url": "https://www.waterboards.ca.gov/northcoast/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "North Coast Board Decisions",
+          "url": "https://www.waterboards.ca.gov/northcoast/board_decisions/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "North Coast TMDLs",
+          "url": "https://www.waterboards.ca.gov/northcoast/water_issues/programs/tmdls/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Regional Board Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "San Francisco Bay Regional Water Board",
+      "category": "Regional Boards",
+      "subcategory": "Region 2",
+      "source_file": "batch_regional_boards.json",
+      "urls": [
+        {
+          "label": "SF Bay RWQCB (Region 2)",
+          "url": "https://www.waterboards.ca.gov/sanfranciscobay/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "SF Bay Enforcement Actions",
+          "url": "https://www.waterboards.ca.gov/sanfranciscobay/board_decisions/enforcement.html",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "SF Bay Stormwater Program",
+          "url": "https://www.waterboards.ca.gov/rwqcb2/water_issues/programs/stormwater/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Regional Board Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Central Coast Regional Water Board",
+      "category": "Regional Boards",
+      "subcategory": "Region 3",
+      "source_file": "batch_regional_boards.json",
+      "urls": [
+        {
+          "label": "Central Coast RWQCB (Region 3)",
+          "url": "https://www.waterboards.ca.gov/centralcoast/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Central Coast Programs",
+          "url": "https://www.waterboards.ca.gov/centralcoast/water_issues/programs/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Central Coast Cannabis Program",
+          "url": "https://www.waterboards.ca.gov/centralcoast/water_issues/programs/cannabis_cultivation/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Regional Board Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Los Angeles Regional Water Board",
+      "category": "Regional Boards",
+      "subcategory": "Region 4",
+      "source_file": "batch_regional_boards.json",
+      "urls": [
+        {
+          "label": "LA RWQCB (Region 4)",
+          "url": "https://www.waterboards.ca.gov/losangeles/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "LA Basin Plan",
+          "url": "https://www.waterboards.ca.gov/losangeles/water_issues/programs/basin_plan/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "LA Stormwater Program",
+          "url": "https://www.waterboards.ca.gov/losangeles/water_issues/programs/stormwater/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Regional Board Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Central Valley Regional Water Board",
+      "category": "Regional Boards",
+      "subcategory": "Region 5",
+      "source_file": "batch_regional_boards.json",
+      "urls": [
+        {
+          "label": "Central Valley RWQCB (Region 5)",
+          "url": "https://www.waterboards.ca.gov/centralvalley/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Central Valley Oil Fields Program",
+          "url": "https://www.waterboards.ca.gov/centralvalley/water_issues/oil_fields/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Central Valley Cannabis Program",
+          "url": "https://www.waterboards.ca.gov/centralvalley/water_issues/cannabis/general_order/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Regional Board Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Lahontan Regional Water Board",
+      "category": "Regional Boards",
+      "subcategory": "Region 6",
+      "source_file": "batch_regional_boards.json",
+      "urls": [
+        {
+          "label": "Lahontan RWQCB (Region 6)",
+          "url": "https://www.waterboards.ca.gov/lahontan/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Lahontan 401 Certification",
+          "url": "https://www.waterboards.ca.gov/lahontan/water_issues/programs/clean_water_act_401/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Lahontan SNMP",
+          "url": "https://www.waterboards.ca.gov/lahontan/water_issues/programs/snmp/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Regional Board Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Colorado River Basin Regional Water Board",
+      "category": "Regional Boards",
+      "subcategory": "Region 7",
+      "source_file": "batch_regional_boards.json",
+      "urls": [
+        {
+          "label": "Colorado River RWQCB (Region 7)",
+          "url": "https://www.waterboards.ca.gov/coloradoriver/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Colorado River 401 Certification",
+          "url": "https://www.waterboards.ca.gov/coloradoriver/water_issues/programs/401_certification/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Colorado River Enforcement",
+          "url": "https://www.waterboards.ca.gov/coloradoriver/water_issues/programs/enforcement/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Regional Board Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Santa Ana Regional Water Board",
+      "category": "Regional Boards",
+      "subcategory": "Region 8",
+      "source_file": "batch_regional_boards.json",
+      "urls": [
+        {
+          "label": "Santa Ana RWQCB (Region 8)",
+          "url": "https://www.waterboards.ca.gov/santaana/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Santa Ana 401 Certification",
+          "url": "https://www.waterboards.ca.gov/rwqcb8/water_issues/programs/401_certification/index.html",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Santa Ana WDR Program",
+          "url": "https://www.waterboards.ca.gov/rwqcb8/water_issues/programs/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Regional Board Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "San Diego Regional Water Board",
+      "category": "Regional Boards",
+      "subcategory": "Region 9",
+      "source_file": "batch_regional_boards.json",
+      "urls": [
+        {
+          "label": "San Diego RWQCB (Region 9)",
+          "url": "https://www.waterboards.ca.gov/sandiego/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "San Diego Basin Plan",
+          "url": "https://www.waterboards.ca.gov/sandiego/water_issues/programs/basin_plan/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "San Diego Stormwater",
+          "url": "https://www.waterboards.ca.gov/sandiego/water_issues/programs/stormwater/",
+          "type": "info",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Regional Board Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "State vs Regional Board Responsibilities",
+      "category": "Regional Boards",
+      "subcategory": "State vs Regional",
+      "source_file": "batch_regional_boards.json",
+      "urls": [
+        {
+          "label": "About the Water Boards",
+          "url": "https://www.waterboards.ca.gov/about_us/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Regional Board Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "State Water Board Programs",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Small Water System Challenges",
+      "category": "Small Systems",
+      "subcategory": "Challenges",
+      "source_file": "batch_small_systems.json",
+      "urls": [
+        {
+          "label": "DDW Small Water Systems",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/publicwatersystems.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": false
+        },
+        {
+          "label": "SAFER Program Overview",
+          "url": "https://www.waterboards.ca.gov/safer/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "EPA Small System Challenges",
+          "url": "https://www.epa.gov/dwcapacity",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water System Consolidation Options",
+      "category": "Small Systems",
+      "subcategory": "Consolidation",
+      "source_file": "batch_small_systems.json",
+      "urls": [
+        {
+          "label": "DDW Consolidation Program",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/waterpartnership.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "SAFER Consolidation Funding",
+          "url": "https://www.waterboards.ca.gov/safer/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "SB 88 Mandatory Consolidation",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/compliance/",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Private Well Owner Responsibilities",
+      "category": "Small Systems",
+      "subcategory": "Private Wells",
+      "source_file": "batch_small_systems.json",
+      "urls": [
+        {
+          "label": "DDW Private Wells Information",
+          "url": "https://www.waterboards.ca.gov/gama/well_owners.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": false
+        },
+        {
+          "label": "EPA Private Drinking Water Wells",
+          "url": "https://www.epa.gov/privatewells",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "GAMA Groundwater Information",
+          "url": "https://gamagroundwater.waterboards.ca.gov/gama/gamamap/public/",
+          "type": "database",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "State Small Water System Permits",
+      "category": "Small Systems",
+      "subcategory": "State Small Systems",
+      "source_file": "batch_small_systems.json",
+      "urls": [
+        {
+          "label": "DDW State Small Water Systems",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/publicwatersystems.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": false
+        },
+        {
+          "label": "DDW Permits and Licensing",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Local Primacy Delegation",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Transient Non-Community Water Systems",
+      "category": "Small Systems",
+      "subcategory": "Transient Systems",
+      "source_file": "batch_small_systems.json",
+      "urls": [
+        {
+          "label": "DDW Non-Community Water Systems",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/publicwatersystems.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": false
+        },
+        {
+          "label": "EPA Non-Community Water System Basics",
+          "url": "https://www.epa.gov/dwreginfo",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "DDW Drinking Water Classification",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Non-Transient Non-Community Water Systems",
+      "category": "Small Systems",
+      "subcategory": "NTNCWS",
+      "source_file": "batch_small_systems.json",
+      "urls": [
+        {
+          "label": "DDW Non-Community Water Systems",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/publicwatersystems.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": false
+        },
+        {
+          "label": "EPA NTNCWS Requirements",
+          "url": "https://www.epa.gov/dwreginfo",
+          "type": "regulation",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "DDW Permits and Compliance",
+          "url": "https://www.waterboards.ca.gov/drinking_water/programs/compliance/",
+          "type": "regulation",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Rural Water System Funding Programs",
+      "category": "Funding",
+      "subcategory": "Rural Systems",
+      "source_file": "batch_small_systems.json",
+      "urls": [
+        {
+          "label": "SAFER Program - SWRCB",
+          "url": "https://www.waterboards.ca.gov/safer/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Drinking Water State Revolving Fund",
+          "url": "https://www.waterboards.ca.gov/drinking_water/services/funding/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "USDA Rural Water Programs",
+          "url": "https://www.rd.usda.gov/programs-services/water-environmental-programs",
+          "type": "info",
+          "agency": "Federal",
+          "stable": true
+        },
+        {
+          "label": "Small Community Funding - SWRCB",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/small_community_wastewater_grant/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Technical Assistance for Small Systems",
+      "category": "Small Systems",
+      "subcategory": "Technical Assistance",
+      "source_file": "batch_small_systems.json",
+      "urls": [
+        {
+          "label": "DDW Small Water System Technical Assistance",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/publicwatersystems.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": false
+        },
+        {
+          "label": "RCAC Technical Assistance",
+          "url": "https://www.rcac.org/events/drinking-water-compliance/",
+          "type": "info",
+          "agency": "Other",
+          "stable": false
+        },
+        {
+          "label": "EPA Capacity Development",
+          "url": "https://www.epa.gov/dwcapacity",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        },
+        {
+          "label": "SAFER Technical Assistance Program",
+          "url": "https://www.waterboards.ca.gov/safer/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water System Rate Setting Basics",
+      "category": "Small Systems",
+      "subcategory": "Rates",
+      "source_file": "batch_small_systems.json",
+      "urls": [
+        {
+          "label": "CPUC Water Utility Rates",
+          "url": "https://www.cpuc.ca.gov/industries-and-topics/water",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "SWRCB Financial Sustainability for Water Systems",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "EPA Rate Setting for Small Systems",
+          "url": "https://www.epa.gov/dwcapacity",
+          "type": "info",
+          "agency": "EPA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Mutual Water Companies",
+      "category": "Small Systems",
+      "subcategory": "Mutual Companies",
+      "source_file": "batch_small_systems.json",
+      "urls": [
+        {
+          "label": "CPUC Mutual Water Company Regulation",
+          "url": "https://www.cpuc.ca.gov/industries-and-topics/water",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        },
+        {
+          "label": "DDW Small Water Systems",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/publicwatersystems.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": false
+        },
+        {
+          "label": "California Secretary of State - Business Search",
+          "url": "https://bizfileonline.sos.ca.gov/search/business",
+          "type": "tool",
+          "agency": "State of California",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Construction General Permit (CGP)",
+      "category": "Permits",
+      "subcategory": "Stormwater",
+      "source_file": "cgp_guide.json",
+      "urls": [
+        {
+          "label": "Construction",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/construction.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Construction General Permit (CGP)",
+          "url": "https://smarts.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Construction General Permit (CGP)",
+          "url": "https://www.casqa.org",
+          "type": "info",
+          "agency": "CASQA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "How to Contact Your Regional Board",
+      "category": "Public Resources",
+      "subcategory": "Contacts",
+      "source_file": "contact_regional_board.json",
+      "urls": [
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Contact Us",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/",
+          "type": "contact",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Resources",
+          "url": "https://www.waterboards.ca.gov/resources/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "How to Contact Your Regional Board",
+          "url": "https://www.waterboards.ca.gov",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Clean Water State Revolving Fund Guide",
+      "category": "Funding",
+      "subcategory": "State Revolving Fund",
+      "source_file": "cwsrf_guide.json",
+      "urls": [
+        {
+          "label": "Srf",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/srf/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Cwsrf Iup Sfy2025 26 Final",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/srf/docs/2025/cwsrf-iup-sfy2025-26-final.pdf",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "Disadvantaged Community Grants",
+      "category": "Funding",
+      "subcategory": "Grants",
+      "source_file": "dac_grants.json",
+      "urls": [
+        {
+          "label": "Safer",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/sustainable_water_solutions/safer.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Dacs",
+          "url": "https://gis.water.ca.gov/app/dacs/",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Drinking Water State Revolving Fund Guide",
+      "category": "Funding",
+      "subcategory": "State Revolving Fund",
+      "source_file": "dwsrf_guide.json",
+      "urls": [
+        {
+          "label": "Srf",
+          "url": "https://www.waterboards.ca.gov/drinking_water/services/funding/SRF.html",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Drinking Water State Revolving Fund Guide",
+          "url": "https://faast.waterboards.ca.gov",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Industrial General Permit (IGP)",
+      "category": "Permits",
+      "subcategory": "Stormwater",
+      "source_file": "igp_guide.json",
+      "urls": [
+        {
+          "label": "Industrial",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/industrial.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Industrial General Permit (IGP)",
+          "url": "https://smarts.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Industrial General Permit (IGP)",
+          "url": "https://www.casqa.org",
+          "type": "info",
+          "agency": "CASQA",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "NPDES Permit Application Guide",
+      "category": "Permits",
+      "subcategory": "NPDES",
+      "source_file": "npdes_application_guide.json",
+      "urls": [
+        {
+          "label": "Npdes",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "NPDES Permit Application Guide",
+          "url": "https://ciwqs.waterboards.ca.gov",
+          "type": "portal",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Npdes",
+          "url": "https://www.epa.gov/npdes",
+          "type": "info",
+          "agency": "EPA",
+          "stable": false
+        }
+      ]
+    },
+    {
+      "topic": "NPDES Permit Fee Schedule 2026",
+      "category": "Permits",
+      "subcategory": "Fees",
+      "source_file": "npdes_permit_fees.json",
+      "urls": [
+        {
+          "label": "Fy2526 Wq Feeschedule",
+          "url": "https://www.waterboards.ca.gov/resources/fees/stakeholder/docs/2025/fy2526-wq-feeschedule.pdf",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "Water Quality",
+          "url": "https://www.waterboards.ca.gov/resources/fees/water_quality/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Regional Water Board Directory (All 9 Regions)",
+      "category": "Public Resources",
+      "subcategory": "Contacts",
+      "source_file": "regional_board_directory.json",
+      "urls": [
+        {
+          "label": "Rwqcbs Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Regional Board Contact by Program Type",
+      "category": "Public Resources",
+      "subcategory": "Contacts",
+      "source_file": "regional_board_programs.json",
+      "urls": [
+        {
+          "label": "Rwqcbs Directory",
+          "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+          "type": "contact",
+          "agency": "Regional Board",
+          "stable": true
+        },
+        {
+          "label": "Waterboards Map",
+          "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "SAFER Eligibility and Application",
+      "category": "Funding",
+      "subcategory": "SAFER Program",
+      "source_file": "safer_eligibility.json",
+      "urls": [
+        {
+          "label": "Safer",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/sustainable_water_solutions/safer.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "The Safe And Affordable Funding For Equity And Resilience Program Safer",
+          "url": "https://www.grants.ca.gov/grants/the-safe-and-affordable-funding-for-equity-and-resilience-program-safer/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "SAFER Eligibility and Application",
+          "url": "https://faast.waterboards.ca.gov",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "SAFER Funding Amounts and Cycles",
+      "category": "Funding",
+      "subcategory": "SAFER Program",
+      "source_file": "safer_funding_amounts.json",
+      "urls": [
+        {
+          "label": "Safer",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/sustainable_water_solutions/safer.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "State Budget",
+          "url": "https://www.communitywatercenter.org/press-releases/state-budget",
+          "type": "info",
+          "agency": "Other",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "SAFER Program 2026 Overview",
+      "category": "Funding",
+      "subcategory": "SAFER Program",
+      "source_file": "safer_overview.json",
+      "urls": [
+        {
+          "label": "Safer",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/sustainable_water_solutions/safer.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "The Safe And Affordable Funding For Equity And Resilience Program Safer",
+          "url": "https://www.grants.ca.gov/grants/the-safe-and-affordable-funding-for-equity-and-resilience-program-safer/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "SGMA Implementation Status 2026",
+      "category": "Compliance",
+      "subcategory": "SGMA",
+      "source_file": "sgma_implementation.json",
+      "urls": [
+        {
+          "label": "Sgma Groundwater Management",
+          "url": "https://water.ca.gov/Programs/Groundwater-Management/SGMA-Groundwater-Management",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "New Reports Show Progress In Community Actions To Make Groundwater Sustainability A Reality",
+          "url": "https://water.ca.gov/News/News-Releases/2025/Oct-25/New-Reports-Show-Progress-in-Community-Actions-to-Make-Groundwater-Sustainability-a-Reality",
+          "type": "info",
+          "agency": "DWR",
+          "stable": false
+        },
+        {
+          "label": "SGMA Implementation Status 2026",
+          "url": "https://sgma.water.ca.gov",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Sgma",
+          "url": "https://www.waterboards.ca.gov/sgma/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Small Community Funding Options",
+      "category": "Funding",
+      "subcategory": "Small Systems",
+      "source_file": "small_community_funding.json",
+      "urls": [
+        {
+          "label": "Small Community Drinking Water Scdw Funding Program",
+          "url": "https://www.grants.ca.gov/grants/small-community-drinking-water-scdw-funding-program/",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "Tech Asst Funding",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/tech_asst_funding.html",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        },
+        {
+          "label": "Sustainable Water Solutions",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/sustainable_water_solutions/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Stormwater Permit Fees 2026",
+      "category": "Permits",
+      "subcategory": "Fees",
+      "source_file": "stormwater_permit_fees.json",
+      "urls": [
+        {
+          "label": "Fy2526 Wq Feeschedule",
+          "url": "https://www.waterboards.ca.gov/resources/fees/stakeholder/docs/2025/fy2526-wq-feeschedule.pdf",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "Cgp Per Acre",
+          "url": "https://www.waterboards.ca.gov/resources/fees/water_quality/docs/cgp-per-acre.pdf",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": false
+        },
+        {
+          "label": "Stormwater",
+          "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/",
+          "type": "info",
+          "agency": "SWRCB",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Water Quality Testing Schedule",
+      "category": "Compliance",
+      "subcategory": "Monitoring",
+      "source_file": "water_quality_testing.json",
+      "urls": [
+        {
+          "label": "Drinking Water",
+          "url": "https://www.waterboards.ca.gov/drinking_water/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        },
+        {
+          "label": "Labs",
+          "url": "https://www.waterboards.ca.gov/drinking_water/certlic/labs/",
+          "type": "info",
+          "agency": "DDW",
+          "stable": true
+        }
+      ]
+    },
+    {
+      "topic": "Well Permit Requirements by County",
+      "category": "Permits",
+      "subcategory": "Wells",
+      "source_file": "well_permit_requirements.json",
+      "urls": [
+        {
+          "label": "Wells",
+          "url": "https://water.ca.gov/Programs/Groundwater-Management/Wells",
+          "type": "info",
+          "agency": "DWR",
+          "stable": true
+        },
+        {
+          "label": "Checklicense.Aspx",
+          "url": "https://www.cslb.ca.gov/onlineservices/checklicenseII/checklicense.aspx",
+          "type": "info",
+          "agency": "State of California",
+          "stable": true
+        },
+        {
+          "label": "Well Permit Requirements by County",
+          "url": "https://www.cdph.ca.gov/",
+          "type": "info",
+          "agency": "CDPH",
+          "stable": true
+        }
+      ]
+    }
+  ],
+  "site_map": {
+    "waterboards.ca.gov": {
+      "base": "https://www.waterboards.ca.gov",
+      "agency": "SWRCB",
+      "description": "State Water Resources Control Board - primary CA water quality regulator",
+      "sections": {
+        "board_info": {
+          "path": "/board_info/",
+          "serves": [
+            "Programs",
+            "Public Resources"
+          ],
+          "stable": true,
+          "notes": "Board meetings, agendas, member info"
+        },
+        "water_issues_programs": {
+          "path": "/water_issues/programs/",
+          "serves": [
+            "Programs",
+            "Permits",
+            "Compliance",
+            "Water Quality"
+          ],
+          "stable": true,
+          "notes": "Hub for NPDES, stormwater, grants/loans, TMDLs, 401 cert, cleanup",
+          "subsections": {
+            "npdes": {
+              "path": "/water_issues/programs/npdes/",
+              "serves": [
+                "Permits"
+              ],
+              "stable": true,
+              "notes": "NPDES permits, general permits, permit search"
+            },
+            "stormwater": {
+              "path": "/water_issues/programs/stormwater/",
+              "serves": [
+                "Permits"
+              ],
+              "stable": true,
+              "notes": "CGP, IGP, MS4, construction permits"
+            },
+            "stormwater_construction": {
+              "path": "/water_issues/programs/stormwater/construction.html",
+              "serves": [
+                "Permits"
+              ],
+              "stable": true,
+              "notes": "Construction General Permit details"
+            },
+            "stormwater_industrial": {
+              "path": "/water_issues/programs/stormwater/industrial.html",
+              "serves": [
+                "Permits"
+              ],
+              "stable": true,
+              "notes": "Industrial General Permit details"
+            },
+            "grants_loans": {
+              "path": "/water_issues/programs/grants_loans/",
+              "serves": [
+                "Funding"
+              ],
+              "stable": true,
+              "notes": "SRF, SAFER, tech assistance funding"
+            },
+            "grants_loans_srf": {
+              "path": "/water_issues/programs/grants_loans/srf/",
+              "serves": [
+                "Funding"
+              ],
+              "stable": true,
+              "notes": "Clean Water State Revolving Fund"
+            },
+            "sustainable_water_solutions": {
+              "path": "/water_issues/programs/grants_loans/sustainable_water_solutions/",
+              "serves": [
+                "Funding"
+              ],
+              "stable": true,
+              "notes": "SAFER program, small system funding"
+            },
+            "cwa401": {
+              "path": "/water_issues/programs/cwa401/",
+              "serves": [
+                "Permits"
+              ],
+              "stable": true,
+              "notes": "Section 401 water quality certification"
+            },
+            "conservation_portal": {
+              "path": "/water_issues/programs/conservation_portal/",
+              "serves": [
+                "Programs",
+                "Compliance"
+              ],
+              "stable": true,
+              "notes": "Water conservation regulations and portal"
+            }
+          }
+        },
+        "drinking_water": {
+          "path": "/drinking_water/",
+          "serves": [
+            "Water Quality",
+            "Compliance",
+            "Small Systems"
+          ],
+          "stable": true,
+          "notes": "Division of Drinking Water (DDW) - drinking water regulation hub",
+          "subsections": {
+            "certlic": {
+              "path": "/drinking_water/certlic/",
+              "serves": [
+                "Compliance",
+                "Permits"
+              ],
+              "stable": true,
+              "notes": "Certificates and licenses hub"
+            },
+            "certlic_drinkingwater": {
+              "path": "/drinking_water/certlic/drinkingwater/",
+              "serves": [
+                "Water Quality",
+                "Compliance"
+              ],
+              "stable": true,
+              "notes": "Drinking water programs, permits, chemicals"
+            },
+            "certlic_drinkingwater_chemicals": {
+              "path": "/drinking_water/certlic/drinkingwater/Chemicalcontaminants.html",
+              "serves": [
+                "Water Quality"
+              ],
+              "stable": true,
+              "notes": "Chemical contaminant info and MCLs"
+            },
+            "certlic_labs": {
+              "path": "/drinking_water/certlic/labs/",
+              "serves": [
+                "Compliance"
+              ],
+              "stable": true,
+              "notes": "ELAP lab accreditation"
+            },
+            "certlic_occupations": {
+              "path": "/drinking_water/certlic/occupations/",
+              "serves": [
+                "Compliance"
+              ],
+              "stable": true,
+              "notes": "Operator certification program"
+            },
+            "services_funding": {
+              "path": "/drinking_water/services/funding/",
+              "serves": [
+                "Funding"
+              ],
+              "stable": true,
+              "notes": "DWSRF and drinking water funding"
+            },
+            "programs": {
+              "path": "/drinking_water/programs/",
+              "serves": [
+                "Programs",
+                "Small Systems"
+              ],
+              "stable": true,
+              "notes": "DDW program pages"
+            }
+          }
+        },
+        "safer": {
+          "path": "/safer/",
+          "serves": [
+            "Funding",
+            "Small Systems"
+          ],
+          "stable": true,
+          "notes": "Safe and Affordable Funding for Equity and Resilience",
+          "subsections": {
+            "background": {
+              "path": "/safer/background.html",
+              "serves": [
+                "Funding"
+              ],
+              "stable": true,
+              "notes": "SAFER program background and overview"
+            },
+            "accomplishments": {
+              "path": "/safer/accomplishments.html",
+              "serves": [
+                "Funding"
+              ],
+              "stable": true,
+              "notes": "SAFER program accomplishments"
+            },
+            "funding_solicitation": {
+              "path": "/safer/funding_solicitation.html",
+              "serves": [
+                "Funding"
+              ],
+              "stable": true,
+              "notes": "County-wide and regional funding programs"
+            },
+            "tribal": {
+              "path": "/safer/tribal_drinking_water.html",
+              "serves": [
+                "Funding",
+                "Programs"
+              ],
+              "stable": true,
+              "notes": "Tribal drinking water programs"
+            },
+            "outreach": {
+              "path": "/safer/outreach.html",
+              "serves": [
+                "Public Resources"
+              ],
+              "stable": true,
+              "notes": "Outreach and engagement"
+            }
+          }
+        },
+        "conservation": {
+          "path": "/conservation/",
+          "serves": [
+            "Programs",
+            "Compliance",
+            "Public Resources"
+          ],
+          "stable": true,
+          "notes": "Water conservation programs and regulations",
+          "subsections": {
+            "water_efficiency_legislation": {
+              "path": "/conservation/regs/water_efficiency_legislation.html",
+              "serves": [
+                "Programs",
+                "Compliance"
+              ],
+              "stable": true,
+              "notes": "AB 1668 / SB 606 implementation"
+            },
+            "emergency_regulation": {
+              "path": "/conservation/regs/emergency_regulation.html",
+              "serves": [
+                "Programs"
+              ],
+              "stable": true,
+              "notes": "Drought emergency regulations"
+            },
+            "water_loss_control": {
+              "path": "/conservation/water_loss_control.html",
+              "serves": [
+                "Compliance"
+              ],
+              "stable": true,
+              "notes": "Water loss management standards"
+            }
+          }
+        },
+        "resources_fees": {
+          "path": "/resources/fees/",
+          "serves": [
+            "Permits"
+          ],
+          "stable": true,
+          "notes": "Fee schedules for all permit types",
+          "subsections": {
+            "water_quality": {
+              "path": "/resources/fees/water_quality/",
+              "serves": [
+                "Permits"
+              ],
+              "stable": true,
+              "notes": "NPDES and water quality fee schedules"
+            }
+          }
+        },
+        "waterrights": {
+          "path": "/waterrights/",
+          "serves": [
+            "Programs"
+          ],
+          "stable": true,
+          "notes": "Water rights division"
+        },
+        "sgma": {
+          "path": "/sgma/",
+          "serves": [
+            "Compliance"
+          ],
+          "stable": true,
+          "notes": "SGMA (Sustainable Groundwater Management Act) SWRCB role"
+        },
+        "climate": {
+          "path": "/climate/",
+          "serves": [
+            "Programs"
+          ],
+          "stable": true,
+          "notes": "Climate change programs"
+        },
+        "about_us_contact": {
+          "path": "/about_us/contact_us/",
+          "serves": [
+            "Public Resources"
+          ],
+          "stable": true,
+          "notes": "Contact info, includes regional board directory"
+        },
+        "waterboards_map": {
+          "path": "/waterboards_map.html",
+          "serves": [
+            "Public Resources",
+            "Regional Boards"
+          ],
+          "stable": true,
+          "notes": "Interactive map to find your regional board"
+        }
+      },
+      "portals": {
+        "smarts": {
+          "url": "https://smarts.waterboards.ca.gov",
+          "serves": [
+            "Permits"
+          ],
+          "notes": "Stormwater Multiple Application & Report Tracking System - CGP/IGP enrollment"
+        },
+        "ciwqs": {
+          "url": "https://ciwqs.waterboards.ca.gov",
+          "serves": [
+            "Compliance",
+            "Community Resources"
+          ],
+          "notes": "California Integrated Water Quality System - permits, violations, enforcement"
+        },
+        "geotracker": {
+          "url": "https://geotracker.waterboards.ca.gov",
+          "serves": [
+            "Programs",
+            "Community Resources"
+          ],
+          "notes": "Cleanup site and environmental data tracker"
+        },
+        "faast": {
+          "url": "https://faast.waterboards.ca.gov",
+          "serves": [
+            "Funding"
+          ],
+          "notes": "Financial Assistance Application Submittal Tool"
+        }
+      },
+      "regional_boards": {
+        "pattern": "https://www.waterboards.ca.gov/{region_slug}/",
+        "stable": true,
+        "notes": "Each regional board has same URL structure under main domain",
+        "regions": {
+          "region_1": {
+            "slug": "northcoast",
+            "name": "North Coast",
+            "path": "/northcoast/",
+            "serves": [
+              "Regional Boards"
+            ]
+          },
+          "region_2": {
+            "slug": "sanfranciscobay",
+            "name": "San Francisco Bay",
+            "path": "/sanfranciscobay/",
+            "serves": [
+              "Regional Boards"
+            ]
+          },
+          "region_3": {
+            "slug": "centralcoast",
+            "name": "Central Coast",
+            "path": "/centralcoast/",
+            "serves": [
+              "Regional Boards"
+            ]
+          },
+          "region_4": {
+            "slug": "losangeles",
+            "name": "Los Angeles",
+            "path": "/losangeles/",
+            "serves": [
+              "Regional Boards"
+            ]
+          },
+          "region_5": {
+            "slug": "centralvalley",
+            "name": "Central Valley",
+            "path": "/centralvalley/",
+            "serves": [
+              "Regional Boards"
+            ]
+          },
+          "region_6": {
+            "slug": "lahontan",
+            "name": "Lahontan",
+            "path": "/lahontan/",
+            "serves": [
+              "Regional Boards"
+            ]
+          },
+          "region_7": {
+            "slug": "coloradoriver",
+            "name": "Colorado River Basin",
+            "path": "/coloradoriver/",
+            "serves": [
+              "Regional Boards"
+            ]
+          },
+          "region_8": {
+            "slug": "santaana",
+            "name": "Santa Ana",
+            "path": "/santaana/",
+            "serves": [
+              "Regional Boards"
+            ]
+          },
+          "region_9": {
+            "slug": "sandiego",
+            "name": "San Diego",
+            "path": "/sandiego/",
+            "serves": [
+              "Regional Boards"
+            ]
+          }
+        },
+        "common_subsections": [
+          "water_issues/programs/",
+          "board_decisions/",
+          "public_notices/",
+          "water_issues/programs/basin_plan/"
+        ]
+      }
+    },
+    "water.ca.gov": {
+      "base": "https://water.ca.gov",
+      "agency": "DWR",
+      "description": "Department of Water Resources - water supply, groundwater, flood management",
+      "sections": {
+        "water_basics": {
+          "path": "/Water-Basics",
+          "serves": [
+            "Water Supply",
+            "Consumer FAQ"
+          ],
+          "stable": true,
+          "notes": "General water education - agriculture, conservation, groundwater, drought"
+        },
+        "what_we_do": {
+          "path": "/What-We-Do",
+          "serves": [
+            "Programs"
+          ],
+          "stable": true,
+          "notes": "DWR activities - dam safety, emergency management, flood prep, water storage"
+        },
+        "programs": {
+          "path": "/Programs",
+          "serves": [
+            "Programs",
+            "Compliance"
+          ],
+          "stable": true,
+          "notes": "SWP, Bay Delta, Groundwater Management, Climate Change programs"
+        },
+        "programs_groundwater_sgma": {
+          "path": "/Programs/Groundwater-Management/SGMA-Groundwater-Management",
+          "serves": [
+            "Compliance"
+          ],
+          "stable": true,
+          "notes": "SGMA implementation, GSP review, basin prioritization"
+        },
+        "programs_groundwater_wells": {
+          "path": "/Programs/Groundwater-Management/Wells",
+          "serves": [
+            "Permits"
+          ],
+          "stable": true,
+          "notes": "Well standards, well permits"
+        },
+        "programs_water_use_efficiency": {
+          "path": "/Programs/Water-Use-And-Efficiency",
+          "serves": [
+            "Programs",
+            "Compliance"
+          ],
+          "stable": true,
+          "notes": "Urban water use efficiency, conservation legislation implementation"
+        },
+        "news": {
+          "path": "/News",
+          "serves": [
+            "Public Resources"
+          ],
+          "stable": true,
+          "notes": "Current conditions, news releases, public notices"
+        },
+        "grants_loans": {
+          "path": "/Work-With-Us",
+          "serves": [
+            "Funding"
+          ],
+          "stable": true,
+          "notes": "Grants, loans, procurement"
+        }
+      },
+      "portals": {
+        "sgma_portal": {
+          "url": "https://sgma.water.ca.gov",
+          "serves": [
+            "Compliance"
+          ],
+          "notes": "SGMA portal - GSP tracking, basin info"
+        },
+        "dacs_map": {
+          "url": "https://gis.water.ca.gov/app/dacs/",
+          "serves": [
+            "Funding"
+          ],
+          "notes": "Disadvantaged communities mapping tool"
+        }
+      }
+    },
+    "epa.gov": {
+      "base": "https://www.epa.gov",
+      "agency": "EPA",
+      "description": "US Environmental Protection Agency - federal drinking water and water quality standards",
+      "sections": {
+        "ground_water_drinking_water": {
+          "path": "/ground-water-and-drinking-water",
+          "serves": [
+            "Water Quality",
+            "Consumer FAQ",
+            "Compliance"
+          ],
+          "stable": true,
+          "notes": "Hub for federal drinking water info - lead, PFAS, contaminants, SDWA"
+        },
+        "sdwa": {
+          "path": "/sdwa",
+          "serves": [
+            "Compliance",
+            "Water Quality"
+          ],
+          "stable": true,
+          "notes": "Safe Drinking Water Act overview"
+        },
+        "dwstandardsregulations": {
+          "path": "/dwstandardsregulations",
+          "serves": [
+            "Water Quality",
+            "Compliance"
+          ],
+          "stable": true,
+          "notes": "Drinking water standards and regulations table"
+        },
+        "npdes": {
+          "path": "/npdes",
+          "serves": [
+            "Permits"
+          ],
+          "stable": true,
+          "notes": "Federal NPDES program overview"
+        },
+        "ccr": {
+          "path": "/ccr",
+          "serves": [
+            "Consumer FAQ",
+            "Public Resources"
+          ],
+          "stable": true,
+          "notes": "Consumer Confidence Report search tool"
+        },
+        "pfas": {
+          "path": "/pfas",
+          "serves": [
+            "Water Quality"
+          ],
+          "stable": true,
+          "notes": "PFAS regulation and guidance"
+        },
+        "lead": {
+          "path": "/lead",
+          "serves": [
+            "Water Quality"
+          ],
+          "stable": true,
+          "notes": "Lead in drinking water, Lead and Copper Rule"
+        },
+        "dwsrf": {
+          "path": "/dwsrf",
+          "serves": [
+            "Funding"
+          ],
+          "stable": true,
+          "notes": "Federal Drinking Water State Revolving Fund"
+        }
+      }
+    },
+    "oehha.ca.gov": {
+      "base": "https://oehha.ca.gov",
+      "agency": "OEHHA",
+      "description": "Office of Environmental Health Hazard Assessment - public health goals for drinking water chemicals",
+      "sections": {
+        "water": {
+          "path": "/water",
+          "serves": [
+            "Water Quality"
+          ],
+          "stable": true,
+          "notes": "Water program main page"
+        },
+        "water_phgs": {
+          "path": "/water/public-health-goals-phgs",
+          "serves": [
+            "Water Quality"
+          ],
+          "stable": true,
+          "notes": "Public Health Goals (PHGs) for chemicals in drinking water"
+        },
+        "water_phg_list": {
+          "path": "/water/public-health-goal/california-public-health-goals-phgs-chemicals-drinking-water",
+          "serves": [
+            "Water Quality"
+          ],
+          "stable": true,
+          "notes": "Complete list of PHGs by chemical"
+        },
+        "water_phg_guide": {
+          "path": "/water/guide-public-health-goals-chemicals-drinking-water",
+          "serves": [
+            "Water Quality"
+          ],
+          "stable": true,
+          "notes": "Guide to understanding PHGs"
+        }
+      }
+    },
+    "mywaterquality.ca.gov": {
+      "base": "https://mywaterquality.ca.gov",
+      "agency": "SWRCB",
+      "description": "Public-facing water quality information portal",
+      "sections": {
+        "root": {
+          "path": "/",
+          "serves": [
+            "Public Resources",
+            "Consumer FAQ"
+          ],
+          "stable": true,
+          "notes": "Interactive tool for checking local water quality - beach, drinking, swimming"
+        }
+      }
+    },
+    "leginfo.legislature.ca.gov": {
+      "base": "https://leginfo.legislature.ca.gov",
+      "agency": "State of California",
+      "description": "California legislation text - bills, codes, statutes",
+      "sections": {
+        "bill_search": {
+          "path": "/faces/billNavClient.xhtml",
+          "serves": [
+            "Programs",
+            "Compliance"
+          ],
+          "stable": false,
+          "notes": "Bill lookup by ID - URLs contain bill_id parameter, may change across sessions"
+        }
+      }
+    }
+  },
+  "validation": {
+    "last_run": "2026-02-10",
+    "total_urls": 347,
+    "ok": 342,
+    "redirected": 1,
+    "broken": 1,
+    "timeout": 1,
+    "other": 2,
+    "notes": "FEMA MSC (500) is transient server error. USDA RD timeout is intermittent. SMARTS redirect to login is expected."
+  }
+}

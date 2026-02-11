@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# Child Care Copay Calculation Guide (2026)\n\n## How Copays Are Calculated\n\nYour child care copay (family fee) is based on:\n1. **Adjusted monthly income**\n2. **Family size**\n3. **Hours of care needed** (part-time vs full-time)\n\n## Step-by-Step Calculation\n\n### Step 1: Determine Your Adjusted Monthly Income\n\nInclude:\n- Gross wages (before taxes)\n- Self-employment income\n- Child support received\n- Unemployment benefits\n- Social Security benefits\n\nExclude:\n- CalFresh (food stamps)\n- Housing assistance\n- One-time payments\n- Student financial aid\n\n### Step 2: Find Your SMI Percentage\n\nCompare your income to SMI for your family size:\n- Below 75% SMI = **NO FEE**\n- 75-100% SMI = Fee capped at **1% of income**\n\n### Step 3: Determine Care Type\n\n- **Part-time:** Less than 130 hours/month\n- **Full-time:** 130+ hours/month\n\n## Calculation Examples\n\n### Example 1: Family of 4, $8,000/month\n- 75% SMI for family of 4 = $7,959/month\n- Family is ABOVE 75% SMI\n- Maximum fee = 1% × $8,000 = **$80/month**\n\n### Example 2: Family of 3, $6,500/month\n- 75% SMI for family of 3 = $6,869/month\n- Family is BELOW 75% SMI\n- Fee = **$0/month**\n\n### Example 3: Single parent with 1 child, $5,500/month\n- 75% SMI for family of 2 = $6,053/month\n- Family is BELOW 75% SMI\n- Fee = **$0/month**\n\n## Multiple Children\n\nYou pay **ONE FEE** for your whole family, based on:\n- The child certified for the most hours of care\n- NOT multiplied by number of children\n\n## When Fees Change\n\nYour fee may be recalculated:\n- At annual recertification\n- If you report income above 85%/100% SMI\n- When you move to a different program\n\n**Questions?** Contact your local R&R at rrnetwork.org",
+      "metadata": {
+        "category": "Costs & Affordability",
+        "subcategory": "Family Fees",
+        "topic": "Copay Calculation by Income Tier",
+        "source_urls": ["https://www.cde.ca.gov/sp/cd/ci/mb2506.asp", "https://rrnetwork.org/family-services/paying-for-childcare"],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2025-26"
+      }
+    }
+  ]
+}

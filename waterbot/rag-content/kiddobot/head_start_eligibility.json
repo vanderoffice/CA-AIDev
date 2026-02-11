@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "content": "# Head Start & Early Head Start Eligibility (2026)\n\n## What is Head Start?\n\nHead Start provides comprehensive developmental services for children from low-income households from birth to kindergarten entry. California operates the largest Head Start program in the nation.\n\n## Program Types\n\n### Early Head Start (EHS)\n- **Ages:** Birth to 3 years\n- **Services:** Child development, parenting support, health services\n- **Settings:** Center-based, home-based, or combination\n\n### Head Start\n- **Ages:** 3-5 years (until kindergarten entry)\n- **Services:** Early education, health, nutrition, family engagement\n- **Settings:** Primarily center-based\n\n## Income Eligibility\n\n**Primary eligibility:** Family income at or below Federal Poverty Level (FPL)\n\n### 2025 Federal Poverty Guidelines\n| Family Size | Annual Income |\n|-------------|---------------|\n| 2 persons | $20,440 |\n| 3 persons | $25,820 |\n| 4 persons | $31,200 |\n| 5 persons | $36,580 |\n\n## Categorical Eligibility (Income Not Required)\n\n- Children in foster care\n- Children experiencing homelessness\n- Families receiving public assistance (TANF, SSI)\n\n## Additional Enrollment Priorities\n\n- Children with disabilities (10% of slots reserved)\n- Children whose families receive public benefits\n- Children of migrant and seasonal farmworkers\n\n## Services Included\n\n- Free high-quality early education\n- Health screenings (vision, hearing, dental)\n- Nutritious meals and snacks\n- Family support services\n- Disability services\n- Parent involvement activities\n\n## How to Apply\n\n1. Find your local Head Start program at eclkc.ohs.acf.hhs.gov\n2. Contact program directly for application\n3. Provide income verification and child's birth certificate\n\n**No family fees** - Head Start is completely free\n\n**Federal Resource:** https://eclkc.ohs.acf.hhs.gov/\n**CA Resource:** https://rrnetwork.org/family-services/find-child-care",
+      "metadata": {
+        "category": "Subsidies",
+        "subcategory": "Head Start",
+        "topic": "Head Start and Early Head Start Eligibility",
+        "source_urls": ["https://eclkc.ohs.acf.hhs.gov/", "https://rrnetwork.org/family-services/paying-for-childcare"],
+        "last_verified": "2026-01-18"
+      }
+    }
+  ]
+}

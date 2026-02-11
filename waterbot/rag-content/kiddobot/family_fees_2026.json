@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# California Child Care Family Fee Schedule 2025-26\n\n## Major Reform: Reduced Fees!\n\nEffective July 1, 2025, California dramatically reduced family fees for subsidized child care.\n\n## Who Pays Zero Fees?\n\n**NO family fees if:**\n- Income below 75% of State Median Income\n- Receiving CalWORKs cash assistance\n- Child in foster care\n- Child receiving Child Protective Services\n- Enrolled in CHAN (children with severe disabilities)\n- Enrolled in Federal Migrant Program\n- Experiencing homelessness (San Francisco County)\n\n## Family Fee Caps\n\nFor families WITH income-based fees:\n- **Maximum fee:** 1% of monthly income\n- This applies from 75% SMI through the top of eligibility (85% or 100% SMI)\n\n## Example Family Fees (2025-26)\n\n### Family of 4 Examples\n| Monthly Income | As % of SMI | Monthly Fee |\n|----------------|-------------|-------------|\n| $7,000 | Below 75% | $0 |\n| $8,500 | ~80% SMI | ~$85 |\n| $9,500 | ~90% SMI | ~$95 |\n| $10,500 | ~99% SMI | ~$105 |\n\n### Fee by Care Type\n| Income Level | Part-Time Fee | Full-Time Fee |\n|--------------|---------------|---------------|\n| At 75% SMI | ~$60-70 | ~$120-140 |\n| At 85% SMI | ~$70-80 | ~$140-170 |\n| At 100% SMI | ~$120-140 | ~$240-280 |\n\n*Exact amounts vary by family size*\n\n## One Fee Per Family\n\n**Important:** You pay ONE family fee regardless of:\n- Number of children in care\n- Number of programs enrolled in\n- Number of providers used\n\nThe fee is based on the child certified for the most hours.\n\n## Fee Exemptions (One-Time, 12 Months)\n\nYou may qualify for a 12-month fee exemption if your child:\n- Is at risk of abuse, neglect, or exploitation\n- Is receiving Child Protective Services\n\n## How Fees Are Paid\n\n- Deducted from provider payment by your APP\n- Paid directly to provider in some cases\n- Contact your local agency for specific process\n\n**Source:** CDE Management Bulletin 25-06\n**URL:** https://www.cde.ca.gov/sp/cd/ci/mb2506.asp",
+      "metadata": {
+        "category": "Costs & Affordability",
+        "subcategory": "Family Fees",
+        "topic": "Family Fee Schedule 2026",
+        "source_urls": ["https://www.cde.ca.gov/sp/cd/ci/mb2506.asp"],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2025-26"
+      }
+    }
+  ]
+}

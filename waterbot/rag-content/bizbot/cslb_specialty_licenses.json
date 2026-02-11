@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "content": "# California CSLB Class C Specialty Licenses (2026)\n\n## 42 Specialty Contractor Classifications\n\nClass C licenses allow contractors to perform specialized trades. Each requires trade-specific examination and experience.\n\n### Mechanical & HVAC\n- **C-4** - Boiler, Hot Water Heating and Steam Fitting\n- **C-20** - HVAC (Warm-Air Heating, Ventilating, Air Conditioning)\n- **C-38** - Refrigeration\n\n### Electrical & Low Voltage\n- **C-7** - Low Voltage Systems\n- **C-10** - Electrical (requires 32 CE hours via DIR)\n- **C-28** - Lock and Security Equipment\n\n### Structural & Building\n- **C-5** - Framing and Rough Carpentry\n- **C-6** - Cabinet, Millwork and Finish Carpentry\n- **C-8** - Concrete\n- **C-9** - Drywall\n- **C-17** - Glazing\n- **C-21** - Building Moving/Demolition\n- **C-29** - Masonry\n- **C-35** - Lathing and Plastering\n- **C-43** - Sheet Metal\n- **C-50** - Reinforcing Steel\n- **C-51** - Structural Steel\n\n### Site Work & Infrastructure\n- **C-12** - Earthwork and Paving\n- **C-27** - Landscaping\n- **C-31** - Construction Zone Traffic Control\n- **C-32** - Parking and Highway Improvement\n- **C-34** - Pipeline\n- **C-42** - Sanitation System\n- **C-57** - Well Drilling (B license cannot perform)\n\n### Specialty Finishes\n- **C-2** - Insulation and Acoustical\n- **C-13** - Fencing\n- **C-15** - Flooring and Floor Covering\n- **C-23** - Ornamental Metal\n- **C-33** - Painting and Decorating\n- **C-45** - Sign\n- **C-54** - Ceramic and Mosaic Tile\n\n### Plumbing & Water\n- **C-36** - Plumbing\n- **C-53** - Swimming Pool\n- **C-55** - Water Conditioning\n\n### Specialized\n- **C-11** - Elevator\n- **C-16** - Fire Protection (B license cannot perform)\n- **C-22** - Asbestos Abatement (workers comp always required)\n- **C-39** - Roofing (workers comp always required)\n- **C-46** - Solar\n- **C-47** - General Manufactured Housing\n- **C-49** - Tree Service (Tree and Palm)\n- **C-60** - Welding\n- **C-61** - Limited Specialty (various sub-classifications)\n\n### Official URL\nhttps://www.cslb.ca.gov/about_us/library/licensing_classifications/",
+      "metadata": {
+        "category": "Industry-Specific Licenses",
+        "subcategory": "Contractor Licensing",
+        "topic": "Class C Specialty Classifications",
+        "source_urls": ["https://www.cslb.ca.gov/about_us/library/licensing_classifications/"],
+        "last_verified": "2026-01-18"
+      }
+    }
+  ]
+}

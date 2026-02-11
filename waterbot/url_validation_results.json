@@ -1,0 +1,205 @@
+{
+  "bizbot": {
+    "total": 229,
+    "ok_count": 222,
+    "redirect_count": 3,
+    "client_error_count": 3,
+    "server_error_count": 0,
+    "dns_error_count": 0,
+    "other_error_count": 1,
+    "broken_urls": [
+      {
+        "url": "https://www.cslb.ca.gov/resources/",
+        "status": 403,
+        "message": "Forbidden"
+      },
+      {
+        "url": "https://www.hcd.ca.gov/building-standards",
+        "status": 403,
+        "message": "Forbidden"
+      },
+      {
+        "url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII",
+        "status": 403,
+        "message": "Forbidden"
+      }
+    ]
+  },
+  "kiddobot": {
+    "total": 247,
+    "ok_count": 221,
+    "redirect_count": 1,
+    "client_error_count": 11,
+    "server_error_count": 0,
+    "dns_error_count": 13,
+    "other_error_count": 1,
+    "broken_urls": [
+      {
+        "url": "https://www.cdss.ca.gov/inforesources/child-care-and-development-licensing",
+        "status": 404,
+        "message": "Not Found"
+      },
+      {
+        "url": "https://www.rcoe.us/departments/early-education-services/early-education-programs/head-start-and-early-head-start",
+        "status": 404,
+        "message": "Not Found"
+      },
+      {
+        "url": "https://www.sandiegocounty.gov/hhsa/programs/ssp/family_resource_centers.html",
+        "status": 404,
+        "message": "Not Found"
+      },
+      {
+        "url": "https://data.chhs.ca.gov/dataset/46ffcbdf-4874-4cc1-92c2-fb715e3ad014/resource/7aed8063-cea7-4367-8651-c81643164ae0/download/tmpwya01y9s.csv",
+        "status": 403,
+        "message": "Forbidden"
+      },
+      {
+        "url": "https://www.cde.ca.gov/sp/cd/re/cdcontractorinfo.asp",
+        "status": 404,
+        "message": "Not Found"
+      },
+      {
+        "url": "https://www.ccld.dss.ca.gov/carefacilitysearch//carefacilitysearch/",
+        "status": 404,
+        "message": "Not Found"
+      },
+      {
+        "url": "https://mychildcareplan.org",
+        "status": 404,
+        "message": "Not Found"
+      },
+      {
+        "url": "https://www.rcoe.us/departments/early-education-services/early-care-and-education/alternative-payment-program-calworks-stage-2-and-calworks-stage-3",
+        "status": 404,
+        "message": "Not Found"
+      },
+      {
+        "url": "https://data.chhs.ca.gov/dataset/46ffcbdf-4874-4cc1-92c2-fb715e3ad014/resource/4b5cc48d-03b1-4f42-a7d1-b9816903eb2b/download/tmpghf_prqt.csv",
+        "status": 403,
+        "message": "Forbidden"
+      },
+      {
+        "url": "https://winnie.com/mountain-view-ca/overnight-childcare",
+        "status": 403,
+        "message": "Forbidden"
+      },
+      {
+        "url": "https://www.ccrcca.org/publications/",
+        "status": 403,
+        "message": "Forbidden"
+      },
+      {
+        "url": "https://inspireschools.org",
+        "status": 0,
+        "message": "URLError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)"
+      },
+      {
+        "url": "https://family-resource.org",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "url": "https://www.trintyfamilyresource.org",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "url": "https://iceschildcare.org",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "url": "https://dha.saccounty.gov/Services/Pages/CalWORKs.aspx",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "url": "https://mychildcare.ca.gov",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "url": "https://cdrc-childcare.org",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "url": "https://www.delnortechildcare.org",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "url": "https://cvchn.org",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "url": "https://www.sbfamilycare.org",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "url": "https://dha.saccounty.gov",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "url": "https://lassencfr.org",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "url": "https://valleyoakcs.org",
+        "status": 0,
+        "message": "URLError: [Errno 8] nodename nor servname provided, or not known"
+      }
+    ]
+  },
+  "waterbot": {
+    "total": 313,
+    "ok_count": 304,
+    "redirect_count": 2,
+    "client_error_count": 6,
+    "server_error_count": 0,
+    "dns_error_count": 1,
+    "other_error_count": 0,
+    "broken_urls": [
+      {
+        "url": "https://geotracker.waterboards.ca.gov/",
+        "status": 403,
+        "message": "Forbidden"
+      },
+      {
+        "url": "https://www.envirostor.dtsc.ca.gov",
+        "status": 403,
+        "message": "Forbidden"
+      },
+      {
+        "url": "https://www.epa.gov/npdes/industrial-pretreatment",
+        "status": 404,
+        "message": "Not Found"
+      },
+      {
+        "url": "https://geotracker.waterboards.ca.gov",
+        "status": 403,
+        "message": "Forbidden"
+      },
+      {
+        "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/PFAS.html",
+        "status": 404,
+        "message": "Not Found"
+      },
+      {
+        "url": "https://gamagroundwater.waterboards.ca.gov/gama/gamamap/public/",
+        "status": 403,
+        "message": "Forbidden"
+      },
+      {
+        "url": "https://enviro.epa.gov/facts/sdwis/search.html",
+        "status": 0,
+        "message": "URLError: [Errno 65] No route to host"
+      }
+    ]
+  }
+}

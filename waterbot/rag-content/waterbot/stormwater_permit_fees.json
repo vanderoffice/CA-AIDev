@@ -1,0 +1,18 @@
+{
+  "documents": [
+    {
+      "content": "# Stormwater Permit Fees (2025-26)\n\n## Construction General Permit (CGP)\n\n### Standard Construction Projects\n\n**Fee Calculation:**\n- Base fee: $511\n- Per acre fee: $54\n- Formula: $511 + ($54 × total disturbed acres)\n- Maximum: $11,311\n\n### Example Calculations\n\n| Project Size | Fee Calculation | Total Fee |\n|--------------|-----------------|----------|\n| 0.5 acres | $511 + ($54 × 0.5) | $538 |\n| 1 acre | $511 + ($54 × 1) | $565 |\n| 5 acres | $511 + ($54 × 5) | $781 |\n| 10 acres | $511 + ($54 × 10) | $1,051 |\n| 50 acres | $511 + ($54 × 50) | $3,211 |\n| 100 acres | $511 + ($54 × 100) | $5,911 |\n| 200+ acres | Maximum | $11,311 |\n\n### Rainfall Erosivity Waiver\n- **Fee:** $200 (flat fee)\n- **Eligibility:** Small projects meeting specific criteria\n- Low erosivity conditions required\n\n## Industrial General Permit (IGP)\n\n### Annual Fees by Facility Size\n\n| Industrial Acres | Annual Fee |\n|------------------|------------|\n| Less than 1 acre | $1,701 |\n| 1 to less than 5 acres | $1,723 |\n| 5 acres or more | $1,873 |\n\n### What Counts as Industrial Acres?\n- Areas where industrial materials/activities exposed to stormwater\n- Outdoor storage areas\n- Loading/unloading areas\n- Equipment maintenance areas\n- Parking areas where industrial activities occur\n\n## Municipal Stormwater (MS4)\n\n### Phase I MS4 (Large/Medium Cities)\n| Population | Annual Fee |\n|------------|------------|\n| ≥ 250,000 | $27,293 |\n| 100,000-249,999 | $21,835 |\n\n### Phase II MS4 (Small MS4s)\n| Population | Annual Fee |\n|------------|------------|\n| 50,000-99,999 | $18,196 |\n| 10,000-49,999 | $10,920-18,196 |\n| < 10,000 | $3,641-7,279 |\n\n## When Fees Are Due\n\n**Construction:**\n- Before permit issuance (NOT)\n- At time of enrollment\n\n**Industrial:**\n- Annual renewal\n- Invoice sent by State Water Board\n\n**Municipal:**\n- Annual billing cycle\n- Due by specified date on invoice\n\n## Fee Calculator\n\n**Online Calculator:** [CGP Per-Acre Fee Reference (PDF)](https://www.waterboards.ca.gov/resources/fees/water_quality/docs/cgp-per-acre.pdf)\n\n## Contact\n\n**Stormwater Program:** [SWRCB Stormwater Program](https://www.waterboards.ca.gov/water_issues/programs/stormwater/)\n**Fee Questions:** [Regional Water Board](https://www.waterboards.ca.gov/waterboards_map.html)\n\n## Take Action\n\n1. **Calculate your construction fee** -- Use the formula ($511 + $54 per acre) and verify against the [CGP Per-Acre Fee Reference (PDF)](https://www.waterboards.ca.gov/resources/fees/water_quality/docs/cgp-per-acre.pdf).\n2. **Review the full fee schedule** -- Download the [FY 2025-26 Fee Schedule (PDF)](https://www.waterboards.ca.gov/resources/fees/stakeholder/docs/2025/fy2526-wq-feeschedule.pdf) for construction, industrial, and municipal stormwater fee details.\n3. **Enroll via SMARTS** -- Visit the [SMARTS portal](https://smarts.waterboards.ca.gov) to submit your Notice of Intent and pay enrollment fees for construction or industrial stormwater permits.\n4. **Contact the Stormwater Program** -- Visit the [SWRCB Stormwater Program](https://www.waterboards.ca.gov/water_issues/programs/stormwater/) page for guidance on which permit category applies to your project.",
+      "metadata": {
+        "category": "Permits",
+        "subcategory": "Fees",
+        "topic": "Stormwater Permit Fees 2026",
+        "source_urls": [
+          "https://www.waterboards.ca.gov/resources/fees/stakeholder/docs/2025/fy2526-wq-feeschedule.pdf",
+          "https://www.waterboards.ca.gov/resources/fees/water_quality/docs/cgp-per-acre.pdf"
+        ],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2025-26"
+      }
+    }
+  ]
+}

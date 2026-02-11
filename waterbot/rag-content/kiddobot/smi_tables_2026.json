@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# California State Median Income Tables 2025-26\n\n## What is State Median Income (SMI)?\n\nSMI is calculated annually by the California Department of Finance using U.S. Census data and federal formulas. It determines eligibility for most subsidized child care programs.\n\n## 2025-26 SMI Schedule\n\n### 100% of State Median Income\n*Used for California State Preschool Program (CSPP)*\n\n| Family Size | Yearly | Monthly |\n|-------------|--------|--------|\n| 1-2 | $96,854 | $8,071 |\n| 3 | $109,904 | $9,159 |\n| 4 | $127,344 | $10,612 |\n| 5 | $147,715 | $12,309 |\n| 6 | $168,086 | $14,007 |\n| 7 | $171,913 | $14,326 |\n| 8 | $175,740 | $14,644 |\n\n### 85% of State Median Income\n*Used for CDSS programs (CCTR, CAPP, CalWORKs Stage 3)*\n\n| Family Size | Yearly | Monthly |\n|-------------|--------|--------|\n| 1-2 | $82,326 | $6,860 |\n| 3 | $93,418 | $7,785 |\n| 4 | $108,237 | $9,020 |\n| 5 | $125,558 | $10,463 |\n| 6 | $142,873 | $11,906 |\n| 7 | $146,126 | $12,177 |\n| 8 | $149,379 | $12,448 |\n\n### 75% of State Median Income\n*Families below this level pay NO family fees*\n\n| Family Size | Yearly | Monthly |\n|-------------|--------|--------|\n| 1-2 | $72,641 | $6,053 |\n| 3 | $82,428 | $6,869 |\n| 4 | $95,508 | $7,959 |\n| 5 | $110,786 | $9,232 |\n\n## How SMI is Used\n\n1. **Below 75% SMI:** No family fees, eligible for all programs\n2. **75-85% SMI:** Family fees capped at 1%, eligible for CDSS programs\n3. **85-100% SMI:** Family fees capped at 1%, eligible for CSPP only\n4. **Above 100% SMI:** Not income-eligible (may qualify through other categories)\n\n## Income Calculation\n\n- Based on adjusted monthly income\n- Includes wages, self-employment, child support received\n- Excludes CalFresh, housing assistance, one-time payments\n\n**Source:** CDE Management Bulletin 25-05\n**URL:** https://www.cde.ca.gov/sp/cd/ci/mb2505.asp",
+      "metadata": {
+        "category": "Subsidies",
+        "subcategory": "Income Eligibility",
+        "topic": "State Median Income Tables 2026",
+        "source_urls": ["https://www.cde.ca.gov/sp/cd/ci/mb2505.asp", "https://www.cde.ca.gov/sp/cd/ci/smi.asp"],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2025-26"
+      }
+    }
+  ]
+}

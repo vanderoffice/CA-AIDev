@@ -1,90 +1,91 @@
-# WaterBot
+# WaterBot Next-Level Overhaul
 
 ## What This Is
 
-WaterBot is a professional-grade RAG chatbot for California Water Boards, deployed on vanderdev.net as the third chatbot in the series after KiddoBot (childcare) and BizBot (business licensing). It helps small businesses, environmental organizations, agricultural operations, local governments, and non-profits navigate water permits, regulations, and funding programs.
+A comprehensive overhaul of WaterBot's knowledge base to make every response both **factually accurate** and **actionable** — verified URLs, direct links to portals/forms/databases, and "Take Action" sections that guide California residents to the next step. Currently WaterBot answers questions well (100% coverage, 94% strong retrieval) but almost never links users to where they need to go.
 
 ## Core Value
 
-Accurate, well-cited answers to "Do I need a permit?" and "Am I eligible for funding?" — the two questions that drive every Water Boards interaction.
+Every WaterBot response must be accurate AND actionable — accurate facts without links is useless to a resident trying to act, and links without accuracy is dangerous. Both must be true simultaneously.
 
 ## Requirements
 
 ### Validated
 
-- [x] n8n workflows deployed and functional (4 workflows)
-- [x] Supabase schema with pgvector extension
-- [x] React frontend component (WaterBot.jsx)
-- [x] Knowledge base created (permits, funding, compliance, water quality)
-- [x] Chunking and embedding pipeline functional
+- ✓ WaterBot answers 35 adversarial queries at 100% coverage (33 strong, 2 acceptable) — existing
+- ✓ 1,286 pgvector rows with OpenAI text-embedding-3-small embeddings — existing
+- ✓ Consumer FAQ, conservation, advocate toolkit, and operator guide content ingested — 2026-02-10
+- ✓ n8n workflow (MY78EVsJL00xPMMw) processes waterContext from IntakeForm — existing
+- ✓ Adversarial evaluation framework with automated scoring — existing
+- ✓ Master URL registry mapping 179 topics to 500+ verified, actionable URLs — v1.0
+- ✓ All 33 batch content files rewritten with inline URLs and "Take Action" sections — v1.0
+- ✓ Content accuracy audit — every fact, date, figure verified against current CA sources — v1.0
+- ✓ DB rebuilt from overhauled content (clean-slate: 1,286 → 179 rows) — v1.0
+- ✓ n8n system prompt updated to instruct LLM to surface links from retrieved context — v1.0
+- ✓ Adversarial eval: 33/35 → 35/35 STRONG (100%) — v1.0
+- ✓ All URLs validated (313 URLs, 97.1% reachable) — v1.0
+- ✓ Regression test: zero degradation on existing 35 queries — v1.0
 
 ### Active
 
-- [x] RAG-powered chat with source citations (cosine similarity > 0.70, Top-K: 8)
-- [x] "Do I Need a Permit?" backend workflow (`/webhook/waterbot-permits`)
-- [x] Funding Navigator backend workflow (`/webhook/waterbot-funding`)
-- [x] Knowledge base covering all 9 Regional Water Quality Control Boards
-- [x] Permit type documentation (NPDES, WDR, 401 Certification, Water Rights, Habitat Restoration)
-- [x] Funding program documentation including Proposition 4 (2024) — $10B bond
-- [ ] Multi-model research validation matching KiddoBot quality (4.8/5.0 standard)
-- [ ] IntakeForm questionnaire (5 steps: Project Type, Location, Discharge, Water Needs, Applicant)
-- [x] Disclaimer on all responses (not legal advice, contact Regional Board)
-
-### Pending Deployment
-
-- [ ] Frontend integration with vanderdev.net
-- [ ] Route added to App.jsx
-- [ ] NavItem added to Sidebar.jsx
+(None — v1.0 shipped. Next milestone TBD.)
 
 ### Out of Scope
 
-- User accounts / login / saved sessions — stateless chatbot, no personalization
-- Form pre-filling / PDF generation — WaterBot informs, doesn't fill applications
-- Features beyond handoff document — scope is locked
-- Mobile app — web-only on vanderdev.net
+- BizBot and KiddoBot — WaterBot only for this overhaul
+- Frontend/UI React component changes — pure knowledge base + n8n workflow
+- New topic areas — overhaul existing content, don't expand topic coverage
+- Embedding model change — stay on text-embedding-3-small (1536 dims)
+- Schema migration — keep existing `content`, `metadata`, `embedding` column structure
 
 ## Context
 
-**Existing Architecture (must follow):**
-- Frontend: React 18 + Vite + Tailwind CSS
-- Backend: n8n webhooks (n8n.vanderdev.net)
-- Vector DB: Supabase PostgreSQL + pgvector
-- Embeddings: OpenAI `text-embedding-3-small` (1536 dimensions)
-- LLM: Claude Sonnet
-- Hosting: Hostinger FTP via GitHub Actions
+### Current State (2026-02-11 — PROJECT COMPLETE)
 
-**Key Patterns from KiddoBot:**
-- `alwaysOutputData: true` on vector search node (prevents silent failures)
-- `escapeBraces()` function for LangChain templates
-- Fallback handler for empty search results
-- Multi-model validation: Perplexity → Claude → GPT-4o → Gemini → Claude reconciliation
+- **DB:** 179 rows in `public.waterbot_documents` (clean-slate rebuild from overhauled content)
+- **Content:** 33 batch JSON files (179 docs), each with inline URLs, Take Action sections, verified facts
+- **URLs:** 313 unique URLs in DB (3.9x increase from ~81 baseline), 97.1% reachable
+- **Adversarial scores:** 35/35 STRONG (100%), 0 acceptable, 0 weak — up from 33/35 (94.3%)
+- **Both weak spots resolved:** wat-015 chromium-6 (0.339 → 0.625), wat-017 CCR (0.366 → 0.589)
+- **Avg similarity:** 0.5636 → 0.5944 (+0.031)
+- **Ingestion pipeline:** `ingest_waterbot_content.py` → OpenAI embeddings → SSH/Docker/psql → IVFFlat reindex
+- **Live bot:** https://vanderdev.net/ecosform (WaterBot chat mode)
+- **n8n workflow:** `MY78EVsJL00xPMMw` (WaterBot - Chat, maxTokens 2000, temp 0.2, link-surfacing prompt)
 
-**Knowledge Base Structure:**
-- 9 regional boards + statewide
-- Permit types: NPDES (individual/general), WDR, 401 Certification, Water Rights, Habitat Restoration
-- Funding programs: CWSRF, DWSRF, SAFER, WIFIA, Prop 1/4/68, DAC, Tribal
+### Key Technical Facts
 
-**Reference Files:**
-- KiddoBot pattern: `/Users/slate/Documents/GitHub/vanderdev-website/src/pages/KiddoBot.jsx`
-- BizBot pattern: `/Users/slate/Documents/GitHub/vanderdev-website/src/pages/BizBot.jsx`
-- KiddoBot knowledge base: `/Users/slate/Documents/GitHub/CA-AIDev/kiddobot/ChildCareAssessment/`
-- Handoff document: `/Users/slate/Documents/GitHub/CA-AIDev/waterbot/WATERBOT-PROJECT-HANDOFF.md`
+- PostgreSQL 15.8.1 with pgvector 0.8.0, IVFFlat index
+- Supabase on VPS: `ssh vps "docker exec -i supabase-db psql -U postgres -d postgres"`
+- Two metadata schemas coexist: markdown-chunked (`document_id`, `section_title`, `chunk_index`) and batch JSON (`topic`, `category`, `subcategory`)
+- Dollar-quoted SQL strings with `CONTENT_END_12345` tag for safe insertion
+- Adversarial eval script: `scripts/run_adversarial_evaluation.py` (thresholds: STRONG ≥0.40, ACCEPTABLE ≥0.30)
+- URL validation script: `scripts/test_all_urls.py`
+
+### Prior Work
+
+- Original bot KB enhancement: Jan 2026 (all 3 bots, 6 phases, URL audit fixed 116 broken URLs)
+- Conservation enhancement: Feb 10 2026 (8 deep docs, all 10 queries STRONG)
+- Rich batch ingestion: Feb 10 2026 (25 docs, strong rate 69% → 94%)
+- Full project history: `.planning/RESUME.md`
+- Phase 5 evaluation: 35/35 STRONG, regression report at `.planning/phases/05-evaluation/regression_report.md`
 
 ## Constraints
 
-- **Tech Stack**: React + n8n + Supabase + Claude — locked to match KiddoBot/BizBot architecture
-- **Documentation Quality**: Must match KiddoBot standard (multi-model validation, 4.8/5.0 quality rating, all figures cited)
-- **Documentation Format**: Use markdown headers (KiddoBot style), not YAML frontmatter
-- **Vector DB Tuning**: Phase 7 is critical — target average score ≥ 4.0, no scores below 3
-- **Disclaimer Required**: All responses must include disclaimer that this is not legal advice
+- **Infrastructure**: VPS-hosted Supabase, SSH pipeline for all DB operations — no direct DB connection
+- **Embedding cost**: OpenAI API charges per embedding — minimize unnecessary re-embeddings
+- **URL stability**: CA gov sites restructure frequently (learned from Jan audit) — prefer parent pages and stable domains
+- **Bot is live**: Changes to DB affect live users immediately — validate before ingesting
+- **DB rebuild strategy**: Deferred until after content overhaul (Phase 2) — will decide clean slate vs preserve+enhance based on content quality assessment
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Markdown headers over YAML frontmatter | Match KiddoBot proven pattern, simpler human-readable format | — Pending |
-| All three tools equally prioritized | User specified no priority order — ship together | — Pending |
-| Knowledge base in separate repo (CA-AIDev/waterbot-knowledge) | Separation of concerns, easier research collaboration | — Pending |
+| WaterBot only (not all 3 bots) | Focus delivers better quality than spreading across bots | ✅ Validated — BizBot/KiddoBot unchanged (control check passed) |
+| URL registry as structured JSON | Single source of truth for link maintenance; decoupled from content | ✅ Validated — 179 topics, 500+ URLs, all batch files linked |
+| DB rebuild: clean-slate (TRUNCATE + re-ingest) | Old content fully superseded: 6.2% links vs 100% new | ✅ Validated — 1,286→179 rows, better scores |
+| Inline URLs in content (not just metadata) | Embeddings include URL text; LLM sees links in retrieved context | ✅ Validated — 313 URLs in DB, avg sim +0.031 |
+| Baseline comparison at every phase | Show measurable improvement, not just "we changed things" | ✅ Validated — regression_report.md proves 33→35 STRONG |
 
 ---
-*Last updated: 2026-01-17 — synced with production state*
+*Last updated: 2026-02-11 after v1.0 milestone*

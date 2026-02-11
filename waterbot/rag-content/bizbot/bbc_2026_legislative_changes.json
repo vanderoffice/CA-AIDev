@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# California BBC 2025-2026 Legislative Changes\n\n## Recent Changes Affecting Cosmetology & Barber Licensing\n\n### SB 1451 - Hairstylist Fee Increase (October 1, 2025)\n- **Change:** Application/examination fee for hairstylist license increased from $50 to $75\n- **Purpose:** Aligns hairstylist fees with other license types (cosmetologist, barber, esthetician, manicurist all at $75)\n- **Note:** Hairstylist license requires only 600 hours (hair styling without chemical services)\n\n### Interpreter Regulations (January 1, 2026)\n- **Change:** Formalized procedures for examination interpreter use\n- **Who benefits:** Candidates with limited English proficiency\n- **Exams available in:** English, Korean, Spanish, Vietnamese, Simplified Chinese\n- **Interpreter option:** For languages not offered in written form\n\n### Pre-Apprentice Training Administration (July 1, 2025)\n- **Change:** Board now administers the online pre-apprentice training course directly\n- **Previous:** Offered by apprenticeship program sponsors\n- **Benefit:** Automatic completion reporting to the Board database\n\n### Historical Context: SB 803 (January 1, 2022)\nMajor reform that:\n- Reduced cosmetologist/barber training from 1,500-1,600 hours to 1,000 hours\n- Eliminated practical examinations (written-only testing)\n- Aligned California with other states' requirements\n\n### No Continuing Education (Still Current)\nCalifornia remains one of the few states that does NOT require continuing education for cosmetology license renewal.\n\n### Official Source\nhttps://www.barbercosmo.ca.gov/laws_regs/",
+      "metadata": {
+        "category": "Industry-Specific Licenses",
+        "subcategory": "Cosmetology & Barber",
+        "topic": "2025-2026 Legislative Changes",
+        "source_urls": ["https://www.barbercosmo.ca.gov/laws_regs/"],
+        "last_verified": "2026-01-18",
+        "effective_dates": ["2025-07-01", "2025-10-01", "2026-01-01"]
+      }
+    }
+  ]
+}

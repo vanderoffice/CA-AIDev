@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# California CSLB Contractor License Fees (2026)\n\n## Contractors State License Board Fee Schedule\n\n### Application Fees\n| Fee Type | Amount |\n|----------|--------|\n| Original Application (1 classification) | $450 |\n| Each Additional Classification | $150 |\n| Initial License (Sole Owner) | $200 |\n| Initial License (Non-Sole Owner) | $350 |\n| Add Classification to Existing License | $230 |\n| Replace Qualifier | $230 |\n| Add Personnel | $125 |\n\n### Fingerprinting (Required)\n| Agency | Fee |\n|--------|-----|\n| DOJ Processing | $32 |\n| FBI Processing | $17-$27 |\n| **Total Fingerprinting** | **$49-$59** |\n\n### Renewal Fees (Every 2 Years)\n| License Type | Active Renewal | Delinquent Renewal |\n|--------------|----------------|--------------------|\n| Sole Owner | $450 | $675 |\n| Non-Sole Owner | $700 | $1,050 |\n\n### Bond Requirements\n| Bond Type | Amount | Annual Cost (typical) |\n|-----------|--------|-----------------------|\n| Contractor License Bond | $25,000 | $100-$500 |\n| Qualifying Individual Bond | $25,000 | $100-$500 |\n\n*Bond costs depend on credit score and claims history*\n\n### Processing Times (as of January 12, 2026)\n| Unit | Currently Processing |\n|------|---------------------|\n| Original Applications | December 16, 2025 |\n| Criminal Background | December 17, 2025 |\n| Issuance | December 29, 2025 |\n| Renewals | December 29, 2025 |\n| Bonds | December 19-23, 2025 |\n\n### Official URLs\n- Fee Schedule: https://www.cslb.ca.gov/\n- Processing Times: https://www2.cslb.ca.gov/onlineservices/processingtimes/processingtimes.aspx\n- Application Status: https://www2.cslb.ca.gov/OnlineServices/CheckApplicationII/ApplicantRequest.aspx",
+      "metadata": {
+        "category": "Industry-Specific Licenses",
+        "subcategory": "Contractor Licensing",
+        "topic": "CSLB Fees and Processing Times",
+        "source_urls": ["https://www.cslb.ca.gov/", "https://www2.cslb.ca.gov/onlineservices/processingtimes/processingtimes.aspx"],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2026"
+      }
+    }
+  ]
+}

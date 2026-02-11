@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "content": "# MyChildCarePlan.org Portal Guide (2026)\n\n## What is MyChildCarePlan?\n\nMyChildCarePlan.org is California's official web portal for finding child care and accessing subsidized child care assistance. It's operated by the California Child Care Resource & Referral Network.\n\n**URL:** https://rrnetwork.org/family-services/find-child-care\n\n## What You Can Do\n\n### Find Child Care Providers\n- Search licensed providers in your area\n- Filter by age, schedule, location\n- View provider details and contact info\n\n### Create Your Child Care Plan\n1. Complete a quick survey about your needs\n2. Get matched providers instantly\n3. Update your plan as needs change\n\n### Check Subsidy Eligibility\n- Learn which programs you might qualify for\n- Understand income limits and requirements\n- Find application steps\n\n### Connect to Local Help\n- Find your local R&R agency by zip code\n- Access live support from child care specialists\n- Get personalized assistance\n\n## How to Use the Portal\n\n### Step 1: Visit rrnetwork.org\n\n### Step 2: Enter Your Zip Code\n- This connects you to local resources\n- Shows providers in your area\n\n### Step 3: Complete the Survey\n- Answer questions about your child's age\n- Specify care schedule needs\n- Indicate any special requirements\n\n### Step 4: View Results\n- See matched providers\n- Review subsidy program options\n- Get R&R contact information\n\n## Finding Subsidy Information\n\nNavigate to: Resources → Child Care Subsidies\n\nYou'll find:\n- Program eligibility requirements\n- Income limits by family size\n- Application processes\n- Wait list information\n\n## Centralized Eligibility List (CEL)\n\nSome counties have a CEL where you apply once for multiple programs:\n- Check if your county participates\n- Apply through your local R&R\n- Get placed on lists for all programs you qualify for\n\n## Get Live Help\n\n**Phone:** Contact your local R&R (find via portal)\n**Online:** Use the portal's help features\n**In-Person:** Many R&Rs offer walk-in assistance\n\n## Related Resources\n\n- **Provider licensing verification:** https://www.ccld.dss.ca.gov/carefacilitysearch//carefacilitysearch/\n- **TrustLine verification:** 1-800-822-8490\n- **Legal help:** https://www.childcarelaw.org",
+      "metadata": {
+        "category": "Application Processes",
+        "subcategory": "Portals",
+        "topic": "MyChildCarePlan Portal Guide",
+        "source_urls": ["https://rrnetwork.org/family-services/find-child-care"],
+        "last_verified": "2026-01-18"
+      }
+    }
+  ]
+}

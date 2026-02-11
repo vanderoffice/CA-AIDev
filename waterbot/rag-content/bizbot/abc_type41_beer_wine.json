@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# California Type 41 Beer & Wine License (2026)\n\n## Department of Alcoholic Beverage Control (ABC)\n\n### What is a Type 41 License?\nA Type 41 license allows restaurants to sell beer and wine for on-premises consumption with meals.\n\n### Key Features\n- **Beverages Allowed:** Beer and wine only (no spirits/liquor)\n- **Food Requirement:** At least 50% of gross sales must be from food\n- **Minors:** Allowed on premises\n- **Off-Sale:** Beer and wine in manufacturer-sealed containers allowed\n- **Hours:** Per local ordinance (typically 6 AM - 2 AM)\n\n### Application Fees (2026 - includes 2.72% CPI increase)\n| Fee Type | Amount |\n|----------|--------|\n| Application Fee | $400 - $650 |\n| Fingerprinting | ~$60 |\n| 30-Day Posting Fee | Included |\n\n### Annual Fees by City Population (2026)\n| City Population | Annual Fee |\n|-----------------|------------|\n| Over 40,000 | $565 |\n| 20,000 - 40,000 | $502 |\n| Under 20,000 | $447 |\n\n### Processing Timeline\n- **Original Application:** ~60-90 days\n- **30-Day Posting Period:** Required (neighbors can protest)\n- **Local Government Review:** Varies by city\n\n### Transfer Fees (Person-to-Person)\n- Transfer Application: $420\n- Processing time: ~75 days\n\n### Advantages Over Type 47\n- Significantly lower fees\n- Faster approval process\n- No quota limitations\n- Easier for new restaurants\n\n### Official URLs\n- ABC Main: https://www.abc.ca.gov\n- License Types: https://www.abc.ca.gov/licensing/license-types/\n- Fee Schedule: https://www.abc.ca.gov/licensing/license-fees/",
+      "metadata": {
+        "category": "Industry-Specific Licenses",
+        "subcategory": "ABC Liquor Licensing",
+        "topic": "Type 41 Beer and Wine License",
+        "source_urls": ["https://www.abc.ca.gov/licensing/license-types/", "https://www.abc.ca.gov/licensing/license-fees/"],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2026"
+      }
+    }
+  ]
+}

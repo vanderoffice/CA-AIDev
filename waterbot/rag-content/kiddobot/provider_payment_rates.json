@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "content": "# Child Care Provider Payment Rates (2026)\n\n## How Provider Payments Work\n\n### Regional Market Rate (RMR)\n\nCalifornia sets maximum reimbursement rates based on regional market surveys. Subsidized programs pay providers up to these rates.\n\n### Payment Tiers\n\n**Licensed Centers:** Highest rates\n**Licensed Family Child Care:** Mid-range rates\n**License-Exempt:** Lower rates (typically 60-70% of licensed rates)\n\n## Typical Rate Ranges (2025-26)\n\n*Rates vary significantly by county - these are statewide averages*\n\n### Infant Care (0-2 years)\n| Provider Type | Daily Rate | Monthly Full-Time |\n|---------------|------------|-------------------|\n| Licensed Center | $70-120 | $1,400-2,400 |\n| Licensed FCC | $50-80 | $1,000-1,600 |\n| License-Exempt | $35-55 | $700-1,100 |\n\n### Preschool (3-5 years)\n| Provider Type | Daily Rate | Monthly Full-Time |\n|---------------|------------|-------------------|\n| Licensed Center | $50-90 | $1,000-1,800 |\n| Licensed FCC | $40-65 | $800-1,300 |\n| License-Exempt | $30-45 | $600-900 |\n\n### School-Age (6-12 years)\n| Provider Type | Daily Rate | Monthly Full-Time |\n|---------------|------------|-------------------|\n| Licensed Center | $35-60 | $700-1,200 |\n| Licensed FCC | $30-50 | $600-1,000 |\n| License-Exempt | $25-40 | $500-800 |\n\n## Rate Factors\n\n### Higher Rates For:\n- Infants and toddlers (more staff needed)\n- Full-day care\n- Weekend/evening care\n- Special needs care\n- Higher cost counties (SF, LA)\n\n### Rate Determination\n\n1. Survey of market rates in region\n2. Set at percentile of surveyed rates\n3. Updated periodically\n4. Programs cannot pay above RMR\n\n## Family Fees Don't Affect Provider Pay\n\nWhen families pay copays:\n- Family fee goes to program, not provider\n- Provider receives full contracted rate\n- Payment comes from APP or county\n\n## Payment Process for Providers\n\n### Voucher Programs (CAPP, CalWORKs)\n1. Family chooses provider\n2. Provider enrolls with APP\n3. APP sends attendance forms\n4. Provider submits attendance\n5. Payment within 2-4 weeks\n\n### Center-Based Contracts (CSPP, CCTR)\n1. Center contracts with state/county\n2. Receives monthly advance\n3. Adjusts based on attendance\n4. Quarterly reconciliation\n\n## Getting Your County's Rates\n\n- Contact your local Resource & Referral\n- Ask your Alternative Payment Program\n- Check with Community Care Licensing\n\n**Find Local Rates:** Contact your R&R at rrnetwork.org",
+      "metadata": {
+        "category": "Provider Search",
+        "subcategory": "Payment Rates",
+        "topic": "Provider Payment Rates by County",
+        "source_urls": ["https://www.cdss.ca.gov/inforesources/calworks-child-care/subsidized-programs", "https://rrnetwork.org/family-services/find-child-care"],
+        "last_verified": "2026-01-18"
+      }
+    }
+  ]
+}

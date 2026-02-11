@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# California Child Care Assistance Programs (Non-CalWORKs) 2025-26\n\n## General Child Care Programs\n\nFor families NOT receiving CalWORKs cash assistance:\n\n### General Child Care and Development (CCTR)\n- **Income limit:** 85% SMI\n- **Entitlement:** Yes - no waiting list\n- **Need requirement:** Must demonstrate need (employment, education, training)\n- **Provider choice:** Voucher-based - choose your own provider\n\n### Alternative Payment Program (CAPP)\n- **Income limit:** 85% SMI\n- **Entitlement:** May have waiting lists depending on funding\n- **Need requirement:** Must demonstrate need\n- **Provider choice:** Maximum flexibility - licensed or license-exempt\n\n### California State Preschool Program (CSPP)\n- **Income limit:** 100% SMI (higher than other programs!)\n- **Need requirement:** None for part-day; need demonstrated for full-day\n- **Age:** 3-4 year olds (2-year-olds through July 2027)\n- **Provider:** Center-based only (Title 5 standards)\n\n## 2025-26 Income Limits (85% SMI)\n\n| Family Size | Monthly Limit |\n|-------------|---------------|\n| 2 persons | $6,860 |\n| 3 persons | $7,785 |\n| 4 persons | $9,020 |\n| 5 persons | $10,463 |\n\n## Who Qualifies Without Income Test?\n\n- Foster children (eligible regardless of family income)\n- Children receiving Child Protective Services\n- Children identified as at-risk of abuse/neglect\n- Homeless families\n\n## 24-Month Continuous Eligibility\n\nOnce enrolled, you keep child care for 24 months without reporting changes UNLESS:\n- You qualified based on income AND\n- Your income exceeds 85% SMI\n\n## How to Apply\n\n1. Visit rrnetwork.org\n2. Enter your zip code to find local resources\n3. Contact your local Child Care Resource & Referral agency\n4. Complete application with income documentation\n\n**More Info:** https://rrnetwork.org/family-services/paying-for-childcare",
+      "metadata": {
+        "category": "Subsidies",
+        "subcategory": "General Child Care",
+        "topic": "CCAP Income Guidelines 2026",
+        "source_urls": ["https://rrnetwork.org/family-services/paying-for-childcare", "https://www.cdss.ca.gov/inforesources/calworks-child-care/subsidized-programs"],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2025-26"
+      }
+    }
+  ]
+}

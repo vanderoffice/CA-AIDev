@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# California Real Estate Salesperson License Requirements (2026)\n\n## Department of Real Estate (DRE)\n\n### Basic Requirements\n- **Age:** 18 years or older\n- **Honesty:** Must meet DRE's honesty requirements\n- **Education:** 135 hours (3 college-level courses)\n\n### Required Pre-License Courses (135 hours total)\n1. **Real Estate Principles** (45 hours) - MANDATORY\n2. **Real Estate Practice** (45 hours) - MANDATORY\n   - Must include implicit bias and fair housing components (SB 1495)\n3. **One Elective** (45 hours) - Choose from:\n   - Real Estate Appraisal\n   - Property Management\n   - Real Estate Finance\n   - Real Estate Economics\n   - Legal Aspects of Real Estate\n   - Real Estate Office Administration\n   - Escrow\n   - Mortgage Loan Brokering\n   - Computer Applications in Real Estate\n   - Common Interest Developments\n\n### Costs to Become Licensed\n| Item | Cost |\n|------|------|\n| Pre-License Courses (online/school) | $125 - $700 |\n| State Examination Fee | $100 |\n| License Application Fee | $350 |\n| Live Scan Fingerprinting | $49 + rolling fee |\n| **TOTAL INVESTMENT** | **$635 - $1,210** |\n\n### Examination Details\n- **Questions:** 150 multiple choice\n- **Time:** 3 hours 15 minutes\n- **Passing Score:** 70% (105 correct out of 150)\n- **Pass Rate:** Approximately 50%\n- **Test Locations:** Fresno, La Palma, Oakland, Sacramento, San Diego\n- **Scheduling:** https://secure.dre.ca.gov\n\n### After Passing the Exam\n1. Apply for license within 1 year of passing\n2. Associate with a licensed broker (cannot work independently)\n3. Complete onboarding with broker\n4. Begin practicing real estate\n\n### Official URLs\n- DRE Main: https://www.dre.ca.gov\n- Salesperson Requirements: https://www.dre.ca.gov/examinees/requirementssales.html\n- eLicensing Portal: https://secure.dre.ca.gov\n- Approved Schools: https://secure.dre.ca.gov/publicasp/cestatutory.asp",
+      "metadata": {
+        "category": "Industry-Specific Licenses",
+        "subcategory": "Real Estate",
+        "topic": "Salesperson License Requirements",
+        "source_urls": ["https://www.dre.ca.gov/examinees/requirementssales.html", "https://www.dre.ca.gov"],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2026"
+      }
+    }
+  ]
+}

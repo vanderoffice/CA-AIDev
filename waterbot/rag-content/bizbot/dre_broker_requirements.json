@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# California Real Estate Broker License Requirements (2026)\n\n## Department of Real Estate (DRE)\n\n### Basic Requirements\n- **Age:** 18 years or older\n- **Experience:** 2 years full-time as a licensed salesperson OR equivalent experience OR bachelor's degree with major in real estate\n- **Education:** 360 hours (8 college-level courses)\n\n### Required Pre-License Courses (360 hours total)\n\n**5 Mandatory Courses:**\n1. Real Estate Practice (must include implicit bias component - SB 1495)\n2. Legal Aspects of Real Estate\n3. Real Estate Finance\n4. Real Estate Appraisal\n5. Real Estate Economics OR Accounting\n\n**3 Elective Courses** from approved list:\n- Property Management\n- Escrow\n- Common Interest Developments\n- Mortgage Loan Brokering\n- Business Law\n- Computer Applications in Real Estate\n- And others from DRE-approved list\n\n### Costs to Become Licensed\n| Item | Cost |\n|------|------|\n| Pre-License Courses (8 courses) | $800 - $1,200 |\n| State Examination Fee | $150 |\n| License Application Fee | $450 |\n| Live Scan Fingerprinting | $49 + rolling fee |\n| **TOTAL INVESTMENT** | **$1,450 - $1,850** |\n\n### Examination Details\n- **Questions:** 200 multiple choice\n- **Time:** 4 hours\n- **Passing Score:** 75% (150 correct out of 200)\n- **Pass Rate:** Approximately 40%\n- **Difficulty:** More rigorous than salesperson exam\n\n### Broker vs. Salesperson\n| Aspect | Broker | Salesperson |\n|--------|--------|-------------|\n| Can work independently | Yes | No |\n| Can supervise agents | Yes | No |\n| Can operate own firm | Yes | No |\n| Initial exam pass rate | ~40% | ~50% |\n| Education hours | 360 | 135 |\n| Experience required | 2 years | None |\n\n### Official URLs\n- Broker Requirements: https://www.dre.ca.gov/examinees/requirementsbroker.html\n- Fees: https://www.dre.ca.gov/Fees/Fees.html",
+      "metadata": {
+        "category": "Industry-Specific Licenses",
+        "subcategory": "Real Estate",
+        "topic": "Broker License Requirements",
+        "source_urls": ["https://www.dre.ca.gov/examinees/requirementsbroker.html", "https://www.dre.ca.gov/Fees/Fees.html"],
+        "last_verified": "2026-01-18",
+        "fees_current_as_of": "2026"
+      }
+    }
+  ]
+}

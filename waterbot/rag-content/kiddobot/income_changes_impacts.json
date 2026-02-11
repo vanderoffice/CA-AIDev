@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "content": "# Income Changes and Subsidy Impacts (2026)\n\n## Continuous Eligibility Protection\n\nCalifornia provides strong protections against losing child care due to income changes.\n\n### 24-Month Continuous Eligibility\n\nOnce enrolled in subsidized child care, you keep your child care for **24 months** without losing services, even if:\n- Your income increases\n- Your work hours change\n- Your job changes\n- Your household size changes\n\n### When You MUST Report Income\n\nYou only need to report income changes if:\n1. You qualified **specifically based on income**, AND\n2. Your income **exceeds 85% SMI** (or 100% SMI for CSPP)\n\n### When You DON'T Report\n\nYou do NOT need to report income changes if you qualified through:\n- CalWORKs cash assistance\n- Homelessness\n- At-risk status\n- Child Protective Services\n- Foster care\n\n## What Happens When Income Increases?\n\n### Below 75% SMI → 75-85% SMI\n- You MAY start paying family fees\n- Fees capped at 1% of monthly income\n- Child care continues uninterrupted\n\n### 75-85% SMI → Above 85% SMI\n- Must report the change\n- May lose CDSS program eligibility\n- May transition to CSPP if under 100% SMI\n- Given time to find alternative arrangements\n\n### Above 100% SMI\n- No longer income-eligible for subsidized care\n- But still qualify if in special categories (foster, homeless, at-risk)\n\n## Family Fee Adjustments\n\nWhen income increases within eligible range:\n- Fees are adjusted at next recertification (every 24 months)\n- Maximum fee is 1% of monthly income\n- Example: Monthly income $8,000 = max fee $80/month\n\n## Tips\n\n1. **Don't panic** about income increases - you have 24-month protection\n2. **Keep documentation** of income for recertification\n3. **Report promptly** only if required (above 85%/100% SMI)\n4. **Ask questions** - contact your APP or R&R if unsure\n\n**Contact:** Your local Child Care Resource & Referral agency\n**Find Help:** https://rrnetwork.org/family-services/find-child-care",
+      "metadata": {
+        "category": "Subsidies",
+        "subcategory": "Income Eligibility",
+        "topic": "Income Changes and Subsidy Impacts",
+        "source_urls": ["https://www.childcarelaw.org/content/quick-guide-to-affordable-child-care-programs-in-california/", "https://rrnetwork.org/family-services/paying-for-childcare"],
+        "last_verified": "2026-01-18"
+      }
+    }
+  ]
+}

@@ -2,57 +2,53 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-01-17)
+See: .planning/PROJECT.md (updated 2026-02-11)
 
-**Core value:** Accurate, well-cited answers to "Do I need a permit?" and "Am I eligible for funding?"
-**Current focus:** Frontend integration with vanderdev.net
+**Core value:** Every WaterBot response must be accurate AND actionable — accurate facts without links is useless, links without accuracy is dangerous.
+**Current focus:** v1.0 shipped. Planning next milestone or maintenance.
 
 ## Current Position
 
-Phase: Backend Complete — All 3 n8n workflows deployed and active
-Status: Backends production-ready, frontend integration pending
-Last activity: 2026-01-17 — Documentation synced with VPS production state
+Phase: 5 of 5 (all complete)
+Plan: All plans complete
+Status: v1.0 SHIPPED
+Last activity: 2026-02-11 — v1.0 milestone complete
 
-Progress: ████████░░ 80% (backends complete, frontend pending)
+Progress: ████████████████ 100%
 
-## Production Workflows
+## Performance Metrics
 
-| Workflow | Webhook | Status |
-|----------|---------|--------|
-| WaterBot - Chat | `/waterbot` | ✅ Active |
-| WaterBot - Permit Lookup | `/waterbot-permits` | ✅ Active |
-| WaterBot - Funding Lookup | `/waterbot-funding` | ✅ Active |
+**Velocity:**
+- Total plans completed: 13
+- Average duration: ~12 min
+- Total execution time: ~2.5 hours
 
-## Remaining Work
+**By Phase:**
 
-- [ ] Frontend integration with vanderdev.net
-- [ ] Route added to App.jsx
-- [ ] NavItem added to Sidebar.jsx
-- [ ] Multi-model research validation (optional quality enhancement)
-- [ ] IntakeForm questionnaire (optional UX enhancement)
+| Phase | Plans | Total | Avg/Plan |
+|-------|-------|-------|----------|
+| 1 - URL Registry | 4/4 | 72 min | 18 min |
+| 2 - Content Overhaul | 4/4 | 40 min | 10 min |
+| 3 - DB Rebuild | 2/2 | 16 min | 8 min |
+| 4 - System Prompt | 1/1 | ~45 min | 45 min |
+| 5 - Evaluation | 2/2 | ~15 min | ~8 min |
 
 ## Accumulated Context
 
 ### Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
-Key decisions:
-
-- Water-blue theme (#0ea5e9) for WaterBot instead of VanderDev orange
-- Same database (`n8n`), separate schema (`waterbot`) — KiddoBot pattern
-- Disclaimer included on all responses
-- Cosine similarity > 0.70, Top-K: 8 results
+All decisions validated by regression analysis. See MILESTONES.md and milestone archive for full details.
 
 ### Deferred Issues
 
-None.
+None — all resolved during v1.0.
 
 ### Blockers/Concerns
 
-None — ready for frontend integration.
+None.
 
 ## Session Continuity
 
-Last session: 2026-01-17
-Stopped at: Documentation sync complete
-Next step: Frontend integration with vanderdev.net
+Last session: 2026-02-11
+Stopped at: v1.0 milestone archived
+Resume file: None

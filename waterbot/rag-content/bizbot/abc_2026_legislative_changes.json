@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# California ABC 2025-2026 Legislative Changes\n\n## New Laws Affecting Liquor Licensing\n\n### SB 395 - San Francisco Hospitality Zone (Effective January 1, 2026)\n- **What:** Creates up to 20 new Type 47 licenses in downtown San Francisco\n- **Allocation:** Maximum 10 licenses in first year, then 5 per year\n- **Anti-Flipping Provision:** Licenses CANNOT be sold above the original state fee\n- **Purpose:** Help SF restaurants recover from pandemic and downtown vacancy crisis\n- **Restriction:** Must remain in designated hospitality zone\n\n### AB 828 - Los Angeles Type 87 Licenses (Effective January 1, 2026)\n- **What:** Creates up to 40 new neighborhood-restricted licenses in LA County\n- **Type 87:** Special full-liquor license tied to specific census tracts\n- **Allocation:** Maximum 12 licenses per year\n- **Restriction:** Cannot be transferred to different census tract\n- **Purpose:** Expand restaurant options in underserved LA neighborhoods\n\n### AB 1008 - San Luis Obispo (Effective January 1, 2026)\n- **What:** Up to 10 additional Type 47 licenses for SLO County\n- **Allocation:** Maximum 5 per year\n- **Purpose:** Support growing tourism and food scene\n\n### AB 233 - Colusa County (Effective January 1, 2026)\n- **What:** Up to 10 additional Type 47 licenses\n- **Purpose:** Rural area development\n\n### CPI Fee Adjustment (January 1, 2026)\n- All ABC fees increased 2.72% per Consumer Price Index formula\n- Affects application fees, annual fees, and transfer fees\n\n### LA Restaurant Beverage Program (Ongoing)\n- Streamlined local approval in eligible council districts\n- Timeline: 6-10 weeks (vs 6-12 months for traditional CUP)\n- Cost: ~$1,500-$3,000 (vs ~$13,000 for CUP)\n- Eligible Districts: 2, 3, 4, 5, 10, 11, 15\n- URL: https://planning.lacity.gov/restaurant-beverage-program\n\n### Official Source\nhttps://www.abc.ca.gov/2025-chaptered-legislation/",
+      "metadata": {
+        "category": "Industry-Specific Licenses",
+        "subcategory": "ABC Liquor Licensing",
+        "topic": "2025-2026 Legislative Changes",
+        "source_urls": ["https://www.abc.ca.gov/2025-chaptered-legislation/", "https://planning.lacity.gov/restaurant-beverage-program"],
+        "last_verified": "2026-01-18",
+        "effective_dates": ["2026-01-01"]
+      }
+    }
+  ]
+}

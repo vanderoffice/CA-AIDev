@@ -1,0 +1,2491 @@
+{
+  "generated": "2026-02-11T03:50:52.720999+00:00",
+  "registry_path": "/Users/slate/projects/vanderdev-bots/rag-content/waterbot/url_registry.json",
+  "summary": {
+    "total_urls": 347,
+    "ok": 337,
+    "ok_403": 4,
+    "redirected": 1,
+    "client_error": 1,
+    "server_error": 1,
+    "dns_failure": 0,
+    "timeout": 1,
+    "connection_error": 0,
+    "other": 2,
+    "working_total": 342,
+    "broken_total": 2,
+    "working_pct": 98.6,
+    "elapsed_seconds": 21.2
+  },
+  "broken": [
+    {
+      "url": "https://www.epa.gov/aboutepa/about-office-environmental-justice-and-external-civil-rights",
+      "status": 404,
+      "message": "Not Found",
+      "topics": [
+        "Filing Environmental Justice Complaints",
+        "Environmental Justice and Water"
+      ]
+    },
+    {
+      "url": "https://msc.fema.gov/portal/home",
+      "status": 500,
+      "message": "Internal Server Error",
+      "topics": [
+        "Flood Management in California"
+      ]
+    }
+  ],
+  "redirected": [
+    {
+      "url": "https://smarts.waterboards.ca.gov",
+      "final_url": "https://smarts.waterboards.ca.gov/smarts/faces/SwSmartsLogin.xhtml",
+      "topics": [
+        "Annual Reporting Requirements",
+        "Industrial Stormwater Requirements",
+        "Construction Site Dewatering",
+        "Construction General Permit (CGP)",
+        "Industrial General Permit (IGP)"
+      ]
+    }
+  ],
+  "timeout": [
+    {
+      "url": "https://www.rd.usda.gov/programs-services/water-environmental-programs",
+      "topics": [
+        "Rural Water System Funding Programs"
+      ]
+    }
+  ],
+  "all_results": [
+    {
+      "url": "https://bizfileonline.sos.ca.gov/search/business",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://calepa.ca.gov/enforcement/complaints/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://calwep.org/commercial-industrial-institutional/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://calwep.org/outdoor-residential-standard/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://calwep.org/the-framework/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://calwep.org/timeline/indoor-residential-standard-drops-to-47-gpcd/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://ceden.waterboards.ca.gov/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://ceff.ucdavis.edu/",
+      "status": 403,
+      "category": "ok_403",
+      "final_url": null,
+      "message": "403 Forbidden (likely bot protection, not broken)"
+    },
+    {
+      "url": "https://ciwqs.waterboards.ca.gov",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://ciwqs.waterboards.ca.gov/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://cw3e.ucsd.edu/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://deltacouncil.ca.gov/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://enviro.epa.gov/facts/sdwis/search.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://faast.waterboards.ca.gov",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://gamagroundwater.waterboards.ca.gov/gama/gamamap/public/",
+      "status": 403,
+      "category": "ok_403",
+      "final_url": null,
+      "message": "403 Forbidden (likely bot protection, not broken)"
+    },
+    {
+      "url": "https://geotracker.waterboards.ca.gov",
+      "status": 403,
+      "category": "ok_403",
+      "final_url": null,
+      "message": "403 Forbidden (likely bot protection, not broken)"
+    },
+    {
+      "url": "https://geotracker.waterboards.ca.gov/",
+      "status": 403,
+      "category": "ok_403",
+      "final_url": null,
+      "message": "403 Forbidden (likely bot protection, not broken)"
+    },
+    {
+      "url": "https://gis.water.ca.gov/app/dacs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://healthebay.org/beach-report-card-2018/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://lao.ca.gov/Publications/Report/4823",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://lci.ca.gov/planning/general-plan/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=200920107SB7",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202120220SB1157",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201520160SB814",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://msc.fema.gov/portal/home",
+      "status": 500,
+      "category": "server_error",
+      "final_url": null,
+      "message": "Internal Server Error"
+    },
+    {
+      "url": "https://mywaterquality.ca.gov/habs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://oag.ca.gov/consumers/general/pra",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://oehha.ca.gov/calenviroscreen",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://oehha.ca.gov/habs/cyanobacteria-harmful-algal-blooms-habs-and-cyanotoxins-recreational-waters",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://oehha.ca.gov/water/public-health-goals-phgs",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://oehha.ca.gov/water/public-health-goals-phgs-drinking-water",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://saveourwater.com",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://saveourwater.com/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://sdwis.waterboards.ca.gov/PDWW/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://sgma.water.ca.gov",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://smarts.waterboards.ca.gov",
+      "status": 200,
+      "category": "redirected",
+      "final_url": "https://smarts.waterboards.ca.gov/smarts/faces/SwSmartsLogin.xhtml",
+      "message": "Redirected to https://smarts.waterboards.ca.gov/smarts/faces/SwSmartsLogin.xhtml"
+    },
+    {
+      "url": "https://viewperformance.deltacouncil.ca.gov/pm/urban-water-use",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/News/News-Releases/2025/Oct-25/New-Reports-Show-Progress-in-Community-Actions-to-Make-Groundwater-Sustainability-a-Reality",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/All-Programs/Climate-Change-Program",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/All-Programs/Division-of-Safety-of-Dams",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/All-Programs/Division-of-Safety-of-Dams/Jurisdictional-Sized-Dams",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/All-Programs/Flood-MAR",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/California-Water-Plan",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Flood-Management",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Flood-Management/Flood-Planning-and-Studies/Central-Valley-Flood-Protection-Plan",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Groundwater-Management",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Groundwater-Management/SGMA-Groundwater-Management",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Groundwater-Management/SGMA-Groundwater-Management/Groundwater-Sustainable-Agencies",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Groundwater-Management/Wells",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Groundwater-Management/Wells/Well-Standards/Combined-Well-Standards",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Groundwater-Management/Wells/Well-Standards/Combined-Well-Standards/Water-Destruction",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Integrated-Regional-Water-Management",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/State-Water-Project",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/State-Water-Project/Delta-Conveyance",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/2018-Water-Conservation-Legislation/Urban-Water-Use-Efficiency-Standards-Variances-and-Performance-Measures",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Agricultural-Water-Use-Efficiency",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Land-And-Water-Use",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency/Model-Water-Efficient-Landscape-Ordinance",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency/Validated-Water-Loss-Reporting",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/What-We-Do/Water-Storage-And-Supply",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/Work-With-Us/Grants-And-Loans/desalination-Grant-Program",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/programs/integrated-regional-water-management",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://water.ca.gov/programs/water-use-and-efficiency/sb-x7-7",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://waterboards.ca.gov/plans_policies/biological_objective.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://waterresilience.ca.gov/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://wildlife.ca.gov/Conservation/Invasives",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://wildlife.ca.gov/Conservation/Watersheds/Fish-Passage",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.awwa.org/resource/asset-management/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.bia.gov/service/water-rights-negotiation-and-litigation-program",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.caloes.ca.gov/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.casqa.org",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.casqa.org/resources",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.casqa.org/resources/bmp-handbooks",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cdc.gov/drinking-water/about/about-water-disinfection-with-chlorine-and-chloramine.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cdc.gov/drinking-water/about/index.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cdc.gov/fluoridation/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cdc.gov/healthy-swimming/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cdc.gov/mmwr/volumes/73/ss/ss7301a1.htm",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cdc.gov/water-emergency/about/index.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cdph.ca.gov/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cdph.ca.gov/Programs/CEH/DRSEM/Pages/EMB/RecreationalHealth/California-Swimming-Pool-Requirements.aspx",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience/critical-infrastructure-sectors/water-and-wastewater-sector",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.communitywatercenter.org/press-releases/state-budget",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cpuc.ca.gov/industries-and-topics/water",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.cslb.ca.gov/onlineservices/checklicenseII/checklicense.aspx",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/aboutepa/about-office-environmental-justice-and-external-civil-rights",
+      "status": 404,
+      "category": "client_error",
+      "final_url": null,
+      "message": "Not Found"
+    },
+    {
+      "url": "https://www.epa.gov/aboutepa/epa-region-9-pacific-southwest",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/awma",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/beaches",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/biosolids",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/ccr",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/ccr/ccr-information-consumers",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/climate-change-water-sector",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/cyberwater/epa-cybersecurity-water-sector",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/dwcapacity",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/dwreginfo",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/dwreginfo/drinking-water-regulations",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/dwreginfo/lead-and-copper-rule",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/dwreginfo/public-notification-rule",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/dwsrf",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/ground-water-and-drinking-water",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/ground-water-and-drinking-water/drinking-water-grants",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/ground-water-and-drinking-water/safe-drinking-water-information",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/lead",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/npdes",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/npdes/national-menu-best-management-practices-bmps-stormwater",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/npdes/stormwater-discharges-municipal-sources",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/nps",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/pfas",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/privatewells",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/sdwa",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/sdwa/overview-drinking-water-treatment-technologies",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/sdwa/secondary-drinking-water-standards-guidance-nuisance-chemicals",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/septic",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/tmdl",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/tribaldrinkingwater",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/uic/aquifer-recharge-and-aquifer-storage-and-recovery",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/ust",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/vessels-marinas-and-ports/aquatic-nuisance-species-ans",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/waterdata",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/waterresilience",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/waterreuse",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/watersense",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/watersense/outdoors",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/watersense/start-saving",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/waterutilityresponse",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/wetlands",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.epa.gov/wqs-tech/water-quality-standards-regulations-california",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/bottled-water-everywhere-keeping-it-safe",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.fema.gov/grants/mitigation/learn/dam-safety",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.fisheries.noaa.gov/west-coast/habitat-conservation/west-coast-fish-passage-guidelines",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.grants.ca.gov/grants/small-community-drinking-water-scdw-funding-program/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.grants.ca.gov/grants/the-safe-and-affordable-funding-for-equity-and-resilience-program-safer/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.kutakrock.com/newspublications/publications/2024/july/california-water-conservation-regulations",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.mywaterquality.ca.gov/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.nsf.org/consumer-resources/articles/standards-water-treatment-systems",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.rcac.org/events/drinking-water-compliance/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.rd.usda.gov/programs-services/water-environmental-programs",
+      "status": 0,
+      "category": "timeout",
+      "final_url": null,
+      "message": "Timeout after 15s"
+    },
+    {
+      "url": "https://www.slc.ca.gov/marine-invasive-species-program/ballast-water-discharge-performance-standards-faqs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.usgs.gov/water-science-school/science/hardness-water",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/about_us/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/about_us/contact_us/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/about_us/contact_us/rwqcbs_directory.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/about_us/performance_report_2324/regulate/251_drinking_water.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/about_us/public_participation/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/about_us/public_participation/tribal_affairs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/bacterialobjectives/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/board_info/agendas/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/board_info/calendar/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/centralcoast/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/centralcoast/water_issues/programs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/centralcoast/water_issues/programs/cannabis_cultivation/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/centralvalley/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/centralvalley/water_issues/cannabis/general_order/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/centralvalley/water_issues/oil_fields/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/climate/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/coloradoriver/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/coloradoriver/water_issues/programs/401_certification/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/coloradoriver/water_issues/programs/enforcement/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/conservation/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/conservation/assistance/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/conservation/regs/emergency_regulation.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/conservation/regs/water_efficiency_legislation.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/conservation/water_loss_control.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/123TCP.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Arsenic.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/CCR.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chemicalcontaminants.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chromium6.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/DWSAP-Protection.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/DWSAP.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/EmergingContaminants.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Fluoridation.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Lawbook.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/MCLReview.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/MCLsandPHGs.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Nitrate.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Perchlorate.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Publications.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/SBDDW-17-001_123TCP_MCL.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/SWRCBDDW-21-003_hexavalent_chromium.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/arsenic-mcl-revision.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/cccph.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/ddw-disinfectionregulations.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/ddw_secondary_standards.pdf",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/ear.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead-copper-rule/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead-copper-rule/background.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead-copper-rule/public_health_info.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead-copper-rule/water_system_resources.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/lead_service_line_inventory_pws.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/leadsamplinginschools.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/microplastics.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/onsite_nonpotable_reuse_regulations.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/pfas_ddw_general_order/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/publicwatersystems.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/recycledwater/",
+      "status": 300,
+      "category": "other",
+      "final_url": null,
+      "message": "Multiple Choices"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/rtcr.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/shutoff-protection.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/water-recycling-criteria.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/water_resiliency/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/water_resiliency/prepare.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/waterpartnership.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/labs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/labs/about_elap.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/occupations/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/certlic/occupations/DWopcert.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/programs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/programs/compliance/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/programs/districts/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/programs/habs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/services/funding/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/services/funding/SRF.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/drinking_water/services/funding/lead-service-line-funding.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/gama/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/gama/docs/coc_hexchromcr6.pdf",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/gama/online_tools.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/gama/well_owners.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/lahontan/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/lahontan/water_issues/programs/clean_water_act_401/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/lahontan/water_issues/programs/snmp/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/losangeles/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/losangeles/water_issues/programs/basin_plan/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/losangeles/water_issues/programs/stormwater/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/northcoast/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/northcoast/board_decisions/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/northcoast/water_issues/programs/tmdls/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/oil-gas/oil_field_produced/produced_water_ponds/index.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/pfas/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/pfas/drinking_water.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/plans_policies/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/publications_forms/forms/docs/form200.pdf",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/resources/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/resources/data_databases/compliance_enforcement.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/resources/data_databases/groundwater.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/resources/fees/stakeholder/docs/2025/fy2526-wq-feeschedule.pdf",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/resources/fees/water_quality/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/resources/fees/water_quality/docs/cgp-per-acre.pdf",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/resources/public_records/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/rwqcb2/water_issues/programs/stormwater/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/rwqcb8/water_issues/programs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/rwqcb8/water_issues/programs/401_certification/docs/401fee.pdf",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/rwqcb8/water_issues/programs/401_certification/index.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/safer/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/sandiego/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/sandiego/water_issues/programs/basin_plan/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/sandiego/water_issues/programs/stormwater/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/sanfranciscobay/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/sanfranciscobay/board_decisions/enforcement.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/sanfranciscobay/water_issues/programs/dredging.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/santaana/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/sgma/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/upward/calwatrs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/ust/electronic_submittal/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/agriculture/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/beaches/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/beaches/vssl_prmt.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/biosolids/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/cannabis/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/cannabis/cannabis_policy.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/cannabis/cannabis_water_quality.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/cannabis/cannabis_water_rights.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/cec/index.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/ciwqs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/ciwqs/esmr25.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/conservation_portal/regs/wasteful_water_uses.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/conservation_portal/water_loss_control.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/docs/2021/procedures.pdf",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/emergency-permitting.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/cwa401/wrapp/",
+      "status": 300,
+      "category": "other",
+      "final_url": null,
+      "message": "Multiple Choices"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/emp/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/enforcement/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/proposition1/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/small_community_wastewater_grant/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/srf/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/srf/docs/2025/cwsrf-iup-sfy2025-26-final.pdf",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/sustainable_water_solutions/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/sustainable_water_solutions/safer.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/swgp/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/tech_asst_funding.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/groundwater/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/groundwater/protecting_gw.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/hr2w/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/mercury/other_programs.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/mercury/reservoirs/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/nitrate_project/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/general_permits.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/permit_search.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/npdes/pretreat.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/nps/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/nutrient_objectives/development/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/ocean/cwa316/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/ocean/cwa316/policy.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/ocean/cwa316/saccwis/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/ocean/desalination/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/operator_certification/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/operator_certification/cert.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/outreach/education/justice.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/owts/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/owts/docs/owts_policy.pdf",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/recycled_water/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/recycled_water/snmp.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/scp/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/site_cleanup_program/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/constpermits.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/construction.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/industrial.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/municipal.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/phase_i_municipal.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/phase_ii_municipal.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/stormwater/smarts/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/ais/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/bioassessment/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/clean_water_team/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/freshwater_cyanobacteria.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/swamp_iq/bioassessment.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/tmdl/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/tmdl/background.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/tmdl/integrated2014_2016.shtml",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/ust/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/ustcf/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/waste_discharge_requirements/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/water_quality_assessment/2020_2022_integrated_report.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/water_quality_assessment/2024-integrated-report.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/water_quality_goals/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/waterboards_map.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/waterrights/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/waterrights/board_decisions/adopted_orders/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/waterrights/board_info/faqs.html",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/waterrights/water_issues/programs/bay_delta/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    },
+    {
+      "url": "https://www.waterboards.ca.gov/waterrights/water_issues/programs/instream_flows/",
+      "status": 200,
+      "category": "ok",
+      "final_url": null,
+      "message": "OK"
+    }
+  ]
+}

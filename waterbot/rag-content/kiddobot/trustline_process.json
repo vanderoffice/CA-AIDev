@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "content": "# TrustLine Background Check Process (2026)\n\n## What is TrustLine?\n\nTrustLine is California's registry of in-home child care providers who have passed comprehensive background checks. Required for license-exempt providers receiving subsidized child care payments (unless close relative).\n\n## Who Needs TrustLine?\n\n**Required:**\n- Friends, neighbors providing subsidized care\n- Non-close relatives (cousins, in-laws not grandparent/aunt/uncle)\n- Nannies paid through subsidies\n\n**NOT Required:**\n- Close relatives (grandparent, aunt, uncle)\n- Licensed providers (already background-checked)\n- Providers not receiving subsidy payments\n\n## What TrustLine Checks\n\n### Three Main Databases\n1. **California Criminal History** (DOJ)\n2. **FBI Criminal History** (all 50 states)\n3. **California Child Abuse Central Index**\n\n### Additional Checks\n- Community Care Licensing database\n- Dept of Aging records\n- Dept of Public Health records\n- Health Care Services records\n- Emergency Medical Services records\n\n## Application Process\n\n### Step 1: Complete Application Form\n- Get form PUB 438 from CDSS website\n- Fill out completely and honestly\n- Disclose ALL criminal history\n\n### Step 2: Get Fingerprinted\n- Visit a California Live Scan facility\n- Bring completed TrustLine form\n- Pay fingerprinting fee (~$20-50)\n\n### Step 3: Submit Documents\n- Mail application to CDSS within 7 days of orientation\n- Include Live Scan receipt\n\n### Step 4: Wait for Results\n- Processing time: 2-8 weeks typically\n- You'll receive letter with results\n\n## While You Wait\n\n**You CAN:**\n- Provide child care during processing\n- Care for children immediately\n\n**You CANNOT:**\n- Receive payment until approved\n- Be paid retroactively for more than 120 days\n\n## If Your Application is Denied\n\n### Exemptible Crimes\n- Some crimes allow exemption request\n- You can appeal and explain circumstances\n\n### Non-Exemptible Crimes\n- Serious violent crimes\n- Sex offenses\n- Permanent denial - no appeal available\n\n## Verifying TrustLine Registration\n\n**Parents can verify providers:**\n- Call: 1-800-822-8490\n- Provide: Provider's full name + ID number\n\n## Costs\n\n- **TrustLine fee:** ~$15 (paid by provider or family)\n- **Live Scan fee:** ~$20-50 (varies by location)\n- **Total:** ~$35-65\n\n## Contact\n\n**TrustLine Website:** https://www.trustline.org\n**Phone:** 1-800-822-8490\n**Forms:** https://www.cdss.ca.gov/cdssweb/entres/forms/English/PUB438.pdf",
+      "metadata": {
+        "category": "Provider Search",
+        "subcategory": "Background Checks",
+        "topic": "TrustLine Background Check Process",
+        "source_urls": ["https://www.trustline.org", "https://www.cdss.ca.gov/cdssweb/entres/forms/English/PUB438.pdf", "https://www.cdss.ca.gov/inforesources/calworks-child-care/trustline-background-check"],
+        "last_verified": "2026-01-18"
+      }
+    }
+  ]
+}

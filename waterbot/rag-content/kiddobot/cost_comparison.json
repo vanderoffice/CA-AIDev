@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "content": "# Full-Cost vs Subsidized Child Care Comparison (2026)\n\n## California Child Care Costs\n\n### Average Full-Cost Rates (2025-26)\n\n**Infant Care (0-2 years):**\n| Setting | Monthly Cost |\n|---------|-------------|\n| Center-based | $1,800 - $2,500 |\n| Family child care | $1,200 - $1,800 |\n\n**Preschool (3-5 years):**\n| Setting | Monthly Cost |\n|---------|-------------|\n| Center-based | $1,200 - $1,800 |\n| Family child care | $900 - $1,400 |\n\n**School-age (6-12 years):**\n| Setting | Monthly Cost |\n|---------|-------------|\n| After-school program | $400 - $800 |\n| Full-time summer | $1,000 - $1,500 |\n\n*Costs vary significantly by region - Bay Area and LA are highest*\n\n## Subsidized Care Comparison\n\n### Family Paying Subsidized Rate\n\n**Example: Family of 4, income $8,500/month**\n- At ~80% SMI\n- Maximum family fee: ~$85/month (1% of income)\n- **Savings: $1,700 - $2,400/month for infant care**\n\n### Family at Zero Fee\n\n**Example: Family of 4, income $7,500/month**\n- Below 75% SMI\n- Family fee: $0\n- **Savings: $1,800 - $2,500/month for infant care**\n\n## Annual Savings Calculator\n\n| Scenario | Monthly Savings | Annual Savings |\n|----------|----------------|----------------|\n| Zero fee (infant) | $2,000+ | $24,000+ |\n| Zero fee (preschool) | $1,500+ | $18,000+ |\n| 1% fee (infant) | $1,900+ | $22,800+ |\n| 1% fee (preschool) | $1,400+ | $16,800+ |\n\n## Free Options\n\n### Completely Free Programs\n- **Head Start/Early Head Start:** Ages 0-5, income ≤ FPL\n- **Transitional Kindergarten:** All 4-year-olds (by Sept 1)\n- **California State Preschool:** 3-4 year-olds, below 75% SMI = no fee\n\n## Finding Affordable Care\n\n1. **Check eligibility** for subsidies at rrnetwork.org\n2. **Apply for multiple programs** - some have shorter wait lists\n3. **Consider license-exempt care** with relatives (often lower cost)\n4. **Look into TK** for 4-year-olds (free, school district)\n\n**Calculate Your Savings:** Contact your local R&R for personalized help",
+      "metadata": {
+        "category": "Costs & Affordability",
+        "subcategory": "Cost Comparison",
+        "topic": "Full-Cost vs Subsidized Care Comparison",
+        "source_urls": ["https://rrnetwork.org/family-services/find-child-care", "https://rrnetwork.org"],
+        "last_verified": "2026-01-18"
+      }
+    }
+  ]
+}

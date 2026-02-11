@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "content": "# CalWORKs Stage 2 Child Care (2026)\n\n## What is Stage 2?\n\nStage 2 child care serves families whose situation has stabilized OR families transitioning off CalWORKs cash assistance within the past 24 months.\n\n## Eligibility\n\n- Situation has stabilized (determined by county)\n- OR transitioning off CalWORKs cash aid (within 24 months of leaving)\n- OR received lump-sum diversion services\n- Must demonstrate need for care (employment, education, training)\n\n## Key Benefits\n\n**Entitlement Program:**\n- No waiting list for eligible families\n- More provider flexibility than Stage 1\n\n**Continuous Eligibility:**\n- 24 months guaranteed without reporting changes\n- Only need to report if you qualified based on income AND income exceeds 85% SMI\n\n**Income Reporting Exemptions:**\nYou do NOT need to report income changes if you qualified through:\n- Homelessness\n- At-risk status\n- Current CalWORKs cash assistance\n- Child protective services\n\n## Transition Timeline\n\n**From Stage 1:** When county determines your situation is stable\n**To Stage 3:** After 24 months off CalWORKs cash aid (if funding available)\n\n## Family Fees\n\n- Zero fees if income below 75% SMI\n- Fees capped at 1% of income if 75-85% SMI\n- Families on CalWORKs cash assistance pay no fees\n\n## Care Options\n\nSame as Stage 1:\n- Licensed centers\n- Licensed family child care homes\n- Before/after school programs\n- License-exempt providers\n\n## Administration\n\nAdministered by: California Department of Social Services (CDSS) through Alternative Payment Programs (APPs)\n\n**More Info:** https://www.cdss.ca.gov/inforesources/calworks-child-care",
+      "metadata": {
+        "category": "Subsidies",
+        "subcategory": "CalWORKs Child Care",
+        "topic": "Stage 2 Eligibility and Transition",
+        "source_urls": ["https://www.cdss.ca.gov/inforesources/calworks-child-care"],
+        "last_verified": "2026-01-18"
+      }
+    }
+  ]
+}

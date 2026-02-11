@@ -1,0 +1,15 @@
+{
+  "documents": [
+    {
+      "content": "# California CSLB 2025-2026 Legislative Changes\n\n## New Laws Affecting Contractor Licensing\n\n### AB 2622 - Handyperson Threshold Increase (Effective January 1, 2025)\n- **Change:** Unlicensed work threshold increased from $500 to $1,000\n- **Impact:** Handypersons can now perform jobs up to $1,000 without a contractor's license\n- **Restrictions Still Apply:**\n  - Cannot hire employees for the work\n  - Cannot advertise as a contractor\n  - Work cannot require a building permit\n  - Cannot include plumbing, electrical, or HVAC that requires a permit\n\n### SB 779 - Increased Civil Penalties (Effective July 1, 2026)\n- **Unlicensed Activity:** Minimum penalty increased to $1,500 (was $200)\n- **Other Violations:** Minimum penalty now $500-$1,500 (was $100)\n- **CPI Adjustments:** Penalties will automatically adjust every 5 years based on CPI\n- **Purpose:** Deter unlicensed contractors who undercut licensed competition\n\n### AB 1002 - Wage Enforcement (2026)\n- **Change:** Attorney General and CSLB can jointly act on contractor wage violations\n- **Penalty:** License suspension or revocation for non-payment of wages or judgments\n- **Impact:** Strengthens worker protections in construction industry\n\n### AB 1327 - Home Improvement Contracts (2026)\n- **Requirement:** Contracts must include contractor's email address\n- **Cancellation:** Must allow contract cancellation via email\n- **Notice:** Must include phone number on Notice of Cancellation form\n\n### SB 291 - Workers' Comp Penalties (2026)\n- **Change:** Increased penalties for workers' compensation violations\n- **New Process:** Enhanced verification for exemption claims\n- **Note:** C-8, C-20, C-22, C-39, C-61/D-49 classifications ALWAYS require workers' comp regardless of exemption claims\n\n### SB 456 - Muralist Exemption (2026)\n- **Exemption:** Muralists exempt from contractor licensing\n- **Requirements:** Must be unique fine art, hand-painted\n- **Exclusion:** Does not apply to painted signs or commercial graphics\n\n### SB 517 - Subcontractor Disclosure (2026)\n- **Requirement:** Must disclose subcontractor information upon homeowner request\n- **Information Required:** Name, contact info, license number, classification\n- **Timeline:** Must provide within reasonable time after request\n\n### Official Source\nhttps://www.cslb.ca.gov/",
+      "metadata": {
+        "category": "Industry-Specific Licenses",
+        "subcategory": "Contractor Licensing",
+        "topic": "2025-2026 Legislative Changes",
+        "source_urls": ["https://www.cslb.ca.gov/"],
+        "last_verified": "2026-01-18",
+        "effective_dates": ["2025-01-01", "2026-01-01", "2026-07-01"]
+      }
+    }
+  ]
+}
