@@ -159,7 +159,7 @@ export default function WaterBot() {
 
         {/* Welcome */}
         <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-6 mb-6 glow-box">
-          <div className="flex items-start gap-4">
+          <div className="flex flex-col sm:flex-row items-start gap-4">
             <div className="w-12 h-12 rounded-full bg-sky-500/20 text-sky-500 flex items-center justify-center flex-shrink-0">
               <Droplets size={24} />
             </div>
@@ -380,7 +380,7 @@ export default function WaterBot() {
             <button
               type="submit"
               disabled={isLoading || !input.trim()}
-              className="bg-sky-500 hover:bg-sky-600 disabled:bg-neutral-700 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg transition-colors flex items-center gap-2"
+              className="bg-sky-500 hover:bg-sky-600 disabled:bg-neutral-700 disabled:cursor-not-allowed text-white px-4 py-3 min-w-[44px] rounded-lg transition-colors flex items-center gap-2"
             >
               <Send size={16} />
             </button>

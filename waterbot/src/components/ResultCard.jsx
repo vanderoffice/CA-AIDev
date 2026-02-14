@@ -85,7 +85,7 @@ export default function ResultCard({
 
       {/* Details grid */}
       {detailEntries.length > 0 && (
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {detailEntries.map(({ label, value }) => (
             <div key={label}>
               <p className="text-xs text-neutral-500 mb-0.5">{label}</p>
