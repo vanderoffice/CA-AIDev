@@ -61,7 +61,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: Intake questionnaire — system size, population served, project type, DAC status, violation history (using wizard stepper from Phase 1)
+- [x] 04-01: Intake questionnaire — system size, population served, project type, DAC status, violation history (using wizard stepper from Phase 1)
 - [ ] 04-02: Matching algorithm — deterministic scoring of user answers against program eligibility criteria, ranked results with Eligible / Likely Eligible / May Qualify tiers
 - [ ] 04-03: Results display + RAG enrichment — program cards with match status, RAG bridge for application tips/timelines/success factors, "Ask WaterBot" handoff
 
@@ -85,5 +85,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Shared Infrastructure | 2/2 | Complete | 2026-02-13 |
 | 2. Permit Finder | 3/3 | Complete | 2026-02-14 |
 | 3. Funding Data Model | 2/2 | Complete | 2026-02-14 |
-| 4. Funding Navigator | 0/3 | Not started | - |
+| 4. Funding Navigator | 1/3 | In progress | - |
 | 5. Integration & Polish | 0/2 | Not started | - |
