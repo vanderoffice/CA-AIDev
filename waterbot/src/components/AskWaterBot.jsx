@@ -21,7 +21,7 @@ export default function AskWaterBot({ query, onClick, variant = 'button' }) {
     return (
       <button
         onClick={handleClick}
-        className="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-sm transition-colors"
+        className="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-sm transition-colors outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
       >
         <MessageSquare size={14} />
         <span>Ask WaterBot</span>
@@ -32,7 +32,7 @@ export default function AskWaterBot({ query, onClick, variant = 'button' }) {
   return (
     <button
       onClick={handleClick}
-      className="flex items-center gap-2 px-4 py-2 border border-sky-500/50 text-sky-400 hover:bg-sky-500/10 rounded-lg text-sm transition-colors"
+      className="flex items-center gap-2 px-4 py-2 border border-sky-500/50 text-sky-400 hover:bg-sky-500/10 rounded-lg text-sm transition-colors outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
     >
       <MessageSquare size={16} />
       <span>Ask WaterBot about this</span>

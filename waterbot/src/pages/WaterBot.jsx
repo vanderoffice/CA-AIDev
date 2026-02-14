@@ -181,7 +181,7 @@ export default function WaterBot() {
               key={m.id}
               onClick={() => handleModeSelect(m)}
               disabled={m.disabled}
-              className={`group flex items-center gap-4 p-4 bg-neutral-900 border border-neutral-800 rounded-lg transition-all text-left ${
+              className={`group flex items-center gap-4 p-4 bg-neutral-900 border border-neutral-800 rounded-lg transition-all text-left outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 ${
                 m.disabled
                   ? 'opacity-50 cursor-not-allowed'
                   : 'hover:border-sky-500/50'
@@ -281,7 +281,7 @@ export default function WaterBot() {
                   <button
                     key={idx}
                     onClick={() => handleSuggestedQuestion(question)}
-                    className="px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-full text-sm text-neutral-300 hover:border-sky-500/50 hover:text-white transition-colors"
+                    className="px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-full text-sm text-neutral-300 hover:border-sky-500/50 hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
                   >
                     {question}
                   </button>
@@ -380,7 +380,8 @@ export default function WaterBot() {
             <button
               type="submit"
               disabled={isLoading || !input.trim()}
-              className="bg-sky-500 hover:bg-sky-600 disabled:bg-neutral-700 disabled:cursor-not-allowed text-white px-4 py-3 min-w-[44px] rounded-lg transition-colors flex items-center gap-2"
+              className="bg-sky-500 hover:bg-sky-600 disabled:bg-neutral-700 disabled:cursor-not-allowed text-white px-4 py-3 min-w-[44px] rounded-lg transition-colors flex items-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
+              aria-label="Send message"
             >
               <Send size={16} />
             </button>

@@ -241,7 +241,7 @@ export default function FundingNavigator({ onAskWaterBot, onBack, onSwitchMode, 
         <button
           key={option.value}
           onClick={() => handleSingleSelect(answerKey, option.value)}
-          className="w-full text-left bg-slate-800 hover:bg-slate-700 border border-neutral-700 hover:border-sky-500/50 rounded-lg p-4 transition-all group"
+          className="w-full text-left bg-slate-800 hover:bg-slate-700 border border-neutral-700 hover:border-sky-500/50 rounded-lg p-4 transition-all group outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
         >
           <span className="font-medium text-white group-hover:text-sky-400 transition-colors block">
             {option.label}
@@ -266,7 +266,7 @@ export default function FundingNavigator({ onAskWaterBot, onBack, onSwitchMode, 
           <button
             key={option.value}
             onClick={() => handleMultiToggle(option.value)}
-            className={`w-full text-left border rounded-lg p-4 transition-all group ${
+            className={`w-full text-left border rounded-lg p-4 transition-all group outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 ${
               isSelected
                 ? 'bg-cyan-500/10 border-cyan-500/50'
                 : 'bg-slate-800 hover:bg-slate-700 border-neutral-700 hover:border-sky-500/50'

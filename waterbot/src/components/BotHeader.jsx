@@ -13,7 +13,7 @@ export default function BotHeader({ title, subtitle, mode, messages, onBack, onR
       <div className="flex items-center gap-3">
         <button
           onClick={onBack}
-          className="text-neutral-400 hover:text-white transition-colors p-1"
+          className="text-neutral-400 hover:text-white transition-colors p-1 outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 rounded"
           aria-label="Go back"
         >
           <ArrowLeft size={20} />

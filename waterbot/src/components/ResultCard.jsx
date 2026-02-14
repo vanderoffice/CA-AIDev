@@ -28,7 +28,7 @@ function ExpandableSection({ title, items }) {
     <div className="border-t border-neutral-800 pt-3">
       <button
         onClick={() => setOpen(prev => !prev)}
-        className="flex items-center justify-between w-full text-left text-sm font-medium text-neutral-300 hover:text-white transition-colors"
+        className="flex items-center justify-between w-full text-left text-sm font-medium text-neutral-300 hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 rounded"
       >
         <span>{title}</span>
         <ChevronDown

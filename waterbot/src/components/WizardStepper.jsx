@@ -40,7 +40,7 @@ export default function WizardStepper({
               <button
                 onClick={onBack}
                 disabled={isFirstStep}
-                className="text-neutral-400 hover:text-white transition-colors p-1 min-h-[44px] min-w-[44px] flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed"
+                className="text-neutral-400 hover:text-white transition-colors p-1 min-h-[44px] min-w-[44px] flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
                 aria-label="Go back"
               >
                 <ArrowLeft size={18} />
@@ -91,7 +91,8 @@ export default function WizardStepper({
           {onRestart && currentStep > 0 && (
             <button
               onClick={onRestart}
-              className="text-xs text-neutral-500 hover:text-red-400 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="text-xs text-neutral-500 hover:text-red-400 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
+              aria-label="Restart"
             >
               Start Over
             </button>
@@ -102,7 +103,7 @@ export default function WizardStepper({
             <button
               onClick={onBack}
               disabled={isFirstStep}
-              className="px-4 py-2 min-h-[44px] text-sm text-neutral-400 hover:text-white border border-neutral-700 rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              className="px-4 py-2 min-h-[44px] text-sm text-neutral-400 hover:text-white border border-neutral-700 rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
             >
               Back
             </button>
@@ -110,7 +111,7 @@ export default function WizardStepper({
           {onNext && (
             <button
               onClick={onNext}
-              className="px-4 py-2 min-h-[44px] text-sm text-white bg-sky-500 hover:bg-sky-600 rounded-lg transition-colors flex items-center gap-2"
+              className="px-4 py-2 min-h-[44px] text-sm text-white bg-sky-500 hover:bg-sky-600 rounded-lg transition-colors flex items-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
             >
               {isLastStep ? 'Finish' : 'Next'}
               <ArrowRight size={14} />

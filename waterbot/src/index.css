@@ -28,6 +28,13 @@ body {
    CUSTOM SCROLLBAR
    ============================================================================ */
 
+/* Firefox scrollbar */
+:root {
+  scrollbar-color: #333 #0a0a0a;
+  scrollbar-width: thin;
+}
+
+/* Webkit scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

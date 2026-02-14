@@ -123,7 +123,7 @@ export default function PermitFinder({ onAskWaterBot, onBack, onSwitchMode, sess
                 <button
                   key={option.id}
                   onClick={() => selectOption(option.next)}
-                  className="w-full text-left bg-slate-800 hover:bg-slate-700 border border-neutral-700 hover:border-sky-500/50 rounded-lg p-4 transition-all group"
+                  className="w-full text-left bg-slate-800 hover:bg-slate-700 border border-neutral-700 hover:border-sky-500/50 rounded-lg p-4 transition-all group outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
                 >
                   <div className="flex items-start gap-3">
                     {option.icon && (
