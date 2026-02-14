@@ -15,6 +15,7 @@ const DETAIL_LABELS = {
   estimatedTime: 'Estimated Time',
   fees: 'Fees',
   fundingRange: 'Funding Range',
+  fundingType: 'Funding Type',
   deadline: 'Deadline'
 }
 

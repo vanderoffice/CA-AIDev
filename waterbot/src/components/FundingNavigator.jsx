@@ -12,7 +12,9 @@
 import { useState } from 'react'
 import BotHeader from './BotHeader'
 import WizardStepper from './WizardStepper'
-import { DollarSign } from './Icons'
+import ResultCard from './ResultCard'
+import AskWaterBot from './AskWaterBot'
+import { DollarSign, ArrowRight } from './Icons'
 import matchFundingPrograms from '../utils/matchFundingPrograms'
 import fundingData from '../../public/funding-programs.json'
 
@@ -56,6 +58,36 @@ const MATCH_OPTIONS = [
   { value: 'limited', label: 'Limited \u2014 we may be able to provide some match' },
   { value: 'no', label: 'No \u2014 we need full funding' }
 ]
+
+const FUNDING_TYPE_LABELS = {
+  'grant': 'Grant',
+  'loan': 'Loan',
+  'loan-and-grant': 'Loan & Grant',
+  'mixed': 'Mixed (Loan + Grant)',
+  'technical-assistance': 'Technical Assistance'
+}
+
+const TIER_CONFIG = [
+  { key: 'eligible', label: 'Eligible', bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', text: 'text-emerald-400' },
+  { key: 'likelyEligible', label: 'Likely Eligible', bg: 'bg-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400' },
+  { key: 'mayQualify', label: 'May Qualify', bg: 'bg-neutral-500/10', border: 'border-neutral-500/30', text: 'text-neutral-400' }
+]
+
+/** Format a funding range object into a readable string */
+function formatFundingRange(range) {
+  if (!range) return null
+  const fmt = (n) => {
+    if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(1).replace(/\.0$/, '')}B`
+    if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1).replace(/\.0$/, '')}M`
+    if (n >= 1_000) return `$${(n / 1_000).toFixed(0)}K`
+    return `$${n}`
+  }
+  if (range.min != null && range.max != null) return `${fmt(range.min)} \u2013 ${fmt(range.max)}`
+  if (range.max != null) return `Up to ${fmt(range.max)}`
+  if (range.min != null) return `From ${fmt(range.min)}`
+  if (range.notes) return range.notes
+  return null
+}
 
 const STEP_TITLES = [
   'What type of organization are you?',
@@ -214,9 +246,10 @@ export default function FundingNavigator({ onAskWaterBot, onBack, sessionId }) {
     { content: renderSingleSelect(MATCH_OPTIONS, 'matchFunds') }
   ]
 
-  // Results summary view (full ResultCards UI in Plan 04-03)
+  // Full results view with tiered ResultCards
   if (showResults && matchedPrograms) {
     const total = matchedPrograms.eligible.length + matchedPrograms.likelyEligible.length + matchedPrograms.mayQualify.length
+
     return (
       <div className="h-full flex flex-col animate-in fade-in duration-500">
         <BotHeader
@@ -224,45 +257,101 @@ export default function FundingNavigator({ onAskWaterBot, onBack, sessionId }) {
           subtitle="California Water Boards"
           onBack={handleBack}
         />
-        <div className="flex-1 flex flex-col items-center justify-center px-4">
-          <div className="w-16 h-16 rounded-full bg-cyan-500/20 flex items-center justify-center mb-4">
-            <DollarSign size={32} className="text-cyan-500" />
-          </div>
-          <h3 className="text-lg font-semibold text-white mb-1">
-            {total} Program{total !== 1 ? 's' : ''} Found
-          </h3>
-          <p className="text-neutral-400 text-sm mb-6">Based on your eligibility criteria</p>
-          <div className="flex flex-col gap-3 w-full max-w-sm">
-            {matchedPrograms.eligible.length > 0 && (
-              <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg px-4 py-3 flex items-center justify-between">
-                <span className="text-emerald-400 font-medium">Eligible</span>
-                <span className="text-white font-semibold text-lg">{matchedPrograms.eligible.length}</span>
+        <div className="flex-1 overflow-y-auto px-4 py-6">
+          <div className="space-y-6">
+            {/* Results header */}
+            <div className="text-center">
+              <div className="w-14 h-14 rounded-full bg-cyan-500/20 flex items-center justify-center mx-auto mb-3">
+                <DollarSign size={28} className="text-cyan-500" />
               </div>
-            )}
-            {matchedPrograms.likelyEligible.length > 0 && (
-              <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg px-4 py-3 flex items-center justify-between">
-                <span className="text-amber-400 font-medium">Likely Eligible</span>
-                <span className="text-white font-semibold text-lg">{matchedPrograms.likelyEligible.length}</span>
-              </div>
-            )}
-            {matchedPrograms.mayQualify.length > 0 && (
-              <div className="bg-sky-500/10 border border-sky-500/30 rounded-lg px-4 py-3 flex items-center justify-between">
-                <span className="text-sky-400 font-medium">May Qualify</span>
-                <span className="text-white font-semibold text-lg">{matchedPrograms.mayQualify.length}</span>
-              </div>
-            )}
+              <h3 className="text-xl font-semibold text-white mb-1">
+                {total} Program{total !== 1 ? 's' : ''} Found
+              </h3>
+              <p className="text-neutral-400 text-sm">Based on your answers</p>
+            </div>
+
+            {/* Tier sections */}
+            {TIER_CONFIG.map(({ key, label, bg, border, text }) => {
+              const programs = matchedPrograms[key]
+              if (!programs || programs.length === 0) return null
+
+              return (
+                <div key={key} className="space-y-4">
+                  {/* Tier header */}
+                  <div className={`${bg} border ${border} rounded-lg px-4 py-2.5 flex items-center justify-between`}>
+                    <span className={`${text} font-medium`}>{label}</span>
+                    <span className={`${text} text-sm`}>{programs.length} Program{programs.length !== 1 ? 's' : ''}</span>
+                  </div>
+
+                  {/* Program cards */}
+                  {programs.map((program) => (
+                    <div key={program.id} className="space-y-2">
+                      {/* Match reasons tags */}
+                      {program.matchReasons && program.matchReasons.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 px-1">
+                          {program.matchReasons.map((reason, idx) => (
+                            <span key={idx} className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+                              {reason}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      <ResultCard
+                        title={program.name}
+                        code={program.abbreviation || null}
+                        description={program.description}
+                        agency={program.administeredBy}
+                        link={program.programUrl}
+                        details={{
+                          fundingRange: formatFundingRange(program.fundingRange),
+                          ...(program.fundingType ? { fundingType: FUNDING_TYPE_LABELS[program.fundingType] || program.fundingType } : {})
+                        }}
+                        requirements={program.eligibility?.additionalCriteria}
+                        nextSteps={null}
+                        ragQuery={program.ragQuery}
+                        onAskWaterBot={onAskWaterBot}
+                      />
+
+                      {/* Barriers as amber warnings */}
+                      {program.barriers && program.barriers.length > 0 && (
+                        <div className="px-1 space-y-1">
+                          {program.barriers.map((barrier, idx) => (
+                            <p key={idx} className="text-xs text-amber-400 flex items-start gap-1.5">
+                              <span className="flex-shrink-0 mt-0.5">&#9888;</span>
+                              <span>{barrier}</span>
+                            </p>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )
+            })}
+
+            {/* Empty state */}
             {total === 0 && (
-              <p className="text-neutral-400 text-sm text-center">
-                No programs matched your criteria. Try broadening your project types or population range.
-              </p>
+              <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-6 text-center space-y-4">
+                <p className="text-neutral-400 text-sm leading-relaxed">
+                  No programs matched your specific criteria. Try broadening your project types or check the links below for all available programs.
+                </p>
+                <AskWaterBot
+                  query="What water infrastructure funding programs are available in California?"
+                  onClick={onAskWaterBot}
+                />
+              </div>
             )}
+
+            {/* Search Again button */}
+            <button
+              onClick={handleRestart}
+              className="w-full flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 rounded-lg py-3 text-white transition-colors"
+            >
+              <ArrowRight size={16} className="rotate-180" />
+              <span>Search Again</span>
+            </button>
           </div>
-          <button
-            onClick={handleRestart}
-            className="mt-6 px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors text-sm"
-          >
-            Search Again
-          </button>
         </div>
       </div>
     )
