@@ -18,7 +18,7 @@ None
 - [x] **Phase 2: Permit Finder** - Decision tree rendering, traversal with nav history, result screens, RAG bridge enrichment
 - [x] **Phase 3: Funding Data Model** - Extract structured `funding-programs.json` from existing knowledge, verify against live sources
 - [x] **Phase 4: Funding Navigator** - Intake questionnaire, deterministic matching algorithm, ranked results, RAG enrichment
-- [ ] **Phase 5: Integration & Polish** - Cross-tool linking, responsive/mobile QA, theme consistency, final testing
+- [x] **Phase 5: Integration & Polish** - Cross-tool linking, responsive/mobile QA, theme consistency, final testing
 
 ## Phase Details
 
@@ -73,7 +73,7 @@ Plans:
 
 Plans:
 - [x] 05-01: Cross-tool linking — permit results → related funding programs, funding results → related permits, consistent navigation between all three modes
-- [ ] 05-02: Responsive QA and theme polish — mobile layout testing, dark theme consistency, accessibility basics, end-to-end flow testing
+- [x] 05-02: Responsive QA and theme polish — mobile layout testing, dark theme consistency, accessibility basics, end-to-end flow testing
 
 ## Progress
 
@@ -86,4 +86,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Permit Finder | 3/3 | Complete | 2026-02-14 |
 | 3. Funding Data Model | 2/2 | Complete | 2026-02-14 |
 | 4. Funding Navigator | 3/3 | Complete | 2026-02-14 |
-| 5. Integration & Polish | 1/2 | In progress | - |
+| 5. Integration & Polish | 2/2 | Complete | 2026-02-14 |

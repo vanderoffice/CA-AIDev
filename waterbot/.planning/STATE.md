@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-13)
 
 **Core value:** Turn WaterBot from a chat-only tool into a three-mode assistant — chat, Permit Finder, and Funding Navigator — with cross-linking between all modes
-**Current focus:** Phase 5 — Integration & Polish
+**Current focus:** COMPLETE — All phases delivered
 
 ## Current Position
 
 Phase: 5 of 5 (Integration & Polish)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-02-14 — Completed 05-01-PLAN.md
+Plan: 2 of 2 in current phase
+Status: Milestone complete
+Last activity: 2026-02-14 — Completed 05-02-PLAN.md
 
-Progress: █████████░ 92%
+Progress: ██████████ 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
+- Total plans completed: 12
 - Average duration: 5 min
-- Total execution time: 59 min
+- Total execution time: 64 min
 
 **By Phase:**
 
@@ -31,10 +31,10 @@ Progress: █████████░ 92%
 | 2 - Permit Finder | 3/3 | 9 min | 3 min |
 | 3 - Funding Data Model | 2/2 | 17 min | 8 min |
 | 4 - Funding Navigator | 3/3 | 12 min | 4 min |
-| 5 - Integration & Polish | 1/2 | 3 min | 3 min |
+| 5 - Integration & Polish | 2/2 | 8 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 5m, 5m, 3m, 4m, 3m
+- Last 5 plans: 3m, 4m, 3m, 3m, 5m
 - Trend: Stable at ~4 min average
 
 ## Accumulated Context
@@ -74,6 +74,9 @@ Recent decisions affecting current work:
 | 05-01 | Cross-tool CTAs placed after restart buttons | Natural flow — users see CTA after completing a tool, not interrupting results |
 | 05-01 | Related programs as inline text, not expandable | Lightweight discovery — programs already visible on same page |
 | 05-01 | Only co-matched related programs shown | Irrelevant programs hidden — user's criteria filter what's surfaced |
+| 05-02 | focus-visible (not focus) for keyboard rings | Avoids showing focus rings on mouse clicks — keyboard-only |
+| 05-02 | 44px minimum touch targets | WCAG 2.5.5 compliance for all nav/action buttons |
+| 05-02 | Firefox scrollbar at :root level | Consistent styling rather than per-element |
 
 ### Deferred Issues
 
@@ -86,5 +89,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-14
-Stopped at: Completed 05-01-PLAN.md — 1 of 2 plans done in Phase 5
+Stopped at: Milestone complete — all 12 plans across 5 phases delivered
 Resume file: None
