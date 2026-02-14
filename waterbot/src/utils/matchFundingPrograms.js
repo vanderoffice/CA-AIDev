@@ -81,13 +81,14 @@ export default function matchFundingPrograms(answers, programs) {
 
     // Match funds tier adjustments
     if (elig.matchRequired) {
-      const pct = elig.matchPercentage || 0
+      const pct = elig.matchPercentage
+      const matchLabel = pct ? `${pct}% matching funds` : 'matching funds'
       if (answers.matchFunds === 'no') {
         tier = 'may-qualify'
-        barriers.push(`Requires ${pct}% matching funds`)
+        barriers.push(`Requires ${matchLabel}`)
       } else if (answers.matchFunds === 'limited') {
         if (tier === 'eligible') tier = 'likely-eligible'
-        barriers.push(`Requires ${pct}% matching funds — limited ability noted`)
+        barriers.push(`Requires ${matchLabel} — limited ability noted`)
       }
     }
 
