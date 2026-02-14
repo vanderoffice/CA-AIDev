@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-13)
 ## Current Position
 
 Phase: 4 of 5 (Funding Navigator)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-02-14 — Completed 04-01-PLAN.md
+Last activity: 2026-02-14 — Completed 04-02-PLAN.md
 
-Progress: ████████░░ 67%
+Progress: █████████░ 75%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: 6 min
-- Total execution time: 49 min
+- Total execution time: 52 min
 
 **By Phase:**
 
@@ -30,10 +30,10 @@ Progress: ████████░░ 67%
 | 1 - Shared Infrastructure | 2/2 | 18 min | 9 min |
 | 2 - Permit Finder | 3/3 | 9 min | 3 min |
 | 3 - Funding Data Model | 2/2 | 17 min | 8 min |
-| 4 - Funding Navigator | 1/3 | 5 min | 5 min |
+| 4 - Funding Navigator | 2/3 | 8 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 4m, 3m, 12m, 5m, 5m
+- Last 5 plans: 3m, 12m, 5m, 5m, 3m
 - Trend: Stable at ~5 min average
 
 ## Accumulated Context
@@ -64,6 +64,9 @@ Recent decisions affecting current work:
 | 03-02 | Grant programs correctly have null interestRate | Not a gap — grants don't have interest rates |
 | 04-01 | Single-select auto-advances on click; multi-select shows Next when selections exist | Matches PermitFinder UX pattern; progressive disclosure for Next button |
 | 04-01 | Clear current step's answer on back navigation | Clean re-entry for auto-advance single-select steps |
+| 04-02 | Population midpoint values (250–75000) for range comparisons | Practical values for comparing user ranges against program caps |
+| 04-02 | Funding type sort priority: grants > TA > mixed > loan-and-grant > loans | Users prefer free money; sort reflects that |
+| 04-02 | DAC "unsure" → likely-eligible, match "no" → may-qualify | Soft downgrades rather than hard filters for uncertain criteria |
 
 ### Deferred Issues
 
@@ -76,5 +79,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-14
-Stopped at: Completed 04-01-PLAN.md (1/3 in Phase 4)
+Stopped at: Completed 04-02-PLAN.md (2/3 in Phase 4)
 Resume file: None
