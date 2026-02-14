@@ -314,6 +314,8 @@ export default function FundingNavigator({ onAskWaterBot, onBack, onSwitchMode, 
   // Full results view with tiered ResultCards
   if (showResults && matchedPrograms) {
     const total = matchedPrograms.eligible.length + matchedPrograms.likelyEligible.length + matchedPrograms.mayQualify.length
+    const matchedIds = new Set([...matchedPrograms.eligible, ...matchedPrograms.likelyEligible, ...matchedPrograms.mayQualify].map(p => p.id))
+    const nameById = Object.fromEntries(fundingData.programs.map(p => [p.id, p.name]))
 
     return (
       <div className="h-full flex flex-col animate-in fade-in duration-500">
@@ -388,6 +390,21 @@ export default function FundingNavigator({ onAskWaterBot, onBack, onSwitchMode, 
                             </p>
                           ))}
                         </div>
+                      )}
+
+                      {/* Related programs (only those also matched) */}
+                      {program.relatedPrograms && program.relatedPrograms.filter(id => matchedIds.has(id)).length > 0 && (
+                        <p className="text-xs text-slate-500 px-1">
+                          Related:{' '}
+                          {program.relatedPrograms
+                            .filter(id => matchedIds.has(id))
+                            .map((id, idx, arr) => (
+                              <span key={id}>
+                                <span className="text-slate-400">{nameById[id] || id}</span>
+                                {idx < arr.length - 1 ? ', ' : ''}
+                              </span>
+                            ))}
+                        </p>
                       )}
                     </div>
                   ))}
