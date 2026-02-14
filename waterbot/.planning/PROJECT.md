@@ -1,91 +1,102 @@
-# WaterBot Next-Level Overhaul
+# WaterBot v2.0 — Interactive Tools
 
 ## What This Is
 
-A comprehensive overhaul of WaterBot's knowledge base to make every response both **factually accurate** and **actionable** — verified URLs, direct links to portals/forms/databases, and "Take Action" sections that guide California residents to the next step. Currently WaterBot answers questions well (100% coverage, 94% strong retrieval) but almost never links users to where they need to go.
+Two new interactive tools for WaterBot — a **Permit Finder** (guided decision tree) and a **Funding Navigator** (eligibility wizard + program matching) — that complement the existing RAG-powered chat. Both tools use structured questionnaires to walk users through complex decisions, then enrich results with context from WaterBot's 1,401-chunk knowledge base via the existing n8n/pgvector pipeline.
 
 ## Core Value
 
-Every WaterBot response must be accurate AND actionable — accurate facts without links is useless to a resident trying to act, and links without accuracy is dangerous. Both must be true simultaneously.
+Turn WaterBot from a chat-only tool into a **three-mode assistant** where users can get answers conversationally (chat), find required permits through guided questions (Permit Finder), or discover eligible funding programs through intake screening (Funding Navigator). Each mode links to the others — results always offer "Ask WaterBot about this" as an escape hatch to the full RAG chat.
 
 ## Requirements
 
 ### Validated
 
-- ✓ WaterBot answers 35 adversarial queries at 100% coverage (33 strong, 2 acceptable) — existing
-- ✓ 1,286 pgvector rows with OpenAI text-embedding-3-small embeddings — existing
-- ✓ Consumer FAQ, conservation, advocate toolkit, and operator guide content ingested — 2026-02-10
-- ✓ n8n workflow (MY78EVsJL00xPMMw) processes waterContext from IntakeForm — existing
-- ✓ Adversarial evaluation framework with automated scoring — existing
-- ✓ Master URL registry mapping 179 topics to 500+ verified, actionable URLs — v1.0
-- ✓ All 33 batch content files rewritten with inline URLs and "Take Action" sections — v1.0
-- ✓ Content accuracy audit — every fact, date, figure verified against current CA sources — v1.0
-- ✓ DB rebuilt from overhauled content (clean-slate: 1,286 → 179 rows) — v1.0
-- ✓ n8n system prompt updated to instruct LLM to surface links from retrieved context — v1.0
-- ✓ Adversarial eval: 33/35 → 35/35 STRONG (100%) — v1.0
-- ✓ All URLs validated (313 URLs, 97.1% reachable) — v1.0
-- ✓ Regression test: zero degradation on existing 35 queries — v1.0
+- ✓ WaterBot chat: 35/35 adversarial queries STRONG (100%) — v1.0
+- ✓ RAG pipeline: 1,401 chunks, pgvector, n8n webhook (`MY78EVsJL00xPMMw`) — v1.0
+- ✓ Knowledge base: 34 JSON files, 313 validated URLs, inline links — v1.0
+- ✓ Permit decision tree: 83-node JSON covering 8 project categories — v1.0
+- ✓ Funding knowledge: 15 markdown docs (federal, grants, SRF, private) + 7 RAG JSONs — v1.0
+- ✓ Frontend: React 18 + Vite + Tailwind, mode selection landing page — v1.0
+- ✓ Session persistence via `useBotPersistence` hook — v1.0
 
 ### Active
 
-(None — v1.0 shipped. Next milestone TBD.)
+**Shared Infrastructure**
+- [ ] Wizard/stepper shell component (back/forward navigation, progress indicator)
+- [ ] Result card component (permit or funding program display)
+- [ ] "Ask WaterBot about this" handoff — pre-fills chat with contextual question
+- [ ] Enable disabled mode buttons on landing page
+
+**Permit Finder**
+- [ ] `PermitFinder.jsx` component rendering decision tree from `permit-decision-tree.json`
+- [ ] Tree traversal with navigation history (back button support)
+- [ ] Result screen with permit details (name, code, agency, link, fees, timeline)
+- [ ] RAG bridge — fire `ragQuery` against n8n webhook to enrich results with knowledge base context
+- [ ] Requirements and next-steps checklists on result screens
+
+**Funding Navigator**
+- [ ] `funding-programs.json` — structured data model with machine-readable eligibility criteria
+- [ ] Data sourced from existing 15 markdown + 7 RAG JSON files, then verified against current CA.gov sources
+- [ ] Intake questionnaire (system size, population, project type, DAC status, violation history)
+- [ ] Deterministic matching algorithm scoring user against program eligibility criteria
+- [ ] Results ranked by match quality with eligibility status (Eligible / Likely Eligible / May Qualify)
+- [ ] RAG enrichment for program details (application tips, timelines, success factors)
+
+**Quality**
+- [ ] Both tools responsive (mobile-friendly via Tailwind)
+- [ ] Both tools match existing WaterBot dark theme and design language
+- [ ] Cross-link between tools where relevant (e.g., permit result → related funding)
 
 ### Out of Scope
 
-- BizBot and KiddoBot — WaterBot only for this overhaul
-- Frontend/UI React component changes — pure knowledge base + n8n workflow
-- New topic areas — overhaul existing content, don't expand topic coverage
-- Embedding model change — stay on text-embedding-3-small (1536 dims)
-- Schema migration — keep existing `content`, `metadata`, `embedding` column structure
+- Authentication or user accounts — stays anonymous/public like chat
+- BizBot or KiddoBot changes — WaterBot only
+- Embedding model or pgvector schema changes — use existing infrastructure
+- Admin panel for updating decision trees or funding data — manual JSON editing is fine for now
+- PDF export of results — future enhancement
 
 ## Context
 
-### Current State (2026-02-11 — PROJECT COMPLETE)
+### Current State (2026-02-13)
 
-- **DB:** 179 rows in `public.waterbot_documents` (clean-slate rebuild from overhauled content)
-- **Content:** 33 batch JSON files (179 docs), each with inline URLs, Take Action sections, verified facts
-- **URLs:** 313 unique URLs in DB (3.9x increase from ~81 baseline), 97.1% reachable
-- **Adversarial scores:** 35/35 STRONG (100%), 0 acceptable, 0 weak — up from 33/35 (94.3%)
-- **Both weak spots resolved:** wat-015 chromium-6 (0.339 → 0.625), wat-017 CCR (0.366 → 0.589)
-- **Avg similarity:** 0.5636 → 0.5944 (+0.031)
-- **Ingestion pipeline:** `ingest_waterbot_content.py` → OpenAI embeddings → SSH/Docker/psql → IVFFlat reindex
-- **Live bot:** https://vanderdev.net/ecosform (WaterBot chat mode)
-- **n8n workflow:** `MY78EVsJL00xPMMw` (WaterBot - Chat, maxTokens 2000, temp 0.2, link-surfacing prompt)
+- **Chat:** Fully operational at https://vanderdev.net (WaterBot mode)
+- **Permit Finder:** Decision tree JSON complete (83 nodes, 2,352 lines). Zero frontend components. Button disabled with "Coming soon."
+- **Funding Navigator:** Knowledge content exists but no structured data model. Zero frontend components. Button disabled with "Coming soon."
+- **Codebase:** React 18.2 + Vite + Tailwind CSS SPA. Single page component (`WaterBot.jsx`, 368 lines). Components directory has `Icons.jsx` and `BotHeader.jsx` only.
+- **n8n webhook:** `https://n8n.vanderdev.net/webhook/waterbot` — accepts `{ message, sessionId, messageHistory }`, returns `{ response, sources }`
 
-### Key Technical Facts
+### Decision Tree Structure
 
-- PostgreSQL 15.8.1 with pgvector 0.8.0, IVFFlat index
-- Supabase on VPS: `ssh vps "docker exec -i supabase-db psql -U postgres -d postgres"`
-- Two metadata schemas coexist: markdown-chunked (`document_id`, `section_title`, `chunk_index`) and batch JSON (`topic`, `category`, `subcategory`)
-- Dollar-quoted SQL strings with `CONTENT_END_12345` tag for safe insertion
-- Adversarial eval script: `scripts/run_adversarial_evaluation.py` (thresholds: STRONG ≥0.40, ACCEPTABLE ≥0.30)
-- URL validation script: `scripts/test_all_urls.py`
+Each question node has `id`, `type: "question"`, `title`, `helpText`, and `options[]` with `next` pointers. Result nodes have `type: "result"` with `permits[]` (name, code, description, agency, link, estimatedTime, fees), `requirements[]`, `nextSteps[]`, and critically a `ragQuery` string for knowledge base cross-reference.
 
-### Prior Work
+### Funding Knowledge Available
 
-- Original bot KB enhancement: Jan 2026 (all 3 bots, 6 phases, URL audit fixed 116 broken URLs)
-- Conservation enhancement: Feb 10 2026 (8 deep docs, all 10 queries STRONG)
-- Rich batch ingestion: Feb 10 2026 (25 docs, strong rate 69% → 94%)
-- Full project history: `.planning/RESUME.md`
-- Phase 5 evaluation: 35/35 STRONG, regression report at `.planning/phases/05-evaluation/regression_report.md`
+| Source | Location | Content |
+|--------|----------|---------|
+| Federal programs | `knowledge/04-funding/federal/` | EPA, FEMA, USDA, other federal |
+| State grants | `knowledge/04-funding/grants/` | Prop 1, SWRCB, IRWM, drought |
+| State Revolving Funds | `knowledge/04-funding/srf/` | CWSRF, DWSRF, small community |
+| Private/alternative | `knowledge/04-funding/private/` | Foundations, alt financing, TA |
+| RAG content | `rag-content/waterbot/` | `dwsrf_guide.json`, `cwsrf_guide.json`, `safer_*.json`, `small_community_funding.json`, `dac_grants.json` |
 
 ## Constraints
 
-- **Infrastructure**: VPS-hosted Supabase, SSH pipeline for all DB operations — no direct DB connection
-- **Embedding cost**: OpenAI API charges per embedding — minimize unnecessary re-embeddings
-- **URL stability**: CA gov sites restructure frequently (learned from Jan audit) — prefer parent pages and stable domains
-- **Bot is live**: Changes to DB affect live users immediately — validate before ingesting
-- **DB rebuild strategy**: Deferred until after content overhaul (Phase 2) — will decide clean slate vs preserve+enhance based on content quality assessment
+- **Infrastructure**: VPS-hosted Supabase, SSH pipeline for DB ops — no direct DB connection
+- **n8n webhook contract**: Must match existing `{ message, sessionId }` → `{ response, sources }` interface for RAG bridge calls
+- **Bot is live**: Chat must remain functional throughout development
+- **Decision tree is source of truth**: Permit Finder renders from `permit-decision-tree.json` — don't duplicate data into components
+- **Funding data accuracy**: All program details must be verified against current CA.gov/federal sources before shipping
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| WaterBot only (not all 3 bots) | Focus delivers better quality than spreading across bots | ✅ Validated — BizBot/KiddoBot unchanged (control check passed) |
-| URL registry as structured JSON | Single source of truth for link maintenance; decoupled from content | ✅ Validated — 179 topics, 500+ URLs, all batch files linked |
-| DB rebuild: clean-slate (TRUNCATE + re-ingest) | Old content fully superseded: 6.2% links vs 100% new | ✅ Validated — 1,286→179 rows, better scores |
-| Inline URLs in content (not just metadata) | Embeddings include URL text; LLM sees links in retrieved context | ✅ Validated — 313 URLs in DB, avg sim +0.031 |
-| Baseline comparison at every phase | Show measurable improvement, not just "we changed things" | ✅ Validated — regression_report.md proves 33→35 STRONG |
+| Permit Finder first, Funding Navigator second | Decision tree data is complete; establishes shared component patterns | — Pending |
+| RAG-enriched results (not static-only) | Leverages existing 1,401-chunk KB; makes tools feel connected to chat | — Pending |
+| Guided wizard + deterministic matching for Funding | More trustworthy than LLM-only matching for eligibility decisions | — Pending |
+| "Ask WaterBot" escape hatch on all results | Connects tools back to chat; handles edge cases the structured flow can't | — Pending |
+| Funding data: extract from existing → verify against live sources | Content already exists in knowledge/; fresh research fills gaps | — Pending |
 
 ---
-*Last updated: 2026-02-11 after v1.0 milestone*
+*Last updated: 2026-02-13 after v2.0 initialization*

@@ -1,0 +1,92 @@
+[
+  {
+    "bot": "kiddobot",
+    "query_id": "kid-005",
+    "query": "What's the difference between a family fee and a co-payment?",
+    "type": "edge_case",
+    "expected_coverage": "Family fee = income-based payment to program; co-payment = difference between provider rate and max reimbursement",
+    "top_similarity": 0.0,
+    "top_result_preview": "No results"
+  },
+  {
+    "bot": "waterbot",
+    "query_id": "wat-002",
+    "query": "I have a private well. How do I get it tested and how often should I?",
+    "type": "real_user",
+    "expected_coverage": "No state oversight for private wells; homeowner responsibility; annual testing recommended; find certified lab",
+    "top_similarity": 0.0,
+    "top_result_preview": "No results"
+  },
+  {
+    "bot": "waterbot",
+    "query_id": "wat-004",
+    "query": "My water has a chlorine smell. Is that dangerous?",
+    "type": "real_user",
+    "expected_coverage": "Chlorine/chloramine used for disinfection; not dangerous at treatment levels; taste/odor issue",
+    "top_similarity": 0.0,
+    "top_result_preview": "No results"
+  },
+  {
+    "bot": "waterbot",
+    "query_id": "wat-007",
+    "query": "I got a notice from my water company about a violation. What should I do?",
+    "type": "real_user",
+    "expected_coverage": "Read notice carefully; may recommend alternative water source; contact water provider for details",
+    "top_similarity": 0.2473,
+    "top_result_preview": "#### Toxicology and Contaminants Program (SPoT)"
+  },
+  {
+    "bot": "waterbot",
+    "query_id": "wat-009",
+    "query": "Is hard water bad for my health or just annoying?",
+    "type": "real_user",
+    "expected_coverage": "Not a health risk; causes scale buildup, dry skin, appliance damage",
+    "top_similarity": 0.0,
+    "top_result_preview": "No results"
+  },
+  {
+    "bot": "waterbot",
+    "query_id": "wat-014",
+    "query": "Will boiling my water make it safe if it's contaminated with nitrates?",
+    "type": "edge_case",
+    "expected_coverage": "NO - boiling concentrates nitrates; only works for bacteria/viruses",
+    "top_similarity": 0.1561,
+    "top_result_preview": "### Common IGP Violations"
+  },
+  {
+    "bot": "waterbot",
+    "query_id": "wat-017",
+    "query": "What's in my Consumer Confidence Report and how do I read it?",
+    "type": "real_user",
+    "expected_coverage": "Annual water quality report; shows contaminants detected, levels vs MCL, source info",
+    "top_similarity": 0.2477,
+    "top_result_preview": "- WaterSense (EPA)"
+  },
+  {
+    "bot": "waterbot",
+    "query_id": "wat-018",
+    "query": "Is bottled water safer than tap water?",
+    "type": "real_user",
+    "expected_coverage": "Not necessarily; tap water often more tested; bottled water regulated differently; environmental concerns",
+    "top_similarity": 0.2289,
+    "top_result_preview": "- Chemical-specific limits derived from site conditions"
+  },
+  {
+    "bot": "waterbot",
+    "query_id": "wat-019",
+    "query": "My water looks cloudy in the morning. Is something wrong?",
+    "type": "real_user",
+    "expected_coverage": "Usually air bubbles or temperature; clears after standing; if persistent, may be sediment",
+    "top_similarity": 0.0,
+    "top_result_preview": "No results"
+  },
+  {
+    "bot": "waterbot",
+    "query_id": "wat-024",
+    "query": "I heard my water district uses recycled water. Is that safe to drink?",
+    "type": "real_user",
+    "expected_coverage": "Potable reuse is highly treated and regulated; direct vs indirect potable reuse; monitoring requirements",
+    "top_similarity": 0.2702,
+    "top_result_preview": "- Chemical-specific limits derived from site conditions"
+  }
+]

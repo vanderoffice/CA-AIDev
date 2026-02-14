@@ -1,0 +1,630 @@
+{
+  "metadata": {
+    "created": "2026-01-18",
+    "purpose": "Non-circular coverage audit - queries sourced from real user questions, not from reviewing existing content",
+    "sources": [
+      "Reddit/forum discussions on CA business licensing",
+      "Government FAQ pages (Alameda County, CDSS, CDE)",
+      "Community Water Center FAQ",
+      "LA Times water contamination investigation",
+      "Marin Child Care Council FAQs",
+      "LADWP Water Quality FAQs"
+    ],
+    "query_types": {
+      "real_user": "Actual questions people ask online",
+      "edge_case": "Confusing scenarios that trip people up",
+      "multi_part": "Complex questions combining multiple topics",
+      "out_of_scope": "Questions the bot SHOULD decline or redirect"
+    }
+  },
+  "bizbot": {
+    "description": "California business licensing questions",
+    "queries": [
+      {
+        "id": "biz-001",
+        "query": "Do I need a DBA or an LLC? What's the difference?",
+        "type": "real_user",
+        "source": "Common confusion from YouTube/forums",
+        "expected_coverage": "Should explain DBA is just a name registration, LLC is entity formation, and you might need both"
+      },
+      {
+        "id": "biz-002",
+        "query": "I work in three different cities as a mobile dog groomer. Do I need a business license from each city?",
+        "type": "edge_case",
+        "source": "Alameda County FAQ",
+        "expected_coverage": "Yes, each city requires its own license; tax only on portion of revenue in each"
+      },
+      {
+        "id": "biz-003",
+        "query": "What order do I get licenses in? City first or state first?",
+        "type": "real_user",
+        "source": "Common sequencing confusion",
+        "expected_coverage": "Generally: entity formation (state) → EIN (federal) → city business license → industry permits"
+      },
+      {
+        "id": "biz-004",
+        "query": "My contractor license expired 4 months ago. Can I just renew it or do I have to start over?",
+        "type": "edge_case",
+        "source": "CSLB reinstatement rules",
+        "expected_coverage": "CSLB allows reinstatement within 5 years with fees; after that, reapply"
+      },
+      {
+        "id": "biz-005",
+        "query": "I'm a sole proprietor working from home under my own name. Do I need any licenses at all?",
+        "type": "real_user",
+        "source": "YouTube attorney video",
+        "expected_coverage": "Still need city business license (Business Tax Certificate), possibly home occupation permit"
+      },
+      {
+        "id": "biz-006",
+        "query": "What's the total cost to open a restaurant in California including all permits and licenses?",
+        "type": "multi_part",
+        "source": "Cost surprise theme",
+        "expected_coverage": "Should mention: business license, health permit, ABC license if alcohol, fire inspection, seller's permit, etc."
+      },
+      {
+        "id": "biz-007",
+        "query": "I live in an unincorporated area of the county. Do I still need a business license?",
+        "type": "edge_case",
+        "source": "Alameda County FAQ",
+        "expected_coverage": "Yes, from the county; unincorporated areas are county jurisdiction"
+      },
+      {
+        "id": "biz-008",
+        "query": "When do I need an EIN number vs just using my SSN?",
+        "type": "real_user",
+        "source": "Common confusion",
+        "expected_coverage": "EIN required for: employees, certain business types, partnerships; optional for sole props without employees"
+      },
+      {
+        "id": "biz-009",
+        "query": "I'm a cosmetologist who wants to add microblading. Do I need a separate license?",
+        "type": "edge_case",
+        "source": "BBC overlap rules",
+        "expected_coverage": "Should explain BBC requirements for esthetician services, separate certification for microblading"
+      },
+      {
+        "id": "biz-010",
+        "query": "What's the bond requirement for a contractor license and why do I need it?",
+        "type": "real_user",
+        "source": "Cost surprise theme",
+        "expected_coverage": "CSLB requires $25,000 contractor bond; protects consumers from contractor default"
+      },
+      {
+        "id": "biz-011",
+        "query": "I want to sell homemade candles at farmers markets. What licenses do I need?",
+        "type": "multi_part",
+        "source": "Cottage industry scenario",
+        "expected_coverage": "Business license, seller's permit (CDTFA), possibly cottage food exemption doesn't apply to candles"
+      },
+      {
+        "id": "biz-012",
+        "query": "How do I transfer my business license to a new owner when I sell my business?",
+        "type": "real_user",
+        "source": "Renewal/maintenance theme",
+        "expected_coverage": "Most licenses don't transfer; new owner must apply fresh"
+      },
+      {
+        "id": "biz-013",
+        "query": "What happens if I forget to renew my business license?",
+        "type": "real_user",
+        "source": "Renewal theme",
+        "expected_coverage": "Penalties, late fees; operating without valid license can result in fines"
+      },
+      {
+        "id": "biz-014",
+        "query": "I'm starting a food truck. Do I need a health permit from every county I operate in?",
+        "type": "edge_case",
+        "source": "Multi-jurisdiction food service",
+        "expected_coverage": "Mobile Food Facility Permit; some reciprocity between counties but varies"
+      },
+      {
+        "id": "biz-015",
+        "query": "What's the difference between a seller's permit and a business license?",
+        "type": "real_user",
+        "source": "Common confusion",
+        "expected_coverage": "Business license = city tax; seller's permit = state sales tax collection authority"
+      },
+      {
+        "id": "biz-016",
+        "query": "Can my LLC get a Type 47 liquor license or does it have to be in my personal name?",
+        "type": "edge_case",
+        "source": "ABC licensing",
+        "expected_coverage": "LLCs can hold ABC licenses; all members undergo background check"
+      },
+      {
+        "id": "biz-017",
+        "query": "I run an online-only business from California selling to customers nationwide. What CA licenses do I need?",
+        "type": "multi_part",
+        "source": "E-commerce scenario",
+        "expected_coverage": "Still need city business license, seller's permit if selling tangible goods"
+      },
+      {
+        "id": "biz-018",
+        "query": "How much does a real estate broker license cost including all the required education?",
+        "type": "real_user",
+        "source": "Cost theme",
+        "expected_coverage": "DRE fees, required courses, exam fees, E&O insurance"
+      },
+      {
+        "id": "biz-019",
+        "query": "I'm a handyman. Do I need a contractor license for small jobs under $500?",
+        "type": "edge_case",
+        "source": "CSLB exemption rules",
+        "expected_coverage": "$500 limit (including materials and labor); still need business license"
+      },
+      {
+        "id": "biz-020",
+        "query": "What continuing education do I need to renew my cosmetology license?",
+        "type": "real_user",
+        "source": "Renewal theme",
+        "expected_coverage": "BBC CE requirements vary by license type"
+      },
+      {
+        "id": "biz-021",
+        "query": "Can I operate a daycare out of my home? What licenses and inspections are required?",
+        "type": "multi_part",
+        "source": "Home-based regulated business",
+        "expected_coverage": "Community Care Licensing, fire clearance, background checks, capacity limits"
+      },
+      {
+        "id": "biz-022",
+        "query": "I want to import goods from China to sell in California. What permits do I need beyond a seller's permit?",
+        "type": "out_of_scope",
+        "source": "Federal jurisdiction",
+        "expected_coverage": "Should note this involves federal customs/import law beyond CA state licensing"
+      },
+      {
+        "id": "biz-023",
+        "query": "How do I look up if a contractor is properly licensed?",
+        "type": "real_user",
+        "source": "Consumer protection",
+        "expected_coverage": "CSLB license lookup tool, what to verify"
+      },
+      {
+        "id": "biz-024",
+        "query": "My HOA says I can't run a business from home. Does that override my home occupation permit?",
+        "type": "edge_case",
+        "source": "Regulatory conflict",
+        "expected_coverage": "HOA covenants are separate from city permits; both must be satisfied"
+      },
+      {
+        "id": "biz-025",
+        "query": "What's the penalty for operating without a business license in California?",
+        "type": "real_user",
+        "source": "Enforcement question",
+        "expected_coverage": "Varies by city; typically fines, back taxes, potential cease operations order"
+      }
+    ]
+  },
+  "kiddobot": {
+    "description": "California childcare subsidy and program questions",
+    "queries": [
+      {
+        "id": "kid-001",
+        "query": "What's the difference between CalWORKs Stage 1, Stage 2, and Stage 3?",
+        "type": "real_user",
+        "source": "CDSS FAQ - major confusion point",
+        "expected_coverage": "Stage 1 = receiving cash aid; Stage 2 = transition/stable; Stage 3 = income-based, not entitlement"
+      },
+      {
+        "id": "kid-002",
+        "query": "I signed up for the Centralized Eligibility List 6 months ago. Why haven't I heard anything?",
+        "type": "real_user",
+        "source": "Marin Child Care Council FAQ",
+        "expected_coverage": "CEL is NOT first-come-first-served; ranked by income and family size; can be year+ wait"
+      },
+      {
+        "id": "kid-003",
+        "query": "I make $5,000 a month and have 3 kids. Do I qualify for subsidized childcare?",
+        "type": "real_user",
+        "source": "Income eligibility question",
+        "expected_coverage": "Should reference SMI thresholds by family size; $5K/mo for family of 4 is under threshold"
+      },
+      {
+        "id": "kid-004",
+        "query": "Can my mom watch my kids and get paid through the subsidy program?",
+        "type": "real_user",
+        "source": "License-exempt care question",
+        "expected_coverage": "Yes, Alternative Payment Program allows license-exempt providers including relatives"
+      },
+      {
+        "id": "kid-005",
+        "query": "What's the difference between a family fee and a co-payment?",
+        "type": "edge_case",
+        "source": "CDA San Diego FAQ",
+        "expected_coverage": "Family fee = income-based payment to program; co-payment = difference between provider rate and max reimbursement"
+      },
+      {
+        "id": "kid-006",
+        "query": "I'm on CalFresh and Medi-Cal. Does that automatically qualify me for childcare assistance?",
+        "type": "real_user",
+        "source": "Categorical eligibility question",
+        "expected_coverage": "Yes, participating in means-tested programs satisfies income eligibility; still need to show 'need'"
+      },
+      {
+        "id": "kid-007",
+        "query": "My child has an IEP. Does that help us get childcare faster?",
+        "type": "edge_case",
+        "source": "Priority enrollment rules",
+        "expected_coverage": "Children with exceptional needs get priority within same rank; also CHAN program for severely disabled"
+      },
+      {
+        "id": "kid-008",
+        "query": "I'm a seasonal farmworker. Is there a special childcare program for me?",
+        "type": "real_user",
+        "source": "Migrant programs",
+        "expected_coverage": "CMIG (Migrant Child Care) and CMAP (Migrant Alternative Payment) programs"
+      },
+      {
+        "id": "kid-009",
+        "query": "How do I recertify for childcare assistance? What documents do I need?",
+        "type": "real_user",
+        "source": "Recertification process",
+        "expected_coverage": "Income verification, continued need documentation, timeline"
+      },
+      {
+        "id": "kid-010",
+        "query": "I just got a job but haven't started yet. Can I get childcare while job searching?",
+        "type": "edge_case",
+        "source": "Need requirement scenarios",
+        "expected_coverage": "Seeking employment is a valid need; limited duration"
+      },
+      {
+        "id": "kid-011",
+        "query": "The childcare provider I want to use charges more than what the program pays. What do I do?",
+        "type": "real_user",
+        "source": "Regional Market Rate ceiling issue",
+        "expected_coverage": "Family may need to pay co-payment (difference); or choose different provider"
+      },
+      {
+        "id": "kid-012",
+        "query": "I'm homeless and need childcare. Are there special provisions for me?",
+        "type": "real_user",
+        "source": "Homeless family eligibility",
+        "expected_coverage": "Homelessness satisfies both income AND need criteria; special priority"
+      },
+      {
+        "id": "kid-013",
+        "query": "Can I get help paying for summer camp or just daycare?",
+        "type": "edge_case",
+        "source": "School-age care question",
+        "expected_coverage": "School-age children up to 13 can receive subsidized care including summer programs"
+      },
+      {
+        "id": "kid-014",
+        "query": "My income went up. When do I lose my childcare subsidy?",
+        "type": "real_user",
+        "source": "Exit threshold question",
+        "expected_coverage": "Families can stay until income exceeds 85% SMI (higher than entry threshold)"
+      },
+      {
+        "id": "kid-015",
+        "query": "How do I know if a childcare center is safe and licensed?",
+        "type": "real_user",
+        "source": "Licensing lookup",
+        "expected_coverage": "Community Care Licensing lookup; Oliver's Law right to review facility file"
+      },
+      {
+        "id": "kid-016",
+        "query": "I'm in school full-time. Does that count as a 'need' for childcare?",
+        "type": "real_user",
+        "source": "Need requirement",
+        "expected_coverage": "Yes, vocational training or educational program qualifies as need"
+      },
+      {
+        "id": "kid-017",
+        "query": "What happens if I get a CPS referral for childcare? Do I go to the front of the line?",
+        "type": "edge_case",
+        "source": "Priority enrollment",
+        "expected_coverage": "CPS referrals are Priority 1; served first when funding available"
+      },
+      {
+        "id": "kid-018",
+        "query": "My child is 14 but has special needs. Can they still get subsidized care?",
+        "type": "edge_case",
+        "source": "Age limit exceptions",
+        "expected_coverage": "Children 13+ with IEP and professional letter can continue in care"
+      },
+      {
+        "id": "kid-019",
+        "query": "I applied to 5 different programs. Do they all use the same eligibility list?",
+        "type": "real_user",
+        "source": "CEL confusion",
+        "expected_coverage": "Depends on county; some have unified CEL, others require separate applications"
+      },
+      {
+        "id": "kid-020",
+        "query": "What immunizations does my child need for daycare?",
+        "type": "real_user",
+        "source": "Health requirements",
+        "expected_coverage": "CA required vaccines for childcare; CDPH immunization schedule"
+      },
+      {
+        "id": "kid-021",
+        "query": "I have a disability and can't physically care for my child during the day. Does that qualify me?",
+        "type": "edge_case",
+        "source": "Parental incapacity",
+        "expected_coverage": "Physical/mental incapacity is a valid need category"
+      },
+      {
+        "id": "kid-022",
+        "query": "Can I use childcare subsidies for overnight care if I work night shifts?",
+        "type": "edge_case",
+        "source": "Non-standard hours",
+        "expected_coverage": "Care authorized based on work schedule; some programs cover non-traditional hours"
+      },
+      {
+        "id": "kid-023",
+        "query": "I'm a foster parent. What childcare help is available to me?",
+        "type": "real_user",
+        "source": "Foster care programs",
+        "expected_coverage": "Emergency Foster Care Bridge Program; foster children get priority"
+      },
+      {
+        "id": "kid-024",
+        "query": "How do I complain about my childcare provider to the state?",
+        "type": "real_user",
+        "source": "Complaint process",
+        "expected_coverage": "Community Care Licensing complaint process"
+      },
+      {
+        "id": "kid-025",
+        "query": "What's the California State Preschool Program and is it different from Head Start?",
+        "type": "real_user",
+        "source": "Program confusion",
+        "expected_coverage": "CSPP is state-funded preschool; Head Start is federal; different income limits and requirements"
+      }
+    ]
+  },
+  "waterbot": {
+    "description": "California water quality and safety questions",
+    "queries": [
+      {
+        "id": "wat-001",
+        "query": "Is my tap water safe to drink? How do I know?",
+        "type": "real_user",
+        "source": "LADWP FAQ - #1 question",
+        "expected_coverage": "Check Consumer Confidence Report; public systems must meet MCLs; testing available"
+      },
+      {
+        "id": "wat-002",
+        "query": "I have a private well. How do I get it tested and how often should I?",
+        "type": "real_user",
+        "source": "Community Water Center FAQ",
+        "expected_coverage": "No state oversight for private wells; homeowner responsibility; annual testing recommended; find certified lab"
+      },
+      {
+        "id": "wat-003",
+        "query": "What is PFAS and should I be worried about it in my water?",
+        "type": "real_user",
+        "source": "Emerging contaminant concern",
+        "expected_coverage": "PFAS = forever chemicals; health effects; CA monitoring requirements; treatment options"
+      },
+      {
+        "id": "wat-004",
+        "query": "My water has a chlorine smell. Is that dangerous?",
+        "type": "real_user",
+        "source": "LADWP FAQ",
+        "expected_coverage": "Chlorine/chloramine used for disinfection; not dangerous at treatment levels; taste/odor issue"
+      },
+      {
+        "id": "wat-005",
+        "query": "I live in a farming community. Should I be worried about nitrates?",
+        "type": "real_user",
+        "source": "Community Water Center - major issue",
+        "expected_coverage": "Agricultural areas have elevated nitrate risk; health effects especially for infants; testing recommended"
+      },
+      {
+        "id": "wat-006",
+        "query": "What's the difference between a Maximum Contaminant Level and a Public Health Goal?",
+        "type": "edge_case",
+        "source": "LA Times investigation",
+        "expected_coverage": "PHG = ideal safe level; MCL = enforceable legal limit (may be higher due to cost/tech limits)"
+      },
+      {
+        "id": "wat-007",
+        "query": "I got a notice from my water company about a violation. What should I do?",
+        "type": "real_user",
+        "source": "Compliance notice response",
+        "expected_coverage": "Read notice carefully; may recommend alternative water source; contact water provider for details"
+      },
+      {
+        "id": "wat-008",
+        "query": "My landlord won't tell me about the water quality. What are my rights?",
+        "type": "real_user",
+        "source": "Community Water Center FAQ",
+        "expected_coverage": "Landlords must forward water notices to tenants; can request CCR; right to safe water"
+      },
+      {
+        "id": "wat-009",
+        "query": "Is hard water bad for my health or just annoying?",
+        "type": "real_user",
+        "source": "Hague Water FAQ",
+        "expected_coverage": "Not a health risk; causes scale buildup, dry skin, appliance damage"
+      },
+      {
+        "id": "wat-010",
+        "query": "I think there's lead in my water from old pipes. How do I test for it?",
+        "type": "real_user",
+        "source": "LADWP FAQ",
+        "expected_coverage": "Lead test ~$50 from certified lab; old plumbing issue not water supply; flush before drinking"
+      },
+      {
+        "id": "wat-011",
+        "query": "What water filter should I buy to remove arsenic?",
+        "type": "real_user",
+        "source": "Treatment question",
+        "expected_coverage": "Reverse osmosis; check NSF certification for specific contaminants; SWRCB approved device list"
+      },
+      {
+        "id": "wat-012",
+        "query": "My water system is on the 'failing' list. What does that mean?",
+        "type": "real_user",
+        "source": "LA Times investigation",
+        "expected_coverage": "Not meeting Human Right to Water Act standards; may have violations; state working on solutions"
+      },
+      {
+        "id": "wat-013",
+        "query": "Who do I complain to if my water looks or smells bad?",
+        "type": "real_user",
+        "source": "Complaint routing",
+        "expected_coverage": "Contact water provider first; if unresolved, State Water Board or local LPA"
+      },
+      {
+        "id": "wat-014",
+        "query": "Will boiling my water make it safe if it's contaminated with nitrates?",
+        "type": "edge_case",
+        "source": "Community Water Center FAQ",
+        "expected_coverage": "NO - boiling concentrates nitrates; only works for bacteria/viruses"
+      },
+      {
+        "id": "wat-015",
+        "query": "What is chromium-6 and why was it in the news?",
+        "type": "real_user",
+        "source": "Erin Brockovich contaminant",
+        "expected_coverage": "Industrial pollutant; cancer risk; CA had/has stricter standard; some systems struggle to meet it"
+      },
+      {
+        "id": "wat-016",
+        "query": "I'm pregnant. Are there extra precautions I should take with tap water?",
+        "type": "edge_case",
+        "source": "Vulnerable population question",
+        "expected_coverage": "Consult healthcare provider; extra concern for nitrates, lead; consider testing if unsure"
+      },
+      {
+        "id": "wat-017",
+        "query": "What's in my Consumer Confidence Report and how do I read it?",
+        "type": "real_user",
+        "source": "Community Water Center FAQ",
+        "expected_coverage": "Annual water quality report; shows contaminants detected, levels vs MCL, source info"
+      },
+      {
+        "id": "wat-018",
+        "query": "Is bottled water safer than tap water?",
+        "type": "real_user",
+        "source": "Common question",
+        "expected_coverage": "Not necessarily; tap water often more tested; bottled water regulated differently; environmental concerns"
+      },
+      {
+        "id": "wat-019",
+        "query": "My water looks cloudy in the morning. Is something wrong?",
+        "type": "real_user",
+        "source": "LADWP FAQ",
+        "expected_coverage": "Usually air bubbles or temperature; clears after standing; if persistent, may be sediment"
+      },
+      {
+        "id": "wat-020",
+        "query": "What's a TMDL and how does it affect my local creek?",
+        "type": "edge_case",
+        "source": "Regulatory term",
+        "expected_coverage": "Total Maximum Daily Load; pollution limit for impaired water body; cleanup plan"
+      },
+      {
+        "id": "wat-021",
+        "query": "I want to report someone illegally dumping into a storm drain. Who do I call?",
+        "type": "real_user",
+        "source": "Reporting question",
+        "expected_coverage": "Local water quality agency; Regional Water Board; CalEPA complaint portal"
+      },
+      {
+        "id": "wat-022",
+        "query": "Can I get a grant to fix my failing water system? I'm on a small community system.",
+        "type": "multi_part",
+        "source": "Small system funding",
+        "expected_coverage": "State Drinking Water Revolving Fund; SAFER program; technical assistance available"
+      },
+      {
+        "id": "wat-023",
+        "query": "What's the difference between the State Water Board and Regional Water Boards?",
+        "type": "real_user",
+        "source": "Regulatory confusion",
+        "expected_coverage": "State = statewide policy, drinking water; Regional = 9 boards for watershed-specific pollution control"
+      },
+      {
+        "id": "wat-024",
+        "query": "I heard my water district uses recycled water. Is that safe to drink?",
+        "type": "real_user",
+        "source": "Recycled water concern",
+        "expected_coverage": "Potable reuse is highly treated and regulated; direct vs indirect potable reuse; monitoring requirements"
+      },
+      {
+        "id": "wat-025",
+        "query": "After the wildfire, is my tap water safe? I heard about benzene contamination.",
+        "type": "edge_case",
+        "source": "Disaster scenario",
+        "expected_coverage": "Post-fire water quality concerns are real; follow local advisories; VOC contamination possible from burned infrastructure"
+      },
+      {
+        "id": "wat-026",
+        "query": "What is SB 606 and how does it affect my water usage?",
+        "type": "real_user",
+        "source": "Conservation policy question",
+        "expected_coverage": "AB 1668/SB 606 Making Conservation a Way of Life; permanent water use standards; supplier water budgets"
+      },
+      {
+        "id": "wat-027",
+        "query": "How much water am I allowed to use per day in California?",
+        "type": "real_user",
+        "source": "Common consumer question",
+        "expected_coverage": "Indoor standard is 47 GPCD as of 2025; standards apply to suppliers not individuals; outdoor varies by climate"
+      },
+      {
+        "id": "wat-028",
+        "query": "What was the 20 by 2020 water conservation goal?",
+        "type": "real_user",
+        "source": "Historical conservation question",
+        "expected_coverage": "SB X7-7 Water Conservation Act of 2009; 20% reduction by 2020; achieved 32% reduction; 199 to 136 GPCD"
+      },
+      {
+        "id": "wat-029",
+        "query": "What are the current drought restrictions in California?",
+        "type": "real_user",
+        "source": "Common confusion about current status",
+        "expected_coverage": "No statewide emergency regulations as of 2025; permanent conservation standards now apply; local restrictions may vary"
+      },
+      {
+        "id": "wat-030",
+        "query": "How does my water company calculate my water budget?",
+        "type": "real_user",
+        "source": "Consumer understanding of WUO",
+        "expected_coverage": "Urban Water Use Objectives; indoor + outdoor + water loss + CII budgets; custom per supplier; annual reporting"
+      },
+      {
+        "id": "wat-031",
+        "query": "What is Save Our Water and how do I participate?",
+        "type": "real_user",
+        "source": "Program awareness question",
+        "expected_coverage": "DWR campaign; rebate finder; conservation tips; SaveOurWater.com"
+      },
+      {
+        "id": "wat-032",
+        "query": "What's the difference between drought restrictions and permanent conservation rules?",
+        "type": "real_user",
+        "source": "Policy confusion",
+        "expected_coverage": "Emergency vs permanent framework; drought restrictions are temporary; AB 1668/SB 606 standards are permanent"
+      },
+      {
+        "id": "wat-033",
+        "query": "When does California start enforcing water use limits?",
+        "type": "real_user",
+        "source": "Enforcement timeline question",
+        "expected_coverage": "Regulation effective Jan 2025; graduated enforcement; penalties start Nov 2027; $1000-$10000 per day"
+      },
+      {
+        "id": "wat-034",
+        "query": "What rebates are available for water-saving appliances in California?",
+        "type": "real_user",
+        "source": "Consumer rebate question",
+        "expected_coverage": "Toilet, washer, showerhead rebates; turf removal; smart controllers; SaveOurWater.com rebate finder"
+      },
+      {
+        "id": "wat-035",
+        "query": "What does water use efficiency mean for California homeowners?",
+        "type": "real_user",
+        "source": "General efficiency question",
+        "expected_coverage": "Indoor 47 GPCD standard; outdoor ET-based budgets; rate impacts; available incentives"
+      }
+    ]
+  }
+}
