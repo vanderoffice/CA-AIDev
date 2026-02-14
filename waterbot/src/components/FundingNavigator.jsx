@@ -2,8 +2,8 @@
  * FundingNavigator.jsx
  *
  * Eligibility questionnaire wizard for the Funding Navigator tool.
- * Collects user criteria across 5 steps and will match against
- * funding-programs.json in Plan 04-02.
+ * Collects user criteria across 5 steps and matches against
+ * funding-programs.json using deterministic filter + sort algorithm.
  *
  * Architecture follows PermitFinder pattern: component owns
  * BotHeader + WizardStepper internally.
@@ -13,6 +13,8 @@ import { useState } from 'react'
 import BotHeader from './BotHeader'
 import WizardStepper from './WizardStepper'
 import { DollarSign } from './Icons'
+import matchFundingPrograms from '../utils/matchFundingPrograms'
+import fundingData from '../../public/funding-programs.json'
 
 const ENTITY_TYPES = [
   { value: 'public-agency', label: 'Public Agency', description: 'City, county, water district, etc.' },
@@ -77,7 +79,7 @@ export default function FundingNavigator({ onAskWaterBot, onBack, sessionId }) {
   const [currentStep, setCurrentStep] = useState(0)
   const [answers, setAnswers] = useState(INITIAL_ANSWERS)
   const [showResults, setShowResults] = useState(false)
-  const [matchedPrograms, setMatchedPrograms] = useState([])
+  const [matchedPrograms, setMatchedPrograms] = useState(null)
 
   // Navigate back: clear current step's answer, go to previous step (or exit)
   const handleBack = () => {
@@ -102,15 +104,18 @@ export default function FundingNavigator({ onAskWaterBot, onBack, sessionId }) {
     setCurrentStep(0)
     setAnswers(INITIAL_ANSWERS)
     setShowResults(false)
-    setMatchedPrograms([])
+    setMatchedPrograms(null)
   }
 
-  // Single-select: set answer and auto-advance
+  // Single-select: set answer and auto-advance (last step triggers matching)
   const handleSingleSelect = (key, value) => {
-    setAnswers(prev => ({ ...prev, [key]: value }))
+    const updated = { ...answers, [key]: value }
+    setAnswers(updated)
     if (currentStep < 4) {
       setCurrentStep(currentStep + 1)
     } else {
+      const results = matchFundingPrograms(updated, fundingData.programs)
+      setMatchedPrograms(results)
       setShowResults(true)
     }
   }
@@ -209,8 +214,9 @@ export default function FundingNavigator({ onAskWaterBot, onBack, sessionId }) {
     { content: renderSingleSelect(MATCH_OPTIONS, 'matchFunds') }
   ]
 
-  // Placeholder results view (matching algorithm comes in Plan 04-02)
-  if (showResults) {
+  // Results summary view (full ResultCards UI in Plan 04-03)
+  if (showResults && matchedPrograms) {
+    const total = matchedPrograms.eligible.length + matchedPrograms.likelyEligible.length + matchedPrograms.mayQualify.length
     return (
       <div className="h-full flex flex-col animate-in fade-in duration-500">
         <BotHeader
@@ -218,20 +224,44 @@ export default function FundingNavigator({ onAskWaterBot, onBack, sessionId }) {
           subtitle="California Water Boards"
           onBack={handleBack}
         />
-        <div className="flex-1 flex flex-col items-center justify-center">
+        <div className="flex-1 flex flex-col items-center justify-center px-4">
           <div className="w-16 h-16 rounded-full bg-cyan-500/20 flex items-center justify-center mb-4">
             <DollarSign size={32} className="text-cyan-500" />
           </div>
-          <h3 className="text-lg font-semibold text-white mb-2">Matching programs...</h3>
-          <p className="text-neutral-400 text-sm text-center max-w-md leading-relaxed">
-            The matching algorithm will analyze your responses against eligible funding programs.
-            This will be implemented in the next plan.
-          </p>
+          <h3 className="text-lg font-semibold text-white mb-1">
+            {total} Program{total !== 1 ? 's' : ''} Found
+          </h3>
+          <p className="text-neutral-400 text-sm mb-6">Based on your eligibility criteria</p>
+          <div className="flex flex-col gap-3 w-full max-w-sm">
+            {matchedPrograms.eligible.length > 0 && (
+              <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg px-4 py-3 flex items-center justify-between">
+                <span className="text-emerald-400 font-medium">Eligible</span>
+                <span className="text-white font-semibold text-lg">{matchedPrograms.eligible.length}</span>
+              </div>
+            )}
+            {matchedPrograms.likelyEligible.length > 0 && (
+              <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg px-4 py-3 flex items-center justify-between">
+                <span className="text-amber-400 font-medium">Likely Eligible</span>
+                <span className="text-white font-semibold text-lg">{matchedPrograms.likelyEligible.length}</span>
+              </div>
+            )}
+            {matchedPrograms.mayQualify.length > 0 && (
+              <div className="bg-sky-500/10 border border-sky-500/30 rounded-lg px-4 py-3 flex items-center justify-between">
+                <span className="text-sky-400 font-medium">May Qualify</span>
+                <span className="text-white font-semibold text-lg">{matchedPrograms.mayQualify.length}</span>
+              </div>
+            )}
+            {total === 0 && (
+              <p className="text-neutral-400 text-sm text-center">
+                No programs matched your criteria. Try broadening your project types or population range.
+              </p>
+            )}
+          </div>
           <button
             onClick={handleRestart}
             className="mt-6 px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors text-sm"
           >
-            Start Over
+            Search Again
           </button>
         </div>
       </div>
