@@ -15,6 +15,7 @@ import WizardStepper from './WizardStepper'
 import ResultCard from './ResultCard'
 import AskWaterBot from './AskWaterBot'
 import { DollarSign, ArrowRight, Droplets, Loader, ExternalLink, Search } from './Icons'
+import BotMarkdown from './BotMarkdown'
 import matchFundingPrograms from '../utils/matchFundingPrograms'
 import fundingData from '../../public/funding-programs.json'
 
@@ -439,13 +440,7 @@ export default function FundingNavigator({ onAskWaterBot, onBack, onSwitchMode, 
                   <Droplets size={16} className="text-blue-400 flex-shrink-0" />
                   <h4 className="text-sm font-medium text-blue-400">WaterBot Insights</h4>
                 </div>
-                <div className="space-y-3">
-                  {ragResponse.split('\n\n').map((paragraph, idx) => (
-                    <p key={idx} className="text-sm text-slate-300 leading-relaxed">
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
+                <BotMarkdown content={ragResponse} />
                 {ragSources && ragSources.length > 0 && ragSources[0]?.fileName !== 'N/A' && (
                   <div className="border-t border-slate-700 pt-3">
                     <p className="text-xs text-slate-500 mb-2">Sources</p>

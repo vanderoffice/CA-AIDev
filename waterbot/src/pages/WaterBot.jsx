@@ -6,8 +6,8 @@
  */
 
 import { useState, useRef, useEffect } from 'react'
-import ReactMarkdown from 'react-markdown'
 import { Droplets, Send, User, Loader, MessageSquare, ArrowRight, Search, DollarSign } from '../components/Icons'
+import BotMarkdown from '../components/BotMarkdown'
 import BotHeader from '../components/BotHeader'
 import PermitFinder from '../components/PermitFinder'
 import FundingNavigator from '../components/FundingNavigator'
@@ -306,44 +306,33 @@ export default function WaterBot() {
               </div>
 
               {/* Message Bubble */}
-              <div className={`max-w-[80%] rounded-lg px-4 py-3 ${
+              <div className={`max-w-[85%] rounded-xl ${
                 message.role === 'user'
-                  ? 'bg-sky-500/10 border border-sky-500/20 text-white'
+                  ? 'bg-sky-500/10 border border-sky-500/20 text-white px-5 py-3'
                   : message.error
-                    ? 'bg-red-900/30 border border-red-700/50 text-red-200'
-                    : 'bg-neutral-800 border border-neutral-700 text-gray-200'
+                    ? 'bg-red-900/20 border border-red-700/40 text-red-200 px-5 py-4'
+                    : 'bg-gradient-to-b from-neutral-800/90 to-neutral-800/60 border border-neutral-700/40 text-gray-200 px-5 py-4 shadow-lg shadow-black/10'
               }`}>
                 {message.role === 'user' ? (
                   <p className="text-sm">{message.content}</p>
                 ) : (
-                  <div className="prose prose-invert prose-sm max-w-none">
-                    <ReactMarkdown
-                      components={{
-                        a: ({ href, children }) => (
-                          <a href={href} target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:text-sky-300">
-                            {children}
-                          </a>
-                        ),
-                        table: ({ children }) => (
-                          <table className="min-w-full text-sm border-collapse">{children}</table>
-                        ),
-                        th: ({ children }) => (
-                          <th className="border border-neutral-600 px-2 py-1 bg-neutral-700/50 text-left">{children}</th>
-                        ),
-                        td: ({ children }) => (
-                          <td className="border border-neutral-600 px-2 py-1">{children}</td>
-                        )
-                      }}
-                    >
-                      {message.content}
-                    </ReactMarkdown>
-                  </div>
+                  <BotMarkdown content={message.content} />
                 )}
                 {message.sources && message.sources.length > 0 && message.sources[0].fileName !== 'N/A' && (
-                  <div className="mt-2 pt-2 border-t border-neutral-700">
-                    <p className="text-xs text-neutral-500">
-                      Sources: {message.sources.map(s => s.fileName).filter(f => f !== 'N/A').join(', ')}
-                    </p>
+                  <div className="mt-4 pt-3 border-t border-neutral-700/30">
+                    <p className="text-[10px] font-medium text-neutral-500 uppercase tracking-widest mb-2">Sources</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {message.sources
+                        .filter(s => s.fileName !== 'N/A')
+                        .map((source, i) => (
+                          <span
+                            key={i}
+                            className="inline-flex items-center px-2.5 py-1 rounded-md bg-sky-500/8 border border-sky-500/15 text-xs text-sky-400/80"
+                          >
+                            {source.fileName.replace(/\.(md|txt|pdf|json)$/i, '').replace(/[-_]/g, ' ')}
+                          </span>
+                        ))}
+                    </div>
                   </div>
                 )}
               </div>

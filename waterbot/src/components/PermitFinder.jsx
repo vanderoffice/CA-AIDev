@@ -14,7 +14,20 @@ import BotHeader from './BotHeader'
 import WizardStepper from './WizardStepper'
 import ResultCard from './ResultCard'
 import AskWaterBot from './AskWaterBot'
-import { Search, ArrowRight, Droplets, Loader, ExternalLink, DollarSign } from './Icons'
+import { Search, ArrowRight, Droplets, Loader, ExternalLink, HardHat, Factory, Wheat, Droplet, Leaf, Waves, Landmark, Mountain } from './Icons'
+import BotMarkdown from './BotMarkdown'
+
+// Map icon name strings from permit-decision-tree.json → actual icon components
+const ICON_MAP = {
+  construction: HardHat,
+  factory: Factory,
+  agriculture: Wheat,
+  water_drop: Droplet,
+  eco: Leaf,
+  waves: Waves,
+  account_balance: Landmark,
+  landscape: Mountain,
+}
 
 // n8n webhook endpoint for RAG enrichment queries
 const RAG_WEBHOOK_URL = 'https://n8n.vanderdev.net/webhook/waterbot'
@@ -126,8 +139,8 @@ export default function PermitFinder({ onAskWaterBot, onBack, onSwitchMode, sess
                   className="w-full text-left bg-slate-800 hover:bg-slate-700 border border-neutral-700 hover:border-sky-500/50 rounded-lg p-4 transition-all group outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
                 >
                   <div className="flex items-start gap-3">
-                    {option.icon && (
-                      <span className="text-lg flex-shrink-0 mt-0.5">{option.icon}</span>
+                    {option.icon && ICON_MAP[option.icon] && (
+                      (() => { const Icon = ICON_MAP[option.icon]; return <Icon size={20} className="text-sky-400 flex-shrink-0 mt-0.5" /> })()
                     )}
                     <div className="flex-1 min-w-0">
                       <span className="font-medium text-white group-hover:text-sky-400 transition-colors block">
@@ -237,13 +250,7 @@ export default function PermitFinder({ onAskWaterBot, onBack, onSwitchMode, sess
                       <Droplets size={16} className="text-blue-400 flex-shrink-0" />
                       <h4 className="text-sm font-medium text-blue-400">WaterBot Insights</h4>
                     </div>
-                    <div className="space-y-3">
-                      {ragResponse.split('\n\n').map((paragraph, idx) => (
-                        <p key={idx} className="text-sm text-slate-300 leading-relaxed">
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
+                    <BotMarkdown content={ragResponse} />
                     {ragSources && ragSources.length > 0 && ragSources[0]?.fileName !== 'N/A' && (
                       <div className="border-t border-slate-700 pt-3">
                         <p className="text-xs text-slate-500 mb-2">Sources</p>
@@ -286,27 +293,6 @@ export default function PermitFinder({ onAskWaterBot, onBack, onSwitchMode, sess
               <span>Start New Search</span>
             </button>
 
-            {/* Cross-tool CTA: Funding Navigator */}
-            {onSwitchMode && (
-              <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-lg p-5">
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                    <DollarSign size={20} className="text-cyan-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-white">Need Help Funding This Project?</h4>
-                    <p className="text-sm text-neutral-400 mt-1">Discover grant and loan programs you may qualify for</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => onSwitchMode('funding')}
-                  className="w-full flex items-center justify-center gap-2 bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 rounded-lg py-3 text-cyan-400 transition-colors"
-                >
-                  <span>Explore Funding</span>
-                  <ArrowRight size={16} />
-                </button>
-              </div>
-            )}
           </div>
         )}
       </WizardStepper>
