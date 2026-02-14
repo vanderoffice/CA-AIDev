@@ -5,16 +5,25 @@
 See: .planning/PROJECT.md (updated 2026-02-13)
 
 **Core value:** Turn WaterBot from a chat-only tool into a three-mode assistant — chat, Permit Finder, and Funding Navigator — with cross-linking between all modes
-**Current focus:** COMPLETE — All phases delivered
+**Current focus:** COMPLETE — All phases delivered, production reconciled
 
 ## Current Position
 
-Phase: 5 of 5 (Integration & Polish)
-Plan: 2 of 2 in current phase
-Status: Milestone complete
-Last activity: 2026-02-14 — Completed 05-02-PLAN.md
+Phase: 6 of 6 (Production Reconciliation)
+Plan: 1 of 1 in current phase
+Status: **COMPLETE — Milestone closed**
+Last activity: 2026-02-14 — Production reconciliation executed
 
-Progress: ██████████ 100%
+Progress: ██████████ 100% (All 6 phases complete)
+
+### Phase 6 Summary
+Ported highest-impact GSD features to production (vanderdev-website on VPS):
+- FundingNavigator (5-step questionnaire + 58-program matching) replaces DecisionTreeView for funding
+- Enhanced ChatMessage.jsx with full accent-aware markdown overrides (getMarkdownComponents)
+- RAGButton.jsx uses shared markdown components
+- Gradient message bubbles + pill source citations across all 3 bots
+- Cross-tool CTAs between Permit Finder and Funding Navigator
+- BotHeader simplified to use onBack callback pattern
 
 ## Performance Metrics
 
@@ -89,5 +98,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-14
-Stopped at: Milestone complete — all 12 plans across 5 phases delivered
-Resume file: None
+Stopped at: Milestone COMPLETE — all 6 phases delivered and deployed to production
+Resume file: N/A (milestone closed)

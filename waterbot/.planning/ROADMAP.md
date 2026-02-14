@@ -19,6 +19,7 @@ None
 - [x] **Phase 3: Funding Data Model** - Extract structured `funding-programs.json` from existing knowledge, verify against live sources
 - [x] **Phase 4: Funding Navigator** - Intake questionnaire, deterministic matching algorithm, ranked results, RAG enrichment
 - [x] **Phase 5: Integration & Polish** - Cross-tool linking, responsive/mobile QA, theme consistency, final testing
+- [x] **Phase 6: Production Reconciliation** - Port FundingNavigator + visual polish to vanderdev-website on VPS
 
 ## Phase Details
 
@@ -75,6 +76,20 @@ Plans:
 - [x] 05-01: Cross-tool linking — permit results → related funding programs, funding results → related permits, consistent navigation between all three modes
 - [x] 05-02: Responsive QA and theme polish — mobile layout testing, dark theme consistency, accessibility basics, end-to-end flow testing
 
+### Phase 6: Production Reconciliation
+**Goal**: Port highest-impact GSD features to production vanderdev-website on VPS. Production uses shared `lib/bots/` components + React Router — different architecture from dev repo.
+**Depends on**: All prior phases (features to port)
+**Research**: Unlikely (architecture already analyzed)
+**Plans**: 1 plan
+
+Plans:
+- [x] 06-01: Port FundingNavigator (questionnaire + matching + 58-program catalog), enhance ChatMessage markdown overrides, polish message bubbles, add cross-tool CTAs. All on VPS via SSH.
+
+**Key context:**
+- Production has features dev doesn't: IntakeForm, waterContext, 60+ icons, transcript copy
+- Permits stay on DecisionTreeView (adequate). Funding switches to questionnaire+matching (superior).
+- Full plan: `~/.claude/plans/wiggly-stirring-scott.md`
+
 ## Progress
 
 **Execution Order:**
@@ -87,3 +102,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 3. Funding Data Model | 2/2 | Complete | 2026-02-14 |
 | 4. Funding Navigator | 3/3 | Complete | 2026-02-14 |
 | 5. Integration & Polish | 2/2 | Complete | 2026-02-14 |
+| 6. Production Reconciliation | 1/1 | Complete | 2026-02-14 |
