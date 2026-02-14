@@ -14,7 +14,7 @@ import BotHeader from './BotHeader'
 import WizardStepper from './WizardStepper'
 import ResultCard from './ResultCard'
 import AskWaterBot from './AskWaterBot'
-import { Search, ArrowRight } from './Icons'
+import { Search, ArrowRight, Droplets, Loader, ExternalLink } from './Icons'
 
 // n8n webhook endpoint for RAG enrichment queries
 const RAG_WEBHOOK_URL = 'https://n8n.vanderdev.net/webhook/waterbot'
@@ -219,6 +219,62 @@ export default function PermitFinder({ onAskWaterBot, onBack, sessionId }) {
                   )}
                 </div>
               </div>
+            )}
+
+            {/* RAG enrichment section */}
+            {currentNode.ragQuery && (
+              <>
+                {ragLoading && (
+                  <div className="flex items-center gap-3 px-4 py-3 bg-slate-800/30 border border-slate-700/50 rounded-lg">
+                    <Loader size={16} className="animate-spin text-slate-400 flex-shrink-0" />
+                    <span className="text-sm text-slate-400">Getting additional context from WaterBot...</span>
+                  </div>
+                )}
+
+                {ragResponse && (
+                  <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-5 space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Droplets size={16} className="text-blue-400 flex-shrink-0" />
+                      <h4 className="text-sm font-medium text-blue-400">WaterBot Insights</h4>
+                    </div>
+                    <div className="space-y-3">
+                      {ragResponse.split('\n\n').map((paragraph, idx) => (
+                        <p key={idx} className="text-sm text-slate-300 leading-relaxed">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                    {ragSources && ragSources.length > 0 && ragSources[0]?.fileName !== 'N/A' && (
+                      <div className="border-t border-slate-700 pt-3">
+                        <p className="text-xs text-slate-500 mb-2">Sources</p>
+                        <div className="flex flex-wrap gap-2">
+                          {ragSources.map((source, idx) => {
+                            const url = typeof source === 'string' ? source : source.url
+                            const label = typeof source === 'string' ? source : (source.title || source.fileName || source.url)
+                            if (!url || label === 'N/A') return null
+                            return (
+                              <a
+                                key={idx}
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"
+                              >
+                                {label}
+                                <ExternalLink size={10} />
+                              </a>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {ragError && (
+                  <p className="text-sm text-slate-500 italic px-1">Additional context unavailable</p>
+                )}
+              </>
             )}
 
             {/* Restart button */}
