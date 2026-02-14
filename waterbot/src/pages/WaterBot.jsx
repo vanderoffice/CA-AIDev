@@ -228,6 +228,7 @@ export default function WaterBot() {
       <PermitFinder
         onAskWaterBot={handleAskWaterBot}
         onBack={() => setMode('choice')}
+        sessionId={sessionId}
       />
     )
   }

@@ -8,7 +8,7 @@
  * Data source: permit-decision-tree.json (83 nodes)
  */
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import treeData from '../../permit-decision-tree.json'
 import BotHeader from './BotHeader'
 import WizardStepper from './WizardStepper'
@@ -16,11 +16,60 @@ import ResultCard from './ResultCard'
 import AskWaterBot from './AskWaterBot'
 import { Search, ArrowRight } from './Icons'
 
-export default function PermitFinder({ onAskWaterBot, onBack }) {
+// n8n webhook endpoint for RAG enrichment queries
+const RAG_WEBHOOK_URL = 'https://n8n.vanderdev.net/webhook/waterbot'
+
+export default function PermitFinder({ onAskWaterBot, onBack, sessionId }) {
   const [currentNodeId, setCurrentNodeId] = useState('start')
   const [history, setHistory] = useState([])
 
+  // RAG enrichment state
+  const [ragResponse, setRagResponse] = useState(null)
+  const [ragSources, setRagSources] = useState(null)
+  const [ragLoading, setRagLoading] = useState(false)
+  const [ragError, setRagError] = useState(false)
+
   const currentNode = treeData.nodes[currentNodeId]
+
+  // Fetch RAG enrichment when landing on a result node with a ragQuery
+  useEffect(() => {
+    if (currentNode.type !== 'result' || !currentNode.ragQuery) return
+
+    const controller = new AbortController()
+
+    setRagLoading(true)
+    setRagResponse(null)
+    setRagSources(null)
+    setRagError(false)
+
+    fetch(RAG_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: currentNode.ragQuery,
+        sessionId,
+        messageHistory: []
+      }),
+      signal: controller.signal
+    })
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        return res.json()
+      })
+      .then(data => {
+        setRagResponse(data.response || null)
+        setRagSources(data.sources || [])
+        setRagLoading(false)
+      })
+      .catch(err => {
+        if (err.name === 'AbortError') return
+        console.error('RAG enrichment error:', err)
+        setRagError(true)
+        setRagLoading(false)
+      })
+
+    return () => controller.abort()
+  }, [currentNodeId, sessionId])
 
   // Push current node onto history stack and navigate forward
   const selectOption = (nextNodeId) => {
