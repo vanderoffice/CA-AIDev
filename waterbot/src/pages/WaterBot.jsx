@@ -228,6 +228,7 @@ export default function WaterBot() {
       <PermitFinder
         onAskWaterBot={handleAskWaterBot}
         onBack={() => setMode('choice')}
+        onSwitchMode={(m) => setMode(m)}
         sessionId={sessionId}
       />
     )
@@ -239,6 +240,7 @@ export default function WaterBot() {
       <FundingNavigator
         onAskWaterBot={handleAskWaterBot}
         onBack={() => setMode('choice')}
+        onSwitchMode={(m) => setMode(m)}
         sessionId={sessionId}
       />
     )

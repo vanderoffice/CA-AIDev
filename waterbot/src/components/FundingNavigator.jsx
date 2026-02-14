@@ -14,7 +14,7 @@ import BotHeader from './BotHeader'
 import WizardStepper from './WizardStepper'
 import ResultCard from './ResultCard'
 import AskWaterBot from './AskWaterBot'
-import { DollarSign, ArrowRight, Droplets, Loader, ExternalLink } from './Icons'
+import { DollarSign, ArrowRight, Droplets, Loader, ExternalLink, Search } from './Icons'
 import matchFundingPrograms from '../utils/matchFundingPrograms'
 import fundingData from '../../public/funding-programs.json'
 
@@ -120,7 +120,7 @@ function buildRagQuery(answers) {
   return `What funding programs are available for a ${entity} working on ${projects} serving ${pop} people?`
 }
 
-export default function FundingNavigator({ onAskWaterBot, onBack, sessionId }) {
+export default function FundingNavigator({ onAskWaterBot, onBack, onSwitchMode, sessionId }) {
   const [currentStep, setCurrentStep] = useState(0)
   const [answers, setAnswers] = useState(INITIAL_ANSWERS)
   const [showResults, setShowResults] = useState(false)
@@ -478,6 +478,28 @@ export default function FundingNavigator({ onAskWaterBot, onBack, sessionId }) {
               <ArrowRight size={16} className="rotate-180" />
               <span>Search Again</span>
             </button>
+
+            {/* Cross-tool CTA: Permit Finder */}
+            {onSwitchMode && (
+              <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-5">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                    <Search size={20} className="text-blue-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-white">Know Which Permits You Need?</h4>
+                    <p className="text-sm text-neutral-400 mt-1">Find out which water permits your project requires</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => onSwitchMode('permits')}
+                  className="w-full flex items-center justify-center gap-2 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/40 rounded-lg py-3 text-blue-400 transition-colors"
+                >
+                  <span>Find Permits</span>
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

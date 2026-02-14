@@ -14,12 +14,12 @@ import BotHeader from './BotHeader'
 import WizardStepper from './WizardStepper'
 import ResultCard from './ResultCard'
 import AskWaterBot from './AskWaterBot'
-import { Search, ArrowRight, Droplets, Loader, ExternalLink } from './Icons'
+import { Search, ArrowRight, Droplets, Loader, ExternalLink, DollarSign } from './Icons'
 
 // n8n webhook endpoint for RAG enrichment queries
 const RAG_WEBHOOK_URL = 'https://n8n.vanderdev.net/webhook/waterbot'
 
-export default function PermitFinder({ onAskWaterBot, onBack, sessionId }) {
+export default function PermitFinder({ onAskWaterBot, onBack, onSwitchMode, sessionId }) {
   const [currentNodeId, setCurrentNodeId] = useState('start')
   const [history, setHistory] = useState([])
 
@@ -285,6 +285,28 @@ export default function PermitFinder({ onAskWaterBot, onBack, sessionId }) {
               <ArrowRight size={16} className="rotate-180" />
               <span>Start New Search</span>
             </button>
+
+            {/* Cross-tool CTA: Funding Navigator */}
+            {onSwitchMode && (
+              <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-lg p-5">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
+                    <DollarSign size={20} className="text-cyan-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-white">Need Help Funding This Project?</h4>
+                    <p className="text-sm text-neutral-400 mt-1">Discover grant and loan programs you may qualify for</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => onSwitchMode('funding')}
+                  className="w-full flex items-center justify-center gap-2 bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 rounded-lg py-3 text-cyan-400 transition-colors"
+                >
+                  <span>Explore Funding</span>
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            )}
           </div>
         )}
       </WizardStepper>
