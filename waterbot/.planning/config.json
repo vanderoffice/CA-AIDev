@@ -14,5 +14,10 @@
   "safety": {
     "always_confirm_destructive": true,
     "always_confirm_external_services": true
+  },
+  "tracking": {
+    "build_time": true,
+    "file": ".planning/BUILD_TIME.md",
+    "instructions": "At session START: note the current time. At session END: calculate elapsed active time (exclude any time waiting on user input), append a row to BUILD_TIME.md, and update the total at the top."
   }
 }
