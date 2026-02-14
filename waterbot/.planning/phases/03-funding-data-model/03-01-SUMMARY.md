@@ -1,14 +1,78 @@
 ---
 phase: 03-funding-data-model
 plan: 01
-status: complete
+subsystem: database
+tags: [json, funding, eligibility, data-model, knowledge-extraction]
+
+# Dependency graph
+requires:
+  - phase: 01-shared-infrastructure/01-02
+    provides: ResultCard display pattern (details grid, expandable sections)
+  - phase: 02-permit-finder/02-03
+    provides: ragQuery pattern and RAG enrichment contract
+provides:
+  - Machine-readable funding catalog (58 programs) with typed eligibility predicates
+  - ragQuery strings for every program (RAG enrichment ready)
+  - relatedPrograms cross-references between related funding sources
+affects: [04-funding-navigator, 05-integration-polish]
+
+# Tech tracking
+tech-stack:
+  added: []
+  patterns: [flat-array-filter-matching, typed-eligibility-predicates, three-value-dac-status]
+
+key-files:
+  created: [public/funding-programs.json]
+  modified: []
+
+key-decisions:
+  - "Flat array (not tree) because funding matching is filter-based, not path-based"
+  - "Three-value dacRequired (false/true/'preferred') for programs that prefer but don't require DAC"
+  - "relatedPrograms uses ID cross-refs for Phase 5 cross-linking"
+  - "Conservative figures where sources conflict, with notes explaining discrepancy"
+  - "FAAST portal URL for all state programs where applicable"
+
+patterns-established:
+  - "Typed eligibility predicates: entityTypes[], projectTypes[], dacRequired, populationMax, matchRequired"
+  - "fundingRange with min/max/notes pattern for variable amounts"
+  - "principalForgiveness object separating availability from conditions"
+
+issues-created: []
+
+# Metrics
+duration: 12min
+completed: 2026-02-14
 ---
 
-# 03-01 Summary: Funding Programs Data Model
+# Phase 3 Plan 1: Funding Data Model Summary
 
-## Result
+**58 funding programs extracted from 15 markdown + 7 RAG JSON knowledge files into typed `funding-programs.json` with eligibility predicates, cross-references, and ragQuery for every program**
 
-Created `public/funding-programs.json` with 58 distinct funding programs extracted from 15 markdown knowledge base files and 7 RAG JSON files.
+## Performance
+
+- **Duration:** 12 min
+- **Started:** 2026-02-14T02:54:27Z
+- **Completed:** 2026-02-14T03:06:48Z
+- **Tasks:** 2
+- **Files created:** 1
+
+## Accomplishments
+
+- Designed funding-programs.json schema with 18 required fields per program including typed eligibility predicates
+- Extracted 58 distinct programs across all 5 categories from 22 source files
+- Every program has ragQuery for RAG enrichment (consistent with permit-decision-tree.json pattern)
+- All relatedPrograms cross-references validated — no broken links
+
+## Task Commits
+
+Each task was committed atomically:
+
+1. **Task 1: Design funding-programs.json schema** - `0bbd4d3` (feat)
+2. **Task 2: Extract all programs from knowledge base** - `d70b8f5` (feat)
+
+## Files Created/Modified
+
+- `public/funding-programs.json` — 58 funding programs (~2400 lines), version 1.0.0, typed eligibility predicates
 
 ## Programs by Category
 
@@ -16,58 +80,39 @@ Created `public/funding-programs.json` with 58 distinct funding programs extract
 |----------|-------|---------|
 | state-srf | 7 | DWSRF, CWSRF, SAFER, SCDW, Lead Service Line, Consolidation Incentives, SAFER O&M |
 | state-grant | 14 | Emerging Contaminants, WRFP, UDWN, IRWM, Prop 1/4/68 chapters, Drought Relief |
-| federal | 19 | WIFIA, USDA (4 programs), WaterSMART (4), FEMA (3), Title XVI, USACE, CDBG, EDA, EPA (3) |
+| federal | 19 | WIFIA, USDA (4), WaterSMART (4), FEMA (3), Title XVI, USACE, CDBG, EDA, EPA (3) |
 | private | 11 | Packard, Hewlett, Moore, NFWF, Water Foundation, Pisces, CCF, RLF, Spring Point, EIB, Green Bonds |
 | technical-assistance | 7 | RCAC, RCAC Tribal, CRWA, Self-Help Enterprises, CWC, State TA, USDA Circuit Rider |
 
-## Schema Design
+## Decisions Made
 
-- Flat array with filter-based matching (not tree/path-based)
-- Typed eligibility predicates: `dacRequired` (false/true/"preferred"), `entityTypes`, `projectTypes`, `populationMax`, `matchRequired`
-- `ragQuery` on every program for RAG enrichment (consistent with permit-decision-tree.json pattern)
-- `relatedPrograms` cross-references using IDs (all validated)
-- `fundingRange` with min/max/notes for programs without fixed amounts
-- `principalForgiveness` object distinguishing availability from conditions
+- Flat array structure for filter-based matching (not tree/path-based like permit-decision-tree.json)
+- Three-value `dacRequired` field (false/true/"preferred") — some programs prefer but don't require DAC status
+- `relatedPrograms` uses ID cross-references for Phase 5 cross-linking feature
+- Conservative figures where sources conflict, noted in `fundingRange.notes` or `interestRate.notes`
+- FAAST portal URL for all applicable state programs
+- Invitation-only foundations noted in `additionalCriteria` rather than omitted
 
-## Verification (all pass)
+## Deviations from Plan
 
-- Valid JSON
-- All 18 required schema fields present on every program
-- No duplicate IDs
-- All 5 categories represented
-- ragQuery on every program
-- metadata.totalPrograms (58) matches actual count
-- All relatedPrograms reference valid IDs
+- Plan targeted 50+ programs; delivered 58 (8 above minimum)
+- Added 3 extra programs as distinct entries (SAFER O&M, Consolidation Incentives, WaterSMART Planning) — each has unique eligibility streams
+- No architectural changes; no Rule 4 consultations needed
 
-## Commits
+**Total deviations:** 0 auto-fixed, 0 deferred
+**Impact on plan:** Exceeded target count. No scope creep.
 
-| Task | Commit | Hash |
-|------|--------|------|
-| Schema design (5 placeholder programs) | `feat(03-01): design funding-programs.json schema` | `0bbd4d3` |
-| Full extraction (58 programs) | `feat(03-01): extract funding programs from knowledge base` | `d70b8f5` |
+## Issues Encountered
 
-## Files Created
+None
 
-- `public/funding-programs.json` — 58 programs, ~2400 lines
+## Next Phase Readiness
 
-## Data Integrity Notes
+- `funding-programs.json` ready for Phase 3 Plan 2 (live source verification)
+- Data model ready for Phase 4 matching algorithm consumption
+- All ragQuery strings ready for RAG enrichment (same pattern as Permit Finder)
+- Known data freshness items: BRIC program suspended (litigation), Prop 1 Groundwater closed, some foundation programs invitation-only
 
-- No fabricated data: `null` used where sources don't specify amounts/rates
-- Conservative figures where sources conflict (e.g., interest rates use most recent published values)
-- BRIC program flagged as SUSPENDED with litigation status noted
-- Prop 1 Groundwater flagged as CLOSED
-- All FAAST-eligible state programs reference `https://faast.waterboards.ca.gov`
-- Invitation-only foundations (Water Foundation, Moore, Spring Point, RLF) noted in additionalCriteria
-
-## Deviations
-
-- Plan targeted 50+ programs across 5 categories; delivered 58 across 5 categories
-- Added consolidation incentives as separate program entry (distinct from DWSRF base program)
-- Added SAFER O&M as separate entry (distinct funding stream with unique eligibility)
-- Added WaterSMART planning grants as separate entry from efficiency grants
-
-## Issues for Future Plans
-
-- Some private foundations are invitation-only with no application URL; Phase 4 matching should note this
-- FEMA BRIC status uncertain due to litigation; may need periodic status update
-- Several Prop 1 programs nearly fully committed; data accurate as of Feb 2026 but will age
+---
+*Phase: 03-funding-data-model*
+*Completed: 2026-02-14*

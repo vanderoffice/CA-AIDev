@@ -51,7 +51,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: Extract and model — design `funding-programs.json` schema, extract program data from existing 15 markdown + 7 RAG JSON files
+- [x] 03-01: Extract and model — design `funding-programs.json` schema, extract program data from existing 15 markdown + 7 RAG JSON files
 - [ ] 03-02: Verify and complete — cross-reference every program against current CA.gov and federal sources, fill gaps, validate eligibility criteria accuracy
 
 ### Phase 4: Funding Navigator
@@ -84,6 +84,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|---------------|--------|-----------|
 | 1. Shared Infrastructure | 2/2 | Complete | 2026-02-13 |
 | 2. Permit Finder | 3/3 | Complete | 2026-02-14 |
-| 3. Funding Data Model | 0/2 | Not started | - |
+| 3. Funding Data Model | 1/2 | In progress | - |
 | 4. Funding Navigator | 0/3 | Not started | - |
 | 5. Integration & Polish | 0/2 | Not started | - |
