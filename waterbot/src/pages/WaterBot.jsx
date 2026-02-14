@@ -10,6 +10,7 @@ import ReactMarkdown from 'react-markdown'
 import { Droplets, Send, User, Loader, MessageSquare, ArrowRight, Search, DollarSign } from '../components/Icons'
 import BotHeader from '../components/BotHeader'
 import WizardStepper from '../components/WizardStepper'
+import PermitFinder from '../components/PermitFinder'
 import useBotPersistence from '../hooks/useBotPersistence'
 
 // n8n webhook endpoint for WaterBot chat
@@ -221,30 +222,13 @@ export default function WaterBot() {
     )
   }
 
-  // Permit Finder (placeholder)
+  // Permit Finder
   if (mode === 'permits') {
     return (
-      <div className="h-full flex flex-col animate-in fade-in duration-500">
-        <BotHeader
-          title="Permit Finder"
-          subtitle="California Water Boards"
-          mode={mode}
-          onBack={() => setMode('choice')}
-        />
-        <WizardStepper title="Permit Finder" subtitle="Interactive permit identification">
-          <div className="text-center py-12">
-            <div className="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-4">
-              <Search size={32} className="text-blue-500" />
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Coming in Phase 2</h3>
-            <p className="text-neutral-400 text-sm max-w-md mx-auto leading-relaxed">
-              The Permit Finder will walk you through a series of questions about your project
-              and identify exactly which water permits you need. In the meantime, you can ask
-              WaterBot directly about permits.
-            </p>
-          </div>
-        </WizardStepper>
-      </div>
+      <PermitFinder
+        onAskWaterBot={handleAskWaterBot}
+        onBack={() => setMode('choice')}
+      />
     )
   }
 
