@@ -9,8 +9,8 @@ import { useState, useRef, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Droplets, Send, User, Loader, MessageSquare, ArrowRight, Search, DollarSign } from '../components/Icons'
 import BotHeader from '../components/BotHeader'
-import WizardStepper from '../components/WizardStepper'
 import PermitFinder from '../components/PermitFinder'
+import FundingNavigator from '../components/FundingNavigator'
 import useBotPersistence from '../hooks/useBotPersistence'
 
 // n8n webhook endpoint for WaterBot chat
@@ -233,30 +233,14 @@ export default function WaterBot() {
     )
   }
 
-  // Funding Navigator (placeholder)
+  // Funding Navigator
   if (mode === 'funding') {
     return (
-      <div className="h-full flex flex-col animate-in fade-in duration-500">
-        <BotHeader
-          title="Funding Navigator"
-          subtitle="California Water Boards"
-          mode={mode}
-          onBack={() => setMode('choice')}
-        />
-        <WizardStepper title="Funding Navigator" subtitle="Find eligible funding programs">
-          <div className="text-center py-12">
-            <div className="w-16 h-16 rounded-full bg-cyan-500/20 flex items-center justify-center mx-auto mb-4">
-              <DollarSign size={32} className="text-cyan-500" />
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Coming in Phase 4</h3>
-            <p className="text-neutral-400 text-sm max-w-md mx-auto leading-relaxed">
-              The Funding Navigator will help you discover water infrastructure funding programs
-              you may qualify for, including CWSRF, DWSRF, and grant opportunities. In the
-              meantime, you can ask WaterBot about funding options.
-            </p>
-          </div>
-        </WizardStepper>
-      </div>
+      <FundingNavigator
+        onAskWaterBot={handleAskWaterBot}
+        onBack={() => setMode('choice')}
+        sessionId={sessionId}
+      />
     )
   }
 
