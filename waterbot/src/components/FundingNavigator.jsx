@@ -9,14 +9,17 @@
  * BotHeader + WizardStepper internally.
  */
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import BotHeader from './BotHeader'
 import WizardStepper from './WizardStepper'
 import ResultCard from './ResultCard'
 import AskWaterBot from './AskWaterBot'
-import { DollarSign, ArrowRight } from './Icons'
+import { DollarSign, ArrowRight, Droplets, Loader, ExternalLink } from './Icons'
 import matchFundingPrograms from '../utils/matchFundingPrograms'
 import fundingData from '../../public/funding-programs.json'
+
+// n8n webhook endpoint for RAG enrichment queries
+const RAG_WEBHOOK_URL = 'https://n8n.vanderdev.net/webhook/waterbot'
 
 const ENTITY_TYPES = [
   { value: 'public-agency', label: 'Public Agency', description: 'City, county, water district, etc.' },
@@ -107,11 +110,69 @@ const INITIAL_ANSWERS = {
   matchFunds: null
 }
 
+/** Build a human-readable RAG query from user answers */
+function buildRagQuery(answers) {
+  const entity = ENTITY_TYPES.find(e => e.value === answers.entityType)?.label || answers.entityType
+  const projects = answers.projectTypes
+    .map(pt => PROJECT_TYPES.find(p => p.value === pt)?.label || pt)
+    .join(', ')
+  const pop = POPULATION_RANGES.find(p => p.value === answers.populationServed)?.label || answers.populationServed
+  return `What funding programs are available for a ${entity} working on ${projects} serving ${pop} people?`
+}
+
 export default function FundingNavigator({ onAskWaterBot, onBack, sessionId }) {
   const [currentStep, setCurrentStep] = useState(0)
   const [answers, setAnswers] = useState(INITIAL_ANSWERS)
   const [showResults, setShowResults] = useState(false)
   const [matchedPrograms, setMatchedPrograms] = useState(null)
+
+  // RAG enrichment state
+  const [ragResponse, setRagResponse] = useState(null)
+  const [ragSources, setRagSources] = useState(null)
+  const [ragLoading, setRagLoading] = useState(false)
+  const [ragError, setRagError] = useState(false)
+
+  // Fetch RAG enrichment when results are displayed
+  useEffect(() => {
+    if (!showResults || !matchedPrograms) return
+
+    const controller = new AbortController()
+
+    setRagLoading(true)
+    setRagResponse(null)
+    setRagSources(null)
+    setRagError(false)
+
+    const ragQuery = buildRagQuery(answers)
+
+    fetch(RAG_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: ragQuery,
+        sessionId,
+        messageHistory: []
+      }),
+      signal: controller.signal
+    })
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        return res.json()
+      })
+      .then(data => {
+        setRagResponse(data.response || null)
+        setRagSources(data.sources || [])
+        setRagLoading(false)
+      })
+      .catch(err => {
+        if (err.name === 'AbortError') return
+        console.error('RAG enrichment error:', err)
+        setRagError(true)
+        setRagLoading(false)
+      })
+
+    return () => controller.abort()
+  }, [showResults, sessionId])
 
   // Navigate back: clear current step's answer, go to previous step (or exit)
   const handleBack = () => {
@@ -137,6 +198,10 @@ export default function FundingNavigator({ onAskWaterBot, onBack, sessionId }) {
     setAnswers(INITIAL_ANSWERS)
     setShowResults(false)
     setMatchedPrograms(null)
+    setRagResponse(null)
+    setRagSources(null)
+    setRagLoading(false)
+    setRagError(false)
   }
 
   // Single-select: set answer and auto-advance (last step triggers matching)
@@ -338,6 +403,68 @@ export default function FundingNavigator({ onAskWaterBot, onBack, sessionId }) {
                 </p>
                 <AskWaterBot
                   query="What water infrastructure funding programs are available in California?"
+                  onClick={onAskWaterBot}
+                />
+              </div>
+            )}
+
+            {/* RAG enrichment section */}
+            {ragLoading && (
+              <div className="flex items-center gap-3 px-4 py-3 bg-slate-800/30 border border-slate-700/50 rounded-lg">
+                <Loader size={16} className="animate-spin text-slate-400 flex-shrink-0" />
+                <span className="text-sm text-slate-400">Getting additional context from WaterBot...</span>
+              </div>
+            )}
+
+            {ragResponse && (
+              <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-5 space-y-3">
+                <div className="flex items-center gap-2">
+                  <Droplets size={16} className="text-blue-400 flex-shrink-0" />
+                  <h4 className="text-sm font-medium text-blue-400">WaterBot Insights</h4>
+                </div>
+                <div className="space-y-3">
+                  {ragResponse.split('\n\n').map((paragraph, idx) => (
+                    <p key={idx} className="text-sm text-slate-300 leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+                {ragSources && ragSources.length > 0 && ragSources[0]?.fileName !== 'N/A' && (
+                  <div className="border-t border-slate-700 pt-3">
+                    <p className="text-xs text-slate-500 mb-2">Sources</p>
+                    <div className="flex flex-wrap gap-2">
+                      {ragSources.map((source, idx) => {
+                        const url = typeof source === 'string' ? source : source.url
+                        const label = typeof source === 'string' ? source : (source.title || source.fileName || source.url)
+                        if (!url || label === 'N/A') return null
+                        return (
+                          <a
+                            key={idx}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"
+                          >
+                            {label}
+                            <ExternalLink size={10} />
+                          </a>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {ragError && (
+              <p className="text-sm text-slate-500 italic px-1">Additional context unavailable</p>
+            )}
+
+            {/* AskWaterBot standalone handoff */}
+            {total > 0 && (
+              <div className="flex justify-center">
+                <AskWaterBot
+                  query="Tell me more about water infrastructure funding options for my project"
                   onClick={onAskWaterBot}
                 />
               </div>
