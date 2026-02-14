@@ -198,7 +198,9 @@
         "agricultural",
         "watershed",
         "federal",
-        "grant"
+        "grant",
+        "environmental",
+        "stormwater"
       ]
     },
     {
@@ -383,7 +385,8 @@
         "contamination",
         "cleanup",
         "federal",
-        "groundwater"
+        "groundwater",
+        "environmental"
       ]
     },
     {
@@ -507,7 +510,8 @@
         "mitigation",
         "federal",
         "nfip",
-        "grant"
+        "grant",
+        "infrastructure"
       ]
     },
     {
@@ -575,7 +579,8 @@
         "federal",
         "resilience",
         "seismic",
-        "flood"
+        "flood",
+        "infrastructure"
       ]
     },
     {
@@ -1036,7 +1041,9 @@
         "resilience",
         "federal",
         "grant",
-        "storage"
+        "storage",
+        "infrastructure",
+        "planning"
       ]
     },
     {
@@ -1158,7 +1165,8 @@
         "small-project",
         "federal",
         "grant",
-        "automation"
+        "automation",
+        "infrastructure"
       ]
     },
     {
@@ -1222,7 +1230,8 @@
         "conservation",
         "federal",
         "grant",
-        "western-states"
+        "western-states",
+        "infrastructure"
       ]
     },
     {
@@ -1346,7 +1355,8 @@
         "conservation",
         "ocean",
         "central-coast",
-        "bay-area"
+        "bay-area",
+        "environmental"
       ]
     },
     {
@@ -1397,7 +1407,7 @@
         "conditions": null
       },
       "applicationUrl": null,
-      "programUrl": null,
+      "programUrl": "https://www.epa.gov/waterfinancecenter",
       "ragQuery": "How do Environmental Impact Bonds work for water infrastructure and green infrastructure projects?",
       "relatedPrograms": [
         "green-bonds"
@@ -1406,7 +1416,8 @@
         "innovative-finance",
         "green-infrastructure",
         "performance-based",
-        "private-capital"
+        "private-capital",
+        "infrastructure"
       ]
     },
     {
@@ -1467,7 +1478,8 @@
         "philanthropy",
         "conservation",
         "ocean",
-        "invitation-only"
+        "invitation-only",
+        "environmental"
       ]
     },
     {
@@ -1520,7 +1532,7 @@
         "conditions": null
       },
       "applicationUrl": null,
-      "programUrl": null,
+      "programUrl": "https://www.climatebonds.net/standard/water",
       "ragQuery": "How can water agencies use green bonds to finance water infrastructure and environmental projects?",
       "relatedPrograms": [
         "eib",
@@ -1594,7 +1606,9 @@
         "restoration",
         "urban-waters",
         "education",
-        "community"
+        "community",
+        "environmental",
+        "stormwater"
       ]
     },
     {
@@ -1657,7 +1671,8 @@
         "urban",
         "one-water",
         "green-infrastructure",
-        "equity"
+        "equity",
+        "stormwater"
       ]
     },
     {
@@ -1718,7 +1733,8 @@
         "philanthropy",
         "policy",
         "climate",
-        "invitation-only"
+        "invitation-only",
+        "environmental"
       ]
     },
     {
@@ -1778,7 +1794,8 @@
         "leadership",
         "workforce",
         "equity",
-        "invitation-only"
+        "invitation-only",
+        "planning"
       ]
     },
     {
@@ -1839,7 +1856,8 @@
         "philanthropy",
         "water-policy",
         "equity",
-        "invitation-only"
+        "invitation-only",
+        "planning"
       ]
     },
     {
@@ -1900,7 +1918,8 @@
         "philanthropy",
         "conservation",
         "climate",
-        "western-states"
+        "western-states",
+        "environmental"
       ]
     },
     {
@@ -2164,7 +2183,8 @@
         "contamination",
         "grant",
         "proposition-1",
-        "closed"
+        "closed",
+        "drinking-water"
       ]
     },
     {
@@ -2359,7 +2379,9 @@
         "proposition-4",
         "grant",
         "drought",
-        "resilience"
+        "resilience",
+        "drinking-water",
+        "infrastructure"
       ]
     },
     {
@@ -2813,7 +2835,8 @@
         "water-storage",
         "proposition-1",
         "large-project",
-        "reservoir"
+        "reservoir",
+        "infrastructure"
       ]
     },
     {
@@ -3350,7 +3373,8 @@
         "training",
         "operator-certification",
         "leak-detection",
-        "rate-setting"
+        "rate-setting",
+        "operations"
       ]
     },
     {
@@ -3413,7 +3437,8 @@
         "environmental-justice",
         "advocacy",
         "community-organizing",
-        "free"
+        "free",
+        "dac"
       ]
     },
     {
