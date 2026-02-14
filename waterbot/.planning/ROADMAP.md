@@ -16,7 +16,7 @@ None
 
 - [x] **Phase 1: Shared Infrastructure** - Wizard stepper, result cards, "Ask WaterBot" handoff, landing page activation
 - [x] **Phase 2: Permit Finder** - Decision tree rendering, traversal with nav history, result screens, RAG bridge enrichment
-- [ ] **Phase 3: Funding Data Model** - Extract structured `funding-programs.json` from existing knowledge, verify against live sources
+- [x] **Phase 3: Funding Data Model** - Extract structured `funding-programs.json` from existing knowledge, verify against live sources
 - [ ] **Phase 4: Funding Navigator** - Intake questionnaire, deterministic matching algorithm, ranked results, RAG enrichment
 - [ ] **Phase 5: Integration & Polish** - Cross-tool linking, responsive/mobile QA, theme consistency, final testing
 
@@ -52,7 +52,7 @@ Plans:
 
 Plans:
 - [x] 03-01: Extract and model — design `funding-programs.json` schema, extract program data from existing 15 markdown + 7 RAG JSON files
-- [ ] 03-02: Verify and complete — cross-reference every program against current CA.gov and federal sources, fill gaps, validate eligibility criteria accuracy
+- [x] 03-02: Verify and complete — cross-reference every program against current CA.gov and federal sources, fill gaps, validate eligibility criteria accuracy
 
 ### Phase 4: Funding Navigator
 **Goal**: Fully functional Funding Navigator with intake questionnaire, deterministic matching algorithm, ranked results with eligibility status, and RAG enrichment
@@ -84,6 +84,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|---------------|--------|-----------|
 | 1. Shared Infrastructure | 2/2 | Complete | 2026-02-13 |
 | 2. Permit Finder | 3/3 | Complete | 2026-02-14 |
-| 3. Funding Data Model | 1/2 | In progress | - |
+| 3. Funding Data Model | 2/2 | Complete | 2026-02-14 |
 | 4. Funding Navigator | 0/3 | Not started | - |
 | 5. Integration & Polish | 0/2 | Not started | - |
