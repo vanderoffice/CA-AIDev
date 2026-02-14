@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-13)
 
 **Core value:** Turn WaterBot from a chat-only tool into a three-mode assistant — chat, Permit Finder, and Funding Navigator — with cross-linking between all modes
-**Current focus:** Phase 4 — Funding Navigator
+**Current focus:** Phase 5 — Integration & Polish
 
 ## Current Position
 
 Phase: 4 of 5 (Funding Navigator)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-02-14 — Completed 04-02-PLAN.md
+Plan: 3 of 3 in current phase
+Status: Phase complete
+Last activity: 2026-02-14 — Completed 04-03-PLAN.md
 
-Progress: █████████░ 75%
+Progress: ████████░░ 83%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
+- Total plans completed: 10
 - Average duration: 6 min
-- Total execution time: 52 min
+- Total execution time: 56 min
 
 **By Phase:**
 
@@ -30,10 +30,10 @@ Progress: █████████░ 75%
 | 1 - Shared Infrastructure | 2/2 | 18 min | 9 min |
 | 2 - Permit Finder | 3/3 | 9 min | 3 min |
 | 3 - Funding Data Model | 2/2 | 17 min | 8 min |
-| 4 - Funding Navigator | 2/3 | 8 min | 4 min |
+| 4 - Funding Navigator | 3/3 | 12 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 3m, 12m, 5m, 5m, 3m
+- Last 5 plans: 12m, 5m, 5m, 3m, 4m
 - Trend: Stable at ~5 min average
 
 ## Accumulated Context
@@ -67,6 +67,9 @@ Recent decisions affecting current work:
 | 04-02 | Population midpoint values (250–75000) for range comparisons | Practical values for comparing user ranges against program caps |
 | 04-02 | Funding type sort priority: grants > TA > mixed > loan-and-grant > loans | Users prefer free money; sort reflects that |
 | 04-02 | DAC "unsure" → likely-eligible, match "no" → may-qualify | Soft downgrades rather than hard filters for uncertain criteria |
+| 04-03 | Added fundingType to ResultCard DETAIL_LABELS map | Needed for funding type display in program cards |
+| 04-03 | RAG query built from human-readable answer labels | Better webhook context than raw option IDs |
+| 04-03 | Reused PermitFinder RAG pattern inline, no abstraction | Two consumers doesn't justify a shared utility yet |
 
 ### Deferred Issues
 
@@ -79,5 +82,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-14
-Stopped at: Completed 04-02-PLAN.md (2/3 in Phase 4)
+Stopped at: Completed 04-03-PLAN.md — Phase 4 complete
 Resume file: None
