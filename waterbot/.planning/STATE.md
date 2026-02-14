@@ -5,33 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-02-13)
 
 **Core value:** Turn WaterBot from a chat-only tool into a three-mode assistant — chat, Permit Finder, and Funding Navigator — with cross-linking between all modes
-**Current focus:** Phase 2 — Permit Finder
+**Current focus:** Phase 3 — Funding Data Model
 
 ## Current Position
 
 Phase: 2 of 5 (Permit Finder)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-02-13 — Completed 02-02-PLAN.md
+Plan: 3 of 3 in current phase
+Status: Phase complete
+Last activity: 2026-02-14 — Completed 02-03-PLAN.md
 
-Progress: ████░░░░░░ 33%
+Progress: █████░░░░░ 42%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
-- Average duration: 6 min
-- Total execution time: 24 min
+- Total plans completed: 5
+- Average duration: 5 min
+- Total execution time: 27 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1 - Shared Infrastructure | 2/2 | 18 min | 9 min |
-| 2 - Permit Finder | 2/3 | 6 min | 3 min |
+| 2 - Permit Finder | 3/3 | 9 min | 3 min |
 
 **Recent Trend:**
-- Last 5 plans: 3m, 15m, 2m, 4m
+- Last 5 plans: 3m, 15m, 2m, 4m, 3m
 - Trend: Variable (depends on task complexity)
 
 ## Accumulated Context
@@ -53,6 +53,8 @@ Recent decisions affecting current work:
 | 02-01 | History as flat array of node ID strings | Simple push/pop, no serialization overhead |
 | 02-02 | Node-level requirements/nextSteps shared across ResultCards | Data model is node-level, not per-permit |
 | 02-02 | Empty permits get dedicated no-permit card, not ResultCard | Different UX needed for "no permit required" vs permit display |
+| 02-03 | RAG enrichment is non-blocking — ResultCards render first | Async pattern keeps UI responsive, enrichment loads below |
+| 02-03 | Simple paragraph splitting instead of markdown parser | Avoids dependency for text that's already readable |
 
 ### Deferred Issues
 
@@ -64,6 +66,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-13
-Stopped at: Completed 02-02-PLAN.md — Phase 2 in progress (2/3)
+Last session: 2026-02-14
+Stopped at: Completed 02-03-PLAN.md — Phase 2 complete (3/3)
 Resume file: None
