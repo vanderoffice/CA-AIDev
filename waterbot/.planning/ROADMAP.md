@@ -40,7 +40,7 @@ Plans:
 
 Plans:
 - [x] 02-01: PermitFinder component — tree traversal engine, question rendering, navigation history
-- [ ] 02-02: Permit result screens — permit details display (name, code, agency, fees, timeline, links), requirements and next-steps checklists
+- [x] 02-02: Permit result screens — permit details display (name, code, agency, fees, timeline, links), requirements and next-steps checklists
 - [ ] 02-03: RAG bridge — fire `ragQuery` from result nodes against n8n webhook, display enriched context alongside static results
 
 ### Phase 3: Funding Data Model
@@ -83,7 +83,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
 | 1. Shared Infrastructure | 2/2 | Complete | 2026-02-13 |
-| 2. Permit Finder | 1/3 | In progress | - |
+| 2. Permit Finder | 2/3 | In progress | - |
 | 3. Funding Data Model | 0/2 | Not started | - |
 | 4. Funding Navigator | 0/3 | Not started | - |
 | 5. Integration & Polish | 0/2 | Not started | - |
