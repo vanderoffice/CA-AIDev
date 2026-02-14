@@ -9,29 +9,30 @@ See: .planning/PROJECT.md (updated 2026-02-13)
 
 ## Current Position
 
-Phase: 1 of 5 (Shared Infrastructure) — COMPLETE
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-02-13 — Completed 01-02-PLAN.md
+Phase: 2 of 5 (Permit Finder)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-02-13 — Completed 02-01-PLAN.md
 
-Progress: ██░░░░░░░░ 17%
+Progress: ███░░░░░░░ 25%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 9 min
-- Total execution time: 18 min
+- Total plans completed: 3
+- Average duration: 7 min
+- Total execution time: 20 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1 - Shared Infrastructure | 2/2 | 18 min | 9 min |
+| 2 - Permit Finder | 1/3 | 2 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 3m, 15m
-- Trend: Increasing (more complex tasks)
+- Last 5 plans: 3m, 15m, 2m
+- Trend: Variable (depends on task complexity)
 
 ## Accumulated Context
 
@@ -48,6 +49,8 @@ Recent decisions affecting current work:
 | 01-02 | ResultCard uses local useState for expandable toggles | Keeps parent API simple, component self-contained |
 | 01-02 | handleAskWaterBot uses setTimeout(100ms) delay | Lets mode switch render before sending message |
 | 01-02 | Mode routing stays as React state (no react-router) | Consistent with existing chat pattern |
+| 02-01 | PermitFinder owns BotHeader and WizardStepper internally | Encapsulates navigation logic — parent just passes callbacks |
+| 02-01 | History as flat array of node ID strings | Simple push/pop, no serialization overhead |
 
 ### Deferred Issues
 
@@ -60,5 +63,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-13
-Stopped at: Completed 01-02-PLAN.md — Phase 1 complete
+Stopped at: Completed 02-01-PLAN.md — Phase 2 in progress (1/3)
 Resume file: None
