@@ -72,7 +72,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: Cross-tool linking — permit results → related funding programs, funding results → related permits, consistent navigation between all three modes
+- [x] 05-01: Cross-tool linking — permit results → related funding programs, funding results → related permits, consistent navigation between all three modes
 - [ ] 05-02: Responsive QA and theme polish — mobile layout testing, dark theme consistency, accessibility basics, end-to-end flow testing
 
 ## Progress
@@ -86,4 +86,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Permit Finder | 3/3 | Complete | 2026-02-14 |
 | 3. Funding Data Model | 2/2 | Complete | 2026-02-14 |
 | 4. Funding Navigator | 3/3 | Complete | 2026-02-14 |
-| 5. Integration & Polish | 0/2 | Not started | - |
+| 5. Integration & Polish | 1/2 | In progress | - |
