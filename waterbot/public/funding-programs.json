@@ -1,0 +1,232 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-14",
+  "metadata": {
+    "title": "California Water Infrastructure Funding Programs",
+    "description": "Machine-readable catalog of federal, state, and private funding programs for water infrastructure projects",
+    "disclaimer": "Eligibility information is for guidance only. Always verify current requirements directly with the administering agency before applying.",
+    "totalPrograms": 5
+  },
+  "programs": [
+    {
+      "id": "dwsrf",
+      "name": "Drinking Water State Revolving Fund",
+      "abbreviation": "DWSRF",
+      "category": "state-srf",
+      "subcategory": "loan-with-forgiveness",
+      "administeredBy": "State Water Resources Control Board",
+      "description": "Provides affordable financing for drinking water infrastructure projects throughout California, including treatment, distribution, storage, consolidation, and source development.",
+      "fundingType": "loan-and-grant",
+      "fundingRange": {
+        "min": null,
+        "max": null,
+        "unit": "USD",
+        "notes": "FY 2025-26 loan capacity $300M base program; ~$1B in grant/principal forgiveness available"
+      },
+      "interestRate": {
+        "min": 0,
+        "max": 1.9,
+        "notes": "50% of state GO Bond rate; 0% for small SDAC systems"
+      },
+      "repaymentTermYears": 30,
+      "eligibility": {
+        "entityTypes": ["public-agency", "nonprofit", "tribe", "mutual-water-company", "private-utility"],
+        "systemSizeMax": null,
+        "populationMax": null,
+        "dacRequired": false,
+        "sdacRequired": false,
+        "projectTypes": ["treatment", "distribution", "storage", "consolidation", "planning"],
+        "complianceIssueRequired": false,
+        "environmentalReviewRequired": true,
+        "matchRequired": false,
+        "matchPercentage": null,
+        "additionalCriteria": ["Technical, Managerial, Financial (TMF) assessment required", "Authorized Representative Resolution from governing body"]
+      },
+      "principalForgiveness": {
+        "available": true,
+        "conditions": "Available for small DAC/SDAC communities (population ≤10,000, MHI <80% statewide); up to 100% of eligible project cost"
+      },
+      "applicationUrl": "https://faast.waterboards.ca.gov",
+      "programUrl": "https://www.waterboards.ca.gov/drinking_water/services/funding/SRF.html",
+      "ragQuery": "What are the DWSRF eligibility requirements, interest rates, and principal forgiveness options for drinking water projects?",
+      "relatedPrograms": ["cwsrf", "safer", "scdw"],
+      "tags": ["drinking-water", "loan", "principal-forgiveness", "dac", "small-community", "infrastructure"]
+    },
+    {
+      "id": "cwsrf",
+      "name": "Clean Water State Revolving Fund",
+      "abbreviation": "CWSRF",
+      "category": "state-srf",
+      "subcategory": "loan-with-forgiveness",
+      "administeredBy": "State Water Resources Control Board",
+      "description": "Federal-state partnership providing low-interest financing for water quality projects including wastewater treatment, stormwater management, water recycling, and nonpoint source pollution control.",
+      "fundingType": "loan-and-grant",
+      "fundingRange": {
+        "min": null,
+        "max": null,
+        "unit": "USD",
+        "notes": "No maximum per project; FY 2025-26 total fundable list ~$2.8B; ~$514M in principal forgiveness"
+      },
+      "interestRate": {
+        "min": 2.2,
+        "max": 2.2,
+        "notes": "50% of most recent GO Bond rate (Nov 2025); historical range 0.80%-3.00%"
+      },
+      "repaymentTermYears": 30,
+      "eligibility": {
+        "entityTypes": ["public-agency", "nonprofit", "tribe"],
+        "systemSizeMax": null,
+        "populationMax": null,
+        "dacRequired": false,
+        "sdacRequired": false,
+        "projectTypes": ["treatment", "recycling", "stormwater", "planning"],
+        "complianceIssueRequired": false,
+        "environmentalReviewRequired": true,
+        "matchRequired": false,
+        "matchPercentage": null,
+        "additionalCriteria": ["Priority scoring system (max 20 points; FY 2025-26 cutoff: 13 points)", "Applications accepted continuously"]
+      },
+      "principalForgiveness": {
+        "available": true,
+        "conditions": "BIL General Supplemental: 49% as principal forgiveness; Emerging Contaminants: 100% principal forgiveness"
+      },
+      "applicationUrl": "https://faast.waterboards.ca.gov",
+      "programUrl": "https://www.waterboards.ca.gov/water_issues/programs/grants_loans/srf/",
+      "ragQuery": "What are the CWSRF program details for wastewater, stormwater, and water recycling project financing?",
+      "relatedPrograms": ["dwsrf", "wrfp", "prop1-stormwater"],
+      "tags": ["wastewater", "stormwater", "water-recycling", "loan", "principal-forgiveness", "infrastructure"]
+    },
+    {
+      "id": "safer",
+      "name": "Safe and Affordable Funding for Equity and Resilience",
+      "abbreviation": "SAFER",
+      "category": "state-srf",
+      "subcategory": "grant",
+      "administeredBy": "State Water Resources Control Board",
+      "description": "Comprehensive program ensuring all Californians have access to safe and affordable drinking water through emergency response, technical assistance, consolidation support, and long-term infrastructure development.",
+      "fundingType": "grant",
+      "fundingRange": {
+        "min": null,
+        "max": 130000000,
+        "unit": "USD",
+        "notes": "$130M annually through 2045; additional $180M from Proposition 4"
+      },
+      "interestRate": {
+        "min": null,
+        "max": null,
+        "notes": "Grant program — no repayment required for most DAC/SDAC projects"
+      },
+      "repaymentTermYears": null,
+      "eligibility": {
+        "entityTypes": ["public-agency", "nonprofit", "tribe", "mutual-water-company", "private-utility"],
+        "systemSizeMax": null,
+        "populationMax": null,
+        "dacRequired": "preferred",
+        "sdacRequired": false,
+        "projectTypes": ["treatment", "distribution", "consolidation", "emergency", "planning", "operations"],
+        "complianceIssueRequired": false,
+        "environmentalReviewRequired": true,
+        "matchRequired": false,
+        "matchPercentage": null,
+        "additionalCriteria": ["Priority given to systems on Failing or At-Risk list", "Continuous year-round applications"]
+      },
+      "principalForgiveness": {
+        "available": false,
+        "conditions": null
+      },
+      "applicationUrl": "https://faast.waterboards.ca.gov",
+      "programUrl": "https://www.waterboards.ca.gov/safer/",
+      "ragQuery": "What does the SAFER program cover and who is eligible for safe drinking water grants and emergency funding?",
+      "relatedPrograms": ["dwsrf", "scdw", "udwn"],
+      "tags": ["drinking-water", "grant", "dac", "emergency", "consolidation", "small-community", "equity"]
+    },
+    {
+      "id": "wifia",
+      "name": "Water Infrastructure Finance and Innovation Act",
+      "abbreviation": "WIFIA",
+      "category": "federal",
+      "subcategory": "loan",
+      "administeredBy": "U.S. Environmental Protection Agency",
+      "description": "Federal credit assistance for large water infrastructure projects too large or complex for traditional state revolving fund programs, providing long-term, low-cost supplemental financing.",
+      "fundingType": "loan",
+      "fundingRange": {
+        "min": 5000000,
+        "max": null,
+        "unit": "USD",
+        "notes": "$20M minimum for large communities; $5M minimum for small communities (≤25,000); max 49% of eligible project costs"
+      },
+      "interestRate": {
+        "min": null,
+        "max": null,
+        "notes": "Equal to or exceeding U.S. Treasury rate for similar maturity; locked at closing"
+      },
+      "repaymentTermYears": 35,
+      "eligibility": {
+        "entityTypes": ["public-agency", "tribe"],
+        "systemSizeMax": null,
+        "populationMax": null,
+        "dacRequired": false,
+        "sdacRequired": false,
+        "projectTypes": ["treatment", "distribution", "storage", "recycling", "stormwater"],
+        "complianceIssueRequired": false,
+        "environmentalReviewRequired": true,
+        "matchRequired": false,
+        "matchPercentage": null,
+        "additionalCriteria": ["Total federal assistance cannot exceed 80%", "15% of funds set aside for small community projects", "Letter of Interest required"]
+      },
+      "principalForgiveness": {
+        "available": false,
+        "conditions": null
+      },
+      "applicationUrl": "https://www.epa.gov/wifia",
+      "programUrl": "https://www.epa.gov/wifia",
+      "ragQuery": "What are the WIFIA loan program requirements for large water infrastructure projects?",
+      "relatedPrograms": ["dwsrf", "cwsrf"],
+      "tags": ["large-project", "federal", "loan", "drinking-water", "wastewater", "desalination"]
+    },
+    {
+      "id": "usda-wwd",
+      "name": "USDA Water and Waste Disposal Loan and Grant Program",
+      "abbreviation": null,
+      "category": "federal",
+      "subcategory": "loan-and-grant",
+      "administeredBy": "USDA Rural Development",
+      "description": "Primary federal financing mechanism for rural water and sanitation projects, providing long-term low-interest loans combined with grants to communities that cannot obtain adequate credit through conventional channels.",
+      "fundingType": "loan-and-grant",
+      "fundingRange": {
+        "min": null,
+        "max": null,
+        "unit": "USD",
+        "notes": "No stated cap — based on need and fund availability"
+      },
+      "interestRate": {
+        "min": 2.875,
+        "max": 4.75,
+        "notes": "Poverty-level: 2.875%; Intermediate: 3.750%; Market rate: 4.750% (Q1 2026)"
+      },
+      "repaymentTermYears": 40,
+      "eligibility": {
+        "entityTypes": ["public-agency", "nonprofit", "tribe"],
+        "systemSizeMax": null,
+        "populationMax": 10000,
+        "dacRequired": false,
+        "sdacRequired": false,
+        "projectTypes": ["treatment", "distribution", "storage", "stormwater"],
+        "complianceIssueRequired": false,
+        "environmentalReviewRequired": true,
+        "matchRequired": false,
+        "matchPercentage": null,
+        "additionalCriteria": ["Rural areas and towns with 10,000 or fewer residents", "Must demonstrate inability to obtain credit elsewhere"]
+      },
+      "principalForgiveness": {
+        "available": false,
+        "conditions": null
+      },
+      "applicationUrl": "https://www.rd.usda.gov/programs-services/rd-apply",
+      "programUrl": "https://www.rd.usda.gov/programs-services/water-environmental-programs",
+      "ragQuery": "What USDA rural water programs are available for small communities and what are the eligibility requirements?",
+      "relatedPrograms": ["usda-ecwag", "usda-search", "usda-circuit-rider"],
+      "tags": ["rural", "small-community", "federal", "loan", "grant", "drinking-water", "wastewater"]
+    }
+  ]
+}
