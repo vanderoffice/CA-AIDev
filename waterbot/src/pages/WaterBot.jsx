@@ -7,8 +7,9 @@
 
 import { useState, useRef, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { Droplets, Send, User, Loader, MessageSquare, ArrowRight } from '../components/Icons'
+import { Droplets, Send, User, Loader, MessageSquare, ArrowRight, Search, DollarSign } from '../components/Icons'
 import BotHeader from '../components/BotHeader'
+import WizardStepper from '../components/WizardStepper'
 import useBotPersistence from '../hooks/useBotPersistence'
 
 // n8n webhook endpoint for WaterBot chat
@@ -25,19 +26,17 @@ const MODES = [
   },
   {
     id: 'permits',
-    icon: Droplets,
+    icon: Search,
     title: 'Permit Finder',
-    description: 'Find out if you need a permit for your project.',
-    color: 'blue',
-    disabled: true
+    description: 'Find which permits your project needs',
+    color: 'blue'
   },
   {
     id: 'funding',
-    icon: Droplets,
+    icon: DollarSign,
     title: 'Funding Navigator',
-    description: 'Check eligibility for water infrastructure funding.',
-    color: 'cyan',
-    disabled: true
+    description: 'Discover funding programs you may qualify for',
+    color: 'cyan'
   }
 ]
 
@@ -135,6 +134,12 @@ export default function WaterBot() {
     sendMessage(question)
   }
 
+  // Ask WaterBot handoff — switches to chat mode and pre-fills the query
+  const handleAskWaterBot = (query) => {
+    setMode('chat')
+    setTimeout(() => sendMessage(query), 100)
+  }
+
   // Choice Screen
   if (mode === 'choice') {
     return (
@@ -212,6 +217,60 @@ export default function WaterBot() {
             </a>
           </p>
         </div>
+      </div>
+    )
+  }
+
+  // Permit Finder (placeholder)
+  if (mode === 'permits') {
+    return (
+      <div className="h-full flex flex-col animate-in fade-in duration-500">
+        <BotHeader
+          title="Permit Finder"
+          subtitle="California Water Boards"
+          mode={mode}
+          onBack={() => setMode('choice')}
+        />
+        <WizardStepper title="Permit Finder" subtitle="Interactive permit identification">
+          <div className="text-center py-12">
+            <div className="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-4">
+              <Search size={32} className="text-blue-500" />
+            </div>
+            <h3 className="text-lg font-semibold text-white mb-2">Coming in Phase 2</h3>
+            <p className="text-neutral-400 text-sm max-w-md mx-auto leading-relaxed">
+              The Permit Finder will walk you through a series of questions about your project
+              and identify exactly which water permits you need. In the meantime, you can ask
+              WaterBot directly about permits.
+            </p>
+          </div>
+        </WizardStepper>
+      </div>
+    )
+  }
+
+  // Funding Navigator (placeholder)
+  if (mode === 'funding') {
+    return (
+      <div className="h-full flex flex-col animate-in fade-in duration-500">
+        <BotHeader
+          title="Funding Navigator"
+          subtitle="California Water Boards"
+          mode={mode}
+          onBack={() => setMode('choice')}
+        />
+        <WizardStepper title="Funding Navigator" subtitle="Find eligible funding programs">
+          <div className="text-center py-12">
+            <div className="w-16 h-16 rounded-full bg-cyan-500/20 flex items-center justify-center mx-auto mb-4">
+              <DollarSign size={32} className="text-cyan-500" />
+            </div>
+            <h3 className="text-lg font-semibold text-white mb-2">Coming in Phase 4</h3>
+            <p className="text-neutral-400 text-sm max-w-md mx-auto leading-relaxed">
+              The Funding Navigator will help you discover water infrastructure funding programs
+              you may qualify for, including CWSRF, DWSRF, and grant opportunities. In the
+              meantime, you can ask WaterBot about funding options.
+            </p>
+          </div>
+        </WizardStepper>
       </div>
     )
   }
