@@ -29,7 +29,7 @@ None
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: Wizard stepper shell component (back/forward nav, progress indicator, step management)
+- [x] 01-01: Wizard stepper shell component (back/forward nav, progress indicator, step management)
 - [ ] 01-02: Result card component, "Ask WaterBot" handoff, landing page mode button activation
 
 ### Phase 2: Permit Finder
@@ -82,7 +82,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
-| 1. Shared Infrastructure | 0/2 | Not started | - |
+| 1. Shared Infrastructure | 1/2 | In progress | - |
 | 2. Permit Finder | 0/3 | Not started | - |
 | 3. Funding Data Model | 0/2 | Not started | - |
 | 4. Funding Navigator | 0/3 | Not started | - |
