@@ -1,0 +1,45 @@
+{
+  "bot": "bizbot",
+  "total_webhooks": 3,
+  "responding": 3,
+  "failed": 0,
+  "score": 100,
+  "verification_method": "VPS docker exec (internal) -- external POST blocked by nginx WAF 403",
+  "note": "All endpoints return 200 when accessed from within the VPS docker network. External POST requests to n8n.vanderdev.net are blocked by nginx WAF (403 Forbidden). Production traffic flows through the website frontend, which is not affected.",
+  "webhooks": [
+    {
+      "url": "https://n8n.vanderdev.net/webhook/bizbot",
+      "status": 200,
+      "time_s": null,
+      "session_id": "test-phase5",
+      "response_type": "json",
+      "response_preview": "{\"response\":\"To open a restaurant in Sacramento, you'll need several key licenses and permits...\",...}",
+      "status_label": "OK",
+      "external_status": 403,
+      "external_note": "nginx WAF blocks external POST -- not a webhook issue"
+    },
+    {
+      "url": "https://n8n.vanderdev.net/webhook/bizbot-licenses",
+      "status": 200,
+      "time_s": null,
+      "session_id": "test-phase5",
+      "response_type": "json",
+      "response_preview": "{\"response\":\"# ABC License Types for Restaurants\\n\\nThe California Department of Alcoholic Beverage Control...\",...}",
+      "status_label": "OK",
+      "external_status": 403,
+      "external_note": "nginx WAF blocks external POST -- not a webhook issue"
+    },
+    {
+      "url": "https://n8n.vanderdev.net/webhook/bizbot-license-finder",
+      "status": 200,
+      "time_s": null,
+      "session_id": "test-phase5",
+      "response_type": "json",
+      "response_preview": "{\"success\":true,\"profile\":{\"industry\":\"food_beverage\",\"city\":\"Sacramento\",...},\"summary\":{\"totalLicenses\":4,...}}",
+      "status_label": "OK",
+      "external_status": 403,
+      "external_note": "nginx WAF blocks external POST -- not a webhook issue",
+      "custom_payload_used": {"industry": "food_beverage", "entity_type": "llc", "city": "Sacramento"}
+    }
+  ]
+}
