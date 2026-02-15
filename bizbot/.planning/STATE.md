@@ -106,5 +106,10 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | Eval Archive | `~/.claude/data/eval-history/bizbot-eval-20260214-160704.json` |
 | Refresh History | `~/.claude/data/bot-refresh-history.json` |
 
+### Session Continuity
+Last session: 2026-02-14 — Completed 00-01-PLAN.md (Audit & Baseline)
+Resume file: None
+
 ### Next Up
 Phase 1: Knowledge Refresh — Fix broken/dead URLs, update redirects, re-ingest.
+Run `/gsd:plan-phase 01-knowledge-refresh` to plan Phase 1.
