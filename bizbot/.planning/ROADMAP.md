@@ -129,7 +129,7 @@ Phases execute in numeric order. Phase 2 is skipped.
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
 | 0: Audit & Baseline | 1/1 | Complete | 2026-02-14 |
-| 1: Knowledge Refresh | 0/2 | Not started | |
+| 1: Knowledge Refresh | 1/2 | In progress | |
 | 2: Shared Infra | N/A | SKIPPED | N/A |
 | 3: Tool Rebuilds | 0/2-3 | Not started | |
 | 4: UI/UX Polish | 0/1-2 | Not started | |

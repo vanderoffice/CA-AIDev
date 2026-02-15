@@ -1,9 +1,13 @@
 # BizBot Overhaul — State
 
 ## Current Position
-**Phase:** 0 (Audit & Baseline) -- COMPLETE
-**Last Plan Executed:** `00-01-PLAN.md` — Audit & Baseline
-**Next Phase:** Phase 1 — Knowledge Refresh
+
+Phase: 1 of 6 (Knowledge Refresh)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-02-15 — Completed 01-01-PLAN.md
+
+Progress: ██░░░░░░░░ 20%
 
 ## Baseline Metrics
 
@@ -81,6 +85,8 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | Skip Phase 2 (Shared Infra) | WaterBot already built all shared components; BizBot just imports them | Phase 2 |
 | Include Phase 1 despite fresh content | URL health at 60% -- 34 broken + 44 redirects need remediation | Phase 1 |
 | Both WEAK eval scores are acceptable | injection_03 and offtopic_03 are intentionally off-domain; handled by LLM, not RAG | Phase 0 |
+| FTB /index.html URLs left as-is | FTB serves these directly (200); removing index.html returns 503 | Phase 1 |
+| http:// academic papers not updated | External references, not CA gov URLs, most lack HTTPS | Phase 1 |
 
 ## Deferred Issues
 
@@ -107,9 +113,9 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | Refresh History | `~/.claude/data/bot-refresh-history.json` |
 
 ### Session Continuity
-Last session: 2026-02-14 — Completed 00-01-PLAN.md (Audit & Baseline)
+Last session: 2026-02-15 — Completed 01-01-PLAN.md (URL Remediation)
+Stopped at: Completed 01-01-PLAN.md
 Resume file: None
 
 ### Next Up
-Phase 1: Knowledge Refresh — Fix broken/dead URLs, update redirects, re-ingest.
-Run `/gsd:plan-phase 01-knowledge-refresh` to plan Phase 1.
+Plan 01-02: Re-ingest corrected content and verify URL health improvement.
