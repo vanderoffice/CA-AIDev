@@ -2,12 +2,12 @@
 
 ## Current Position
 
-Phase: 1 of 6 (Knowledge Refresh)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-02-15 — Completed 01-01-PLAN.md
+Phase: 1 of 6 (Knowledge Refresh) — COMPLETE
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-02-15 — Completed 01-02-PLAN.md
 
-Progress: ██░░░░░░░░ 20%
+Progress: ███░░░░░░░ 30%
 
 ## Baseline Metrics
 
@@ -87,6 +87,8 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | Both WEAK eval scores are acceptable | injection_03 and offtopic_03 are intentionally off-domain; handled by LLM, not RAG | Phase 0 |
 | FTB /index.html URLs left as-is | FTB serves these directly (200); removing index.html returns 503 | Phase 1 |
 | http:// academic papers not updated | External references, not CA gov URLs, most lack HTTPS | Phase 1 |
+| Deduplicated 2 identical preamble chunks | 3 BizInterviews files shared same Perplexity header; kept 1 copy | Phase 1 |
+| Bot-blocking 403s documented, not fixed | ftb (29) + sos (3) = 32 URLs with WAF blocking; valid in browser | Phase 1 |
 
 ## Deferred Issues
 
@@ -113,9 +115,19 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | Refresh History | `~/.claude/data/bot-refresh-history.json` |
 
 ### Session Continuity
-Last session: 2026-02-15 — Completed 01-01-PLAN.md (URL Remediation)
-Stopped at: Completed 01-01-PLAN.md
+Last session: 2026-02-15 — Completed 01-02-PLAN.md (Re-ingest & Verify)
+Stopped at: Phase 1 complete
 Resume file: None
 
+### Post-Refresh Metrics
+| Metric | Baseline | Post-Refresh | Delta |
+|--------|----------|-------------|-------|
+| Chunks | 392 | 387 | -5 |
+| Coverage | 94.3% | 100.0% | +5.7% |
+| STRONG | 29 | 29 | -- |
+| ACCEPTABLE | 4 | 6 | +2 |
+| WEAK | 2 | 0 | -2 |
+| Dead URLs | 6 | 0 | -6 |
+
 ### Next Up
-Plan 01-02: Re-ingest corrected content and verify URL health improvement.
+Phase 3: Tool Rebuilds — rebuild LicenseFinder with deterministic matching and wizard UX.
