@@ -62,7 +62,7 @@ PHASE 4: Alcohol (If Applicable - Weeks 1-52)
 **Agency:** Internal Revenue Service (IRS)
 **Cost:** Free
 **Timeline:** Immediate (online)
-**URL:** https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online
+**URL:** https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number
 
 **When Required:**
 - Hiring employees

@@ -41,7 +41,7 @@ Complete licensing and permitting pathway for manufacturing businesses in Califo
 ### Federal EIN
 
 **Agency:** IRS
-**URL:** https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online
+**URL:** https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number
 
 - Required regardless of employees
 - Apply online - immediate issuance
@@ -584,7 +584,7 @@ Month 4-6+: Final Approvals
 | Agency | URL |
 |--------|-----|
 | CDPH Food & Drug | https://www.cdph.ca.gov/Programs/CEH/DFDCS |
-| FDA Registration | https://www.fda.gov/food/registration-food-facilities |
+| FDA Registration | https://www.fda.gov/food/registration-food-facilities-and-other-submissions/online-registration-food-facilities |
 
 ---
 

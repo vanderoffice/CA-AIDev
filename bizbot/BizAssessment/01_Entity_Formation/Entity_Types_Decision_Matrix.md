@@ -301,7 +301,7 @@ All registered entities must have a California registered agent (individual or c
 | SOS Forms | https://www.sos.ca.gov/business-programs/business-entities/forms | Paper forms |
 | SOS Business Search | https://bizfileonline.sos.ca.gov/search/business | Look up existing entities |
 | FTB Business | https://www.ftb.ca.gov/file/business/ | Tax registration |
-| IRS EIN | https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online | Get federal EIN |
+| IRS EIN | https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number | Get federal EIN |
 
 ---
 
