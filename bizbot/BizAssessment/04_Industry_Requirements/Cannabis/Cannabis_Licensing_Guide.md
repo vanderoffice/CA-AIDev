@@ -344,7 +344,7 @@ Standard California sales tax applies to retail cannabis sales:
 ### What is METRC?
 
 **System:** Marijuana Enforcement Tracking Reporting & Compliance
-**URL:** https://ca.metrc.com
+**URL:** https://www.metrc.com/partner/california/
 
 **Purpose:** Seed-to-sale tracking of all cannabis in California's licensed market.
 
@@ -565,7 +565,7 @@ Many cities have equity programs:
 
 | Resource | URL |
 |----------|-----|
-| METRC California | https://ca.metrc.com |
+| METRC California | https://www.metrc.com/partner/california/ |
 | METRC Training | https://www.metrc.com/training |
 
 ### Industry Organizations

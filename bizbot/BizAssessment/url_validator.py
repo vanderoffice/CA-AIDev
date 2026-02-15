@@ -63,7 +63,7 @@ URLS_TO_VALIDATE = [
 
     # CDTFA
     "https://cdtfa.ca.gov/",
-    "https://onlineservices.cdtfa.ca.gov/_/",
+    "https://cdtfa.ca.gov/services/",
     "https://cdtfa.ca.gov/services/registration.htm",
     "https://cdtfa.ca.gov/taxes-and-fees/sutprograms.htm",
     "https://maps.cdtfa.ca.gov/",

@@ -25,7 +25,7 @@
 | License Application | https://www.cslb.ca.gov/About_Us/Library/Licensing_Classifications/ | 43 contractor classifications |
 | License Lookup | https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx | Verify contractor licenses |
 | Exam Info & Guides | https://www.cslb.ca.gov/Contractors/Applicants/Examination_Study_Guides/ | Exam study materials |
-| Renewal | https://www.cslb.ca.gov/Licensees/Renew_A_License.aspx | Renew contractor license |
+| Renewal | https://www.cslb.ca.gov/contractors/maintain_license/renew_license/ | Renew contractor license |
 | Bond & Insurance | https://www.cslb.ca.gov/Contractors/Bond_Basics.aspx | Bond requirements and info |
 
 ### Board of Registered Nursing (BRN)

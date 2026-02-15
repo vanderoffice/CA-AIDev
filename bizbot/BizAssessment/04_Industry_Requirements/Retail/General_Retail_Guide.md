@@ -337,7 +337,7 @@ New regulations emphasize:
 
 **URLs:**
 - https://calosba.ca.gov/for-small-businesses-and-non-profits/disability-access-regulations/
-- https://www.dgs.ca.gov/DSA/Resources/CASp-Program
+- https://www.dgs.ca.gov/DSA/Certifications/Page-Content/CASp-Certification
 
 ---
 

@@ -76,7 +76,7 @@ data.extend(edd_urls)
 # ============================================================================
 cdtfa_urls = [
     ("CDTFA", "https://cdtfa.ca.gov/", "Portal", "Main CDTFA homepage", "Sales tax, seller's permits, excise taxes"),
-    ("CDTFA", "https://onlineservices.cdtfa.ca.gov/_/", "Application", "Online Services portal", "Filing, payments, registration"),
+    ("CDTFA", "https://cdtfa.ca.gov/services/", "Application", "Online Services portal", "Filing, payments, registration"),
     ("CDTFA", "https://cdtfa.ca.gov/services/registration.htm", "Application", "Online registration", "Free seller's permit registration"),
     ("CDTFA", "https://cdtfa.ca.gov/taxes-and-fees/sutprograms.htm", "Guide", "Sales & Use Tax overview", "Base rate 7.25% plus district taxes"),
     ("CDTFA", "https://maps.cdtfa.ca.gov/", "Application", "Tax rate lookup by address", "Interactive map for address-based rates"),

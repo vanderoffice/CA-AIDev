@@ -351,7 +351,7 @@ Every license must have a Qualifying Individual who meets experience/exam requir
 | Name/Address Change | 1-2 weeks |
 | Bond Processing | 1-5 business days |
 
-**Check Current Times:** https://www.cslb.ca.gov/About_Us/Library/Licensing_Timeframes.aspx
+**Check Current Times:** https://www.cslb.ca.gov/onlineservices/processingtimes/processingtimes.aspx
 
 ---
 
@@ -600,7 +600,7 @@ Every license must have a Qualifying Individual who meets experience/exam requir
 | License Lookup | https://www.cslb.ca.gov/OnlineServices/CheckLicenseII |
 | Applicants | https://www.cslb.ca.gov/Applicants.aspx |
 | Forms Library | https://www.cslb.ca.gov/About_Us/Library/ |
-| Processing Times | https://www.cslb.ca.gov/About_Us/Library/Licensing_Timeframes.aspx |
+| Processing Times | https://www.cslb.ca.gov/onlineservices/processingtimes/processingtimes.aspx |
 
 ### Related Agencies
 
