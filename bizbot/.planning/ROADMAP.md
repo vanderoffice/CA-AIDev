@@ -21,8 +21,8 @@ All code changes target the production repo on VPS:
 - [x] Phase 0: Audit & Baseline — **COMPLETE** (2026-02-14)
 - [x] Phase 1: Knowledge Refresh — **COMPLETE** (2026-02-15)
 - [ ] ~~Phase 2: Shared Infrastructure~~ — **SKIP** (WaterBot patterns exist, BizBot imports)
-- [ ] Phase 3: Tool Rebuilds — **INCLUDE** (always)
-- [ ] Phase 4: UI/UX Polish — **INCLUDE** (UI parity 42% < 90%)
+- [x] Phase 3: Tool Rebuilds — **COMPLETE** (2026-02-15)
+- [x] Phase 4: UI/UX Polish — **COMPLETE** (2026-02-15)
 - [ ] Phase 5: Integration & E2E — **INCLUDE** (always)
 - [ ] Phase 6: Production Deploy — **INCLUDE** (always)
 
@@ -132,7 +132,7 @@ Phases execute in numeric order. Phase 2 is skipped.
 | 1: Knowledge Refresh | 2/2 | Complete | 2026-02-15 |
 | 2: Shared Infra | N/A | SKIPPED | N/A |
 | 3: Tool Rebuilds | 2/2 | Complete | 2026-02-15 |
-| 4: UI/UX Polish | 0/1-2 | Not started | |
+| 4: UI/UX Polish | 1/1 | Complete | 2026-02-15 |
 | 5: Integration & E2E | 0/1 | Not started | |
 | 6: Production Deploy | 0/1 | Not started | |
 

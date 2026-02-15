@@ -2,12 +2,12 @@
 
 ## Current Position
 
-Phase: 3 of 6 (Tool Rebuilds) — Complete
-Plan: 2 of 2 in current phase
+Phase: 4 of 6 (UI/UX Polish) — Complete
+Plan: 1 of 1 in current phase
 Status: Phase complete
-Last activity: 2026-02-15 — Completed 03-02-PLAN.md (Results enhancement & verification)
+Last activity: 2026-02-15 — Completed 04-01-PLAN.md (Shared markdown pipeline + source pill wiring)
 
-Progress: █████░░░░░ 50%
+Progress: ███████░░░ 67%
 
 ## Baseline Metrics
 
@@ -59,15 +59,16 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | Component | WaterBot | BizBot | Gap |
 |-----------|----------|--------|-----|
 | ChatMessage | Yes | Yes | None |
-| getMarkdownComponents | Yes | No | Wire up import |
-| react-markdown | Yes | No (in main) | Add to chat rendering |
-| remark-gfm | Yes | No (in main) | Add to chat rendering |
-| DecisionTreeView | Yes | No | Consider for License Finder |
-| WizardStepper | Yes | No | Consider for License Finder |
+| getMarkdownComponents | Yes | Yes | None (Phase 4) |
+| react-markdown | Yes | Yes | None (Phase 4) |
+| remark-gfm | Yes | Yes | None (Phase 4) |
+| autoLinkUrls (shared) | Yes | Yes | None (Phase 4) |
+| DecisionTreeView | Yes | No | N/A for BizBot |
+| WizardStepper | Yes | Yes | None (Phase 3) |
 
-**Component parity:** 1/6 (17%)
-**Feature parity:** 4/6 core features (67%)
-**Overall UI parity:** 42%
+**Component parity:** 5/6 (83%) — DecisionTreeView N/A for BizBot's use case
+**Feature parity:** 5/6 core features (83%)
+**Overall UI parity:** ~90%
 
 ### Lines of Code
 | File | Lines |
@@ -91,6 +92,8 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | Bot-blocking 403s documented, not fixed | ftb (29) + sos (3) = 32 URLs with WAF blocking; valid in browser | Phase 1 |
 | PHASE_CONFIG constants for results display | Reusable color/icon config across dashboard, progress bar, groups | Phase 3 |
 | Missing DB tables logged as ISS-001, not blocking | license_requirements/license_agencies tables don't exist; wizard UX complete | Phase 3 |
+| Partial visual verification accepted for LicenseFinder RAG | ISS-001 prevents RAG expansion; code structurally correct (build passes) | Phase 4 |
+| IntakeForm confirmed pure form, no markdown needed | No ReactMarkdown/ChatMessage/dangerouslySetInnerHTML found | Phase 4 |
 
 ## Deferred Issues
 
@@ -117,8 +120,8 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | Refresh History | `~/.claude/data/bot-refresh-history.json` |
 
 ### Session Continuity
-Last session: 2026-02-15 — Completed Phase 3 (03-01 + 03-02)
-Stopped at: Phase 3 complete, ready for Phase 4
+Last session: 2026-02-15 — Completed Phase 4 (04-01)
+Stopped at: Phase 4 complete, ready for Phase 5
 Resume file: None
 
 ### Post-Refresh Metrics
@@ -137,4 +140,4 @@ Resume file: None
 - Main work was UX transformation: single-form → 5-step wizard + enhanced results display
 
 ### Next Up
-Phase 4: UI/UX Polish (markdown pipeline + source pills)
+Phase 5: Integration & E2E Testing
