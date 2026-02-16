@@ -2,12 +2,12 @@
 
 ## Current Position
 
-Phase: 5 of 6 (Integration & E2E Testing) — Complete
+Phase: 6 of 6 (Production Deploy) — **COMPLETE**
 Plan: 1 of 1 in current phase
-Status: Phase complete
-Last activity: 2026-02-15 — Completed 05-01-PLAN.md (Integration eval + E2E verification)
+Status: **PROJECT COMPLETE**
+Last activity: 2026-02-15 — Completed 06-01-PLAN.md (Production deploy + final eval)
 
-Progress: █████████░ 83%
+Progress: ██████████ 100%
 
 ## Baseline Metrics
 
@@ -96,6 +96,8 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | IntakeForm confirmed pure form, no markdown needed | No ReactMarkdown/ChatMessage/dangerouslySetInnerHTML found | Phase 4 |
 | WAF 403 on external POST is infrastructure, not webhook issue | VPS hardening blocks external POST to n8n webhooks; internal access fine | Phase 5 |
 | Wizard back buttons added during E2E checkpoint | Missing back navigation was UX bug, not enhancement; fixed inline | Phase 5 |
+| Industry subcategory → parent category for DB matching | Frontend sent subcategory codes; n8n/DB expects parent codes | Phase 6 |
+| Entity type sole_proprietor → sole_proprietorship | Frontend value didn't match n8n workflow string | Phase 6 |
 
 ## Deferred Issues
 
@@ -121,9 +123,21 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | Eval Archive | `~/.claude/data/eval-history/bizbot-eval-20260214-160704.json` |
 | Refresh History | `~/.claude/data/bot-refresh-history.json` |
 
+### Final Metrics Comparison
+
+| Metric | Phase 0 Baseline | Phase 5 Post-Test | Phase 6 Final |
+|--------|-----------------|-------------------|---------------|
+| Coverage | 94.3% | 100.0% | 100.0% |
+| STRONG | 29 | 29 | 29 |
+| ACCEPTABLE | 4 | 6 | 6 |
+| WEAK | 2 | 0 | 0 |
+| Webhook Score | 70/100 | 100/100 | 100/100 |
+| UI Parity | 42% | ~90% | ~90% |
+| Audit Overall | 74/100 | — | ~95/100 |
+
 ### Session Continuity
-Last session: 2026-02-15 — Completed Phase 5 (Integration & E2E Testing)
-Stopped at: Phase 5 complete, ready for Phase 6
+Last session: 2026-02-15 — **PROJECT COMPLETE** (Phase 6 Production Deploy)
+Stopped at: Project complete. All 6 phases finished.
 Resume file: None
 
 ### Post-Refresh Metrics
@@ -147,5 +161,5 @@ Resume file: None
 - End-to-end verified: food (12 licenses), construction (9), cannabis (7), personal (5), professional (4)
 - Two new issues logged: ISS-002 (general cross-industry inclusion), ISS-003 (city/county data)
 
-### Next Up
-Phase 6: Production Deploy
+### Project Complete
+BizBot Overhaul: 2026-02-14 → 2026-02-15 (2 days, ~8 plans executed)
