@@ -317,7 +317,7 @@ After 24 months in Stage 2, if you're still income-eligible (<85% SMI), you move
 | Stage 2/3 issues | Your APP contractor |
 | Find your APP contractor | [rrnetwork.org](https://rrnetwork.org/about/r-r-directory) |
 | Don't know your contractor | Call your county welfare office |
-| Appeal a decision | [CDSS Appeals](https://www.cdss.ca.gov/inforesources/child-care-and-development/parent-resources/parent-appeals) |
+| Appeal a decision | [CDSS Appeals](https://www.cdss.ca.gov/inforesources/calworks-child-care/parent-information-and-resources) |
 
 ---
 

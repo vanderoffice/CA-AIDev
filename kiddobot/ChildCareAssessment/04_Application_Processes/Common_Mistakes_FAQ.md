@@ -422,7 +422,7 @@ A:
 |------|---------|
 | Find your local CCR&R | [rrnetwork.org](https://rrnetwork.org/about/r-r-directory) |
 | CalWORKs questions | Your county welfare office |
-| Appeal a denial | [CDSS Appeals](https://www.cdss.ca.gov/inforesources/child-care-and-development/parent-resources/parent-appeals) |
+| Appeal a denial | [CDSS Appeals](https://www.cdss.ca.gov/inforesources/calworks-child-care/parent-information-and-resources) |
 | Verify a license | [CCLD Search](https://www.ccld.dss.ca.gov/carefacilitysearch/) |
 | TrustLine registration | 1-800-822-8490 or [trustline.org](https://trustline.org) |
 | General help | Dial 211 |
@@ -431,8 +431,8 @@ A:
 
 ## Sources
 
-- [CDSS Parent Resources](https://www.cdss.ca.gov/inforesources/child-care-and-development/parent-resources)
-- [CDSS Parent Appeals](https://www.cdss.ca.gov/inforesources/child-care-and-development/parent-resources/parent-appeals)
+- [CDSS Parent Resources](https://www.cdss.ca.gov/inforesources/calworks-child-care/parent-information-and-resources)
+- [CDSS Parent Appeals](https://www.cdss.ca.gov/inforesources/calworks-child-care/parent-information-and-resources)
 - [CCDF Improper Payments Data](https://acf.gov/sites/default/files/documents/occ/CCDF_Improper_Payments_Data_Collection_Instructions_for_2022-2025.pdf)
 - [CCRC Parent Handbook](https://www.ccrcca.org/publications/)
 

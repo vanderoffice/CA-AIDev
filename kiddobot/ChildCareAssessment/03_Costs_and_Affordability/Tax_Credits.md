@@ -361,9 +361,9 @@ You CANNOT claim credit for payments to:
 
 | Resource | Link |
 |----------|------|
-| **IRS Form 2441 Instructions** | [irs.gov/forms-pubs](https://www.irs.gov/forms-pubs) |
+| **IRS Form 2441 Instructions** | [irs.gov/forms-pubs](https://www.irs.gov/forms-instructions) |
 | **California FTB Credit Info** | [ftb.ca.gov](https://www.ftb.ca.gov/file/personal/credits/child-and-dependent-care-expenses-credit.html) |
-| **Form W-10 (Provider Info)** | [irs.gov/forms-pubs](https://www.irs.gov/forms-pubs) |
+| **Form W-10 (Provider Info)** | [irs.gov/forms-pubs](https://www.irs.gov/forms-instructions) |
 | **FSA Questions** | Ask your employer's HR/benefits |
 
 ---

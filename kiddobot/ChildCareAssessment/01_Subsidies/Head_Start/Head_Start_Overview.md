@@ -226,7 +226,7 @@ The **California Head Start Collaboration Office** coordinates between Head Star
 | Resource | Contact |
 |----------|---------|
 | **Head Start California** | [headstartca.org](https://headstartca.org) |
-| **Federal Office of Head Start** | [acf.hhs.gov/ohs](https://www.acf.hhs.gov/ohs) |
+| **Federal Office of Head Start** | [acf.hhs.gov/ohs](https://acf.gov/ohs) |
 | **Center Locator** | [eclkc.ohs.acf.hhs.gov/center-locator](https://eclkc.ohs.acf.hhs.gov/center-locator) |
 | **Parent Info** | [childcare.gov](https://childcare.gov) |
 

@@ -30,7 +30,7 @@ The San Francisco Bay Area presents unique challenges for subsidized childcare: 
 | **CalWORKs Cash Aid** | Alameda County Social Services | (510) 267-9505 |
 | **Stage 1 Childcare** | Social Services Agency | Through CalWORKs caseworker |
 | **Stage 2/3 Childcare** | 4Cs of Alameda County | (510) 582-2182 |
-| **CCR&R** | 4Cs of Alameda County | 4c-alameda.org |
+| **CCR&R** | 4Cs of Alameda County | 4calameda.org |
 
 ### Contra Costa County
 
@@ -67,7 +67,7 @@ The San Francisco Bay Area presents unique challenges for subsidized childcare: 
 | **CalWORKs Cash Aid** | HHS Employment & Training | (415) 473-3309 |
 | **Stage 1 Childcare** | HHS Department | marinhhs.org |
 | **Stage 2/3 Childcare** | Marin Child Care Council | (415) 479-0116 |
-| **CCR&R** | Marin Child Care Council | mc3.org |
+| **CCR&R** | Marin Child Care Council | mc3web.org |
 
 ---
 
@@ -283,7 +283,7 @@ Very common in Bay Area (Uber, DoorDash, Instacart):
 - **Early Learning For All:** [sfdec.org/early-learning-for-all](https://sfdec.org/early-learning-for-all/)
 
 ### Alameda
-- **4Cs of Alameda:** [4c-alameda.org](https://4c-alameda.org)
+- **4Cs of Alameda:** [4calameda.org](https://4calameda.org)
 - **Alameda SSA:** [alamedasocialservices.org](https://www.alamedasocialservices.org)
 
 ### Santa Clara
@@ -299,7 +299,7 @@ Very common in Bay Area (Uber, DoorDash, Instacart):
 - **4Cs of San Mateo:** [sanmateo4cs.org](https://sanmateo4cs.org)
 
 ### Marin
-- **MC3:** [mc3.org](https://mc3.org)
+- **MC3:** [mc3web.org](https://mc3web.org)
 
 ---
 

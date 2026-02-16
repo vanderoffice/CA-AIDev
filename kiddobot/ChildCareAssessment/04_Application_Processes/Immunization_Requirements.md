@@ -367,7 +367,7 @@ Free vaccines for children who are:
 | **Digital Vaccine Record** | [myvaccinerecord.cdph.ca.gov](https://myvaccinerecord.cdph.ca.gov) |
 | **Vaccines for Children** | Ask your doctor or local health department |
 | **Local health department** | Find at [cdph.ca.gov](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/Local-Health-Department.aspx) |
-| **ShotsForSchool.org** | [shotsforschool.org](https://www.shotsforschool.org) |
+| **ShotsForSchool.org** | [shotsforschool.org](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/School/shotsforschool.aspx) |
 
 ---
 

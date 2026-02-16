@@ -211,8 +211,8 @@ Children qualify for free vaccines through VFC if they are:
 
 | Resource | Link |
 |----------|------|
-| **Immunization Requirements** | [shotsforschool.org](https://www.shotsforschool.org) |
-| **CAIR Information** | [cairweb.org](https://cairweb.org) |
+| **Immunization Requirements** | [shotsforschool.org](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/School/shotsforschool.aspx) |
+| **CAIR Information** | [cairweb.org](https://www.cdph.ca.gov/Programs/CID/DCDC/CAIR/Pages/CAIR-updates.aspx) |
 | **Immunization Branch** | [cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization-Branch](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/immunize.aspx) |
 | **Medical Exemptions** | [cdph.ca.gov/Programs/CID/DCDC/Pages/Medical-Exemptions](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/School/laws-exemptions.aspx) |
 | **Find Vaccines** | [vaccines.gov](https://www.vaccines.gov) |

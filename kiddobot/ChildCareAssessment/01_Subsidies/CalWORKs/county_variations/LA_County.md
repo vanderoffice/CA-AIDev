@@ -32,7 +32,7 @@ LA County has **multiple APPs** serving different geographic areas:
 | **PACE** | Central/East LA | (323) 721-1340 | pacela.org |
 | **Options for Learning** | West San Gabriel Valley | (626) 856-5900 | optionsforlearning.org |
 | **Connections for Children** | Westside, Santa Monica | (310) 452-3325 | connectionsforchildren.org |
-| **Child Care Resource Center** | San Fernando Valley, Antelope Valley | (818) 717-1000 | ccrcla.org |
+| **Child Care Resource Center** | San Fernando Valley, Antelope Valley | (818) 717-1000 | ccrcca.org |
 | **Children's Home Society** | Multiple areas | (562) 256-7500 | chs-ca.org |
 | **Pomona Unified School District** | Pomona area | (909) 397-4740 | pusd.org |
 
@@ -215,7 +215,7 @@ If you have an immediate need (job offer, training start date):
 - **License Search:** [CCLD Search](https://www.ccld.dss.ca.gov/carefacilitysearch/)
 - **Crystal Stairs:** [crystalstairs.org](https://crystalstairs.org)
 - **PACE:** [pacela.org](https://pacela.org)
-- **CCRC:** [ccrcla.org](https://ccrcla.org)
+- **CCRC:** [ccrcca.org](https://ccrcca.org)
 
 ---
 

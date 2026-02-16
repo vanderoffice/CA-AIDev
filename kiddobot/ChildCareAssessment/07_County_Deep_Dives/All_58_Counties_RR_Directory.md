@@ -33,7 +33,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** 1.7 million (Urban)
 - **Primary R&R:** 4Cs of Alameda County
 - **Phone:** (510) 582-2182
-- **Website:** https://www.4c-alameda.org
+- **Website:** https://www.4calameda.org
 - **Secondary R&R:** BANANAS Inc. - (510) 658-7353
 - **APP Contractor:** 4Cs of Alameda County
 - **Notes:** Multiple R&R options. Good coverage across urban and suburban areas.
@@ -42,14 +42,14 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~1,200 (Very Rural - Smallest CA county)
 - **R&R:** Catalyst Community
 - **Phone:** (530) 541-5848
-- **Website:** https://catalystcommunity.org
+- **Website:** https://www.catalystcomm.org
 - **Notes:** Extremely limited local options. Most families use El Dorado or Douglas County (Nevada) providers. Family child care is primary option. Consider South Lake Tahoe area.
 
 ### Amador County
 - **Population:** ~40,000 (Rural)
 - **R&R:** The Resource Connection
 - **Phone:** (209) 754-1075
-- **Website:** https://theresourceconnection.net
+- **Website:** https://trcac.org
 - **Notes:** Limited center-based care. Strong family child care network. Jackson and Sutter Creek have most options.
 
 ### Butte County
@@ -64,7 +64,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~45,000 (Rural)
 - **R&R:** The Resource Connection
 - **Phone:** (209) 754-1075
-- **Website:** https://theresourceconnection.net
+- **Website:** https://trcac.org
 - **Notes:** Very limited center-based care. Angels Camp and San Andreas have few options. Many families use Stockton or Modesto providers.
 
 ### Colusa County
@@ -93,7 +93,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~190,000 (Suburban/Rural)
 - **R&R:** Catalyst Community
 - **Phone:** (530) 541-5848 (South Lake Tahoe) / (530) 676-0707 (Placerville)
-- **Website:** https://catalystcommunity.org
+- **Website:** https://www.catalystcomm.org
 - **Notes:** Split between Placerville area and South Lake Tahoe. Different markets with different availability. Lake Tahoe has higher costs.
 
 ### Fresno County
@@ -184,7 +184,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~260,000 (Suburban - Affluent)
 - **R&R:** Marin Child Care Council
 - **Phone:** (415) 479-2273
-- **Website:** https://www.mc3.org
+- **Website:** https://www.mc3web.org
 - **Notes:** High-cost area with limited subsidized options. Good quality indicators but expensive. Strong employer benefit culture.
 
 ### Mariposa County
@@ -295,7 +295,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** 2.2 million (Urban/Rural - Largest CA county by area)
 - **R&R:** Child Care Resource Center (CCRC)
 - **Phone:** (909) 384-1488 / (800) 722-7442
-- **Website:** https://www.ccrcla.org
+- **Website:** https://www.ccrcca.org
 - **Secondary:** Pomona Unified School District R&R
 - **Notes:** Huge geographic area. San Bernardino, Ontario, Rancho Cucamonga have options. High desert (Victorville, Barstow) and mountain communities very limited.
 

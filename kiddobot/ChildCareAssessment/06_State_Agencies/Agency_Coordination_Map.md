@@ -40,7 +40,7 @@
 | **CSPP enrollment** | CDE | Local school district |
 | **TK enrollment** | CDE | Neighborhood school |
 | **Head Start** | CDE (federal partnership) | [eclkc.ohs.acf.hhs.gov](https://eclkc.ohs.acf.hhs.gov/center-locator) |
-| **Immunization requirements** | CDPH | [shotsforschool.org](https://www.shotsforschool.org) |
+| **Immunization requirements** | CDPH | [shotsforschool.org](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/School/shotsforschool.aspx) |
 | **Medical exemptions** | CDPH | Physician + CAIR |
 | **Licensing complaints** | CDSS (CCL Division) | (916) 651-6040 |
 | **Provider licensing** | CDSS (CCL Division) | [ccld.dss.ca.gov](https://ccld.dss.ca.gov) |

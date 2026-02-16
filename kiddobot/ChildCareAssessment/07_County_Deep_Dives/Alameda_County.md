@@ -31,8 +31,8 @@ Alameda County has a more streamlined APP structure than LA:
 
 | Agency | Service Area | Phone | Website |
 |--------|--------------|-------|---------|
-| **4Cs of Alameda County** | Countywide | (510) 582-2182 | 4c-alameda.org |
-| **Bananas** | North County (Oakland, Berkeley) | (510) 658-0381 | bananasinc.org |
+| **4Cs of Alameda County** | Countywide | (510) 582-2182 | 4calameda.org |
+| **Bananas** | North County (Oakland, Berkeley) | (510) 658-0381 | bananasbunch.org |
 | **City of Fremont** | Fremont | (510) 494-4550 | fremont.gov |
 
 **Primary APP:** 4Cs of Alameda County serves most of the county for CalWORKs Stage 2/3 and income-eligible subsidies.
@@ -261,8 +261,8 @@ Childcare subsidies available regardless of parent's immigration status (for eli
 
 | Resource | URL |
 |----------|-----|
-| 4Cs of Alameda County | 4c-alameda.org |
-| Bananas | bananasinc.org |
+| 4Cs of Alameda County | 4calameda.org |
+| Bananas | bananasbunch.org |
 | Alameda County SSA | alamedacountysocialservices.org |
 | First 5 Alameda | first5alameda.org |
 | OUSD Early Childhood | ousd.org |
