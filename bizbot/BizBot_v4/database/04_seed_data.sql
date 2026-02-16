@@ -122,7 +122,11 @@ INSERT INTO license_agencies (code, name, abbreviation, url, phone, agency_type,
 ('local_health', 'Local Health Department', NULL, NULL, NULL, 'county', 'Health permits, food facility'),
 ('local_fire', 'Local Fire Department', NULL, NULL, NULL, 'city', 'Fire permits, inspections'),
 ('local_planning', 'Local Planning Department', NULL, NULL, NULL, 'city', 'Zoning, land use permits'),
-('local_aqmd', 'Local Air Quality Management District', 'AQMD', NULL, NULL, 'special_district', 'Air permits')
+('local_aqmd', 'Local Air Quality Management District', 'AQMD', NULL, NULL, 'special_district', 'Air permits'),
+
+-- County-level agencies (added Phase 7)
+('county_clerk', 'County Clerk', 'CC', NULL, NULL, 'county', 'Fictitious business name filings'),
+('county_assessor', 'County Assessor', 'CA', 'https://www.boe.ca.gov/proptaxes/bpp.htm', NULL, 'county', 'Business personal property assessments')
 
 ON CONFLICT (code) DO UPDATE SET
     name = EXCLUDED.name,
@@ -313,6 +317,32 @@ INSERT INTO license_requirements (
  60, 'industry', 200, 500, 90, 180,
  'https://www.cdss.ca.gov/inforesources/community-care-licensing/child-care',
  'Extensive requirements. Fire clearance, health screening, background checks, training.');
+
+-- General/Cross-Industry Requirements (Phase 7 expansion)
+-- These apply to most/all CA businesses regardless of industry
+INSERT INTO license_requirements (
+    license_name, license_code, agency_code, industry_code,
+    sequence_order, sequence_group, is_conditional, condition_description,
+    application_fee_min, application_fee_max,
+    application_url, info_url, notes
+) VALUES
+('Fictitious Business Name Statement (DBA)', 'dba_statement', 'county_clerk', 'general',
+ 15, 'formation', true, 'Required when operating under a name other than your legal name',
+ 10, 50,
+ NULL, 'https://www.sos.ca.gov/business-programs/business-entities/statements',
+ 'Must also publish in local newspaper ($30-$100). Filed with county clerk. Expires after 5 years.'),
+
+('Statement of Information (SOS Filing)', 'soi_filing', 'sos', 'general',
+ 80, 'ongoing', true, 'Required for LLCs (biennial) and Corporations (annual); not required for sole proprietorships',
+ 20, 25,
+ 'https://bizfileonline.sos.ca.gov/', 'https://www.sos.ca.gov/business-programs/business-entities/statements',
+ 'LLC: due within 90 days of formation, then biennial. Corp: due within 90 days, then annual.'),
+
+('Business Personal Property Statement (BOE-571-L)', 'bpp_statement', 'county_assessor', 'general',
+ 85, 'ongoing', true, 'Required for businesses with assessable personal property (equipment, fixtures, supplies)',
+ 0, 0,
+ NULL, 'https://www.boe.ca.gov/proptaxes/bpp.htm',
+ 'Filed annually with county assessor by April 1. Covers furniture, equipment, computers, supplies. Late filing penalty: 10% of assessed value.');
 
 -- Copy universal requirements to all industries
 -- This ensures every industry inherits the formation basics
