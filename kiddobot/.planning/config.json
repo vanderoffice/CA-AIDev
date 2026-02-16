@@ -1,0 +1,7 @@
+{
+  "mode": "yolo",
+  "gates": {
+    "execute_next_plan": false,
+    "issues_review": false
+  }
+}
