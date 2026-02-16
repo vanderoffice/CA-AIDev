@@ -3,7 +3,7 @@
 ## Milestones
 
 - ✅ [v1.0 Overhaul](milestones/v1.0-ROADMAP.md) (Phases 0-6) — SHIPPED 2026-02-15
-- ✅ **v1.1 Data Completeness** — Phases 7-9 — SHIPPED 2026-02-16
+- ✅ [v1.1 Data Completeness](milestones/v1.1-ROADMAP.md) (Phases 7-9) — SHIPPED 2026-02-16
 
 ## Production-First Doctrine
 
@@ -32,43 +32,18 @@ All code changes target the production repo on VPS:
 
 </details>
 
-### ✅ v1.1 Data Completeness (SHIPPED 2026-02-16)
+<details>
+<summary>✅ v1.1 Data Completeness (Phases 7-9) — SHIPPED 2026-02-16</summary>
 
-**Milestone Goal:** Improve License Finder data coverage and RAG pipeline maintainability — no UI changes
+- [x] Phase 7: License Data Expansion (2/2 plans) — completed 2026-02-16
+- [x] Phase 8: RAG Pipeline Improvements (3/3 plans) — completed 2026-02-16
+- [x] Phase 9: Tooling & Verification (1/1 plan) — completed 2026-02-16
 
-#### Phase 7: License Data Expansion
+**Stats:** 3 phases, 6 plans, ~85 min active build time
+**Eval:** 29S/6A/0W — zero regressions from data expansion
+**Full details:** [v1.1-ROADMAP.md](milestones/v1.1-ROADMAP.md)
 
-**Goal**: Auto-include cross-industry general licenses (ISS-002) and seed city/county-specific permit data (ISS-003)
-**Depends on**: v1.0 complete
-**Research**: Likely (CalGOLD city/county requirements, general license categories)
-**Research topics**: CalGOLD local permitting data for major CA metros, general business license categories across industries
-**Plans**: 2
-
-Plans:
-- [x] 07-01: Cross-Industry General License Fix (ISS-002) — fix WHERE clause + expand general seed data ✓
-- [x] 07-02: City/County License Data Seeding (ISS-003) — 25 CA metros + n8n dedup logic ✓
-
-#### Phase 8: RAG Pipeline Improvements
-
-**Goal**: Enrich metadata on ~60% of chunks using basic blob format, add DB timestamp columns for chunk-level staleness tracking, and expand city dropdown with unincorporated CDPs
-**Depends on**: Phase 7
-**Research**: Unlikely (internal pipeline work — /bot-ingest + SQL migration)
-**Plans**: 3
-
-Plans:
-- [x] 08-01: Schema Migration + Metadata Enrichment — timestamp columns + topic classification on all 387 chunks ✓
-- [x] 08-02: Unincorporated Communities Dropdown Expansion — 728 CDPs added to CA_CITIES (1,210 total entries) ✓
-- [x] 08-03: Ingest Pipeline Update + Verification — chunk.py enrichment + end-to-end Phase 8 verification ✓
-
-#### Phase 9: Tooling & Verification
-
-**Goal**: Fix WAF external POST blocking (ISS-004) and run final eval pass to validate all v1.1 changes
-**Depends on**: Phase 8
-**Research**: Unlikely (nginx config + existing /bot-eval workflow)
-**Plans**: 1
-
-Plans:
-- [x] 09-01: WAF Fix + Final v1.1 Eval — X-Bot-Token auth added to audit tooling, final eval confirms 29S/6A/0W (zero regressions) ✓
+</details>
 
 ## Progress
 

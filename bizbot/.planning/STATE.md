@@ -2,61 +2,46 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-02-15)
+See: .planning/PROJECT.md (updated 2026-02-16)
 
 **Core value:** Accurate California business licensing information through intuitive multi-mode interface with deterministic license matching
-**Current focus:** v1.1 Data Completeness — COMPLETE
+**Current focus:** v1.1 Data Completeness — SHIPPED
 
 ## Current Position
 
-Phase: 9 of 9 (Tooling & Verification)
-Plan: 1 of 1 in current phase
-Status: Phase complete — v1.1 milestone ready for close-out
-Last activity: 2026-02-16 — Completed 09-01-PLAN.md
+Phase: 9 of 9 (all phases complete)
+Plan: N/A — all milestones shipped
+Status: v1.1 milestone complete — project at rest
+Last activity: 2026-02-16 — v1.1 Data Completeness milestone archived
 
 Progress: ██████████ 100%
 
+## Milestones
+
+- ✅ v1.0 Overhaul (Phases 0-6) — shipped 2026-02-15
+- ✅ v1.1 Data Completeness (Phases 7-9) — shipped 2026-02-16
+
 ## Deferred Issues
 
-- ~~ISS-002: Cross-industry general licenses not auto-included~~ → **RESOLVED 07-01**
-- ~~ISS-003: City/county-specific license data not seeded~~ → **RESOLVED 07-02**
-- ~~ISS-004: External POST blocked by nginx WAF~~ → **RESOLVED 09-01** (was X-Bot-Token auth, not WAF)
-- ftb.ca.gov + bizfileonline.sos.ca.gov 403s: Bot-blocking WAF, functional in browser
-- ~~DB timestamp column for chunk-level staleness tracking~~ → **RESOLVED 08-01**
-- ~~Metadata enrichment on ~60% of chunks~~ → **RESOLVED 08-01** (100% coverage: topic on all 387, industry_category on 142)
+- ftb.ca.gov + bizfileonline.sos.ca.gov 403s: Bot-blocking WAF, functional in browser (known limitation)
+- City-specific license data covers top 25 metros only — 457 cities use generic fallback
+- Filtered RAG retrieval using topic metadata not yet implemented
 
 ## Accumulated Context
 
-### Key Decisions (from v1.0)
+### Key Decisions (v1.0 + v1.1)
 
-| Decision | Rationale |
-|----------|-----------|
-| Production-first doctrine | Dev repo divergence cost WaterBot a full reconciliation phase |
-| Skip Phase 2 (Shared Infra) | WaterBot already built all shared components |
-| FTB /index.html URLs left as-is | FTB serves directly (200); removing index.html returns 503 |
-| Bot-blocking 403s documented | ftb (29) + sos (3) = 32 URLs with WAF blocking; valid in browser |
-| TEXT types in DB functions | Production schema uses text, not varchar — function return types must match |
-| General licenses all conditional | DBA/SOI/BPP marked conditional to avoid false positives for sole props |
-| city_biz_lic_ prefix convention | All city-specific license codes use this prefix for dedup detection |
-| hasCityLicense check before generic | Prevents generic $50-$500 from polluting cost accumulators when real city data exists |
-| Santa Clarita → LA County TTC | City doesn't issue own business license; mapped to county agency |
-| TIMESTAMPTZ over TIMESTAMP | Timezone-aware timestamps for chunk staleness tracking |
-| No indexes on timestamp cols | Staleness queries are batch (bot-refresh), not real-time |
-| CDP pop >= 1000 threshold | Keeps dropdown manageable; special counties exempt (all CDPs) |
-| (Unincorporated) suffix on CDPs | Distinguishes from incorporated cities; n8n fallback handles unknown names |
-| infer_topic_metadata returns {} for unknown dirs | Safe no-op for WaterBot/KiddoBot — only matches NN_ prefix convention |
-| 3+ path segments for industry_category | Prevents top-level READMEs from getting spurious industry_category |
-| ISS-004 was X-Bot-Token, not WAF | Nginx vhost requires auth header on /webhook/ — fix in tooling, not infra |
+See PROJECT.md Key Decisions table for full list.
 
 ### Roadmap Evolution
 
 - v1.0 Overhaul: Full rebuild to WaterBot v2.0 standard, 7 phases (0-6), shipped 2026-02-15
-- v1.1 Data Completeness: License data + RAG pipeline + final verification, 3 phases (7-9), completed 2026-02-16
+- v1.1 Data Completeness: License data + RAG pipeline + final verification, 3 phases (7-9), shipped 2026-02-16
 
 ## Session Continuity
 
 Last session: 2026-02-16
-Stopped at: Completed 09-01-PLAN.md (WAF Fix + Final v1.1 Eval) — Phase 9 complete, v1.1 milestone ready
+Stopped at: v1.1 milestone archived — BizBot overhaul complete
 Resume file: None
 
 ### Artifacts
@@ -64,6 +49,7 @@ Resume file: None
 |------|----------|
 | Audit Report | `.planning/BOT-AUDIT-bizbot-2026-02-14.md` |
 | v1.0 Milestone Archive | `.planning/milestones/v1.0-ROADMAP.md` |
+| v1.1 Milestone Archive | `.planning/milestones/v1.1-ROADMAP.md` |
 | Milestone Summary | `.planning/MILESTONES.md` |
 | Eval Archive (Phase 5) | `~/.claude/data/eval-history/bizbot-eval-20260214-160704.json` |
 | Eval Archive (v1.1 Final) | `~/.claude/data/eval-history/bizbot-eval-20260216-045545.json` |

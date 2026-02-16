@@ -22,13 +22,17 @@ California business licensing chatbot with 3 specialized modes (Just Chat, Guide
 - Achieve UI parity with WaterBot standard (42% → ~90%) — v1.0
 - All webhook endpoints returning structured responses (100/100 webhook score) — v1.0
 
+- ✓ ISS-002: Cross-industry general licenses auto-included (DBA, SOI, BPP) — v1.1
+- ✓ ISS-003: City/county-specific license data seeded (25 CA metros) — v1.1
+- ✓ ISS-004: External POST auth fixed (X-Bot-Token in audit tooling) — v1.1
+- ✓ Metadata enrichment on all 387 chunks (topic + industry_category) — v1.1
+- ✓ Timestamp columns for chunk-level staleness tracking — v1.1
+
 ### Active
 
-- ISS-002: Include cross-industry general licenses automatically in results
-- ISS-003: Seed city/county-specific license data for local requirements
-- ISS-004: Fix external POST blocked by nginx WAF (audit tooling improvement)
-- Enrich metadata on ~60% of chunks still using basic blob format
-- Add timestamp column to DB for chunk-level staleness tracking
+- [ ] KiddoBot audit and overhaul (next bot in pipeline)
+- [ ] Expand city-specific license data beyond top 25 metros
+- [ ] Filtered RAG retrieval using topic metadata (e.g., industry-only for License Finder)
 
 ### Out of Scope
 
@@ -40,30 +44,35 @@ California business licensing chatbot with 3 specialized modes (Just Chat, Guide
 
 ## Context
 
-### Current State (v1.0 shipped 2026-02-15)
+### Current State (v1.1 shipped 2026-02-16)
 
-**Overall Score:** ~95/100
+**Overall Score:** ~97/100
 
-| Category | Pre-Overhaul | Post-Overhaul |
-|----------|-------------|---------------|
-| Database Health | 100/100 | 100/100 |
-| URL Validation | 60/100 | ~88/100 (adjusted for bot-blocking WAF) |
-| Webhook Health | 70/100 | 100/100 |
-| Knowledge Freshness | 100/100 | 100/100 |
-| UI Parity | 42/100 | ~90/100 |
+| Category | Pre-Overhaul | v1.0 | v1.1 |
+|----------|-------------|------|------|
+| Database Health | 100/100 | 100/100 | 100/100 |
+| URL Validation | 60/100 | ~88/100 | ~88/100 (bot-blocking WAF unchanged) |
+| Webhook Health | 70/100 | 100/100 | 100/100 (external access fixed) |
+| Knowledge Freshness | 100/100 | 100/100 | 100/100 |
+| UI Parity | 42/100 | ~90/100 | ~90/100 |
+| Data Coverage | N/A | N/A | Expanded (25 metros + 728 CDPs) |
 
 **Eval Metrics:**
 
-| Metric | Baseline | Final |
-|--------|----------|-------|
-| Coverage | 94.3% | 100.0% |
-| STRONG | 29 | 29 |
-| ACCEPTABLE | 4 | 6 |
-| WEAK | 2 | 0 |
+| Metric | Baseline | v1.0 Final | v1.1 Final |
+|--------|----------|------------|------------|
+| Coverage | 94.3% | 100.0% | 100.0% |
+| STRONG | 29 | 29 | 29 |
+| ACCEPTABLE | 4 | 6 | 6 |
+| WEAK | 2 | 0 | 0 |
 
 **Production LOC:** 1,948 lines across 3 JSX files (BizBot.jsx, IntakeForm.jsx, LicenseFinder.jsx)
 
-**License Database:** 17 agencies, 31 industry licenses across 9 categories
+**License Database:** 19 agencies (17 state + 2 county), 36 industry licenses across 9 categories + 25 city-specific licenses
+
+**RAG Metadata:** 387 chunks — 100% topic coverage (8 categories), 142 industry subcategory annotations, TIMESTAMPTZ staleness tracking
+
+**City Dropdown:** 1,210 entries (482 incorporated + 728 CDPs)
 
 ### Bot Registry
 
@@ -108,6 +117,17 @@ California business licensing chatbot with 3 specialized modes (Just Chat, Guide
 | Industry subcategory → parent category | Frontend subcategory codes didn't match DB parent codes | Fixed data contract |
 | Entity type value alignment | sole_proprietor → sole_proprietorship to match n8n workflow | Fixed data contract |
 | WAF 403 is infrastructure | VPS hardening blocks external POST; internal access fine | ISS-004 logged |
+| TEXT types in DB functions | Production schema uses text, not varchar — function return types must match | ✓ Good |
+| General licenses all conditional | DBA/SOI/BPP marked conditional to avoid false positives for sole props | ✓ Good |
+| city_biz_lic_ prefix convention | All city-specific license codes use this prefix for dedup detection | ✓ Good |
+| hasCityLicense check before generic | Prevents generic $50-$500 from polluting cost accumulators when real city data exists | ✓ Good |
+| Santa Clarita → LA County TTC | City doesn't issue own business license; mapped to county agency | ✓ Good |
+| TIMESTAMPTZ over TIMESTAMP | Timezone-aware timestamps for chunk staleness tracking | ✓ Good |
+| No indexes on timestamp cols | Staleness queries are batch (bot-refresh), not real-time | ✓ Good |
+| CDP pop >= 1000 threshold | Keeps dropdown manageable; special counties exempt (all CDPs) | ✓ Good |
+| (Unincorporated) suffix on CDPs | Distinguishes from incorporated cities; n8n fallback handles unknown names | ✓ Good |
+| infer_topic_metadata returns {} for unknown dirs | Safe no-op for WaterBot/KiddoBot — only matches NN_ prefix convention | ✓ Good |
+| ISS-004 was X-Bot-Token, not WAF | Nginx vhost requires auth header on /webhook/ — fix in tooling, not infra | ✓ Good |
 
 ---
-*Last updated: 2026-02-15 after v1.0 milestone*
+*Last updated: 2026-02-16 after v1.1 milestone*
