@@ -3,11 +3,11 @@
 ## Current Position
 
 Phase: 3 of 6 (Tool Rebuilds)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-02-16 - Completed 03-01-PLAN.md (threshold externalization)
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-02-16 - Completed 03-02-PLAN.md (county R&R + cross-tool CTAs)
 
-Progress: ████░░░░░░ 40%
+Progress: █████░░░░░ 50%
 
 ## Accumulated Decisions
 
@@ -21,6 +21,9 @@ Progress: ████░░░░░░ 40%
 | 1 | Chunk count 935 (not 1300+) | Well-structured content with concise sections — 935 is correct |
 | 1 | Fixed bot_registry.py ON_ERROR_STOP | psql silently swallowed SQL errors without this flag |
 | 3 | String keys for family sizes in JSON | JSON spec requires string keys; JS coerces integers for property access |
+| 3 | Null website for no-URL counties | Modoc, Siskiyou, San Benito have no website; component renders phone-only |
+| 3 | LA County multi-APP structure | 6 regional APPs in secondaryRR; primaryRR describes the pattern |
+| 3 | Collapsible details for ProgramFinder R&R | Avoids state management; keeps UI uncluttered |
 
 ## Deferred Issues
 
@@ -32,7 +35,7 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-16T18:51:00Z
-Stopped at: Completed 03-01-PLAN.md (threshold externalization)
+Last session: 2026-02-16T19:09:00Z
+Stopped at: Completed 03-02-PLAN.md — Phase 3 complete
 Resume file: None
-Next: 03-02-PLAN.md (ProgramFinder enhancements)
+Next: Phase 4 (UI/UX Polish) — /gsd:plan-phase 4
