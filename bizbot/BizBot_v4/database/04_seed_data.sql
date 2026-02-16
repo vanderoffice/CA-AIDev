@@ -344,8 +344,48 @@ INSERT INTO license_requirements (
  NULL, 'https://www.boe.ca.gov/proptaxes/bpp.htm',
  'Filed annually with county assessor by April 1. Covers furniture, equipment, computers, supplies. Late filing penalty: 10% of assessed value.');
 
--- Copy universal requirements to all industries
--- This ensures every industry inherits the formation basics
--- Done via application logic, not database triggers
+-- ============================================================
+-- CITY-SPECIFIC BUSINESS LICENSES (Phase 7, Plan 02 — ISS-003)
+-- Top 25 CA Metros by population
+-- ============================================================
 
-COMMENT ON TABLE license_requirements IS 'Seed data - expand with city-specific and additional industry requirements';
+-- City agencies
+INSERT INTO license_agencies (code, name, abbreviation, url, phone) VALUES
+('city_los_angeles', 'City of Los Angeles Office of Finance', 'LAOF', 'https://finance.lacity.gov', NULL),
+('city_san_diego', 'City of San Diego Treasurer''s Office', 'SDTO', 'https://www.sandiego.gov/treasurer', '619-615-1500'),
+('city_san_jose', 'City of San Jose Finance Department', 'SJFD', 'https://www.sanjoseca.gov/your-government/departments-offices/finance', '408-535-7055'),
+('city_san_francisco', 'SF Treasurer & Tax Collector', 'SFTTC', 'https://sftreasurer.org', NULL),
+('city_fresno', 'City of Fresno Finance Department', 'FRFD', 'https://www.fresno.gov/finance', '559-621-6880'),
+('city_sacramento', 'City of Sacramento Revenue Division', 'SACRD', 'https://www.cityofsacramento.gov/finance/revenue', '916-808-8500'),
+('city_long_beach', 'City of Long Beach Financial Management', 'LBLD', 'https://www.longbeach.gov/finance', '562-570-6211'),
+('city_oakland', 'City of Oakland Finance Department', 'OAKBT', 'https://www.oaklandca.gov', '510-238-3704'),
+('city_bakersfield', 'City of Bakersfield Treasury Division', 'BKTD', 'https://www.bakersfieldcity.us', '661-326-3762'),
+('city_anaheim', 'City of Anaheim Planning & Building', 'AHBL', 'https://www.anaheim.net', '714-765-5194'),
+('city_santa_ana', 'City of Santa Ana Finance Department', 'SABT', 'https://www.santa-ana.org', '714-647-5447'),
+('city_riverside', 'City of Riverside Finance Department', 'RVBT', 'https://riversideca.gov/finance', '951-826-5465'),
+('city_stockton', 'City of Stockton Administrative Services', 'STBL', 'https://www.stocktonca.gov', '209-937-8313'),
+('city_irvine', 'City of Irvine Community Development', 'IRBL', 'https://cityofirvine.org', '949-724-7128'),
+('city_chula_vista', 'City of Chula Vista Finance Department', 'CVBL', 'https://www.chulavistaca.gov', '619-585-5624'),
+('city_santa_clarita', 'LA County Treasurer and Tax Collector', 'LACTC', 'https://ttc.lacounty.gov', '213-974-2011'),
+('city_fremont', 'City of Fremont Revenue Division', 'FMRD', 'https://www.fremont.gov', '510-494-4790'),
+('city_moreno_valley', 'City of Moreno Valley Community Dev', 'MVBL', 'https://moval.gov', '951-413-3080'),
+('city_fontana', 'City of Fontana Customer Services', 'FNBL', 'https://www.fontanaca.gov', '909-350-7675'),
+('city_san_bernardino', 'City of San Bernardino Finance Dept', 'SBBR', 'https://www.sanbernardino.gov', '909-998-2101'),
+('city_modesto', 'City of Modesto Finance Department', 'MOBL', 'https://www.modestogov.com', '209-577-5389'),
+('city_glendale', 'City of Glendale Community Development', 'GLBL', 'https://www.glendaleca.gov', '818-548-2005'),
+('city_huntington_beach', 'City of Huntington Beach Finance Dept', 'HBBL', 'https://www.huntingtonbeachca.gov', '714-536-5267'),
+('city_oxnard', 'City of Oxnard Finance Department', 'OXBL', 'https://www.oxnard.gov', '805-385-7817'),
+('city_roseville', 'City of Roseville Finance Department', 'RSBL', 'https://www.roseville.ca.us', '916-727-6868')
+ON CONFLICT (code) DO NOTHING;
+
+-- Note: Production schema differs from DDL:
+--   - is_statewide is NOT generated, must set explicitly to false
+--   - No is_required column
+--   - No license_industries table (no FK on industry_code)
+--   - All text columns are TEXT type
+
+-- City business licenses (25 rows, industry_code='general' for all-industry queries)
+-- See /tmp/07-02-city-licenses.sql for full INSERT statements with individual comments
+-- Key: license_code starts with 'city_biz_lic_' for dedup logic in n8n Code node
+
+COMMENT ON TABLE license_requirements IS 'Seed data - 25 city-specific + statewide licenses';
