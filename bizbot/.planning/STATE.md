@@ -2,12 +2,12 @@
 
 ## Current Position
 
-Phase: 4 of 6 (UI/UX Polish) — Complete
+Phase: 5 of 6 (Integration & E2E Testing) — Complete
 Plan: 1 of 1 in current phase
 Status: Phase complete
-Last activity: 2026-02-15 — Completed 04-01-PLAN.md (Shared markdown pipeline + source pill wiring)
+Last activity: 2026-02-15 — Completed 05-01-PLAN.md (Integration eval + E2E verification)
 
-Progress: ███████░░░ 67%
+Progress: █████████░ 83%
 
 ## Baseline Metrics
 
@@ -94,6 +94,8 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | Missing DB tables logged as ISS-001, not blocking | license_requirements/license_agencies tables don't exist; wizard UX complete | Phase 3 |
 | Partial visual verification accepted for LicenseFinder RAG | ISS-001 prevents RAG expansion; code structurally correct (build passes) | Phase 4 |
 | IntakeForm confirmed pure form, no markdown needed | No ReactMarkdown/ChatMessage/dangerouslySetInnerHTML found | Phase 4 |
+| WAF 403 on external POST is infrastructure, not webhook issue | VPS hardening blocks external POST to n8n webhooks; internal access fine | Phase 5 |
+| Wizard back buttons added during E2E checkpoint | Missing back navigation was UX bug, not enhancement; fixed inline | Phase 5 |
 
 ## Deferred Issues
 
@@ -120,8 +122,8 @@ Both WEAK scores are on queries intentionally outside BizBot's knowledge domain.
 | Refresh History | `~/.claude/data/bot-refresh-history.json` |
 
 ### Session Continuity
-Last session: 2026-02-15 — Completed Phase 4 (04-01)
-Stopped at: Phase 4 complete, ready for Phase 5
+Last session: 2026-02-15 — Completed Phase 5 (Integration & E2E Testing)
+Stopped at: Phase 5 complete, ready for Phase 6
 Resume file: None
 
 ### Post-Refresh Metrics
@@ -139,5 +141,11 @@ Resume file: None
 - WizardStepper deployed to VPS as shared component (was missing despite claims)
 - Main work was UX transformation: single-form → 5-step wizard + enhanced results display
 
+### ISS-001 Resolution (2026-02-15)
+- Tables created, 17 agencies + 31 industry licenses seeded across 9 categories
+- n8n workflow fixed: `alwaysOutputData: true` on Postgres node
+- End-to-end verified: food (12 licenses), construction (9), cannabis (7), personal (5), professional (4)
+- Two new issues logged: ISS-002 (general cross-industry inclusion), ISS-003 (city/county data)
+
 ### Next Up
-Phase 5: Integration & E2E Testing
+Phase 6: Production Deploy
