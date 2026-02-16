@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-15)
 ## Current Position
 
 Phase: 8 of 9 (RAG Pipeline Improvements)
-Plan: 0 of ? in current phase
-Status: Not started
-Last activity: 2026-02-16 — Completed Phase 7 (07-02-PLAN.md)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-02-16 — Completed 08-01-PLAN.md
 
-Progress: ████░░░░░░ 44%
+Progress: █████░░░░░ 50%
 
 ## Deferred Issues
 
@@ -22,8 +22,8 @@ Progress: ████░░░░░░ 44%
 - ~~ISS-003: City/county-specific license data not seeded~~ → **RESOLVED 07-02**
 - ISS-004: External POST blocked by nginx WAF (LOW — workaround exists) → **Phase 9**
 - ftb.ca.gov + bizfileonline.sos.ca.gov 403s: Bot-blocking WAF, functional in browser
-- DB timestamp column for chunk-level staleness tracking → **Phase 8**
-- Metadata enrichment on ~60% of chunks → **Phase 8**
+- ~~DB timestamp column for chunk-level staleness tracking~~ → **RESOLVED 08-01**
+- ~~Metadata enrichment on ~60% of chunks~~ → **RESOLVED 08-01** (100% coverage: topic on all 387, industry_category on 142)
 
 ## Accumulated Context
 
@@ -40,6 +40,8 @@ Progress: ████░░░░░░ 44%
 | city_biz_lic_ prefix convention | All city-specific license codes use this prefix for dedup detection |
 | hasCityLicense check before generic | Prevents generic $50-$500 from polluting cost accumulators when real city data exists |
 | Santa Clarita → LA County TTC | City doesn't issue own business license; mapped to county agency |
+| TIMESTAMPTZ over TIMESTAMP | Timezone-aware timestamps for chunk staleness tracking |
+| No indexes on timestamp cols | Staleness queries are batch (bot-refresh), not real-time |
 
 ### Roadmap Evolution
 
@@ -49,7 +51,7 @@ Progress: ████░░░░░░ 44%
 ## Session Continuity
 
 Last session: 2026-02-16
-Stopped at: Completed Phase 7 (07-02-PLAN.md — City/County License Data Seeding)
+Stopped at: Completed 08-01-PLAN.md (Schema Migration + Metadata Enrichment)
 Resume file: None
 
 ### Artifacts
