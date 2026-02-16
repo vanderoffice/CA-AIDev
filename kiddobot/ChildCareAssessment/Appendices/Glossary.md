@@ -26,11 +26,11 @@ The state agency overseeing social services including CalWORKs, child welfare, f
 
 ### CDE — California Department of Education
 The state agency managing public education, including preschool programs like CSPP, Title 5 childcare funding, and Transitional Kindergarten.
-- **Website:** [cde.ca.gov](https://cde.ca.gov)
+- **Website:** [cde.ca.gov](https://www.cde.ca.gov)
 
 ### CDPH — California Department of Public Health
 The state agency regulating public health standards, including immunization requirements for licensed childcare facilities and the CAIR-ME immunization registry.
-- **Website:** [cdph.ca.gov](https://cdph.ca.gov)
+- **Website:** [cdph.ca.gov](https://www.cdph.ca.gov)
 
 ### CCLD — Community Care Licensing Division
 The division within CDSS responsible for licensing and overseeing childcare facilities, family child care homes, and community care programs. Administers Title 22 regulations.

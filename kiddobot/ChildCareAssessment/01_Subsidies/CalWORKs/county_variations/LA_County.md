@@ -213,9 +213,9 @@ If you have an immediate need (job offer, training start date):
 - **Find Your DPSS Office:** [dpss.lacounty.gov/en/resources/offices.html](https://dpss.lacounty.gov/en/resources/offices.html)
 - **211 LA:** [211la.org](https://211la.org) or call 2-1-1
 - **License Search:** [CCLD Search](https://www.ccld.dss.ca.gov/carefacilitysearch/)
-- **Crystal Stairs:** [crystalstairs.org](https://crystalstairs.org)
+- **Crystal Stairs:** [crystalstairs.org](https://www.crystalstairs.org)
 - **PACE:** [pacela.org](https://pacela.org)
-- **CCRC:** [ccrcca.org](https://ccrcca.org)
+- **CCRC:** [ccrcca.org](https://www.ccrcca.org)
 
 ---
 

@@ -370,8 +370,8 @@ When evaluating offers, calculate total childcare value:
 | IRS DCFSA information | [irs.gov/publications/p503](https://www.irs.gov/publications/p503) |
 | CA Employment Development Dept | [edd.ca.gov](https://edd.ca.gov) |
 | CA Paid Family Leave | [EDD Paid Family Leave](https://edd.ca.gov/en/disability/paid-family-leave/) |
-| Care.com (backup care) | [care.com](https://care.com) |
-| Bright Horizons | [brighthorizons.com](https://brighthorizons.com) |
+| Care.com (backup care) | [care.com](https://www.care.com) |
+| Bright Horizons | [brighthorizons.com](https://www.brighthorizons.com) |
 
 ---
 
@@ -380,7 +380,7 @@ When evaluating offers, calculate total childcare value:
 - [IRS Publication 503 - Child and Dependent Care Expenses](https://www.irs.gov/publications/p503)
 - [Society for Human Resource Management - Childcare Benefits](https://www.shrm.org)
 - [California Employment Development Department](https://edd.ca.gov)
-- [Bright Horizons Employer Solutions](https://brighthorizons.com)
+- [Bright Horizons Employer Solutions](https://www.brighthorizons.com)
 
 ---
 

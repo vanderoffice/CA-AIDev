@@ -130,7 +130,7 @@ Many MSHS programs provide:
 
 | Program | Area Served | Contact |
 |---------|-------------|---------|
-| **Central California Child Development Services (CCCDS)** | Merced, Stanislaus | [cccds.com](https://cccds.com) |
+| **Central California Child Development Services (CCCDS)** | Merced, Stanislaus | [cccds.com](https://cccds.com/wp/) |
 | **Stanislaus County Office of Education (SCOE)** | Stanislaus County | 209-238-1700 |
 | **Kings Community Action Organization (KCAO)** | Kings County | 559-415-7173 |
 | **Fresno County Office of Education** | Fresno County | 559-265-3000 |

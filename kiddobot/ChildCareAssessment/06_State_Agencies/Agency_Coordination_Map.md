@@ -287,8 +287,8 @@ California has discussed creating a unified early childhood agency:
 | Agency | What They Handle | Phone | Web |
 |--------|-----------------|-------|-----|
 | **CDSS** | Subsidies, fees, licensing | (916) 651-8848 | [cdss.ca.gov](https://cdss.ca.gov) |
-| **CDE** | CSPP, TK, Head Start | (916) 322-6233 | [cde.ca.gov](https://cde.ca.gov) |
-| **CDPH** | Immunizations, health | (916) 558-1784 | [cdph.ca.gov](https://cdph.ca.gov) |
+| **CDE** | CSPP, TK, Head Start | (916) 322-6233 | [cde.ca.gov](https://www.cde.ca.gov) |
+| **CDPH** | Immunizations, health | (916) 558-1784 | [cdph.ca.gov](https://www.cdph.ca.gov) |
 | **Local CCR&R** | Referrals, all programs | Varies | [rrnetwork.org](https://rrnetwork.org) |
 | **211** | Everything | Dial 211 | [211.org](https://211.org) |
 
