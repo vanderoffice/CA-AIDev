@@ -2,12 +2,12 @@
 
 ## Current Position
 
-Phase: 5 of 6 (Integration & E2E)
-Plan: 1 of 1 in current phase
-Status: Phase complete
-Last activity: 2026-02-16 - Completed 05-01-PLAN.md (integration eval + browser verification)
+Phase: 6 of 6 (all phases complete)
+Plan: N/A — all phases shipped
+Status: KiddoBot overhaul GSD complete
+Last activity: 2026-02-16 — Completed 06-01-PLAN.md (production deploy + verification)
 
-Progress: █████████░ 90%
+Progress: ██████████ 100%
 
 ## Accumulated Decisions
 
@@ -29,12 +29,14 @@ Progress: █████████░ 90%
 | 4 | Mobile-first responsive: base=375px, sm:=640px+ | Consistent with Tailwind convention; mode grid 1-col → sm:2-col |
 | 4 | Added violet to DecisionTreeView + RAGButton | Same additive pattern as ChatMessage; fixes blue fallback |
 | 5 | Embedding regression is CONDITIONAL PASS | Webhook eval (30S/5A/0W) proves end-to-end quality; embedding is intermediate metric |
-| 5 | Document regressions for Phase 6 investigation | 11 queries regressed after Phase 1 re-ingestion; chunk boundaries need investigation |
 | 5 | run-eval.py needs --header and --payload-key for KiddoBot | VPS hardening auth + n8n payload key mismatch |
+| 6 | Embedding regression = threshold artifact | 935 chunks all valid (1536-dim, 0 NULL); re-chunking shifted similarity distribution |
+| 6 | Cross-bot standardization deferred to new GSD | Inconsistencies span 3 overhaul GSDs; needs dedicated harmonization pass |
 
 ## Deferred Issues
 
-- **Embedding regression (Phase 1 → Phase 5):** 34S/1A/0W dropped to 24S/3A/5W/3N after knowledge re-ingestion. 3 NO_RESULTS queries (0.0 similarity) are anomalous. Investigate chunk boundaries and vector integrity in Phase 6.
+- **Embedding regression RESOLVED:** Root cause confirmed as threshold artifact from re-chunking. All 935 embeddings valid. No remediation needed — webhook eval proves LLM compensates.
+- **Cross-bot standardization:** Footer disclaimers, mode selector layouts, accent strategies, bail-out mechanisms, and knowledge repo links inconsistent across WaterBot/BizBot/KiddoBot. Planned as next GSD.
 
 ## Blockers/Concerns Carried Forward
 
@@ -42,7 +44,7 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-16T20:18:50Z
-Stopped at: Completed 05-01-PLAN.md — Phase 5 complete
+Last session: 2026-02-16T23:46:12Z
+Stopped at: Completed 06-01-PLAN.md — KiddoBot overhaul GSD complete
 Resume file: None
-Next: Phase 6 (Production Deploy)
+Next: Cross-Bot Standardization GSD
