@@ -3,11 +3,11 @@
 ## Current Position
 
 Phase: 4 of 6 (UI/UX Polish)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-02-16 - Completed 04-01-PLAN.md (violet accent + ChevronRight fix)
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-02-16 - Completed 04-02-PLAN.md (responsive layout + violet color fix)
 
-Progress: ██████░░░░ 60%
+Progress: ███████░░░ 70%
 
 ## Accumulated Decisions
 
@@ -26,6 +26,8 @@ Progress: ██████░░░░ 60%
 | 3 | Collapsible details for ProgramFinder R&R | Avoids state management; keeps UI uncluttered |
 | 4 | Violet accent (not pink or orange) | User rejected pink at checkpoint; violet is playful + distinct from WaterBot sky |
 | 4 | Added violet to shared ChatMessage COLOR_PALETTE | Additive change; no impact to WaterBot/BizBot |
+| 4 | Mobile-first responsive: base=375px, sm:=640px+ | Consistent with Tailwind convention; mode grid 1-col → sm:2-col |
+| 4 | Added violet to DecisionTreeView + RAGButton | Same additive pattern as ChatMessage; fixes blue fallback |
 
 ## Deferred Issues
 
@@ -37,7 +39,7 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-16T19:46:20Z
-Stopped at: Completed 04-01-PLAN.md — violet accent + ChevronRight fix
+Last session: 2026-02-16T20:04:58Z
+Stopped at: Completed 04-02-PLAN.md — Phase 4 complete
 Resume file: None
-Next: 04-02-PLAN.md (responsive layout / UI polish)
+Next: Phase 5 (Integration & E2E)

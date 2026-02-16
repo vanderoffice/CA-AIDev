@@ -22,7 +22,7 @@ All code changes target the production repo on VPS:
 - [x] Phase 1: Knowledge Refresh — **COMPLETE** (URLs fixed, thresholds verified, 935 chunks re-ingested)
 - [x] Phase 2: Shared Infrastructure — **SKIP** (WaterBot built components; KiddoBot imports in Phase 4)
 - [x] Phase 3: Tool Rebuilds — **COMPLETE** (threshold externalization + county R&R + cross-tool CTAs)
-- [ ] Phase 4: UI/UX Polish — **INCLUDE** (UI parity 58% < 90% threshold)
+- [x] Phase 4: UI/UX Polish — **COMPLETE** (violet accent + responsive layout)
 - [ ] Phase 5: Integration & E2E — **INCLUDE** (mandatory)
 - [ ] Phase 6: Production Deploy — **INCLUDE** (mandatory)
 
@@ -135,7 +135,7 @@ Phases execute in numeric order. Skipped phases are marked N/A.
 | 1: Knowledge Refresh | 2/2 | Complete | 2026-02-16 |
 | 2: Shared Infrastructure | N/A | SKIPPED | N/A |
 | 3: Tool Rebuilds | 2/2 | Complete | 2026-02-16 |
-| 4: UI/UX Polish | 1/2 | In progress | |
+| 4: UI/UX Polish | 2/2 | Complete | 2026-02-16 |
 | 5: Integration & E2E | 0/TBD | Not started | |
 | 6: Production Deploy | 0/1 | Not started | |
 
