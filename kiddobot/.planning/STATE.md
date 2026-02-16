@@ -2,12 +2,12 @@
 
 ## Current Position
 
-Phase: 4 of 6 (UI/UX Polish)
-Plan: 2 of 2 in current phase
+Phase: 5 of 6 (Integration & E2E)
+Plan: 1 of 1 in current phase
 Status: Phase complete
-Last activity: 2026-02-16 - Completed 04-02-PLAN.md (responsive layout + violet color fix)
+Last activity: 2026-02-16 - Completed 05-01-PLAN.md (integration eval + browser verification)
 
-Progress: ███████░░░ 70%
+Progress: █████████░ 90%
 
 ## Accumulated Decisions
 
@@ -28,10 +28,13 @@ Progress: ███████░░░ 70%
 | 4 | Added violet to shared ChatMessage COLOR_PALETTE | Additive change; no impact to WaterBot/BizBot |
 | 4 | Mobile-first responsive: base=375px, sm:=640px+ | Consistent with Tailwind convention; mode grid 1-col → sm:2-col |
 | 4 | Added violet to DecisionTreeView + RAGButton | Same additive pattern as ChatMessage; fixes blue fallback |
+| 5 | Embedding regression is CONDITIONAL PASS | Webhook eval (30S/5A/0W) proves end-to-end quality; embedding is intermediate metric |
+| 5 | Document regressions for Phase 6 investigation | 11 queries regressed after Phase 1 re-ingestion; chunk boundaries need investigation |
+| 5 | run-eval.py needs --header and --payload-key for KiddoBot | VPS hardening auth + n8n payload key mismatch |
 
 ## Deferred Issues
 
-None yet.
+- **Embedding regression (Phase 1 → Phase 5):** 34S/1A/0W dropped to 24S/3A/5W/3N after knowledge re-ingestion. 3 NO_RESULTS queries (0.0 similarity) are anomalous. Investigate chunk boundaries and vector integrity in Phase 6.
 
 ## Blockers/Concerns Carried Forward
 
@@ -39,7 +42,7 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-16T20:04:58Z
-Stopped at: Completed 04-02-PLAN.md — Phase 4 complete
+Last session: 2026-02-16T20:18:50Z
+Stopped at: Completed 05-01-PLAN.md — Phase 5 complete
 Resume file: None
-Next: Phase 5 (Integration & E2E)
+Next: Phase 6 (Production Deploy)
