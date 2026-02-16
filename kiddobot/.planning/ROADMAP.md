@@ -134,7 +134,7 @@ Phases execute in numeric order. Skipped phases are marked N/A.
 | 0: Audit & Baseline | 1/1 | Complete | 2026-02-16 |
 | 1: Knowledge Refresh | 2/2 | Complete | 2026-02-16 |
 | 2: Shared Infrastructure | N/A | SKIPPED | N/A |
-| 3: Tool Rebuilds | 0/TBD | Not started | |
+| 3: Tool Rebuilds | 0/2 | Planned | |
 | 4: UI/UX Polish | 0/TBD | Not started | |
 | 5: Integration & E2E | 0/TBD | Not started | |
 | 6: Production Deploy | 0/1 | Not started | |
