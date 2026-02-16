@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-15)
 ## Current Position
 
 Phase: 8 of 9 (RAG Pipeline Improvements)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-02-16 — Completed 08-01-PLAN.md
+Last activity: 2026-02-16 — Completed 08-02-PLAN.md
 
-Progress: █████░░░░░ 50%
+Progress: ██████░░░░ 60%
 
 ## Deferred Issues
 
@@ -42,6 +42,8 @@ Progress: █████░░░░░ 50%
 | Santa Clarita → LA County TTC | City doesn't issue own business license; mapped to county agency |
 | TIMESTAMPTZ over TIMESTAMP | Timezone-aware timestamps for chunk staleness tracking |
 | No indexes on timestamp cols | Staleness queries are batch (bot-refresh), not real-time |
+| CDP pop >= 1000 threshold | Keeps dropdown manageable; special counties exempt (all CDPs) |
+| (Unincorporated) suffix on CDPs | Distinguishes from incorporated cities; n8n fallback handles unknown names |
 
 ### Roadmap Evolution
 
@@ -51,7 +53,7 @@ Progress: █████░░░░░ 50%
 ## Session Continuity
 
 Last session: 2026-02-16
-Stopped at: Completed 08-01-PLAN.md (Schema Migration + Metadata Enrichment)
+Stopped at: Completed 08-02-PLAN.md (Unincorporated Communities Dropdown Expansion)
 Resume file: None
 
 ### Artifacts
