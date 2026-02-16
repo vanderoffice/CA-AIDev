@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-15)
 ## Current Position
 
 Phase: 8 of 9 (RAG Pipeline Improvements)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-02-16 — Completed 08-02-PLAN.md
+Plan: 3 of 3 in current phase
+Status: Phase complete
+Last activity: 2026-02-16 — Completed 08-03-PLAN.md
 
-Progress: ██████░░░░ 60%
+Progress: ████████░░ 78%
 
 ## Deferred Issues
 
@@ -44,6 +44,8 @@ Progress: ██████░░░░ 60%
 | No indexes on timestamp cols | Staleness queries are batch (bot-refresh), not real-time |
 | CDP pop >= 1000 threshold | Keeps dropdown manageable; special counties exempt (all CDPs) |
 | (Unincorporated) suffix on CDPs | Distinguishes from incorporated cities; n8n fallback handles unknown names |
+| infer_topic_metadata returns {} for unknown dirs | Safe no-op for WaterBot/KiddoBot — only matches NN_ prefix convention |
+| 3+ path segments for industry_category | Prevents top-level READMEs from getting spurious industry_category |
 
 ### Roadmap Evolution
 
@@ -53,7 +55,7 @@ Progress: ██████░░░░ 60%
 ## Session Continuity
 
 Last session: 2026-02-16
-Stopped at: Completed 08-02-PLAN.md (Unincorporated Communities Dropdown Expansion)
+Stopped at: Completed 08-03-PLAN.md (Ingest Pipeline Update + Verification) — Phase 8 complete
 Resume file: None
 
 ### Artifacts

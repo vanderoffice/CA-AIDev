@@ -58,7 +58,7 @@ Plans:
 Plans:
 - [x] 08-01: Schema Migration + Metadata Enrichment — timestamp columns + topic classification on all 387 chunks ✓
 - [x] 08-02: Unincorporated Communities Dropdown Expansion — 728 CDPs added to CA_CITIES (1,210 total entries) ✓
-- [ ] 08-03: Ingest Pipeline Update + Verification — chunk.py enrichment + end-to-end Phase 8 verification
+- [x] 08-03: Ingest Pipeline Update + Verification — chunk.py enrichment + end-to-end Phase 8 verification ✓
 
 #### Phase 9: Tooling & Verification
 
@@ -82,7 +82,7 @@ Plans:
 | 5: Integration & E2E | v1.0 | 1/1 | Complete | 2026-02-15 |
 | 6: Production Deploy | v1.0 | 1/1 | Complete | 2026-02-15 |
 | 7: License Data Expansion | v1.1 | 2/2 | Complete | 2026-02-16 |
-| 8: RAG Pipeline Improvements | v1.1 | 2/3 | In progress | - |
+| 8: RAG Pipeline Improvements | v1.1 | 3/3 | Complete | 2026-02-16 |
 | 9: Tooling & Verification | v1.1 | 0/? | Not started | - |
 
 ## Domain Expertise
