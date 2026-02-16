@@ -2,7 +2,8 @@
 
 ## Milestones
 
-- [v1.0 Overhaul](milestones/v1.0-ROADMAP.md) (Phases 0-6) — SHIPPED 2026-02-15
+- ✅ [v1.0 Overhaul](milestones/v1.0-ROADMAP.md) (Phases 0-6) — SHIPPED 2026-02-15
+- 🚧 **v1.1 Data Completeness** — Phases 7-9 (in progress)
 
 ## Production-First Doctrine
 
@@ -31,6 +32,41 @@ All code changes target the production repo on VPS:
 
 </details>
 
+### 🚧 v1.1 Data Completeness (In Progress)
+
+**Milestone Goal:** Improve License Finder data coverage and RAG pipeline maintainability — no UI changes
+
+#### Phase 7: License Data Expansion
+
+**Goal**: Auto-include cross-industry general licenses (ISS-002) and seed city/county-specific permit data (ISS-003)
+**Depends on**: v1.0 complete
+**Research**: Likely (CalGOLD city/county requirements, general license categories)
+**Research topics**: CalGOLD local permitting data for major CA metros, general business license categories across industries
+**Plans**: TBD
+
+Plans:
+- [ ] 07-01: TBD (run /gsd:plan-phase 7 to break down)
+
+#### Phase 8: RAG Pipeline Improvements
+
+**Goal**: Enrich metadata on ~60% of chunks using basic blob format and add DB timestamp columns for chunk-level staleness tracking
+**Depends on**: Phase 7
+**Research**: Unlikely (internal pipeline work — /bot-ingest + SQL migration)
+**Plans**: TBD
+
+Plans:
+- [ ] 08-01: TBD
+
+#### Phase 9: Tooling & Verification
+
+**Goal**: Fix WAF external POST blocking (ISS-004) and run final eval pass to validate all v1.1 changes
+**Depends on**: Phase 8
+**Research**: Unlikely (nginx config + existing /bot-eval workflow)
+**Plans**: TBD
+
+Plans:
+- [ ] 09-01: TBD
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -42,6 +78,9 @@ All code changes target the production repo on VPS:
 | 4: UI/UX Polish | v1.0 | 1/1 | Complete | 2026-02-15 |
 | 5: Integration & E2E | v1.0 | 1/1 | Complete | 2026-02-15 |
 | 6: Production Deploy | v1.0 | 1/1 | Complete | 2026-02-15 |
+| 7: License Data Expansion | v1.1 | 0/? | Not started | - |
+| 8: RAG Pipeline Improvements | v1.1 | 0/? | Not started | - |
+| 9: Tooling & Verification | v1.1 | 0/? | Not started | - |
 
 ## Domain Expertise
 
@@ -57,3 +96,6 @@ California business licensing, DCA/ABC/CSLB/DRE regulations, CalGOLD local permi
 | 4: UI/UX Polish | (manual coding via SSH) | Markdown pipeline + source pills |
 | 5: Integration & E2E | `/bot-eval --mode webhook`, `/bot-eval --baseline auto` | Comprehensive testing |
 | 6: Production Deploy | `/bot-refresh track-history` | Ship + log |
+| 7: License Data Expansion | (SQL + SSH), `/bot-ingest` | Cross-industry + city/county data |
+| 8: RAG Pipeline Improvements | `/bot-ingest`, (SQL via SSH) | Metadata enrichment + timestamps |
+| 9: Tooling & Verification | `/bot-eval`, (nginx config) | WAF fix + final eval |
