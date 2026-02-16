@@ -1,0 +1,3028 @@
+{
+  "Alameda": [
+    {
+      "name": "Castro Valley",
+      "pop": 66441
+    },
+    {
+      "name": "San Lorenzo",
+      "pop": 29581
+    },
+    {
+      "name": "Ashland",
+      "pop": 23823
+    },
+    {
+      "name": "Cherryland",
+      "pop": 15808
+    },
+    {
+      "name": "Fairview",
+      "pop": 11341
+    }
+  ],
+  "Alpine": [
+    {
+      "name": "Mesa Vista",
+      "pop": 217
+    },
+    {
+      "name": "Markleeville",
+      "pop": 191
+    },
+    {
+      "name": "Kirkwood",
+      "pop": 190
+    },
+    {
+      "name": "Bear Valley",
+      "pop": 128
+    }
+  ],
+  "Amador": [
+    {
+      "name": "Pine Grove",
+      "pop": 2891
+    },
+    {
+      "name": "Amador Pines",
+      "pop": 1118
+    },
+    {
+      "name": "Camanche North Shore",
+      "pop": 1070
+    },
+    {
+      "name": "Pioneer",
+      "pop": 1066
+    }
+  ],
+  "Butte": [
+    {
+      "name": "Oroville East",
+      "pop": 8038
+    },
+    {
+      "name": "Magalia",
+      "pop": 7795
+    },
+    {
+      "name": "Thermalito",
+      "pop": 7198
+    },
+    {
+      "name": "Durham",
+      "pop": 5834
+    },
+    {
+      "name": "Palermo",
+      "pop": 5555
+    },
+    {
+      "name": "South Oroville",
+      "pop": 3235
+    },
+    {
+      "name": "Kelly Ridge",
+      "pop": 3006
+    },
+    {
+      "name": "Berry Creek",
+      "pop": 1637
+    },
+    {
+      "name": "Forest Ranch",
+      "pop": 1304
+    }
+  ],
+  "Calaveras": [
+    {
+      "name": "Rancho Calaveras",
+      "pop": 5590
+    },
+    {
+      "name": "Bret Harte",
+      "pop": 5135
+    },
+    {
+      "name": "Valley Springs",
+      "pop": 3779
+    },
+    {
+      "name": "Copperopolis",
+      "pop": 3400
+    },
+    {
+      "name": "Arnold",
+      "pop": 3288
+    },
+    {
+      "name": "San Andreas",
+      "pop": 2994
+    },
+    {
+      "name": "Murphys",
+      "pop": 1995
+    },
+    {
+      "name": "Red Corral",
+      "pop": 1687
+    },
+    {
+      "name": "Forest Meadows",
+      "pop": 1276
+    }
+  ],
+  "Colusa": [
+    {
+      "name": "Arbuckle",
+      "pop": 3484
+    },
+    {
+      "name": "Maxwell",
+      "pop": 1067
+    }
+  ],
+  "Contra Costa": [
+    {
+      "name": "Bay Point",
+      "pop": 23896
+    },
+    {
+      "name": "El Sobrante",
+      "pop": 15524
+    },
+    {
+      "name": "Discovery Bay",
+      "pop": 15358
+    },
+    {
+      "name": "Alamo",
+      "pop": 15314
+    },
+    {
+      "name": "Rodeo",
+      "pop": 9653
+    },
+    {
+      "name": "Blackhawk",
+      "pop": 9637
+    },
+    {
+      "name": "Contra Costa Centre",
+      "pop": 6808
+    },
+    {
+      "name": "Saranap",
+      "pop": 5830
+    },
+    {
+      "name": "Kensington",
+      "pop": 5428
+    },
+    {
+      "name": "Tara Hills",
+      "pop": 5364
+    },
+    {
+      "name": "Camino Tassajara",
+      "pop": 4951
+    },
+    {
+      "name": "Vine Hill",
+      "pop": 4323
+    },
+    {
+      "name": "Pacheco",
+      "pop": 4183
+    },
+    {
+      "name": "North Richmond",
+      "pop": 4175
+    },
+    {
+      "name": "San Miguel",
+      "pop": 3591
+    },
+    {
+      "name": "East Richmond Heights",
+      "pop": 3460
+    },
+    {
+      "name": "Reliez Valley",
+      "pop": 3354
+    },
+    {
+      "name": "Crockett",
+      "pop": 3242
+    },
+    {
+      "name": "Montalvin Manor",
+      "pop": 3099
+    },
+    {
+      "name": "Rollingwood",
+      "pop": 3015
+    },
+    {
+      "name": "Bethel Island",
+      "pop": 2131
+    },
+    {
+      "name": "Bayview",
+      "pop": 1782
+    },
+    {
+      "name": "Monument Hills",
+      "pop": 1702
+    },
+    {
+      "name": "Knightsen",
+      "pop": 1596
+    },
+    {
+      "name": "Norris Canyon",
+      "pop": 1313
+    },
+    {
+      "name": "Acalanes Ridge",
+      "pop": 1285
+    },
+    {
+      "name": "Diablo",
+      "pop": 1255
+    },
+    {
+      "name": "Byron",
+      "pop": 1140
+    },
+    {
+      "name": "Shell Ridge",
+      "pop": 1014
+    }
+  ],
+  "Del Norte": [
+    {
+      "name": "Bertsch-Oceanview",
+      "pop": 2520
+    },
+    {
+      "name": "Klamath",
+      "pop": 1088
+    }
+  ],
+  "El Dorado": [
+    {
+      "name": "El Dorado Hills",
+      "pop": 50547
+    },
+    {
+      "name": "Cameron Park",
+      "pop": 18881
+    },
+    {
+      "name": "Diamond Springs",
+      "pop": 11345
+    },
+    {
+      "name": "Pollock Pines",
+      "pop": 7112
+    },
+    {
+      "name": "Shingle Springs",
+      "pop": 4660
+    },
+    {
+      "name": "Auburn Lake Trails",
+      "pop": 3388
+    },
+    {
+      "name": "Georgetown",
+      "pop": 2255
+    },
+    {
+      "name": "Meyers",
+      "pop": 2163
+    },
+    {
+      "name": "Camino",
+      "pop": 1871
+    },
+    {
+      "name": "Grizzly Flats",
+      "pop": 1093
+    },
+    {
+      "name": "Tahoma",
+      "pop": 1034
+    }
+  ],
+  "Fresno": [
+    {
+      "name": "Old Fig Garden",
+      "pop": 5477
+    },
+    {
+      "name": "Mayfair",
+      "pop": 4831
+    },
+    {
+      "name": "Sunnyside",
+      "pop": 4627
+    },
+    {
+      "name": "Tarpey Village",
+      "pop": 3997
+    },
+    {
+      "name": "Squaw Valley",
+      "pop": 3564
+    },
+    {
+      "name": "Riverdale",
+      "pop": 3477
+    },
+    {
+      "name": "Auberry",
+      "pop": 3238
+    },
+    {
+      "name": "Mountain View",
+      "pop": 2622
+    },
+    {
+      "name": "Caruthers",
+      "pop": 2613
+    },
+    {
+      "name": "Easton",
+      "pop": 1972
+    },
+    {
+      "name": "Calwa",
+      "pop": 1776
+    },
+    {
+      "name": "Laton",
+      "pop": 1622
+    },
+    {
+      "name": "Biola",
+      "pop": 1427
+    },
+    {
+      "name": "Del Rey",
+      "pop": 1358
+    },
+    {
+      "name": "Callender",
+      "pop": 1282
+    },
+    {
+      "name": "Orange Blossom",
+      "pop": 1068
+    },
+    {
+      "name": "West Park",
+      "pop": 1053
+    },
+    {
+      "name": "Riverdale Park",
+      "pop": 1053
+    }
+  ],
+  "Glenn": [
+    {
+      "name": "Hamilton City",
+      "pop": 2263
+    }
+  ],
+  "Humboldt": [
+    {
+      "name": "McKinleyville",
+      "pop": 16262
+    },
+    {
+      "name": "Myrtletown",
+      "pop": 4882
+    },
+    {
+      "name": "Humboldt Hill",
+      "pop": 3498
+    },
+    {
+      "name": "Cutten",
+      "pop": 3223
+    },
+    {
+      "name": "Hoopa",
+      "pop": 3167
+    },
+    {
+      "name": "Bayview",
+      "pop": 2619
+    },
+    {
+      "name": "Willow Creek",
+      "pop": 1720
+    },
+    {
+      "name": "Redway",
+      "pop": 1247
+    },
+    {
+      "name": "Hydesville",
+      "pop": 1244
+    },
+    {
+      "name": "Westhaven-Moonstone",
+      "pop": 1187
+    }
+  ],
+  "Imperial": [
+    {
+      "name": "Heber",
+      "pop": 6896
+    },
+    {
+      "name": "Salton City",
+      "pop": 5155
+    },
+    {
+      "name": "Seeley",
+      "pop": 1729
+    },
+    {
+      "name": "Desert Shores",
+      "pop": 1128
+    }
+  ],
+  "Inyo": [
+    {
+      "name": "Dixon Lane-MeadowCreek",
+      "pop": 2780
+    },
+    {
+      "name": "West Bishop",
+      "pop": 2754
+    },
+    {
+      "name": "Lone Pine",
+      "pop": 2014
+    },
+    {
+      "name": "Big Pine",
+      "pop": 1875
+    },
+    {
+      "name": "Independence",
+      "pop": 593
+    },
+    {
+      "name": "Furnace Creek",
+      "pop": 136
+    },
+    {
+      "name": "Olancha",
+      "pop": 131
+    },
+    {
+      "name": "Tecopa",
+      "pop": 120
+    },
+    {
+      "name": "Tuttle",
+      "pop": 102
+    },
+    {
+      "name": "Keeler",
+      "pop": 71
+    },
+    {
+      "name": "Cartago",
+      "pop": 62
+    },
+    {
+      "name": "Charleston View",
+      "pop": 45
+    },
+    {
+      "name": "Homewood Canyon",
+      "pop": 40
+    },
+    {
+      "name": "Darwin",
+      "pop": 36
+    },
+    {
+      "name": "Shoshone",
+      "pop": 22
+    },
+    {
+      "name": "Silver City",
+      "pop": 0
+    }
+  ],
+  "Kern": [
+    {
+      "name": "Oildale",
+      "pop": 36135
+    },
+    {
+      "name": "East Niles",
+      "pop": 28390
+    },
+    {
+      "name": "Rosamond",
+      "pop": 20961
+    },
+    {
+      "name": "Rosedale",
+      "pop": 18639
+    },
+    {
+      "name": "Lamont",
+      "pop": 14049
+    },
+    {
+      "name": "Hillcrest",
+      "pop": 10528
+    },
+    {
+      "name": "East Bakersfield",
+      "pop": 9749
+    },
+    {
+      "name": "Golden Hills",
+      "pop": 9578
+    },
+    {
+      "name": "Potomac Park",
+      "pop": 9164
+    },
+    {
+      "name": "Bear Valley Springs",
+      "pop": 5592
+    },
+    {
+      "name": "Greenacres",
+      "pop": 5496
+    },
+    {
+      "name": "Burbank",
+      "pop": 4940
+    },
+    {
+      "name": "Mojave",
+      "pop": 4699
+    },
+    {
+      "name": "Ford City",
+      "pop": 4348
+    },
+    {
+      "name": "Cottonwood",
+      "pop": 3971
+    },
+    {
+      "name": "Old Stine",
+      "pop": 3841
+    },
+    {
+      "name": "Lake Isabella",
+      "pop": 3573
+    },
+    {
+      "name": "Rexland Acres",
+      "pop": 3563
+    },
+    {
+      "name": "Greenfield",
+      "pop": 3447
+    },
+    {
+      "name": "Stallion Springs",
+      "pop": 3139
+    },
+    {
+      "name": "Frazier Park",
+      "pop": 2592
+    },
+    {
+      "name": "Pine Mountain Club",
+      "pop": 2422
+    },
+    {
+      "name": "Lost Hills",
+      "pop": 2370
+    },
+    {
+      "name": "Richgrove",
+      "pop": 2358
+    },
+    {
+      "name": "Parkwood",
+      "pop": 2307
+    },
+    {
+      "name": "Weldon",
+      "pop": 2303
+    },
+    {
+      "name": "Wofford Heights",
+      "pop": 2213
+    },
+    {
+      "name": "Weedpatch",
+      "pop": 2206
+    },
+    {
+      "name": "Edwards AFB",
+      "pop": 2135
+    },
+    {
+      "name": "South Taft",
+      "pop": 2100
+    },
+    {
+      "name": "Boron",
+      "pop": 2086
+    },
+    {
+      "name": "Bodfish",
+      "pop": 2008
+    },
+    {
+      "name": "Taft Heights",
+      "pop": 1999
+    },
+    {
+      "name": "Woodlands",
+      "pop": 1933
+    },
+    {
+      "name": "Rouse",
+      "pop": 1913
+    },
+    {
+      "name": "China Lake Acres",
+      "pop": 1757
+    },
+    {
+      "name": "Bakersfield Country Club",
+      "pop": 1715
+    },
+    {
+      "name": "Taft Mosswood",
+      "pop": 1636
+    },
+    {
+      "name": "Kernville",
+      "pop": 1549
+    },
+    {
+      "name": "Buttonwillow",
+      "pop": 1337
+    },
+    {
+      "name": "Parklawn",
+      "pop": 1249
+    },
+    {
+      "name": "Lebec",
+      "pop": 1239
+    },
+    {
+      "name": "North Edwards",
+      "pop": 1054
+    }
+  ],
+  "Kings": [
+    {
+      "name": "Lemoore Station",
+      "pop": 6568
+    },
+    {
+      "name": "Armona",
+      "pop": 4274
+    },
+    {
+      "name": "Home Garden",
+      "pop": 1653
+    },
+    {
+      "name": "Kettleman City",
+      "pop": 1242
+    },
+    {
+      "name": "Stratford",
+      "pop": 1121
+    }
+  ],
+  "Lake": [
+    {
+      "name": "Hidden Valley Lake",
+      "pop": 6235
+    },
+    {
+      "name": "North Lakeport",
+      "pop": 3547
+    },
+    {
+      "name": "Clearlake Riviera",
+      "pop": 3410
+    },
+    {
+      "name": "Kelseyville",
+      "pop": 3382
+    },
+    {
+      "name": "Lucerne",
+      "pop": 3266
+    },
+    {
+      "name": "Nice",
+      "pop": 2929
+    },
+    {
+      "name": "Clearlake Oaks",
+      "pop": 2551
+    },
+    {
+      "name": "Cobb",
+      "pop": 1295
+    },
+    {
+      "name": "Lower Lake",
+      "pop": 1276
+    },
+    {
+      "name": "Soda Bay",
+      "pop": 1163
+    },
+    {
+      "name": "Middletown",
+      "pop": 1114
+    },
+    {
+      "name": "Upper Lake",
+      "pop": 1095
+    }
+  ],
+  "Lassen": [
+    {
+      "name": "Janesville",
+      "pop": 2461
+    },
+    {
+      "name": "Westwood",
+      "pop": 1541
+    },
+    {
+      "name": "Johnstonville",
+      "pop": 973
+    },
+    {
+      "name": "Doyle",
+      "pop": 536
+    },
+    {
+      "name": "California Pines",
+      "pop": 473
+    },
+    {
+      "name": "Bieber",
+      "pop": 266
+    },
+    {
+      "name": "Herlong",
+      "pop": 237
+    },
+    {
+      "name": "Litchfield",
+      "pop": 160
+    },
+    {
+      "name": "Milford",
+      "pop": 147
+    },
+    {
+      "name": "Little Valley",
+      "pop": 84
+    },
+    {
+      "name": "Madeline",
+      "pop": 21
+    },
+    {
+      "name": "Nubieber",
+      "pop": 19
+    }
+  ],
+  "Los Angeles": [
+    {
+      "name": "East Los Angeles",
+      "pop": 118786
+    },
+    {
+      "name": "Florence-Graham",
+      "pop": 61983
+    },
+    {
+      "name": "South Whittier",
+      "pop": 56415
+    },
+    {
+      "name": "Hacienda Heights",
+      "pop": 54191
+    },
+    {
+      "name": "Rowland Heights",
+      "pop": 48231
+    },
+    {
+      "name": "Altadena",
+      "pop": 42846
+    },
+    {
+      "name": "Westmont",
+      "pop": 33913
+    },
+    {
+      "name": "West Whittier-Los Nietos",
+      "pop": 25325
+    },
+    {
+      "name": "West Rancho Dominguez",
+      "pop": 24347
+    },
+    {
+      "name": "Willowbrook",
+      "pop": 24295
+    },
+    {
+      "name": "West Puente Valley",
+      "pop": 22959
+    },
+    {
+      "name": "West Carson",
+      "pop": 22870
+    },
+    {
+      "name": "East San Gabriel",
+      "pop": 22769
+    },
+    {
+      "name": "Valinda",
+      "pop": 22437
+    },
+    {
+      "name": "Lennox",
+      "pop": 20323
+    },
+    {
+      "name": "Stevenson Ranch",
+      "pop": 20178
+    },
+    {
+      "name": "La Crescenta-Montrose",
+      "pop": 19997
+    },
+    {
+      "name": "South San Jose Hills",
+      "pop": 19855
+    },
+    {
+      "name": "Castaic",
+      "pop": 18937
+    },
+    {
+      "name": "Vincent",
+      "pop": 15714
+    },
+    {
+      "name": "Walnut Park",
+      "pop": 15214
+    },
+    {
+      "name": "East Rancho Dominguez",
+      "pop": 15114
+    },
+    {
+      "name": "Avocado Heights",
+      "pop": 13317
+    },
+    {
+      "name": "Lake Los Angeles",
+      "pop": 13187
+    },
+    {
+      "name": "Sun Village",
+      "pop": 12345
+    },
+    {
+      "name": "Quartz Hill",
+      "pop": 11447
+    },
+    {
+      "name": "View Park-Windsor Hills",
+      "pop": 11419
+    },
+    {
+      "name": "Marina del Rey",
+      "pop": 11373
+    },
+    {
+      "name": "East Whittier",
+      "pop": 10394
+    },
+    {
+      "name": "Del Aire",
+      "pop": 10338
+    },
+    {
+      "name": "Citrus",
+      "pop": 10243
+    },
+    {
+      "name": "Charter Oak",
+      "pop": 9739
+    },
+    {
+      "name": "West Athens",
+      "pop": 9393
+    },
+    {
+      "name": "Alondra Park",
+      "pop": 8569
+    },
+    {
+      "name": "Topanga",
+      "pop": 8560
+    },
+    {
+      "name": "South San Gabriel",
+      "pop": 7920
+    },
+    {
+      "name": "Acton",
+      "pop": 7431
+    },
+    {
+      "name": "Ladera Heights",
+      "pop": 6654
+    },
+    {
+      "name": "South Monrovia Island",
+      "pop": 6515
+    },
+    {
+      "name": "East Pasadena",
+      "pop": 6021
+    },
+    {
+      "name": "Mayflower Village",
+      "pop": 5402
+    },
+    {
+      "name": "North El Monte",
+      "pop": 3730
+    },
+    {
+      "name": "Agua Dulce",
+      "pop": 3451
+    },
+    {
+      "name": "Rose Hills",
+      "pop": 2927
+    },
+    {
+      "name": "Pepperdine University",
+      "pop": 2747
+    },
+    {
+      "name": "Desert View Highlands",
+      "pop": 2676
+    },
+    {
+      "name": "Val Verde",
+      "pop": 2399
+    },
+    {
+      "name": "San Pasqual",
+      "pop": 2101
+    },
+    {
+      "name": "Elizabeth Lake",
+      "pop": 1651
+    },
+    {
+      "name": "Leona Valley",
+      "pop": 1555
+    },
+    {
+      "name": "Littlerock",
+      "pop": 1535
+    },
+    {
+      "name": "Hasley Canyon",
+      "pop": 1195
+    },
+    {
+      "name": "Green Valley",
+      "pop": 1036
+    }
+  ],
+  "Madera": [
+    {
+      "name": "Madera Acres",
+      "pop": 9162
+    },
+    {
+      "name": "Oakhurst",
+      "pop": 5945
+    },
+    {
+      "name": "Bonadelle Ranchos",
+      "pop": 5497
+    },
+    {
+      "name": "Yosemite Lakes",
+      "pop": 5022
+    },
+    {
+      "name": "Coarsegold",
+      "pop": 4144
+    },
+    {
+      "name": "Madera Ranchos",
+      "pop": 3623
+    },
+    {
+      "name": "North Fork",
+      "pop": 3250
+    },
+    {
+      "name": "Parksdale",
+      "pop": 3234
+    },
+    {
+      "name": "Ahwahnee",
+      "pop": 2296
+    },
+    {
+      "name": "Fairmead",
+      "pop": 1235
+    }
+  ],
+  "Marin": [
+    {
+      "name": "Tamalpais-Homestead Valley",
+      "pop": 11492
+    },
+    {
+      "name": "Kentfield",
+      "pop": 6808
+    },
+    {
+      "name": "Lucas Valley-Marinwood",
+      "pop": 6259
+    },
+    {
+      "name": "Strawberry",
+      "pop": 5447
+    },
+    {
+      "name": "Santa Venetia",
+      "pop": 4289
+    },
+    {
+      "name": "Marin City",
+      "pop": 2993
+    },
+    {
+      "name": "Sleepy Hollow",
+      "pop": 2401
+    },
+    {
+      "name": "Lagunitas-Forest Knolls",
+      "pop": 1924
+    },
+    {
+      "name": "Bolinas",
+      "pop": 1483
+    },
+    {
+      "name": "Black Point-Green Point",
+      "pop": 1431
+    },
+    {
+      "name": "Woodacre",
+      "pop": 1410
+    },
+    {
+      "name": "Inverness",
+      "pop": 1379
+    }
+  ],
+  "Mariposa": [
+    {
+      "name": "Mariposa",
+      "pop": 1526
+    },
+    {
+      "name": "Greeley Hill",
+      "pop": 927
+    },
+    {
+      "name": "Catheys Valley",
+      "pop": 829
+    },
+    {
+      "name": "Bootjack",
+      "pop": 661
+    },
+    {
+      "name": "Midpines",
+      "pop": 379
+    },
+    {
+      "name": "El Portal",
+      "pop": 372
+    },
+    {
+      "name": "Yosemite Valley",
+      "pop": 337
+    },
+    {
+      "name": "Bear Valley",
+      "pop": 156
+    },
+    {
+      "name": "Mt. Bullion",
+      "pop": 154
+    },
+    {
+      "name": "Coulterville",
+      "pop": 115
+    },
+    {
+      "name": "Wawona",
+      "pop": 111
+    },
+    {
+      "name": "Fish Camp",
+      "pop": 49
+    },
+    {
+      "name": "Yosemite West",
+      "pop": 47
+    },
+    {
+      "name": "Hornitos",
+      "pop": 38
+    }
+  ],
+  "Mendocino": [
+    {
+      "name": "Brooktrails",
+      "pop": 3632
+    },
+    {
+      "name": "Redwood Valley",
+      "pop": 1843
+    },
+    {
+      "name": "Covelo",
+      "pop": 1394
+    },
+    {
+      "name": "Laytonville",
+      "pop": 1152
+    },
+    {
+      "name": "Big River",
+      "pop": 1084
+    },
+    {
+      "name": "Boonville",
+      "pop": 1018
+    }
+  ],
+  "Merced": [
+    {
+      "name": "Winton",
+      "pop": 11709
+    },
+    {
+      "name": "Delhi",
+      "pop": 10656
+    },
+    {
+      "name": "Franklin",
+      "pop": 6919
+    },
+    {
+      "name": "Hilmar-Irwin",
+      "pop": 5164
+    },
+    {
+      "name": "McSwain",
+      "pop": 4480
+    },
+    {
+      "name": "Planada",
+      "pop": 4164
+    },
+    {
+      "name": "Santa Nella",
+      "pop": 2211
+    },
+    {
+      "name": "South Dos Palos",
+      "pop": 1747
+    },
+    {
+      "name": "Le Grand",
+      "pop": 1592
+    }
+  ],
+  "Modoc": [
+    {
+      "name": "Cedarville",
+      "pop": 437
+    },
+    {
+      "name": "Newell",
+      "pop": 301
+    },
+    {
+      "name": "Adin",
+      "pop": 205
+    },
+    {
+      "name": "Canby",
+      "pop": 183
+    },
+    {
+      "name": "Fort Bidwell",
+      "pop": 180
+    },
+    {
+      "name": "New Pine Creek",
+      "pop": 87
+    },
+    {
+      "name": "Lake City",
+      "pop": 71
+    },
+    {
+      "name": "Aspen Springs",
+      "pop": 70
+    },
+    {
+      "name": "Lookout",
+      "pop": 68
+    },
+    {
+      "name": "Likely",
+      "pop": 58
+    },
+    {
+      "name": "Eagleville",
+      "pop": 45
+    },
+    {
+      "name": "Dales",
+      "pop": 28
+    }
+  ],
+  "Mono": [
+    {
+      "name": "Crowley Lake",
+      "pop": 980
+    },
+    {
+      "name": "Walker",
+      "pop": 704
+    },
+    {
+      "name": "Chalfant",
+      "pop": 660
+    },
+    {
+      "name": "June Lake",
+      "pop": 611
+    },
+    {
+      "name": "Bridgeport",
+      "pop": 553
+    },
+    {
+      "name": "Coleville",
+      "pop": 419
+    },
+    {
+      "name": "Benton",
+      "pop": 279
+    },
+    {
+      "name": "Mono City",
+      "pop": 224
+    },
+    {
+      "name": "Lee Vining",
+      "pop": 217
+    },
+    {
+      "name": "Swall Meadows",
+      "pop": 178
+    },
+    {
+      "name": "Paradise",
+      "pop": 174
+    },
+    {
+      "name": "Topaz",
+      "pop": 150
+    },
+    {
+      "name": "McGee Creek",
+      "pop": 45
+    },
+    {
+      "name": "Twin Lakes",
+      "pop": 45
+    },
+    {
+      "name": "Virginia Lakes",
+      "pop": 7
+    }
+  ],
+  "Monterey": [
+    {
+      "name": "Prunedale",
+      "pop": 18885
+    },
+    {
+      "name": "Castroville",
+      "pop": 7515
+    },
+    {
+      "name": "Carmel Valley Village",
+      "pop": 4524
+    },
+    {
+      "name": "Del Monte Forest",
+      "pop": 4204
+    },
+    {
+      "name": "Las Lomas",
+      "pop": 3046
+    },
+    {
+      "name": "Pajaro",
+      "pop": 2882
+    },
+    {
+      "name": "Pine Canyon",
+      "pop": 1871
+    },
+    {
+      "name": "Boronda",
+      "pop": 1760
+    },
+    {
+      "name": "Elkhorn",
+      "pop": 1588
+    },
+    {
+      "name": "Chualar",
+      "pop": 1185
+    }
+  ],
+  "Napa": [
+    {
+      "name": "Angwin",
+      "pop": 2633
+    },
+    {
+      "name": "Deer Park",
+      "pop": 1294
+    }
+  ],
+  "Nevada": [
+    {
+      "name": "Alta Sierra",
+      "pop": 7204
+    },
+    {
+      "name": "Lake Wildwood",
+      "pop": 5158
+    },
+    {
+      "name": "Lake of the Pines",
+      "pop": 4301
+    },
+    {
+      "name": "Penn Valley",
+      "pop": 1593
+    },
+    {
+      "name": "Cedar Ridge",
+      "pop": 1235
+    }
+  ],
+  "Orange": [
+    {
+      "name": "Ladera Ranch",
+      "pop": 26170
+    },
+    {
+      "name": "North Tustin",
+      "pop": 25718
+    },
+    {
+      "name": "Coto de Caza",
+      "pop": 14710
+    },
+    {
+      "name": "Rossmoor",
+      "pop": 10625
+    },
+    {
+      "name": "Rancho Mission Viejo",
+      "pop": 10378
+    },
+    {
+      "name": "Midway City",
+      "pop": 8825
+    },
+    {
+      "name": "Las Flores",
+      "pop": 5995
+    },
+    {
+      "name": "Trabuco Canyon",
+      "pop": 1020
+    }
+  ],
+  "Placer": [
+    {
+      "name": "Granite Bay",
+      "pop": 21247
+    },
+    {
+      "name": "North Auburn",
+      "pop": 13452
+    },
+    {
+      "name": "Kings Beach",
+      "pop": 3563
+    },
+    {
+      "name": "Meadow Vista",
+      "pop": 3263
+    },
+    {
+      "name": "Foresthill",
+      "pop": 1692
+    },
+    {
+      "name": "Sunnyside-Tahoe City",
+      "pop": 1555
+    },
+    {
+      "name": "Tahoe Vista",
+      "pop": 1392
+    },
+    {
+      "name": "Sheridan",
+      "pop": 1385
+    },
+    {
+      "name": "Newcastle",
+      "pop": 1321
+    },
+    {
+      "name": "Dollar Point",
+      "pop": 1261
+    },
+    {
+      "name": "Penryn",
+      "pop": 1150
+    }
+  ],
+  "Plumas": [
+    {
+      "name": "East Quincy",
+      "pop": 2463
+    },
+    {
+      "name": "Chester",
+      "pop": 2187
+    },
+    {
+      "name": "Quincy",
+      "pop": 1630
+    },
+    {
+      "name": "Greenville",
+      "pop": 1026
+    },
+    {
+      "name": "Delleker",
+      "pop": 802
+    },
+    {
+      "name": "Graeagle",
+      "pop": 724
+    },
+    {
+      "name": "Hamilton Branch",
+      "pop": 505
+    },
+    {
+      "name": "Beckwourth",
+      "pop": 478
+    },
+    {
+      "name": "Meadow Valley",
+      "pop": 453
+    },
+    {
+      "name": "Lake Almanor Country Club",
+      "pop": 451
+    },
+    {
+      "name": "Chilcoot-Vinton",
+      "pop": 446
+    },
+    {
+      "name": "Lake Almanor Peninsula",
+      "pop": 366
+    },
+    {
+      "name": "Plumas Eureka",
+      "pop": 334
+    },
+    {
+      "name": "Mountain Meadows",
+      "pop": 303
+    },
+    {
+      "name": "Cromberg",
+      "pop": 272
+    },
+    {
+      "name": "Lake Almanor West",
+      "pop": 211
+    },
+    {
+      "name": "Crescent Mills",
+      "pop": 206
+    },
+    {
+      "name": "Whitehawk",
+      "pop": 144
+    },
+    {
+      "name": "Taylorsville",
+      "pop": 123
+    },
+    {
+      "name": "Mohawk Vista",
+      "pop": 107
+    },
+    {
+      "name": "Indian Falls",
+      "pop": 79
+    },
+    {
+      "name": "Clio",
+      "pop": 77
+    },
+    {
+      "name": "Twain",
+      "pop": 75
+    },
+    {
+      "name": "Lake Davis",
+      "pop": 72
+    },
+    {
+      "name": "La Porte",
+      "pop": 65
+    },
+    {
+      "name": "Keddie",
+      "pop": 51
+    },
+    {
+      "name": "Blairsden",
+      "pop": 38
+    },
+    {
+      "name": "Canyondam",
+      "pop": 30
+    },
+    {
+      "name": "Little Grass Valley",
+      "pop": 25
+    },
+    {
+      "name": "Prattville",
+      "pop": 24
+    },
+    {
+      "name": "Johnsville",
+      "pop": 22
+    },
+    {
+      "name": "Bucks Lake",
+      "pop": 22
+    },
+    {
+      "name": "Spring Garden",
+      "pop": 19
+    },
+    {
+      "name": "Tobin",
+      "pop": 19
+    },
+    {
+      "name": "Belden",
+      "pop": 15
+    },
+    {
+      "name": "Warner Valley",
+      "pop": 8
+    },
+    {
+      "name": "Almanor",
+      "pop": 3
+    },
+    {
+      "name": "Caribou",
+      "pop": 1
+    },
+    {
+      "name": "Paxton",
+      "pop": 0
+    }
+  ],
+  "Riverside": [
+    {
+      "name": "French Valley",
+      "pop": 35280
+    },
+    {
+      "name": "Temescal Valley",
+      "pop": 26232
+    },
+    {
+      "name": "Mead Valley",
+      "pop": 19819
+    },
+    {
+      "name": "East Hemet",
+      "pop": 19432
+    },
+    {
+      "name": "Valle Vista",
+      "pop": 16194
+    },
+    {
+      "name": "Woodcrest",
+      "pop": 15378
+    },
+    {
+      "name": "El Sobrante",
+      "pop": 14039
+    },
+    {
+      "name": "Lakeland Village",
+      "pop": 12364
+    },
+    {
+      "name": "Home Gardens",
+      "pop": 11203
+    },
+    {
+      "name": "Good Hope",
+      "pop": 9468
+    },
+    {
+      "name": "La Cresta",
+      "pop": 8787
+    },
+    {
+      "name": "Bermuda Dunes",
+      "pop": 8244
+    },
+    {
+      "name": "Mecca",
+      "pop": 8219
+    },
+    {
+      "name": "Thousand Palms",
+      "pop": 7967
+    },
+    {
+      "name": "Highgrove",
+      "pop": 7515
+    },
+    {
+      "name": "Garnet",
+      "pop": 7118
+    },
+    {
+      "name": "Homeland",
+      "pop": 6772
+    },
+    {
+      "name": "Nuevo",
+      "pop": 6733
+    },
+    {
+      "name": "Desert Palms",
+      "pop": 6686
+    },
+    {
+      "name": "Cherry Valley",
+      "pop": 6509
+    },
+    {
+      "name": "Lake Mathews",
+      "pop": 5972
+    },
+    {
+      "name": "El Cerrito",
+      "pop": 5058
+    },
+    {
+      "name": "Oasis",
+      "pop": 4468
+    },
+    {
+      "name": "Desert Edge",
+      "pop": 4180
+    },
+    {
+      "name": "Idyllwild-Pine Cove",
+      "pop": 4163
+    },
+    {
+      "name": "North Shore",
+      "pop": 3585
+    },
+    {
+      "name": "Sage",
+      "pop": 3370
+    },
+    {
+      "name": "Meadowbrook",
+      "pop": 3142
+    },
+    {
+      "name": "Anza",
+      "pop": 3075
+    },
+    {
+      "name": "Winchester",
+      "pop": 3068
+    },
+    {
+      "name": "Green Acres",
+      "pop": 2918
+    },
+    {
+      "name": "Thermal",
+      "pop": 2676
+    },
+    {
+      "name": "Coronita",
+      "pop": 2639
+    },
+    {
+      "name": "Cabazon",
+      "pop": 2629
+    },
+    {
+      "name": "Vista Santa Rosa",
+      "pop": 2607
+    },
+    {
+      "name": "Sky Valley",
+      "pop": 2411
+    },
+    {
+      "name": "Romoland",
+      "pop": 2005
+    },
+    {
+      "name": "Lakeview",
+      "pop": 1977
+    },
+    {
+      "name": "Casa Loma",
+      "pop": 1804
+    },
+    {
+      "name": "Warm Springs",
+      "pop": 1586
+    },
+    {
+      "name": "Airport",
+      "pop": 1389
+    },
+    {
+      "name": "Lake Riverside",
+      "pop": 1375
+    },
+    {
+      "name": "Indio Hills",
+      "pop": 1048
+    }
+  ],
+  "Sacramento": [
+    {
+      "name": "Arden-Arcade",
+      "pop": 94659
+    },
+    {
+      "name": "Carmichael",
+      "pop": 79793
+    },
+    {
+      "name": "Florin",
+      "pop": 52388
+    },
+    {
+      "name": "North Highlands",
+      "pop": 49327
+    },
+    {
+      "name": "Antelope",
+      "pop": 48733
+    },
+    {
+      "name": "Vineyard",
+      "pop": 43935
+    },
+    {
+      "name": "Foothill Farms",
+      "pop": 35834
+    },
+    {
+      "name": "Orangevale",
+      "pop": 35569
+    },
+    {
+      "name": "Fair Oaks",
+      "pop": 32514
+    },
+    {
+      "name": "Rosemont",
+      "pop": 23510
+    },
+    {
+      "name": "Parkway",
+      "pop": 15962
+    },
+    {
+      "name": "Rio Linda",
+      "pop": 15944
+    },
+    {
+      "name": "Lemon Hill",
+      "pop": 14496
+    },
+    {
+      "name": "La Riviera",
+      "pop": 11252
+    },
+    {
+      "name": "Gold River",
+      "pop": 7844
+    },
+    {
+      "name": "Fruitridge Pocket",
+      "pop": 6102
+    },
+    {
+      "name": "Wilton",
+      "pop": 5958
+    },
+    {
+      "name": "Rancho Murieta",
+      "pop": 5903
+    },
+    {
+      "name": "Elverta",
+      "pop": 5435
+    },
+    {
+      "name": "Mather",
+      "pop": 4698
+    },
+    {
+      "name": "Walnut Grove",
+      "pop": 1452
+    },
+    {
+      "name": "Del Rio",
+      "pop": 1399
+    },
+    {
+      "name": "Clay",
+      "pop": 1252
+    },
+    {
+      "name": "Herald",
+      "pop": 1160
+    }
+  ],
+  "San Benito": [
+    {
+      "name": "Ridgemark",
+      "pop": 3212
+    },
+    {
+      "name": "Aromas",
+      "pop": 2708
+    }
+  ],
+  "San Bernardino": [
+    {
+      "name": "Bloomington",
+      "pop": 24339
+    },
+    {
+      "name": "Phelan",
+      "pop": 13859
+    },
+    {
+      "name": "Big Bear City",
+      "pop": 12738
+    },
+    {
+      "name": "Lake Arrowhead",
+      "pop": 12401
+    },
+    {
+      "name": "Crestline",
+      "pop": 11650
+    },
+    {
+      "name": "Muscoy",
+      "pop": 10719
+    },
+    {
+      "name": "Spring Valley Lake",
+      "pop": 9598
+    },
+    {
+      "name": "Mentone",
+      "pop": 9557
+    },
+    {
+      "name": "Oak Hills",
+      "pop": 9450
+    },
+    {
+      "name": "Fort Irwin",
+      "pop": 8096
+    },
+    {
+      "name": "Piñon Hills",
+      "pop": 7258
+    },
+    {
+      "name": "Joshua Tree",
+      "pop": 6489
+    },
+    {
+      "name": "Silver Lakes",
+      "pop": 6317
+    },
+    {
+      "name": "Lucerne Valley",
+      "pop": 5331
+    },
+    {
+      "name": "Running Springs",
+      "pop": 5268
+    },
+    {
+      "name": "Wrightwood",
+      "pop": 4720
+    },
+    {
+      "name": "Lenwood",
+      "pop": 3623
+    },
+    {
+      "name": "Morongo Valley",
+      "pop": 3514
+    },
+    {
+      "name": "San Antonio Heights",
+      "pop": 3441
+    },
+    {
+      "name": "Mountain View Acres",
+      "pop": 3337
+    },
+    {
+      "name": "Homestead Valley",
+      "pop": 2789
+    },
+    {
+      "name": "Searles Valley",
+      "pop": 1565
+    }
+  ],
+  "San Diego": [
+    {
+      "name": "La Presa",
+      "pop": 35033
+    },
+    {
+      "name": "Fallbrook",
+      "pop": 32267
+    },
+    {
+      "name": "Spring Valley",
+      "pop": 30998
+    },
+    {
+      "name": "Winter Gardens",
+      "pop": 22380
+    },
+    {
+      "name": "Rancho San Diego",
+      "pop": 21858
+    },
+    {
+      "name": "Ramona",
+      "pop": 21468
+    },
+    {
+      "name": "Lakeside",
+      "pop": 21152
+    },
+    {
+      "name": "Casa de Oro-Mount Helix",
+      "pop": 19576
+    },
+    {
+      "name": "Bostonia",
+      "pop": 16882
+    },
+    {
+      "name": "Alpine",
+      "pop": 14696
+    },
+    {
+      "name": "Bonita",
+      "pop": 12917
+    },
+    {
+      "name": "Camp Pendleton South",
+      "pop": 12468
+    },
+    {
+      "name": "San Diego Country Estates",
+      "pop": 10395
+    },
+    {
+      "name": "Valley Center",
+      "pop": 10087
+    },
+    {
+      "name": "Camp Pendleton Mainside",
+      "pop": 9683
+    },
+    {
+      "name": "Jamul",
+      "pop": 6179
+    },
+    {
+      "name": "Eucalyptus Hills",
+      "pop": 5517
+    },
+    {
+      "name": "Lake San Marcos",
+      "pop": 5328
+    },
+    {
+      "name": "Bonsall",
+      "pop": 4546
+    },
+    {
+      "name": "Hidden Meadows",
+      "pop": 4484
+    },
+    {
+      "name": "Harbison Canyon",
+      "pop": 4048
+    },
+    {
+      "name": "Granite Hills",
+      "pop": 3267
+    },
+    {
+      "name": "Pine Hills",
+      "pop": 3186
+    },
+    {
+      "name": "Rancho Santa Fe",
+      "pop": 3156
+    },
+    {
+      "name": "Borrego Springs",
+      "pop": 3073
+    },
+    {
+      "name": "Fairbanks Ranch",
+      "pop": 3002
+    },
+    {
+      "name": "Campo",
+      "pop": 2955
+    },
+    {
+      "name": "Crest",
+      "pop": 2828
+    },
+    {
+      "name": "Harmony Grove",
+      "pop": 2079
+    },
+    {
+      "name": "Rainbow",
+      "pop": 1884
+    },
+    {
+      "name": "Julian",
+      "pop": 1768
+    },
+    {
+      "name": "Pine Valley",
+      "pop": 1645
+    },
+    {
+      "name": "Descanso",
+      "pop": 1499
+    },
+    {
+      "name": "Pala",
+      "pop": 1490
+    }
+  ],
+  "San Joaquin": [
+    {
+      "name": "Mountain House",
+      "pop": 24499
+    },
+    {
+      "name": "Garden Acres",
+      "pop": 11398
+    },
+    {
+      "name": "Country Club",
+      "pop": 10777
+    },
+    {
+      "name": "August",
+      "pop": 8628
+    },
+    {
+      "name": "Benton Park",
+      "pop": 5333
+    },
+    {
+      "name": "Lincoln Village",
+      "pop": 4401
+    },
+    {
+      "name": "Morada",
+      "pop": 4054
+    },
+    {
+      "name": "Woodbridge",
+      "pop": 4031
+    },
+    {
+      "name": "French Camp",
+      "pop": 3770
+    },
+    {
+      "name": "Lockeford",
+      "pop": 3333
+    },
+    {
+      "name": "Kennedy",
+      "pop": 3223
+    },
+    {
+      "name": "Dogtown",
+      "pop": 2516
+    },
+    {
+      "name": "Linden",
+      "pop": 1863
+    },
+    {
+      "name": "Thornton",
+      "pop": 1004
+    }
+  ],
+  "San Luis Obispo": [
+    {
+      "name": "Nipomo",
+      "pop": 18176
+    },
+    {
+      "name": "Los Osos",
+      "pop": 14465
+    },
+    {
+      "name": "California Polytechnic State University",
+      "pop": 8583
+    },
+    {
+      "name": "Templeton",
+      "pop": 8386
+    },
+    {
+      "name": "Oceano",
+      "pop": 7183
+    },
+    {
+      "name": "Cambria",
+      "pop": 5678
+    },
+    {
+      "name": "San Miguel",
+      "pop": 3172
+    },
+    {
+      "name": "Lake Nacimiento",
+      "pop": 2956
+    },
+    {
+      "name": "Cayucos",
+      "pop": 2505
+    },
+    {
+      "name": "Baywood Park",
+      "pop": 1693
+    },
+    {
+      "name": "Avila Beach",
+      "pop": 1576
+    },
+    {
+      "name": "Los Ranchos",
+      "pop": 1516
+    },
+    {
+      "name": "Santa Margarita",
+      "pop": 1291
+    },
+    {
+      "name": "Shandon",
+      "pop": 1168
+    },
+    {
+      "name": "Blacklake",
+      "pop": 1016
+    }
+  ],
+  "San Mateo": [
+    {
+      "name": "North Fair Oaks",
+      "pop": 14027
+    },
+    {
+      "name": "El Granada",
+      "pop": 5481
+    },
+    {
+      "name": "Broadmoor",
+      "pop": 4411
+    },
+    {
+      "name": "Emerald Lake Hills",
+      "pop": 4406
+    },
+    {
+      "name": "West Menlo Park",
+      "pop": 3930
+    },
+    {
+      "name": "Moss Beach",
+      "pop": 3214
+    },
+    {
+      "name": "Montara",
+      "pop": 2833
+    },
+    {
+      "name": "Highlands",
+      "pop": 2359
+    },
+    {
+      "name": "Ladera",
+      "pop": 1557
+    }
+  ],
+  "Santa Barbara": [
+    {
+      "name": "Orcutt",
+      "pop": 32034
+    },
+    {
+      "name": "Eastern Goleta Valley",
+      "pop": 28656
+    },
+    {
+      "name": "Isla Vista",
+      "pop": 15500
+    },
+    {
+      "name": "University of California-Santa Barbara",
+      "pop": 9710
+    },
+    {
+      "name": "Montecito",
+      "pop": 8638
+    },
+    {
+      "name": "Vandenberg Village",
+      "pop": 7308
+    },
+    {
+      "name": "Santa Ynez",
+      "pop": 4505
+    },
+    {
+      "name": "Mission Hills",
+      "pop": 3571
+    },
+    {
+      "name": "Vandenberg AFB",
+      "pop": 3559
+    },
+    {
+      "name": "Mission Canyon",
+      "pop": 2540
+    },
+    {
+      "name": "Los Alamos",
+      "pop": 1839
+    },
+    {
+      "name": "Toro Canyon",
+      "pop": 1835
+    },
+    {
+      "name": "Summerland",
+      "pop": 1222
+    },
+    {
+      "name": "Los Olivos",
+      "pop": 1202
+    }
+  ],
+  "Santa Clara": [
+    {
+      "name": "Stanford",
+      "pop": 21150
+    },
+    {
+      "name": "Alum Rock",
+      "pop": 12042
+    },
+    {
+      "name": "San Martin",
+      "pop": 7008
+    },
+    {
+      "name": "East Foothills",
+      "pop": 6803
+    },
+    {
+      "name": "Cambrian Park",
+      "pop": 3719
+    },
+    {
+      "name": "Loyola",
+      "pop": 3491
+    },
+    {
+      "name": "Lexington Hills",
+      "pop": 2492
+    }
+  ],
+  "Santa Cruz": [
+    {
+      "name": "Live Oak",
+      "pop": 17038
+    },
+    {
+      "name": "Soquel",
+      "pop": 9980
+    },
+    {
+      "name": "Rio del Mar",
+      "pop": 9128
+    },
+    {
+      "name": "Interlaken",
+      "pop": 7368
+    },
+    {
+      "name": "Aptos",
+      "pop": 6664
+    },
+    {
+      "name": "Ben Lomond",
+      "pop": 6337
+    },
+    {
+      "name": "Pleasure Point",
+      "pop": 5821
+    },
+    {
+      "name": "Boulder Creek",
+      "pop": 5429
+    },
+    {
+      "name": "Twin Lakes",
+      "pop": 4944
+    },
+    {
+      "name": "Felton",
+      "pop": 4489
+    },
+    {
+      "name": "Freedom",
+      "pop": 3835
+    },
+    {
+      "name": "Day Valley",
+      "pop": 3410
+    },
+    {
+      "name": "Seacliff",
+      "pop": 3280
+    },
+    {
+      "name": "Bonny Doon",
+      "pop": 2868
+    },
+    {
+      "name": "Amesti",
+      "pop": 2637
+    },
+    {
+      "name": "La Selva Beach",
+      "pop": 2531
+    },
+    {
+      "name": "Aptos Hills-Larkin Valley",
+      "pop": 2383
+    },
+    {
+      "name": "Corralitos",
+      "pop": 2342
+    },
+    {
+      "name": "Brookdale",
+      "pop": 2043
+    },
+    {
+      "name": "Castle Hill",
+      "pop": 1271
+    },
+    {
+      "name": "Lompico",
+      "pop": 1154
+    },
+    {
+      "name": "Mount Hermon",
+      "pop": 1110
+    },
+    {
+      "name": "Pasatiempo",
+      "pop": 1093
+    }
+  ],
+  "Shasta": [
+    {
+      "name": "Cottonwood",
+      "pop": 6268
+    },
+    {
+      "name": "Happy Valley",
+      "pop": 4949
+    },
+    {
+      "name": "Bella Vista",
+      "pop": 3641
+    },
+    {
+      "name": "Lake California",
+      "pop": 3377
+    },
+    {
+      "name": "Burney",
+      "pop": 3000
+    },
+    {
+      "name": "Palo Cedro",
+      "pop": 2931
+    },
+    {
+      "name": "Buckhorn",
+      "pop": 2597
+    },
+    {
+      "name": "Shingletown",
+      "pop": 2442
+    },
+    {
+      "name": "Centerville",
+      "pop": 2095
+    },
+    {
+      "name": "Jones Valley",
+      "pop": 1160
+    },
+    {
+      "name": "Shasta",
+      "pop": 1043
+    }
+  ],
+  "Sierra": [
+    {
+      "name": "Sierra Brooks",
+      "pop": 467
+    },
+    {
+      "name": "Downieville",
+      "pop": 290
+    },
+    {
+      "name": "Sierraville",
+      "pop": 239
+    },
+    {
+      "name": "Sierra City",
+      "pop": 235
+    },
+    {
+      "name": "Calpine",
+      "pop": 223
+    },
+    {
+      "name": "Goodyears Bar",
+      "pop": 69
+    },
+    {
+      "name": "Sattley",
+      "pop": 44
+    },
+    {
+      "name": "Alleghany",
+      "pop": 30
+    }
+  ],
+  "Siskiyou": [
+    {
+      "name": "Lake Shastina",
+      "pop": 2401
+    }
+  ],
+  "Solano": [
+    {
+      "name": "Hartley",
+      "pop": 2430
+    },
+    {
+      "name": "Green Valley",
+      "pop": 1654
+    },
+    {
+      "name": "Allendale",
+      "pop": 1651
+    }
+  ],
+  "Sonoma": [
+    {
+      "name": "Larkfield-Wikiup",
+      "pop": 8492
+    },
+    {
+      "name": "Boyes Hot Springs",
+      "pop": 6215
+    },
+    {
+      "name": "Guerneville",
+      "pop": 4552
+    },
+    {
+      "name": "Fetters Hot Springs-Agua Caliente",
+      "pop": 4233
+    },
+    {
+      "name": "El Verano",
+      "pop": 3867
+    },
+    {
+      "name": "Forestville",
+      "pop": 3264
+    },
+    {
+      "name": "Sonoma State University",
+      "pop": 2679
+    },
+    {
+      "name": "Penngrove",
+      "pop": 2637
+    },
+    {
+      "name": "Graton",
+      "pop": 1683
+    },
+    {
+      "name": "Temelec",
+      "pop": 1500
+    },
+    {
+      "name": "Eldridge",
+      "pop": 1312
+    },
+    {
+      "name": "Sea Ranch",
+      "pop": 1169
+    },
+    {
+      "name": "Occidental",
+      "pop": 1132
+    },
+    {
+      "name": "Monte Rio",
+      "pop": 1080
+    }
+  ],
+  "Stanislaus": [
+    {
+      "name": "Salida",
+      "pop": 13886
+    },
+    {
+      "name": "West Modesto",
+      "pop": 5965
+    },
+    {
+      "name": "Keyes",
+      "pop": 5672
+    },
+    {
+      "name": "Denair",
+      "pop": 4865
+    },
+    {
+      "name": "Empire",
+      "pop": 4202
+    },
+    {
+      "name": "Bystrom",
+      "pop": 3957
+    },
+    {
+      "name": "East Oakdale",
+      "pop": 3201
+    },
+    {
+      "name": "Diablo Grande",
+      "pop": 1669
+    },
+    {
+      "name": "Grayson",
+      "pop": 1041
+    }
+  ],
+  "Sutter": [
+    {
+      "name": "Sutter",
+      "pop": 2997
+    }
+  ],
+  "Tehama": [
+    {
+      "name": "Los Molinos",
+      "pop": 2098
+    },
+    {
+      "name": "Rancho Tehama Reserve",
+      "pop": 1572
+    },
+    {
+      "name": "Gerber",
+      "pop": 1044
+    }
+  ],
+  "Trinity": [
+    {
+      "name": "Weaverville",
+      "pop": 3667
+    },
+    {
+      "name": "Post Mountain",
+      "pop": 3032
+    },
+    {
+      "name": "Hayfork",
+      "pop": 2324
+    },
+    {
+      "name": "Lewiston",
+      "pop": 1222
+    },
+    {
+      "name": "Douglas City",
+      "pop": 868
+    },
+    {
+      "name": "Junction City",
+      "pop": 658
+    },
+    {
+      "name": "Grangeville",
+      "pop": 508
+    },
+    {
+      "name": "Salyer",
+      "pop": 389
+    },
+    {
+      "name": "Trinity Village",
+      "pop": 278
+    },
+    {
+      "name": "Ruth",
+      "pop": 254
+    },
+    {
+      "name": "Burnt Ranch",
+      "pop": 250
+    },
+    {
+      "name": "Hyampom",
+      "pop": 241
+    },
+    {
+      "name": "Trinity Center",
+      "pop": 198
+    },
+    {
+      "name": "Coffee Creek",
+      "pop": 152
+    },
+    {
+      "name": "Wautec",
+      "pop": 48
+    }
+  ],
+  "Tulare": [
+    {
+      "name": "Orosi",
+      "pop": 8329
+    },
+    {
+      "name": "Earlimart",
+      "pop": 7679
+    },
+    {
+      "name": "East Porterville",
+      "pop": 5549
+    },
+    {
+      "name": "Goshen",
+      "pop": 4968
+    },
+    {
+      "name": "Cutler",
+      "pop": 4480
+    },
+    {
+      "name": "Ivanhoe",
+      "pop": 4468
+    },
+    {
+      "name": "Pixley",
+      "pop": 3828
+    },
+    {
+      "name": "Terra Bella",
+      "pop": 2910
+    },
+    {
+      "name": "Strathmore",
+      "pop": 2830
+    },
+    {
+      "name": "Tipton",
+      "pop": 2519
+    },
+    {
+      "name": "Poplar-Cotton Center",
+      "pop": 2370
+    },
+    {
+      "name": "Collierville",
+      "pop": 2094
+    },
+    {
+      "name": "Three Rivers",
+      "pop": 2053
+    },
+    {
+      "name": "Patterson Tract",
+      "pop": 1888
+    },
+    {
+      "name": "Woodville",
+      "pop": 1680
+    },
+    {
+      "name": "London",
+      "pop": 1518
+    },
+    {
+      "name": "Teviston",
+      "pop": 1185
+    },
+    {
+      "name": "Matheny",
+      "pop": 1125
+    }
+  ],
+  "Tuolumne": [
+    {
+      "name": "Phoenix Lake",
+      "pop": 4264
+    },
+    {
+      "name": "Jamestown",
+      "pop": 3478
+    },
+    {
+      "name": "Mono Vista",
+      "pop": 3236
+    },
+    {
+      "name": "Pine Mountain Lake",
+      "pop": 2636
+    },
+    {
+      "name": "Columbia",
+      "pop": 2577
+    },
+    {
+      "name": "East Sonora",
+      "pop": 2431
+    },
+    {
+      "name": "Twain Harte",
+      "pop": 2378
+    },
+    {
+      "name": "Soulsbyville",
+      "pop": 2092
+    },
+    {
+      "name": "Tuolumne City",
+      "pop": 1798
+    },
+    {
+      "name": "Lake Don Pedro",
+      "pop": 1765
+    }
+  ],
+  "Ventura": [
+    {
+      "name": "Oak Park",
+      "pop": 13898
+    },
+    {
+      "name": "El Rio",
+      "pop": 7037
+    },
+    {
+      "name": "Mira Monte",
+      "pop": 6618
+    },
+    {
+      "name": "Oak View",
+      "pop": 6215
+    },
+    {
+      "name": "Meiners Oaks",
+      "pop": 3911
+    },
+    {
+      "name": "Santa Rosa Valley",
+      "pop": 3312
+    },
+    {
+      "name": "Casa Conejo",
+      "pop": 3267
+    },
+    {
+      "name": "Channel Islands Beach",
+      "pop": 2870
+    },
+    {
+      "name": "Piru",
+      "pop": 2587
+    },
+    {
+      "name": "Bell Canyon",
+      "pop": 1946
+    },
+    {
+      "name": "Lake Sherwood",
+      "pop": 1759
+    },
+    {
+      "name": "Somis",
+      "pop": 1429
+    },
+    {
+      "name": "Santa Susana",
+      "pop": 1160
+    },
+    {
+      "name": "Saticoy",
+      "pop": 1133
+    }
+  ],
+  "Yolo": [
+    {
+      "name": "University of California-Davis",
+      "pop": 8525
+    },
+    {
+      "name": "Esparto",
+      "pop": 3572
+    },
+    {
+      "name": "Dunnigan",
+      "pop": 1382
+    },
+    {
+      "name": "Knights Landing",
+      "pop": 1117
+    },
+    {
+      "name": "El Macero",
+      "pop": 1074
+    }
+  ],
+  "Yuba": [
+    {
+      "name": "Linda",
+      "pop": 21654
+    },
+    {
+      "name": "Olivehurst",
+      "pop": 16595
+    },
+    {
+      "name": "Plumas Lake",
+      "pop": 8126
+    },
+    {
+      "name": "Loma Rica",
+      "pop": 2409
+    },
+    {
+      "name": "Stebbins",
+      "pop": 1423
+    },
+    {
+      "name": "Beale AFB",
+      "pop": 1303
+    },
+    {
+      "name": "Challenge-Brownsville",
+      "pop": 1161
+    }
+  ]
+}
