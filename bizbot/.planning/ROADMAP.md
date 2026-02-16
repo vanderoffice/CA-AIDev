@@ -50,13 +50,15 @@ Plans:
 
 #### Phase 8: RAG Pipeline Improvements
 
-**Goal**: Enrich metadata on ~60% of chunks using basic blob format and add DB timestamp columns for chunk-level staleness tracking
+**Goal**: Enrich metadata on ~60% of chunks using basic blob format, add DB timestamp columns for chunk-level staleness tracking, and expand city dropdown with unincorporated CDPs
 **Depends on**: Phase 7
 **Research**: Unlikely (internal pipeline work — /bot-ingest + SQL migration)
-**Plans**: TBD
+**Plans**: 3
 
 Plans:
-- [ ] 08-01: TBD
+- [ ] 08-01: Schema Migration + Metadata Enrichment — timestamp columns + topic classification on all 387 chunks
+- [ ] 08-02: Unincorporated Communities Dropdown Expansion — add CDPs to CA_CITIES in LicenseFinder
+- [ ] 08-03: Ingest Pipeline Update + Verification — chunk.py enrichment + end-to-end Phase 8 verification
 
 #### Phase 9: Tooling & Verification
 
