@@ -2,12 +2,12 @@
 
 ## Current Position
 
-Phase: 1 of 6 (Knowledge Refresh) — COMPLETE
-Plan: 2 of 2 in current phase (all done)
-Status: Phase 1 complete, ready for Phase 3 (Tool Rebuilds)
-Last activity: 2026-02-16 - Completed 01-02-PLAN.md (threshold verification + re-ingestion)
+Phase: 3 of 6 (Tool Rebuilds)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-02-16 - Completed 03-01-PLAN.md (threshold externalization)
 
-Progress: ███░░░░░░░ 30%
+Progress: ████░░░░░░ 40%
 
 ## Accumulated Decisions
 
@@ -20,6 +20,7 @@ Progress: ███░░░░░░░ 30%
 | 1 | Audit over-counted broken URLs | HEAD-only testing produced false positives; actual broken count ~18 not 48 |
 | 1 | Chunk count 935 (not 1300+) | Well-structured content with concise sections — 935 is correct |
 | 1 | Fixed bot_registry.py ON_ERROR_STOP | psql silently swallowed SQL errors without this flag |
+| 3 | String keys for family sizes in JSON | JSON spec requires string keys; JS coerces integers for property access |
 
 ## Deferred Issues
 
@@ -31,7 +32,7 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-16T17:30:00Z
-Stopped at: Completed Phase 1 (Knowledge Refresh) — both plans done
+Last session: 2026-02-16T18:51:00Z
+Stopped at: Completed 03-01-PLAN.md (threshold externalization)
 Resume file: None
-Next: Phase 3 (Tool Rebuilds) — /gsd:plan-phase 3
+Next: 03-02-PLAN.md (ProgramFinder enhancements)
