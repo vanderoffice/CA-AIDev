@@ -1,12 +1,8 @@
 # Roadmap: BizBot Overhaul
 
-## Overview
+## Milestones
 
-Full overhaul of BizBot following the standard 7-phase template. Phases are conditionally included based on `/bot-audit` results from 2026-02-14. Target: WaterBot v2.0 feature and quality parity.
-
-## Domain Expertise
-
-California business licensing, DCA/ABC/CSLB/DRE regulations, CalGOLD local permitting, entity formation (LLC/Corp/Sole Prop), industry-specific licensing (food service, alcohol, construction, cannabis, healthcare, manufacturing, retail, professional services), compliance/renewal cycles, fee schedules.
+- [v1.0 Overhaul](milestones/v1.0-ROADMAP.md) (Phases 0-6) — SHIPPED 2026-02-15
 
 ## Production-First Doctrine
 
@@ -16,127 +12,40 @@ All code changes target the production repo on VPS:
 - **Dev repos are READ-ONLY** — no code changes to `CA-AIDev/*`
 - **Knowledge content** is ingested via `/bot-ingest`, not deployed via git
 
-## Phases
+## Completed Phases
 
-- [x] Phase 0: Audit & Baseline — **COMPLETE** (2026-02-14)
-- [x] Phase 1: Knowledge Refresh — **COMPLETE** (2026-02-15)
-- [ ] ~~Phase 2: Shared Infrastructure~~ — **SKIP** (WaterBot patterns exist, BizBot imports)
-- [x] Phase 3: Tool Rebuilds — **COMPLETE** (2026-02-15)
-- [x] Phase 4: UI/UX Polish — **COMPLETE** (2026-02-15)
-- [x] Phase 5: Integration & E2E — **COMPLETE** (2026-02-15)
-- [x] Phase 6: Production Deploy — **COMPLETE** (2026-02-15)
+<details>
+<summary>v1.0 Overhaul (Phases 0-6) — SHIPPED 2026-02-15</summary>
 
-## Phase Details
+- [x] Phase 0: Audit & Baseline (1/1 plans) — completed 2026-02-14
+- [x] Phase 1: Knowledge Refresh (2/2 plans) — completed 2026-02-15
+- [x] ~~Phase 2: Shared Infrastructure~~ — SKIPPED (WaterBot patterns exist)
+- [x] Phase 3: Tool Rebuilds (2/2 plans) — completed 2026-02-15
+- [x] Phase 4: UI/UX Polish (1/1 plan) — completed 2026-02-15
+- [x] Phase 5: Integration & E2E (1/1 plan) — completed 2026-02-15
+- [x] Phase 6: Production Deploy (1/1 plan) — completed 2026-02-15
 
-### Phase 0: Audit & Baseline
-**Goal**: Establish measurable baseline before any changes.
-**Depends on**: None
-**Research**: Unlikely
-**Plans**: 1
+**Stats:** 6 phases (1 skipped), 8 plans, ~280 min active build time
+**Audit score:** 74/100 → ~95/100
+**Full details:** [v1.0-ROADMAP.md](milestones/v1.0-ROADMAP.md)
 
-Key work:
-- Run `/bot-eval --bot bizbot --mode embedding --core` for coverage baseline
-- Copy audit report into `.planning/`
-- Document phase skip/include rationale (done — see above)
-- Snapshot current mode count, feature list, component usage
-
----
-
-### Phase 1: Knowledge Refresh
-**Goal**: Fix broken/dead URLs and update redirects in knowledge base.
-**Depends on**: Phase 0
-**Research**: Likely (verify current URLs for CSLB, CDTFA, Metrc replacements)
-**Plans**: 2
-
-Key work:
-- Fix 4 dead redirects (CSLB Licensing_Timeframes, Renew_A_License, fees; DGS CASp-Program)
-- Fix 2 genuinely dead URLs (onlineservices.cdtfa.ca.gov, ca.metrc.com)
-- Update 44 redirected URLs to final destinations where possible
-- Categorize ftb.ca.gov 403s (14 URLs) — document as bot-blocking, not truly broken
-- Run `/bot-ingest --replace` with corrected content
-- Run `verify.py` — must PASS
-
----
-
-### Phase 3: Tool Rebuilds
-**Goal**: Rebuild LicenseFinder with deterministic matching and wizard UX.
-**Depends on**: Phase 1
-**Research**: Likely (license requirement data model, industry categorization)
-**Plans**: 2-3
-
-Key work:
-- Build structured `license-requirements.json` data model (industry × entity type × location)
-- Create deterministic license matching logic (not LLM-dependent for core lookups)
-- Enhance LicenseFinder with wizard pattern: Formation → State → Local → Industry → Ongoing
-- Wire up `bizbot-license-finder` webhook with proper structured input/output
-- Consider "License Navigator" mode (like WaterBot's FundingNavigator)
-
----
-
-### Phase 4: UI/UX Polish
-**Goal**: Bring BizBot visual presentation to WaterBot standard (42% → 90%+).
-**Depends on**: Phase 3
-**Research**: Unlikely
-**Plans**: 1-2
-
-Key work:
-- Import `getMarkdownComponents('orange')` from shared `ChatMessage.jsx`
-- Add `react-markdown` + `remark-gfm` to all response surfaces
-- Implement pill-style source citations
-- Verify gradient bubbles render with orange accent
-- Ensure `ICON_MAP` renders icons as SVG, not text
-- Verify all 3 modes (Chat, License Expert, License Finder) use styled rendering
-- Side-by-side comparison with WaterBot
-
----
-
-### Phase 5: Integration & E2E Testing
-**Goal**: Comprehensive testing of all modes, tools, and cross-tool flows.
-**Depends on**: Phase 4
-**Research**: Unlikely
-**Plans**: 1
-
-Key work:
-- Run `/bot-eval --bot bizbot --mode embedding --core` — must score >= 80%
-- Run `/bot-eval --bot bizbot --mode webhook` — live endpoint testing
-- Test all mode transitions (Chat ↔ License Expert ↔ License Finder)
-- Test edge cases: empty inputs, long queries, special characters, missing industry field
-- Compare against Phase 0 baseline: `--baseline auto`
-- Fix audit false positive: update bizbot-license-finder test to send `industry` field
-
----
-
-### Phase 6: Production Deploy
-**Goal**: Ship it. Verify live.
-**Depends on**: Phase 5
-**Research**: Unlikely
-**Plans**: 1
-
-Key work:
-- Final VPS build: `ssh vps "cd /root/vanderdev-website && npm run build"`
-- Verify live site at `vanderdev.net`
-- Run `/bot-eval --mode webhook` against live endpoints
-- Log results: `/bot-refresh track-history.py --bot bizbot`
-- Update RESUME.md with final scores + completion timestamp
-
----
+</details>
 
 ## Progress
 
-**Execution Order:**
-Phases execute in numeric order. Phase 2 is skipped.
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|---------------|--------|-----------|
+| 0: Audit & Baseline | v1.0 | 1/1 | Complete | 2026-02-14 |
+| 1: Knowledge Refresh | v1.0 | 2/2 | Complete | 2026-02-15 |
+| 2: Shared Infra | v1.0 | N/A | SKIPPED | N/A |
+| 3: Tool Rebuilds | v1.0 | 2/2 | Complete | 2026-02-15 |
+| 4: UI/UX Polish | v1.0 | 1/1 | Complete | 2026-02-15 |
+| 5: Integration & E2E | v1.0 | 1/1 | Complete | 2026-02-15 |
+| 6: Production Deploy | v1.0 | 1/1 | Complete | 2026-02-15 |
 
-| Phase | Plans Complete | Status | Completed |
-|-------|---------------|--------|-----------|
-| 0: Audit & Baseline | 1/1 | Complete | 2026-02-14 |
-| 1: Knowledge Refresh | 2/2 | Complete | 2026-02-15 |
-| 2: Shared Infra | N/A | SKIPPED | N/A |
-| 3: Tool Rebuilds | 2/2 | Complete | 2026-02-15 |
-| 4: UI/UX Polish | 1/1 | Complete | 2026-02-15 |
-| 5: Integration & E2E | 1/1 | Complete | 2026-02-15 |
-| 6: Production Deploy | 1/1 | Complete | 2026-02-15 |
+## Domain Expertise
 
-**Estimated plans:** 8-10 | **Estimated active build time:** ~40-50 min
+California business licensing, DCA/ABC/CSLB/DRE regulations, CalGOLD local permitting, entity formation (LLC/Corp/Sole Prop), industry-specific licensing (food service, alcohol, construction, cannabis, healthcare, manufacturing, retail, professional services), compliance/renewal cycles, fee schedules.
 
 ## Skills Used Per Phase
 
