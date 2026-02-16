@@ -136,7 +136,7 @@ PREGNANCY          BIRTH           1 YEAR          2 YEARS         3 YEARS      
 | Program | Eligibility | Application |
 |---------|-------------|-------------|
 | Head Start | 100% FPL or categorical | Local grantee |
-| CSPP | 100% SMI (~$90K for family of 3) | Local contractor |
+| CSPP | 100% SMI (~$110K for family of 3) | Local contractor |
 | TK (some districts) | Turning 4 by specific date | School district |
 
 ### Preschool Application Timeline

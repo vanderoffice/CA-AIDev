@@ -31,20 +31,19 @@ To receive CalWORKs cash aid, gross income must be below MBSAC:
 
 | Family Size | Monthly MBSAC | Annual Equivalent |
 |-------------|---------------|-------------------|
-| 1 | $853 | $10,236 |
-| 2 | $1,401 | $16,812 |
-| 3 | $1,736 | $20,832 |
-| 4 | $2,063 | $24,756 |
-| 5 | $2,350 | $28,200 |
-| 6 | $2,633 | $31,596 |
-| 7 | $2,895 | $34,740 |
-| 8 | $3,152 | $37,824 |
-| 9 | $3,403 | $40,836 |
-| 10+ | $3,650 | $43,800 |
+| 1 | $882 | $10,586 |
+| 2 | $1,449 | $17,387 |
+| 3 | $1,795 | $21,545 |
+| 4 | $2,134 | $25,603 |
+| 5 | $2,430 | $29,164 |
+| 6 | $2,723 | $32,676 |
+| 7 | $2,994 | $35,928 |
+| 8 | $3,260 | $39,117 |
+| 9 | $3,519 | $42,232 |
+| 10+ | $3,775 | $45,298 |
 
-*Source: Sacramento County CalWORKs Fact Sheet, effective July 1, 2024*
-*Note: MBSAC increases annually by COLA. July 2025 values are ~3.42% higher (ACL 25-36).*
-*Verified: 2025-12-23 against Sacramento County fact sheet*
+*Source: CDSS ACL 25-36, effective July 1, 2025 (3.42% COLA over 2024 values)*
+*Verified: 2026-02-16 against LSNC Regulation Summaries (reg.summaries.guide)*
 
 ### Ongoing Eligibility Test (MAP)
 After approval, income after disregards must stay below Maximum Aid Payment:
@@ -63,7 +62,8 @@ After approval, income after disregards must stay below Maximum Aid Payment:
 | 10+ | $2,876 | $3,215 | $2,743 | $3,063 |
 
 *Source: SF HSA CalWORKs Fact Sheet & LA DPSS, effective October 1, 2024*
-*Verified: 2025-12-23 against official county sources*
+*Note: A 5% MAP increase was approved in the 2024-25 budget effective July 1, 2025. These values may be slightly higher; check county fact sheets for latest.*
+*Verified: 2025-12-23 against official county sources; MAP increase noted 2026-02-16*
 
 **Region 1 Counties:** Alameda, Contra Costa, Los Angeles, Marin, Orange, San Diego, San Francisco, San Mateo, Santa Barbara, Santa Clara, Santa Cruz, Ventura
 

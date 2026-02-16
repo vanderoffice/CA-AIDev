@@ -91,11 +91,11 @@ To receive CalWORKs cash aid, your income must be below the **Minimum Basic Stan
 
 | Family Size | Monthly MBSAC |
 |-------------|---------------|
-| 1 | $853 |
-| 2 | $1,401 |
-| 3 | $1,736 |
-| 4 | $2,063 |
-| 5 | $2,350 |
+| 1 | $882 |
+| 2 | $1,449 |
+| 3 | $1,795 |
+| 4 | $2,134 |
+| 5 | $2,430 |
 
 ### Stages 2 & 3: 85% State Median Income
 Once off cash aid, you qualify as long as income stays below:

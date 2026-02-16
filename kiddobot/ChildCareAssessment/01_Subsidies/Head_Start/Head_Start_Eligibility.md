@@ -50,21 +50,21 @@ You're considered homeless if lacking a fixed, regular, adequate nighttime resid
 
 ### Federal Poverty Level (FPL) Guidelines
 
-2025 Federal Poverty Guidelines (48 contiguous states):
+2026 Federal Poverty Guidelines (48 contiguous states):
 
 | Family Size | 100% FPL (Annual) | 100% FPL (Monthly) |
 |-------------|-------------------|-------------------|
-| 1 | $15,650 | $1,304 |
-| 2 | $21,150 | $1,763 |
-| 3 | $26,650 | $2,221 |
-| 4 | $32,150 | $2,679 |
-| 5 | $37,650 | $3,138 |
-| 6 | $43,150 | $3,596 |
-| 7 | $48,650 | $4,054 |
-| 8 | $54,150 | $4,513 |
-| Each add'l | +$5,500 | +$458 |
+| 1 | $15,960 | $1,330 |
+| 2 | $21,640 | $1,803 |
+| 3 | $27,320 | $2,277 |
+| 4 | $33,000 | $2,750 |
+| 5 | $38,680 | $3,223 |
+| 6 | $44,360 | $3,697 |
+| 7 | $50,040 | $4,170 |
+| 8 | $55,720 | $4,643 |
+| Each add'l | +$5,680 | +$473 |
 
-*Note: Guidelines are updated each January. Current year may differ.*
+*Source: HHS 2026 Poverty Guidelines (Federal Register, January 13, 2026). Updated annually each January.*
 
 ### How Income Is Calculated
 

@@ -82,15 +82,16 @@ Families often miscalculate their income, leading to:
 
 ### Income Limit Quick Reference
 
-**2025 Income Eligibility (100% State Median Income for CSPP/APP)**
+**2025-26 Income Eligibility (100% State Median Income for CSPP/APP)**
 
 | Family Size | Monthly Gross | Annual |
 |-------------|---------------|--------|
-| 2 | $6,096 | $73,150 |
-| 3 | $7,525 | $90,300 |
-| 4 | $9,042 | $108,500 |
-| 5 | $10,488 | $125,850 |
+| 1-2 | $8,071 | $96,854 |
+| 3 | $9,159 | $109,904 |
+| 4 | $10,612 | $127,338 |
+| 5 | $12,309 | $147,712 |
 
+*Source: CDE Management Bulletin 25-05, effective July 1, 2025 (2023 ACS data).*
 *Note: Head Start uses Federal Poverty Level (much lower). CalWORKs Stage 1 follows cash aid eligibility.*
 
 ---

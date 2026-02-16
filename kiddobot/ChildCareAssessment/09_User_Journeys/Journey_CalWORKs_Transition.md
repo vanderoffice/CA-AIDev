@@ -142,7 +142,7 @@ LAST CASH AID CHECK              STAGE 2 BEGINS
 |---------|---------|---------|
 | Who runs it | County | APP contractor |
 | Family fees | Usually $0 | Based on income |
-| Income limit | N/A (on cash aid) | 85% SMI (~$90K for family of 3) |
+| Income limit | N/A (on cash aid) | 85% SMI (~$93K for family of 3) |
 | Recertification | Tied to cash aid | Every 12 months |
 | Duration | Unlimited while on aid | 24 months |
 

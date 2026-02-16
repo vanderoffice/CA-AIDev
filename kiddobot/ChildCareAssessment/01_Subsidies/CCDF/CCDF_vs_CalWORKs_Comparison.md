@@ -109,10 +109,10 @@ To receive CalWORKs cash aid, gross income must be below:
 
 | Family Size | Monthly MBSAC |
 |-------------|---------------|
-| 2 | $1,401 |
-| 3 | $1,736 |
-| 4 | $2,063 |
-| 5 | $2,350 |
+| 2 | $1,449 |
+| 3 | $1,795 |
+| 4 | $2,134 |
+| 5 | $2,430 |
 
 *Very low threshold — designed for families in poverty*
 

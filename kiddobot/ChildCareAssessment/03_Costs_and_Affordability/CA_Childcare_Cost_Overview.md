@@ -219,7 +219,7 @@ If eligible, subsidies can cover most or all costs:
 
 | Program | Income Limit (Family of 4) |
 |---------|---------------------------|
-| CalWORKs | ~$2,063/month gross |
+| CalWORKs | ~$2,134/month gross |
 | CCDF Subsidies | ~$9,020/month (85% SMI) |
 | State Preschool | ~$10,612/month (100% SMI) |
 | Head Start | Federal poverty level |

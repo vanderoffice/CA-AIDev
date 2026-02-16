@@ -60,7 +60,7 @@ PREGNANCY                    BIRTH                    RETURN TO WORK
 | Your Situation | Likely Best Options |
 |----------------|---------------------|
 | Income under Federal Poverty Level | Head Start, CSPP, APP |
-| Income under ~$90K (family of 3) | CSPP, APP |
+| Income under ~$110K (family of 3) | CSPP, APP |
 | Higher income | Tax credits, employer benefits, private pay |
 | Any income + child with disability | Regional Center, Head Start 10% slots |
 
