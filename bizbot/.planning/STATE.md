@@ -10,16 +10,16 @@ See: .planning/PROJECT.md (updated 2026-02-15)
 ## Current Position
 
 Phase: 7 of 9 (License Data Expansion)
-Plan: Not started
-Status: Ready to plan
-Last activity: 2026-02-15 — Milestone v1.1 created
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-02-16 — Completed 07-01-PLAN.md
 
-Progress: ░░░░░░░░░░ 0%
+Progress: ███░░░░░░░ 33%
 
 ## Deferred Issues
 
-- ISS-002: Cross-industry general licenses not auto-included (LOW) → **Phase 7**
-- ISS-003: City/county-specific license data not seeded (LOW) → **Phase 7**
+- ~~ISS-002: Cross-industry general licenses not auto-included~~ → **RESOLVED 07-01**
+- ISS-003: City/county-specific license data not seeded (LOW) → **Phase 7 (07-02)**
 - ISS-004: External POST blocked by nginx WAF (LOW — workaround exists) → **Phase 9**
 - ftb.ca.gov + bizfileonline.sos.ca.gov 403s: Bot-blocking WAF, functional in browser
 - DB timestamp column for chunk-level staleness tracking → **Phase 8**
@@ -35,6 +35,8 @@ Progress: ░░░░░░░░░░ 0%
 | Skip Phase 2 (Shared Infra) | WaterBot already built all shared components |
 | FTB /index.html URLs left as-is | FTB serves directly (200); removing index.html returns 503 |
 | Bot-blocking 403s documented | ftb (29) + sos (3) = 32 URLs with WAF blocking; valid in browser |
+| TEXT types in DB functions | Production schema uses text, not varchar — function return types must match |
+| General licenses all conditional | DBA/SOI/BPP marked conditional to avoid false positives for sole props |
 
 ### Roadmap Evolution
 
@@ -43,8 +45,8 @@ Progress: ░░░░░░░░░░ 0%
 
 ## Session Continuity
 
-Last session: 2026-02-15
-Stopped at: Milestone v1.1 initialization
+Last session: 2026-02-16
+Stopped at: Completed 07-01-PLAN.md (Cross-Industry General License Fix)
 Resume file: None
 
 ### Artifacts

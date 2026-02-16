@@ -4,14 +4,12 @@ Enhancements discovered during execution. Not critical - address in future phase
 
 ## Open Enhancements
 
-### ISS-002: Cross-industry `general` licenses not auto-included in queries
+### ISS-002: Cross-industry `general` licenses not auto-included in queries — RESOLVED
 
 - **Discovered:** ISS-001 resolution (2026-02-15)
 - **Type:** Enhancement
-- **Status:** OPEN
-- **Description:** Workers Comp and IIPP are seeded with `industry_code = 'general'` but the n8n workflow queries `WHERE industry_code = :industry`, so they're never returned. Could add `OR industry_code = 'general'` to include them for all employer queries.
-- **Impact:** Low — hardcoded enrichment already covers baseline employer obligations
-- **Effort:** Low — single SQL change in n8n Postgres node
+- **Status:** RESOLVED (2026-02-16, Plan 07-01)
+- **Resolution:** Added `OR r.industry_code = 'general'` to n8n Postgres node WHERE clause and created `get_required_licenses()` DB function. Expanded general catalog from 2 to 5 licenses (DBA, SOI, BPP added).
 
 ### ISS-003: City/county-specific license requirements
 

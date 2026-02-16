@@ -45,7 +45,7 @@ All code changes target the production repo on VPS:
 **Plans**: 2
 
 Plans:
-- [ ] 07-01: Cross-Industry General License Fix (ISS-002) — fix WHERE clause + expand general seed data
+- [x] 07-01: Cross-Industry General License Fix (ISS-002) — fix WHERE clause + expand general seed data ✓
 - [ ] 07-02: City/County License Data Seeding (ISS-003) — top 25 CA metros + n8n dedup logic
 
 #### Phase 8: RAG Pipeline Improvements
@@ -79,7 +79,7 @@ Plans:
 | 4: UI/UX Polish | v1.0 | 1/1 | Complete | 2026-02-15 |
 | 5: Integration & E2E | v1.0 | 1/1 | Complete | 2026-02-15 |
 | 6: Production Deploy | v1.0 | 1/1 | Complete | 2026-02-15 |
-| 7: License Data Expansion | v1.1 | 0/2 | Not started | - |
+| 7: License Data Expansion | v1.1 | 1/2 | In progress | - |
 | 8: RAG Pipeline Improvements | v1.1 | 0/? | Not started | - |
 | 9: Tooling & Verification | v1.1 | 0/? | Not started | - |
 
