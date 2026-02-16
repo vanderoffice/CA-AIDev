@@ -375,7 +375,7 @@ If you qualify for CalWORKs or CCDF subsidies:
 | Resource | Contact |
 |----------|---------|
 | **Find your CCR&R** | [rrnetwork.org](https://rrnetwork.org/about/r-r-directory) |
-| **MyChildCarePlan.org** | [mychildcareplan.org](https://mychildcareplan.org) |
+| **Find Child Care** | [rrnetwork.org/family-services/find-child-care](https://rrnetwork.org/family-services/find-child-care) |
 | **TrustLine (FFN)** | 1-800-822-8490 |
 | **Bay Area Crisis Nursery** | 925-685-8052 |
 | **Care.com** | [care.com](https://www.care.com) |

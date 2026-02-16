@@ -310,7 +310,7 @@ While the CCLD database verifies licenses, **MyChildCarePlan.org** helps you FIN
 | Task | Where to Go |
 |------|-------------|
 | Verify a license | [ccld.dss.ca.gov/carefacilitysearch](https://www.ccld.dss.ca.gov/carefacilitysearch/) |
-| Find childcare | [MyChildCarePlan.org](https://mychildcareplan.org) |
+| Find childcare | [Find Child Care](https://rrnetwork.org/family-services/find-child-care) |
 | Check FFN provider | [TrustLine](https://trustline.org) 1-800-822-8490 |
 | Report a concern | 1-844-LET-US-NO |
 | Questions about licensing | 916-654-1541 |

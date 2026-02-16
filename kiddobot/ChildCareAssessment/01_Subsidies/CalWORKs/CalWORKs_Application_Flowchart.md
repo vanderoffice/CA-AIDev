@@ -233,7 +233,7 @@ flowchart TD
 | **Apply for CalWORKs** | Your county Human Services Agency |
 | **Find your county office** | [CDSS County Office Directory](https://www.cdss.ca.gov/county-offices) |
 | **Stage 2/3 questions** | Your local Alternative Payment Program |
-| **Find your local APP** | [CDE Contractor List](https://www.cde.ca.gov/sp/cd/re/cdcontractorinfo.asp) |
+| **Find your local APP** | [CDE Contractor List](https://www.cde.ca.gov/sp/cd/ci/) |
 | **Appeal a decision** | 1-800-743-8525 |
 | **TrustLine registration** | 1-800-822-8490 or www.TrustLine.org |
 | **Online application** | www.benefitscal.com |

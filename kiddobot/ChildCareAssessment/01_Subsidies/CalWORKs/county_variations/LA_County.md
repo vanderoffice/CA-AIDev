@@ -20,7 +20,7 @@ Los Angeles County is the largest county in California, serving over 10 million 
 | **Stage 1 Childcare** | Your DPSS Caseworker | Request through GAIN Services |
 | **Stage 2/3 Childcare** | Multiple APPs (see below) | Depends on your location |
 | **General Questions** | 211 LA | Call 2-1-1 or text LACARES to 898211 |
-| **Provider Licensing** | CDSS Community Care Licensing | [Search providers](https://www.ccld.dcdss.ca.gov/carefacilitysearch/) |
+| **Provider Licensing** | CDSS Community Care Licensing | [Search providers](https://www.ccld.dss.ca.gov/carefacilitysearch/) |
 
 ### Alternative Payment Programs (APPs) in LA County
 
@@ -212,7 +212,7 @@ If you have an immediate need (job offer, training start date):
 - **DPSS CalWORKs:** [dpss.lacounty.gov/en/cash/calworks.html](https://dpss.lacounty.gov/en/cash/calworks.html)
 - **Find Your DPSS Office:** [dpss.lacounty.gov/en/resources/offices.html](https://dpss.lacounty.gov/en/resources/offices.html)
 - **211 LA:** [211la.org](https://211la.org) or call 2-1-1
-- **MyChildCare License Search:** [mychildcare.ca.gov](https://mychildcare.ca.gov)
+- **License Search:** [CCLD Search](https://www.ccld.dss.ca.gov/carefacilitysearch/)
 - **Crystal Stairs:** [crystalstairs.org](https://crystalstairs.org)
 - **PACE:** [pacela.org](https://pacela.org)
 - **CCRC:** [ccrcla.org](https://ccrcla.org)

@@ -308,7 +308,7 @@ Research shows quality early care leads to:
 
 | Resource | Contact |
 |----------|---------|
-| **Find local costs** | [MyChildCarePlan.org](https://mychildcareplan.org) |
+| **Find local costs** | [Find Child Care](https://rrnetwork.org/family-services/find-child-care) |
 | **Subsidy eligibility** | Local APP or CCR&R |
 | **Tax credit info** | [ftb.ca.gov](https://www.ftb.ca.gov) |
 | **Regional rates** | [cdss.ca.gov](https://www.cdss.ca.gov/inforesources/child-care-and-development) |

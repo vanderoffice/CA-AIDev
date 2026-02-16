@@ -134,7 +134,7 @@ Family, friends, and neighbors providing care before/after school.
 | Method | How |
 |--------|-----|
 | License search | [ccld.dss.ca.gov](https://www.ccld.dss.ca.gov/carefacilitysearch/) |
-| Care search | [MyChildCarePlan.org](https://mychildcareplan.org) |
+| Care search | [Find Child Care](https://rrnetwork.org/family-services/find-child-care) |
 | Word of mouth | Ask other parents at school |
 
 ---

@@ -92,7 +92,7 @@ The CSV format enables:
 
 | Resource | URL | For |
 |----------|-----|-----|
-| MyChildCarePlan.org | https://mychildcareplan.org | Finding childcare & subsidies |
+| Find Child Care (CCR&R) | https://rrnetwork.org/family-services/find-child-care | Finding childcare & subsidies |
 | CCR&R Directory | https://rrnetwork.org/about/r-r-directory | Local help |
 | CCLD License Search | https://www.ccld.dss.ca.gov/carefacilitysearch/ | Verify providers |
 | 211 | https://211.org | All local services |

@@ -21,7 +21,7 @@ San Diego County benefits from a well-organized childcare system, with the YMCA 
 | **Stage 2/3 Childcare** | YMCA CRS | (800) 481-2151 | ymcasd.org/crs |
 | **CCR&R** | YMCA Childcare Resource Service | (800) 481-2151 | ymcasd.org/crs |
 | **General Info** | 211 San Diego | Dial 2-1-1 | 211sandiego.org |
-| **Provider Licensing** | CDSS CCL | | ccld.dcdss.ca.gov |
+| **Provider Licensing** | CDSS CCL | | ccld.dss.ca.gov |
 
 ### YMCA Childcare Resource Service
 
@@ -263,7 +263,7 @@ San Diego follows state requirements, but be prepared for:
 - **211 San Diego:** [211sandiego.org](https://211sandiego.org)
 
 ### State Resources
-- **MyChildCare.ca.gov:** [mychildcare.ca.gov](https://mychildcare.ca.gov)
+- **Find Child Care:** [rrnetwork.org/family-services/find-child-care](https://rrnetwork.org/family-services/find-child-care)
 - **CDSS Child Care:** [Child Care Programs](https://www.cdss.ca.gov/inforesources/child-care-and-development/child-care-and-development-programs)
 
 ### Military Specific

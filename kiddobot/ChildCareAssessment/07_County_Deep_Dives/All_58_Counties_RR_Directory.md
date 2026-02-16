@@ -56,7 +56,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~210,000 (Suburban/Rural)
 - **R&R:** Valley Oak Children's Services
 - **Phone:** (530) 895-3572
-- **Website:** https://valleyoakcs.org
+- **Website:** https://www.valleyoakchildren.org
 - **APP Contractor:** Valley Oak Children's Services
 - **Notes:** Chico has most options. Paradise area rebuilding after 2018 fire. Head Start through Butte CAA.
 
@@ -86,7 +86,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~27,000 (Very Rural - Far north)
 - **R&R:** Del Norte Child Care Council
 - **Phone:** (707) 464-8311
-- **Website:** https://www.delnortechildcare.org
+- **Website:** https://dnccc.org
 - **Notes:** Very remote location. Limited options in Crescent City. Some families use Grants Pass, Oregon providers. Strong Head Start presence.
 
 ### El Dorado County
@@ -100,7 +100,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~1 million (Urban/Rural mix)
 - **R&R:** Central Valley Children's Services Network
 - **Phone:** (559) 456-1100
-- **Website:** https://cvchn.org
+- **Website:** https://www.cvcsn.org
 - **APP Contractor:** CVCHN
 - **Notes:** Fresno city has good options. Rural areas (Coalinga, Mendota, etc.) very limited. Strong migrant services.
 
@@ -159,7 +159,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~30,000 (Very Rural)
 - **R&R:** Lassen Child & Family Resources
 - **Phone:** (530) 257-9781
-- **Website:** https://lassencfr.org
+- **Website:** https://www.lassencfr.com
 - **Notes:** Susanville has limited options. Very remote. Family child care is primary. Consider Redding (Shasta) for more options.
 
 ### Los Angeles County
@@ -191,7 +191,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~17,000 (Very Rural - Yosemite Gateway)
 - **R&R:** Infant/Child Enrichment Services (ICES)
 - **Phone:** (209) 966-3662
-- **Website:** https://iceschildcare.org
+- **Website:** https://icesagency.org
 - **Notes:** Very limited options. Tourism economy affects availability. Most care is family-based. Consider Merced for more options.
 
 ### Mendocino County
@@ -241,7 +241,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~100,000 (Rural/Suburban)
 - **R&R:** Sierra Nevada Children's Services
 - **Phone:** (530) 273-1182
-- **Website:** https://sncs.org
+- **Website:** https://www.sncs.org
 - **Notes:** Grass Valley/Nevada City have options. Truckee area expensive (resort community). Mountain communities limited.
 
 ### Orange County
@@ -281,14 +281,14 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Phone:** (916) 369-0191
 - **Website:** https://www.childaction.org
 - **APP Contractor:** Child Action Inc.
-- **Subsidy Portal:** MyBenefits CalWIN - https://www.mybenefitscalwin.org
+- **Subsidy Portal:** BenefitsCal - https://benefitscal.com
 - **Notes:** Centralized system with good response times. Shortest major county waitlists (2-6 months). State capital means good state worker benefit culture.
 
 ### San Benito County
 - **Population:** ~65,000 (Rural)
 - **R&R:** Family Resource Center
 - **Phone:** (831) 637-9205
-- **Website:** https://family-resource.org
+- **Website:** Contact via phone (site offline)
 - **Notes:** Hollister has limited options. Agricultural economy. Many families use Gilroy (Santa Clara) providers.
 
 ### San Bernardino County
@@ -340,7 +340,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~450,000 (Suburban/Rural)
 - **R&R:** Children's Resource & Referral of Santa Barbara County
 - **Phone:** (805) 962-8988
-- **Website:** https://www.sbfamilycare.org
+- **Website:** https://crrsbc.org
 - **Notes:** Santa Barbara city and Goleta have options. Santa Maria/Lompoc different market. North county agricultural with strong migrant services.
 
 ### Santa Clara County
@@ -356,7 +356,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~270,000 (Suburban/Rural)
 - **R&R:** Child Development Resource Center
 - **Phone:** (831) 476-8585
-- **Website:** https://cdrc-childcare.org
+- **Website:** https://childcare.santacruzcoe.org
 - **Notes:** Santa Cruz city has options. Watsonville agricultural with strong migrant services. UCSC campus affects market.
 
 ### Shasta County
@@ -370,7 +370,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~3,000 (Very Rural - Second smallest CA county)
 - **R&R:** Sierra Nevada Children's Services
 - **Phone:** (530) 273-1182
-- **Website:** https://sncs.org
+- **Website:** https://www.sncs.org
 - **Notes:** Extremely limited. Downieville/Loyalton tiny communities. Most care is informal. Consider Grass Valley (Nevada County) or Truckee.
 
 ### Siskiyou County
@@ -422,7 +422,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~13,000 (Very Rural - Mountain)
 - **R&R:** Human Response Network
 - **Phone:** (530) 623-2024
-- **Website:** https://www.trintyfamilyresource.org
+- **Website:** https://www.hrntrinity.org/childrens-services
 - **Notes:** Extremely limited. Weaverville has few options. Very remote mountain communities. Family child care only option in most areas.
 
 ### Tulare County
@@ -436,7 +436,7 @@ These counties have multiple R&R options and typically shorter waitlists:
 - **Population:** ~55,000 (Rural - Gold Country/Yosemite)
 - **R&R:** Infant/Child Enrichment Services (ICES)
 - **Phone:** (209) 533-0377
-- **Website:** https://iceschildcare.org
+- **Website:** https://icesagency.org
 - **Notes:** Sonora has limited options. Tourism economy (Yosemite gateway). Family child care primary option in rural areas.
 
 ### Ventura County

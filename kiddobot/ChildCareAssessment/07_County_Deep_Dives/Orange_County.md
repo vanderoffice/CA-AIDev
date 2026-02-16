@@ -20,7 +20,7 @@ Orange County is California's third most populous county, known for affluent are
 | Childcare Subsidies | CHS Orange County | (714) 543-2273 |
 | CCR&R Referrals | CHS Orange County | (714) 543-2273 |
 | Head Start | Community Action Partnership | (714) 839-6199 |
-| Provider Licensing | CCLD Orange County | [carefacilitysearch](https://www.ccld.dcdss.ca.gov/carefacilitysearch/) |
+| Provider Licensing | CCLD Orange County | [carefacilitysearch](https://www.ccld.dss.ca.gov/carefacilitysearch/) |
 | General Help | 211 Orange County | Call 2-1-1 |
 
 ---
@@ -291,7 +291,7 @@ CAP OC focuses Head Start in highest-need areas:
 | First 5 Orange County | occhildrenandfamilies.com |
 | OCDE Early Childhood | ocde.us |
 | 211 Orange County | 211oc.org |
-| MyChildCare | mychildcare.ca.gov |
+| Find Child Care | rrnetwork.org/family-services/find-child-care |
 
 ---
 

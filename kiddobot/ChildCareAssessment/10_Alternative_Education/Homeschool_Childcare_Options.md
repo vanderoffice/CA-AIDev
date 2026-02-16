@@ -46,7 +46,7 @@ Homeschooling doesn't mean a parent is always available. Common situations:
 
 **Good for:** Families needing flexibility, younger children
 
-**How to find:** [MyChildCare.ca.gov](https://mychildcare.ca.gov) or local CCR&R
+**How to find:** [Find Child Care](https://rrnetwork.org/family-services/find-child-care) or local CCR&R
 
 ### 3. License-Exempt Care (FFN)
 
@@ -175,7 +175,7 @@ Co-ops are parent-organized groups where:
 - Very low income: Apply for CSPP (California State Preschool)
 
 **Step 4:** Find a provider who accepts subsidies
-- Use [MyChildCare.ca.gov](https://mychildcare.ca.gov)
+- Use [Find Child Care](https://rrnetwork.org/family-services/find-child-care)
 - Call your CCR&R for referrals
 - Ask providers directly
 
@@ -327,7 +327,7 @@ If eligible, your family fee might be:
 - [ ] Is your income under 85% SMI?
 - [ ] How many hours of care would be authorized?
 
-**Calculate SMI:** [Income Calculator](https://mychildcareplan.org)
+**Calculate SMI:** Contact your local CCR&R ([Find yours](https://rrnetwork.org/family-services/find-child-care))
 
 ### Step 3: Explore Options
 
@@ -357,7 +357,7 @@ If eligible, your family fee might be:
 
 | Resource | What It Provides |
 |----------|------------------|
-| [MyChildCare.ca.gov](https://mychildcare.ca.gov) | Find licensed providers |
+| [Find Child Care](https://rrnetwork.org/family-services/find-child-care) | Find licensed providers |
 | [TrustLine](https://trustline.org) | FFN background checks |
 | [Local CCR&R](https://rrnetwork.org) | Referrals and resources |
 | [HSC.org](https://hsc.org) | CA homeschool support |

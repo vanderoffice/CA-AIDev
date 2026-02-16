@@ -16,12 +16,12 @@ Sacramento County, as the seat of California state government, often serves as a
 
 | Need | Contact | Phone | Website |
 |------|---------|-------|---------|
-| **CalWORKs Cash Aid** | Dept. of Human Assistance | (916) 874-3100 | dha.saccounty.gov |
+| **CalWORKs Cash Aid** | Dept. of Human Assistance | (916) 874-3100 | dhaservices.saccounty.gov |
 | **Stage 1 Childcare** | DHA CalWORKs | Through your caseworker | |
 | **Stage 2/3 Childcare** | Sacramento County DESS | (916) 228-5580 | |
 | **CCR&R** | Child Action, Inc. | (916) 369-0191 | childaction.org |
 | **General Info** | 211 Sacramento | Dial 2-1-1 | 211sacramento.org |
-| **Provider Licensing** | CDSS CCL | | ccld.dcdss.ca.gov |
+| **Provider Licensing** | CDSS CCL | | ccld.dss.ca.gov |
 
 ### Child Action, Inc.
 
@@ -151,7 +151,7 @@ When leaving cash aid:
 ### For Faster Processing
 
 1. **Apply online when possible:**
-   - [MyBenefits CalWIN](https://www.mybenefitscalwin.org) for cash aid application
+   - [BenefitsCal](https://benefitscal.com) for cash aid application
    - Faster initial processing than in-person
 
 2. **Be thorough with documentation:**
@@ -321,14 +321,14 @@ Sacramento is in **Region 2** (lower cost of living), which affects MAP amounts:
 ## Links & Resources
 
 ### Sacramento County
-- **DHA:** [dha.saccounty.gov](https://dha.saccounty.gov)
-- **CalWORKs:** [dha.saccounty.gov/Services/CalWORKs](https://dha.saccounty.gov/Services/Pages/CalWORKs.aspx)
+- **DHA:** [dhaservices.saccounty.gov](https://dhaservices.saccounty.gov)
+- **CalWORKs:** [dhaservices.saccounty.gov](https://dhaservices.saccounty.gov)
 - **Child Action:** [childaction.org](https://childaction.org)
 - **211 Sacramento:** [211sacramento.org](https://211sacramento.org)
 
 ### State Resources
-- **MyBenefits CalWIN:** [mybenefitscalwin.org](https://www.mybenefitscalwin.org)
-- **MyChildCare.ca.gov:** [mychildcare.ca.gov](https://mychildcare.ca.gov)
+- **BenefitsCal:** [benefitscal.com](https://benefitscal.com)
+- **Find Child Care:** [rrnetwork.org/family-services/find-child-care](https://rrnetwork.org/family-services/find-child-care)
 - **CDSS Child Care:** [Child Care Programs](https://www.cdss.ca.gov/inforesources/child-care-and-development/child-care-and-development-programs)
 
 ### Special Needs

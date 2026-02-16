@@ -167,7 +167,7 @@ They may be able to start. Your Regional Center or APP can explain the process.
 
 **Resources:**
 - Regional Center (assessment and services)
-- [Autism Society of California](https://autismsocietyca.org)
+- Autism Society of California (autismsocietyca.org - website under construction)
 
 ### Children with Physical Disabilities
 

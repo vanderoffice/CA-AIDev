@@ -20,7 +20,7 @@ Alameda County includes Oakland, Berkeley, Fremont, Hayward, and surrounding cit
 | Childcare Subsidies | 4Cs of Alameda County | (510) 582-2182 |
 | CCR&R Referrals | 4Cs of Alameda County | (510) 582-2182 |
 | Head Start | Alameda County Head Start | (510) 562-3442 |
-| Provider Licensing | CCLD Bay Area | [carefacilitysearch](https://www.ccld.dcdss.ca.gov/carefacilitysearch/) |
+| Provider Licensing | CCLD Bay Area | [carefacilitysearch](https://www.ccld.dss.ca.gov/carefacilitysearch/) |
 | General Help | 211 Bay Area | Call 2-1-1 |
 
 ---
@@ -266,7 +266,7 @@ Childcare subsidies available regardless of parent's immigration status (for eli
 | Alameda County SSA | alamedacountysocialservices.org |
 | First 5 Alameda | first5alameda.org |
 | OUSD Early Childhood | ousd.org |
-| MyChildCare | mychildcare.ca.gov |
+| Find Child Care | rrnetwork.org/family-services/find-child-care |
 | 211 Bay Area | 211bayarea.org |
 
 ---

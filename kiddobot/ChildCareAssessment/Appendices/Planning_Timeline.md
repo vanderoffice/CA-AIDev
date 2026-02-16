@@ -351,7 +351,7 @@ All subsidized care requires recertification every 12 months.
 | Need | Resource |
 |------|----------|
 | Local guidance | CCR&R: [rrnetwork.org](https://rrnetwork.org/about/r-r-directory) |
-| Provider search | [MyChildCarePlan.org](https://mychildcareplan.org) |
+| Provider search | [Find Child Care](https://rrnetwork.org/family-services/find-child-care) |
 | Head Start | [headstartca.org](https://headstartca.org) |
 | School information | Your local school district |
 | Subsidy questions | Your APP contractor or county office |

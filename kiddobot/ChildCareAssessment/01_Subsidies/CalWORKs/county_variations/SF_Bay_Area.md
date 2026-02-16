@@ -274,7 +274,7 @@ Very common in Bay Area (Uber, DoorDash, Instacart):
 ## Links & Resources
 
 ### State Resources
-- **MyChildCare.ca.gov:** [mychildcare.ca.gov](https://mychildcare.ca.gov)
+- **Find Child Care:** [rrnetwork.org/family-services/find-child-care](https://rrnetwork.org/family-services/find-child-care)
 - **CDSS Child Care:** [Child Care Programs](https://www.cdss.ca.gov/inforesources/child-care-and-development/child-care-and-development-programs)
 
 ### San Francisco

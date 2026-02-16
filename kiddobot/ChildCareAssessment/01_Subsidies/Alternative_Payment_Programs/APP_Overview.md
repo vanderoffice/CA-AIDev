@@ -132,7 +132,7 @@ Must have a qualifying need for childcare:
 APP agencies are contracted by county. Find yours:
 - Contact your local **CCR&R** (Child Care Resource & Referral)
 - Call **CDSS Child Care Hotline:** 1-800-KIDS-793
-- Search [MyChildCarePlan.org](https://mychildcareplan.org)
+- Search [Find Child Care](https://rrnetwork.org/family-services/find-child-care)
 
 ### Step 2: Get on the Waitlist
 
@@ -292,7 +292,7 @@ Wait times vary dramatically by county:
 
 | Resource | Contact |
 |----------|---------|
-| **Find local APP agency** | [MyChildCarePlan.org](https://mychildcareplan.org) |
+| **Find local APP agency** | [Find Child Care](https://rrnetwork.org/family-services/find-child-care) |
 | **CDSS Child Care Programs** | [cdss.ca.gov/inforesources/child-care-and-development](https://www.cdss.ca.gov/inforesources/child-care-and-development) |
 | **CCR&R Directory** | [rrnetwork.org](https://rrnetwork.org/about/r-r-directory) |
 | **CalWORKs Child Care Info** | [cdss.ca.gov/inforesources/calworks-child-care](https://www.cdss.ca.gov/inforesources/calworks-child-care) |

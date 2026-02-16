@@ -20,7 +20,7 @@ San Diego County is California's second-largest county by population, stretching
 | Childcare Subsidies | YMCA Childcare Resource Service | (800) 481-2151 |
 | CCR&R Referrals | YMCA CRS | (800) 481-2151 |
 | Head Start | Neighborhood House Association | (619) 263-7761 |
-| Provider Licensing | CCLD San Diego | [carefacilitysearch](https://www.ccld.dcdss.ca.gov/carefacilitysearch/) |
+| Provider Licensing | CCLD San Diego | [carefacilitysearch](https://www.ccld.dss.ca.gov/carefacilitysearch/) |
 | General Help | 211 San Diego | Call 2-1-1 |
 | Military Families | MCCYN | childcareaware.org |
 
@@ -277,7 +277,7 @@ Available for farmworker families in North County agricultural areas.
 | NHA Head Start | neighborhoodhouse.org |
 | Military OneSource | militaryonesource.mil |
 | 211 San Diego | 211sandiego.org |
-| MyChildCare | mychildcare.ca.gov |
+| Find Child Care | rrnetwork.org/family-services/find-child-care |
 
 ---
 

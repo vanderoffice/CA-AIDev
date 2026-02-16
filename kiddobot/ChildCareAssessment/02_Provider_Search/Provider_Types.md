@@ -240,7 +240,7 @@ State-funded preschool for income-eligible families, operated at schools and chi
 ### How to Find CSPP
 
 1. Contact your local school district
-2. Search [MyChildCarePlan.org](https://mychildcareplan.org)
+2. Search [Find Child Care](https://rrnetwork.org/family-services/find-child-care)
 3. Call your local CCR&R agency
 
 ---
@@ -362,7 +362,7 @@ Do you want educational curriculum?
 | Resource | Contact |
 |----------|---------|
 | **Verify a license** | [ccld.dss.ca.gov/carefacilitysearch](https://www.ccld.dss.ca.gov/carefacilitysearch/) |
-| **Find childcare** | [MyChildCarePlan.org](https://mychildcareplan.org) |
+| **Find childcare** | [Find Child Care](https://rrnetwork.org/family-services/find-child-care) |
 | **TrustLine (FFN check)** | 1-800-822-8490 |
 | **Local CCR&R** | [rrnetwork.org](https://rrnetwork.org/about/r-r-directory) |
 | **Head Start locator** | [headstartca.org](https://headstartca.org) |

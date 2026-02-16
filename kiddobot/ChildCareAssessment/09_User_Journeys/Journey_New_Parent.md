@@ -65,7 +65,7 @@ PREGNANCY                    BIRTH                    RETURN TO WORK
 | Any income + child with disability | Regional Center, Head Start 10% slots |
 
 **Tools:**
-- Use the [Income Eligibility Calculator](https://mychildcareplan.org) to check subsidy eligibility
+- Contact your local CCR&R to check subsidy eligibility ([Find your CCR&R](https://rrnetwork.org/family-services/find-child-care))
 - Check [Family Fee Schedules](../03_Costs_and_Affordability/Family_Fee_Schedules.md) for expected costs
 
 ### Week 3-4: Contact Your Local CCR&R
@@ -116,7 +116,7 @@ PREGNANCY                    BIRTH                    RETURN TO WORK
 **Start researching providers now.** Infant care is the hardest to find.
 
 **Action Items:**
-1. [ ] Search [MyChildCarePlan.org](https://mychildcareplan.org) or [MyChildCare.ca.gov](https://mychildcare.ca.gov)
+1. [ ] Search [Find Child Care](https://rrnetwork.org/family-services/find-child-care) or [CCLD License Search](https://www.ccld.dss.ca.gov/carefacilitysearch/)
 2. [ ] Ask friends, neighbors, coworkers for recommendations
 3. [ ] Create a list of 5-10 potential providers
 4. [ ] Call each to check infant availability

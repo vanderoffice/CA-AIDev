@@ -20,7 +20,7 @@ Sacramento County serves the state capital region, including Sacramento, Elk Gro
 | Childcare Subsidies | Child Action | (916) 369-0191 |
 | CCR&R Referrals | Child Action | (916) 369-0191 |
 | Head Start | Sacramento Employment & Training | (916) 263-3800 |
-| Provider Licensing | CCLD Sacramento | [carefacilitysearch](https://www.ccld.dcdss.ca.gov/carefacilitysearch/) |
+| Provider Licensing | CCLD Sacramento | [carefacilitysearch](https://www.ccld.dss.ca.gov/carefacilitysearch/) |
 | General Help | 211 Sacramento | Call 2-1-1 |
 
 ---
@@ -263,12 +263,12 @@ Head Start operates at multiple locations throughout the county. Contact SETA fo
 | Resource | URL |
 |----------|-----|
 | Child Action | childaction.org |
-| Sacramento DHA | dha.saccounty.gov |
+| Sacramento DHA | dhaservices.saccounty.gov |
 | SETA Head Start | seta.net |
 | First 5 Sacramento | first5sacramento.org |
 | SCUSD Early Childhood | scusd.edu |
 | 211 Sacramento | 211sacramento.org |
-| MyChildCare | mychildcare.ca.gov |
+| Find Child Care | rrnetwork.org/family-services/find-child-care |
 
 ---
 

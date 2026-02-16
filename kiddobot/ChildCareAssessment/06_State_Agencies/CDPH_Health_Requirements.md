@@ -11,7 +11,7 @@ The **California Department of Public Health (CDPH)** sets and enforces health r
 | Attribute | Details |
 |-----------|---------|
 | **Website** | [cdph.ca.gov](https://www.cdph.ca.gov) |
-| **Immunization Branch** | [cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization-Branch](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization-Branch.aspx) |
+| **Immunization Branch** | [cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization-Branch](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/immunize.aspx) |
 | **Role** | Health standards, immunizations, disease prevention |
 | **Key Law** | California Health & Safety Code §120325-120380 |
 
@@ -213,8 +213,8 @@ Children qualify for free vaccines through VFC if they are:
 |----------|------|
 | **Immunization Requirements** | [shotsforschool.org](https://www.shotsforschool.org) |
 | **CAIR Information** | [cairweb.org](https://cairweb.org) |
-| **Immunization Branch** | [cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization-Branch](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization-Branch.aspx) |
-| **Medical Exemptions** | [cdph.ca.gov/Programs/CID/DCDC/Pages/Medical-Exemptions](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Medical-Exemptions.aspx) |
+| **Immunization Branch** | [cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization-Branch](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/immunize.aspx) |
+| **Medical Exemptions** | [cdph.ca.gov/Programs/CID/DCDC/Pages/Medical-Exemptions](https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/Immunization/School/laws-exemptions.aspx) |
 | **Find Vaccines** | [vaccines.gov](https://www.vaccines.gov) |
 
 ---

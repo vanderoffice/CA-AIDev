@@ -90,10 +90,10 @@ When slots are limited, priority goes to:
 ### Step 1: Find Your Local APP or R&R
 
 **Alternative Payment Programs (APPs):** Process voucher applications and payments
-- [Find your local APP](https://www.cde.ca.gov/sp/cd/re/cdcontractorinfo.asp)
+- [Find your local APP](https://www.cde.ca.gov/sp/cd/ci/)
 
 **Resource & Referral (R&R) agencies:** Provide information and referrals
-- [MyChildCarePlan.org](https://mychildcareplan.org) — search tool with live support
+- [Find Child Care](https://rrnetwork.org/family-services/find-child-care) — search tool with live support
 - Call 211 for local resources
 
 ### Step 2: Gather Documentation
@@ -273,9 +273,9 @@ Demand exceeds supply in most California counties. Even with eligibility, you ma
 
 | Need | Resource |
 |------|----------|
-| **Find local APP** | [CDE Contractor List](https://www.cde.ca.gov/sp/cd/re/cdcontractorinfo.asp) |
-| **General childcare info** | [MyChildCarePlan.org](https://mychildcareplan.org) |
-| **Provider search** | [MyChildCare.ca.gov](https://mychildcare.ca.gov) |
+| **Find local APP** | [CDE Contractor List](https://www.cde.ca.gov/sp/cd/ci/) |
+| **General childcare info** | [Find Child Care](https://rrnetwork.org/family-services/find-child-care) |
+| **Provider search** | [Find Child Care](https://rrnetwork.org/family-services/find-child-care) |
 | **TrustLine** | 800-822-8490 or [TrustLine.org](https://www.trustline.org) |
 | **Local resources** | Dial 211 |
 | **CDSS Child Care** | [Child Care Programs](https://www.cdss.ca.gov/inforesources/child-care-and-development/child-care-and-development-programs) |

@@ -352,7 +352,7 @@ When child is in multiple programs:
 ### Charter Homeschool Programs
 | Resource | URL |
 |----------|-----|
-| Inspire Charter Schools | [inspireschools.org](https://inspireschools.org) |
+| Inspire Charter Schools | [inspireschools.com](https://inspireschools.com) |
 | iLEAD Schools | [ileadschools.org](https://ileadschools.org) |
 | Sage Oak Charter | [sageoakcharter.org](https://sageoakcharter.org) |
 

@@ -97,7 +97,7 @@ Many families fit multiple scenarios. For example:
 | Need | Resource |
 |------|----------|
 | Find your local CCR&R | [rrnetwork.org](https://rrnetwork.org/about/r-r-directory) |
-| Search for childcare | [MyChildCarePlan.org](https://mychildcareplan.org) |
+| Search for childcare | [Find Child Care](https://rrnetwork.org/family-services/find-child-care) |
 | Check provider licenses | [CCLD Search](https://www.ccld.dss.ca.gov/carefacilitysearch/) |
 | 24/7 local resources | Dial 211 |
 | Head Start programs | [headstartca.org](https://headstartca.org) |
