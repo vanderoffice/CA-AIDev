@@ -170,7 +170,7 @@ BEGIN
     FROM license_requirements r
     JOIN license_agencies a ON r.agency_code = a.code
     WHERE
-        r.industry_code = p_industry_code
+        (r.industry_code = p_industry_code OR r.industry_code = 'general' OR r.industry_code = 'other')
         AND (
             -- Match statewide licenses
             r.is_statewide = true
