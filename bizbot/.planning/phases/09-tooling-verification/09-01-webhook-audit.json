@@ -1,0 +1,56 @@
+{
+  "bot": "bizbot",
+  "total_webhooks": 3,
+  "responding": 3,
+  "failed": 0,
+  "score": 100,
+  "webhooks": [
+    {
+      "url": "https://n8n.vanderdev.net/webhook/bizbot",
+      "status": 200,
+      "time_s": 0.3,
+      "session_id": "audit-166a7bbf",
+      "response_type": "json",
+      "response_keys": [
+        "response",
+        "sessionId",
+        "userLevel",
+        "mode",
+        "sources",
+        "_debug_test"
+      ],
+      "response_preview": "{\"response\": \"Hello! How can I assist you with California business licensing today?\", \"sessionId\": \"audit-3d92f68b\", \"userLevel\": \"intermediate\", \"mode\": \"text\", \"sources\": [{\"title\": \"BizAssessment\", \"category\": \"General\", \"url\": null}, {\"title\": \"CA Business Guide\", \"category\": \"General\", \"url\": n...",
+      "status_label": "OK"
+    },
+    {
+      "url": "https://n8n.vanderdev.net/webhook/bizbot-licenses",
+      "status": 200,
+      "time_s": 0.17,
+      "session_id": "audit-749b5534",
+      "response_type": "json",
+      "response_keys": [
+        "response",
+        "sources",
+        "chunksUsed"
+      ],
+      "response_preview": "{\"response\": \"Hello! I'm BizBot's License Expert, ready to help you navigate California business and professional licensing requirements. Whether you need information about contractor licenses, professional certifications, business permits, or any other licensing questions, I'm here to provide detai...",
+      "status_label": "OK"
+    },
+    {
+      "url": "https://n8n.vanderdev.net/webhook/bizbot-license-finder",
+      "status": 200,
+      "time_s": 0.2,
+      "session_id": "audit-a2c66e11",
+      "response_type": "json",
+      "response_keys": [
+        "success",
+        "profile",
+        "summary",
+        "licenses",
+        "grouped"
+      ],
+      "response_preview": "{\"success\": true, \"profile\": {\"industry\": \"food_beverage\", \"city\": \"Sacramento\", \"county\": null, \"entityType\": \"llc\", \"hasEmployees\": false, \"sellsTangibleGoods\": false}, \"summary\": {\"totalLicenses\": 6, \"estimatedCostRange\": \"$100-$145\", \"formationCount\": 3, \"stateCount\": 0, \"localCount\": 1, \"indust...",
+      "status_label": "OK"
+    }
+  ]
+}

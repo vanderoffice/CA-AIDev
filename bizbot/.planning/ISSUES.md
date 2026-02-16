@@ -18,14 +18,12 @@ Enhancements discovered during execution. Not critical - address in future phase
 - **Status:** RESOLVED (2026-02-16, Plan 07-02)
 - **Resolution:** Seeded city-specific business license data for top 25 CA metros (Los Angeles through Roseville). Added 25 city agencies and 25 city-specific license rows with real fees, URLs, and processing times. Added `hasCityLicense` dedup logic to n8n Code node — city-specific data replaces generic "City Business License ($50-$500)" for seeded cities; generic fallback preserved for 457 non-seeded cities.
 
-### ISS-004: External POST to n8n webhooks blocked by nginx WAF (403)
+### ISS-004: External POST to n8n webhooks blocked by nginx WAF (403) — RESOLVED
 
 - **Discovered:** Phase 5 Task 2 (2026-02-15)
 - **Type:** Infrastructure
-- **Status:** OPEN
-- **Description:** POST requests from external IPs to `n8n.vanderdev.net/webhook/*` return 403 Forbidden from nginx reverse proxy. This was likely introduced during VPS production hardening (rate limiting / WAF rules). Webhooks themselves are fully functional when accessed internally via docker exec. Production traffic flows through the website frontend and is unaffected.
-- **Impact:** Low — audit-webhooks.py script must use VPS-internal verification (SSH + docker exec) instead of direct HTTP. No user-facing impact.
-- **Effort:** Medium — would need to allowlist the audit script's IP or add a VPS-internal execution mode to audit-webhooks.py
+- **Status:** RESOLVED (2026-02-16, Plan 09-01)
+- **Resolution:** Root cause was NOT a WAF or rate-limiting rule — it was the `X-Bot-Token` header requirement added during VPS production hardening (Plan 01-03). The nginx-proxy Docker container's vhost config at `/etc/nginx/vhost.d/n8n.vanderdev.net` requires an `X-Bot-Token` header on all `/webhook/` and `/webhook-test/` requests, returning 403 if missing or incorrect. Fix: Added `N8N_WEBHOOK_HEADERS` constant to `bot_registry.py` (shared SSOT) and updated `audit-webhooks.py` to pass the token header on all webhook test requests. All 3 bot registries (waterbot, bizbot, kiddobot) now include `webhook_headers`. External access confirmed working: all 3 BizBot endpoints return 200 OK.
 
 ## Closed Enhancements
 

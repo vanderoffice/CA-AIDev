@@ -5,22 +5,22 @@
 See: .planning/PROJECT.md (updated 2026-02-15)
 
 **Core value:** Accurate California business licensing information through intuitive multi-mode interface with deterministic license matching
-**Current focus:** v1.1 Data Completeness — License data expansion + RAG pipeline improvements
+**Current focus:** v1.1 Data Completeness — COMPLETE
 
 ## Current Position
 
-Phase: 8 of 9 (RAG Pipeline Improvements)
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-02-16 — Completed 08-03-PLAN.md
+Phase: 9 of 9 (Tooling & Verification)
+Plan: 1 of 1 in current phase
+Status: Phase complete — v1.1 milestone ready for close-out
+Last activity: 2026-02-16 — Completed 09-01-PLAN.md
 
-Progress: ████████░░ 78%
+Progress: ██████████ 100%
 
 ## Deferred Issues
 
 - ~~ISS-002: Cross-industry general licenses not auto-included~~ → **RESOLVED 07-01**
 - ~~ISS-003: City/county-specific license data not seeded~~ → **RESOLVED 07-02**
-- ISS-004: External POST blocked by nginx WAF (LOW — workaround exists) → **Phase 9**
+- ~~ISS-004: External POST blocked by nginx WAF~~ → **RESOLVED 09-01** (was X-Bot-Token auth, not WAF)
 - ftb.ca.gov + bizfileonline.sos.ca.gov 403s: Bot-blocking WAF, functional in browser
 - ~~DB timestamp column for chunk-level staleness tracking~~ → **RESOLVED 08-01**
 - ~~Metadata enrichment on ~60% of chunks~~ → **RESOLVED 08-01** (100% coverage: topic on all 387, industry_category on 142)
@@ -46,16 +46,17 @@ Progress: ████████░░ 78%
 | (Unincorporated) suffix on CDPs | Distinguishes from incorporated cities; n8n fallback handles unknown names |
 | infer_topic_metadata returns {} for unknown dirs | Safe no-op for WaterBot/KiddoBot — only matches NN_ prefix convention |
 | 3+ path segments for industry_category | Prevents top-level READMEs from getting spurious industry_category |
+| ISS-004 was X-Bot-Token, not WAF | Nginx vhost requires auth header on /webhook/ — fix in tooling, not infra |
 
 ### Roadmap Evolution
 
 - v1.0 Overhaul: Full rebuild to WaterBot v2.0 standard, 7 phases (0-6), shipped 2026-02-15
-- v1.1 Data Completeness created: License data coverage + RAG pipeline, 3 phases (Phase 7-9)
+- v1.1 Data Completeness: License data + RAG pipeline + final verification, 3 phases (7-9), completed 2026-02-16
 
 ## Session Continuity
 
 Last session: 2026-02-16
-Stopped at: Completed 08-03-PLAN.md (Ingest Pipeline Update + Verification) — Phase 8 complete
+Stopped at: Completed 09-01-PLAN.md (WAF Fix + Final v1.1 Eval) — Phase 9 complete, v1.1 milestone ready
 Resume file: None
 
 ### Artifacts
@@ -64,5 +65,6 @@ Resume file: None
 | Audit Report | `.planning/BOT-AUDIT-bizbot-2026-02-14.md` |
 | v1.0 Milestone Archive | `.planning/milestones/v1.0-ROADMAP.md` |
 | Milestone Summary | `.planning/MILESTONES.md` |
-| Eval Archive | `~/.claude/data/eval-history/bizbot-eval-20260214-160704.json` |
+| Eval Archive (Phase 5) | `~/.claude/data/eval-history/bizbot-eval-20260214-160704.json` |
+| Eval Archive (v1.1 Final) | `~/.claude/data/eval-history/bizbot-eval-20260216-045545.json` |
 | Refresh History | `~/.claude/data/bot-refresh-history.json` |

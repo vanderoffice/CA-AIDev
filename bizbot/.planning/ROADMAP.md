@@ -3,7 +3,7 @@
 ## Milestones
 
 - ✅ [v1.0 Overhaul](milestones/v1.0-ROADMAP.md) (Phases 0-6) — SHIPPED 2026-02-15
-- 🚧 **v1.1 Data Completeness** — Phases 7-9 (in progress)
+- ✅ **v1.1 Data Completeness** — Phases 7-9 — SHIPPED 2026-02-16
 
 ## Production-First Doctrine
 
@@ -32,7 +32,7 @@ All code changes target the production repo on VPS:
 
 </details>
 
-### 🚧 v1.1 Data Completeness (In Progress)
+### ✅ v1.1 Data Completeness (SHIPPED 2026-02-16)
 
 **Milestone Goal:** Improve License Finder data coverage and RAG pipeline maintainability — no UI changes
 
@@ -65,10 +65,10 @@ Plans:
 **Goal**: Fix WAF external POST blocking (ISS-004) and run final eval pass to validate all v1.1 changes
 **Depends on**: Phase 8
 **Research**: Unlikely (nginx config + existing /bot-eval workflow)
-**Plans**: TBD
+**Plans**: 1
 
 Plans:
-- [ ] 09-01: TBD
+- [x] 09-01: WAF Fix + Final v1.1 Eval — X-Bot-Token auth added to audit tooling, final eval confirms 29S/6A/0W (zero regressions) ✓
 
 ## Progress
 
@@ -83,7 +83,7 @@ Plans:
 | 6: Production Deploy | v1.0 | 1/1 | Complete | 2026-02-15 |
 | 7: License Data Expansion | v1.1 | 2/2 | Complete | 2026-02-16 |
 | 8: RAG Pipeline Improvements | v1.1 | 3/3 | Complete | 2026-02-16 |
-| 9: Tooling & Verification | v1.1 | 0/? | Not started | - |
+| 9: Tooling & Verification | v1.1 | 1/1 | Complete | 2026-02-16 |
 
 ## Domain Expertise
 
