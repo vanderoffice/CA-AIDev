@@ -11,14 +11,12 @@ Enhancements discovered during execution. Not critical - address in future phase
 - **Status:** RESOLVED (2026-02-16, Plan 07-01)
 - **Resolution:** Added `OR r.industry_code = 'general'` to n8n Postgres node WHERE clause and created `get_required_licenses()` DB function. Expanded general catalog from 2 to 5 licenses (DBA, SOI, BPP added).
 
-### ISS-003: City/county-specific license requirements
+### ISS-003: City/county-specific license requirements — RESOLVED
 
 - **Discovered:** ISS-001 resolution (2026-02-15)
 - **Type:** Data
-- **Status:** OPEN
-- **Description:** All seeded licenses are statewide (`is_statewide = true`). The schema supports `city` and `county` columns for location-specific requirements, but no location-specific data has been seeded yet.
-- **Impact:** Low — CalGOLD link already directs users to local requirements
-- **Effort:** High — would need per-city/county research for 400+ jurisdictions
+- **Status:** RESOLVED (2026-02-16, Plan 07-02)
+- **Resolution:** Seeded city-specific business license data for top 25 CA metros (Los Angeles through Roseville). Added 25 city agencies and 25 city-specific license rows with real fees, URLs, and processing times. Added `hasCityLicense` dedup logic to n8n Code node — city-specific data replaces generic "City Business License ($50-$500)" for seeded cities; generic fallback preserved for 457 non-seeded cities.
 
 ### ISS-004: External POST to n8n webhooks blocked by nginx WAF (403)
 

@@ -9,17 +9,17 @@ See: .planning/PROJECT.md (updated 2026-02-15)
 
 ## Current Position
 
-Phase: 7 of 9 (License Data Expansion)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-02-16 — Completed 07-01-PLAN.md
+Phase: 8 of 9 (RAG Pipeline Improvements)
+Plan: 0 of ? in current phase
+Status: Not started
+Last activity: 2026-02-16 — Completed Phase 7 (07-02-PLAN.md)
 
-Progress: ███░░░░░░░ 33%
+Progress: ████░░░░░░ 44%
 
 ## Deferred Issues
 
 - ~~ISS-002: Cross-industry general licenses not auto-included~~ → **RESOLVED 07-01**
-- ISS-003: City/county-specific license data not seeded (LOW) → **Phase 7 (07-02)**
+- ~~ISS-003: City/county-specific license data not seeded~~ → **RESOLVED 07-02**
 - ISS-004: External POST blocked by nginx WAF (LOW — workaround exists) → **Phase 9**
 - ftb.ca.gov + bizfileonline.sos.ca.gov 403s: Bot-blocking WAF, functional in browser
 - DB timestamp column for chunk-level staleness tracking → **Phase 8**
@@ -37,6 +37,9 @@ Progress: ███░░░░░░░ 33%
 | Bot-blocking 403s documented | ftb (29) + sos (3) = 32 URLs with WAF blocking; valid in browser |
 | TEXT types in DB functions | Production schema uses text, not varchar — function return types must match |
 | General licenses all conditional | DBA/SOI/BPP marked conditional to avoid false positives for sole props |
+| city_biz_lic_ prefix convention | All city-specific license codes use this prefix for dedup detection |
+| hasCityLicense check before generic | Prevents generic $50-$500 from polluting cost accumulators when real city data exists |
+| Santa Clarita → LA County TTC | City doesn't issue own business license; mapped to county agency |
 
 ### Roadmap Evolution
 
@@ -46,7 +49,7 @@ Progress: ███░░░░░░░ 33%
 ## Session Continuity
 
 Last session: 2026-02-16
-Stopped at: Completed 07-01-PLAN.md (Cross-Industry General License Fix)
+Stopped at: Completed Phase 7 (07-02-PLAN.md — City/County License Data Seeding)
 Resume file: None
 
 ### Artifacts
