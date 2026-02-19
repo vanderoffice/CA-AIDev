@@ -5,3 +5,4 @@ node_modules/
 # Independent nested projects (have their own git repos)
 bot-standardization/
 command-center-v2/
+*.code-workspace
